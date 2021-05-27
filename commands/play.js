@@ -117,7 +117,6 @@ const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
-    message.channel.send('**XOPBOT** Left The Channel!')
     message.channel.send('**XOPBOT** Left The Channel!');
 }
 
