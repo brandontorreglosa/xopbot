@@ -1,0 +1,91 @@
+const profileModel = require("../models/profileSchema");
+
+module.exports = {
+  name: "search",
+  aliases: [],
+  permissions: ["SEND_MESSAGES"],
+  cooldown: 43200,
+  category: "economy",
+  description: {
+    usage: "a-search",
+    content: "Choose your search location and have a chance at some bits!",
+    examples: ["a-search"],
+  },
+  execute(client, message, cmd, args, Discord, profileData) {
+    const LOCATIONS = [
+      "Car",
+      "Van",
+      "Sock",
+      "Milk",
+      "Wallet",
+      "Box",
+      "Pocket",
+      "Bus",
+      "Gutters",
+      "Park",
+      "Train",
+      "Lounge",
+      "Keyboard",
+      "Picnic",
+      "Bathroom",
+      "Bed",
+      "Sofa",
+      "Backpack",
+      "Laptop",
+      "Oculus",
+      "Shirt",
+      "Wardrobe",
+      "Hospital",
+      "Gaming Arena",
+      "Hackerprotms Server",
+    ];
+
+    let chosenLocations = LOCATIONS.sort(() => Math.random() - Math.random()).slice(0, 3);
+
+    const RANDOM_NUMBER = Math.floor(Math.random() * (10000 - 100 + 1)) + 100;
+
+    const FILTER = (m) => {
+      return chosenLocations.some((answer) => answer.toLowerCase() === m.content.toLowerCase()) && m.author.id === message.author.id;
+    };
+
+    const COLLECTOR = message.channel.createMessageCollector(FILTER, { max: 1, time: 15000 });
+
+    COLLECTOR.on("collect", async (m) => {
+      const EMBED = new Discord.MessageEmbed()
+        .setColor("#ffa500")
+        .setTitle(`${message.author.username} Searched ${m.content} 🕵️`)
+        .setDescription(`**You Found ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
+        .setFooter(`What A True Detective You Are.`);
+
+      await profileModel.findOneAndUpdate(
+        {
+          userID: message.author.id,
+        },
+        {
+          $inc: {
+            bits: RANDOM_NUMBER,
+          },
+        }
+      );
+
+      message.channel.send(EMBED);
+    });
+
+    COLLECTOR.on("end", (collected) => {
+      if (collected.size == 0) {
+        return message.channel.send(
+          `**What are you doing <@${message.author.id}>?! There was ₿${RANDOM_NUMBER.toString().replace(
+            /\B(?=(\d{3})+(?!\d))/g,
+            ","
+          )} Hidden Inside The ${chosenLocations[0]} 😭**`
+        );
+      }
+    });
+
+    message.channel.send(
+      `<@${
+        message.author.id
+      }>\n**Which location would you like to search?** 🔍\nType the location in this channel.\n\`${chosenLocations.join("` `")}\``
+    );
+  },
+};
