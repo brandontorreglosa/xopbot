@@ -8,7 +8,8 @@ module.exports = (Discord, client) => {
     const activities = [
         `${client.guilds.cache.size} Servers`,
         `${client.channels.cache.size} Channels`,
-        `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`
+        `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
+        '24/7 Always'
     ];
 
    let i = 0;
