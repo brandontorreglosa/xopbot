@@ -4,10 +4,9 @@ module.exports = {
     aliases: ['sgs', 'suggest'],
     permissions: [],
     description: 'Create A Suggestion!',
-    execute(client, message, cmd, args, Discord){
-        const channel = message.guild.channels.cache.find(c => c.name === '💡suggestions');
-        const channel = message.guild.channels.cache.find(c => c.name === 'suggestions');
-        if(!channel) return message.channel.send('***💡suggestions Channel Does Not Exist! \nMake Sure To Make A Channel Called `💡suggestions` Or `suggestions`!***')
+    execute(client, message, cmd, args, Discord) {
+        const channel = await message.guild.channels.create(c => c.name === '💡suggestions');
+        //if(!channel) return message.channel.send('***💡suggestions Channel Does Not Exist! \nMake Sure To Make A Channel Called `💡suggestions`!***')
 
         let messageArgs = args.join(' ');
         const embed = new Discord.MessageEmbed()
