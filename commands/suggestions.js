@@ -5,8 +5,9 @@ module.exports = {
     permissions: [],
     description: 'Create A Suggestion!',
     async execute(client, message, cmd, args, Discord) {
-        const channel = await message.guild.channels.create(`💡suggestions`);
-        //if(!channel) return message.channel.send('***💡suggestions Channel Does Not Exist! \nMake Sure To Make A Channel Called `💡suggestions`!***')
+        const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("💡suggestions"));
+        if(!channel) message.guild.channels.create(`💡suggestions`);
+        // const channel = await message.guild.channels.create(`💡suggestions`);
 
         let messageArgs = args.join(' ');
         const embed = new Discord.MessageEmbed()
