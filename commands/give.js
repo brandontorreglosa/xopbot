@@ -2,7 +2,7 @@ const profileModel = require("../models/profileSchema");
 module.exports = {
   name: "give",
   aliases: [],
-  permissions: ["ADMINISTRATOR"],
+  permissions: ["SEND_MESSAGES"],
   description: "give a player some Xocoins",
   async execute(client, message, cmd, args, Discord, profileData) {
     if (message.member.id != "600094534386319370") return message.channel.send(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command 😔**`);
