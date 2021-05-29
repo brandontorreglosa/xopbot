@@ -13,6 +13,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`Server info for "${name}"`)
+      .setTimestamp()
       .setThumbnail(icon)
       .addFields(
         {
@@ -48,7 +49,7 @@ module.exports = {
           value: afkTimeout / 60,
         }
       )
-      .setFooter(`Requested By: ${message.author.tag} | ${time} \nServer Information Coded By  @👑HACKERPROᵈᵉᵛ#1498`, message.author.displayAvatarURL(), time.setTimestamp())
+      .setFooter(`Requested By: ${message.author.tag} | ${Timestamp} \nServer Information Coded By  @👑HACKERPROᵈᵉᵛ#1498`, message.author.displayAvatarURL())
 
     message.channel.send(embed)
   }
