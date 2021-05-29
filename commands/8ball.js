@@ -15,6 +15,7 @@ module.exports = {
     // check permissions for embed
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
       const embed = new MessageEmbed() // create embed 
+        .setTimestamp()
         .setAuthor('**🎱 The 8 Ball says...**')
         .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
         .setColor('#c30202').addField('Question:', question)

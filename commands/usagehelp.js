@@ -10,6 +10,7 @@ module.exports = {
     description: "Embeds!",
     execute(client, message, cmd, args, Discord) {
         const embed1 = new Discord.MessageEmbed()
+        .setTimestamp()
         .setColor('#c30202')
         .setTitle(' Usage Help Menu')
         .setURL('https://www.youtube.com/watch?v=K_I8-UUINTg')
@@ -39,6 +40,7 @@ module.exports = {
         .setFooter('***Bot Developer @👑HACKERPROᵈᵉᵛ#1498!***');
 
             const embed2 = new Discord.MessageEmbed()
+            .setTimestamp()
             .setColor('#c30202')
             .setTitle(' Usage Help Menu')
             .setURL('https://www.youtube.com/watch?v=K_I8-UUINTg')

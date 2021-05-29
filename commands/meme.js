@@ -16,6 +16,7 @@ module.exports = {
         }
 
         const embed = new Discord.MessageEmbed()
+            .setTimestamp()
             .setTitle(`Random Meme`)
             .setDescription(data.caption)
             .setColor('#f3f3f3')

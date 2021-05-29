@@ -9,6 +9,7 @@ module.exports = {
      async execute(client, message, cmd, args, Discord) {
         const embed = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
+            .setTimestamp()
             .setTitle('Bot Stats')
             .setColor('#000000')
             .addFields(

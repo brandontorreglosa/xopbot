@@ -15,6 +15,7 @@ module.exports = {
       // if(bank === null) bank = '0'
 
       const newEmbed = new Discord.MessageEmbed()
+      .setTimestamp()
       .setAuthor(`${user.user.username} Balance`, user.user.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
       .setDescription(`

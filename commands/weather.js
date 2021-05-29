@@ -20,6 +20,7 @@ module.exports = {
         var location = result[0].location;
 
         const weatherinfo = new Discord.MessageEmbed()
+        .setTimestamp()
         .setDescription(`**${current.skytext}**`)
         .setAuthor(`Weather forecast for ${current.observationpoint}`)
         .setThumbnail(current.imageUrl)

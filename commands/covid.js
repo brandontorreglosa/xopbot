@@ -19,6 +19,7 @@ module.exports = {
         }
 
         const embed = new MessageEmbed()
+        .setTimestamp()
             .setTitle(args[0] ? `${args[0].toUpperCase()} Stats` : 'Total Corona Cases World Wide')
             .setColor('#fb644c')
             .setThumbnail(args[0] ? corona.countryInfo.flag : 'https://i.giphy.com/YPbrUhP9Ryhgi2psz3.gif')

@@ -35,10 +35,12 @@ module.exports = {
         const { member, channel, guild } = message;
 
         const provideaguess = new Discord.MessageEmbed()
+        .setTimestamp()
             .setColor('#c30202')
             .setDescription(`**❌ Please provide a guess!**`)
 
         const pickinganumber = new Discord.MessageEmbed()
+        .setTimestamp()
             .setColor('#c30202')
             .setDescription('**Picking a number between 1 and 20000**')
 
@@ -58,6 +60,7 @@ module.exports = {
             let attempts = guildAttempts.get(guild.id);
 
             const guessedthenumber = new Discord.MessageEmbed()
+            .setTimestamp()
                 .setColor('#00ff00')
                 .setDescription(`**✅ Perfect, <@${member.id}> The Number Was ${guildNumber.get(guild.id)}, It Only Took You ${attempts.attempts} Attempts!**`)
 

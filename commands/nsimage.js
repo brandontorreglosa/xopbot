@@ -60,6 +60,7 @@ module.exports = {
 			                if (!message.channel.nsfw) return message.channel.send('**You Must Use This Command In An NSFW Channel**!') 
 			
 					 const embed = new Discord.MessageEmbed()
+					 .setTimestamp()
 					 .setFooter('NSFW Images Provided To You By The Bot Supporters')
 					 .setTitle('Mmmm.. Nice :)')
 			         .setImage(urls[~~Math.floor(Math.random() * urls.length)]);

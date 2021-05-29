@@ -11,6 +11,7 @@ module.exports = {
         const blueTeamEmoji = '🔵';
 
         let embed = new Discord.MessageEmbed()
+            .setTimestamp()
             .setColor('#e42643')
             .setTitle('Choose a team to play on!')
             .setDescription('Choosing a team will allow you to interact with your teammates!\n\n'

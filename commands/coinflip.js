@@ -9,6 +9,7 @@ module.exports = {
         const choices= ["Heads", "Tails"];
         const choice = choices[Math.floor(Math.random() * choices.length)];
         let embed = new MessageEmbed()
+        .setTimestamp()
         .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
         .setTitle("Coinflip!")
         .setDescription(`You Flipping Flipped **${choice}**!`)

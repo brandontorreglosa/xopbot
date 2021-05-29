@@ -17,6 +17,7 @@ module.exports = {
                 
         const image_results = await google.scrape(image_query, 1);
         const embed = new Discord.MessageEmbed()
+        .setTimestamp()
         .setFooter('Images Provided To You By The Bot Creator 👑HACKERPROᵈᵉᵛ#1498')
         .setTitle('Good Searching!')
         .setImage(image_results[0].url);

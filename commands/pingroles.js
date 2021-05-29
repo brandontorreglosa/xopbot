@@ -16,6 +16,7 @@ module.exports = {
         const youtubeTeamEmoji = '🎮';
 
         let embed = new Discord.MessageEmbed()
+            .setTimestamp()
             .setColor('#e42643')
             .setTitle('**Pings**')
             .setDescription('**Choosing A Ping Will Allow You To Get Important Notifications!**\n\n'

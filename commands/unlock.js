@@ -11,6 +11,7 @@ module.exports = {
         const role = message.guild.roles.cache.find(r => r.id === roletofind)
         if(!role) return message.reply("**Please Give A Valid Role Id!**")
         let embed = new MessageEmbed()
+        .setTimestamp()
         .setTitle("Channel Unlocked!")
         .setDescription(`**This Channel Has Been Unlocked By ${message.author.tag}**`)
         .setTimestamp()

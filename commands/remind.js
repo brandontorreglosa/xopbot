@@ -14,14 +14,17 @@ module.exports = {
         let reminder = args.splice(1).join(' ')
 
         const notime = new Discord.MessageEmbed()
+        .setTimestamp()
             .setColor('#c30202')
             .setDescription(`**Please specify the time!**`)
 
         const wrongtime = new Discord.MessageEmbed()
+        .setTimestamp()
             .setColor('#c30202')
             .setDescription(`**Sorry I only do d, m, h, or s.**`)
 
         const reminderembed = new Discord.MessageEmbed()
+        .setTimestamp()
             .setColor('#c30202')
             .setDescription(`**Please Tell Me What You Want To Be Reminded Off**`)
 
@@ -38,12 +41,14 @@ module.exports = {
         if (!reminder) return message.channel.send(reminderembed)
 
         const remindertime = new Discord.MessageEmbed()
+        .setTimestamp()
         .setColor('#33F304')
         .setDescription(`\**Your reminder will go off in ${time}**`)
 
         message.channel.send(remindertime)
 
         const reminderdm = new Discord.MessageEmbed()
+        .setTimestamp()
         .setColor('#7289DA')
         .setTitle('**REMINDER**')
         .setDescription(`**It has been ${time} here is your reminder:** ${reminder}`)  

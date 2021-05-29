@@ -5,6 +5,7 @@ module.exports = {
     description: "Embeds!",
     execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
+        .setTimestamp()
         .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
         .setColor('#0404fc')
         .setTitle('Bot Invite')

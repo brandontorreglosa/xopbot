@@ -14,6 +14,7 @@ module.exports = {
         const randomNumber6 =  Math.floor(Math.random() * 50) + 1;
         const randomNumber7 = Math.floor(Math.random() * 100) + 1;
         const newEmbed = new Discord.MessageEmbed()
+        .setTimestamp()
         .setColor('#c30202')
         .setTitle('User Info')
         .setDescription('***Get A Users Information***')

@@ -23,6 +23,7 @@ module.exports = {
     
 
     const newEmbed = new Discord.MessageEmbed()
+    .setTimestamp()
     .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
     .setTitle('LeaderBoard')
     .setColor('#c30202')
