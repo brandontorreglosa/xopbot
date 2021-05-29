@@ -63,7 +63,7 @@ module.exports = {
 					 .setTimestamp()
 					 .setFooter('NSFW Images Provided To You By The Bot Supporters')
 					 .setTitle('Mmmm.. Nice :)')
-			         .setImage(urls[~~Math.floor(Math.random() * urls.length)]);
+			         .setImage(urls[Math.floor(Math.random() * urls.length)]);
 					 message.channel.send(embed)
 					
 				});
