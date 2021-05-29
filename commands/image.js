@@ -1,27 +1,31 @@
-var Scraper = require('images-scraper');
-
-const google = new Scraper({
-    puppeteer: {
-       headless: true,
-     },
- });
 
 module.exports = {
     name: 'image',
     permissions: ["SEND_MESSAGES"],
     description: 'this sends a image to a discord text channel',
     async execute(client, message, cmd, args, Discord) {
-        const image_query = args.join(' ');
-        if(!image_query) return message.channel.send('**Please Enter Image Name**');
-        
-                
-        const image_results = await google.scrape(image_query, 1);
-        const embed = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setFooter('Images Provided To You By The Bot Creator 👑HACKERPROᵈᵉᵛ#1498')
-        .setTitle('Good Searching!')
-        .setImage(image_results[0].url);
-        message.channel.send(embed)
-    }
+
+const res = await got("http://results.dogpile.com/serp?qc=images&q=" + args.slice(1).join(" "))
+
+const arrayOfMatches = res.body.match(/(?<=href=")https?.*?(?=")/gm);
+
+function grabImage() {
+  const image = arrayOfMatches[Math.floor(Math.random() * arrayOfMatches.length)];
+
+    if (!/jpg|png|gif/gi.test(image)) return grabImage();
+    else return image;
+}
+
+
+const embed = new Discord.MessageEmbed()
+.setTimestamp()
+  .setFooter('Very Good Searching!')
+  .setTitle('Nice Embed Right?')
+  .setImage(grabImage());
+
+  message.channel.send(embed)
 
 }
+
+}
+

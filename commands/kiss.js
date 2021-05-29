@@ -1,5 +1,6 @@
 module.exports = {
     name: 'kiss',
+    permissions: ["SEND_MESSAGES"],
     description: 'kiss a user',
     execute(message, args) {
         const Choices = [
