@@ -153,8 +153,8 @@ if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES'
     const command = client.commands.get(cmd) ||
                     client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-//const channel = client.channels.cache.get('841362279353155656')
-// //return channel.send(`**${message.author.tag} Used The Command ${command.name} In ${message.guild.name}**`)
+if(message.channel.id ==="841362279353155656")
+message.channel.send(`**${message.author.tag} Used The Command ${command.name} In ${message.guild.name}**`)
 
         const validPermissions = [
           "CREATE_INSTANT_INVITE",
