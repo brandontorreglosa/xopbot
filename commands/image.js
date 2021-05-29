@@ -1,3 +1,4 @@
+const got = require('got');
 
 module.exports = {
     name: 'image',
