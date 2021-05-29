@@ -108,7 +108,7 @@ const video_player = async (guild, song) => {
 const skip_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
     if(!server_queue){
-        return message.channel.send(`**There Are No Songs In Queue 🎶**`);
+        return message.channel.send(`***There Are No Songs In Queue 🎶***`);
     }
     server_queue.connection.dispatcher.end();
 }
@@ -117,6 +117,7 @@ const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
+    message.channel.send("***XOPBOT Is Leaving Voice Channel 😭***")
 }
 
 
