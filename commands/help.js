@@ -67,7 +67,7 @@ module.exports = {
         .setURL('https://www.youtube.com/watch?v=K_I8-UUINTg')
         .setColor('#c30202')
         .addFields(
-            {name: '__🥳 Fun__' , value: '`ping`-__***Not Real Ping!***__ `\nfakeuserinfo`-__***Get A Fake User Info!***__ `\n\avatar`-__***Shows A Users Avatar!***__  `\n\weather`-__***Get Your Current Weather!***__  `\n\8ball`-__***Ask 8ball A Question!***__  `\n\guessthenumber`-__***Guess The Number!***__  `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__ `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__'}
+            {name: '__🥳 Fun__' , value: '`ping`-__***Not Real Ping!***__ `\nfakeuserinfo`-__***Get A Fake User Info!***__ `\n\avatar`-__***Shows A Users Avatar!***__  `\n\weather`-__***Get Your Current Weather!***__  `\n\8ball`-__***Ask 8ball A Question!***__  `\n\guessthenumber`-__***Guess The Number!***__  `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__ `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__'}
         )
         .setFooter('***Bot Developer @👑HACKERPROᵈᵉᵛ#1498!***');
 
