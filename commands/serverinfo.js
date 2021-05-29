@@ -48,7 +48,7 @@ module.exports = {
           value: afkTimeout / 60,
         }
       )
-      .setFooter(`Requested By: ${message.author.tag} \nServer Information Coded By  @👑HACKERPROᵈᵉᵛ#1498`, message.author.displayAvatarURL() .setTimestamp())
+      .setFooter(`Requested By: ${message.author.tag} | ${time} \nServer Information Coded By  @👑HACKERPROᵈᵉᵛ#1498`, message.author.displayAvatarURL(), time.setTimestamp())
 
     message.channel.send(embed)
   }
