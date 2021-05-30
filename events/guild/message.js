@@ -129,7 +129,7 @@ if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES'
 
 
     if (message.content.startsWith("<!@831824859066925087>")) {
-      message.channel.send("***Hello My Prefix Is '-'***")
+    return  message.channel.send("***Hello My Prefix Is '-'***")
  }
 
     const prefix = process.env.PREFIX;
