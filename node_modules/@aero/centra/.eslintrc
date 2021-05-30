@@ -1,6 +1,0 @@
-{
-	"extends": "raven",
-	"rules": {
-		"no-prototype-builtins": "off"
-	}
-}
