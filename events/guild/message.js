@@ -11,6 +11,8 @@ module.exports = async (Discord, client, message) => {
     const randomXP = Math.floor(Math.random() *49) + 1;
     const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
+      const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("Leveling"));
+      if(!channel) message.guild.channels.create(`Leveling`);
       const user = await Levels.fetch(message.author.id, message.guild.id);
       message.channel.send(`_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`);
 

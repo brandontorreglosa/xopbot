@@ -55,7 +55,8 @@ module.exports = {
                     text_channel: message.channel,
                     connection: null,
                     songs: [],
-                    // loop: false,
+                     //loopone: false,
+                     //loopall: false,
                 }
                 
                
@@ -82,7 +83,7 @@ module.exports = {
         else if(cmd === 'stop') stop_song(message, server_queue);
         else if(cmd === 'pause') pause_song(message, server_queue);
         else if(cmd === 'unpause') unpause_song(message, server_queue);
-        // else if(cmd === 'loop') loop_song(message, server_queue);
+       // else if(cmd === 'loop') loop_song(args, server_queue);
     }
     
 }
