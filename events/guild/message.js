@@ -14,7 +14,7 @@ module.exports = async (Discord, client, message) => {
       const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("Leveling"));
       if(!channel) message.guild.channels.create(`Leveling`);
       const user = await Levels.fetch(message.author.id, message.guild.id);
-      message.channel.send(`_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`);
+      channel.send(`_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`);
 
       if (user.level == 1) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 1");
