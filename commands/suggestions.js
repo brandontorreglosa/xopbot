@@ -5,8 +5,8 @@ module.exports = {
     permissions: [],
     description: 'Create A Suggestion!',
     async execute(client, message, cmd, args, Discord) {
-        const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("💡suggestions"));
-        if(!channel) message.guild.channels.create(`💡suggestions`);
+        const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("suggestions"));
+        if(!channel) message.guild.channels.create(`suggestions`);
         // const channel = await message.guild.channels.create(`💡suggestions`);
 
         let messageArgs = args.join(' ');
