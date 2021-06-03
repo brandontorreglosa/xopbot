@@ -18,7 +18,7 @@ module.exports = {
         async (err,data) => {
             if (data)
             return message.reply(
-                "This User Does Not Have Premium"
+                "***This User Does Not Have Premium! 😭***"
             );
 
             data.delete();
