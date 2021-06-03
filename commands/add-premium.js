@@ -22,7 +22,7 @@ module.exports = {
             new premiumSchema({
                 User: member.id
             }).save();
-            return message.reply(`***Added ${user} To The Premium Database!***`);
+            return message.reply(`***Added ${member} To The Premium Database!***`);
         }
     );
 
