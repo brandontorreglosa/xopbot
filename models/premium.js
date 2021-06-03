@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-module.exports = mongoose.model(
-    "premium",
-    new mongoose.Schema({
+    const premiumSchema = new mongoose.Schema({
         User: String,
-    })
-);
+    });
+
+const model = mongoose.model("premium", premiumSchema);
+
+module.exports = model;
