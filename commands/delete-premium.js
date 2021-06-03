@@ -8,7 +8,7 @@ module.exports = {
 
     const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
 
-    if(!memeber) return message.reply('***Please Specify A Valid User!***');
+    if(!member) return message.reply('***Please Specify A Valid User!***');
 
     premiumSchema.findOne(
         {
