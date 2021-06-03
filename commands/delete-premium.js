@@ -3,6 +3,7 @@ const premiumSchema =  require("../models/premium");
 module.exports = {
     name: 'delete-premium',
     permissions: ["SEND_MESSAGES"],
+    aliases: ['delete-p', 'd-p'],
    async execute(client, message, cmd, args, Discord) {
     if (message.member.id != "600094534386319370") return message.channel.send(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command 😔**`);
 
@@ -21,7 +22,7 @@ module.exports = {
             );
 
             data.delete();
-            message.channel.send(`***Removed ${member} From The Premium Database!***`);
+            message.channel.send(`***Removed ${member} From The Premium Database! 💲***`);
         }
     );
 

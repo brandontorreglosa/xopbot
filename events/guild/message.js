@@ -215,7 +215,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
         }
 
         if(command.premium && !(await premiumSchema.findOne({ User: message.author.id})))
-        return message.reply("***You Need To Buy Premium To Use This Command!***")
+        return message.reply("***You Need To Buy Premium To Use This Command! 💰***")
 
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
