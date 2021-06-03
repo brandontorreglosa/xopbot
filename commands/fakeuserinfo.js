@@ -3,6 +3,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     aliases: ['fusi', 'fui'],
     cooldown: 2,
+    premium: true,
     description: 'get a users info',
     //Use your own execute parameters
     execute(client, message, cmd, args, Discord) {

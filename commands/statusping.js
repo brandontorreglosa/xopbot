@@ -13,7 +13,7 @@ module.exports = {
     const msg = await message.channel.send('Loading...');
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed() 
-      .setTitle('🐲 Pong!')
+      .setTitle('🏓 Pong!')
       .setColor('#c30202')
       .setDescription(
         `

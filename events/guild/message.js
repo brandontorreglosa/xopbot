@@ -1,5 +1,6 @@
 const fetch = require("node-fetch").default;
 const profileModel = require("../../models/profileSchema");
+const premiumSchema =  require("../models/premium");
 const quick = require('quick.db');
 const Levels = require('discord-xp');
 require('dotenv').config();
@@ -212,6 +213,9 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
             return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
           }
         }
+
+        if(command.premium && !(await premiumSchema.findOne({ User: message.author.id})))
+        return message.reply("***You Need To Buy Premium To Use This Command!***")
 
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
