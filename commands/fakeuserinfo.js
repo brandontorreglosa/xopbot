@@ -16,8 +16,8 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
-        .setTitle('User Info')
-        .setDescription('***Get A Users Information***')
+        .setTitle('Fake User Info')
+        .setDescription('***Get A Fake Users Information***')
         .addFields(
             {name: 'Coolness', value: `${randomNumber}%`},
             {name: 'Gaming Skills', value: `${randomNumber2}%`},
