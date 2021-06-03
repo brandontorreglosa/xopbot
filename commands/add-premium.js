@@ -18,7 +18,7 @@ module.exports = {
         async (err,data) => {
             if (data)
             return message.reply(
-                "This User Has Already Premium Features"
+                "***This User Has Already Premium Features***"
             );
 
             new premiumSchema({
