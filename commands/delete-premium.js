@@ -18,7 +18,7 @@ module.exports = {
         async (err,data) => {
             if (data)
             return message.reply(
-                "***This User Does Not Have Premium! 😭 \nBuy Premium From Here [Get Premium](https://www.patreon.com/user?u=52511474&fan_landing=true)***"
+                "***This User Does Not Have Premium! 😭 \nBuy Premium From Here (https://www.patreon.com/user?u=52511474&fan_landing=true)***"
             );
 
             data.delete();
