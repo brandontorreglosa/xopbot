@@ -21,7 +21,7 @@ module.exports = {
             );
 
             data.delete();
-            message.channel.send(`***Removed ${user.username} From The Premium Database!***`);
+            message.channel.send(`***Removed ${member} From The Premium Database!***`);
         }
     );
 
