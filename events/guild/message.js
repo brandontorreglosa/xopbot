@@ -1,6 +1,6 @@
 const fetch = require("node-fetch").default;
 const profileModel = require("../../models/profileSchema");
-const premiumSchema =  require("../models/premium");
+const premiumSchema =  require("../../models/premium");
 const quick = require('quick.db');
 const Levels = require('discord-xp');
 require('dotenv').config();
