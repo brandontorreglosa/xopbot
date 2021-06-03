@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports = mongoose.model(
     "premium",
-    new mongoose.schema({
+    new mongoose.Schema({
         User: String,
     })
 );
