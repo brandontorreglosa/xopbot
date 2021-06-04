@@ -22,7 +22,7 @@ module.exports = {
         .setTimestamp()
         .setImage(`${randomLinks}`)
         .setColor('#c30202')
-        .setTitle(`${user.user.username} Was Hugged!`)
+        .setTitle(`${user.username} Was Hugged!`)
         .setDescription(`${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy!`)
 
         //const hug_list = message.mentions.users.map(user => {
