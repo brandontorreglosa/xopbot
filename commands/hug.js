@@ -15,7 +15,7 @@ module.exports = {
         ]
 
         const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
-        let randomLinks = links[Math.floor(Math.random() * choices.length)];
+        let randomLinks = links[Math.floor(Math.random() * links.length)];
         const randomNumber = Math.floor(Math.random() * 100) + 1;
 
         const newEmbed = new Discord.MessageEmbed()
