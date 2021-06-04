@@ -14,13 +14,13 @@ module.exports = {
             'https://th.bing.com/th/id/R33208dccd082fbc7c7b045042bf5da6c?rik=CN%2b6qBOAbfp7%2bA&pid=ImgRaw',
         ]
 
-        const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+        const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
         let randomLinks = links[Math.floor(Math.random() * links.length)];
         const randomNumber = Math.floor(Math.random() * 100) + 1;
 
         const newEmbed = new Discord.MessageEmbed()
         .setTimestamp()
-        .setImage(`${links}`)
+        .setImage(`${randomLinks}`)
         .setColor('#c30202')
         .setTitle(`${user.user.username} Was Hugged!`)
         .setDescription(`${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy!`)
