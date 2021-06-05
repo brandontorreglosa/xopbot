@@ -13,7 +13,7 @@ async execute(client, message, cmd, args, Discord) {
             .addField("Solution", math.evaluate(args.join(" ")))
         );
     } catch (err) {
-        message.channel.send("***Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`");
+        message.channel.send("***Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`***");
     }
 },
 };
