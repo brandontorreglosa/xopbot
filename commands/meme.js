@@ -3,6 +3,7 @@ const axios = require('axios');
 module.exports = {
     name: "meme",
     permissions: ["SEND_MESSAGES"],
+    premium: true,
     cooldown: 3,
      async execute(client, message, cmd, args, Discord) {
         const url = 'https://some-random-api.ml/meme';
