@@ -21,7 +21,7 @@ module.exports = {
 
       .catch(_e => {
         quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-        return message.channel.send('**Failed To Set Your Status Due To Very High Role.**');
+        return message.channel.send('**Failed To Set Your Status Due To Very High Role Try Demoting.**');
       });
   },
 };
