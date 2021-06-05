@@ -1,7 +1,7 @@
 const math = require('mathjs');
 
 module.exports = {
-    name: math,
+    name: 'math',
     permissions: ["SEND_MESSAGES"],
     aliases: ['mathprob', 'mathproblem'],
     premium: true,
