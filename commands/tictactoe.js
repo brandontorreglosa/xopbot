@@ -1,4 +1,4 @@
-const tictactoe = require('reconlx')
+const { tictactoe } = require('reconlx')
 
 module.exports = {
     name : 'tictactoe',
