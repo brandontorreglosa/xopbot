@@ -11,6 +11,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
     "axios": "^0.21.1",
+    "booru": "^2.4.0",
     "canvacord": "^5.2.0",
     "chartjs-node-canvas": "^3.1.0",
     "cheerio": "^1.0.0-rc.6",
@@ -37,6 +38,7 @@
     "reconlx": "^1.2.41",
     "redis": "^3.1.2",
     "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
     "weather-js": "^2.0.0",
     "yt-search": "^2.7.6",
     "ytdl-core": "^4.8.0"
