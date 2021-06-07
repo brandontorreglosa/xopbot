@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 module.exports = {
-name: '4k',
+name: 'neko',
 permissions: ["SEND_MESSAGES"],
 async execute(client, message, cmd, args, Discord) {
 
