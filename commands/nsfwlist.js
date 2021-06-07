@@ -1,7 +1,8 @@
 module.exports = {
-    name: 'help',
-    description: "Embeds!",
-    execute(message, args, Discord) {
+    name: 'nsfwlist',
+    description: "nsfw",
+    permissions: ["SEND_MESSAGES"],
+    execute(client, message, cmd, args, Discord) {
 
         if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**') 
 
