@@ -20,7 +20,7 @@ module.exports = {
         .setColor('#c30202')
         .setTimestamp()
         .setTitle('🔞 NSFW List')
-        .setDescription('Real Life NSFW: `4k` `neko` `pgif` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai `hthigh` `hanal` `hboobs` `hneko` `hkitsune`')
+        .setDescription('Real Life NSFW: `4k` `neko` `pgif` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `hneko` `hkitsune`')
         .setFooter('Bot Developer @👑HACKERPRO™#9999');
 
         message.channel.send(newEmbed);
