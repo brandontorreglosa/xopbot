@@ -2,6 +2,7 @@ const got = require('got');
 
 module.exports = {
     name: "2meme",
+    permissions: ["SEND_MESSAGES"],
     category: "Image",
     description: "Sends a random meme from reddit",
 
