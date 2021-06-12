@@ -13,8 +13,14 @@ module.exports = async (Discord, client, message) => {
     const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
       const user = await Levels.fetch(message.author.id, message.guild.id);
+
+      var messagelevelup = `_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`;
+      message.reply(messagelevelup)
+      .then(message => {
+        message.delete({ timeout: 5000 })
+      })
+      
       //const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("Leveling"))
-      message.channel.send(`_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`); 
       //if(!channel) message.guild.channels.create(`Leveling`);
 
       if (user.level == 1) {
