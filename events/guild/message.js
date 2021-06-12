@@ -130,6 +130,17 @@ if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES'
         })
     }
 
+    if(message.channel.id === "853316512358334494") {
+      fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&`)
+      .then(response => response.json())
+      .then(data => {
+          message.channel.send(data.response)
+      })
+      .catch(() => {
+          message.channel.send("Couldnt Fetch Response!");
+      })
+  }
+    
 
     if (message.content.startsWith("<!@831824859066925087>")) {
     return  message.channel.send("***Hello My Prefix Is '-'***")
