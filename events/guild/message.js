@@ -14,10 +14,10 @@ module.exports = async (Discord, client, message) => {
     if (hasLeveledUp) {
       const user = await Levels.fetch(message.author.id, message.guild.id);
 
-      var messagelevelup = `_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`;
-      message.reply(messagelevelup)
+      var someonelevelup = `_**${message.member} You Have Advanced To Level ${user.level} You Are Getting Wise!**_`;
+      message.reply(someonelevelup)
       .then(message => {
-        message.delete({ timeout: 5000 })
+        message.delete({ timeout: 8000 })
       })
       
       //const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("Leveling"))
