@@ -140,6 +140,17 @@ if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES'
           message.channel.send("Couldnt Fetch Response!");
       })
   }
+
+  if(message.channel.id === "853326210531590175") {
+    fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&`)
+    .then(response => response.json())
+    .then(data => {
+        message.channel.send(data.response)
+    })
+    .catch(() => {
+        message.channel.send("Couldnt Fetch Response!");
+    })
+}
     
 
     if (message.content.startsWith("<!@831824859066925087>")) {

@@ -6,11 +6,11 @@ module.exports = {
     description: 'let users request xop-chat',
     async execute(client, message, cmd, args, Discord){
         //the channel you want the bug-reports to be send to
-        const channel = client.channels.cache.get('839389883486306304')
+        const channel = client.channels.cache.get('853326730937106452')
 
          //look if there is a bug specified
         const query = args.join(' ');
-        if(!query) return message.reply('**Please Enter The Channel Id That You Want The Bot To Talk To**')
+        if(!query) return message.reply('**Please Enter The Channel Id That You Want The Bot To Talk To!**')
         
          //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()
