@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['addnewrole'],
     permissions: ["MANAGE_ROLES"],
     async execute(client, message, cmd, args, Discord) {
-        //if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send('You do not have permission.')
+        if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send('You do not have permission.')
         const target = message.mentions.members.first() 
         if(!target) return message.channel.send('No member specified') 
         const role = message.mentions.roles.first()
