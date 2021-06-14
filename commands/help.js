@@ -8,6 +8,9 @@ module.exports = {
      async execute(client, message, cmd, args, Discord) {
 
         if(cmd === 'help') {
+
+            message.react('✔');
+
         const embed = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
@@ -93,12 +96,13 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        await message.channel.send(embed).then((msg) => {
-            msg.react('✔');
-        }).catch((err) => {
-            throw err;
-        });
-        }
+        await message.channel.send(embed)
+        //.then((msg) => {
+        //     msg.react('✔');
+        // }).catch((err) => {
+        //     throw err;
+        // });
+         }
 
     else if(cmd === 'moderation') {
         const embed2 = new Discord.MessageEmbed()
