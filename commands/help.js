@@ -94,7 +94,7 @@ module.exports = {
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         await message.channel.send(embed).then((msg) => {
-            msg.react(':DrakeHyperYea:');
+            msg.react('✔');
         }).catch((err) => {
             throw err;
         });
