@@ -7,7 +7,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
      async execute(client, message, cmd, args, Discord) {
 
-        if(cmd === '2help') {
+        if(cmd === 'help') {
         const embed = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
