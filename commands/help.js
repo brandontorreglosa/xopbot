@@ -40,6 +40,11 @@ module.exports = {
                     inline: true
                 },
                 {
+                    name: '__🤖 Usage__',
+                    value: '`-usage`',
+                    inline: true
+                },
+                {
                     name: '__🥳 Fun__',
                     value: '`-fun`',
                     inline: true
@@ -90,7 +95,7 @@ module.exports = {
         const embed2 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🛠️ Moderation__')
+        //.setTitle('__🛠️ Moderation__')
         .setColor('#c30202')
         .addFields(
             {name: '__🛠️ Moderation__', value: '`ban`-__***Ban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__  `\n\mute`-__***Mute A Member From A Server!***__  `\n\mute timed`-__***Time Mute A Member From A Server!***__  `\nunmute`-__***Unmute A Member From A Server!***__  `\n\clear`-__***Clear Messages From A Server!***__  `\n\command`-__***Gives Basic Server Rules Of A Server!***__  `\n\slowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\nsetnick`-__***Set A Server Nickname!***__ `\nresetnick`-__***Reset To Normal Nickname!***__ `\nlock`-__***Lock A Channel From A Specific Role!***__ `\nunlock`-__***Unlock A Channel From A Specific Role!***__'},
