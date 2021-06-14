@@ -1,3 +1,5 @@
+const os = require('os')
+
 module.exports = {
     name: "2help",
     aliases: ['2mod'],
