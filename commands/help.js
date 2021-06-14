@@ -9,7 +9,7 @@ module.exports = {
 
         if(cmd === 'help') {
 
-            message.react('✔');
+            message.react('✅');
 
         const embed = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
