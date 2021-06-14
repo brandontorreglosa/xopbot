@@ -83,6 +83,11 @@ module.exports = {
                     name: '__🤖 Credits__',
                     value: '`-credits`',
                     inline: true
+                },
+                {
+                    name: '__🆘 Menus__',
+                    value: '`-v1help`',
+                    inline: true
                 }
                 
             )
@@ -109,7 +114,7 @@ module.exports = {
         const embed3 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__⚙ Utility__')
+        //.setTitle('__⚙ Utility__')
         .setColor('#c30202')
         .addFields(
             {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nafk`-__***Get AFK Status!***__ `\n\suggestions`-__***Make A Suggestion To The Admins!***__'}
@@ -123,7 +128,7 @@ module.exports = {
         const embed4 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🐛 Bugs__')
+        //.setTitle('__🐛 Bugs__')
         .setColor('#c30202')
         .addFields(
             {name: '__🐛 Bugs__', value: '`bugreport`-__***Report A Bug To Admins!***__ `\nfindbugs`-__***Find Bugs On Your Server!***__ `\nclearbugs`-__***Clear Bugs From Your Server!***__'}
@@ -137,7 +142,7 @@ module.exports = {
         const embed5 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__📈 Status__')
+        //.setTitle('__📈 Status__')
         .setColor('#c30202')
         .addFields(
             {name: '__📈 Status__' , value: '`mcserver`-__***Get Real-Time Status Of MCServers!***__  `\nstatusping`-__***Get A Status Ping Of Your Server!***__ `\nserverinfo`-__***Get Your Servers Information!***__ `\nbotinfo`-__***Get The Bots Information!***__ `\ncovid`-__***Get Covid Information Of A Area!***__ `\nuserinfo`-__***Get A Real User Info!***__'}
@@ -151,7 +156,7 @@ module.exports = {
         const embed6 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__💬 Socials__')
+        //.setTitle('__💬 Socials__')
         .setColor('#c30202')
         .addFields(
             {name: '__💬 Socials__', value: '`youtube`-__***Go To My Youtube Channel!***__ `\nscratch`-__***Go To My Scratch Account!***__ `\namino`-__***Go To My Amino Account!***__'}
@@ -179,7 +184,7 @@ module.exports = {
         const embed7 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🥳 Fun__')
+        //.setTitle('__🥳 Fun__')
         .setColor('#c30202')
         .addFields(
             {name: '__🥳 Fun__' , value: '`ping`-__***Not Real Ping!***__ `\navatar`-__***Shows A Users Avatar!***__ `\nbadges`-__***Gives You A Users Badge!***__ `\n8ball`-__***Ask 8ball A Question!***__  `\nguessthenumber`-__***Guess The Number!***__  `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__  `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__ `\npp`-__***Get A Users PP!***__'}
@@ -193,7 +198,7 @@ module.exports = {
         const embed8 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🎶 Music__')
+       // .setTitle('__🎶 Music__')
         .setColor('#c30202')
         .addFields(
             {name: '__🎶 Music__' , value: '`play`-__***Play Any Music From Youtube!***__  `\nstop`-__***Stop The Player!***__  `\n\skip`-__***Skip To The Song In Queue!***__ `\n\pause`-__***Pause The Song From Playing!***__ `\nunpause`-__***Unpause The Song To Play!***__'}
@@ -207,7 +212,7 @@ module.exports = {
         const embed9 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🤑 Economy__')
+       // .setTitle('__🤑 Economy__')
         .setColor('#c30202')
         .addFields(
             {name: '__🤑 Economy__' , value: '`balance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
@@ -221,7 +226,7 @@ module.exports = {
         const embed10 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__⏫ Leveling__')
+        //.setTitle('__⏫ Leveling__')
         .setColor('#c30202')
         .addFields(
             {name: '__⏫ Leveling__', value: '`xoprank`-__***Private Command!***__ `\nrank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
@@ -246,7 +251,7 @@ module.exports = {
         const embed11 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🔞 NSFW__')
+        //.setTitle('__🔞 NSFW__')
         .setColor('#c30202')
         .addFields(
             {name: '__🔞 NSFW__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)'},
@@ -260,7 +265,7 @@ module.exports = {
         const embed12 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__👑 Premium__')
+        //.setTitle('__👑 Premium__')
         .setColor('#c30202')
         .addFields(
             {name: '__👑 Premium__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ `\nweather`-__***Get Your Current Weather! (Premium)***__ `\noldmeme`-__***Get Old Memes From Google! (Premium)***__ `\ntictactoe`-__***Play Tictactoe! (Premium)***__ `\nhangman`-__***Play Hangman! (Premium)***__ `\nmath`-__***Do Math Problems! (Premium)***__'}
@@ -274,7 +279,7 @@ module.exports = {
         const embe13 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🔗 Invites__')
+        //.setTitle('__🔗 Invites__')
         .setColor('#c30202')
         .addFields(
             {name: '__🔗 Invites__' , value: '`invite`-__***Invite The Bot To Your Server!***__ `\ninvitewebsite`-__***Go To XOPBOTs Official Website!***__'}
@@ -288,7 +293,7 @@ module.exports = {
         const embed14 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setTitle('__🤖 Credits__')
+        //.setTitle('__🤖 Credits__')
         .setColor('#c30202')
         .addFields(
             {name: '__🤖 Bot Credits__' , value: '`Bot:`-__***The Bots Credits***__ `\nBot Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ `\nBot Supporter`-__***@Trixer#8894***__'},
