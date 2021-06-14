@@ -93,8 +93,12 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        await message.channel.send(embed)
-    }
+        await message.channel.send(embed).then((msg) => {
+            msg.react(':DrakeHyperYea:');
+        }).catch((err) => {
+            throw err;
+        });
+        }
 
     else if(cmd === 'moderation') {
         const embed2 = new Discord.MessageEmbed()
