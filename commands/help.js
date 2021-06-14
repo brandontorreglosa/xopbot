@@ -16,77 +16,77 @@ module.exports = {
             .addFields(
                 {
                     name: '__🛠️ Moderation__',
-                    value: '`-moderation`',
+                    value: '`x!moderation`',
                     inline: true
                 },
                 {
                     name: '__⚙ Utility__',
-                    value: '`-utility`',
+                    value: '`x!utility`',
                     inline: true
                 },
                 {
                     name: '__🐛 Bugs__',
-                    value: '`-bugs`',
+                    value: '`x!bugs`',
                     inline: true
                 },
                 {
                     name: '__📈 Status__',
-                    value: '`-status`',
+                    value: '`x!status`',
                     inline: true
                 },
                 {
                     name: '__💬 Socials__',
-                    value: '`-socials`',
+                    value: '`x!socials`',
                     inline: true
                 },
                 {
                     name: '__🤖 Usage__',
-                    value: '`-usage`',
+                    value: '`x!usage`',
                     inline: true
                 },
                 {
                     name: '__🥳 Fun__',
-                    value: '`-fun`',
+                    value: '`x!fun`',
                     inline: true
                 },
                 {
                     name: '__🎶 Music__',
-                    value: '`-music`',
+                    value: '`x!music`',
                     inline: true
                 },
                 {
                     name: '__🤑 Economy__',
-                    value: '`-economy`',
+                    value: '`x!economy`',
                     inline: true
                 },
                 {
                     name: '__⏫ Leveling__',
-                    value: '`-leveling`',
+                    value: '`x!leveling`',
                     inline: true
                 },
                 {
                     name: '__🔞 NSFW__',
-                    value: '`-nsfw`',
+                    value: '`x!nsfw`',
                     inline: true
                 },
                 {
                     name: '__👑 Premium__',
-                    value: '`-premium`',
+                    value: '`x!premium`',
                     inline: true
                 },
                 {
                     name: '__🔗 Invites__',
-                    value: '`-invites`',
+                    value: '`x!invites`',
                     inline: true
                 },
                 {
                     name: '__🤖 Credits__',
-                    value: '`-credits`',
+                    value: '`x!credits`',
                     inline: true
                 },
                 {
                     name: '__🆘 Menus__',
-                    value: '`-v1help`',
+                    value: '`x!v1help`',
                     inline: true
                 }
                 
