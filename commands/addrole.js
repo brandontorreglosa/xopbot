@@ -3,6 +3,12 @@ module.exports = {
     aliases: ['addnewrole'],
     permissions: ["MANAGE_ROLES"],
     async execute(client, message, cmd, args, Discord) {
+        if (!message.member.hasPermission("MANAGE_ROLES")) {
+            return message.channel.send("**Sorry You Need Permissions To Add A Role!**");
+          }
+          if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
+            return message.channel.send("**I Do Not Have Permission To Manage Roles!**");
+          } 
         let target = message.mentions.members.first();
     
         if(!target) return message.reply(`**Please Mention A User!**`)
