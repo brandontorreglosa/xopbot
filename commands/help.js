@@ -284,7 +284,7 @@ module.exports = {
     }
 
     else if(cmd === 'invites') {
-        const embe13 = new Discord.MessageEmbed()
+        const embed13 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
         //.setTitle('__🔗 Invites__')

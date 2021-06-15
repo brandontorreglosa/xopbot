@@ -19,7 +19,7 @@ module.exports = {
     //   .setThumbnail(target.user.displayAvatarURL({ dynamic: true }))
       .setColor("RANDOM")
       .setDescription(`**${rrole} Was Removed From ${target}**`)
-      .setFooter(`**Role Added By ${message.author.username}**`)
+      .setFooter(`👑HACKERPROᵈᵉᵛ#1498`)
       .setTimestamp()
       
       await message.channel.send(embed)

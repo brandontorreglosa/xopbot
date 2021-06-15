@@ -16,9 +16,10 @@ module.exports = {
         
           const embed = new Discord.MessageEmbed()
           .setTitle(`${target.user.username} Has Been Given A Role`)
-          .setColor("RANDOM")
+          .setTimestamp()
+          .setColor("#c30202")
           .setDescription(`**XOPBOT Changed Role For ${target.user.username} And Added ${arole}**`)
-          
+          .setFooter('👑HACKERPROᵈᵉᵛ#1498')
          await message.channel.send(embed)
           
           target.roles.add(arole)
