@@ -3,12 +3,28 @@ module.exports = {
     aliases: ['delrole', 'deleterole'],
     permissions: ["MANAGE_ROLES"],
     async execute(client, message, cmd, args, Discord)  {
-        if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send('You do not have permission.')
-        const target = message.mentions.members.first() 
-        if(!target) return message.channel.send('**No Member Specified!**')
-        const role = message.mentions.roles.first()
-        if(!role) return message.channel.send('**No Role Has Been Specified!**') 
-        await target.roles.remove(role)
-        message.channel.send(`${target.user.username} Role: ${role} Was Removed By ${message.author.username}`) 
+        let target = message.mentions.members.first();
+    
+    if(!target) return message.reply(`**I am unable to find the user**`)
+    
+    let rrole = message.mentions.roles.first();
+    
+    if(!rrole) return message.reply(`**I am unable to find the role**`)
+    
+    // let ticon = target.user.avatarURL({ dynamic: true, size: 2048 });
+    // let aicon = message.author.avatarURL({ dynamic: true, size: 2048 });
+    
+      const embed = new Discord.MessageEmbed()
+    //   .setAuthor(target.user.username, ticon)
+    //   .setThumbnail(target.user.displayAvatarURL({ dynamic: true }))
+      .setColor("RANDOM")
+      .setDescription(`**${rrole} Was Removed From ${target}**`)
+      .setFooter(`**Role Added By ${message.author.username}**`)
+      .setTimestamp()
+      
+      await message.channel.send(embed)
+      
+      target.roles.remove(rrole)
+    
+  }
     }
-}
