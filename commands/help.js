@@ -223,7 +223,7 @@ module.exports = {
        // .setTitle('__🤑 Economy__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🤑 Economy__' , value: '`balance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
+            {name: '__🤑 Economy__' , value: '`balance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\nwork`-__***Work For Xocoins!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 

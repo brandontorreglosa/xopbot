@@ -64,7 +64,7 @@ module.exports = {
         },
         {
           $inc: {
-            bits: RANDOM_NUMBER,
+            coins: RANDOM_NUMBER,
           },
         }
       );
@@ -75,10 +75,10 @@ module.exports = {
     COLLECTOR.on("end", (collected) => {
       if (collected.size == 0) {
         return message.channel.send(
-          `**What are you doing <@${message.author.id}>?! There was ₿${RANDOM_NUMBER.toString().replace(
+          `**What are you doing <@${message.author.id}>?! There was ${RANDOM_NUMBER.toString().replace(
             /\B(?=(\d{3})+(?!\d))/g,
             ","
-          )} Hidden Inside The ${chosenLocations[0]} 😭**`
+          )} Xocoins, Hidden Inside The ${chosenLocations[0]} 😭**`
         );
       }
     });

@@ -43,7 +43,7 @@ module.exports = {
         },
         {
           $inc: {
-            bits: RANDOM_NUMBER,
+            coins: RANDOM_NUMBER,
           },
         }
       );
