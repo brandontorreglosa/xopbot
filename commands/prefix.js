@@ -6,7 +6,7 @@ module.exports = {
   name: "prefix",
  permissions: ["ADMINISTRATOR"],
   description: "Change the guild prefix",
-  async (client, message, cmd, args, Discord) {
+  async execute(client, message, cmd, args, Discord) {
     //PERMISSION
     // if(!message.member.hasPermission("ADMINISTRATOR")) {
     //   return message.channel.send("<a:crossWrongYou are not allowed or do not have permission to change prefix")
