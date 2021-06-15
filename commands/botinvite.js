@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'invite',
+    name: 'botinvite',
     permissions: ["SEND_MESSAGES"],
-    aliases: ['inv'],
+    aliases: ['binv'],
     description: "Embeds!",
     execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()

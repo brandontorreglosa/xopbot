@@ -290,7 +290,7 @@ module.exports = {
         //.setTitle('__🔗 Invites__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🔗 Invites__' , value: '`invite`-__***Invite The Bot To Your Server!***__ `\ninvitewebsite`-__***Go To XOPBOTs Official Website!***__'}
+            {name: '__🔗 Invites__' , value: '`botinvite`-__***Invite The Bot To Your Server!***__ `\nwebsiteinvite`-__***Go To XOPBOTs Official Website!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 

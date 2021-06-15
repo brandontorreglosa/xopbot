@@ -3,12 +3,24 @@ module.exports = {
     aliases: ['addnewrole'],
     permissions: ["MANAGE_ROLES"],
     async execute(client, message, cmd, args, Discord) {
-        if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send('You do not have permission.')
-        const target = message.mentions.members.first() 
-        if(!target) return message.channel.send('No member specified') 
-        const role = message.mentions.roles.first()
-        if(!role) return message.channel.send('No role specified') 
-        await target.roles.add(role) 
-        message.channel.send(`${target.user.username} has obtained a role`)
+        let target = message.mentions.members.first();
+    
+        if(!target) return message.reply(`**Please Mention A User!**`)
+        
+        let arole = message.mentions.roles.first();
+        
+        if(!arole) return message.reply(`**Please Mention Role For Add!**`)
+        
+        //let ticon = target.user.avatarURL({ dynamic: true, size: 2048 });
+        //let aicon = message.author.avatarURL({ dynamic: true, size: 2048 });
+        
+          const embed = new MessageEmbed()
+          
+          .setColor("RANDOM")
+          .setDescription(`**XOPBOT Changed Role For ${target.user.username} And Added ${arole}**`)
+          
+          await message.channel.send(embed)
+          
+          target.roles.add(arole)
     }
 }

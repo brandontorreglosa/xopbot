@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'invitewebsite',
+    name: 'websiteinvite',
     permissions: ["SEND_MESSAGES"],
-    aliases: ['invw', 'inviteweb', 'iw'],
+    aliases: ['winv', 'webinvite', 'wi'],
     description: "Embeds!",
     execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
