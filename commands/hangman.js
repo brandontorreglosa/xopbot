@@ -3,6 +3,7 @@ const { hangman } = require('reconlx')
 module.exports = {
     name: 'hangman',
     permissions: ["SEND_MESSAGES"],
+    premium: true,
     async execute(client, message, cmd, args, Discord) {
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You need manage messages permission.')
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])

@@ -7,7 +7,7 @@ module.exports = {
     if (member) {
       const memberTarger = message.guild.members.cache.get(member.id);
       memberTarger.kick();
-      message.channel.send(`*** <@${memberTarget.user.id}> Has Been Kicked For Breaking The Rules!***`);
+      message.channel.send(`***<@${memberTarger.user.id}> Has Been Kicked For Breaking The Rules!***`);
     } else {
       message.channel.send('**You Cant Kick This Member Because It Dont Exist Or He Is A Hacker!**');
     }

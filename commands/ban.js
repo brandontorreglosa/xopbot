@@ -7,7 +7,7 @@ module.exports = {
     if (member) {
       const memberTarger = message.guild.members.cache.get(member.id);
       memberTarger.ban();
-      message.channel.send(`***<@${memberTarget.user.id}> Has Been Banned For Breaking The Rules!***`);
+      message.channel.send(`***<@${memberTarger.user.id}> Has Been Banned For Breaking The Rules!***`);
     } else {
       message.channel.send('**You Cant Ban This Member Because It Dont Exist Or He Is A Hacker!**');
     }
