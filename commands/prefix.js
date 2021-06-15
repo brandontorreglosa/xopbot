@@ -1,5 +1,6 @@
 const db = require("quick.db")
-const { PREFIX } = require("../../.env")
+const { PREFIX } = process.env.PREFIX;
+require('dotenv').config();
 let reset = { PREFIX }
 
 module.exports = {
