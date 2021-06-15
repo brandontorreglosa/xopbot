@@ -14,12 +14,12 @@ client.snipes = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
- client.on('guildMemberAdd', guildMember =>{
-     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'English');
+//  client.on('guildMemberAdd', guildMember =>{
+//      let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'English');
  
-     guildMember.roles.add(welcomeRole);
-     guildMember.guild.channels.cache.get('766937600161349662').send(`**Welcome <@${guildMember.user.id}> To Our Server! Make Sure To Check Out The #✅rules✅ Channel! \nYou Can Talk On The #💬｜bot-commands Thank You Bye.**`)
- });
+//      guildMember.roles.add(welcomeRole);
+//      guildMember.guild.channels.cache.get('766937600161349662').send(`**Welcome <@${guildMember.user.id}> To Our Server! Make Sure To Check Out The #✅rules✅ Channel! \nYou Can Talk On The #💬｜bot-commands Thank You Bye.**`)
+//  });
 //const channel = client.channels.cache.get('841362279353155656')
 //if(command) return channel.send(`${message.author.tag} used the command ${command.name} in ${message.guild.name}`)
 
