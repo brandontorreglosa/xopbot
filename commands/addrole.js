@@ -14,12 +14,12 @@ module.exports = {
         //let ticon = target.user.avatarURL({ dynamic: true, size: 2048 });
         //let aicon = message.author.avatarURL({ dynamic: true, size: 2048 });
         
-          const embed = new MessageEmbed()
-          
+          const embed = new Discord.MessageEmbed()
+          .setTitle(`${target.user.username} Has Been Given A Role`)
           .setColor("RANDOM")
           .setDescription(`**XOPBOT Changed Role For ${target.user.username} And Added ${arole}**`)
           
-          await message.channel.send(embed)
+         await message.channel.send(embed)
           
           target.roles.add(arole)
     }
