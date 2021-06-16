@@ -17,7 +17,7 @@ module.exports = {
         const prize = args.slice(3).join(" ")
         if(!prize) return message.channel.send('**Please Specify A Prize To Win**')
 
-        client.giveaways.start(channel, {
+        client.giveaways.startGiveaway(channel, {
             time : ms(duration),
             prize : prize,
             winnerCount: winners,
