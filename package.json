@@ -30,6 +30,7 @@
     "inb_botlist": "^1.1.3",
     "mathjs": "^9.4.2",
     "minecraft-server-util": "^3.5.1",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.5",
     "ms": "^2.1.3",
     "nekos.life": "^2.0.7",
