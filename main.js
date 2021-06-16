@@ -3,15 +3,15 @@ const Levels = require('discord-xp');
 require('dotenv').config();
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]});
 const mongoose = require('mongoose');
-const { GiveawayCreator } = require('discord-giveaway');
-const Creator = new GiveawayCreator(client, 'mongoose');
+//const { GiveawayCreator } = require('discord-giveaway');
+//const Creator = new GiveawayCreator(client, 'mongoose');
 
 const fs = require('fs')
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 client.snipes = new Discord.Collection();
-client.giveaways = Creator;
+//client.giveaways = Creator;
 
 ['command_handler', 'event_handler'].forEach(handler =>{
     require(`./handlers/${handler}`)(client, Discord);
