@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const Levels = require('discord-xp');
 require('dotenv').config();
-const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]});
+const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS", "COLLECTION"]});
 const mongoose = require('mongoose');
 //const { GiveawayCreator } = require('discord-giveaway');
 //const Creator = new GiveawayCreator(client, 'mongoose');

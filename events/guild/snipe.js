@@ -1,5 +1,5 @@
-const client = require('../../main');
-client.once('messageDelete', (message) => {
+const client = require('../main');
+client.on('messageDelete', (message) => {
     let snipes = client.snipes.get(message.channel.id) || [];
     if (snipes.length > 5) snipes = snipes.slice(0, 4);
 
