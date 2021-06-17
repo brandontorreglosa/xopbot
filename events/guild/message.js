@@ -164,44 +164,71 @@ if (message.content === "<@831824859066925087>" || message.content === "<@!83182
 
 if (message.content === "lol" || message.content === "lmao") {
   message.channel.send(`***${message.author} Laughed Out Loud!***`)
+  .then(message => {
+    message.delete({ timeout: 8000 })
+})
 }
 
 if (message.content === "bot" || message.content === "noob") {
   message.channel.send(`***Stop Bullying This Kid! :)***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "yay" || message.content === "great") {
   message.channel.send(`***Wooohooo!***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "ihatexopbot" || message.content === "xopbotistrash") {
   message.channel.send(`***I Hate You Too Kid!***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "bruh" || message.content === "bruhs") {
   message.channel.send(`***Bruh Moment!***`)
+  .then(message => {
+    message.delete({ timeout:15000 })
+})
 }
 
 if (message.content === "yeet" || message.content === "getyeeted") {
   message.channel.send(`***Man Just Got Yeeted!***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "deeznuts" || message.content === "mynuts") {
   message.channel.send(`***Best Meme For Me!***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "stop" || message.content === "stopit") {
   message.channel.send(`***Stop It Get Some Help Kid!***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "1+1" || message.content === "oneplusone") {
   message.channel.send(`***Is 2 Boiiiii!***`)
+  .then(message => {
+    message.delete({ timeout: 15000 })
+})
 }
 
 if (message.content === "damn" || message.content === "thatgood") {
   message.channel.send(`***Damn Kid!***`)
   .then(message => {
-    message.delete({ timeout: 3000 })
+    message.delete({ timeout: 15000 })
 })
 }
 
