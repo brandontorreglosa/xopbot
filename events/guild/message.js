@@ -165,6 +165,46 @@ if (message.content === "<@831824859066925087>" || message.content === "<@!83182
 if (message.content === "lol" || message.content === "lmao") {
   message.channel.send(`***${message.author} Laughed Out Loud!***`)
 }
+
+if (message.content === "bot" || message.content === "noob") {
+  message.channel.send(`***Stop Bullying This Kid! :)***`)
+}
+
+if (message.content === "yay" || message.content === "great") {
+  message.channel.send(`***Wooohooo!***`)
+}
+
+if (message.content === "ihatexopbot" || message.content === "xopbotistrash") {
+  message.channel.send(`***I Hate You Too Kid!***`)
+}
+
+if (message.content === "bruh" || message.content === "bruhs") {
+  message.channel.send(`***Bruh Moment!***`)
+}
+
+if (message.content === "yeet" || message.content === "getyeeted") {
+  message.channel.send(`***Man Just Got Yeeted!***`)
+}
+
+if (message.content === "deeznuts" || message.content === "mynuts") {
+  message.channel.send(`***Best Meme For Me!***`)
+}
+
+if (message.content === "stop" || message.content === "stopit") {
+  message.channel.send(`***Stop It Get Some Help Kid!***`)
+}
+
+if (message.content === "1+1" || message.content === "oneplusone") {
+  message.channel.send(`***Is 2 Boiiiii!***`)
+}
+
+if (message.content === "damn" || message.content === "thatgood") {
+  message.channel.send(`***Damn Kid!***`)
+  .then(message => {
+    message.delete({ timeout: 3000 })
+})
+}
+
     
     const prefix = process.env.PREFIX;
     if(!message.content.startsWith(prefix)) return;
