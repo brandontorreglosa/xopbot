@@ -14,6 +14,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
+            .setImage('https://topservers.com/dynamic_banners/16239181281906343483.gif')
             .setTitle('XOPBOT Commands')
             .setColor('#c30202')
             .addFields(
@@ -105,6 +106,9 @@ module.exports = {
          }
 
     else if(cmd === 'moderation') {
+
+        message.react('⛏');
+
         const embed2 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -119,6 +123,9 @@ module.exports = {
     }
 
     else if(cmd === 'utility') {
+
+message.react('⚙');
+
         const embed3 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -133,6 +140,9 @@ module.exports = {
     }
 
     else if(cmd === 'bugs') {
+
+message.react('🐜');
+
         const embed4 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -147,6 +157,9 @@ module.exports = {
     }
 
     else if(cmd === 'status') {
+
+message.react('💹');
+
         const embed5 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -161,6 +174,9 @@ module.exports = {
     }
 
     else if(cmd === 'socials') {
+
+        message.react('🗨');
+
         const embed6 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -189,6 +205,9 @@ module.exports = {
     // }
 
     else if(cmd === 'fun') {
+
+message.react('🤪');
+
         const embed7 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -203,6 +222,9 @@ module.exports = {
     }
 
     else if(cmd === 'music') {
+
+message.react('🎵');
+
         const embed8 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -217,6 +239,9 @@ module.exports = {
     }
 
     else if(cmd === 'economy') {
+
+message.react('💵');
+
         const embed9 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -231,6 +256,9 @@ module.exports = {
     }
 
     else if(cmd === 'leveling') {
+
+message.react('🆙');
+
         const embed10 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -255,6 +283,8 @@ module.exports = {
             message.delete({ timeout: 3000 })
         })
     }
+ 
+    message.react('🔞');
 
         const embed11 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
@@ -270,6 +300,9 @@ module.exports = {
     }
 
     else if(cmd === 'premium') {
+
+message.react('🏆');
+
         const embed12 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -284,6 +317,9 @@ module.exports = {
     }
 
     else if(cmd === 'invites') {
+
+message.react('🖇');
+
         const embed13 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
@@ -298,6 +334,9 @@ module.exports = {
     }
 
     else if(cmd === 'credits') {
+
+message.react('📃');
+
         const embed14 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
