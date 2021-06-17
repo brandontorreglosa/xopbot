@@ -163,7 +163,7 @@ if (message.content === "<@831824859066925087>" || message.content === "<@!83182
 }
 
 if (message.content === "lol" || message.content === "lmao") {
-  message.channel.send(`***${author.username} Laughed Out Loud!***`)
+  message.channel.send(`***${message.author} Laughed Out Loud!***`)
 }
     
     const prefix = process.env.PREFIX;
