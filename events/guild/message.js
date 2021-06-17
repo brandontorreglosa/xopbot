@@ -159,7 +159,7 @@ if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES'
 }
 
 if (message.content === "<@831824859066925087>" || message.content === "<@!831824859066925087>") {
-  message.channel.send(`***${message.author} My Prefix Is ${prefix} And You Can Do ${prefix}help To Get My Commands!***`)
+  message.channel.send(`***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***`)
 }
     
     const prefix = process.env.PREFIX;
