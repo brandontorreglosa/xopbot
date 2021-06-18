@@ -2,7 +2,7 @@ const os = require('os')
 
 module.exports = {
     name: "help",
-    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits'],
+    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
      async execute(client, message, cmd, args, Discord) {
@@ -44,8 +44,8 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: '__🤖 Usage__',
-                    value: '`x!usage`',
+                    name: '__🎮 Games__',
+                    value: '`x!games`',
                     inline: true
                 },
                 {
@@ -190,20 +190,6 @@ message.react('💹');
     await message.channel.send(embed6)
     }
 
-    // else if(cmd === 'moderation') {
-    //     const embed2 = new Discord.MessageEmbed()
-    //     .setThumbnail(client.user.displayAvatarURL())
-    //     .setTimestamp()
-    //     .setTitle('__🤖 Usage__')
-    //     .setColor('#c30202')
-    //     .addFields(
-    //         {name: '__🛠️ Moderation__', value: '`ban`-__***Ban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__  `\n\mute`-__***Mute A Member From A Server!***__  `\n\mute timed`-__***Time Mute A Member From A Server!***__  `\nunmute`-__***Unmute A Member From A Server!***__  `\n\clear`-__***Clear Messages From A Server!***__  `\n\command`-__***Gives Basic Server Rules Of A Server!***__  `\n\slowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\nsetnick`-__***Set A Server Nickname!***__ `\nresetnick`-__***Reset To Normal Nickname!***__ `\nlock`-__***Lock A Channel From A Specific Role!***__ `\nunlock`-__***Unlock A Channel From A Specific Role!***__'},
-    //     )
-    //     .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-    // await message.channel.send(embed2)
-    // }
-
     else if(cmd === 'fun') {
 
 message.react('🤪');
@@ -214,7 +200,7 @@ message.react('🤪');
         //.setTitle('__🥳 Fun__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🥳 Fun__' , value: '`ping`-__***Not Real Ping!***__ `\navatar`-__***Shows A Users Avatar!***__ `\nbadges`-__***Gives You A Users Badge!***__ `\n8ball`-__***Ask 8ball A Question!***__  `\nguessthenumber`-__***Guess The Number!***__  `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__  `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__ `\npp`-__***Get A Users PP!***__'}
+            {name: '__🥳 Fun__' , value: '`ping`-__***Not Real Ping!***__ `\navatar`-__***Shows A Users Avatar!***__ `\nbadges`-__***Gives You A Users Badge!***__ `\n8ball`-__***Ask 8ball A Question!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__  `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__ `\npp`-__***Get A Users PP!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -309,7 +295,7 @@ message.react('🏆');
         //.setTitle('__👑 Premium__')
         .setColor('#c30202')
         .addFields(
-            {name: '__👑 Premium__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ `\nweather`-__***Get Your Current Weather! (Premium)***__ `\noldmeme`-__***Get Old Memes From Google! (Premium)***__ `\ntictactoe`-__***Play Tictactoe! (Premium)***__ `\nhangman`-__***Play Hangman! (Premium)***__ `\nmath`-__***Do Math Problems! (Premium)***__'}
+            {name: '__👑 Premium__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ `\nweather`-__***Get Your Current Weather! (Premium)***__ `\noldmeme`-__***Get Old Memes From Google! (Premium)***__ `\ntictactoe`-__***Play Tictactoe! (Premium)***__ `\nmath`-__***Do Math Problems! (Premium)***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -351,11 +337,22 @@ message.react('📃');
 
     await message.channel.send(embed14)
     }
-}
-}
 
-// {
-   // name: '__🤖 Usage__',
-   // value: '`-usage`',
-   // inline: true
-//},
+    else if(cmd === 'games') {
+
+message.react('🎯');
+
+        const embed15 = new Discord.MessageEmbed()
+        .setThumbnail(client.user.displayAvatarURL())
+        .setTimestamp()
+        //.setTitle('__🎮 Games__')
+        .setColor('#c30202')
+        .addFields(
+            {name: '__🎮 Games__', value: '`guessthenumber`-__***Guess The Number!***__ `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nhangman`-__***Play Hangman!***__'}
+        )
+        .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+
+    await message.channel.send(embed15)
+    }
+}
+}

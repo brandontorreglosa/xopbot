@@ -162,7 +162,7 @@ if (message.content === "<@831824859066925087>" || message.content === "<@!83182
   message.channel.send(`***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***`)
 }
 
-if (message.content === "lol" || message.content === "lmao") {
+if (message.content === "lol" || message.content === "lmao" || message.content === 'Lol') {
   message.channel.send(`***${message.author} Laughed Out Loud!***`)
   .then(message => {
     message.delete({ timeout: 8000 })
