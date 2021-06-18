@@ -17,7 +17,7 @@ async execute(client, message, cmd, args, Discord) {
         superagent.get('https://nekobot.xyz/api/image').query({ type: 'hmidriff'}).end((err, response) => {
 
             var embed_nsfw = new Discord.MessageEmbed()
-                .setDescription(`:underage:\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
+                .setDescription(`:underage: **Hentai Midriff**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                 .setTimestamp()
                 .setImage(response.body.message)
                 .setFooter('Nice Huh :)')
