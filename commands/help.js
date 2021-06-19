@@ -360,7 +360,7 @@ message.react('🎯');
         message.react('✅');
 
     const embed16 = new Discord.MessageEmbed()
-        .setThumbnail(client.user.displayAvatarURL())
+        //.setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
         .setImage('https://topservers.com/dynamic_banners/16239181281906343483.gif') //my banner for my bot 
         .setTitle('XOPBOT Commands')
