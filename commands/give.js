@@ -18,13 +18,12 @@ module.exports = {
       if (!targetData) return message.channel.send(`**This User Does Not Exist In The Database!**`);
 
       await profileModel.findOneAndUpdate(
-        {
-          userID: message.author.id,
-        },
-          {
-            coins: -amount,
-          },
-          
+        // {
+        //   userID: message.author.id,
+        // },
+        //   {
+        //     coins: -amount,
+        //   },
           {
           userID: target.id,
           },
