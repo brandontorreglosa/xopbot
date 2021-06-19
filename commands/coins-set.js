@@ -32,7 +32,7 @@ module.exports = {
           },
       );
 
-      return message.channel.send(`**This User Has Been Given ${amount} of Xocoins!** 💸`);
+      return message.channel.send(`**This User's Xocoins Have Been Set To ${amount} Xocoins!** 💸`);
     } catch (err) {
       console.log(err);
     }
