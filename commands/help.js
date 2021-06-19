@@ -2,7 +2,7 @@ const os = require('os')
 
 module.exports = {
     name: "help",
-    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits'],
+    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
      async execute(client, message, cmd, args, Discord) {
@@ -354,5 +354,79 @@ message.react('🎯');
 
     await message.channel.send(embed15)
     }
+
+    if(cmd === 'βοηθεια') {
+
+        message.react('✅');
+
+    const embed16 = new Discord.MessageEmbed()
+        .setThumbnail(client.user.displayAvatarURL())
+        .setTimestamp()
+        .setImage('https://topservers.com/dynamic_banners/16239181281906343483.gif') //my banner for my bot 
+        .setTitle('XOPBOT Commands')
+        .setColor('#c30202')
+        .addFields(
+            {
+                name: '__🛠️ Μετριοπαθεια__',
+                value: '`x!μετριοπαθεια`',
+                inline: true
+            },
+            {
+                name: '__⚙ Χρησιμοτητα__',
+                value: '`x!χρησιμοτητα`',
+                inline: true
+            },
+            {
+                name: '__🐛 Σφαλματα__',
+                value: '`x!σφαλματα`',
+                inline: true
+            },
+            {
+                name: '__📈 Κατασταση__',
+                value: '`x!κατασταση`',
+                inline: true
+            },
+            {
+                name: '__💬 Κοινωνικα__',
+                value: '`x!κοινωνικα`',
+                inline: true
+            },
+            {
+                name: '__🎮 Παιχνιδια__',
+                value: '`x!παιχνιδια`',
+                inline: true
+            },
+            {
+                name: '__🥳 Διασκεδαση__',
+                value: '`x!διασκεδαση`',
+                inline: true
+            },
+            {
+                name: '__🎶 Μουσικη__',
+                value: '`x!μουσικη`',
+                inline: true
+            },
+            {
+                name: '__🤑 Οικονομια__',
+                value: '`x!οικονομια`',
+                inline: true
+            },
+            {
+                name: '__⏫ Ισοπεδωση__',
+                value: '`x!ισοπεδωση`',
+                inline: true
+            },
+            {
+                name: '__🔗 Προσκαληση__',
+                value: '`x!προσκαληση`',
+                inline: true
+            },
+
+            
+        )
+        .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+
+    await message.channel.send(embed)
+        }
 }
 }
