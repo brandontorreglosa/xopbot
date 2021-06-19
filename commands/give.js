@@ -21,10 +21,14 @@ module.exports = {
         {
           userID: message.author.id,
         },
-        
           {
             coins: -amount,
+          },
+          
+          {
           userID: target.id,
+          },
+          {
             coins: amount,
           },
       );
