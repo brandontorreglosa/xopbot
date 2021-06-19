@@ -430,5 +430,177 @@ message.react('🎯');
 
     await message.channel.send(embed16)
         }
+
+        else if(cmd === 'μετριοπαθεια') {
+
+            message.react('⛏');
+
+            const embed17 = new Discord.MessageEmbed()
+            .setThumbnail(client.user.displayAvatarURL())
+            .setTimestamp()
+            //.setTitle('__🛠️ Moderation__')
+            .setColor('#c30202')
+            .addFields(
+                {name: '__🛠️ Mετριοπαθεια__', value: '`ban`-__***Κανε Ban Ενα Member!***__  `\nkick`-__***Κανε Kick Ενα Member!***__  `\n\mute`-__***Κανε Mute Ενα Member!***__  `\n\mute timed`-__***Κανε Time Mute Ενα Member!***__  `\nunmute`-__***Κανε Unmute Ενα Member!***__  `\n\clear`-__***Κανε Clear Messages Απο Ενα Server!***__  `\n\command`-__***Δινει Βασικους Κανονες Απο Server!***__  `\n\slowmode`-__***Κανε Add Slowmode Σε Text Channel!***__ `\naddrole`-__***Δωσε Ενα Role Σε User!***__ `\nremoverole`-__***Σβησε Εωα Role Απο User!***__ `\nsetnick`-__***Κανε Set Server Nickname!***__ `\nresetnick`-__***Κανε Reset To Normal Nickname!***__ `\nlock`-__***Κανε Lock Channel Απο Συγκεκριμενο Role!***__ `\nunlock`-__***Κανε Unlock Channel Απο Συγκεκριμενο Role!***__'},
+            )
+            .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+    
+        await message.channel.send(embed17)
+
+        }
+
+        else if(cmd === 'χρησιμοτητα') {
+
+            message.react('⚙');
+            
+                    const embed18 = new Discord.MessageEmbed()
+                    .setThumbnail(client.user.displayAvatarURL())
+                    .setTimestamp()
+                    //.setTitle('__⚙ Utility__')
+                    .setColor('#c30202')
+                    .addFields(
+                        {name: '__⚙ Χρησιμοτητα__', value: '`ticket`-__***Κανει Generate Ιδιωτικο Text Channel!***__ `\nafk`-__***Παρε AFK Status!***__ `\n\suggestions`-__***Κανε Suggest Στους Admins!***__'}
+                    )
+                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+            
+                await message.channel.send(embed18)
+                }
+
+         else if(cmd === 'σφαλματα') {
+
+             message.react('🐜');
+                    
+                        const embed19 = new Discord.MessageEmbed()
+                        .setThumbnail(client.user.displayAvatarURL())
+                        .setTimestamp()
+                        //.setTitle('__🐛 Bugs__')
+                        .setColor('#c30202')
+                        .addFields(
+                            {name: '__🐛 Σφαλματα__', value: '`bugreport`-__***Κανε Report Ενα Bug Στους Admins!***__ `\nfindbugs`-__***Ψαξε Bugs Στο Server Σου!***__ `\nclearbugs`-__***Κανε Clear Bugs Απο Το Server Σου!***__'}
+                         )
+                        .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                    
+                        await message.channel.send(embed19)
+                        }
+
+                        else if(cmd === 'κατασταση') {
+
+                            message.react('💹');
+                            
+                                    const embed20 = new Discord.MessageEmbed()
+                                    .setThumbnail(client.user.displayAvatarURL())
+                                    .setTimestamp()
+                                    //.setTitle('__📈 Status__')
+                                    .setColor('#c30202')
+                                    .addFields(
+                                        {name: '__📈 Κατασταση__' , value: '`mcserver`-__***Παρε Real-Time Κατασταση Για MCServers!***__  `\nstatusping`-__***Παρε Κατασταση Του Ping Του Server Σου!***__ `\nserverinfo`-__***Παρε Το Server Information!***__ `\nbotinfo`-__***Παρε Tο Bot Information!***__ `\ncovid`-__***Παρε Covid Information Για Τη Περιοχη Σου!***__ `\nuserinfo`-__***Παρε Real User Info!***__'}
+                                    )
+                                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                            
+                                await message.channel.send(embed20)
+                                }
+                            
+                                else if(cmd === 'κοινωνικα') {
+                            
+                                    message.react('🗨');
+                            
+                                    const embed21 = new Discord.MessageEmbed()
+                                    .setThumbnail(client.user.displayAvatarURL())
+                                    .setTimestamp()
+                                    //.setTitle('__💬 Socials__')
+                                    .setColor('#c30202')
+                                    .addFields(
+                                        {name: '__💬 Κοινωνικα__', value: '`youtube`-__***Πηγαινε Στο Youtube Channel Μου!***__ `\nscratch`-__***Πηγαινε Στο Scratch Account Μου!***__ `\namino`-__***Πηγαινε Στο Amino Account Μου!***__'}
+                                    )
+                                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                            
+                                await message.channel.send(embed21)
+                                }
+                            
+                                else if(cmd === 'διασκεδαση') {
+                            
+                            message.react('🤪');
+                            
+                                    const embed22 = new Discord.MessageEmbed()
+                                    .setThumbnail(client.user.displayAvatarURL())
+                                    .setTimestamp()
+                                    //.setTitle('__🥳 Fun__')
+                                    .setColor('#c30202')
+                                    .addFields(
+                                        {name: '__🥳 Διασκεδαση__' , value: '`ping`-__***Οχι Αληθινο Ping!***__ `\navatar`-__***Δειχνει Το User Avatar!***__ `\nbadges`-__***Δειχνει Το Users Badge!***__ `\n8ball`-__***Ρωτησε Τον 8ball Μια Ερωτηση!***__ `\nreverse`-__***Κανε Reverse Μια Λεξη Που Κανεις Send!***__ `\ncoinflip`-__***Κανε Flip A Coin!***__ `\nmeme`-__***Παρε Memes Απο Το Google!***__  `\nkill`-__***Κανε Kill Ενα User!***__ `\nhug`-__***Κανε Hug Ενα User!***__ `\nkiss`-__***Κανε Kiss Ενα User!***__ `\npp`-__***Παρε Ενα Users PP!***__'}
+                                    )
+                                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                            
+                                await message.channel.send(embed22)
+                                }
+                            
+                                else if(cmd === 'μουσικη') {
+                            
+                            message.react('🎵');
+                            
+                                    const embed23 = new Discord.MessageEmbed()
+                                    .setThumbnail(client.user.displayAvatarURL())
+                                    .setTimestamp()
+                                   // .setTitle('__🎶 Music__')
+                                    .setColor('#c30202')
+                                    .addFields(
+                                        {name: '__🎶 Mουσικη__' , value: '`play`-__***Κανε Play Ενα Τραγουδι Απο Το Youtube!***__  `\nstop`-__***Κανε Stop Tο Player!***__  `\n\skip`-__***Κανε Skip To Τραγουδι Στο Queue!***__ `\n\pause`-__***Κανε Pause Tο Τραγουδι Απο Να Κανει Play!***__ `\nunpause`-__***Κανε Unpause Tο Τραγουδι Ωστε Να Κανει Play!***__'}
+                                    )
+                                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                            
+                                await message.channel.send(embed23)
+                                }
+                            
+                                else if(cmd === 'οικονομια') {
+                            
+                            message.react('💵');
+                            
+                                    const embed24 = new Discord.MessageEmbed()
+                                    .setThumbnail(client.user.displayAvatarURL())
+                                    .setTimestamp()
+                                   // .setTitle('__🤑 Economy__')
+                                    .setColor('#c30202')
+                                    .addFields(
+                                        {name: '__🤑 Οικονομια__' , value: '`balance`-__***Παρε Το Δικo Σου Bank Και Wallet Balance!***__  `\ndeposit`-__***Καταθετησε Xocoins Στην Δικη Σου Τραπεζα!***__  `\nwithdraw`-__***Κανε Αποσυρωσει Xocoins Εξω Απο Το Bank Σου!***__  `\nbeg`-__***Παρακαλεσε Τον XOPBOT Για Xocoins!***__  `\ngive`-__***Ιδιωτικο Command!***__  `\nsearch`-__***Ψαξε Για Xocoins Σε Περιοχες!***__ `\nwork`-__***Δουλεψε Για Xocoins!***__ `\ndaily`-__***Παρε Ημερησια Δοση Xocoins!***__'}
+                                    )
+                                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                            
+                                await message.channel.send(embed24)
+                                }
+                            
+                                else if(cmd === 'ισοπεδωση') {
+                            
+                            message.react('🆙');
+                            
+                                    const embed25 = new Discord.MessageEmbed()
+                                    .setThumbnail(client.user.displayAvatarURL())
+                                    .setTimestamp()
+                                    //.setTitle('__⏫ Leveling__')
+                                    .setColor('#c30202')
+                                    .addFields(
+                                        {name: '__⏫ Ισοπεδωση__', value: '`xoprank`-__***Private Command!***__ `\nrank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
+                                    )
+                                    .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                            
+                                await message.channel.send(embed25)
+                                }
+
+                                else if(cmd === 'προσκαληση') {
+
+                                    message.react('🖇');
+                                    
+                                            const embed26 = new Discord.MessageEmbed()
+                                            .setThumbnail(client.user.displayAvatarURL())
+                                            .setTimestamp()
+                                            //.setTitle('__🔗 Invites__')
+                                            .setColor('#c30202')
+                                            .addFields(
+                                                {name: '__🔗 Προσκαληση__' , value: '`botinvite`-__***Invite The Bot To Your Server!***__ `\nwebsiteinvite`-__***Go To XOPBOTs Official Website!***__'}
+                                            )
+                                            .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
+                                    
+                                        await message.channel.send(embed26)
+                                        }
+
 }
 }
