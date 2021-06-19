@@ -426,7 +426,7 @@ message.react('🎯');
         )
         .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
 
-    await message.channel.send(embed)
+    await message.channel.send(embed16)
         }
 }
 }
