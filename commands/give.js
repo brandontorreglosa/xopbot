@@ -21,19 +21,12 @@ module.exports = {
         {
           userID: message.author.id,
         },
-        {
-          $inc: {
+        
+          {
             coins: -amount,
-        }
-      },
-        {
           userID: target.id,
-        },
-        {
-          $inc: {
             coins: amount,
           },
-        }
       );
 
       return message.channel.send(`**This User Has Been Given ${amount} of Xocoins!** 💸`);
