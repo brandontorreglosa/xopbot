@@ -19,6 +19,14 @@ module.exports = {
 
       await profileModel.findOneAndUpdate(
         {
+          userID: message.author.id,
+        },
+        {
+          $inc: {
+            coins: -amount,
+        }
+      },
+        {
           userID: target.id,
         },
         {
