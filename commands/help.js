@@ -15,7 +15,7 @@ module.exports = {
             .setAuthor(`XOPBOT Commands`, client.user.displayAvatarURL({ dynamic: true }))
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
-            .setImage('https://topservers.com/dynamic_banners/16239181281906343483.gif') //my banner for my bot 
+            .setImage('https://share.creavite.co/yTKDKm6JFnN7Db89.gif') //my banner for my bot 
             //.setTitle('XOPBOT Commands')
             .setColor('#c30202')
             .addFields(
@@ -364,7 +364,7 @@ message.react('🎯');
         .setAuthor(`XOPBOT Εντολες`, client.user.displayAvatarURL({ dynamic: true }))
         //.setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setImage('https://topservers.com/dynamic_banners/16239181281906343483.gif') //my banner for my bot 
+        .setImage('https://share.creavite.co/KZRSRMoPxz3F8kPp.gif') //my banner for my bot 
         //.setTitle('XOPBOT Commands')
         .setColor('#c30202')
         .addFields(
