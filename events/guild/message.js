@@ -176,42 +176,42 @@ if (message.content === "bot" || message.content === "noob" || message.content =
 })
 }
 
-if (message.content === "yay" || message.content === "great") {
+if (message.content === "yay" || message.content === "great" || message.content === 'Yay' || message.content === 'Great') {
   message.channel.send(`***Wooohooo!***`)
   .then(message => {
     message.delete({ timeout: 15000 })
 })
 }
 
-if (message.content === "ihatexopbot" || message.content === "xopbotistrash") {
+if (message.content === "ihatexopbot" || message.content === "xopbotistrash" || message.content === 'Ihatexopbot' || message.content === 'Xopbotistrash') {
   message.channel.send(`***I Hate You Too Kid!***`)
   .then(message => {
     message.delete({ timeout: 15000 })
 })
 }
 
-if (message.content === "bruh" || message.content === "bruhs") {
+if (message.content === "bruh" || message.content === "bruhs" || message.content === 'Bruh') {
   message.channel.send(`***Bruh Moment!***`)
   .then(message => {
     message.delete({ timeout:15000 })
 })
 }
 
-if (message.content === "yeet" || message.content === "getyeeted") {
+if (message.content === "yeet" || message.content === "getyeeted" || message.content === 'Yeet') {
   message.channel.send(`***Man Just Got Yeeted!***`)
   .then(message => {
     message.delete({ timeout: 15000 })
 })
 }
 
-if (message.content === "deeznuts" || message.content === "mynuts") {
+if (message.content === "deeznuts" || message.content === "mynuts" || message.content === "Deeznuts" || message.content === 'Mynuts') {
   message.channel.send(`***Best Meme For Me!***`)
   .then(message => {
     message.delete({ timeout: 15000 })
 })
 }
 
-if (message.content === "stop" || message.content === "stopit") {
+if (message.content === "stop" || message.content === "stopit" || message.content === 'Stop') {
   message.channel.send(`***Stop It Get Some Help Kid!***`)
   .then(message => {
     message.delete({ timeout: 15000 })
