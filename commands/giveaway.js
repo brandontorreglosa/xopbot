@@ -26,9 +26,9 @@ module.exports = {
         let Embed = new MessageEmbed()
           .setTitle(`New giveaway!`)
           .setDescription(
-            `**🎁 ${prize} \nReact With 🎉 To Enter! \n1 Winner! \nHosted By ${message.author} 🥳!**`
+            `**🎁 ${prize} \n\nReact With 🎉 To Enter! \n\n1 Winner! \n\nHosted By ${message.author} 🥳!**`
           )
-          .setTimestamp('Ends', Date.now() + ms(args[0]))
+          .setTimestamp(Date.now() + ms(args[0]))
           .setColor(`BLUE`);
         let m = await channel.send(Embed);
         m.react("🎉");
