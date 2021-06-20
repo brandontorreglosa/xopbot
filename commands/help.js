@@ -561,7 +561,7 @@ message.react('🎯');
                                    // .setTitle('__🤑 Economy__')
                                     .setColor('#c30202')
                                     .addFields(
-                                        {name: '__🤑 Οικονομια__' , value: '`balance`-__***Παρε Το Δικo Σου Bank Και Wallet Balance!***__  `\ndeposit`-__***Καταθετησε Xocoins Στην Δικη Σου Τραπεζα!***__  `\nwithdraw`-__***Κανε Αποσυρωσει Xocoins Εξω Απο Το Bank Σου!***__  `\nbeg`-__***Παρακαλεσε Τον XOPBOT Για Xocoins!***__  `\ngive`-__***Ιδιωτικο Command!***__  `\nsearch`-__***Ψαξε Για Xocoins Σε Περιοχες!***__ `\nwork`-__***Δουλεψε Για Xocoins!***__ `\ndaily`-__***Παρε Ημερησια Δοση Xocoins!***__'}
+                                        {name: '__🤑 Οικονομια__' , value: '`balance`-__***Παρε Το Δικo Σου Bank Και Wallet Balance!***__  `\ndeposit`-__***Καταθετησε Xocoins Στην Δικη Σου Τραπεζα!***__  `\nwithdraw`-__***Αποσυρωσε Xocoins Εξω Απο Το Bank Σου!***__  `\nbeg`-__***Παρακαλεσε Τον XOPBOT Για Xocoins!***__  `\ngive`-__***Ιδιωτικο Command!***__  `\nsearch`-__***Ψαξε Για Xocoins Σε Περιοχες!***__ `\nwork`-__***Δουλεψε Για Xocoins!***__ `\ndaily`-__***Παρε Ημερησια Δοση Xocoins!***__'}
                                     )
                                     .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
                             
@@ -578,7 +578,7 @@ message.react('🎯');
                                     //.setTitle('__⏫ Leveling__')
                                     .setColor('#c30202')
                                     .addFields(
-                                        {name: '__⏫ Ισοπεδωση__', value: '`xoprank`-__***Private Command!***__ `\nrank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
+                                        {name: '__⏫ Ισοπεδωση__', value: '`xoprank`-__***Ιδιωτικο Command!***__ `\nrank`-__***Παρε Το Level Rank Card Σου!***__  `\nleaderboard`-__***Παρε Το Server Leaderboard!***__ `\nlevel`-__***Παρε Το Level Ενος User!***__ `\nedit`-__***Κανε Edit Level Η Xp!***__'}
                                     )
                                     .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
                             
@@ -595,12 +595,29 @@ message.react('🎯');
                                             //.setTitle('__🔗 Invites__')
                                             .setColor('#c30202')
                                             .addFields(
-                                                {name: '__🔗 Προσκαληση__' , value: '`botinvite`-__***Invite The Bot To Your Server!***__ `\nwebsiteinvite`-__***Go To XOPBOTs Official Website!***__'}
+                                                {name: '__🔗 Προσκαληση__' , value: '`botinvite`-__***Κανε Invite Tο Bot Στο Server Σου!***__ `\nwebsiteinvite`-__***Πηγαινε Στο Official Website Του XOPBOT!***__'}
                                             )
                                             .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
                                     
                                         await message.channel.send(embed26)
                                         }
+
+                                        else if(cmd === 'παιχνιδια') {
+
+                                            message.react('🎯');
+                                            
+                                                    const embed27 = new Discord.MessageEmbed()
+                                                    .setThumbnail(client.user.displayAvatarURL())
+                                                    .setTimestamp()
+                                                    //.setTitle('__🎮 Games__')
+                                                    .setColor('#c30202')
+                                                    .addFields(
+                                                        {name: '__🎮 Παιχνιδια__', value: '`guessthenumber`-__***Μαντεψε Tο Nουμερο!***__ `\nrps`-__***Παιξε Rock,Paper,Sciccors!***__ `\nhangman`-__***Παιξε Hangman!***__'}
+                                                    )
+                                                    .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+                                            
+                                                await message.channel.send(embed27)
+                                                }
 
 }
 }
