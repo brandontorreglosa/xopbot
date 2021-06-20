@@ -5,7 +5,7 @@ module.exports = {
     name: 'giveaway',
     permissions: ["MANAGE_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {  
-        if (!args[0]) return message.channel.send(`You Did Not Specify Your Time By (s/m/h)!`);
+        if (!args[0]) return message.channel.send(`You Did Not Specify Your Time By (m/h/d)!`);
         if (
           !args[0].endsWith("d") &&
           !args[0].endsWith("h") &&
@@ -26,15 +26,15 @@ module.exports = {
         let Embed = new MessageEmbed()
           .setTitle(`New giveaway!`)
           .setDescription(
-            `**🥳 The User ${message.author} Is Hosting A Giveaway For The Prize Of ${prize}!**`
+            `**🎁 ${prize} \nReact With 🎉 To Enter! \n1 Winner! \nHosted By ${message.author} 🥳!**`
           )
-          .setTimestamp(Date.now() + ms(args[0]))
+          .setTimestamp('Ends', Date.now() + ms(args[0]))
           .setColor(`BLUE`);
         let m = await channel.send(Embed);
         m.react("🎉");
         setTimeout(() => {
           if (m.reactions.cache.get("🎉").count <= 1) {
-            message.channel.send(`Reactions: ${m.reactions.cache.get("🎉").count}`);
+            message.channel.send(`**Reactions: ${m.reactions.cache.get("🎉").count}**`);
             return message.channel.send(
               `**😭 Not Enough People Rreacted For XOPBOT To Draw A Winner!**`
             );
