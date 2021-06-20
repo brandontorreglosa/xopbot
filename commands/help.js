@@ -65,6 +65,11 @@ module.exports = {
                     inline: true
                 },
                 {
+                   name:'__🎉 Giveaway__',
+                   value: '`x!giveaway`',
+                   inline: true
+                },
+                {
                     name: '__⏫ Leveling__',
                     value: '`x!leveling`',
                     inline: true
@@ -87,11 +92,6 @@ module.exports = {
                 {
                     name: '__🤖 Credits__',
                     value: '`x!credits`',
-                    inline: true
-                },
-                {
-                    name: '__🆘 Menus__',
-                    value: '`x!v1help`',
                     inline: true
                 }
                 

@@ -162,14 +162,14 @@ if (message.content === "<@831824859066925087>" || message.content === "<@!83182
   message.channel.send(`***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***`)
 }
 
-if (message.content === "lol" || message.content === "lmao" || message.content === 'Lol') {
+if (message.content === "lol" || message.content === "lmao" || message.content === 'Lol' || message.content === 'Lmao') {
   message.channel.send(`***${message.author} Laughed Out Loud!***`)
   .then(message => {
     message.delete({ timeout: 8000 })
 })
 }
 
-if (message.content === "bot" || message.content === "noob") {
+if (message.content === "bot" || message.content === "noob" || message.content === 'Bot' || message.content === 'Noob') {
   message.channel.send(`***Stop Bullying This Kid! :)***`)
   .then(message => {
     message.delete({ timeout: 15000 })
