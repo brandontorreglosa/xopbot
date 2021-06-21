@@ -116,7 +116,7 @@ module.exports = {
         //.setTitle('__🛠️ Moderation__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🛠️ Moderation__', value: '`ban`-__***Ban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__  `\n\mute`-__***Mute A Member From A Server!***__  `\n\mute timed`-__***Time Mute A Member From A Server!***__  `\nunmute`-__***Unmute A Member From A Server!***__  `\n\clear`-__***Clear Messages From A Server!***__  `\n\command`-__***Gives Basic Server Rules Of A Server!***__  `\n\slowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\nsetnick`-__***Set A Server Nickname!***__ `\nresetnick`-__***Reset To Normal Nickname!***__ `\nlock`-__***Lock A Channel From A Specific Role!***__ `\nunlock`-__***Unlock A Channel From A Specific Role!***__'},
+            {name: '__🛠️ Moderation__', value: '`ban`-__***Ban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__  `\n\mute`-__***Mute A Member From A Server!***__ `\nunmute`-__***Unmute A Member From A Server!***__  `\n\clear`-__***Clear Messages From A Server!***__  `\n\command`-__***Gives Basic Server Rules Of A Server!***__  `\n\slowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\nlock`-__***Lock A Channel From A Specific Role!***__ `\nunlock`-__***Unlock A Channel From A Specific Role!***__'},
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -133,7 +133,7 @@ message.react('⚙');
         //.setTitle('__⚙ Utility__')
         .setColor('#c30202')
         .addFields(
-            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nafk`-__***Get AFK Status!***__ `\n\suggestions`-__***Make A Suggestion To The Admins!***__'}
+            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\n\suggestions`-__***Make A Suggestion To The Admins!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -252,7 +252,7 @@ message.react('🆙');
         //.setTitle('__⏫ Leveling__')
         .setColor('#c30202')
         .addFields(
-            {name: '__⏫ Leveling__', value: '`xoprank`-__***Private Command!***__ `\nrank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
+            {name: '__⏫ Leveling__', value: '`rank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
