@@ -24,6 +24,7 @@
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
     "figlet": "^1.5.0",
+    "flip-text": "^1.2.0",
     "fs": "0.0.1-security",
     "got": "^11.8.2",
     "image-scraper": "^0.2.1",
