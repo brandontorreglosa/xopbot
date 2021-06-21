@@ -3,6 +3,7 @@ const akaneko = require('akaneko');
 
 module.exports = {
   name: "bdsm",
+  permissions: ["SEND_MESSAGES"],
   aliases: [],
   description: "Get some wallpapers",
   async execute(client, message, cmd, args, Discord)  {
