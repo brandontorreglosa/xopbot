@@ -16,7 +16,7 @@ module.exports = {
         .setTitle("Wikipedia Search")
         .addField(`You Searched For:`, `${msg}`)
         .addField(`Results:`, `[Here's What I Found](${link})`)
-        .setColor("RANDOM");
+        .setColor("RED");
 
         message.channel.send(embed);
     }
