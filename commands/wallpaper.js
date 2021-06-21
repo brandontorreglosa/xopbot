@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const superagent = require("superagent");
 
-module.exports.help = {
+module.exports = {
 	name: "wallpaper",
 	permissions: ["SEND_MESSAGES"],
 	description: "Generating NSFW wallpapers randomly",
