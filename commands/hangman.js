@@ -3,6 +3,7 @@ const { hangman } = require('reconlx')
 module.exports = {
     name: 'hangman',
     permissions: ["SEND_MESSAGES"],
+    cooldown: 3,
     //premium: true,
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])

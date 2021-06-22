@@ -3,6 +3,7 @@ const ms = module.require("ms");
 module.exports = {
   name: "hack",
   permissions: ["SEND_MESSAGES"],
+  cooldown: 3,
   description: "Another Fun Command",
    async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {

@@ -1,6 +1,7 @@
 module.exports = {
   name: 'ban',
   permissions: ["BAN_MEMBERS"],
+  cooldown: 3,
   description: "This Command Bans Member",
   execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first();

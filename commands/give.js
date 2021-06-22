@@ -1,6 +1,7 @@
 const profileModel = require("../models/profileSchema");
 module.exports = {
   name: "give",
+  cooldown: 3,
   aliases: [],
   permissions: ["SEND_MESSAGES"],
   description: "give a player some Xocoins",

@@ -1,6 +1,7 @@
 
 module.exports = {
     name: 'command',
+    cooldown: 5,
     permissions: ["MANAGE_MESSAGES"],
     description: "Embeds!",
     execute(client, message, cmd, args, Discord) {

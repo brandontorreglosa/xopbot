@@ -4,6 +4,7 @@ const figlet = require("figlet"); // MAKE SURE TO INSTALL FIGLET PACKAGE OR CODE
 module.exports = {
     name: "ascii",
     permissions: ["SEND_MESSAGES"],
+    cooldown: 5,
     aliases: [],
     category: "Fun",
     usage: "ascii <text>",

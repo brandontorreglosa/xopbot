@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "google",
     permissions: ["SEND_MESSAGES"],
+    cooldown: 5,
     description: "Search anything on google",
     async execute(client, message, cmd, args, Discord) {
     const text1 = args.join(' ');

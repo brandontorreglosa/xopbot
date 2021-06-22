@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "covid",
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     aliases: ['corona', 'c19'],
     async execute(client, message, cmd, args, Discord) {

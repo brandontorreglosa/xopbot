@@ -4,7 +4,7 @@ module.exports = {
     name: 'leaderboard',
     aliases: ['lb', 'ldb'],
     permissions: ["SEND_MESSAGES"],
-    cooldown: 20,
+    cooldown: 10,
     description: "Top 10 members!",
   async execute(client, message, cmd, args, Discord){
 

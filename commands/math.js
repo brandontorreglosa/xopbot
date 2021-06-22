@@ -3,6 +3,7 @@ const math = require('mathjs');
 module.exports = {
     name: 'math',
     permissions: ["SEND_MESSAGES"],
+    cooldown: 3,
     aliases: ['mathprob', 'mathproblem'],
     premium: true,
 async execute(client, message, cmd, args, Discord) {

@@ -2,6 +2,7 @@ const quick = require('quick.db');
 
 module.exports = {
   name: 'afkset',
+  cooldown: 5,
   permissions: ["SEND_MESSAGES"],    
   aliases: ['afk'],
   description: 'Set your afk status',

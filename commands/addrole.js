@@ -1,5 +1,6 @@
 module.exports = {
     name: 'addrole',
+    cooldown: 5,
     aliases: ['addnewrole'],
     permissions: ["MANAGE_ROLES"],
     async execute(client, message, cmd, args, Discord) {

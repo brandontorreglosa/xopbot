@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "coinflip",
+    cooldown: 2,
     aliases: ['cf'],
     permissions: ["SEND_MESSAGES"],
     description: "flips a coin!",

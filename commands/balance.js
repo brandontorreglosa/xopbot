@@ -2,7 +2,7 @@ module.exports = {
     name: "balance",
     permissions: ["SEND_MESSAGES"],
     aliases: ["bal", "bl"],
-    cooldown: 2,
+    cooldown: 4,
     permissions: [],
     description: "Check the user balance",
     execute(client, message, cmd, args, Discord, profileData) {

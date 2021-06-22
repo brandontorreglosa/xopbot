@@ -3,7 +3,7 @@ const Levels = require('discord-xp');
 module.exports = {
     name: 'level',
     permissions: ["SEND_MESSAGES"],
-    cooldown: 2,
+    cooldown: 5,
     description: "Shows Level Of You Or User!",
    async execute(client, message, cmd, args, Discord){
        let mentionedMember = message.mentions.members.first() || message.guild.member.cache.get(args [0]);

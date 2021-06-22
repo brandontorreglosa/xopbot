@@ -4,6 +4,7 @@ const flip = require("flip-text");
 module.exports = {
     name: "fliptext",
     permissions: ["SEND_MESSAGES"],
+    cooldown: 4,
     description: "Flip some text",
     usage: "fliptext <text>",
     type: "Fun",

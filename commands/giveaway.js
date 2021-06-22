@@ -4,6 +4,7 @@
 module.exports = {
     name: 'giveaway',
     permissions: ["MANAGE_MESSAGES"],
+    cooldown: 10,
     async execute(client, message, cmd, args, Discord) {  
         if (!args[0]) return message.channel.send(`You Did Not Specify Your Time By (m/h/d)!`);
         if (

@@ -6,6 +6,7 @@ const Discord = require('discord.js')
 module.exports = {
   name: "dog",
   permissions: ["SEND_MESSAGES"],
+  cooldown: 3,
   category: "fun",
 description: "Sends a random dog image",
 usage: "[command]",

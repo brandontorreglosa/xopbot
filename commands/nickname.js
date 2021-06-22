@@ -3,6 +3,7 @@ const Discord = module.require("discord.js");
 module.exports = {
     name: "nickname",
     permissions: ["MANAGE_NICKNAMES"],
+    cooldown: 3,
     description: "Change the Nickname of other Users",
     async execute(client, message, cmd, args, Discord) {
         if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) {

@@ -1,6 +1,7 @@
 module.exports = {
     name: 'botinvite',
     permissions: ["SEND_MESSAGES"],
+    cooldown: 3,
     aliases: ['binv'],
     description: "Embeds!",
     execute(client, message, cmd, args, Discord) {
