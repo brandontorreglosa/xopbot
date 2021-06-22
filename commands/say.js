@@ -7,6 +7,6 @@ module.exports = {
         message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat! \nAnything Rude Is Sended To The Developer!**")
         }
         message.channel.send(args.join(" "), { allowedMentions: { parse:["users"] } });
-     message.delete(10000);
+    //  message.delete(10000);
     }
 }
