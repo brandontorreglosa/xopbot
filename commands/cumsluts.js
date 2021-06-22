@@ -9,37 +9,26 @@ module.exports = {
   description: "Sends random cumsluts",
   usage: "[command]",
   async execute(client, message, cmd, args, Discord) {
-      try{
-  //command
-  var errMessage = "This is not an NSFW Channel";
-  if (!message.channel.nsfw) {
-      message.react('💢');
 
-      return message.reply(errMessage)
-      .then(msg => {
-      msg.delete({ timeout: 3000 })
-      })
-      
-  }
+        if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**') 
+
+        var lo = new Discord.MessageEmbed()
+                    .setDescription(`Sending 4k...`)
+                    .setTimestamp()
+    
+        message.channel.send(lo).then(m => {
   got('https://www.reddit.com/r/cumsluts/random.json').then(response => {
         let content = JSON.parse(response.body);
         var title = content[0].data.children[0].data.title;
         var amazeme = content[0].data.children[0].data.url;
         let wow = new discord.MessageEmbed()
-        .setDescription(`**` + title + `**`)
+        .setTimestamp()
+        .setDescription(`:underage: **Cum Sluts**`)
         .setImage(amazeme)
-        .setFooter(`Slippery Slut`)
+        .setFooter(`Nice Yeah :)`)
         .setColor("RANDOM")
-        message.channel.send(wow)
-    }).catch(console.error);
-} catch (err) {
-
-    const errorlogs = client.channels.cache.get('747423875956080801')
-  
-    message.channel.send(`Whoops, We got a error right now! This error has been reported to Support center!`)
-  
-    errorlogs.send(`Error in ${message.guild.name}  by ${message.author.username} on  cumsluts commands!\n\nError:\n\n ${err}`)
-  
+        m.edit(wow)
+  })
+    })
+}
   }
-    }
-};
