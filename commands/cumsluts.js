@@ -13,7 +13,7 @@ module.exports = {
         if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**') 
 
         var lo = new Discord.MessageEmbed()
-                    .setDescription(`Sending 4k...`)
+                    .setDescription(`Sending Cumsluts...`)
                     .setTimestamp()
     
         message.channel.send(lo).then(m => {
@@ -23,7 +23,7 @@ module.exports = {
         var amazeme = content[0].data.children[0].data.url;
         let wow = new discord.MessageEmbed()
         .setTimestamp()
-        .setDescription(`:underage: **Cum Sluts**`)
+        .setDescription(`:underage: **Cum Sluts**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
         .setImage(amazeme)
         .setFooter(`Nice Yeah :)`)
         .setColor("RANDOM")
