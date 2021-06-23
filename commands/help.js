@@ -279,7 +279,7 @@ message.react('🆙');
         //.setTitle('__🔞 NSFW__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🔞 NSFW__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)'},
+            {name: '__🔞 NSFW__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `cumsluts` `blowjob` `milf` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)'},
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
