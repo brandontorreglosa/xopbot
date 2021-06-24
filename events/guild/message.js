@@ -329,7 +329,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
         if(current_time < expiration_time){
             const time_left = (expiration_time - current_time) / 1000;
 
-            return message.reply(`**Please Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
+            return message.reply(`**Slowdown There Mate! You Need To Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
         }
     }
 
