@@ -319,6 +319,12 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
         cooldowns.set(command.name, new Discord.Collection());
     }
 
+    // const cooldown = used.get(message.author.id);
+    // if (cooldown) {
+    //   const remaining = Duration(cooldown - Date.now(), { units: ['h', 'm', 's'], round: true});
+    //    return message.reply(`**Slowdown There Mate! Wait ${remaining} More Seconds Before Using ${command.name}**`).catch((err) => message.reply(`${err}`));
+    // }
+
     const current_time = Date.now();
     const time_stamps = cooldowns.get(command.name);
     const cooldown_amount = (command.cooldown) * 1000;
@@ -329,7 +335,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
         if(current_time < expiration_time){
             const time_left = (expiration_time - current_time) / 1000;
 
-            return message.reply(`**Slowdown There Mate! You Need To Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
+            return message.reply(`**Slowdown There Mate! Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
         }
     }
 
