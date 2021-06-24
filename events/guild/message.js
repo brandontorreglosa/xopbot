@@ -308,7 +308,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
             }
           }
           if (invalidPerms.length){
-            return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
+            return message.channel.send(`Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\``);
           }
         }
 
