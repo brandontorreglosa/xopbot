@@ -1,22 +1,23 @@
 const { MessageEmbed } = require("discord.js")
 
 module.exports = {
-    name: "lock",
+    name: "userunlock",
     permissions: ["ADMINISTRATOR"],
     cooldown: 3,
-    description: "Locks a given channel for a particular role!",
+    description: "Unlocks a given channel for a particular role!",
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first()
-        if(!channel) return message.reply("**Please mention a Valid Channel!**")
+        if(!channel) return message.reply("**Please Mention A Valid Channel!**")
         const roletofind = args.slice(1).join(" ")
         const role = message.guild.roles.cache.find(r => r.id === roletofind)
         if(!role) return message.reply("**Please Give A Valid Role Id!**")
         let embed = new MessageEmbed()
-        .setTitle("Channel Locked!")
-        .setDescription(`**This channel Has Been Locked By ${message.author.tag}**`)
+        .setTimestamp()
+        .setTitle("Channel Unlocked!")
+        .setDescription(`**This Channel Has Been Unlocked By ${message.author.tag} For This Role <@!${role}>**`)
         .setTimestamp()
         channel.updateOverwrite(role, {
-            SEND_MESSAGES: false
+            SEND_MESSAGES: true
         })
         await channel.send(embed)
     }
