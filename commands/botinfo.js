@@ -9,7 +9,7 @@ module.exports = {
      async execute(client, message, cmd, args, Discord) {
 
         let status;
-        switch (user.presence.status) {
+        switch (client.presence.status) {
             case "online":
                 status = "🟢 Online";
                 break;
