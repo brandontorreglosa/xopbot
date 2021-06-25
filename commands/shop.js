@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const items = require('../../shopItems');
+const items = require("../utility/shopItems");
 
 module.exports = {
     name: 'shop',
