@@ -30,5 +30,21 @@ module.exports = [
     {
         item2: 'Apple Pie',
         coins: 10000,
+    },
+    {
+        item2: 'Golden Cake',
+        coins: 15000,
+    },
+    {
+        item2: 'Cheesepie',
+        coins: 20000,
+    },
+    {
+        item2: 'Golden Cookie',
+        coins: 50000,
+    },
+    {
+        item2: 'Megacake',
+        coins: 100000,
     }
 ]

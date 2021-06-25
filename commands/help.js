@@ -133,7 +133,7 @@ message.react('⚙');
         //.setTitle('__⚙ Utility__')
         .setColor('#c30202')
         .addFields(
-            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
+            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nwebhook`-__***Send Something From A Webhook!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -235,7 +235,7 @@ message.react('💵');
        // .setTitle('__🤑 Economy__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🤑 Economy__' , value: '`balance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\nwork`-__***Work For Xocoins!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
+            {name: '__🤑 Economy__' , value: '`shop(1-2)`-__***Get Something From The Shop!***__ `\nbalance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\nwork`-__***Work For Xocoins!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
