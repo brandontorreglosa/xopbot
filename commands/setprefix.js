@@ -1,4 +1,6 @@
 
+const fs = require('fs');
+
 module.exports = {
     name: 'setprefix',
     permissions: ["ADMINISTRATOR"],

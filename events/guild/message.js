@@ -3,6 +3,7 @@ const profileModel = require("../../models/profileSchema");
 const premiumSchema =  require("../../models/premium");
 const quick = require('quick.db');
 const Levels = require('discord-xp');
+const fs = require('fs');
 require('dotenv').config();
 const cooldowns = new Map();
 
