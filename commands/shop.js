@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['shop2'],
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
-        if(cmd === 'shop') {
+        if(cmd === 'shop1') {
 
         if (items.length === 0) return message.reply("**There Is Currently Nothing In XOPBOT's Shop!**");
 
@@ -23,7 +23,7 @@ module.exports = {
         if (items2.length === 0) return message.reply("**There Is Currently Nothing In XOPBOT's Shop!**");
 
         const shopList = items.map((value, index) => {
-            return `**${index + 1})** ${value.item2} -> **${value.coins}** Xocoins!`;
+            return `**${index + 1})** ${value.item2} -> **${value.coins2}** Xocoins!`;
         });
 
         message.channel.send(shopList);
