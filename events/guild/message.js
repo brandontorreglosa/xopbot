@@ -233,7 +233,7 @@ if (message.content === "damn" || message.content === "thatgood") {
 })
 }
 
-let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json")); 
+let prefixes = JSON.parse(fs.readFileSync("../moderation/prefixes.json")); 
 if(!prefixes[message.guild.id]){  
    prefixes[message.guild.id] = { 
     prefix: process.env.PREFIX 
