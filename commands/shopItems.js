@@ -23,4 +23,4 @@ module.exports = [
         item: "Sniper",
         coins: 30000,
     }
-]
+];
