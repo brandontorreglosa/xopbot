@@ -18,6 +18,14 @@ module.exports = {
           },
         }
       );
-      return message.channel.send(`**${message.author.username}, You Received ${randomNumber}** Daily **Xocoins** 💸`);
+      
+      const embed = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setTitle(`${message.author.username}`)
+      .setDescription(`You Received **${randomNumber}** Daily **Xocoins** 💸`)
+      .setColor("RED")
+     // message.channel.send(`**${message.author.username}, You Received ${randomNumber}** Daily **Xocoins** 💸`);
+
+     message.channel.send(embed);
     },
   };

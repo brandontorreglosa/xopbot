@@ -27,7 +27,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             //.setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
-            .setTitle('Bot Information', client.user.displayAvatarURL({ dynamic: true }))
+            .setTitle(`Bot Information`,client.user.displayAvatarURL({ dynamic: true }))
             .setColor('#000000')
             .addFields(
                 {
