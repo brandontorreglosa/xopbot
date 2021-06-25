@@ -232,8 +232,15 @@ if (message.content === "damn" || message.content === "thatgood") {
 })
 }
 
-    
-    const prefix = process.env.PREFIX;
+let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json")); 
+if(!prefixes[message.guild.id]){  
+   prefixes[message.guild.id] = { 
+    prefix: process.env.PREFIX 
+   }
+}
+
+let prefix = prefixes[message.guild.id].prefix; 
+  //  const prefix = process.env.PREFIX;
     if(!message.content.startsWith(prefix)) return;
 
     let profileData;
