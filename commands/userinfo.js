@@ -9,16 +9,16 @@ module.exports = {
         let status;
         switch (user.presence.status) {
             case "online":
-                status = "<:online:729181184193462285> online";
+                status = "🟢 Online";
                 break;
             case "dnd":
-                status = "<:dnd:729181212530442311> dnd";
+                status = "🔴 Dnd";
                 break;
             case "idle":
-                status = "<:idle:729181121933475931> idle";
+                status = "🟡 Idle";
                 break;
             case "offline":
-                status = "<:offline:729181162182017051> offline";
+                status = "⚫ Offline";
                 break;
         }
 
@@ -72,6 +72,7 @@ module.exports = {
                     inline: true
                 }
             )
+            .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         await message.channel.send(embed)
     }
