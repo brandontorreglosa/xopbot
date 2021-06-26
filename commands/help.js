@@ -2,7 +2,7 @@ const os = require('os')
 
 module.exports = {
     name: "help",
-    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
+    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'config', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
      async execute(client, message, cmd, args, Discord) {
@@ -30,6 +30,16 @@ module.exports = {
                     inline: true
                 },
                 {
+                    name: '__⚠ Config__',
+                    value: '`x!config`',
+                    inline: true
+                },
+                {
+                    name: '__👷‍♂️ Owner__',
+                    value: '`x!owner`',
+                    inline: true
+                },
+                {
                     name: '__🐛 Bugs__',
                     value: '`x!bugs`',
                     inline: true
@@ -53,6 +63,11 @@ module.exports = {
                     name: '__🥳 Fun__',
                     value: '`x!fun`',
                     inline: true
+                },
+                {
+                    name: '__📷 Images__',
+                    value: '`closed`',
+                    inline: true,
                 },
                 {
                     name: '__🎶 Music__',
