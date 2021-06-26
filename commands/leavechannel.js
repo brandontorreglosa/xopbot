@@ -2,7 +2,8 @@ const Discord = module.require("discord.js")
 const goodbyeSchema = require("../models/leavechannel");
 
 module.exports = {
-  name: "joinchannel",
+  name: "leavechannel",
+  permissions: ["MANAGE_CHANNELS"],
   description: "Change the goodbye channel per server!",
   aliases: ["gchannel", "goodbye"],
   run: async (client, message, args) => {
