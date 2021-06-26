@@ -14,7 +14,7 @@ module.exports = {
       return message.channel.send(`\`Usage: (prefix)joinchannel <#channel|off>\``)
     }
     if (message.mentions.channels.first()) {
-    const data = await joinModel.findOne({
+    const data = await welcomeSchema.findOne({
       GuildID: message.guild.id
     });
 
