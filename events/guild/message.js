@@ -4,7 +4,7 @@ const premiumSchema =  require("../../models/premium");
 const quick = require('quick.db');
 const Levels = require('discord-xp');
 const fs = require('fs');
-const ms = require('ms');
+//const ms = require('ms');
 require('dotenv').config();
 const cooldowns = new Map();
 
@@ -269,7 +269,7 @@ let prefix = prefixes[message.guild.id].prefix;
                     client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
                     if (!command) {
-                      return message.channel.send("Couldn't find that command!")
+                      return message.reply("**Couldn't Find That Command!**")
                     }
 
 if(message.channel.id ==="841362279353155656") {
@@ -376,6 +376,95 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
   return;
 }
 });
+
+const welcomeData = require("../../models/welcome")
+const welcomemsg = require("../../models/joinmsg")
+client.on(`guildMemberAdd`, async (member) => {
+
+  const data = await welcomeData.findOne({
+    GuildID: member.guild.id
+  })
+
+  if (data) {
+    var channel = data.Welcome
+
+    var data2 = await welcomemsg.findOne({
+      GuildID: member.guild.id
+    })
+    if (data2) {
+      var joinmessage = data2.JoinMsg;
+
+      joinmessage = joinmessage.replace("{user.mention}", `${member}`)
+      joinmessage = joinmessage.replace("{user.name}", `${member.user.tag}`)
+      joinmessage = joinmessage.replace("{server}", `${member.guild.name}`)
+      joinmessage = joinmessage.replace("{membercount}", `${member.guild.memberCount}`)
+
+      let embed20 = new MessageEmbed()
+        .setDescription(joinmessage)
+        .setColor("GREEN")
+      member.guild.channels.cache.get(channel).send(embed20);
+    }
+  } else if (data2) {
+    var channel = data.Welcome
+
+    let embed200 = new MessageEmbed()
+      .setTitle("Welcome")
+      .setDescription(`${member}, Welcome to **${member.guild.name}**! We Hope You Like Our Server! Enjoy Your Stay here!`)
+      .setFooter(`We Are Now ${member.guild.memberCount} Members`)
+      .setColor("GREEN")
+
+      member.guild.channels.cache.get(channel).send(embed200)
+  } else if (!data) {
+    return;
+}
+});
+
+const byeData = require("../../models/leavechannel")
+const byemsg = require("../../models/leavemessage")
+client.on(`guildMemberRemove`, async (member) => {
+  const avatar = member.user.avatarURL;
+
+  const data = await byeData.findOne({
+    GuildID: member.guild.id
+  })
+  if (data) {
+
+    const data2 = await byemsg.findOne({
+      GuildID: member.guild.id
+    })
+    if (data2) {
+      var leavemessage = data2.ByeMsg;
+
+      leavemessage = leavemessage.replace("{user.mention}", `${member}`)
+      leavemessage = leavemessage.replace("{user.name}", `${member.user.tag}`)
+      leavemessage = leavemessage.replace("{server}", `${member.guild.name}`)
+      leavemessage = leavemessage.replace("{membercount}", `${member.guild.memberCount}`)
+      
+      let embed = new MessageEmbed()
+        .setDescription(leavemessage)
+        .setColor("RED");
+
+      let channel = data.Bye
+
+      member.guild.channels.cache.get(channel).send(embed);
+
+    } else if (!data2) {
+      let embed2 = new MessageEmbed()
+        .setTitle("Goodbye")
+        .setThumbnail(member.user.avatarURL())
+        .setDescription(`**${member.user.tag}** Just Left This Server! We hope They Return Back Soon!`)
+        .setFooter(`We Now Have ${member.guild.memberCount} Members!`)
+        .setThumbnail(member.user.avatarURL())
+        .setColor("RED")
+
+      let byechannel = data.Bye
+
+      member.guild.channels.cache.get(byechannel).send(embed2);
+    }
+  } else if (!data) {
+    return;
+  }
+})
 
 command.execute(client, message, cmd, args, Discord, profileData);
 }
