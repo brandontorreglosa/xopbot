@@ -4,6 +4,7 @@ const premiumSchema =  require("../../models/premium");
 const quick = require('quick.db');
 const Levels = require('discord-xp');
 const fs = require('fs');
+const ms = require('ms');
 require('dotenv').config();
 const cooldowns = new Map();
 
@@ -358,8 +359,8 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
   if (antilink) {
      if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
     message.delete();
-    message.channel.send("No links allowed while anti-link is active!").then(msg=>{
-    let time = '2s'
+    message.channel.send("**No Links Allowed While Anti-Link Is Active For XOPBOT!**").then(msg=>{
+    let time = '4s'
     setTimeout(function(){
     msg.delete();
   }, ms(time));
