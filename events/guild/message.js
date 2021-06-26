@@ -268,6 +268,10 @@ let prefix = prefixes[message.guild.id].prefix;
     const command = client.commands.get(cmd) ||
                     client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
+                    if (!command) {
+                      return message.channel.send("Couldn't find that command!")
+                    }
+
 if(message.channel.id ==="841362279353155656") {
 message.channel.send(`**${message.author.tag} Used The Command ${command.name} In ${message.guild.name}**`)
 }
@@ -359,7 +363,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
   if (antilink) {
      if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
     message.delete();
-    message.channel.send("**No Links Allowed While Anti-Link Is Active For XOPBOT!**").then(msg=>{
+    message.reply("**No Links Allowed While Anti-Link Is Active For XOPBOT!**").then(msg=>{
     let time = '4s'
     setTimeout(function(){
     msg.delete();
