@@ -4,7 +4,7 @@ const premiumSchema =  require("../../models/premium");
 const quick = require('quick.db');
 const Levels = require('discord-xp');
 const fs = require('fs');
-//const ms = require('ms');
+const ms = require('ms');
 require('dotenv').config();
 const cooldowns = new Map();
 
@@ -399,7 +399,7 @@ client.on(`guildMemberAdd`, async (member) => {
       joinmessage = joinmessage.replace("{server}", `${member.guild.name}`)
       joinmessage = joinmessage.replace("{membercount}", `${member.guild.memberCount}`)
 
-      let embed20 = new MessageEmbed()
+      let embed20 = new Discord.MessageEmbed()
         .setDescription(joinmessage)
         .setColor("GREEN")
       member.guild.channels.cache.get(channel).send(embed20);
@@ -407,7 +407,7 @@ client.on(`guildMemberAdd`, async (member) => {
   } else if (data2) {
     var channel = data.Welcome
 
-    let embed200 = new MessageEmbed()
+    let embed200 = new Discord.MessageEmbed()
       .setTitle("Welcome")
       .setDescription(`${member}, Welcome to **${member.guild.name}**! We Hope You Like Our Server! Enjoy Your Stay here!`)
       .setFooter(`We Are Now ${member.guild.memberCount} Members`)
@@ -440,7 +440,7 @@ client.on(`guildMemberRemove`, async (member) => {
       leavemessage = leavemessage.replace("{server}", `${member.guild.name}`)
       leavemessage = leavemessage.replace("{membercount}", `${member.guild.memberCount}`)
       
-      let embed = new MessageEmbed()
+      let embed = new Discord.MessageEmbed()
         .setDescription(leavemessage)
         .setColor("RED");
 
@@ -449,7 +449,7 @@ client.on(`guildMemberRemove`, async (member) => {
       member.guild.channels.cache.get(channel).send(embed);
 
     } else if (!data2) {
-      let embed2 = new MessageEmbed()
+      let embed2 = new Discord.MessageEmbed()
         .setTitle("Goodbye")
         .setThumbnail(member.user.avatarURL())
         .setDescription(`**${member.user.tag}** Just Left This Server! We hope They Return Back Soon!`)
