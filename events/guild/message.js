@@ -350,5 +350,27 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
     time_stamps.set(message.author.id, current_time);
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
+    const antilinkData = require('./models/antilink')
+ client.on("message", async(message)=>{
+  const antilink = await antilinkData.findOne({
+    GuildID: message.guild.id
+  })
+  if (antilink) {
+     if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
+    message.delete();
+    message.channel.send("No links allowed while anti-link is active!").then(msg=>{
+    let time = '2s'
+    setTimeout(function(){
+    msg.delete();
+  }, ms(time));
+})
+  } else {
+    return;
+  }
+} else if (!antilink) {
+  return;
+}
+});
+
 command.execute(client, message, cmd, args, Discord, profileData);
 }

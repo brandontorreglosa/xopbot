@@ -44,26 +44,4 @@ mongoose.connect(process.env.MONGODB_SRV ,{
     console.log(err);
 });
 
-const antilinkData = require('../models/antilink')
- client.on("message", async(message)=>{
-  const antilink = await antilinkData.findOne({
-    GuildID: message.guild.id
-  })
-  if (antilink) {
-     if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
-    message.delete();
-    message.channel.send("No links allowed while anti-link is active!").then(msg=>{
-    let time = '2s'
-    setTimeout(function(){
-    msg.delete();
-  }, ms(time));
-})
-  } else {
-    return;
-  }
-} else if (!antilink) {
-  return;
-}
-});
-
     client.login(process.env.DISCORD_TOKEN);
