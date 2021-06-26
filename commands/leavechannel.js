@@ -6,7 +6,7 @@ module.exports = {
   permissions: ["MANAGE_CHANNELS"],
   description: "Change the goodbye channel per server!",
   aliases: ["gchannel", "goodbye"],
-  run: async (client, message, args) => {
+  async execute(client, message, cmd, args, Discord)  {
     if (!message.guild.me.hasPermission("MANAGE_CHANNELS")) {
       return message.channel.send("**I Don't Have The `Manage Channels` Permission!**")
     }
