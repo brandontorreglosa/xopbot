@@ -28,7 +28,7 @@ module.exports = {
       } else if (!data) {
         message.channel.send(`**Antilink is now active**`);
 
-        let newData = new prefixModel({
+        let newData = new antilinkSchema({
           GuildID: message.guild.id
         });
         newData.save();
