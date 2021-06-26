@@ -350,7 +350,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
     time_stamps.set(message.author.id, current_time);
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
-    const antilinkData = require('./models/antilink')
+    const antilinkData = require('../../models/antilink')
  client.on("message", async(message)=>{
   const antilink = await antilinkData.findOne({
     GuildID: message.guild.id
