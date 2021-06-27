@@ -381,7 +381,7 @@ message.react('🎯');
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    {name: '__⚠ Config__', value: '`joinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__'}
+                    {name: '__⚠ Config__', value: '`joinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__'}
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
         
