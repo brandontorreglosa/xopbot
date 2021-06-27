@@ -36,7 +36,7 @@ module.exports = {
                 },
                 {
                     name: '__👷‍♂️ Owner__',
-                    value: '`x!owner`',
+                    value: '`closed`',
                     inline: true
                 },
                 {
@@ -370,6 +370,23 @@ message.react('🎯');
 
     await message.channel.send(embed15)
     }
+
+    else if(cmd === 'config') {
+
+        message.react('🌘');
+        
+                const embed15 = new Discord.MessageEmbed()
+                .setThumbnail(client.user.displayAvatarURL())
+                .setTimestamp()
+                //.setTitle('__🎮 Games__')
+                .setColor('#c30202')
+                .addFields(
+                    {name: '__⚠ Config__', value: '`joinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__'}
+                )
+                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+        
+            await message.channel.send(embed15)
+            }
 
     if(cmd === 'βοηθεια') {
 
