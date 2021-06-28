@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: "changemymind",
+    name: "dockofshame",
     permissions: ["SEND_MESSAGES"],
-    aliases: ['chmm', 'chmym'],
+    aliases: ['dcofsh', 'dos'],
     cooldown: 3,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
