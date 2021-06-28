@@ -398,7 +398,7 @@ message.react('🎯');
                         //.setTitle('__🎮 Games__')
                         .setColor('#c30202')
                         .addFields(
-                            {name: '__📷 Images__', value: '`drip`-__***Get A Image Of A Drip User!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
+                            {name: '__📷 Images__', value: '`drip`-__***Get A Image Of A Drip User!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
                         )
                         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
                 
