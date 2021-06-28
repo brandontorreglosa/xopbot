@@ -12,7 +12,7 @@ module.exports = {
         return message.channel.send("**Please Mention A User!**")
     }
 
-    const avatar = user.user.displayAvatarURL({ size: 3048, format: "png" });
+    const avatar = user.user.displayAvatarURL({ size: 2548, format: "png" });
 
 
         message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/drip?user=${avatar}`, name: "drip.png"}]});
