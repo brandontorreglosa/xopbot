@@ -8,7 +8,7 @@ module.exports = {
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 
-        const user = message.mentions.members.first()
+        const user = message.mentions.members.first()  || message.author;
     if (!user) {
         return message.channel.send("**Please Mention A User!**")
     }

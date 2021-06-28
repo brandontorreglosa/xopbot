@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['afk'],
   description: 'Set your afk status',
   execute(client, message, cmd, args, Discord) {
-    if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('**Status Change Failed**');
+  //  if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('**Status Change Failed**');
     quick.set(`${message.author.id}_${message.guild.id}_afk`, {
       username: message.member.displayName.replace('[AFK]', ''), 
       active: true,
