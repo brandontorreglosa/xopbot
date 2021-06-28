@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: "drip",
+    name: "grave",
     permissions: ["SEND_MESSAGES"],
     cooldown: 3,
     description: "Image Manipulation Command",
@@ -15,6 +15,6 @@ module.exports = {
     const avatar = user.user.displayAvatarURL({ size: 2048, format: "png" });
 
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/drip?user=${avatar}`, name: "drip.png"}]});
+        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/grave?user=${avatar}`, name: "grave.png"}]});
     }
     }
