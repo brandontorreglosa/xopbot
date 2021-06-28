@@ -2,7 +2,7 @@ const os = require('os')
 
 module.exports = {
     name: "help",
-    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'config', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
+    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'config', 'images', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
      async execute(client, message, cmd, args, Discord) {
@@ -66,7 +66,7 @@ module.exports = {
                 },
                 {
                     name: '__📷 Images__',
-                    value: '`closed`',
+                    value: '`x!images`',
                     inline: true,
                 },
                 {
@@ -381,12 +381,29 @@ message.react('🎯');
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    {name: '__⚠ Config__', value: '`joinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__'}
+                    {name: '__⚠ Config__', value: '`antilink`-__***Setup Antilink On A Server!***__`\njoinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__'}
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
         
             await message.channel.send(embed15)
             }
+
+            else if(cmd === 'images') {
+
+                message.react('📸');
+                
+                        const embed15 = new Discord.MessageEmbed()
+                        .setThumbnail(client.user.displayAvatarURL())
+                        .setTimestamp()
+                        //.setTitle('__🎮 Games__')
+                        .setColor('#c30202')
+                        .addFields(
+                            {name: '__📷 Images__', value: '`drip`-__***Get A Image Of A Drip User!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
+                        )
+                        .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+                
+                    await message.channel.send(embed15)
+                    }
 
     if(cmd === 'βοηθεια') {
 
