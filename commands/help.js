@@ -398,7 +398,7 @@ message.react('🎯');
                         //.setTitle('__🎮 Games__')
                         .setColor('#c30202')
                         .addFields(
-                            {name: '__📷 Images__', value: '`drip`-__***Get A Image Of A Drip User!***__ `\nclyde`-__***Get An Image Of Clyde Sending!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\ncarreverse`-__***Reverse The Car From The Cringe!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\ntableflip`-__***Get A Image Doing A Tableflip!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
+                            {name: '__📷 Images__', value: '`drip`-__***Get A Image Of A Drip User!***__ `\nclyde`-__***Get An Image Of Clyde Sending!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\ncarreverse`-__***Reverse The Car From The Cringe!***__ `\nwideavatar`-__***Get A Image Of A Users Wide Pfp!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\ntableflip`-__***Get A Image Doing A Tableflip!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
                         )
                         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
                 

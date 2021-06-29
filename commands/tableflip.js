@@ -19,6 +19,6 @@ module.exports = {
     // const avatar = user.user.displayAvatarURL({ size: 2048, format: "png" });
 
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/tableflip?user=${avatar}`, name: "tableflip.png"}]});
+        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/tableflip?user=${avatar}`, name: "xopbottableflip.png"}]});
     }
     }
