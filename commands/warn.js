@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const db = require("../models/ModSchema");
+const db = require("quick.db");
 
 module.exports = {
 	name: 'warn',
@@ -38,7 +38,7 @@ module.exports = {
 			);
 		}
 
-		let warnings = db.findOne(`warnings_${message.guild.id}_${user.id}`);
+		let warnings = db.get(`warnings_${message.guild.id}_${user.id}`);
 
 		if (warnings === null) {
 			db.set(`warnings_${message.guild.id}_${user.id}`, 1);
@@ -51,7 +51,7 @@ module.exports = {
 				}** for ${reason}`
 			);
 		} else if (warnings !== null) {
-			db.findOne(`warnings_${message.guild.id}_${user.id}`, 1);
+			db.add(`warnings_${message.guild.id}_${user.id}`, 1);
 
 			user.send(
 				`**You Have Been Warned In **${message.guild.name}** For ${reason}!**`
