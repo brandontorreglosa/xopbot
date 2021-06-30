@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const ModSchema = new mongoose.Schema({
-  GuildID: String,
-  UserID: String,
-  Punishments: Array
+  guildID: String,
+  userID: String,
+  punishments: Array
 });
 
 const model = mongoose.model("Moderation", ModSchema);
