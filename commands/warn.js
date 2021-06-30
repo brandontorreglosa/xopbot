@@ -38,7 +38,7 @@ module.exports = {
 			);
 		}
 
-		let warnings = db.get(`warnings_${message.guild.id}_${user.id}`);
+		let warnings = db.fetch(`warnings_${message.guild.id}_${user.id}`);
 
 		if (warnings === null) {
 			db.set(`warnings_${message.guild.id}_${user.id}`, 1);
