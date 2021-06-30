@@ -4,6 +4,6 @@ const antiwordsSchema = new mongoose.Schema({
     GuildID: String,
 });
 
-const model = mongoose.model('anitlink', antiwordsSchema);
+const model = mongoose.model('antiwords', antiwordsSchema);
 
 module.exports = model;
