@@ -11,6 +11,8 @@ module.exports = {
     if (!text) {
         return message.channel.send("**Enter Some Text!**")
     }
+    if (text.length > 15) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
+    
         message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/changemymind?text=${text}`, name: "changemymind.png"}]});
     }
     }
