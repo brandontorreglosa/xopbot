@@ -3,13 +3,13 @@ const Levels = require('discord-xp');
 require('dotenv').config();
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]});
 const mongoose = require('mongoose');
-const Database = require('quick.db');
-const db = new Database(process.env.MONGODB_SRV2)
+const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
-const ldbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
+const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 
 const fs = require('fs')
 
+client.db = new Database(process.env.MONGODB_SRV2)
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
@@ -24,7 +24,7 @@ client.db.on("ready",() => {
 
 client.on("ready", () => {
 
-    ldbl.serverCount();
+    dbl.serverCount();
 
 })
 
