@@ -4,7 +4,7 @@ module.exports = {
     description: "Make the bot say your message",
     async execute(client, message, cmd, args, Discord) {
 
-        const user = message.mention.users.first();
+        const user = message.mentions.users.first();
 
         if (message.content.match("gore") || message.content.match("dis") || message.content.match("kls")) {
             message.delete();
