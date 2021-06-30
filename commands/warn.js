@@ -3,7 +3,7 @@ const db = require("../models/ModSchema");
 
 module.exports = {
 	name: 'warn',
-	cooldown: 5000,
+	cooldown: 10,
     permissions: ["ADMINISTRATOR"],
 	category: 'moderation',
 	description: 'Warn anyone who do not obey the rules',
