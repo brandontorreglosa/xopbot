@@ -3,6 +3,13 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     description: "Make the bot say your message",
     async execute(client, message, cmd, args, Discord) {
+
+        const user = message.mention.users.first();
+
+        if (message.content.match("gore") || message.content.match("dis") || message.content.match("kls")) {
+            message.delete();
+            message.reply(`**You Have Been Reported To The Developer ${message.author.username}!**`);
+    }
         if (!args[0]) {
         message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat! \nAnything Rude Is Sended To The Developer!**")
         }
