@@ -24,12 +24,14 @@ module.exports = {
     body = await body.json()
 
         const embed = new Discord.MessageEmbed()
+        .setTimestamp()
         .setTitle(body.data[0].attributes.slug)
         .setColor("RED")
         .setDescription(body.data[0].attributes.synopsis)
         .setThumbnail(body.data[0].attributes.posterImage.original)
         .addField("Ratings", body.data[0].attributes.averageRating)
         .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
+        .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         //.setImage(body.data[0].attributes.coverImage.large)
 

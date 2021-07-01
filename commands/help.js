@@ -148,7 +148,7 @@ message.react('⚙');
         //.setTitle('__⚙ Utility__')
         .setColor('#c30202')
         .addFields(
-            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nwebhook`-__***Send Something From A Webhook!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
+            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nwebhook`-__***Send Something From A Webhook!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nanime`-__***Search For Anime!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
