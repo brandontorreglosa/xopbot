@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "anime",
   permissions: ["SEND_MESSAGES"],
-  cooldown: 6500,
+  cooldown: 10,
   category: "info",
   aliases: ["kitsu"],
   description: "Get anime information",
@@ -15,7 +15,7 @@ module.exports = {
       return message.channel.send("**Please Give Anime Name For XOPBOT To Find!**")
 
     }
-  //   message.channel.send("Loading Anime....")
+  await message.channel.send("Loading Anime....")
 
     try {
 
