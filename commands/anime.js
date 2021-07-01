@@ -14,8 +14,7 @@ module.exports = {
       return message.channel.send("**Please Give Anime Name For XOPBOT To Find!**")
 
     }
-
-      message.channel.send("Loading Anime....")
+  //   message.channel.send("Loading Anime....")
 
     try {
 
