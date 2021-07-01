@@ -2,6 +2,7 @@ const fetch = require("node-fetch");
 
 module.exports = {
   name: "anime",
+  permissions: ["SEND_MESSAGES"],
   cooldown: 6500,
   category: "info",
   aliases: ["kitsu"],
