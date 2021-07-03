@@ -13,7 +13,7 @@ async execute(client, message, cmd, args, Discord) {
                 .setTimestamp()
 
     message.channel.send(lo).then(m => {
-        const bdsm = await akaneko.nsfw.bdsm();
+        const bdsm = akaneko.nsfw.bdsm();
             var embed_nsfw = new Discord.MessageEmbed()
                 embed.setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${bdsm})**`)
                 .setTimestamp()
