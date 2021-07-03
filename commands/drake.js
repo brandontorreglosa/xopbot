@@ -20,7 +20,7 @@ module.exports = {
     }
    // if (text.length > 5) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
-    const text2 = args.slice(1).join(" ");
+    const text2 = args.slice(2).join(" ");
     if (!text2) {
         return message.channel.send("**Enter The Second Text!**")
     }
