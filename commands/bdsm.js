@@ -13,10 +13,10 @@ async execute(client, message, cmd, args, Discord) {
 
     message.channel.send(lo).then(m => {
             var embed_nsfw = new Discord.MessageEmbed()
-                .setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${akaneko.nsfw.bdsm()})**`)
-                .setTimestamp()
-                .setFooter('Nice Huh :)')
-                .setImage(await akaneko.nsfw.bdsm());
+                embed.setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${akaneko.nsfw.bdsm()})**`)
+                embed.setTimestamp()
+                embed.setFooter('Nice Huh :)')
+                embed.setImage(await akaneko.nsfw.bdsm());
             
             m.edit(embed_nsfw);
         });
