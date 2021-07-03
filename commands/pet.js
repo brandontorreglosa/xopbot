@@ -8,9 +8,9 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
     const mention = message.mentions.members.first() || message.member;
-    const avatar = mention.user.displayAvatarURL({size: 2048, format: "png"});
+    const avatar = mention.user.displayAvatarURL({size: 2048, format: "gif"});
 
 
-        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/pet?image=${avatar}`, name: "xopbotpet.png"}]});
+        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/pet?image=${avatar}`, name: "xopbotpet.gif"}]});
     }
     }
