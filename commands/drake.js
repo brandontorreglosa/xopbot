@@ -6,13 +6,13 @@ module.exports = {
     cooldown: 3,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
-    const text = args.slice(0).join(" ");
+    const text = args.slice(1).join(" ");
     if (!text) {
         return message.channel.send("**Enter Some Text!**")
     }
     if (text.length > 15) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
-    const text2 = args.slice(1).join(" ");
+    const text2 = args.slice(2).join(" ");
     if (!text2) {
         return message.channel.send("**Enter The Second Text!**")
     }
