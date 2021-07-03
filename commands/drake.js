@@ -14,13 +14,13 @@ module.exports = {
             }, 15000)
            }, 15000)
            })
-    const text = args.slice(1).join(" ");
+    const text = args.slice(0).join(" ");
     if (!text) {
         return message.channel.send("**Enter Some Text!**")
     }
    // if (text.length > 5) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
-    const text2 = args.slice(2).join(" ");
+    const text2 = args.slice(1).join(" ");
     if (!text2) {
         return message.channel.send("**Enter The Second Text!**")
     }
