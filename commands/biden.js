@@ -10,7 +10,7 @@ module.exports = {
     return message.channel.send('`Usage: (prefix)clyde <msg>`')
     }
     let bidenMessage = args.slice(0).join(' ');
-    if (bidenMessage.length > 35) return message.channel.send('**You Are Not Allowed To Go Over 35 Characters!**');
+    if (bidenMessage.length > 65) return message.channel.send('**You Are Not Allowed To Go Over 65 Characters!**');
 
     message.channel.send({files : [{attachment: `https://api.popcatdev.repl.co/biden?text=${bidenMessage}`, name: 'xopbotbiden.jpg'}]});
   }
