@@ -15,7 +15,7 @@ async execute(client, message, cmd, args, Discord) {
     message.channel.send(lo).then(m => {
         const bdsm = akaneko.nsfw.bdsm();
             var embed_nsfw = new Discord.MessageEmbed()
-                embed.setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${bdsm})**`)
+                .setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${bdsm})**`)
                 .setTimestamp()
                 .setFooter('Nice Huh :)')
                 .setImage(`${bdsm}`)
