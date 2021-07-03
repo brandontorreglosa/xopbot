@@ -8,9 +8,9 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         message.channel.send("⚠ **| This Command `drake` Is Splited Cuz Of Two Texts**").then((msg) => {
             setTimeout(function(){
-            msg.edit("⚠ **| Example: i dont care about you | <--Splits Here And Continues Here--> big boi**")
+            msg.edit("⚠ **| Example: i dont care about you | <--Splits Here And Continues Here--> dont care about you**")
            setTimeout(function(){
-            msg.edit("⚠ **| Max Is 5 Chracters For The First Split | Then Continue On 6**")
+            msg.edit("⚠ **| Max Is 1 Chracters Fo The First Split | Then Continue On Second Character**")
             }, 15000)
            }, 15000)
            })
@@ -20,7 +20,7 @@ module.exports = {
     }
    // if (text.length > 5) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
-    const text2 = args.slice(6).join(" ");
+    const text2 = args.slice(2).join(" ");
     if (!text2) {
         return message.channel.send("**Enter The Second Text!**")
     }
