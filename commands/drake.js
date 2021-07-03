@@ -14,7 +14,7 @@ module.exports = {
             }, 15000)
            }, 15000)
            })
-    const text = args.slice(0).join(" ");
+    const text = args.slice(1).join(" ");
     if (!text) {
         return message.channel.send("**Enter Some Text!**")
     }
