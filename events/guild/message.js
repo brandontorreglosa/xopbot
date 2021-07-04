@@ -21,9 +21,6 @@ module.exports = async (Discord, client, message) => {
       .then(message => {
         message.delete({ timeout: 8000 })
       })
-      
-      //const channel = message.guild.channels.cache.find( x => x.name.toLowerCase().includes("Leveling"))
-      //if(!channel) message.guild.channels.create(`Leveling`);
 
       if (user.level == 1) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 1");
@@ -164,75 +161,75 @@ if (message.content === "<@831824859066925087>" || message.content === "<@!83182
   message.channel.send(`***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***`)
 }
 
-if (message.content === "lol" || message.content === "lmao" || message.content === 'Lol' || message.content === 'Lmao') {
-  message.channel.send(`***${message.author} Laughed Out Loud!***`)
-  .then(message => {
-    message.delete({ timeout: 8000 })
-})
-}
+// if (message.content === "lol" || message.content === "lmao" || message.content === 'Lol' || message.content === 'Lmao') {
+//   message.channel.send(`***${message.author} Laughed Out Loud!***`)
+//   .then(message => {
+//     message.delete({ timeout: 8000 })
+// })
+// }
 
-if (message.content === "bot" || message.content === "noob" || message.content === 'Bot' || message.content === 'Noob') {
-  message.channel.send(`***Stop Bullying This Kid! :)***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "bot" || message.content === "noob" || message.content === 'Bot' || message.content === 'Noob') {
+//   message.channel.send(`***Stop Bullying This Kid! :)***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "yay" || message.content === "great" || message.content === 'Yay' || message.content === 'Great') {
-  message.channel.send(`***Wooohooo!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "yay" || message.content === "great" || message.content === 'Yay' || message.content === 'Great') {
+//   message.channel.send(`***Wooohooo!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "ihatexopbot" || message.content === "xopbotistrash" || message.content === 'Ihatexopbot' || message.content === 'Xopbotistrash') {
-  message.channel.send(`***I Hate You Too Kid!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "ihatexopbot" || message.content === "xopbotistrash" || message.content === 'Ihatexopbot' || message.content === 'Xopbotistrash') {
+//   message.channel.send(`***I Hate You Too Kid!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "bruh" || message.content === "bruhs" || message.content === 'Bruh') {
-  message.channel.send(`***Bruh Moment!***`)
-  .then(message => {
-    message.delete({ timeout:15000 })
-})
-}
+// if (message.content === "bruh" || message.content === "bruhs" || message.content === 'Bruh') {
+//   message.channel.send(`***Bruh Moment!***`)
+//   .then(message => {
+//     message.delete({ timeout:15000 })
+// })
+// }
 
-if (message.content === "yeet" || message.content === "getyeeted" || message.content === 'Yeet') {
-  message.channel.send(`***Man Just Got Yeeted!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "yeet" || message.content === "getyeeted" || message.content === 'Yeet') {
+//   message.channel.send(`***Man Just Got Yeeted!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "deeznuts" || message.content === "mynuts" || message.content === "Deeznuts" || message.content === 'Mynuts') {
-  message.channel.send(`***Best Meme For Me!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "deeznuts" || message.content === "mynuts" || message.content === "Deeznuts" || message.content === 'Mynuts') {
+//   message.channel.send(`***Best Meme For Me!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "stop" || message.content === "stopit" || message.content === 'Stop') {
-  message.channel.send(`***Stop It Get Some Help Kid!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "stop" || message.content === "stopit" || message.content === 'Stop') {
+//   message.channel.send(`***Stop It Get Some Help Kid!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "1+1" || message.content === "oneplusone") {
-  message.channel.send(`***Is 2 Boiiiii!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "1+1" || message.content === "oneplusone") {
+//   message.channel.send(`***Is 2 Boiiiii!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
-if (message.content === "damn" || message.content === "thatgood") {
-  message.channel.send(`***Damn Kid!***`)
-  .then(message => {
-    message.delete({ timeout: 15000 })
-})
-}
+// if (message.content === "damn" || message.content === "thatgood") {
+//   message.channel.send(`***Damn Kid!***`)
+//   .then(message => {
+//     message.delete({ timeout: 15000 })
+// })
+// }
 
 let prefixes = JSON.parse(fs.readFileSync("./prefixes.json")); 
 if(!prefixes[message.guild.id]){  
