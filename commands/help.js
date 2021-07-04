@@ -131,7 +131,7 @@ module.exports = {
         //.setTitle('__🛠️ Moderation__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🛠️ Moderation__', value: '`ban`-__***Ban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__  `\n\mute`-__***Mute A Member From A Server!***__ `\nunmute`-__***Unmute A Member From A Server!***__  `\n\clear`-__***Clear Messages From A Server!***__  `\n\command`-__***Gives Basic Server Rules Of A Server!***__  `\n\slowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\nuserlock`-__***Lock A Role From A Specific Channel!***__ `\nuserunlock`-__***Unlock A Role From A Specific Channel!***__ `\nchannellock`-__***Lock A Channel!***__ `\nchannelunlock`-__***Unlock A Channel!***__'},
+            {name: '__🛠️ Moderation (13)__', value: '`ban`-__***Ban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__  `\n\mute`-__***Mute A Member From A Server!***__ `\nunmute`-__***Unmute A Member From A Server!***__  `\n\clear`-__***Clear Messages From A Server!***__  `\n\command`-__***Gives Basic Server Rules Of A Server!***__  `\n\slowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\nuserlock`-__***Lock A Role From A Specific Channel!***__ `\nuserunlock`-__***Unlock A Role From A Specific Channel!***__ `\nchannellock`-__***Lock A Channel!***__ `\nchannelunlock`-__***Unlock A Channel!***__'},
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -148,7 +148,7 @@ message.react('⚙');
         //.setTitle('__⚙ Utility__')
         .setColor('#c30202')
         .addFields(
-            {name: '__⚙ Utility__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nwebhook`-__***Send Something From A Webhook!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nanime`-__***Search For Anime!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
+            {name: '__⚙ Utility (9)__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nwebhook`-__***Send Something From A Webhook!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nanime`-__***Search For Anime!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -165,7 +165,7 @@ message.react('🐜');
         //.setTitle('__🐛 Bugs__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🐛 Bugs__', value: '`bugreport`-__***Report A Bug To Admins!***__ `\nfindbugs`-__***Find Bugs On Your Server!***__ `\nclearbugs`-__***Clear Bugs From Your Server!***__'}
+            {name: '__🐛 Bugs (3)__', value: '`bugreport`-__***Report A Bug To Admins!***__ `\nfindbugs`-__***Find Bugs On Your Server!***__ `\nclearbugs`-__***Clear Bugs From Your Server!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -182,7 +182,7 @@ message.react('💹');
         //.setTitle('__📈 Status__')
         .setColor('#c30202')
         .addFields(
-            {name: '__📈 Status__' , value: '`mcserver`-__***Get Real-Time Status Of MCServers!***__  `\nstatusping`-__***Get A Status Ping Of Your Server!***__ `\nserverinfo`-__***Get Your Servers Information!***__ `\nbotinfo`-__***Get The Bots Information!***__ `\ncovid`-__***Get Covid Information Of A Area!***__ `\nuserinfo`-__***Get A Real User Info!***__'}
+            {name: '__📈 Status (6)__' , value: '`mcserver`-__***Get Real-Time Status Of MCServers!***__  `\nstatusping`-__***Get A Status Ping Of Your Server!***__ `\nserverinfo`-__***Get Your Servers Information!***__ `\nbotinfo`-__***Get The Bots Information!***__ `\ncovid`-__***Get Covid Information Of A Area!***__ `\nuserinfo`-__***Get A Real User Info!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -199,7 +199,7 @@ message.react('💹');
         //.setTitle('__💬 Socials__')
         .setColor('#c30202')
         .addFields(
-            {name: '__💬 Socials__', value: '`youtube`-__***Go To My Youtube Channel!***__ `\nscratch`-__***Go To My Scratch Account!***__ `\namino`-__***Go To My Amino Account!***__'}
+            {name: '__💬 Socials (3)__', value: '`youtube`-__***Go To My Youtube Channel!***__ `\nscratch`-__***Go To My Scratch Account!***__ `\namino`-__***Go To My Amino Account!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -216,7 +216,7 @@ message.react('🤪');
         //.setTitle('__🥳 Fun__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🥳 Fun__' , value: '`ping`-__***Not Real Ping!***__ `\navatar`-__***Shows A Users Avatar!***__ `\nbadges`-__***Gives You A Users Badge!***__ `\n8ball`-__***Ask 8ball A Question!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__ `\nsay`-__***XOPBOT Repeats The Word!***__ `\nascii`-__***Convert Text To Ascii!***__ `\nfliptext`-__***Flip Your Text!***__ `\ndog`-__***Get A Random Dog!***__ `\ncat`-__***Get A Random Cat!***__ `\nrespect`-__***Respect A User!***__ `\nhack`-__***Hack A User!***__  `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__ `\npp`-__***Get A Users PP!***__'}
+            {name: '__🥳 Fun (18)__' , value: '`ping`-__***Not Real Ping!***__ `\navatar`-__***Shows A Users Avatar!***__ `\nbadges`-__***Gives You A Users Badge!***__ `\n8ball`-__***Ask 8ball A Question!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Google!***__ `\nsay`-__***XOPBOT Repeats The Word!***__ `\nascii`-__***Convert Text To Ascii!***__ `\nfliptext`-__***Flip Your Text!***__ `\ndog`-__***Get A Random Dog!***__ `\ncat`-__***Get A Random Cat!***__ `\nrespect`-__***Respect A User!***__ `\nhack`-__***Hack A User!***__  `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__ `\npp`-__***Get A Users PP!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -233,7 +233,7 @@ message.react('🎵');
        // .setTitle('__🎶 Music__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🎶 Music__' , value: '`play`-__***Play Any Music From Youtube!***__  `\nstop`-__***Stop The Player!***__  `\n\skip`-__***Skip To The Song In Queue!***__ `\n\pause`-__***Pause The Song From Playing!***__ `\nunpause`-__***Unpause The Song To Play!***__'}
+            {name: '__🎶 Music (5)__' , value: '`play`-__***Play Any Music From Youtube!***__  `\nstop`-__***Stop The Player!***__  `\n\skip`-__***Skip To The Song In Queue!***__ `\n\pause`-__***Pause The Song From Playing!***__ `\nunpause`-__***Unpause The Song To Play!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -250,7 +250,7 @@ message.react('💵');
        // .setTitle('__🤑 Economy__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🤑 Economy__' , value: '`shop(1-2)`-__***Get Something From The Shop!***__ `\nbalance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\nwork`-__***Work For Xocoins!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
+            {name: '__🤑 Economy (9)__' , value: '`shop(1-2)`-__***Get Something From The Shop!***__ `\nbalance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\nwork`-__***Work For Xocoins!***__ `\ndaily`-__***Get Daily Xocoins!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -267,7 +267,7 @@ message.react('🆙');
         //.setTitle('__⏫ Leveling__')
         .setColor('#c30202')
         .addFields(
-            {name: '__⏫ Leveling__', value: '`rank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
+            {name: '__⏫ Leveling (4)__', value: '`rank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -311,7 +311,7 @@ message.react('🏆');
         //.setTitle('__👑 Premium__')
         .setColor('#c30202')
         .addFields(
-            {name: '__👑 Premium__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ `\nweather`-__***Get Your Current Weather! (Premium)***__ `\noldmeme`-__***Get Old Memes From Google! (Premium)***__ `\ntictactoe`-__***Play Tictactoe! (Premium)***__ `\nmath`-__***Do Math Problems! (Premium)***__'}
+            {name: '__👑 Premium (5)__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ `\nweather`-__***Get Your Current Weather! (Premium)***__ `\noldmeme`-__***Get Old Memes From Google! (Premium)***__ `\ntictactoe`-__***Play Tictactoe! (Premium)***__ `\nmath`-__***Do Math Problems! (Premium)***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -328,7 +328,7 @@ message.react('🖇');
         //.setTitle('__🔗 Invites__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🔗 Invites__' , value: '`botinvite`-__***Invite The Bot To Your Server!***__ `\nwebsiteinvite`-__***Go To XOPBOTs Official Website!***__'}
+            {name: '__🔗 Invites (2)__' , value: '`botinvite`-__***Invite The Bot To Your Server!***__ `\nwebsiteinvite`-__***Go To XOPBOTs Official Website!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -364,7 +364,7 @@ message.react('🎯');
         //.setTitle('__🎮 Games__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🎮 Games__', value: '`guessthenumber`-__***Guess The Number!***__ `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nhangman`-__***Play Hangman!***__'}
+            {name: '__🎮 Games (3)__', value: '`guessthenumber`-__***Guess The Number!***__ `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nhangman`-__***Play Hangman!***__'}
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -381,7 +381,7 @@ message.react('🎯');
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    {name: '__⚠ Config__', value: '`antiwords`-__***Setup Bad Words Detector!***__`\nantilink`-__***Setup Antilink On A Server!***__`\njoinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__'}
+                    {name: '__⚠ Config (7)__', value: '`antiwords`-__***Setup Bad Words Detector!***__`\nantilink`-__***Setup Antilink On A Server!***__`\njoinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__'}
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
         
@@ -398,7 +398,7 @@ message.react('🎯');
                         //.setTitle('__🎮 Games__')
                         .setColor('#c30202')
                         .addFields(
-                            {name: '__📷 Images__', value: '`ad`-__***Wow You Became A AD!***__ `\npet`-__***Aww You Got Pet!***__ `\nm&m`-__***Wow You Are A M&M!***__ `\ndrip`-__***Get A Image Of A Drip User!***__ `\nalert`-__***Alert The World!***__ `\nfacts`-__***Facts Only Mate!***__ `\nclown`-__***Wow You Are A Clown!***__ `\ndrake`-__***The Drake Meme!***__ `\nclyde`-__***Get An Image Of Clyde Sending!***__ `\nbiden`-__***Make Biden Tweet Something!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\npikachu`-__***Pikachu Meme If You Know!***__ `\nuncover`-__***The Rick And Morty Meme!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\ncarreverse`-__***Reverse The Car From The Cringe!***__ `\nwideavatar`-__***Get A Image Of A Users Wide Pfp!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\ntableflip`-__***Get A Image Doing A Tableflip!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
+                            {name: '__📷 Images (20)__', value: '`ad`-__***Wow You Became A AD!***__ `\npet`-__***Aww You Got Pet!***__ `\nm&m`-__***Wow You Are A M&M!***__ `\ndrip`-__***Get A Image Of A Drip User!***__ `\nalert`-__***Alert The World!***__ `\nfacts`-__***Facts Only Mate!***__ `\nclown`-__***Wow You Are A Clown!***__ `\ndrake`-__***The Drake Meme!***__ `\nclyde`-__***Get An Image Of Clyde Sending!***__ `\nbiden`-__***Make Biden Tweet Something!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\npikachu`-__***Pikachu Meme If You Know!***__ `\nuncover`-__***The Rick And Morty Meme!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\ncarreverse`-__***Reverse The Car From The Cringe!***__ `\nwideavatar`-__***Get A Image Of A Users Wide Pfp!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\ntableflip`-__***Get A Image Doing A Tableflip!***__ `\nchangemymind`-__***Change A Users Mind!***__'}
                         )
                         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
                 
