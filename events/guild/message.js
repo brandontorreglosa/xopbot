@@ -7,7 +7,7 @@ const fs = require('fs');
 const ms = require('ms');
 require('dotenv').config();
 const cooldowns = new Map();
-const convertMS = require('convert-ms');
+// const convertMS = require('convert-ms');
 
 module.exports = async (Discord, client, message) => {
     if(message.author.bot || message.channel.type === 'dm') return;
