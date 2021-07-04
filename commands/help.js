@@ -15,7 +15,7 @@ module.exports = {
             .setAuthor(`XOPBOT Commands`, client.user.displayAvatarURL({ dynamic: true }))
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
-            .setImage('https://share.creavite.co/yTKDKm6JFnN7Db89.gif') //my banner for my bot 
+            .setImage('https://cdn.discordapp.com/attachments/824319314495537175/861288765145088030/standard_1.gif') //my banner for my bot 
             //.setTitle('XOPBOT Commands')
             .setColor('#c30202')
             .addFields(
@@ -294,7 +294,7 @@ message.react('🆙');
         //.setTitle('__🔞 NSFW__')
         .setColor('#c30202')
         .addFields(
-            {name: '__🔞 NSFW__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `cumsluts` `blowjob` `milf` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)'},
+            {name: '__🔞 NSFW (20)__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `cumsluts` `blowjob` `milf` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)'},
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
