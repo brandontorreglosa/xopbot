@@ -10,7 +10,7 @@ module.exports = {
             setTimeout(function(){
             msg.edit("⚠ **| Example: i dont care about you | <--Splits Here And Continues Here--> dont care about you**")
            setTimeout(function(){
-            msg.edit("⚠ **| Max Is 1 Chracters Fo The First Split | Then Continue On Second Character**")
+            msg.edit("⚠ **| Max Is 1 Chracters For The First Split | Then Continue On Second Character**")
             }, 15000)
            }, 15000)
            })
