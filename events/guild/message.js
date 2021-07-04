@@ -344,7 +344,8 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
         const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
 
         if(current_time < expiration_time){
-            const time_left = convertMS.toHMS(cooldown_amount);
+          const time_left = (expiration_time - current_time) / 1000;
+            //const time_left = convertMS.toHMS(cooldown_amount);
 
             return message.reply(`**Slowdown There Mate! Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
         }
