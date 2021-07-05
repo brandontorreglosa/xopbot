@@ -12,14 +12,8 @@ module.exports = {
     description: 'Advanced music bot',
     async execute(client, message, cmd, args, Discord){
 
-
-       
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
-        const permissions = voice_channel.permissionsFor(message.client.user);
-        if (!permissions.has('CONNECT')) return message.channel.send('**You dont have the correct permissions**');
-        if (!permissions.has('SPEAK')) return message.channel.send('**You Dont Have The Correct Permissions**');
-
        
         const server_queue = queue.get(message.guild.id);
 
@@ -104,7 +98,7 @@ const video_player = async (guild, song) => {
         song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
-    await song_queue.text_channel.send(`🎶 Now playing **${song.title}**`)
+    await song_queue.text_channel.send(`🎶 Now Playing **${song.title}** In **${voice_channel}**`)
 }
 
 const skip_song = (message, server_queue) => {
