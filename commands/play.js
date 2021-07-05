@@ -12,6 +12,8 @@ module.exports = {
     description: 'Advanced music bot',
     async execute(client, message, cmd, args, Discord){
 
+        const guildchannelheiis = message.voice.channel;
+
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
        
@@ -98,7 +100,7 @@ const video_player = async (guild, song) => {
         song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
-    await song_queue.text_channel.send(`🎶 Now Playing **${song.title}** In **${voice_channel}**`)
+    await song_queue.text_channel.send(`🎶 Now Playing **${song.title}** In **${guildchannelheiis}**`)
 }
 
 const skip_song = (message, server_queue) => {
