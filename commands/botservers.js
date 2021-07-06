@@ -12,7 +12,12 @@ module.exports = {
         if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
         let data = [];
         client.guilds.cache.forEach(x => {
-            message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
+            const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('RED')
+            .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
+            message.channel.send(embed)
+           // message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
         });
 
         if (data.length > 0) {
