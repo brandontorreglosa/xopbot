@@ -89,11 +89,11 @@ module.exports = {
                     value: '`x!leveling`',
                     inline: true
                 },
-                // {
-                //     name: '__🔞 NSFW__',
-                //     value: '`x!nsfw`',
-                //     inline: true
-                // },
+                {
+                    name: '__🔞 NSFW__',
+                    value: '`x!nsfw`',
+                    inline: true
+                },
                 {
                     name: '__👑 Premium__',
                     value: '`x!premium`',
