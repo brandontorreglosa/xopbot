@@ -2,7 +2,7 @@ const os = require('os')
 
 module.exports = {
     name: "help",
-    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'config', 'images', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
+    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'config', 'images', 'owner', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
      async execute(client, message, cmd, args, Discord) {
@@ -36,7 +36,7 @@ module.exports = {
                 },
                 {
                     name: '__👷‍♂️ Owner__',
-                    value: '`closed`',
+                    value: '`x!owner`',
                     inline: true
                 },
                 {
@@ -358,7 +358,7 @@ message.react('📃');
 
 message.react('🎯');
 
-        const embed15 = new Discord.MessageEmbed()
+        const embed115 = new Discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
         //.setTitle('__🎮 Games__')
@@ -368,7 +368,7 @@ message.react('🎯');
         )
         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-    await message.channel.send(embed15)
+    await message.channel.send(embed115)
     }
 
     else if(cmd === 'config') {
@@ -403,6 +403,21 @@ message.react('🎯');
                         .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
                 
                     await message.channel.send(embed15)
+                    }
+
+                    else if(cmd === 'owner') {
+                        if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
+
+                        message.react('👷‍♂️');
+
+                        const embed116 = new Discord.MessageEmbed()
+                        .setThumbnail(client.user.displayAvatarURL())
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .addFields(
+                            {name: '__👷‍♂️ Owner (2)__', value: '`botservers`-__***Get The Bots Server Names!***__ `\nshutdown`-__***Shutdown The Bot!***__'}
+                        )
+                        await message.channel.send(embed116)
                     }
 
     if(cmd === 'βοηθεια') {

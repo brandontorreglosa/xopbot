@@ -6,6 +6,7 @@ require('dotenv').config();
 module.exports = {
     name: "botservers",
     permissions: ["ADMINISTRATOR"],
+    aliases: ['bserver', 'bs'],
     description: "Check what Servers the bot is in!",
     async execute(client, message, cmd, args, Discord)  {
     try {
