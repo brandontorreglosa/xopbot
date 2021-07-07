@@ -1,4 +1,5 @@
 const os = require('os')
+const OWNER_ID = process.env.Owner_ID;
 
 module.exports = {
     name: "help",
