@@ -406,9 +406,10 @@ message.react('🎯');
                     }
 
                     else if(cmd === 'owner') {
-                        if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
 
                         message.react('👷‍♂️');
+
+                        if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
 
                         const embed116 = new Discord.MessageEmbed()
                         .setThumbnail(client.user.displayAvatarURL())
@@ -417,6 +418,9 @@ message.react('🎯');
                         .addFields(
                             {name: '__👷‍♂️ Owner (2)__', value: '`botservers`-__***Get The Bots Server Names!***__ `\nshutdown`-__***Shutdown The Bot!***__'}
                         )
+                        .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+
+                        
                         await message.channel.send(embed116)
                     }
 
