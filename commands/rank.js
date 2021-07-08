@@ -8,6 +8,10 @@ module.exports = {
     description: 'get rank',
     async execute(client, message, cmd, args, Discord) {
 
+        const rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 100);
+
+        const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true);
+
         const target = message.mentions.users.first() || message.author;
 
         const user = await Levels.fetch(target.id, message.guild.id);
@@ -18,6 +22,7 @@ module.exports = {
 
         const rank = new canvacord.Rank()
     .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png'}))
+    .setRank(leaderboard)
     .setLevel(user.level)
     .setCurrentXP(user.xp)
     .setRequiredXP(neededXp)
