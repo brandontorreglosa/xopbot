@@ -1,20 +1,30 @@
 const errorChannel = process.env.errorChannel;
 
+const Discord = module.require("discord.js");
 
 module.exports = {
-    name: 'dm',
-    permissions: ["MANAGE_MESSAGES"],
-    cooldown: 15,
+    name: "dm",
+    description: "Send DM message to a user",
     async execute(client, message, cmd, args, Discord) {
-        try {
-        var mentions = message.mentions.users.first();
-                var dmMessage = args.slice(0).join(' ');
-                if(!dmMessage) return message.channel.send(`${message.author.username} Couldnt Send Without A Message!`)
-                mentions.send(`**${dmMessage}**`) 
-            }  catch (err) {
+    const userid = args[0];
+    if (!userid) {
+    return message.channel.send("Enter an ID")
+    }
+    const msg = args.slice(1).join(" ");
+    if (!msg) {
+    return message.channel.send("Enter the message")
+    }
+    const user = client.users.cache.get(`${userid}`);
+    const embed = new Discord.MessageEmbed()
+    .setTimestamp()
+    .setTitle("Support Reply!")
+    .setDescription(`${msg}`)
+    .setColor("RANDOM");
 
-                const errorlogs = client.channels.cache.get(errorChannel)
-                errorlogs.send(`Error On Bot Server Command!\n\nError:\n\n ${err}`)
-            }
-        }
-        }
+    user.send(embed);
+    }, catch (error) {
+        const errorlogs = client.channels.cache.get(errorChannel);
+    message.channel.send("Looks like an error has occured");
+    errorlogs.send("Error on DM command\n Error:\n"+error)
+    }
+}
