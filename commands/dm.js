@@ -1,3 +1,6 @@
+const errorChannel = process.env.errorChannel;
+
+
 module.exports = {
     name: 'dm',
     permissions: ["MANAGE_MESSAGES"],
