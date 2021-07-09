@@ -6,7 +6,7 @@ const Levels = require('discord-xp');
 const fs = require('fs');
 const ms = require('ms');
 require('dotenv').config();
-const cooldowns = new Map();
+const cooldown = require('../../models/cooldown');
 // const convertMS = require('convert-ms');
 
 module.exports = async (Discord, client, message) => {
@@ -326,34 +326,73 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
         if(command.premium && !(await premiumSchema.findOne({ User: message.author.id})))
         return message.reply("***You Need To Buy Premium To Use This Command! 💰 \nBuy Premium From Here (https://www.patreon.com/user?u=52511474&fan_landing=true)***")
 
-    if(!cooldowns.has(command.name)){
-        cooldowns.set(command.name, new Discord.Collection());
-    }
 
-    // const cooldown = used.get(message.author.id);
-    // if (cooldown) {
-    //   const remaining = Duration(cooldown - Date.now(), { units: ['h', 'm', 's'], round: true});
-    //    return message.reply(`**Slowdown There Mate! Wait ${remaining} More Seconds Before Using ${command.name}**`).catch((err) => message.reply(`${err}`));
+async function commandExecute(){
+    if(command) command.execute(client, message, cmd, args, Discord)
+}
+if(command.cooldown) {
+    const current_time = Date.now();
+    const cooldown_amount = (command.cooldown) * 1000
+
+    cooldown.findOne({ userId: message.author.id, cmd: command.name }, async(err, data) => {
+        if(data) {
+            const expiration_time = data.time + cooldown_amount;
+        
+            if(current_time < expiration_time) {
+                const time_left = (expiration_time -  current_time) / 1000
+    
+                if(time_left.toFixed(1) >= 3600){
+                    let hour = (time_left.toFixed(1) / 3600);
+                    return message.reply(`Please wait ${parseInt(hour)} more hours before using \`${command.name}\`!`)
+                }
+                if(time_left.toFixed(1) >= 60) {
+                    let minute = (time_left.toFixed(1) / 60);
+                    return message.reply(`Please wait ${parseInt(minute)} more minutes before using \`${command.name}\`!`)
+                }
+                let seconds = (time_left.toFixed(1));
+                return message.reply(`Please wait ${parseInt(seconds)} more seconds before using \`${command.name}\`!`)
+            } else {
+                await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
+                commandExecute();
+            }
+        } else {
+            commandExecute();
+            new cooldown({
+                userId: message.author.id,
+                cmd: command.name,
+                time: current_time,
+                cooldown: command.cooldown,
+            }).save();
+        }
+    })
+} else {
+    commandExecute();
+};
+
+//<!---Old Cooldown--->
+    // if(!cooldowns.has(command.name)){
+    //     cooldowns.set(command.name, new Discord.Collection());
+    // }
+    // const current_time = Date.now();
+    // const time_stamps = cooldowns.get(command.name);
+    // const cooldown_amount = (command.cooldown) * 1000;
+
+    // if(time_stamps.has(message.author.id)){
+    //     const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
+
+    //     if(current_time < expiration_time){
+    //       const time_left = (expiration_time - current_time) / 1000;
+
+    //         return message.reply(`**Slowdown There Mate! Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
+    //     }
     // }
 
-    const current_time = Date.now();
-    const time_stamps = cooldowns.get(command.name);
-    const cooldown_amount = (command.cooldown) * 1000;
+    // time_stamps.set(message.author.id, current_time);
+    // setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
-    if(time_stamps.has(message.author.id)){
-        const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
+   // <!----The End---->
 
-        if(current_time < expiration_time){
-          const time_left = (expiration_time - current_time) / 1000;
-            //const time_left = convertMS.toHMS(cooldown_amount);
-
-            return message.reply(`**Slowdown There Mate! Wait ${time_left.toFixed(1)} More Seconds Before Using ${command.name}**`);
-        }
-    }
-
-    time_stamps.set(message.author.id, current_time);
-    setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
-
+   
     const antilinkData = require('../../models/antilink')
  client.on("message", async(message)=>{
   const antilink = await antilinkData.findOne({
