@@ -4,6 +4,7 @@ const Discord = module.require("discord.js");
 
 module.exports = {
     name: "dm",
+    permissions: ["MANAGE_MESSAGES"],
     description: "Send DM message to a user",
     async execute(client, message, cmd, args, Discord) {
     const userid = args[0];
