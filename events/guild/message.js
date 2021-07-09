@@ -328,7 +328,7 @@ message.channel.send(`**${message.author.tag} Used The Command ${command.name} I
 
 
 async function commandExecute(){
-    if(command) command.execute(client, message, cmd, args, Discord)
+    if(command) command.execute(client, message, cmd, args, Discord, profileData)
 }
 if(command.cooldown) {
     const current_time = Date.now();
@@ -343,14 +343,14 @@ if(command.cooldown) {
     
                 if(time_left.toFixed(1) >= 3600){
                     let hour = (time_left.toFixed(1) / 3600);
-                    return message.reply(`Please wait ${parseInt(hour)} more hours before using \`${command.name}\`!`)
+                    return message.reply(`**Please Wait ${parseInt(hour)} More Hours Before Using \`${command.name}\` Again!**`)
                 }
                 if(time_left.toFixed(1) >= 60) {
                     let minute = (time_left.toFixed(1) / 60);
-                    return message.reply(`Please wait ${parseInt(minute)} more minutes before using \`${command.name}\`!`)
+                    return message.reply(`**Please Wait ${parseInt(minute)} More Minutes Before Using \`${command.name}\` Again!**`)
                 }
                 let seconds = (time_left.toFixed(1));
-                return message.reply(`Please wait ${parseInt(seconds)} more seconds before using \`${command.name}\`!`)
+                return message.reply(`**Please Wait ${parseInt(seconds)} More Seconds Before Using \`${command.name}\` Again!**`)
             } else {
                 await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
                 commandExecute();
@@ -526,5 +526,5 @@ client.on(`guildMemberRemove`, async (member) => {
   }
 })
 
-command.execute(client, message, cmd, args, Discord, profileData);
+//command.execute(client, message, cmd, args, Discord, profileData);
 }
