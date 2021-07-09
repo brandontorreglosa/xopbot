@@ -7,15 +7,12 @@ module.exports = {
     permissions: ["MANAGE_MESSAGES"],
     description: "Send DM message to a user",
     async execute(client, message, cmd, args, Discord) {
-    const userid = args[0];
-    if (!userid) {
-    return message.channel.send("Enter an ID")
-    }
+     const user = message.mentions.members.first()
+     if(!user) return message.channel.send('Please Specify User!')
     const msg = args.slice(1).join(" ");
     if (!msg) {
     return message.channel.send("Enter the message")
     }
-    const user = client.users.cache.get(`${userid}`);
     const embed = new Discord.MessageEmbed()
     .setTimestamp()
     .setTitle("Support Reply!")
