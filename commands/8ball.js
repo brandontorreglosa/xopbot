@@ -17,7 +17,7 @@ module.exports = {
       const embed = new MessageEmbed() // create embed 
         .setTimestamp()
         .setAuthor('**🎱 The 8 Ball says...**')
-        .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
+        .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
         .setColor('#c30202').addField('Question:', question)
         .addField('Answer:', replies[result]);
       await message.channel.send(embed); // send embed message

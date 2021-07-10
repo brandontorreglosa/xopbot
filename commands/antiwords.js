@@ -5,11 +5,11 @@ module.exports = {
   name: "antiwords",
   permissions: ["ADMINISTRATOR"],
   description: "Setup antilink per server!",
-  async execute(client, message, cmd, args, Discord)  {
+  async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-        return message.channel.send(`Usage: \`(prefix)antiwords <on|off>\``)
+      return message.channel.send(`Usage: \`(prefix)antiwords <on|off>\``)
     }
-    if (args[0]==="On" || args[0]=== "on"){
+    if (args[0] === "On" || args[0] === "on") {
       const data = await antiwordsSchema.findOne({
         GuildID: message.guild.id
       });

@@ -19,12 +19,12 @@ module.exports = {
       }
     );
     const embed = new Discord.MessageEmbed()
-    .setTimestamp()
-    .setTitle(`${message.author.username}`)
-    .setDescription(`You Begged And Got From XOPBOT **${randomNumber} Xocoins** 💸`)
-    .setColor("RED")
- 
-   message.channel.send(embed);
+      .setTimestamp()
+      .setTitle(`${message.author.username}`)
+      .setDescription(`You Begged And Got From XOPBOT **${randomNumber} Xocoins** 💸`)
+      .setColor("RED")
+
+    message.channel.send(embed);
     //return message.channel.send(`**${message.author.username}, You Begged And Received ${randomNumber}** **Xocoins** 💸`);
   },
 };

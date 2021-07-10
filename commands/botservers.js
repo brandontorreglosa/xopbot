@@ -8,31 +8,31 @@ module.exports = {
     permissions: ["ADMINISTRATOR"],
     aliases: ['bserver', 'bs'],
     description: "Check what Servers the bot is in!",
-    async execute(client, message, cmd, args, Discord)  {
-    try {
-        if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
-        let data = [];
-        client.guilds.cache.forEach(x => {
-            const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setColor('RED')
-            .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
-            message.channel.send(embed)
-           // message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
-        });
+    async execute(client, message, cmd, args, Discord) {
+        try {
+            if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
+            let data = [];
+            client.guilds.cache.forEach(x => {
+                const embed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('RED')
+                    .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
+                message.channel.send(embed)
+                // message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
+            });
 
-        if (data.length > 0) {
-            data.sort();
-            data = `🔹 ` + data.join('\n🔹');
+            if (data.length > 0) {
+                data.sort();
+                data = `🔹 ` + data.join('\n🔹');
+            }
+            else {
+                data = "[No Server Found Try Again]";
+            }
+        } catch (err) {
+
+            const errorlogs = client.channels.cache.get(errorChannel)
+            errorlogs.send(`Error On Bot Server Command!\n\nError:\n\n **${err}**`)
+
         }
-        else {
-            data = "[No Server Found Try Again]";
-        }
-    } catch (err) {
-
-        const errorlogs = client.channels.cache.get(errorChannel)
-        errorlogs.send(`Error On Bot Server Command!\n\nError:\n\n **${err}**`)
-
     }
-}
 };

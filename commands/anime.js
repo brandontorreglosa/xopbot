@@ -10,20 +10,20 @@ module.exports = {
   usage: "`a!anime <anime_name>`",
   async execute(client, message, cmd, args, Discord) {
 
-    if(!args.length) {
+    if (!args.length) {
 
       return message.channel.send("**Please Give Anime Name For XOPBOT To Find!**")
 
     }
-  await message.channel.send("Loading Anime....")
+    await message.channel.send("Loading Anime....")
 
     try {
 
-    let body = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`)
+      let body = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`)
 
-    body = await body.json()
+      body = await body.json()
 
-        const embed = new Discord.MessageEmbed()
+      const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(body.data[0].attributes.slug)
         .setColor("RED")
@@ -33,16 +33,16 @@ module.exports = {
         .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
         .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        //.setImage(body.data[0].attributes.coverImage.large)
+      //.setImage(body.data[0].attributes.coverImage.large)
 
-        //try it
-        message.channel.send(embed)
-      } catch (err) {
+      //try it
+      message.channel.send(embed)
+    } catch (err) {
 
 
-         return message.channel.send("**XOPBOT Was Unable To Find This Anime!**");
+      return message.channel.send("**XOPBOT Was Unable To Find This Anime!**");
 
-       }               
+    }
 
   }
 

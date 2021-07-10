@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['bi'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
-     async execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
 
         let status;
         switch (client.presence.status) {
@@ -27,7 +27,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             //.setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
-            .setTitle(`Bot Information`,client.user.displayAvatarURL({ dynamic: true }))
+            .setTitle(`Bot Information`, client.user.displayAvatarURL({ dynamic: true }))
             .setColor('#000000')
             .addFields(
                 {

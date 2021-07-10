@@ -9,9 +9,8 @@ module.exports = {
         const flags = user.flags.toArray();
 
         console.log(flags);
-        
+
         message.channel.send(`${user}'s badges: ${flags.join(', ')}`)
     }
 }
 
-    

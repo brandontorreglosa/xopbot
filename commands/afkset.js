@@ -3,19 +3,19 @@ const quick = require('quick.db');
 module.exports = {
   name: 'afkset',
   cooldown: 5,
-  permissions: ["SEND_MESSAGES"],    
+  permissions: ["SEND_MESSAGES"],
   aliases: ['afk'],
   description: 'Set your afk status',
   execute(client, message, cmd, args, Discord) {
-  //  if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('**Status Change Failed**');
+    //  if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('**Status Change Failed**');
     quick.set(`${message.author.id}_${message.guild.id}_afk`, {
-      username: message.member.displayName.replace('[AFK]', ''), 
+      username: message.member.displayName.replace('[AFK]', ''),
       active: true,
-      date: Date.now(), 
+      date: Date.now(),
     });
 
     message.member
-      .setNickname(`[AFK] ${message.member.displayName.replace('[AFK]', '')}`) 
+      .setNickname(`[AFK] ${message.member.displayName.replace('[AFK]', '')}`)
       .then(() => {
         return message.reply(`**Status Succesfully Has Been Set To AFK.**`);
       })
