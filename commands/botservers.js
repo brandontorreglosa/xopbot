@@ -31,7 +31,7 @@ module.exports = {
     } catch (err) {
 
         const errorlogs = client.channels.cache.get(errorChannel)
-        errorlogs.send(`Error On Bot Server Command!\n\nError:\n\n ${err}`)
+        errorlogs.send(`Error On Bot Server Command!\n\nError:\n\n **${err}**`)
 
     }
 }

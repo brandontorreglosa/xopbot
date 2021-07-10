@@ -1,4 +1,4 @@
-
+const errorChannel = process.env.errorChannel;
 const moment = require("moment");
 
 module.exports = {
@@ -7,6 +7,9 @@ module.exports = {
     cooldown: 20,
     permissions: ["SEND_MESSAGES"],
  execute(client, message, cmd, args, Discord) {
+
+  try {
+  const mention = message.mentions.users.first() || message.author;
  const afk = message.guild.afkChannel === null ? "\`None\`" : message.guild.afkChannel;
   let servericon = message.guild.iconURL;
   let verifLevels = {
@@ -47,7 +50,12 @@ const serverembed = new Discord.MessageEmbed()
 .setTimestamp();
 
 message.channel.send(serverembed);
-},
+
+  } catch (err) {
+    const errorlogs = client.channels.cache.get(errorChannel)
+    errorlogs.send(`Error On Server Info Command!\n\nError:\n\n **${err}**`)
+  }
+}
 };
 //     const { guild } = message
 
