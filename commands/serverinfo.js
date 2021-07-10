@@ -1,4 +1,6 @@
 
+const moment = require("moment");
+
 module.exports = {
     name: 'serverinfo',
     aliases: ['si'],
