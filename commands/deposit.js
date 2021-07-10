@@ -23,13 +23,13 @@ module.exports = {
         }
       );
       const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle(`${message.author.username}`)
-      .setDescription(`You Deposited **${amount} Xocoins** Into Your **Bank** 💸`)
-      .setColor("RED")
-   
-     message.channel.send(embed);
-     // return message.channel.send(`**You Deposited ${amount} Xocoins Into Your Bank** 💸`);
+        .setTimestamp()
+        .setTitle(`${message.author.username}`)
+        .setDescription(`You Deposited **${amount} Xocoins** Into Your **Bank** 💸`)
+        .setColor("RED")
+
+      message.channel.send(embed);
+      // return message.channel.send(`**You Deposited ${amount} Xocoins Into Your Bank** 💸`);
     } catch (err) {
       console.log(err);
     }

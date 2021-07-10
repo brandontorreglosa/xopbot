@@ -4,10 +4,10 @@ const db = require("quickmongo");
 module.exports = {
 	name: 'warn',
 	cooldown: 10,
-    permissions: ["ADMINISTRATOR"],
+	permissions: ["ADMINISTRATOR"],
 	category: 'moderation',
 	description: 'Warn anyone who do not obey the rules',
-	async execute(client, message, cmd, args, Discord)  {
+	async execute(client, message, cmd, args, Discord) {
 		const user = message.mentions.members.first();
 
 		if (!user) {
@@ -46,8 +46,7 @@ module.exports = {
 				`You have been warned in **${message.guild.name}** for ${reason}`
 			);
 			await message.channel.send(
-				`You warned **${
-					message.mentions.users.first().username
+				`You warned **${message.mentions.users.first().username
 				}** for ${reason}`
 			);
 		} else if (warnings !== null) {
@@ -58,8 +57,7 @@ module.exports = {
 			);
 
 			await message.channel.send(
-				`You warned **${
-					message.mentions.users.first().username
+				`You warned **${message.mentions.users.first().username
 				}** for ${reason}`
 			);
 

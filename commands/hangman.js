@@ -7,9 +7,9 @@ module.exports = {
     //premium: true,
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
-        if(!channel) return message.channel.send('Please specify a channel')
+        if (!channel) return message.channel.send('Please specify a channel')
         const word = args.slice(1).join(" ")
-        if(!word) return  message.channel.send('Please specify a word to guess.')
+        if (!word) return message.channel.send('Please specify a word to guess.')
 
         const hang = new hangman({
             message: message,

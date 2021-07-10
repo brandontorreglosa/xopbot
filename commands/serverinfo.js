@@ -2,44 +2,44 @@ const errorChannel = process.env.errorChannel;
 const moment = require("moment");
 
 module.exports = {
-    name: 'serverinfo',
-    aliases: ['si'],
-    cooldown: 20,
-    permissions: ["SEND_MESSAGES"],
- execute(client, message, cmd, args, Discord) {
+  name: 'serverinfo',
+  aliases: ['si'],
+  cooldown: 20,
+  permissions: ["SEND_MESSAGES"],
+  execute(client, message, cmd, args, Discord) {
 
-  try {
-  const mention = message.mentions.users.first() || message.author;
- const afk = message.guild.afkChannel === null ? "\`None\`" : message.guild.afkChannel;
-  let servericon = message.guild.iconURL;
-  let verifLevels = {
-      "NONE": "None",
-      "LOW": "Low",
-      "MEDIUM": "Medium",
-      "HIGH": "(╯°□°）╯︵  ┻━┻ (High)",
-      "VERY_HIGH": "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻ (Very High)"
-  };
-  const { guild } = message
-  const { region } = guild
-const serverembed = new Discord.MessageEmbed()
-.setAuthor(`${message.guild.name}`, message.guild.iconURL())
-.setThumbnail(servericon)
-.addField(`General Info`, `Owner: ${message.guild.owner} \nRegion: \`${region}\` \nVerification Lvl: \`${verifLevels[message.guild.verificationLevel]}\``)
-.addField(`Overview`, `Total Channels: \`${message.guild.channels.cache.size}\` \nText Channels: \`${message.guild.channels.cache.filter((c) => c.type === "text").size}\` \nVoice Channels: \`${message.guild.channels.cache.filter((c) => c.type === "voice").size}\` \nAFK Channel: ${afk} \nAFK Timeout: \`${message.guild.afkTimeout} Sec\` \nTotal Roles: \`${message.guild.roles.cache.size}\` \nTotal Emojis: \`${message.guild.emojis.cache.size}\``)
-.addField(`Member Info`, `Total Members: \`${message.guild.memberCount}\` \nHumans: \`${message.guild.members.cache.filter(member => !member.user.bot).size}\` \nBots: \`${message.guild.members.cache.filter(member => member.user.bot).size}\``)
-.addField(`Misc. Info`, `You Joined on: \n\`${moment(mention.joinedAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` \nCreated On: \n\`${moment(message.guild.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\``)
-.setThumbnail(message.guild.iconURL())
-.setFooter(`ID: ${message.guild.id}`, message.guild.iconURL())
-.setColor("#c30202")
-.setTimestamp();
+    try {
+      const mention = message.mentions.users.first() || message.author;
+      const afk = message.guild.afkChannel === null ? "\`None\`" : message.guild.afkChannel;
+      let servericon = message.guild.iconURL;
+      let verifLevels = {
+        "NONE": "None",
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "(╯°□°）╯︵  ┻━┻ (High)",
+        "VERY_HIGH": "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻ (Very High)"
+      };
+      const { guild } = message
+      const { region } = guild
+      const serverembed = new Discord.MessageEmbed()
+        .setAuthor(`${message.guild.name}`, message.guild.iconURL())
+        .setThumbnail(servericon)
+        .addField(`General Info`, `Owner: ${message.guild.owner} \nRegion: \`${region}\` \nVerification Lvl: \`${verifLevels[message.guild.verificationLevel]}\``)
+        .addField(`Overview`, `Total Channels: \`${message.guild.channels.cache.size}\` \nText Channels: \`${message.guild.channels.cache.filter((c) => c.type === "text").size}\` \nVoice Channels: \`${message.guild.channels.cache.filter((c) => c.type === "voice").size}\` \nAFK Channel: ${afk} \nAFK Timeout: \`${message.guild.afkTimeout} Sec\` \nTotal Roles: \`${message.guild.roles.cache.size}\` \nTotal Emojis: \`${message.guild.emojis.cache.size}\``)
+        .addField(`Member Info`, `Total Members: \`${message.guild.memberCount}\` \nHumans: \`${message.guild.members.cache.filter(member => !member.user.bot).size}\` \nBots: \`${message.guild.members.cache.filter(member => member.user.bot).size}\``)
+        .addField(`Misc. Info`, `You Joined on: \n\`${moment(mention.joinedAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` \nCreated On: \n\`${moment(message.guild.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\``)
+        .setThumbnail(message.guild.iconURL())
+        .setFooter(`ID: ${message.guild.id}`, message.guild.iconURL())
+        .setColor("#c30202")
+        .setTimestamp();
 
-message.channel.send(serverembed);
+      message.channel.send(serverembed);
 
-  } catch (err) {
-    const errorlogs = client.channels.cache.get(errorChannel)
-    errorlogs.send(`Error On Server Info Command!\n\nError:\n\n **${err}**`)
+    } catch (err) {
+      const errorlogs = client.channels.cache.get(errorChannel)
+      errorlogs.send(`Error On Server Info Command!\n\nError:\n\n **${err}**`)
+    }
   }
-}
 };
 //     const { guild } = message
 

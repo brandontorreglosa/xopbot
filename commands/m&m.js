@@ -8,10 +8,10 @@ module.exports = {
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 
-    const mention = message.mentions.members.first() || message.member;
-    const avatar = mention.user.displayAvatarURL({size: 2048, format: "png"});
+        const mention = message.mentions.members.first() || message.member;
+        const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
 
-        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/mnm?image=${avatar}`, name: "xopbotm&m.png"}]});
+        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/mnm?image=${avatar}`, name: "xopbotm&m.png" }] });
     }
-    }
+}

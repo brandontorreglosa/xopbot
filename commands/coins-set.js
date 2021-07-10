@@ -24,12 +24,12 @@ module.exports = {
         //   {
         //     coins: -amount,
         //   },
-          {
+        {
           userID: target.id,
-          },
-          {
-            coins: amount,
-          },
+        },
+        {
+          coins: amount,
+        },
       );
 
       return message.channel.send(`**This User's Xocoins Have Been Set To ${amount} Xocoins!** 💸`);

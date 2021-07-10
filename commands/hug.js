@@ -29,16 +29,16 @@ module.exports = {
         const randomNumber = Math.floor(Math.random() * 100) + 1;
 
         const newEmbed = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setImage(`${randomLinks}`)
-        .setColor('#c30202')
-        .setTitle(`${user.username} Was Hugged!`)
-        .setDescription(`**${user.username}** Was Hugged By **${message.author.username}** And Now **${user.username}** Is **${randomNumber}%** Happy!`)
+            .setTimestamp()
+            .setImage(`${randomLinks}`)
+            .setColor('#c30202')
+            .setTitle(`${user.username} Was Hugged!`)
+            .setDescription(`**${user.username}** Was Hugged By **${message.author.username}** And Now **${user.username}** Is **${randomNumber}%** Happy!`)
 
         //const hug_list = message.mentions.users.map(user => {
 
-            //return `**${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy! **`;
-       // });
+        //return `**${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy! **`;
+        // });
 
         message.channel.send(newEmbed);
     }

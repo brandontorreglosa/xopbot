@@ -84,8 +84,7 @@ module.exports = {
     });
 
     message.channel.send(
-      `<@${
-        message.author.id
+      `<@${message.author.id
       }>\n**Which location would you like to search?** 🔍\nType the location in this channel.\n\`${chosenLocations.join("` `")}\``
     );
   },

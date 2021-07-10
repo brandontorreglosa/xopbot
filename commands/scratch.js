@@ -5,5 +5,5 @@ module.exports = {
     execute(client, message, cmd, args, Discord) {
         message.channel.send('https://scratch.mit.edu/users/COOLBLUEINKLINGTM/');
 
-     }
+    }
 }

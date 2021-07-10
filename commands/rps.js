@@ -4,9 +4,9 @@ module.exports = {
     aliases: [],
     cooldown: 3,
     description: "play rock paper sciccors",
-     async execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         let embed = new Discord.MessageEmbed()
-        .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
+            .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTitle("Lets Play Rock Paper Scissors")
             .setDescription("Play Rock Paper Scissors Must React!")
             .setTimestamp()
@@ -25,10 +25,9 @@ module.exports = {
                 const reaction = collected.first()
                 if ((reaction.emoji.name === '🗻' && me === "✂") ||
                     (reaction.emoji.name === "✂" && me === "📄") ||
-                    (reaction.emoji.name === "📄" && me === "🗻"))
-                {
+                    (reaction.emoji.name === "📄" && me === "🗻")) {
                     message.reply("**You Won!**")
-                } else{
+                } else {
                     message.reply("**You Lost!**")
                 }
 
@@ -36,9 +35,9 @@ module.exports = {
             }
         )
 
-        .catch(collected => {
-            message.reply("**Game Ended Due To No Response!**")
-        })
+            .catch(collected => {
+                message.reply("**Game Ended Due To No Response!**")
+            })
     }
 
 

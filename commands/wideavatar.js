@@ -7,9 +7,9 @@ module.exports = {
     cooldown: 3,
     description: "Get a  widened avatar of a user",
     async execute(client, message, cmd, args, Discord) {
-    const mention = message.mentions.members.first() || message.member;
-    const avatar = mention.user.displayAvatarURL({dynamic: true, size: 2048, format: "png"});
+        const mention = message.mentions.members.first() || message.member;
+        const avatar = mention.user.displayAvatarURL({ dynamic: true, size: 2048, format: "png" });
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/wide?image=${avatar}`, name: "xopbotwideavatar.png"}]});
+        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/wide?image=${avatar}`, name: "xopbotwideavatar.png" }] });
     }
 }

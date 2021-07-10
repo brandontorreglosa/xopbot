@@ -5,57 +5,57 @@ module.exports = {
   permissions: ["SEND_MESSAGES"],
   cooldown: 3,
   description: "Another Fun Command",
-   async execute(client, message, cmd, args, Discord) {
+  async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-    return message.channel.send("Woah.... Slow Down!! Who Are We Hacking Here Mate..??")
+      return message.channel.send("Woah.... Slow Down!! Who Are We Hacking Here Mate..??")
     }
     const tohack = message.mentions.members.first()
     let msg = await message.channel.send(`**Hacking ${tohack.displayName}....**`);
 
     let time = '1s'
-    setTimeout(function(){
-    msg.edit(`**Finding ${tohack.displayName}'s Email And Password.....**`);
-  }, ms(time));
+    setTimeout(function () {
+      msg.edit(`**Finding ${tohack.displayName}'s Email And Password.....**`);
+    }, ms(time));
 
     let time1 = '6s'
-    setTimeout(function(){
-    msg.edit(`**E-Mail: ${tohack.displayName}@gmail.com \nPassword: ******** **`);
-  }, ms(time1));
+    setTimeout(function () {
+      msg.edit(`**E-Mail: ${tohack.displayName}@gmail.com \nPassword: ******** **`);
+    }, ms(time1));
 
     let time2 = '9s'
-    setTimeout(function(){
-    msg.edit("**Finding Other Accounts.....**");
-  }, ms(time2));
+    setTimeout(function () {
+      msg.edit("**Finding Other Accounts.....**");
+    }, ms(time2));
 
     let time3 = '15s'
-    setTimeout(function(){
-    msg.edit("**Setting Up Epic Games Account.....**");
-  }, ms(time3));
+    setTimeout(function () {
+      msg.edit("**Setting Up Epic Games Account.....**");
+    }, ms(time3));
 
     let time4 = '21s'
-    setTimeout(function(){
-    msg.edit("**Hacking Epic Games Account......**");
-  }, ms(time4));
+    setTimeout(function () {
+      msg.edit("**Hacking Epic Games Account......**");
+    }, ms(time4));
 
     let time5 = '28s'
-    setTimeout(function(){
-    msg.edit("**Hacked Epic Games Account!!**");
-  }, ms(time5));
+    setTimeout(function () {
+      msg.edit("**Hacked Epic Games Account!!**");
+    }, ms(time5));
 
     let time6 = '31s'
-    setTimeout(function(){
-    msg.edit("**Collecting Info.....**");
-  }, ms(time6));
+    setTimeout(function () {
+      msg.edit("**Collecting Info.....**");
+    }, ms(time6));
 
     let time7 = '38s'
-    setTimeout(function(){
-    msg.edit("**Selling Data to FBI....**");
-  }, ms(time7));
+    setTimeout(function () {
+      msg.edit("**Selling Data to FBI....**");
+    }, ms(time7));
 
     let time8 = '41s'
-    setTimeout(function(){ 
-    msg.edit(`**Finished Hacking ${tohack.displayName}**`);
-  }, ms(time8));
+    setTimeout(function () {
+      msg.edit(`**Finished Hacking ${tohack.displayName}**`);
+    }, ms(time8));
 
   }
 }

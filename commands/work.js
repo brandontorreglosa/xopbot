@@ -7,16 +7,17 @@ module.exports = {
   cooldown: 10800,
   execute(client, message, cmd, args, Discord, profileData) {
     const JOBS = [
-     "Plumber",
-     "Programer",
-     "Murderer",
-     "Police Man",
-     "Football Player",
-     "Basketball Player",
-     "Discord Developer",
-     "Discord Moderator",
-     "Discord Member",
-     "Discord Bot",
+      "Plumber",
+      "Coder",
+      "Programer",
+      "Murderer",
+      "Police Man",
+      "Football Player",
+      "Basketball Player",
+      "Discord Developer",
+      "Discord Moderator",
+      "Discord Member",
+      "Discord Bot",
     ];
 
     let chosenJobs = JOBS.sort(() => Math.random() - Math.random()).slice(0, 3);
@@ -63,8 +64,7 @@ module.exports = {
     });
 
     message.channel.send(
-      `<@${
-        message.author.id
+      `<@${message.author.id
       }>\n**What Job Would You Do?** 💰\nType The Job In This Channel.\n\`${chosenJobs.join("` `")}\``
     );
   },

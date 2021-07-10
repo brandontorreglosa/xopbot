@@ -12,7 +12,7 @@ module.exports = {
         let url, response, corona;
 
         try {
-            url = args[0] ? `${baseUrl}/countries/${args[0]}`:`${baseUrl}/all`
+            url = args[0] ? `${baseUrl}/countries/${args[0]}` : `${baseUrl}/all`
             response = await axios.get(url)
             corona = response.data
         } catch (error) {
@@ -20,7 +20,7 @@ module.exports = {
         }
 
         const embed = new MessageEmbed()
-        .setTimestamp()
+            .setTimestamp()
             .setTitle(args[0] ? `${args[0].toUpperCase()} Stats` : 'Total Corona Cases World Wide')
             .setColor('#fb644c')
             .setThumbnail(args[0] ? corona.countryInfo.flag : 'https://i.giphy.com/YPbrUhP9Ryhgi2psz3.gif')

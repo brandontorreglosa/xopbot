@@ -15,19 +15,19 @@ module.exports = {
         if (message.content.match("gore") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt")) {
             message.delete();
             message.reply(`**You Have Been Reported To The Developer!**`);
-           // message.delete(4000);
+            // message.delete(4000);
             const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle(`Author \n${message.author.username} Used The Say Command!`)
-            .setDescription(`Guild \nIn ${message.guild.name} \nHe Commanded This Word ${sayMessage}`)
+                .setTimestamp()
+                .setTitle(`Author \n${message.author.username} Used The Say Command!`)
+                .setDescription(`Guild \nIn ${message.guild.name} \nHe Commanded This Word ${sayMessage}`)
             channel.send(embed);
         }
-    
+
         if (!args[0]) {
-        message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat! \nAnything Rude Is Sended To The Developer!**")
+            message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat! \nAnything Rude Is Sended To The Developer!**")
         }
- 
-        message.channel.send(`${sayMessage}`, { allowedMentions: { parse:["users"] } });
-    //  message.delete(10000);
-}
+
+        message.channel.send(`${sayMessage}`, { allowedMentions: { parse: ["users"] } });
+        //  message.delete(10000);
+    }
 }

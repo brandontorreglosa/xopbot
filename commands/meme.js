@@ -25,5 +25,5 @@ module.exports = {
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
             message.channel.send(embed);
         })
-}    
+    }
 }

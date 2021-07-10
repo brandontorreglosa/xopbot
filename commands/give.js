@@ -25,14 +25,14 @@ module.exports = {
         //   {
         //     coins: -amount,
         //   },
-          {
+        {
           userID: target.id,
-          },
-          {
-            $inc: {
+        },
+        {
+          $inc: {
             coins: amount,
-            },
-          }
+          },
+        }
       );
 
       return message.channel.send(`**This User Has Been Given ${amount} of Xocoins!** 💸`);

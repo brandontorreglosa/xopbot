@@ -5,7 +5,7 @@ module.exports = {
     description: "Reverses the given text",
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ")
-        if(!text) return message.reply("Please Give Something To Reverse!")
+        if (!text) return message.reply("Please Give Something To Reverse!")
         let Rarray = text.split("")
         let reverseArray = Rarray.reverse()
         let result = reverseArray.join("")
