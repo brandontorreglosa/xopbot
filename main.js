@@ -21,6 +21,7 @@ client.events = new Discord.Collection();
 })
 
 require('events').EventEmitter.prototype._maxListeners = 100;
+emitter.setMaxListeners(1000);
 
 client.db.on("ready", () => {
 

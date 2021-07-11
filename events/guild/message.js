@@ -22,9 +22,7 @@ module.exports = async (Discord, client, message) => {
       .setTitle(`**👤 ${message.author.username}**`)
       .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise!**_`)
       .setFooter('Thank You For Being Active 🙏')
-    message.channel.send(someonelevelup).then(message => {
-      message.delete({ timeout: 15000 })
-    })
+    message.channel.send(someonelevelup)
 
     if (user.level == 1) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 1");
