@@ -20,8 +20,8 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
-require('events').EventEmitter.prototype._maxListeners = 100;
-emitter.setMaxListeners(1000);
+const EventEmitter = require('events')
+EventEmitter.setMaxListeners(100);
 
 client.db.on("ready", () => {
 
