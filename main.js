@@ -20,6 +20,8 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
+require('events').EventEmitter.prototype._maxListeners = 100;
+
 client.db.on("ready",() => {
   
     console.log(`CONNECTED WITH DATABASE `)
