@@ -19,11 +19,11 @@ module.exports = async (Discord, client, message) => {
     const someonelevelup = new Discord.MessageEmbed()
       .setTimestamp()
       .setColor('#c30202')
-      .setTitle(`**👤 ${message.author.usename}**`)
+      .setTitle(`**👤 ${message.author.username}**`)
       .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise!**_`)
       .setFooter('Thank You For Being Active 🙏')
     message.channel.send(someonelevelup).then(message => {
-      message.delete({ timeout: 8000 })
+      message.delete({ timeout: 15000 })
     })
 
     if (user.level == 1) {
