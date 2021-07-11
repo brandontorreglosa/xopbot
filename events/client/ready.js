@@ -3,7 +3,7 @@
 module.exports = (Discord, client) => {
     console.log('XOPBOT Is Online!');
     client.user.setPresence({ status: 'dnd' })
-   // memberCounter(client)
+    // memberCounter(client)
 
     const activities = [
         `${client.guilds.cache.size} Servers`,
@@ -14,6 +14,6 @@ module.exports = (Discord, client) => {
         '24/7 Always'
     ];
 
-   let i = 0;
-   setInterval(() => client.user.setActivity(`x!help | ${activities[i ++ % activities.length]}`, {type: 'LISTENING'}), 10000);
+    let i = 0;
+    setInterval(() => client.user.setActivity(`x!help | ${activities[i++ % activities.length]}`, { type: 'LISTENING' }), 10000);
 }

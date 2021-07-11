@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const Levels = require('discord-xp');
 require('dotenv').config();
-const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]});
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTIONS"] });
 const mongoose = require('mongoose');
 const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
@@ -16,16 +16,16 @@ client.filters = process.env.filters;
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
-['command_handler', 'event_handler'].forEach(handler =>{
+['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, Discord);
 })
 
 require('events').EventEmitter.prototype._maxListeners = 100;
 
-client.db.on("ready",() => {
-  
+client.db.on("ready", () => {
+
     console.log(`CONNECTED WITH DATABASE `)
-  })
+})
 
 client.on("ready", () => {
 
@@ -35,7 +35,7 @@ client.on("ready", () => {
 
 //  client.on('guildMemberAdd', guildMember =>{
 //      let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'English');
- 
+
 //      guildMember.roles.add(welcomeRole);
 //      guildMember.guild.channels.cache.get('766937600161349662').send(`**Welcome <@${guildMember.user.id}> To Our Server! Make Sure To Check Out The #✅rules✅ Channel! \nYou Can Talk On The #💬｜bot-commands Thank You Bye.**`)
 //  });
@@ -44,16 +44,16 @@ client.on("ready", () => {
 
 Levels.setURL(process.env.MONGODB_SRV);
 
-mongoose.connect(process.env.MONGODB_SRV ,{
+mongoose.connect(process.env.MONGODB_SRV, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,   
+    useFindAndModify: false,
 })
-.then(() => {
-    console.log("Connected To Mongo Database!");
-})
-.catch((err) => {
-    console.log(err);
-});
+    .then(() => {
+        console.log("Connected To Mongo Database!");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
-    client.login(process.env.DISCORD_TOKEN);
+client.login(process.env.DISCORD_TOKEN);
