@@ -9,6 +9,7 @@
   "author": "Esteb",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.5.3",
     "axios": "^0.21.1",
     "canvacord": "^5.2.0",
     "disbotlist": "^1.0.4",
