@@ -6,11 +6,7 @@ const roleSchema = new mongoose.Schema({
         unique: true,
         required: true,
     },
-    GuildID: {
-        type: String,
-        unique: true,
-        required: true,
-    },
+    GuildID: String,
 });
 
 const roleModel = mongoose.model("autorole", roleSchema)
