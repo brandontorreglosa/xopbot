@@ -303,7 +303,7 @@ module.exports = async (Discord, client, message) => {
   const antilinkData = require('../../models/antilink')
   client.on("message", async (message) => {
     const antilink = await antilinkData.findOne({
-      GuildID: message.guild.id
+      GuildID: message.guild.id,
     })
     if (antilink) {
       if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
@@ -325,7 +325,7 @@ module.exports = async (Discord, client, message) => {
   const antiwordsData = require('../../models/antiwords')
   client.on("message", async (message) => {
     const antiwords = await antiwordsData.findOne({
-      GuildID: message.guild.id
+      GuildID: message.guild.id,
     })
     if (antiwords) {
       if (message.content.match("bitch") || message.content.match("hoe") || message.content.match("slut") || message.content.match("nigga") || message.content.match("nigg") || message.content.match("dick") || message.content.match("cunt") || message.content.match("shit") || message.content.match("fuck")) {
@@ -349,14 +349,14 @@ module.exports = async (Discord, client, message) => {
   client.on(`guildMemberAdd`, async (member) => {
 
     const data = await welcomeData.findOne({
-      GuildID: member.guild.id
+      GuildID: member.guild.id,
     })
 
     if (data) {
       var channel = data.Welcome
 
       var data2 = await welcomemsg.findOne({
-        GuildID: member.guild.id
+        GuildID: member.guild.id,
       })
       if (data2) {
         var joinmessage = data2.JoinMsg;
@@ -392,12 +392,12 @@ module.exports = async (Discord, client, message) => {
     const avatar = member.user.avatarURL;
 
     const data = await byeData.findOne({
-      GuildID: member.guild.id
+      GuildID: member.guild.id,
     })
     if (data) {
 
       const data2 = await byemsg.findOne({
-        GuildID: member.guild.id
+        GuildID: member.guild.id,
       })
       if (data2) {
         var leavemessage = data2.ByeMsg;
@@ -433,3 +433,25 @@ module.exports = async (Discord, client, message) => {
     }
   })
 }
+
+const roleSchema = require("../../models/autorole");
+
+module.exports = async (member) => {
+  const data = await roleSchema
+    .findOne({
+      GuildID: member.guild.id,
+    })
+    .catch((err) => console.log(err));
+
+  if (data) {
+    let role = data.Role;
+    let arole = member.guild.roles.cache.get(role);
+    if (role) {
+      member.roles.add(arole);
+    } else if (!role) {
+      return;
+    }
+  } else if (!data) {
+    return;
+  }
+};
