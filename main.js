@@ -6,12 +6,11 @@ const mongoose = require('mongoose');
 const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
-const { Player } = require('discord-player');
+// const { Player } = require('discord-player');
 
 const fs = require('fs')
 
 client.db = new Database(process.env.MONGODB_SRV2)
-client.player = new Player(client);
 client.filters = process.env.filters;
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
@@ -20,8 +19,8 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
-const EventEmitter = require('events')
-EventEmitter.setMaxListeners(100);
+// const EventEmitter = require('events')
+// EventEmitter.setMaxListeners(100);
 
 client.db.on("ready", () => {
 
