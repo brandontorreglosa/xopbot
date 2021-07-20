@@ -7,10 +7,11 @@ const fs = require('fs');
 const ms = require('ms');
 require('dotenv').config();
 const cooldown = require('../../models/cooldown');
-// const convertMS = require('convert-ms');
 
 module.exports = async (Discord, client, message) => {
   if (message.author.bot || message.channel.type === 'dm') return;
+
+  // <----/Leveling System/---->
 
   const randomXP = Math.floor(Math.random() * 49) + 1;
   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXP);
@@ -102,8 +103,22 @@ module.exports = async (Discord, client, message) => {
       if (message.member.roles.cache.has(role.id)) return;
       else await message.member.roles.add(role.id);
     }
+
+    if (user.level == 60) {
+      let role = message.guild.roles.cache.find(role => role.name == "God Level");
+      if (!role) await message.guild.roles.create({
+        data: {
+          name: "God Level",
+          color: "#c30202",
+        }
+      }).catch(err => console.log(err));
+      role = message.guild.roles.cache.find(role => role.name == "God Level");
+      if (message.member.roles.cache.has(role.id)) return;
+      else await message.member.roles.add(role.id);
+    }
   }
 
+  // <----/AFk System/---->
   const status = quick.get(`${message.author.id}_${message.guild.id}_afk`);
 
   if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES' || 'ADMINISTRATOR')) {
@@ -126,6 +141,8 @@ module.exports = async (Discord, client, message) => {
         message.reply('Failed To Set Your Status.');
       });
   }
+
+  // <----/XOPCHAT System/---->
 
   if (message.channel.id === "835025266728370176") {
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&`)
@@ -160,9 +177,13 @@ module.exports = async (Discord, client, message) => {
       })
   }
 
+  // <----/Bot Mentioned/---->
+
   if (message.content === "<@831824859066925087>" || message.content === "<@!831824859066925087>") {
     message.channel.send(`***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***`)
   }
+
+  // <----/Prefix System/---->
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json"));
   if (!prefixes[message.guild.id]) {
@@ -194,6 +215,8 @@ module.exports = async (Discord, client, message) => {
   const args = message.content.slice(prefix.length).split(/ +/);
   const cmd = args.shift().toLowerCase();
 
+  // <----/Command System/---->
+
   const command = client.commands.get(cmd) ||
     client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
@@ -204,6 +227,8 @@ module.exports = async (Discord, client, message) => {
   if (message.channel.id === "841362279353155656") {
     message.channel.send(`**${message.author.tag} Used The Command ${command.name} In ${message.guild.name}**`)
   }
+
+  // <----/Permissions System/---->
 
   const validPermissions = [
     "CREATE_INSTANT_INVITE",
@@ -254,9 +279,12 @@ module.exports = async (Discord, client, message) => {
     }
   }
 
+  // <----/Premium System/---->
+
   if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
     return message.reply("***You Need To Buy Premium To Use This Command! 💰 \nBuy Premium From Here (https://www.patreon.com/user?u=52511474&fan_landing=true)***")
 
+  // <----/Cooldown System/---->
 
   async function commandExecute() {
     if (command) command.execute(client, message, cmd, args, Discord, profileData)
@@ -300,6 +328,8 @@ module.exports = async (Discord, client, message) => {
     commandExecute();
   };
 
+  // <----/Antilink System/---->
+
   const antilinkData = require('../../models/antilink')
   client.on("message", async (message) => {
     const antilink = await antilinkData.findOne({
@@ -322,6 +352,8 @@ module.exports = async (Discord, client, message) => {
     }
   });
 
+  // <----/Antiwords System/---->
+
   const antiwordsData = require('../../models/antiwords')
   client.on("message", async (message) => {
     const antiwords = await antiwordsData.findOne({
@@ -343,6 +375,8 @@ module.exports = async (Discord, client, message) => {
       return;
     }
   });
+
+  // <----/Welcome System/---->
 
   const welcomeData = require("../../models/welcome")
   const welcomemsg = require("../../models/joinmsg")
@@ -385,6 +419,8 @@ module.exports = async (Discord, client, message) => {
       return;
     }
   });
+
+  // <----/Goodbye System/---->
 
   const byeData = require("../../models/leavechannel")
   const byemsg = require("../../models/leavemessage")
@@ -434,12 +470,14 @@ module.exports = async (Discord, client, message) => {
   })
 }
 
+// <----/Autorole System/---->
+
 const roleSchema = require("../../models/autorole");
 
 module.exports = async (member) => {
   const data = await roleSchema
     .findOne({
-      GuildID: member.guild.id,
+      GuildID: message.guild.id,
     })
     .catch((err) => console.log(err));
 

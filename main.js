@@ -6,17 +6,22 @@ const mongoose = require('mongoose');
 const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
-
 const fs = require('fs')
+
+// <----/Client Events/---->
 
 client.db = new Database(process.env.MONGODB_SRV2)
 client.filters = process.env.filters;
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
+// <----/Handlers System/---->
+
 ['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, Discord);
 })
+
+// <----/Disbotlist Servercount System/---->
 
 client.db.on("ready", () => {
 
@@ -28,6 +33,8 @@ client.on("ready", () => {
     dbl.serverCount();
 
 })
+
+// <----/Mongodb System/---->
 
 Levels.setURL(process.env.MONGODB_SRV);
 
