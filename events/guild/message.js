@@ -469,27 +469,3 @@ module.exports = async (Discord, client, message) => {
     }
   })
 }
-
-// <----/Autorole System/---->
-
-const roleSchema = require("../../models/autorole");
-
-module.exports = async (message) => {
-  const data = await roleSchema
-    .findOne({
-      GuildID: message.guild.id,
-    })
-    .catch((err) => console.log(err));
-
-  if (data) {
-    let role = data.Role;
-    let arole = member.guild.roles.cache.get(role);
-    if (role) {
-      member.roles.add(arole);
-    } else if (!role) {
-      return;
-    }
-  } else if (!data) {
-    return;
-  }
-};
