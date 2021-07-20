@@ -18,6 +18,7 @@ module.exports = async (Discord, client, message) => {
     const user = await Levels.fetch(message.author.id, message.guild.id);
     const someonelevelup = new Discord.MessageEmbed()
       .setTimestamp()
+      .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
       .setTitle(`**👤 ${message.author.username}**`)
       .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise!**_`)

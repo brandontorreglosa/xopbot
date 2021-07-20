@@ -6,6 +6,6 @@ let schema = new mongoose.Schema({
     time: Number,
     cooldown: Number,
 })
- const model = mongoose.model('cooldown', schema);
+const model = mongoose.model('cooldown', schema);
 
- module.exports = model;
+module.exports = model;

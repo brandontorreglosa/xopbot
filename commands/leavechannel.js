@@ -11,23 +11,23 @@ module.exports = {
       return message.channel.send("**I Don't Have The `Manage Channels` Permission!**")
     }
     if (!args[0]) {
-      return message.channel.send(`\`Usage: (prefix)leavechannel <#channel|off>\``)
+      return message.channel.send(`\`Usage: (prefix)leavechannel <#channel|off>\``);
     }
     if (message.mentions.channels.first()) {
       const data = await goodbyeSchema.findOne({
-        GuildID: message.guild.id
+        GuildID: message.guild.id,
       });
 
       if (data) {
         await goodbyeSchema.findOneAndRemove({
-          GuildID: message.guild.id
+          GuildID: message.guild.id,
         });
 
         message.channel.send(`**Goodbye Channel Set To ${message.mentions.channels.first()}**`);
 
         let newData = new goodbyeSchema({
           Bye: message.mentions.channels.first().id,
-          GuildID: message.guild.id
+          GuildID: message.guild.id,
         });
         newData.save();
       } else if (!data) {
@@ -35,7 +35,7 @@ module.exports = {
 
         let newData = new goodbyeSchema({
           Bye: message.mentions.channels.first().id,
-          GuildID: message.guild.id
+          GuildID: message.guild.id,
         });
         newData.save();
       }
@@ -46,14 +46,14 @@ module.exports = {
 
       if (data2) {
         await goodbyeSchema.findOneAndRemove({
-          GuildID: message.guild.id
+          GuildID: message.guild.id,
         });
 
         return message.channel.send(`**Goodbye Channel Has Been Turned Off!**`);
 
       } else if (!data2) {
-        return message.channel.send(`**Goodbye Channel Isn't Even Setup Bot!**`)
+        return message.channel.send(`**Goodbye Channel Isn't Even Setup Bot!**`);
       }
     }
-  }
-}
+  },
+};
