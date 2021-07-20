@@ -283,7 +283,7 @@ module.exports = {
 
                 return message.reply(errMessage)
                     .then(message => {
-                        message.delete({ timeout: 3000 })
+                        message.delete({ timeout: 5000 })
                     })
             }
 
@@ -295,7 +295,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (20)__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `cumsluts` `blowjob` `milf` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
+                    { name: '__🔞 NSFW (22)__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `cumsluts` `blowjob` `dildo` `milf` `bdsm` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
