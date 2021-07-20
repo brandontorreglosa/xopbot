@@ -474,7 +474,7 @@ module.exports = async (Discord, client, message) => {
 
 const roleSchema = require("../../models/autorole");
 
-module.exports = async (member) => {
+module.exports = async (message) => {
   const data = await roleSchema
     .findOne({
       GuildID: message.guild.id,
