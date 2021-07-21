@@ -1,50 +1,49 @@
 const Discord = require('discord.js');
 const Levels = require("discord-xp");
-const { createCanvas, loadImage } = require('canvas');
 const canvacord = require("canvacord");
 
 module.exports = {
     name: 'rank',
-    aliases: ['profilecard'],
     permissions: ["SEND_MESSAGES"],
     description: 'get rank',
     async execute(client, message, cmd, args, Discord) {
 
-        if (cmd === 'rank') {
+        if(cmd === 'rank') {
 
-            const target = message.mentions.users.first() || message.author;
+        const target = message.mentions.users.first() || message.author;
 
-            const user = await Levels.fetch(target.id, message.guild.id);
+        const user = await Levels.fetch(target.id, message.guild.id);
 
-            const neededXp = Levels.xpFor(parseInt(user.level) + 1);
+        const neededXp = Levels.xpFor(parseInt(user.level) + 1);
 
-            if (!user) return message.reply("**You Dont Have Any Xp, Try Sending More Messages!**");
+        if (!user) return message.reply("**You Dont Have Any Xp, Try Sending More Messages!**");
 
-            const rank = new canvacord.Rank()
-                .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png' }))
-                // .setRank(leaderboard)
-                .setLevel(user.level)
-                .setCurrentXP(user.xp)
-                .setRequiredXP(neededXp)
-                .setStatus(message.member.presence.status)
-                .setBackground("IMAGE", "https://th.bing.com/th/id/Rcf6f575500f15f55cddf043c1a79d902?rik=M0%2bN0%2bVBxLmchA&pid=ImgRaw")
-                .setProgressBar("#c30202")
-                .setUsername(message.author.username)
-                .setDiscriminator(message.author.discriminator);
-
+        const rank = new canvacord.Rank()
+            .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png' }))
+            // .setRank(leaderboard)
+            .setLevel(user.level)
+            .setCurrentXP(user.xp)
+            .setRequiredXP(neededXp)
+            .setStatus(message.member.presence.status)
+            .setBackground("IMAGE", "https://th.bing.com/th/id/Rcf6f575500f15f55cddf043c1a79d902?rik=M0%2bN0%2bVBxLmchA&pid=ImgRaw")
+            .setProgressBar("#c30202")
+            .setUsername(message.author.username)
+            .setDiscriminator(message.author.discriminator);
             rank.build()
-                .then(data => {
-                    const attachment = new Discord.MessageAttachment(data, "RankCard.png");
-                    message.channel.send(attachment);
-                });
+            .then(data => {
+                const attachment = new Discord.MessageAttachment(data, "RankCard.png");
+                message.channel.send(attachment);
+            });
         }
 
-        else if (cmd === 'profilecard') {
+        else if(cmd === 'profilecard') {
+
+            const member = message.mentions.users.first() || message.author;
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
-            const def = await loadImage(doc.data.profile.background || 'https://th.bing.com/th/id/R.dfbd6e7b7bc79c83e26ade40fa66e12d?rik=0NXBiN8%2bjK%2bEgg&pid=ImgRaw');
-            const defpattern = await loadImage(doc.data.profile.pattern || 'https://i.imgur.com/nx5qJUb.png' || 'https://i.imgur.com/bnLhXeW.jpg');
+            const def = await loadImage('https://th.bing.com/th/id/R.dfbd6e7b7bc79c83e26ade40fa66e12d?rik=0NXBiN8%2bjK%2bEgg&pid=ImgRaw');
+            const defpattern = await loadImage('https://i.imgur.com/nx5qJUb.png' || 'https://i.imgur.com/bnLhXeW.jpg');
             const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
 
             ctx.drawImage(def, 300, 65, 475, 250);
