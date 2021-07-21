@@ -11,10 +11,7 @@ module.exports = {
         const doc = new bdaySchema({ _id: message.author.id });
         const date = moment(date, 'DD-MM');
 
-        if (!date) {
-            return message.channel.send(`**${message.author.tag}**, Please Add The Date`);
-        } else {
-            if (!date.isValid()) {
+            if (!date) {
                 return message.channel.send(`**${message.author.tag}**, Please Add The Date In DD-MM Format`);
             };
 
@@ -23,6 +20,5 @@ module.exports = {
             return doc.save()
                 .then(() => message.channel.send(`**${message.author.tag}**, Your Birthday Has Been Updated To **${date.format('Do MMMM')}**!`))
                 .catch(() => message.channel.send(`**${message.author.tag}**, Your Birthday Update Failed!`))
-        };
     }
 }
