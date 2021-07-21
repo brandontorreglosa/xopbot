@@ -7,8 +7,15 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ format: "png" });
+        const bidenMessage = args.slice(0).join(' ')
+        const member = message.author.tag;
+        if (bidenMessage.length > 15) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
-        const image = await Canvas.phub(avatar)
+        const image = await Canvas.phub({
+            username: member,
+            message: bidenMessage,
+            image: avatar,
+          });
 
         message.channel.send(new MessageAttachment(image, 'xopbotphub.png'));
     }
