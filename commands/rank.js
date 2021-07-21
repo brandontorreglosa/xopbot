@@ -44,7 +44,7 @@ module.exports = {
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
-            const color = 'rgb(153, 51, 255)'
+            const color = 'rgb(195, 2, 2)'
             const def = await loadImage('https://th.bing.com/th/id/R.dfbd6e7b7bc79c83e26ade40fa66e12d?rik=0NXBiN8%2bjK%2bEgg&pid=ImgRaw');
             const defpattern = await loadImage('https://i.imgur.com/nx5qJUb.png' || 'https://i.imgur.com/bnLhXeW.jpg');
             const avatar = await loadImage(message.author.displayAvatarURL({ format: 'png' }));
@@ -139,8 +139,8 @@ module.exports = {
             ctx.beginPath();
             ctx.font = '18px Arial'
             ctx.fillStyle = 'rgba(0,0,0,0.8)'
-            ctx.fillText(`Wallet: ${profileData.coins}`, 330, 512, 80)
-            ctx.fillText(`Bank: ${profileData.bank}`, 430, 512, 80)
+            ctx.fillText(`💸: ${profileData.coins}`, 330, 512, 80)
+            ctx.fillText(`🏦: ${profileData.bank}`, 430, 512, 80)
 
             // add the tip shape
             ctx.beginPath();
@@ -165,14 +165,14 @@ module.exports = {
             ctx.beginPath();
             ctx.font = 'bold 30px Arial'
             ctx.textAlign = 'right'
-            ctx.fillText('No Tips Yet', canvas.width - 30, 50, 120)
+            ctx.fillText('0', canvas.width - 30, 50, 120)
 
             // reset shadow
             ctx.shadowOffsetY = 0;
 
             // add card on left side
             // add pattern inside card
-            ctx.fillStyle = 'rgba(255,255,255,1)'
+            ctx.fillStyle = 'rgba(12,12,12)'
             ctx.beginPath();
             ctx.moveTo(0, 65);
             ctx.lineTo(0, 535);
