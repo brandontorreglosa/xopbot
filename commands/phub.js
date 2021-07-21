@@ -17,6 +17,7 @@ module.exports = {
             image: avatar,
           });
 
-        message.channel.send(new MessageAttachment(image, 'xopbotphub.png'));
+          const attachment = new Discord.MessageAttachment(image, "phub.png");
+         return message.channel.send(attachment);
     }
 }
