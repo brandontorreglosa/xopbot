@@ -6,15 +6,13 @@ module.exports = {
     cooldown: 20,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
-        if (!doc) {
-            doc = new bdaySchema({ _id: message.author.id });
-        };
+
+        const doc = new bdaySchema({ _id: message.author.id });
+        const date = moment(date, 'DD-MM');
 
         if (!date) {
             return message.channel.send(`**${message.author.tag}**, Please Add The Date`);
         } else {
-            date = moment(date, 'DD-MM');
-
             if (!date.isValid()) {
                 return message.channel.send(`**${message.author.tag}**, Please Add The Date In DD-MM Format`);
             };
