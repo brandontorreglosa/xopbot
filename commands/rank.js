@@ -40,7 +40,10 @@ module.exports = {
 
         else if(cmd === 'profilecard') {
 
-            const member = message.mentions.users.first() || message.author;
+           const member = member.match(/\d{17,18}/)||[][0] || message.member.id;
+            member = await message.guild.members.fetch(member).catch(() => message.member);
+
+           // const member = message.mentions.users.first() || message.author;
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
