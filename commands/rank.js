@@ -4,6 +4,7 @@ const canvacord = require("canvacord");
 
 module.exports = {
     name: 'rank',
+    aliases: ['profilecard'],
     permissions: ["SEND_MESSAGES"],
     description: 'get rank',
     async execute(client, message, cmd, args, Discord) {
