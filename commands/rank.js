@@ -40,7 +40,7 @@ module.exports = {
 
         else if (cmd === 'profilecard') {
 
-            const member = message.mentions.users.first() || message.author;
+            const user = message.mentions.users.first() || message.author;
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
@@ -95,9 +95,9 @@ module.exports = {
             ctx.font = 'bold 30px Arial'
             ctx.fillStyle = '#ffffff'
             ctx.textAlign = 'center'
-            ctx.fillText(member.displayName, 150, 350, 280)
+            ctx.fillText(message.author.username, 150, 350, 280)
             ctx.font = '20px Arial'
-            ctx.fillText(member.user.tag, 150, 375, 280)
+            ctx.fillText(message.author.discriminator, 150, 375, 280)
 
             ctx.beginPath();
             ctx.arc(150, 225, 75, 0, Math.PI * 2);
