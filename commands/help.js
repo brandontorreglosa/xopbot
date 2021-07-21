@@ -295,7 +295,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (23)__', value: 'Real Life NSFW: `4k` `neko` `pgif` `gonewild` `cumsluts` `blowjob` `dildo` `milf` `bdsm` `anal` `ass` `pussy` `boobs` `thigh` \nAnime NSFW: `hentai` `hthigh` `hanal` `hboobs` `paizuri` `yuri` `hmidriff` `hneko` `hkitsune` \nBot Invite: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
+                    { name: '__🔞 NSFW (24)__', value: '**Real Life NSFW**: `4k` `\nneko` `\npgif` `\ngonewild` `\ncreampie` `\ncumsluts` `\nblowjob` `\ndildo` `\nmilf` `\nbdsm` `\nanal` `\nass` `\npussy` `\nboobs` `\nthigh` \n**Anime NSFW**: `\nhentai` `\nhthigh` `\nhanal` `\nhboobs` `\npaizuri` `\nyuri` `\nhmidriff` `\nhneko` `\nhkitsune` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
