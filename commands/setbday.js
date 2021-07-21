@@ -13,6 +13,7 @@ module.exports = {
         let bdayMessage = args.slice(0).join(' ');
         if (bdayMessage.length > 5) return message.channel.send('**Your Bday Must Be Like Exa. 27-02 \nNot Longer Than 5 Characters Please!**');
         const embed = new Discord.MessageEmbed()
+            .setColor('#c30202')
             .setTimestamp()
             .setTitle('Bday Has Been Set Up')
             .setDescription(`Your Bday Is ${bdayMessage}`)

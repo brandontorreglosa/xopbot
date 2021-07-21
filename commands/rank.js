@@ -115,7 +115,7 @@ module.exports = {
             ctx.beginPath();
             ctx.font = '15px Arial'
             ctx.fillStyle = 'rgba(0,0,0,0.8)'
-            ctx.fillText(`${bdaySchema} || 'No Birthday Set'`, 330, 445, 230)
+            ctx.fillText(`${bdaySchema}` || 'No Birthday Set', 330, 445, 230)
 
             // add balance outline
             ctx.beginPath();
