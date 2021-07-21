@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const Levels = require("discord-xp");
 const canvacord = require("canvacord");
 const { createCanvas, loadImage } = require('canvas');
+const bdaySchema = require('../models/bdayprofile');
 
 module.exports = {
     name: 'rank',
@@ -114,7 +115,7 @@ module.exports = {
             ctx.beginPath();
             ctx.font = '15px Arial'
             ctx.fillStyle = 'rgba(0,0,0,0.8)'
-            ctx.fillText('No Birthday Set', 330, 445, 230)
+            ctx.fillText(bdaySchema, 330, 445, 230)
 
             // add balance outline
             ctx.beginPath();
