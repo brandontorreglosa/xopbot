@@ -9,12 +9,10 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         const doc = new bdaySchema({ _id: message.author.id });
-        const date = moment(date, 'DD-MM');
-
-            if (!date) {
+            if (!args[0]) {
                 return message.channel.send(`**${message.author.tag}**, Please Add The Date In DD-MM Format`);
             };
-
+            const date = moment(date, 'DD-MM');
             doc.data.profile.birthday = date.format('Do MMMM');
 
             return doc.save()
