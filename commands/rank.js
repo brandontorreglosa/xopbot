@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const Levels = require("discord-xp");
 const canvacord = require("canvacord");
+const { createCanvas, loadImage } = require('canvas');
 
 module.exports = {
     name: 'rank',
