@@ -115,7 +115,7 @@ module.exports = {
             ctx.beginPath();
             ctx.font = '15px Arial'
             ctx.fillStyle = 'rgba(0,0,0,0.8)'
-            ctx.fillText(`${bdaySchema}` || 'No Birthday Set', 330, 445, 230)
+            ctx.fillText('No Birthday Set', 330, 445, 230)
 
             // add balance outline
             ctx.beginPath();
@@ -217,7 +217,7 @@ module.exports = {
             ctx.textAlign = 'center'
             ctx.fillText(message.author.username, 150, 350, 280)
             ctx.font = '20px Arial'
-            ctx.fillText(message.author.discriminator, 150, 375, 280)
+            ctx.fillText('#', message.author.discriminator, 150, 375, 280)
 
             ctx.beginPath();
             ctx.arc(150, 225, 75, 0, Math.PI * 2);
