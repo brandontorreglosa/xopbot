@@ -1,4 +1,4 @@
-const Canvas = require('canvacord');
+const { Canvas } = require('canvacord');
 
 module.exports = {
     name: 'phub',
