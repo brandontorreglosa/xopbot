@@ -40,16 +40,13 @@ module.exports = {
 
         else if(cmd === 'profilecard') {
 
-           const member = member.match(/\d{17,18}/)||[][0] || message.member.id;
-            member = await message.guild.members.fetch(member).catch(() => message.member);
-
-           // const member = message.mentions.users.first() || message.author;
+           const member = message.mentions.users.first() || message.author;
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
             const def = await loadImage('https://th.bing.com/th/id/R.dfbd6e7b7bc79c83e26ade40fa66e12d?rik=0NXBiN8%2bjK%2bEgg&pid=ImgRaw');
             const defpattern = await loadImage('https://i.imgur.com/nx5qJUb.png' || 'https://i.imgur.com/bnLhXeW.jpg');
-            const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
+            const avatar = await loadImage(message.author.displayAvatarURL({ format: 'png' }));
 
             ctx.drawImage(def, 300, 65, 475, 250);
 
