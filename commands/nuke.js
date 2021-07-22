@@ -4,7 +4,7 @@ module.exports = {
     permissions: ['MANAGE_MESSAGES', 'MANAGE_CHANNELS'],
     description: 'Removes all messages in the channel (Deletes the old channel and makes a copy of it with permissions intact)',
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.user.first() || message.author;
+        const user = message.mentions.members.first() || message.author;
         message.channel.send(`**This Will Remove All Conversation In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**`);
 
         const filter = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
