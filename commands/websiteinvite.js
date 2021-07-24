@@ -9,10 +9,10 @@ module.exports = {
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setColor('#0404fc')
             .setTitle('Bot Website Invite')
-            .setURL('https://bubble-traveling-entrance.glitch.me/')
+            .setURL('https://www.xopbot.tk/')
             .setDescription('**This Is The Bot Website Invite Link**')
             .addFields(
-                { name: 'Bot Website Invite Link', value: '[Bot Website](https://xopbot-gg.glitch.me/)' }
+                { name: 'Bot Website Invite Link', value: '[Bot Website](https://www.xopbot.tk//)' }
 
             )
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
