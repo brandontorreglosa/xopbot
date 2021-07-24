@@ -27,7 +27,7 @@ module.exports = {
                               .setImage(amazeme)
                               .setFooter(`You Can Put Anything Inside You! :)`)
                               .setColor("RED")
-                        m.edit(wow)
+                              m.edit(wow)
                   })
             })
       }

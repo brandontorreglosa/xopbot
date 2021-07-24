@@ -26,7 +26,7 @@ module.exports = {
          .setTimestamp()
          .setTitle(`**${message.author.username} Respects ${user.displayName}**`)
          .setImage(`${gif[Math.floor(Math.random() * gif.length)]}`)
-         .setColor("RED")
+         .setColor('#c30202')
          .setFooter('Respect Forever')
 
       message.channel.send(embed);

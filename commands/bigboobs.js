@@ -27,7 +27,7 @@ module.exports = {
                               .setDescription(`:underage: **Big Boobs**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                               .setImage(amazeme)
                               .setFooter(`I Want Some Milk From Those! :)`)
-                              .setColor("RED")
+                              .setColor('#c30202')
                         m.edit(wow)
                   })
             })

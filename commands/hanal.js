@@ -21,7 +21,7 @@ module.exports = {
                     .setTimestamp()
                     .setImage(response.body.message)
                     .setFooter('Nice Huh :)')
-
+                    .setColor('#c30202')
                 m.edit(embed_nsfw);
             });
         });

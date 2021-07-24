@@ -12,10 +12,10 @@ module.exports = {
         const role = message.guild.roles.cache.find(r => r.id === roletofind)
         if (!role) return message.reply("**Please Give A Valid Role Id!**")
         let embed = new MessageEmbed()
+            .setColor('#c30202')
             .setTimestamp()
             .setTitle("Channel Unlocked!")
             .setDescription(`**This Channel Has Been Unlocked By ${message.author.tag} For This Role <@!${role}>**`)
-            .setTimestamp()
         channel.updateOverwrite(role, {
             SEND_MESSAGES: true
         })

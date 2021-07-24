@@ -27,7 +27,7 @@ module.exports = {
         .setTimestamp()
         .setTitle(`${message.author.username}`)
         .setDescription(`You Withdrew **${amount} Xocoins** Into Your **Wallet** 💸`)
-        .setColor("RED")
+        .setColor('#c30202')
 
       message.channel.send(embed);
       // return message.channel.send(`**You Withdrew ${amount} Xocoins Into Your Wallet** 💸`);

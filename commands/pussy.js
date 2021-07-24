@@ -22,7 +22,7 @@ module.exports = {
                     .setTimestamp()
                     .setImage(response.body.message)
                     .setFooter('The Best Part Of The Woman Body! :)')
-
+                    .setColor('#c30202')
                 m.edit(embed_nsfw);
             });
         });

@@ -22,7 +22,7 @@ module.exports = {
                     .setTimestamp()
                     .setImage(response.body.message)
                     .setFooter('I Like Bigger Tits! :)')
-
+                    .setColor('#c30202')
                 m.edit(embed_nsfw);
             });
         });

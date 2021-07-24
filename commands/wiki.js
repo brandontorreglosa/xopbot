@@ -16,7 +16,7 @@ module.exports = {
             .setTitle("Wikipedia Search")
             .addField(`You Searched For:`, `${msg}`)
             .addField(`Results:`, `[Here's What I Found](${link})`)
-            .setColor("RED");
+            .setColor('#c30202')
 
         message.channel.send(embed);
     }

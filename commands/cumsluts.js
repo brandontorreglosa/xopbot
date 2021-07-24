@@ -26,7 +26,7 @@ module.exports = {
                               .setDescription(`:underage: **Cum Sluts**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                               .setImage(amazeme)
                               .setFooter(`Swallow The Cum! Uhh I Mean Milk :)`)
-                              .setColor("RED")
+                              .setColor('#c30202')
                         m.edit(wow)
                   })
             })

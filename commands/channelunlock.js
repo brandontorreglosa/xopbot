@@ -17,7 +17,7 @@ module.exports = {
          .setTimestamp()
          .setTitle("Channel Updates")
          .setDescription(`**🔓 ${message.channel} Has Been Unlocked By ${message.author.username}!**`)
-         .setColor("RED")
+         .setColor('#c30202')
       await message.channel.send(embed);
    }
 }

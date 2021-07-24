@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-            .setColor('#0404fc')
+            .setColor('#c30202')
             .setTitle('Bot Website Invite')
             .setURL('https://www.xopbot.tk/')
             .setDescription('**This Is The Bot Website Invite Link**')

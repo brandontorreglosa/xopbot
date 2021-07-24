@@ -14,6 +14,7 @@ module.exports = {
 
         //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()
+            .setColor('#c30202')
             .setTitle('**New Bug Found!**')
             .addField('Author', message.author.toString(), true)
             .addField('Guild', message.guild.name, true)

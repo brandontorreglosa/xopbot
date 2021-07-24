@@ -28,7 +28,7 @@ module.exports = {
             //.setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             .setTitle(`Bot Information`, client.user.displayAvatarURL({ dynamic: true }))
-            .setColor('#000000')
+            .setColor('#c30202')
             .addFields(
                 {
                     name: '👷‍♂ Developer',

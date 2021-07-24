@@ -10,7 +10,12 @@ module.exports = {
 
         console.log(flags);
 
-        message.channel.send(`${user}'s badges: ${flags.join(', ')}`)
+        const badgesuser = new Discord.MessageEmbed()
+            .setColor('#c30202')
+            .setTimestamp()
+            .setDescription(`${user}'s badges: ${flags.join(', ')}`)
+            .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
+        message.channel.send(badgesuser)
     }
 }
 

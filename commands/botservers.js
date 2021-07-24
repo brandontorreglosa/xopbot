@@ -15,7 +15,7 @@ module.exports = {
             client.guilds.cache.forEach(x => {
                 const embed = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('RED')
+                    .setColor('#c30202')
                     .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
                 message.channel.send(embed)
                 // message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);

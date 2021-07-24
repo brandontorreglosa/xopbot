@@ -8,7 +8,7 @@ module.exports = {
         if (!member) {
             const addroleError = new Discord.MessageEmbed()
                 .setDescription(`**Please Mention A Member In Order To Give Them The Role!**`)
-                .setColor("RED")
+                .setColor('#c30202')
             return message.channel.send(addroleError)
         }
         args.shift()
@@ -18,7 +18,7 @@ module.exports = {
             const addroleError2 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setDescription(`**No Roles Provided!**`)
-                .setColor("RED")
+                .setColor('#c30202')
             return message.channel.send(addroleError2)
         }
         const mentionedPosition = member.roles.highest.position
@@ -28,14 +28,14 @@ module.exports = {
             const posi = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setDescription(`**You Cannot Add Role To ${member} As Their Role Is Higher/Equal To Yours!**`)
-                .setColor("RED")
+                .setColor('#c30202')
             return message.channel.send(posi)
         }
         if (member.roles.cache.get(roleToGive.id)) {
             const addroleError3 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setDescription(`**${member} Already Has That Role!**`)
-                .setColor("RED")
+                .setColor('#c30202')
             return message.channel.send(addroleError3)
         }
         member.roles.add(roleToGive)

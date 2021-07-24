@@ -17,7 +17,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       //   .setAuthor(target.user.username, ticon)
       //   .setThumbnail(target.user.displayAvatarURL({ dynamic: true }))
-      .setColor("BLUE")
+      .setColor('#c30202')
       .setDescription(`**${rrole} Was Removed From ${target}**`)
       .setFooter(`👑HACKERPROᵈᵉᵛ#1498`)
       .setTimestamp()

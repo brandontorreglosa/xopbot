@@ -4,7 +4,7 @@ module.exports = {
   name: 'afkset',
   cooldown: 5,
   permissions: ["SEND_MESSAGES"],
-  aliases: ['afk'],
+  aliases: ['afk', ['setafk']],
   description: 'Set your afk status',
   execute(client, message, cmd, args, Discord) {
     //  if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('**Status Change Failed**');

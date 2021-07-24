@@ -14,6 +14,7 @@ module.exports = {
 
         //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()
+            .setColor('#c30202')
             .setTitle('**Xop-Chat Request Wanted!**')
             .addField('Author', message.author.toString(), true)
             .addField('Guild', message.guild.name, true)

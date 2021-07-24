@@ -17,7 +17,7 @@ module.exports = {
           .setTimestamp()
           .setTitle("🐱")
           .setImage(response.body.url)
-          .setColor(`#000000`)
+          .setColor('#c30202')
           .setFooter(`owo`)
           .setURL(response.body.url);
         message.channel.send(lewdembed);

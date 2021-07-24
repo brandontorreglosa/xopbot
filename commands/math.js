@@ -11,7 +11,7 @@ module.exports = {
             if (!args[0]) return message.channel.send("**Please Give Me Equation!**");
 
             const embed = new MessageEmbed()
-                .setColor(`${Color}`)
+                .setColor('#c30202')
                 .setTitle(`Result`)
                 .setDescription(math.evaluate(args.join(" ")))
                 .setTimestamp();

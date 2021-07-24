@@ -8,7 +8,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-            .setColor('#0404fc')
+            .setColor('#c30202')
             .setTitle('Bot Invite')
             .setURL('https://discord.gg/Sy38Uysm4G')
             .setDescription('**This Is The Bot Server Invite Link**')

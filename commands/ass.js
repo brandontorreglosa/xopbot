@@ -18,6 +18,7 @@ module.exports = {
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'ass' }).end((err, response) => {
 
                 var embed_nsfw = new Discord.MessageEmbed()
+                    .setColor('#c30202')
                     .setDescription(`:underage: **Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                     .setTimestamp()
                     .setImage(response.body.message)

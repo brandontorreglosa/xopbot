@@ -17,10 +17,11 @@ module.exports = {
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'gonewild' }).end((err, response) => {
 
                 var embed_nsfw = new Discord.MessageEmbed()
+                    .setColor('#c30202')
                     .setDescription(`:underage: **Gonewild Porn**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                     .setTimestamp()
                     .setImage(response.body.message)
-                    .setFooter('Nice Huh :)')
+                    .setFooter('Hoes Went Crazy! :)')
 
                 m.edit(embed_nsfw);
             });

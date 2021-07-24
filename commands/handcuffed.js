@@ -27,7 +27,7 @@ module.exports = {
                               .setDescription(`:underage: **Handcuffed**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                               .setImage(amazeme)
                               .setFooter(`Im Gonna Cuff You For Being A Baddie! :)`)
-                              .setColor("RED")
+                              .setColor('#c30202')
                         m.edit(wow)
                   })
             })

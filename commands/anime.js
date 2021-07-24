@@ -26,7 +26,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(body.data[0].attributes.slug)
-        .setColor("RED")
+        .setColor('#c30202')
         .setDescription(body.data[0].attributes.synopsis)
         .setThumbnail(body.data[0].attributes.posterImage.original)
         .addField("Ratings", body.data[0].attributes.averageRating)

@@ -18,7 +18,7 @@ module.exports = {
             .setThumbnail(`https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2000px-Google_%22G%22_Logo.svg.png`)
             .setDescription(`**Searched For: **\n${text1} \n\n**Result: **\n[Here's What I Found](https://google.com/search?q=${text2})`)
             .setThumbnail(google)
-            .setColor("RED");
+            .setColor('#c30202')
         message.channel.send(embed);
     }
 }

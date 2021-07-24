@@ -21,7 +21,7 @@ module.exports = {
                     .setTimestamp()
                     .setImage(response.body.message)
                     .setFooter('That Thigh Is Just Godly Sexy! :)')
-
+                    .setColor('#c30202')
                 m.edit(embed_nsfw);
             });
         });
