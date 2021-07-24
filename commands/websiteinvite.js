@@ -12,7 +12,7 @@ module.exports = {
             .setURL('https://www.xopbot.tk/')
             .setDescription('**This Is The Bot Website Invite Link**')
             .addFields(
-                { name: 'Bot Website Invite Link', value: '[Bot Website](https://www.xopbot.tk//)' }
+                { name: 'Bot Website Invite Link', value: '[Bot Website](https://www.xopbot.tk/)' }
 
             )
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())

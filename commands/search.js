@@ -53,7 +53,7 @@ module.exports = {
     COLLECTOR.on("collect", async (m) => {
       const EMBED = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor("#ffa500")
+        .setColor("#c30202")
         .setTitle(`${message.author.username} Searched ${m.content} 🕵️`)
         .setDescription(`**You Found ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
         .setFooter(`What A True Detective You Are.`);

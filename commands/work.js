@@ -33,7 +33,7 @@ module.exports = {
     COLLECTOR.on("collect", async (m) => {
       const EMBED = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor("#ffa500")
+        .setColor("#c30202")
         .setTitle(`${message.author.username} Worked As A ${m.content} 💻`)
         .setDescription(`**You Worked And Got Paid ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
         .setFooter(`Man You Worked Hard As A ${m.content}`);
