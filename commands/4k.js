@@ -21,7 +21,7 @@ module.exports = {
                     .setDescription(`:underage: **4K Nudes**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                     .setTimestamp()
                     .setImage(response.body.message)
-                    .setFooter('Nice Huh :)')
+                    .setFooter('4k Sluts Amazing! :)')
 
                 m.edit(embed_nsfw);
             });

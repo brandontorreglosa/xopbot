@@ -21,7 +21,7 @@ module.exports = {
                     .setDescription(`:underage: **Porn Gif**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                     .setTimestamp()
                     .setImage(response.body.message)
-                    .setFooter('Nice Huh :)')
+                    .setFooter('Whats Better Than Porn Gifs! :)')
 
                 m.edit(embed_nsfw);
             });

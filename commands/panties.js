@@ -25,7 +25,7 @@ module.exports = {
                               .setTimestamp()
                               .setDescription(`:underage: **Panties**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                               .setImage(amazeme)
-                              .setFooter(`Nice Yeah :)`)
+                              .setFooter(`You Have Sexy Underwear! :)`)
                               .setColor("RED")
                         m.edit(wow)
                   })

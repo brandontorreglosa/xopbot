@@ -25,7 +25,7 @@ module.exports = {
                               .setTimestamp()
                               .setDescription(`:underage: **Dildo**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                               .setImage(amazeme)
-                              .setFooter(`Nice Yeah :)`)
+                              .setFooter(`You Can Put Anything Inside You! :)`)
                               .setColor("RED")
                         m.edit(wow)
                   })

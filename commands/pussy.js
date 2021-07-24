@@ -21,7 +21,7 @@ module.exports = {
                     .setDescription(`:underage: **Pussy**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                     .setTimestamp()
                     .setImage(response.body.message)
-                    .setFooter('Nice Huh :)')
+                    .setFooter('The Best Part Of The Woman Body! :)')
 
                 m.edit(embed_nsfw);
             });
