@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
     name: '4k',
+    nsfw: true,
     aliases: ['4kporn', 'porn4k'],
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {

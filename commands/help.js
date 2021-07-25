@@ -283,7 +283,7 @@ module.exports = {
 
                 return message.reply(errMessage)
                     .then(message => {
-                        message.delete({ timeout: 5000 })
+                        message.delete({ timeout: 6000 })
                     })
             }
 

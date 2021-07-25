@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
     name: 'hass',
+    nsfw: true,
     aliases: ['hbum', 'hbutt'],
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {

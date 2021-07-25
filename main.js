@@ -14,6 +14,7 @@ client.db = new Database(process.env.MONGODB_SRV2)
 client.filters = process.env.filters;
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
+client.setMaxListeners(0);
 
 // <----/Handlers System/---->
 

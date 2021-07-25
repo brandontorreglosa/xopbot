@@ -4,6 +4,7 @@ const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CO
 
 module.exports = {
       name: "yuri",
+      nsfw: true,
       permissions: ["SEND_MESSAGES"],
       category: "NSFW",
       description: "Sends random yuri",
@@ -25,7 +26,7 @@ module.exports = {
                               .setTimestamp()
                               .setDescription(`:underage: **Yuri**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                               .setImage(amazeme)
-                              .setFooter(`Nice Yeah :)`)
+                              .setFooter(`Girls On Girls But In Anime! :)`)
                               .setColor('#c30202')
                         m.edit(wow)
                   })

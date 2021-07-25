@@ -1,6 +1,7 @@
 const fetch = require("node-fetch").default;
 const profileModel = require("../../models/profileSchema");
 const premiumSchema = require("../../models/premium");
+const nsfwSchema = require("../../models/registernsfw")
 const quick = require('quick.db');
 const Levels = require('discord-xp');
 const fs = require('fs');
@@ -282,7 +283,26 @@ module.exports = async (Discord, client, message) => {
   // <----/Premium System/---->
 
   if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-    return message.reply("***You Need To Buy Premium To Use This Command! 💰 \nBuy Premium From Here (https://www.patreon.com/user?u=52511474&fan_landing=true)***")
+    const embedpremium = new Discord.MessageEmbed()
+      .setColor('#c30202')
+      .setTimestamp()
+      .setTitle('Premium Needed!')
+      .setURL('https://www.patreon.com/user?u=52511474&fan_landing=true')
+      .setDescription("***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***")
+      .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
+  message.channel.send(embedpremium)
+
+  // <----/NSFW Registration System/---->
+
+  if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
+    const embedpremium = new Discord.MessageEmbed()
+      .setColor('#c30202')
+      .setTimestamp()
+      .setTitle('NSFW Registration Needed!')
+      .setURL('https://www.xopbot.tk/')
+      .setDescription("***You Need To Register For NSFW Usage To Do This Command! 🔞 \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***")
+      .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
+  message.channel.send(embedpremium)
 
   // <----/Cooldown System/---->
 
@@ -445,7 +465,7 @@ module.exports = async (Discord, client, message) => {
 
         let embed = new Discord.MessageEmbed()
           .setDescription(leavemessage)
-          .setColor("RED");
+          .setColor("#c30202");
 
         let channel = data.Bye
 
@@ -458,7 +478,7 @@ module.exports = async (Discord, client, message) => {
           .setDescription(`**${member.user.tag}** Just Left This Server! We hope They Return Back Soon!`)
           .setFooter(`We Now Have ${member.guild.memberCount} Members!`)
           .setThumbnail(member.user.avatarURL())
-          .setColor("RED")
+          .setColor("#c30202")
 
         let byechannel = data.Bye
 
