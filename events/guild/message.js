@@ -23,7 +23,7 @@ module.exports = async (Discord, client, message) => {
       .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
       .setTitle(`**👤 ${message.author.username}**`)
-      .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise!**_`)
+      .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
       .setFooter('Thank You For Being Active 🙏')
     message.channel.send(someonelevelup)
 
@@ -139,7 +139,7 @@ module.exports = async (Discord, client, message) => {
 
       .catch(_e => {
         quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-        message.reply('Failed To Set Your Status.');
+        message.reply('**Failed To Set Your Status.**');
       });
   }
 
@@ -222,7 +222,7 @@ module.exports = async (Discord, client, message) => {
     client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
   if (!command) {
-    return message.reply("**Couldn't Find That Command!**")
+    return message.reply(`**Couldn't Find That Command!**`)
   }
 
   if (message.channel.id === "841362279353155656") {

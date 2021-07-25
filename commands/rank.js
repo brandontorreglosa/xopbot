@@ -6,7 +6,7 @@ const bdaySchema = require('../models/bdayprofile');
 
 module.exports = {
     name: 'rank',
-    aliases: ['profilecard'],
+    aliases: ['profile'],
     permissions: ["SEND_MESSAGES"],
     description: 'get rank',
     async execute(client, message, cmd, args, Discord, profileData) {
@@ -39,7 +39,7 @@ module.exports = {
                 });
         }
 
-        else if (cmd === 'profilecard') {
+        else if (cmd === 'profile') {
 
             const user = message.mentions.users.first() || message.author;
 
@@ -244,7 +244,7 @@ module.exports = {
             message.channel.send({
                 files: [{
                     attachment: canvas.toBuffer(),
-                    name: 'profile.png'
+                    name: 'xopbotprofile.png'
                 }]
             })
 
