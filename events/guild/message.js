@@ -283,26 +283,12 @@ module.exports = async (Discord, client, message) => {
   // <----/Premium System/---->
 
   if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-    const embedpremium = new Discord.MessageEmbed()
-      .setColor('#c30202')
-      .setTimestamp()
-      .setTitle('Premium Needed!')
-      .setURL('https://www.patreon.com/user?u=52511474&fan_landing=true')
-      .setDescription("***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***")
-      .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
-  message.channel.send(embedpremium)
+    return message.reply("***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***")
 
   // <----/NSFW Registration System/---->
 
   if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-    const embedpremium = new Discord.MessageEmbed()
-      .setColor('#c30202')
-      .setTimestamp()
-      .setTitle('NSFW Registration Needed!')
-      .setURL('https://www.xopbot.tk/')
-      .setDescription("***You Need To Register For NSFW Usage To Do This Command! 🔞 \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***")
-      .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
-  message.channel.send(embedpremium)
+    return message.reply("***You Need To Register For NSFW Usage To Do This Command! 🔞 \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***")
 
   // <----/Cooldown System/---->
 
