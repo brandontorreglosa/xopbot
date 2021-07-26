@@ -31,7 +31,7 @@ module.exports = {
             new nsfwSchema({
                 User: member.id
             }).save();
-            return message.reply(`***Adding ${member} To The NSFW Database! 🔞***`);
+            return message.reply(`***Added ${member} To The NSFW Database! 🔞 \nHave Fun You Little Perv 😊***`);
         }
     );
 
