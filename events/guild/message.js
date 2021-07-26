@@ -288,7 +288,7 @@ module.exports = async (Discord, client, message) => {
   // <----/NSFW Registration System/---->
 
   if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-    return message.reply("***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: `\n18+ Years Old` `\nMature Adult` `\nMature Behavior` `\nFull Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***")
+    return message.reply("***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***")
 
   // <----/Cooldown System/---->
 
