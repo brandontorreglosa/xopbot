@@ -2,6 +2,7 @@ const got = require('got');
 
 module.exports = {
     name: "autonsfw",
+    nsfw: true,
     permissions: ["ADMINISTRATOR"],
     category: "Image",
     description: "Sends a random nsfw image from reddit",
