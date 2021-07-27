@@ -15,7 +15,7 @@ module.exports = {
             }, 10000)
         })
         setInterval(() => {
-            got('https://reddit.com/r/dankmemes/random.json').then(response => {
+            got('https://reddit.com/r/memes/random.json').then(response => {
                 let content = JSON.parse(response.body);
                 let permalink = content[0].data.children[0].data.permalink;
                 let memeUrl = `https://reddit.com${permalink}`;
