@@ -8,6 +8,9 @@ module.exports = {
     category: "Image",
     description: "Sends a random nsfw image from reddit",
     async execute(client, message, cmd, args, Discord) {
+
+        if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**')
+
         message.channel.send("🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**").then((msg) => {
             setTimeout(function () {
                 msg.edit("🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**")
