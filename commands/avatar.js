@@ -13,8 +13,8 @@ module.exports = {
             .setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true }))
             .setColor(`#c30202`)
             .setTimestamp()
-            .setTitle(`Avatar:`)
-            .setUrl(`https://www.xopbot.tk/`)
+            .setTitle(`Avatar Link`)
+            .setURL(`${user.displayAvatarURL({ dynamic: true })}`)
             .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
         message.channel.send(avatar_list);
     }
