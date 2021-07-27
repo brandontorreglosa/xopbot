@@ -22,7 +22,7 @@ module.exports = {
       return message.channel.send(
         `**I Could Not Find That Channel In The Guild!**`
       );
-    let prize = args.slice(3).join(" ");
+    let prize = args.slice(2).join(" ");
     if (!prize) return message.channel.send(`**No Prize Was Specified!**`);
     message.channel.send(`**Giveaway Has Been Created In ${channel}**`);
     let Embed = new MessageEmbed()
