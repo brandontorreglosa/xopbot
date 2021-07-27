@@ -26,6 +26,7 @@ module.exports = {
                 let memeDownvotes = content[0].data.children[0].data.downs;
                 let memeNumComments = content[0].data.children[0].data.num_comments;
                 const embed = new Discord.MessageEmbed()
+                embed.setTimestamp()
                 embed.setTitle(`AUTONSFW By XOPBOT`)
                 embed.setURL(`${memeUrl}`)
                 embed.setImage(memeImage)
