@@ -15,7 +15,7 @@ module.exports = {
             .setTimestamp()
             .setTitle(`Avatar Link`)
             .setURL(`${user.displayAvatarURL({ dynamic: true })}`)
-            .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
+            .setImage(`${user.displayAvatarURL({ size: 2048, dynamic: true })}`)
         message.channel.send(avatar_list);
     }
 }
