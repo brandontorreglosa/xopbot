@@ -10,9 +10,11 @@ module.exports = {
         const user = message.mentions.users.first() || message.author;
 
         const avatar_list = new Discord.MessageEmbed()
+            .setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true }))
             .setColor(`#c30202`)
             .setTimestamp()
-            .setTitle(`${user.username}'s Avatar:`)
+            .setTitle(`Avatar Link`)
+            .setUrl(`${user.displayAvatarURL({ dynamic: true })}`)
             .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
         message.channel.send(avatar_list);
     }
