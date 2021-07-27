@@ -8,7 +8,6 @@ module.exports = {
     description: "Sends a random meme from reddit",
 
     async execute(client, message, cmd, args, Discord) {
-        const embed = new Discord.MessageEmbed()
         got('https://reddit.com/r/memes/random.json').then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
@@ -18,6 +17,8 @@ module.exports = {
             let memeUpvotes = content[0].data.children[0].data.ups;
             let memeDownvotes = content[0].data.children[0].data.downs;
             let memeNumComments = content[0].data.children[0].data.num_comments;
+            const embed = new Discord.MessageEmbed()
+            embed.setTimestamp()
             embed.setTitle(`${memeTitle}`)
             embed.setURL(`${memeUrl}`)
             embed.setImage(memeImage)
