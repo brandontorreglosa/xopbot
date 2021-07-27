@@ -1,5 +1,6 @@
 module.exports = {
     name: 'unmute',
+    cooldown: 3,
     permissions: ["MUTE_MEMBERS"],
     description: "This Unmutes A Member",
     execute(client, message, cmd, args, Discord) {

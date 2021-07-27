@@ -3,6 +3,7 @@ const JoinMsgSchema = require("../models/joinmsg");
 
 module.exports = {
   name: "joinmessage",
+  cooldown: 10,
   permissions: ["MANAGE_CHANNELS"],
   description: "Change the welcome message per server!",
   aliases: ["joinmsg", "welcomemsg", "jmsg"],

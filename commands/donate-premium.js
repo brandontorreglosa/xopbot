@@ -2,6 +2,7 @@ const premiumSchema =  require("../models/premium");
 
 module.exports = {
     name: 'donate-premium',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     aliases: ['donate-p', 'd-p'],
    async execute(client, message, cmd, args, Discord) {

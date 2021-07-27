@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
     name: 'thigh',
+    cooldown: 3,
     nsfw: true,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {

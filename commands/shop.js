@@ -5,6 +5,7 @@ const items2 = require("../utility/shopItems2")
 module.exports = {
     name: 'shop1',
     aliases: ['shop2'],
+    cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
         if (cmd === 'shop1') {

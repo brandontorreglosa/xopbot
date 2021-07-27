@@ -2,6 +2,7 @@ const got = require('got');
 
 module.exports = {
     name: "automeme",
+    cooldown: 300,
     permissions: ["ADMINISTRATOR"],
     category: "Image",
     description: "Sends a random meme from reddit",

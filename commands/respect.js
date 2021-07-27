@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
    name: "respect",
+   cooldown: 3,
    permissions: ["SEND_MESSAGES"],
    description: "Returns Random Respect GIF",
    async execute(client, message, cmd, args, Discord) {

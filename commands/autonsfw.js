@@ -2,6 +2,7 @@ const got = require('got');
 
 module.exports = {
     name: "autonsfw",
+    cooldown: 300,
     nsfw: true,
     permissions: ["ADMINISTRATOR"],
     category: "Image",

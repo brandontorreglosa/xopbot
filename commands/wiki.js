@@ -2,6 +2,7 @@ const Discord = module.require("discord.js");
 
 module.exports = {
     name: "wiki",
+    cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     description: "Get Search Results from Wikipedia",
     async execute(client, message, cmd, args, Discord) {

@@ -4,6 +4,7 @@ const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CO
 
 module.exports = {
       name: "milf",
+      cooldown: 3,
       nsfw: true,
       permissions: ["SEND_MESSAGES"],
       category: "NSFW",

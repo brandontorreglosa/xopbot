@@ -1,5 +1,6 @@
 module.exports = {
     name: 'websiteinvite',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     aliases: ['winv', 'webinvite', 'wi'],
     description: "Embeds!",

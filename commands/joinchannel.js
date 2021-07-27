@@ -3,6 +3,7 @@ const welcomeSchema = require("../models/welcome");
 
 module.exports = {
   name: "joinchannel",
+  cooldown: 15,
   permissions: ["MANAGE_CHANNELS"],
   description: "Change the welcome channel per server!",
   aliases: ["jchannel", "jwelcome"],

@@ -1,5 +1,6 @@
 module.exports = {
     name: 'pp',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     aliases: ['ppsize'],
     async execute(client, message, cmd, args, Discord) {

@@ -3,6 +3,7 @@ const LeaveMsgSchema = require("../models/leavemessage");
 
 module.exports = {
   name: "leavemessage",
+  cooldown: 10,
   permissions: ["MANAGE_CHANNELS"],
   description: "Change the welcome message per server!",
   aliases: ["leavemsg", "goodbyemsg", "lmsg"],

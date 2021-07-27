@@ -2,6 +2,7 @@ const nsfwSchema = require("../models/registernsfw");
 
 module.exports = {
     name: 'register',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     aliases: ['register-nsfw', 'nsfw-register'],
    async execute(client, message, cmd, args, Discord) {

@@ -1,5 +1,6 @@
 module.exports = {
   name: "ticket",
+  cooldown: 10,
   aliases: [],
   permissions: ["SEND_MESSAGES"],
   description: "open a ticket!",

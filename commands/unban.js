@@ -1,5 +1,6 @@
 module.exports = {
   name: 'unban',
+  cooldown: 3,
   permissions: ["BAN_MEMBERS"],
   description: "This Command Unbans Member",
   execute(client, message, cmd, args, Discord) {

@@ -7,6 +7,7 @@ const bdaySchema = require('../models/bdayprofile');
 module.exports = {
     name: 'rank',
     aliases: ['profile'],
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     description: 'get rank',
     async execute(client, message, cmd, args, Discord, profileData) {

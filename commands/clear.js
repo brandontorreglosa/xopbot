@@ -1,7 +1,7 @@
 module.exports = {
     name: 'clear',
     permissions: ["MANAGE_MESSAGES"],
-    cooldown: 3,
+    cooldown: 4,
     description: "Clear messages!",
     async execute(client, message, cmd, args, Discord) {
         try {

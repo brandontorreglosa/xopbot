@@ -3,6 +3,7 @@ const fs = require('fs');
 
 module.exports = {
   name: 'setprefix',
+  cooldown: 10,
   permissions: ["ADMINISTRATOR"],
   async execute(client, message, cmd, args, Discord) {
 

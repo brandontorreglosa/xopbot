@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
     name: 'pgif',
+    cooldown: 5,
     nsfw: true,
     aliases: ['porngif', 'gifporn'],
     permissions: ["SEND_MESSAGES"],

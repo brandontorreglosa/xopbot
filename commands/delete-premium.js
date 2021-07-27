@@ -2,6 +2,7 @@ const premiumSchema = require("../models/premium");
 
 module.exports = {
     name: 'delete-premium',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     aliases: ['delete-p', 'r-p'],
     async execute(client, message, cmd, args, Discord) {

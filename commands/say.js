@@ -1,5 +1,6 @@
 module.exports = {
     name: 'say',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     description: "Make the bot say your message",
     async execute(client, message, cmd, args, Discord) {

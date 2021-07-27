@@ -1,5 +1,6 @@
 module.exports = {
     name: "slowmode",
+    cooldown: 5,
     permissions: ["MANAGE_MESSAGES"],
     aliases: ['smd'],
     category: "Mods",

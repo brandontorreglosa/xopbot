@@ -3,6 +3,7 @@ const antiwordsSchema = require("../models/antiwords");
 
 module.exports = {
   name: "antiwords",
+  cooldown: 15,
   permissions: ["ADMINISTRATOR"],
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {

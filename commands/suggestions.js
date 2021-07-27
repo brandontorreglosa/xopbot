@@ -1,5 +1,6 @@
 module.exports = {
     name: 'suggestions',
+    cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     aliases: ['sgs', 'suggest'],
     permissions: [],

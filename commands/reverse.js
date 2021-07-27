@@ -1,5 +1,6 @@
 module.exports = {
     name: "reverse",
+    cooldown: 3,
     aliases: ['rv'],
     permissions: ["SEND_MESSAGES"],
     description: "Reverses the given text",

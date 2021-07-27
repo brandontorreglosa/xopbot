@@ -3,6 +3,7 @@ const antilinkSchema = require("../models/antilink");
 
 module.exports = {
   name: "antilink",
+  cooldown: 15,
   permissions: ["ADMINISTRATOR"],
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {

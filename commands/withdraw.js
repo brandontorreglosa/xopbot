@@ -1,6 +1,7 @@
 const profileModel = require("../models/profileSchema");
 module.exports = {
   name: "withdraw",
+  cooldown: 3,
   permissions: ["SEND_MESSAGES"],
   aliases: ["wd"],
   permissions: [],

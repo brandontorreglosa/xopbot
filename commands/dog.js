@@ -1,8 +1,6 @@
 const superagent = require("snekfetch");
 const Discord = require('discord.js')
 
-
-
 module.exports = {
   name: "dog",
   permissions: ["SEND_MESSAGES"],

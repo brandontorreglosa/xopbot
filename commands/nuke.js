@@ -1,5 +1,6 @@
 module.exports = {
     name: 'nuke',
+    cooldown: 15,
     aliases: ['clearall'],
     permissions: ['MANAGE_MESSAGES', 'MANAGE_CHANNELS'],
     description: 'Removes all messages in the channel (Deletes the old channel and makes a copy of it with permissions intact)',

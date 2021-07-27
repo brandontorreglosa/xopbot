@@ -2,6 +2,7 @@ const { Canvas } = require('canvacord');
 
 module.exports = {
     name: 'phub',
+    cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     description: 'what are you doing here?',
     async execute(client, message, cmd, args, Discord) {

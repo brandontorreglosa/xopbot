@@ -3,6 +3,7 @@ const goodbyeSchema = require("../models/leavechannel");
 
 module.exports = {
   name: "leavechannel",
+  cooldown: 15,
   permissions: ["MANAGE_CHANNELS"],
   description: "Change the goodbye channel per server!",
   aliases: ["gchannel", "goodbye"],

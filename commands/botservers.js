@@ -5,6 +5,7 @@ require('dotenv').config();
 
 module.exports = {
     name: "botservers",
+    cooldown: 3,
     permissions: ["ADMINISTRATOR"],
     aliases: ['bserver', 'bs'],
     description: "Check what Servers the bot is in!",

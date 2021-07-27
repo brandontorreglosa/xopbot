@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
     name: 'boobs',
+    cooldown: 3,
     nsfw: true,
     aliases: ['tits'],
     permissions: ["SEND_MESSAGES"],

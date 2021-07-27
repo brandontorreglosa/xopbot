@@ -1,5 +1,6 @@
 module.exports = {
   name: 'removerole',
+  cooldown: 5,
   aliases: ['delrole', 'deleterole'],
   permissions: ["MANAGE_ROLES"],
   async execute(client, message, cmd, args, Discord) {

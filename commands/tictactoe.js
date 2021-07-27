@@ -2,6 +2,7 @@ const { tictactoe } = require('reconlx')
 
 module.exports = {
     name: 'tictactoe',
+    cooldown: 10,
     permissions: ["SEND_MESSAGES"],
     premium: true,
     async execute(client, message, cmd, args, Discord) {
