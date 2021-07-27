@@ -7,9 +7,10 @@ module.exports = {
   description: "Another Fun Command",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.channel.send("Woah.... Slow Down!! Who Are We Hacking Here Mate..??")
+      return message.channel.send("**Woah.... Slow Down!! Who Are We Hacking Here Mate..??**")
     }
     const randomNumber = Math.floor(Math.random() * 500) + 1;
+    const randomnumber2 = Math.floor(Math.random() * 11500) + 1;
     const tohack = message.mentions.members.first()
     let msg = await message.channel.send(`**${message.author.username} Is Hacking ${tohack.displayName}....**`);
 
@@ -20,7 +21,7 @@ module.exports = {
 
     let time1 = '6s'
     setTimeout(function () {
-      msg.edit(`**E-Mail: ${tohack.displayName}@gmail.com \nPassword: ${tohack.discriminator}${randomNumber}**`);
+      msg.edit(`**E-Mail: ${tohack.displayName}@gmail.com \nPassword: ${randomnumber2}${randomNumber}**`);
     }, ms(time1));
 
     let time2 = '9s'
