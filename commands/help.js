@@ -382,7 +382,7 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__⚠ Config (7)__', value: '`antiwords`-__***Setup Bad Words Detector!***__`\nantilink`-__***Setup Antilink On A Server!***__`\njoinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__' }
+                    { name: '__⚠ Config (9)__', value: '`antiwords`-__***Setup Bad Words Detector!***__`\nantilink`-__***Setup Antilink On A Server!***__ `\nautonsfw`-__***Setup Autonsfw On A Server!***__ `\nautomeme`-__***Setup Automeme On A Server!***__`\njoinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
