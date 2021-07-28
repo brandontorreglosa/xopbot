@@ -26,7 +26,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send(`**Leave Message Set To ${newData.LeaveMsg}**`);
+        message.channel.send(`**Leave Message Set To ${newData.ByeMsg}**`);
 
       } else if (!data) {
 
@@ -35,7 +35,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send(`Goodbye Message set to ${newData.LeaveMsg}`);
+        message.channel.send(`Goodbye Message set to ${newData.ByeMsg}`);
 
       }
     } else if (text === "off") {
