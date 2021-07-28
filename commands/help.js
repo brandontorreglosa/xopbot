@@ -295,7 +295,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (38)__', value: '**Real Life NSFW**: `\n4k` `\nneko` `\npgif` `\nsquirts` `\nhandcuffed` `\nstripgirls` `\ndoggystyle` `\nlesbians` `\nlewds` `\nsluts` `\nbigass` `\nbigboobs` `\nbikinis` `\npanties` `\ngonewild` `\ncreampie` `\ncumsluts` `\nblowjob` `\ndildo` `\nmilf` `\nbdsm` `\nanal` `\nass` `\npussy` `\nboobs` `\nthigh` \n**Anime NSFW**: `\nhentai` `\nhthigh` `\nhanal` `\nhboobs` `\nrule34` `\nnetorare` `\nsuccubus` `\npaizuri` `\nyuri` `\nhmidriff` `\nhneko` `\nhkitsune` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
+                    { name: '__🔞 NSFW (39)__', value: '**Real Life NSFW**: `\n4k` `\nneko` `\npgif` `\nspanks` `\nsquirts` `\nhandcuffed` `\nstripgirls` `\ndoggystyle` `\nlesbians` `\nlewds` `\nsluts` `\nbigass` `\nbigboobs` `\nbikinis` `\npanties` `\ngonewild` `\ncreampie` `\ncumsluts` `\nblowjob` `\ndildo` `\nmilf` `\nbdsm` `\nanal` `\nass` `\npussy` `\nboobs` `\nthigh` \n**Anime NSFW**: `\nhentai` `\nhthigh` `\nhanal` `\nhboobs` `\nrule34` `\nnetorare` `\nsuccubus` `\npaizuri` `\nyuri` `\nhmidriff` `\nhneko` `\nhkitsune` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
