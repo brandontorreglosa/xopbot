@@ -7,7 +7,9 @@ module.exports = {
     description: "Shows Level Of You Or User!",
     async execute(client, message, cmd, args, Discord) {
         let mentionedMember = message.mentions.members.first() || message.guild.member.cache.get(args[0]);
-        if (!mentionedMember) mentionedMember = message.member;
+        if (!args[0]) {
+            return message.reply('Please Mention A User To Check His Level!')
+        }
 
         const target = await Levels.fetch(mentionedMember.user.id, message.guild.id);
         if (!target) return message.channel.send('**The Member Mentioned Does Not Exist In This Server!**');
