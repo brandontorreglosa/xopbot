@@ -6,25 +6,19 @@ module.exports = {
     cooldown: 3,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
-        message.channel.send("⚠ **| This Command `drake` Is Splited Cuz Of Two Texts**").then((msg) => {
-            setTimeout(function () {
-                msg.edit("⚠ **| Example: i dont care about you | <--Splits Here And Continues Here--> dont care about you**")
-                setTimeout(function () {
-                    msg.edit("⚠ **| Max Is 1 Chracters For The First Split | Then Continue On Second Character**")
-                }, 15000)
-            }, 15000)
-        })
-        const text = args.slice(1).join(" ");
+        if (!args[0]) {
+            return message.reply('**You Must Do `x!drake text1 / text2` \nYou Must Add The / For It Work!**')
+        }
+        let splitArgs = args.join(' ').split('/');
+        const text = splitArgs[0];
         if (!text) {
             return message.channel.send("**Enter Some Text!**")
         }
-        // if (text.length > 5) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
-        const text2 = args.slice(2).join(" ");
+        const text2 = splitArgs[1];
         if (!text2) {
             return message.channel.send("**Enter The Second Text!**")
         }
-        // if (text2.length > 5) return message.channel.send('**You Are Not Allowed To Go Over 15 Characters!**');
 
         message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
     }

@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 10,
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.reply('**Please Do `x!createembed + <footermsg> + <title> + <description>`**')
+            return message.reply('**Please Do `x!createembed <footermsg> / <title> / <description>` \nYou Must Add The / To Make It Work!**')
         }
         let splitArgs = args.join(' ').split('/');
         const footer = splitArgs[0];
