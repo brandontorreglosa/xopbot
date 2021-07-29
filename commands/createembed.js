@@ -1,13 +1,13 @@
 module.exports = {
     name: 'createembed',
     permissions: ["MANAGE_MESSAGES"],
-    aliases: ['embedcreator', 'createe'],
+    aliases: ['embedcreator', 'create-ebed', 'create-embed'],
     cooldown: 10,
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.reply('**Please Do `x!createembed <footermsg> / <title> / <description>` \nYou Must Add The / To Make It Work!**')
+            return message.reply('**Please Do `x!createembed <footermsg> + <title> + <description>` \nYou Must Add The + To Make It Work!**')
         }
-        let splitArgs = args.join(' ').split('/');
+        let splitArgs = args.join(' ').split('+');
         const footer = splitArgs[0];
         if (!footer) return message.reply('**Please Add `<footermsg>`**')
         const title = splitArgs[1];
