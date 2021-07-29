@@ -14,11 +14,13 @@ module.exports = {
         if (!text) {
             return message.channel.send("**Enter Some Text!**")
         }
+        if (text.length > 70) return message.reply(`**You Cant Go Over 70 Characters!**`)
 
         const text2 = splitArgs[1];
         if (!text2) {
             return message.channel.send("**Enter The Second Text!**")
         }
+        if (text2.length > 70) return message.reply(`**You Cant Go Over 70 Characters!**`)
 
         message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
     }
