@@ -13,6 +13,7 @@ module.exports = {
     prefixes[message.guild.id] = { //Let The config be
       prefix: args[0] //Let prefix = arguement 1
     }
+    if (args[0] > 5) return message.reply('**Prefix Can Not Be Longer Than 5 Characters!**')
 
     fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) => { //Write File
       if (err) console.log(err); //If error log error to the console
