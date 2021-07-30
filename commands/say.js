@@ -17,11 +17,11 @@ module.exports = {
                 message.delete();
                 message.reply(`**You Have Been Reported To The Developer!**`);
                 // message.delete(4000);
-                const embed = new Discord.MessageEmbed()
+                const embed1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setTitle(`Author \n${message.author.username} Used The Say Command!`)
                     .setDescription(`Guild \nIn ${message.guild.name} \nHe Commanded This Word ${sayMessage}`)
-                channel.send(embed);
+                channel.send(embed1);
             }
 
             let sayMessage = args.slice(0).join(' ');
