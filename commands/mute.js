@@ -21,7 +21,7 @@ module.exports = {
             if (!args[1]) {
                 // memberTarget.roles.remove(mainRole.id);
                 memberTarget.roles.add(muteRole.id);
-                message.channel.send(`*** <@${memberTarget.user.id})> Has Been Muted!***`);
+                message.channel.send(`*** <@${memberTarget.user.id}> Has Been Muted!***`);
                 return
             }
 
