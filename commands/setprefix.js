@@ -7,13 +7,14 @@ module.exports = {
   permissions: ["ADMINISTRATOR"],
   async execute(client, message, cmd, args, Discord) {
 
-    if (!args[0]) return message.channel.send("⚠ Please Specify A Prefix!"); //If there isn't a prefix then return a message
+    if (!args[0]) return message.reply("Please Specify A Prefix!"); //If there isn't a prefix then return a message
+    let Prefixset = args.slice(0).join(" ");
+    if (Prefixset > 5) return message.reply('**Prefix Can Not Be Longer Than 5 Characters!**')
 
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json")); //Read File
     prefixes[message.guild.id] = { //Let The config be
-      prefix: args[0] //Let prefix = arguement 1
+      prefix: Prefixset //Let prefix = arguement 1
     }
-    if (args[0] > 5) return message.reply('**Prefix Can Not Be Longer Than 5 Characters!**')
 
     fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) => { //Write File
       if (err) console.log(err); //If error log error to the console
