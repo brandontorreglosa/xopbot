@@ -9,7 +9,7 @@ module.exports = {
 
     if (!args[0]) return message.reply("Please Specify A Prefix!"); //If there isn't a prefix then return a message
     let Prefixset = args.slice(0).join(" ");
-    if (Prefixset > 5) return message.reply('**Prefix Can Not Be Longer Than 5 Characters!**')
+    if (Prefixset.length > 5) return message.reply('**Prefix Can Not Be Longer Than 5 Characters!**')
 
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json")); //Read File
     prefixes[message.guild.id] = { //Let The config be
