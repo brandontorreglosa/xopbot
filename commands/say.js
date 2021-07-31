@@ -25,7 +25,7 @@ module.exports = {
             }
 
             let sayMessage = args.slice(0).join(' ');
-            if (sayMessage.length > 80) return message.channel.send('**You Are Not Allowed To Go Over 80 Characters!**');
+            if (sayMessage.length > 100) return message.channel.send('**You Are Not Allowed To Go Over 100 Characters!**');
 
             if (!args[0]) {
                 message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat!**")
