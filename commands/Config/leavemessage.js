@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const LeaveMsgSchema = require("../models/leavemessage");
+const LeaveMsgSchema = require("../../models/leavemessage");
 
 module.exports = {
   name: "leavemessage",

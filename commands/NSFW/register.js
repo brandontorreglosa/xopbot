@@ -1,4 +1,4 @@
-const nsfwSchema = require("../models/registernsfw");
+const nsfwSchema = require("../../models/registernsfw");
 
 module.exports = {
     name: 'register',

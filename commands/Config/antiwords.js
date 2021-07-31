@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const antiwordsSchema = require("../models/antiwords");
+const antiwordsSchema = require("../../models/antiwords");
 
 module.exports = {
   name: "antiwords",

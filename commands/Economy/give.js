@@ -1,13 +1,13 @@
-const profileModel = require("../models/profileSchema");
+const profileModel = require("../../models/profileSchema");
 module.exports = {
-  name: "coins-set",
+  name: "give",
   cooldown: 3,
-  aliases: ['cs', 'cst'],
+  aliases: [],
   permissions: ["SEND_MESSAGES"],
   description: "give a player some Xocoins",
   async execute(client, message, cmd, args, Discord, profileData) {
     if (message.member.id != "600094534386319370") return message.channel.send(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command 😔**`);
-    if (!args.length) return message.channel.send("**You Need To Mention A Player To Set Their Xocoins!**");
+    if (!args.length) return message.channel.send("**You Need To Mention A Player To Give Them Xocoins!**");
     const amount = args[1];
     const target = message.mentions.users.first();
     if (!target) return message.channel.send("**That User Does Not Exist In This Server!**");
@@ -29,11 +29,13 @@ module.exports = {
           userID: target.id,
         },
         {
-          coins: amount,
-        },
+          $inc: {
+            coins: amount,
+          },
+        }
       );
 
-      return message.channel.send(`**This User's Xocoins Have Been Set To ${amount} Xocoins!** 💸`);
+      return message.channel.send(`**This User Has Been Given ${amount} of Xocoins!** 💸`);
     } catch (err) {
       console.log(err);
     }

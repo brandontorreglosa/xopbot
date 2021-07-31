@@ -1,13 +1,13 @@
-const profileModel = require("../models/profileSchema");
+const profileModel = require("../../models/profileSchema");
 module.exports = {
-  name: "daily",
+  name: "beg",
   permissions: ["SEND_MESSAGES"],
   aliases: [],
-  cooldown: 86400,
+  cooldown: 3,
   permissions: [],
-  description: "daily Xocoins",
+  description: "beg for coins",
   async execute(client, message, cmd, args, Discord, profileData) {
-    const randomNumber = Math.floor(Math.random() * 20500) + 5000;
+    const randomNumber = Math.floor(Math.random() * 500) + 1;
     const response = await profileModel.findOneAndUpdate(
       {
         userID: message.author.id,
@@ -18,14 +18,13 @@ module.exports = {
         },
       }
     );
-
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setTitle(`${message.author.username}`)
-      .setDescription(`You Received **${randomNumber}** Daily **Xocoins** 💸`)
+      .setDescription(`You Begged And Got From XOPBOT **${randomNumber} Xocoins** 💸`)
       .setColor('#c30202')
-    // message.channel.send(`**${message.author.username}, You Received ${randomNumber}** Daily **Xocoins** 💸`);
 
     message.channel.send(embed);
+    //return message.channel.send(`**${message.author.username}, You Begged And Received ${randomNumber}** **Xocoins** 💸`);
   },
 };

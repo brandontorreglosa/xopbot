@@ -1,4 +1,4 @@
-const premiumSchema = require("../models/premium");
+const premiumSchema = require("../../models/premium");
 
 module.exports = {
     name: 'delete-premium',

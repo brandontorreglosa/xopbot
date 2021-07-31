@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const antilinkSchema = require("../models/antilink");
+const antilinkSchema = require("../../models/antilink");
 
 module.exports = {
   name: "antilink",

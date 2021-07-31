@@ -1,5 +1,5 @@
 const Discord = module.require("discord.js")
-const goodbyeSchema = require("../models/leavechannel");
+const goodbyeSchema = require("../../models/leavechannel");
 
 module.exports = {
   name: "leavechannel",

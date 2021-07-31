@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const items = require("../utility/shopItems");
-const items2 = require("../utility/shopItems2")
+const items = require("../../utility/shopItems");
+const items2 = require("../../utility/shopItems2")
 
 module.exports = {
     name: 'shop1',
