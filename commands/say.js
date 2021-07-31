@@ -13,9 +13,9 @@ module.exports = {
 
             const user = message.mentions.users.first();
 
-            if (message.content.match("gore") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt")) {
+            if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt")) {
                 message.delete();
-                message.reply(`**You Have Been Reported To The Developer!**`);
+                message.reply(`**Im Not Allowed To Say Bad Words! Lol Cry 😂**`);
                 // message.delete(4000);
                 const embed1 = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -28,13 +28,13 @@ module.exports = {
             if (sayMessage.length > 65) return message.channel.send('**You Are Not Allowed To Go Over 65 Characters!**');
 
             if (!args[0]) {
-                message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat! \nAnything Rude Is Sended To The Developer!**")
+                message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat!**")
             }
 
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
-                .setDescription(`${sayMessage}`)
+                .setDescription(`**${sayMessage}**`)
             message.channel.send(embed);
 
         } catch (err) {
