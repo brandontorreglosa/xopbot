@@ -29,6 +29,6 @@ module.exports = {
         }
         if (text2.length > 50) return message.reply(`**You Cant Go Over 50 Characters!**`)
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotdockofshame.png" }] });
+        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
     }
 }

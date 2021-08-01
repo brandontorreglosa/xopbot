@@ -28,7 +28,7 @@ module.exports = {
             if (sayMessage.length > 100) return message.channel.send('**You Are Not Allowed To Go Over 100 Characters!**');
 
             if (!args[0]) {
-                message.channel.send("**Please Add Some Text for Me XOPBOT To Repeat!**")
+                message.channel.send("**Please Add Some Text For Me XOPBOT To Repeat!**")
             }
 
             const embed = new Discord.MessageEmbed()
