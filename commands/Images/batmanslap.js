@@ -14,8 +14,6 @@ module.exports = {
 
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
-        const mention2 = message.mentions.members.first() || message.member;
-        const avatar2 = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
         let splitargs = args.join(' ').split('/');
 
