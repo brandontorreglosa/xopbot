@@ -13,6 +13,7 @@ const fs = require('fs')
 client.db = new Database(process.env.MONGODB_SRV2)
 client.filters = process.env.filters;
 client.commands = new Discord.Collection();
+client.categories = fs.readdirSync("./commands/")
 client.events = new Discord.Collection();
 client.setMaxListeners(0);
 
