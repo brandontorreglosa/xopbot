@@ -9,7 +9,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         if(!args[0]) {
-            return message.reply('**`(preifx)batmanslap @user{optional} text1 / text2` \nMust Add / For It To Work!**')
+            return message.reply('**`(preifx)batmanslap text1 / text2` \nMust Add / For It To Work!**')
         }
 
         const mention = message.mentions.members.first() || message.member;
