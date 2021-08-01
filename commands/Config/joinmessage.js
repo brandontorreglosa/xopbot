@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const JoinMsgSchema = require("../models/joinmsg");
+const JoinMsgSchema = require("../../models/joinmsg");
 
 module.exports = {
   name: "joinmessage",

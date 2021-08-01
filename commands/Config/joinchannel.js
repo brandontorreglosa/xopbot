@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const welcomeSchema = require("../models/welcome");
+const welcomeSchema = require("../../models/welcome");
 
 module.exports = {
   name: "joinchannel",
