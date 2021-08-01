@@ -23,7 +23,7 @@ module.exports = {
         }
         if (text.length > 50) return message.reply(`**You Cant Go Over 50 Characters!**`)
 
-        const text2 = splitArgs[1];
+        const text2 = splitargs[1];
         if (!text2) {
             return message.channel.send("**Enter The Second Text!**")
         }
