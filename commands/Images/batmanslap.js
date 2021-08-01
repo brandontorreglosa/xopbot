@@ -12,7 +12,7 @@ module.exports = {
             return message.reply('**`(preifx)batmanslap text1 / text2` \nMust Add / For It To Work!**')
         }
 
-        const mention = message.mentions.users.first() || message.author;
+        const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
         let splitargs = args.join(' ').split('/');
