@@ -1,3 +1,4 @@
+module.exports = (Discord, client) => {
 client.on('guildCreate', (guild) => {
     let channeltoSend;
     guild.channels.cache.forEach((channel) => {
@@ -19,3 +20,4 @@ client.on('guildCreate', (guild) => {
             return;
         }});
 })
+}
