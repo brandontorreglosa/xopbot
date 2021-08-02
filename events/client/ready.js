@@ -7,7 +7,7 @@ module.exports = (Discord, client) => {
         `${client.channels.cache.size} Channels`,
         `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
         '👑HACKERPROᵈᵉᵛ#1498 Made This Bot',
-        'https://www.xopbot.tk/',
+        'https://xopbot-gg.glitch.me/',
         '160+ Commands',
         '24/7 Always'
     ];
