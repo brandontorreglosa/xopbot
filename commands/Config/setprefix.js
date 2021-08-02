@@ -20,7 +20,7 @@ module.exports = {
       if (err) console.log(err); //If error log error to the console
     })
 
-    message.channel.send(`Prefix Has Been Set To **${args[0]}**!`); //send message to that channel
+    message.channel.send(`Prefix Has Been Set To ||**${Prefixset}**||`); //send message to that channel
     return; //return
   }
 }
