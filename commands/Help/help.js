@@ -295,7 +295,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (42)__', value: '**Real Life NSFW**: `\n4k` `\norgy` `\nneko` `\npgif` `\nspanks` `\nsquirts` `\nhandcuffed` `\nthreesome` `\nstripgirls` `\ndoggystyle` `\nlesbians` `\nlewds` `\nsluts` `\nbigass` `\nbigboobs` `\nbikinis` `\npanties` `\ngonewild` `\ncreampie` `\ncumsluts` `\nblowjob` `\ndildo` `\nmilf` `\nbdsm` `\nanal` `\nass` `\npussy` `\nboobs` `\nthigh` \n**Anime NSFW**: `\nhentai` `\nhthigh` `\nhanal` `\nhboobs` `\nrule34` `\ncowgirl` `\nnetorare` `\nsuccubus` `\npaizuri` `\nyuri` `\nhmidriff` `\nhneko` `\nhkitsune` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
+                    { name: '__🔞 NSFW (43)__', value: '**Real Life NSFW**: \n`4k` \n`orgy` \n`neko` \n`pgif` \n`spanks` \n`squirts` \n`gangbang` \n`handcuffed` \n`threesome` \n`stripgirls` \n`doggystyle` \n`lesbians` \n`lewds` \n`sluts` \n`bigass` \n`bigboobs` \n`bikinis` \n`panties` \n`gonewild` \n`creampie` \n`cumsluts` \n`blowjob` \n`dildo` \n`milf` \n`bdsm` \n`anal` \n`ass` \n`pussy` \n`boobs` \n`thigh` \n**Anime NSFW**: \n`hentai` \n`hthigh` \n`hanal` \n`hboobs` \n`rule34` \n`cowgirl` \n`netorare` \n`succubus` \n`paizuri` \n`yuri` \n`hmidriff` \n`hneko` \n`hkitsune` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
