@@ -9,7 +9,7 @@ module.exports = {
             .setTimestamp()
             .setColor('#c30202')
             .setTitle(`OMG! You Just Got Rickrolled By The Legendary ${message.author.username}`)
-            .setImage('')
+            .setImage('https://tenor.com/view/dance-moves-dancing-singer-groovy-gif-17029825')
             .setFooter('You Just Got Rickrolled 😆')
             user.send(embed)
     }
