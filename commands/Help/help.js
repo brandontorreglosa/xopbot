@@ -132,7 +132,7 @@ module.exports = {
                 //.setTitle('__🛠️ Moderation__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🛠️ Moderation (20)__', value: '`dm`-__***Dm A User!***__  `\nban`-__***Ban A Member From A Server!***__ `\nunban`-__***Unban A Member From A Server!***__  `\nkick`-__***Kick A Member From A Server!***__ `\nmute`-__***Mute A Member From A Server!***__ `\nunmute`-__***Unmute A Member From A Server!***__ `\nnuke`-__***Clear A Channel!***__ `\nclear`-__***Clear Messages From A Server!***__  `\ncommand`-__***Gives Basic Server Rules Of A Server!***__  `\nslowmode`-__***Add Slowmode To A Text Channel!***__ `\naddrole`-__***Add A Role To A User!***__ `\nremoverole`-__***Remove A Role From A User!***__ `\ncreateembed`-__***Create A Custom Embed!***__ `\ncreatetext`-__***Create A Text Channel!***__ `\ncreatevoice`-__***Create A Voice Channel!***__ `\ndeletechannel`-__***Delete A Channel!***__ `\nuserlock`-__***Lock A Role From A Specific Channel!***__ `\nuserunlock`-__***Unlock A Role From A Specific Channel!***__ `\nchannellock`-__***Lock A Channel!***__ `\nchannelunlock`-__***Unlock A Channel!***__' },
+                    { name: '__🛠️ Moderation (20)__', value: '`dm`-__***Dm A User!***__  \n`ban`-__***Ban A Member From A Server!***__ \n`unban`-__***Unban A Member From A Server!***__  \n`kick`-__***Kick A Member From A Server!***__ \n`mute`-__***Mute A Member From A Server!***__ \n`unmute`-__***Unmute A Member From A Server!***__ \n`nuke`-__***Clear A Channel!***__ \n`clear`-__***Clear Messages From A Server!***__  \n`command`-__***Gives Basic Server Rules Of A Server!***__  \n`slowmode`-__***Add Slowmode To A Text Channel!***__ \n`addrole`-__***Add A Role To A User!***__ \n`removerole`-__***Remove A Role From A User!***__ \n`createembed`-__***Create A Custom Embed!***__ \n`createtext`-__***Create A Text Channel!***__ \n`createvoice`-__***Create A Voice Channel!***__ \n`deletechannel`-__***Delete A Channel!***__ \n`userlock`-__***Lock A Role From A Specific Channel!***__ \n`userunlock`-__***Unlock A Role From A Specific Channel!***__ \n`channellock`-__***Lock A Channel!***__ \n`channelunlock`-__***Unlock A Channel!***__' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -149,7 +149,7 @@ module.exports = {
                 //.setTitle('__⚙ Utility__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__⚙ Utility (9)__', value: '`ticket`-__***Generates Private Text Channel!***__ `\nwebhook`-__***Send Something From A Webhook!***__ `\nxopchat`-__***Request For Xopchat!***__ `\nafk`-__***Get AFK Status!***__ `\nsuggestions`-__***Make A Suggestion To The Admins!***__ `\nnickname`-__***Change Someones Nickname!***__ `\nanime`-__***Search For Anime!***__ `\nwiki`-__***Search Something On Wiki!***__ `\ngoogle`-__***Search Something On Google!***__' }
+                    { name: '__⚙ Utility (9)__', value: '`ticket`-__***Generates Private Text Channel!***__ \n`webhook`-__***Send Something From A Webhook!***__ \n`xopchat`-__***Request For Xopchat!***__ \n`afk`-__***Get AFK Status!***__ \n`suggestions`-__***Make A Suggestion To The Admins!***__ \n`nickname`-__***Change Someones Nickname!***__ \n`anime`-__***Search For Anime!***__ \n`wiki`-__***Search Something On Wiki!***__ \n`google`-__***Search Something On Google!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -166,7 +166,7 @@ module.exports = {
                 //.setTitle('__🐛 Bugs__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🐛 Bugs (3)__', value: '`bugreport`-__***Report A Bug To Admins!***__ `\nfindbugs`-__***Find Bugs On Your Server!***__ `\nclearbugs`-__***Clear Bugs From Your Server!***__' }
+                    { name: '__🐛 Bugs (3)__', value: '`bugreport`-__***Report A Bug To Admins!***__ \n`findbugs`-__***Find Bugs On Your Server!***__ \n`clearbugs`-__***Clear Bugs From Your Server!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -183,7 +183,7 @@ module.exports = {
                 //.setTitle('__📈 Status__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__📈 Status (6)__', value: '`mcserver`-__***Get Real-Time Status Of MCServers!***__  `\nstatusping`-__***Get A Status Ping Of Your Server!***__ `\nserverinfo`-__***Get Your Servers Information!***__ `\nbotinfo`-__***Get The Bots Information!***__ `\ncovid`-__***Get Covid Information Of A Area!***__ `\nuserinfo`-__***Get A Real User Info!***__' }
+                    { name: '__📈 Status (6)__', value: '`mcserver`-__***Get Real-Time Status Of MCServers!***__  \n`statusping`-__***Get A Status Ping Of Your Server!***__ \n`serverinfo`-__***Get Your Servers Information!***__ \n`botinfo`-__***Get The Bots Information!***__ \n`covid`-__***Get Covid Information Of A Area!***__ \n`userinfo`-__***Get A Real User Info!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -200,7 +200,7 @@ module.exports = {
                 //.setTitle('__💬 Socials__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__💬 Socials (3)__', value: '`youtube`-__***Go To My Youtube Channel!***__ `\nscratch`-__***Go To My Scratch Account!***__ `\namino`-__***Go To My Amino Account!***__' }
+                    { name: '__💬 Socials (3)__', value: '`youtube`-__***Go To My Youtube Channel!***__ \n`scratch`-__***Go To My Scratch Account!***__ \n`amino`-__***Go To My Amino Account!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -217,7 +217,7 @@ module.exports = {
                 //.setTitle('__🥳 Fun__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🥳 Fun (18)__', value: '`ping`-__***Not Real Ping!***__ `\navatar`-__***Shows A Users Avatar!***__ `\nbadges`-__***Gives You A Users Badge!***__ `\n8ball`-__***Ask 8ball A Question!***__ `\nreverse`-__***Reverse A Word That You Send!***__ `\ncoinflip`-__***Flip A Coin!***__ `\nmeme`-__***Get Memes From Reddit!***__ `\nsay`-__***XOPBOT Repeats The Word!***__ `\nascii`-__***Convert Text To Ascii!***__ `\nfliptext`-__***Flip Your Text!***__ `\ndog`-__***Get A Random Dog!***__ `\ncat`-__***Get A Random Cat!***__ `\nrespect`-__***Respect A User!***__ `\nhack`-__***Hack A User!***__  `\nkill`-__***Kill A User!***__ `\nhug`-__***Hug A User!***__ `\nkiss`-__***Kiss A User!***__ `\npp`-__***Get A Users PP!***__' }
+                    { name: '__🥳 Fun (18)__', value: '`ping`-__***Not Real Ping!***__ \n`avatar`-__***Shows A Users Avatar!***__ \n`badges`-__***Gives You A Users Badge!***__ \n`8ball`-__***Ask 8ball A Question!***__ \n`reverse`-__***Reverse A Word That You Send!***__ \n`coinflip`-__***Flip A Coin!***__ \n`meme`-__***Get Memes From Reddit!***__ \n`say`-__***XOPBOT Repeats The Word!***__ \n`ascii`-__***Convert Text To Ascii!***__ \n`fliptext`-__***Flip Your Text!***__ \n`dog`-__***Get A Random Dog!***__ \n`cat`-__***Get A Random Cat!***__ \n`respect`-__***Respect A User!***__ \n`hack`-__***Hack A User!***__  \n`kill`-__***Kill A User!***__ \n`hug`-__***Hug A User!***__ \n`kiss`-__***Kiss A User!***__ \n`pp`-__***Get A Users PP!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -234,7 +234,7 @@ module.exports = {
                 // .setTitle('__🎶 Music__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🎶 Music (5)__', value: '`play`-__***Play Any Music From Youtube!***__  `\nstop`-__***Stop The Player!***__  `\n\skip`-__***Skip To The Song In Queue!***__ `\n\pause`-__***Pause The Song From Playing!***__ `\nunpause`-__***Unpause The Song To Play!***__' }
+                    { name: '__🎶 Music (5)__', value: '`play`-__***Play Any Music From Youtube!***__  \n`stop`-__***Stop The Player!***__ \n`skip`-__***Skip To The Song In Queue!***__ \n`pause`-__***Pause The Song From Playing!***__ \n`unpause`-__***Unpause The Song To Play!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -251,7 +251,7 @@ module.exports = {
                 // .setTitle('__🤑 Economy__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🤑 Economy (11)__', value: '`shop(1-2)`-__***Get Something From The Shop!***__ `\nprofile`-__***Get Your Profile***__ `\nbalance`-__***Get Your Banks And Wallet Balance!***__  `\ndeposit`-__***Deposit Xocoins Into Your Bank!***__  `\nwithdraw`-__***Withdraw Money Out Of Your Bank!***__  `\nbeg`-__***Beg From XOPBOT For Xocoins!***__ `\ncoins-set`-__***Private Command!***__  `\ngive`-__***Private Command!***__  `\nsearch`-__***Search For Xocoins On Locations!***__ `\nwork`-__***Work For Xocoins!***__ `\ndaily`-__***Get Daily Xocoins!***__' }
+                    { name: '__🤑 Economy (11)__', value: '`shop(1-2)`-__***Get Something From The Shop!***__ \n`profile`-__***Get Your Profile***__ \n`balance`-__***Get Your Banks And Wallet Balance!***__  \n`deposit`-__***Deposit Xocoins Into Your Bank!***__  \n`withdraw`-__***Withdraw Money Out Of Your Bank!***__  \n`beg`-__***Beg From XOPBOT For Xocoins!***__ \n`coins-set`-__***Private Command!***__  \n`give`-__***Private Command!***__  \n`search`-__***Search For Xocoins On Locations!***__ \n`work`-__***Work For Xocoins!***__ \n`daily`-__***Get Daily Xocoins!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -268,7 +268,7 @@ module.exports = {
                 //.setTitle('__⏫ Leveling__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__⏫ Leveling (4)__', value: '`rank`-__***Get Your Level Rank Card!***__  `\nleaderboard`-__***Get Your Servers Leaderboard!***__ `\nlevel`-__***Get A Users Level!***__ `\nedit`-__***Edit Level Or Xp!***__' }
+                    { name: '__⏫ Leveling (4)__', value: '`rank`-__***Get Your Level Rank Card!***__  \n`leaderboard`-__***Get Your Servers Leaderboard!***__ \n`level`-__***Get A Users Level!***__ \n`edit`-__***Edit Level Or Xp!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -312,7 +312,7 @@ module.exports = {
                 //.setTitle('__👑 Premium__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__👑 Premium (5)__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ `\nweather`-__***Get Your Current Weather! (Premium)***__ `\noldmeme`-__***Get Old Memes From Google! (Premium)***__ `\ntictactoe`-__***Play Tictactoe! (Premium)***__ `\nmath`-__***Do Math Problems! (Premium)***__' }
+                    { name: '__👑 Premium (5)__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ \n`weather`-__***Get Your Current Weather! (Premium)***__ \n`oldmeme`-__***Get Old Memes From Google! (Premium)***__ \n`tictactoe`-__***Play Tictactoe! (Premium)***__ \n`math`-__***Do Math Problems! (Premium)***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -329,7 +329,7 @@ module.exports = {
                 //.setTitle('__🔗 Invites__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔗 Invites (2)__', value: '`botinvite`-__***Invite The Bot To Your Server!***__ `\nwebsiteinvite`-__***Go To XOPBOTs Official Website!***__' }
+                    { name: '__🔗 Invites (2)__', value: '`botinvite`-__***Invite The Bot To Your Server!***__ \n`websiteinvite`-__***Go To XOPBOTs Official Website!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -346,8 +346,8 @@ module.exports = {
                 //.setTitle('__🤖 Credits__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🤖 Bot Credits__', value: '`Bot:`-__***The Bots Credits***__ `\nBot Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ `\nBot Supporter`-__***@Trixer#8894***__' },
-                    { name: '__🤖 Bot Website Credits__', value: '`Bot Website:`-__***The Bots Credits Of The Website***__ `\nBot Website Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ `\nBot Website Manager`-__***@Trixer#8894***__' },
+                    { name: '__🤖 Bot Credits__', value: '`Bot:`-__***The Bots Credits***__ \n`Bot Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Supporter`-__***@Trixer#8894***__' },
+                    { name: '__🤖 Bot Website Credits__', value: '`Bot Website:`-__***The Bots Credits Of The Website***__ \n`Bot Website Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Website Manager`-__***@Trixer#8894***__' },
                     { name: '__🤖 Invites__', value: '[Bot Invite](https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295) \n[Bot Website](https://www.xopbot.tk/)' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
@@ -365,7 +365,7 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🎮 Games (3)__', value: '`guessthenumber`-__***Guess The Number!***__ `\nrps`-__***Play Rock,Paper,Sciccors!***__ `\nhangman`-__***Play Hangman!***__' }
+                    { name: '__🎮 Games (3)__', value: '`guessthenumber`-__***Guess The Number!***__ \n`rps`-__***Play Rock,Paper,Sciccors!***__ \n`hangman`-__***Play Hangman!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -382,7 +382,7 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__⚠ Config (9)__', value: '`antiwords`-__***Setup Bad Words Detector!***__`\nantilink`-__***Setup Antilink On A Server!***__ `\nautonsfw`-__***Setup Autonsfw On A Server!***__ `\nautomeme`-__***Setup Automeme On A Server!***__`\njoinchannel`-__***Setup The Join Channel!***__ `\nleavechannel`-__***Setup The Leave Channel!***__ `\njoinmesage`-__***Setup The Join Message!***__ `\nleavemessage`-__***Setup The Leave Message!***__ `\nsetprefix`-__***Set The Server Prefix!***__' }
+                    { name: '__⚠ Config (9)__', value: '`antiwords`-__***Setup Bad Words Detector!***__ \n`antilink`-__***Setup Antilink On A Server!***__ \n`autonsfw`-__***Setup Autonsfw On A Server!***__ \n`automeme`-__***Setup Automeme On A Server!***__ \n`joinchannel`-__***Setup The Join Channel!***__ \n`leavechannel`-__***Setup The Leave Channel!***__ \n`joinmesage`-__***Setup The Join Message!***__ \n`leavemessage`-__***Setup The Leave Message!***__ \n`setprefix`-__***Set The Server Prefix!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -399,7 +399,7 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__📷 Images (14)__', value: '`phub`-__***What Are You Doing?***__ `\ndrip`-__***Get A Image Of A Drip User!***__ `\nwater`-__***I Need Water Guide Me!***__ `\nclyde`-__***Get An Image Of Clyde Sending!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nstonks`-__***Wow Im Rich ASF!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\nbatmanslap`-__***Batman Slap XOPBOT!***__ `\ncarreverse`-__***Reverse The Car From The Cringe!***__ `\nwideavatar`-__***Get A Image Of A Users Wide Pfp!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\ntableflip`-__***Get A Image Doing A Tableflip!***__ `\nchangemymind`-__***Change A Users Mind!***__' }
+                    { name: '__📷 Images (14)__', value: '`phub`-__***What Are You Doing?***__ \n`drip`-__***Get A Image Of A Drip User!***__ \n`water`-__***I Need Water Guide Me!***__ \n`clyde`-__***Get An Image Of Clyde Sending!***__ \n`grave`-__***Get An Image Of A User In A Grave!***__ \n`stonks`-__***Wow Im Rich ASF!***__ \n`heaven`-__***Get A Image Of A User In Heaven!***__ \n`iamspeed`-__***Yes Im Fast Asf Boi You See!***__ \n`batmanslap`-__***Batman Slap XOPBOT!***__ \n`carreverse`-__***Reverse The Car From The Cringe!***__ \n`wideavatar`-__***Get A Image Of A Users Wide Pfp!***__ \n`dockofshame`-__***Get A Image Of A User On The Dock!***__ \n`tableflip`-__***Get A Image Doing A Tableflip!***__ \n`changemymind`-__***Change A Users Mind!***__' }
                     //  { name: '__📷 Images (21)__', value: '`ad`-__***Wow You Became A AD!***__ `\npet`-__***Aww You Got Pet!***__ `\nm&m`-__***Wow You Are A M&M!***__ `\nphub`-__***What Are You Doing?***__ `\ndrip`-__***Get A Image Of A Drip User!***__ `\nalert`-__***Alert The World!***__ `\nfacts`-__***Facts Only Mate!***__ `\nclown`-__***Wow You Are A Clown!***__ `\ndrake`-__***The Drake Meme!***__ `\nclyde`-__***Get An Image Of Clyde Sending!***__ `\nbiden`-__***Make Biden Tweet Something!***__ `\ngrave`-__***Get An Image Of A User In A Grave!***__ `\nheaven`-__***Get A Image Of A User In Heaven!***__ `\npikachu`-__***Pikachu Meme If You Know!***__ `\nuncover`-__***The Rick And Morty Meme!***__ `\niamspeed`-__***Yes Im Fast Asf Boi You See!***__ `\ncarreverse`-__***Reverse The Car From The Cringe!***__ `\nwideavatar`-__***Get A Image Of A Users Wide Pfp!***__ `\ndockofshame`-__***Get A Image Of A User On The Dock!***__ `\ntableflip`-__***Get A Image Doing A Tableflip!***__ `\nchangemymind`-__***Change A Users Mind!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
@@ -418,7 +418,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__👷‍♂️ Owner (2)__', value: '`botservers`-__***Get The Bots Server Names!***__ `\nshutdown`-__***Shutdown The Bot!***__' }
+                    { name: '__👷‍♂️ Owner (2)__', value: '`botservers`-__***Get The Bots Server Names!***__ \n`shutdown`-__***Shutdown The Bot!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
