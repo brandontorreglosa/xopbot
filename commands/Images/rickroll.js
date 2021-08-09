@@ -6,7 +6,10 @@ module.exports = {
     description: 'get Rickrolled',
     async execute(client, message, cmd, args, Discord) {
         try {
-            const user = message.mentions.users.first() || message.author;
+            const user = message.mentions.users.first()
+            if(!args[0]) {
+                return message.reply('**You Must Mention A User To Rickroll! 🤪**')
+            }
             if (message.mentions.users.first().bot) {
                 return message.reply('**You Can Not Rickroll Bot`s! They Wont See It 😢**')
             }
