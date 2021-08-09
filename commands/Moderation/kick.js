@@ -6,7 +6,7 @@ module.exports = {
   execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first();
 
-    if (!member) {
+    if (!args[0]) {
       return message.reply('**You Did Not Mention A User To Kick!**')
     }
 

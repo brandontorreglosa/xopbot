@@ -6,7 +6,7 @@ module.exports = {
   execute(client, message, cmd, args, Discord) {
     const user = message.mentions.users.first();
 
-    if (!user) {
+    if (!args[0]) {
       return message.reply('**You Must Mention A User To Ban!**')
     }
     if (message.author.id === user.id) {

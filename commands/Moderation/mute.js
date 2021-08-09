@@ -8,7 +8,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const roletofind = args.slice(1).join(" ")
         const target = message.mentions.users.first();
-        if (!target) {
+        if (!args[0]) {
             return message.reply('**You Did Not Mention A User To Mute!**')
         }
         if(message.mentions.users.first().bot) {
