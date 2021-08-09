@@ -17,7 +17,7 @@ module.exports = {
                 .send(embed)
                 .catch(() => message.channel.send("**That User Could Not Be Rickrolled!!**"))
                 .then(() => message.channel.send(`**I Have Rickrolled ${user.user.tag}!**`));
-        } catch (err) {
+        } catch (error) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.channel.send("**Looks Like An Error Has Occured!**");
             errorlogs.send("Error On Rickroll Command\n Error:\n" + error)
