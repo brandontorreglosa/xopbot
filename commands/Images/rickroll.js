@@ -15,7 +15,7 @@ module.exports = {
                 .setFooter('You Just Got Rickrolled 😆')
             user.send(embed)
                 .catch(() => message.channel.send("**That User Could Not Be Rickrolled!!**"))
-                .then(() => message.channel.send(`**I Have Rickrolled ${user.user.tag}!**`));
+                .then(() => message.channel.send(`**I Have Rickrolled ${user.tag}!**`));
         } catch (error) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.channel.send("**Looks Like An Error Has Occured!**");
