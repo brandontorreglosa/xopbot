@@ -7,6 +7,9 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         try {
             const user = message.mentions.users.first() || message.author;
+            if (message.mentions.users.first().bot) {
+                return message.reply('**You Can Not Rickroll Bot`s! They Wont See It 😢**')
+            }
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
@@ -14,8 +17,8 @@ module.exports = {
                 .setImage('https://media1.tenor.com/images/23aeaaa34afd591deee6c163c96cb0ee/tenor.gif?itemid=7220603')
                 .setFooter('You Just Got Rickrolled 😆')
             user.send(embed)
-                .catch(() => message.channel.send("**That User Could Not Be Rickrolled!!**"))
-                .then(() => message.channel.send(`**I Have Rickrolled ${user.tag}!**`));
+                .catch(() => message.channel.send("**That User Could Not Be Rickrolled! 😭**"))
+                .then(() => message.channel.send(`**I Have Rickrolled ${user.tag}! 😉**`));
         } catch (error) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.channel.send("**Looks Like An Error Has Occured!**");
