@@ -8,8 +8,8 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setTitle(`OMG! You Just Got Rickrolled By The Legendary ${message.author.username}`)
-            .setImage('https://tenor.com/view/dance-moves-dancing-singer-groovy-gif-17029825')
+            .setTitle(`OMG! You Just Got Rickrolled By ${message.author.username}`)
+            .setImage('https://media1.tenor.com/images/23aeaaa34afd591deee6c163c96cb0ee/tenor.gif?itemid=7220603')
             .setFooter('You Just Got Rickrolled 😆')
             user.send(embed)
     }
