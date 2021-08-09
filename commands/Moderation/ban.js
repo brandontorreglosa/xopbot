@@ -4,7 +4,7 @@ module.exports = {
   cooldown: 3,
   description: "This Command Bans Member",
   execute(client, message, cmd, args, Discord) {
-    const member = message.mentions.users.first();
+    const user = message.mentions.users.first();
 		if (message.author.id === user.id) {
 			return message.channel.send('**Are You Alright? You Can Not Ban Yourself!**');
 		}
@@ -14,11 +14,11 @@ module.exports = {
 				'**You Jerk, How You Can Ban Server Owner! 👿**'
 			);
 		}
-    
-    if (member) {
-      const memberTarger = message.guild.members.cache.get(member.id);
-      memberTarger.ban();
-      message.channel.send(`***<@${memberTarger.user.id}> Has Been Banned For Breaking The Rules!***`);
+
+    if (user) {
+      const userTarger = message.guild.members.cache.get(member.id);
+      userTarger.ban();
+      message.channel.send(`**<@${userTarger.user.id}> Has Been Banned For Breaking The Rules!**`);
     } else {
       message.channel.send('**You Cant Ban This Member Because It Dont Exist Or He Is A Hacker!**');
     }
