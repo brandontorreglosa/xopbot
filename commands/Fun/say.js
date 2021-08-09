@@ -28,6 +28,17 @@ module.exports = {
                 channel.send(embed1);
             }
 
+            if (message.content.match("@") || message.content.match("<@")) {
+                message.delete();
+                message.reply(`**Im Not Allowed To Ping Users! If U Got Pinged ${message.author.username} Did It!**`);
+                // message.delete(4000);
+                const embed1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setTitle(`Author \n${message.author.username} Used The Say Command!`)
+                    .setDescription(`Guild \nIn ${message.guild.name} \nHe Commanded To Ping ${sayMessage}`)
+                channel.send(embed1);
+            }
+
             let sayMessage = args.slice(0).join(' ');
             if (sayMessage.length > 100) return message.channel.send('**You Are Not Allowed To Go Over 100 Characters!**');
 
