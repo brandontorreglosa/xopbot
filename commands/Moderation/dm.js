@@ -16,6 +16,12 @@ module.exports = {
         return message.channel.send(
           `You did not mention a user, or you gave an invalid id`
         );
+        if(message.mentions.users.first().bot) {
+          return message.reply('**You Can Not DM Bot`s As They Will Never Send Back!**')
+        }
+        if (message.author.id === user.id) {
+          return message.reply('**Are You Alright? You Can Not DM Yourself!**');
+        }
       const dmmessage = args.slice(1).join(" ")
       if (!dmmessage)
         return message.channel.send("**You did not specify your message**");
