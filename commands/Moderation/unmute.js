@@ -5,7 +5,7 @@ module.exports = {
     description: "This Unmutes A Member",
     execute(client, message, cmd, args, Discord) {
         const target = message.mentions.users.first();
-        if (!target) {
+        if (!args[0]) {
             return message.reply('**You Must Mention A User To Unmute!**')
           }
           if(message.mentions.users.first().bot) {

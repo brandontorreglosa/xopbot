@@ -5,7 +5,7 @@ module.exports = {
   description: "This Command Unbans Member",
   execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first();
-    if (!member) {
+    if (!args[0]) {
       return message.reply('**You Must Mention A User To Unban!**')
     }
     if (message.author.id === member.id) {
