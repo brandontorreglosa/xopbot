@@ -27,11 +27,11 @@ module.exports = {
         .setFooter(`Sent By ${message.author.username}`)
       user.user
         .send(embed)
-        .catch(() => message.channel.send("**That user could not be DMed!**"))
-        .then(() => message.channel.send(`**Sent a message to ${user.user.tag}**`));
+        .catch(() => message.channel.send("**That User Could Not Be DMED!**"))
+        .then(() => message.channel.send(`**Sent A Message To ${user.user.tag}!**`));
     } catch (error) {
       const errorlogs = client.channels.cache.get(errorChannel);
-      message.channel.send("Looks like an error has occured");
+      message.channel.send("**Looks Like An Error Has Occured**");
       errorlogs.send("Error on DM command\n Error:\n" + error)
     }
   }
