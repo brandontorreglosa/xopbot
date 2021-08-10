@@ -21,7 +21,11 @@ module.exports = {
                     .setTimestamp()
                     .setColor('#c30202')
                     .setDescription(`** ${message.author.username}, Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
-                message.channel.send(embed1);
+                message.channel.send(embed1)
+                .then(message => {
+                    message.delete({ timeout: 6000 })
+                })
+                message.delete();
             }
 
             // if (message.content.match("@") || message.content.match("<@")) {
