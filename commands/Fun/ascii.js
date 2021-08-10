@@ -21,10 +21,14 @@ module.exports = {
       }
       // AGAIN, MAKE SURE TO INSTALL FIGLET PACKAGE!  
       figlet(text, function (err, data) {
-         message.channel.send(data, {
-            code: 'AsciiArt'
-         });
+         const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setDescription(
+               (data, {
+                  code: 'AsciiArt'
+               }))
+         message.channel.send(embed)
       })
-
    }
-};
+}
