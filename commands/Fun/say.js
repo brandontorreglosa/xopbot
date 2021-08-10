@@ -9,8 +9,6 @@ module.exports = {
 
         try {
 
-            const channel = client.channels.cache.get('860085472944848927')
-
             const user = message.mentions.users.first();
 
             if (!args[0]) {
@@ -19,24 +17,20 @@ module.exports = {
 
             if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt")) {
                 message.delete();
-                message.reply(`**Im Not Allowed To Say Bad Words! Lol Cry 😂**`);
-                // message.delete(4000);
                 const embed1 = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setTitle(`Author \n${message.author.username} Used The Say Command!`)
-                    .setDescription(`Guild \nIn ${message.guild.name} \nHe Commanded This Word ${sayMessage}`)
-                channel.send(embed1);
+                    .setColor('#c30202')
+                    .setDescription(`** ${message.author.username}, Im Not Allowed To Say Bad Words! Lol Cry 😂**`)
+                message.channel.send(embed1);
             }
 
             if (message.content.match("@") || message.content.match("<@")) {
                 message.delete();
-                message.reply(`**Im Not Allowed To Ping Users! If U Got Pinged ${message.author.username} Did It!**`);
-                // message.delete(4000);
-                const embed1 = new Discord.MessageEmbed()
+                const embed12 = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setTitle(`Author \n${message.author.username} Used The Say Command!`)
-                    .setDescription(`Guild \nIn ${message.guild.name} \nHe Commanded To Ping ${sayMessage}`)
-                channel.send(embed1);
+                    .setColor('#c30202')
+                    .setDescription(`**Im Not Allowed To Ping Users! If U Got Pinged ${message.author.username} Did It!**`)
+                message.channel.send(embed12);
             }
 
             let sayMessage = args.slice(0).join(' ');
