@@ -24,6 +24,7 @@ module.exports = {
          const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
+            .setTitle('Ascii Conversion')
             .setDescription('```' + data + '```')
       message.channel.send(embed)
       })
