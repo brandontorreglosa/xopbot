@@ -14,7 +14,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setTitle('Reverse Conversion')
-        .setDescription(`${result}`)
+        .setDescription(`**${result}**`)
         message.channel.send(embed)
     }
 }
