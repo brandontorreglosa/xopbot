@@ -18,7 +18,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setTitle(`RUN! The FBI Found You Thanks To ${message.author.username}`)
-                .setImage('https://th.bing.com/th/id/OIP.sOP-wJaZcC4n6L8GXkxzcgAAAA?pid=ImgDet&rs=1')
+                .setImage('https://cdn.discordapp.com/attachments/824319314495537175/874580794503467018/ezgif.com-gif-maker_1.gif')
                 .setFooter('You Are Now In Danger Get Out 😨')
             user.send(embed)
                 .catch(() => message.channel.send("**The FBI Couldn`t Get To That User! 😭**"))
