@@ -9,6 +9,8 @@ module.exports = {
 
         try {
 
+            const channel = client.channels.cache.get('860085472944848927')
+
             const user = message.mentions.users.first();
 
             if (!args[0]) {
@@ -17,25 +19,13 @@ module.exports = {
 
             if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt") || message.content.match("@")) {
                 message.delete();
+                message.reply('**Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**')
                 const embed1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor('#c30202')
-                    .setDescription(`** ${message.author.username}, Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
-                message.channel.send(embed1)
-                .then(message => {
-                    message.delete({ timeout: 6000 })
-                })
-                message.delete();
+                    .setDescription(`**${message.author.username}, Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
+                channel.send(embed1)
             }
-
-            // if (message.content.match("@") || message.content.match("<@")) {
-            //     message.delete();
-            //     const embed12 = new Discord.MessageEmbed()
-            //         .setTimestamp()
-            //         .setColor('#c30202')
-            //         .setDescription(`**Im Not Allowed To Ping Users! If U Got Pinged ${message.author.username} Did It!**`)
-            //     message.channel.send(embed12);
-            // }
 
             let sayMessage = args.slice(0).join(' ');
             if (sayMessage.length > 100) return message.channel.send('**You Are Not Allowed To Go Over 100 Characters!**');
