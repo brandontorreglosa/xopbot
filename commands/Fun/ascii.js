@@ -16,8 +16,8 @@ module.exports = {
          return message.channel.send(`**Please Provide Text For The Ascii Conversion!**`)
       }
       let maxlen = 20
-      if (text.length > 20) {
-         return message.channel.send(`**Please Put Text That Has 20 Characters Or Less Because The Conversion Won't Be That Good!**`)
+      if (text.length > 11) {
+         return message.channel.send(`**Please Put Text That Has 11 Characters Or Less Because The Conversion Won't Be That Good!**`)
       }
 
       figlet(text, function (err, data) {
