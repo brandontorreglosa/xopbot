@@ -69,7 +69,7 @@ module.exports = {
       msg.edit(`**Encrypted Your IP: ${message.author.discriminator}**`);
     }, ms(time10));
 
-    let time10 = '53s'
+    let time11 = '53s'
     setTimeout(function () {
       msg.edit(`**${message.author.username} You Are Now Wanted In The States! 😄**`);
     }, ms(time11));
