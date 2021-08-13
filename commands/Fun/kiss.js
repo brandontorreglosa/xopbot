@@ -32,6 +32,6 @@ module.exports = {
             return `**${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy And Would Like To ${randomChoices}!**`;
         });
 
-        message.channel.send(hug_list);
+        message.channel.send({ content: hug_list });
     }
 }

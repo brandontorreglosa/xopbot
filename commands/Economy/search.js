@@ -69,23 +69,25 @@ module.exports = {
         }
       );
 
-      message.channel.send(EMBED);
+      message.channel.send({ embeds: [EMBED] });
     });
 
     COLLECTOR.on("end", (collected) => {
       if (collected.size == 0) {
-        return message.channel.send(
-          `**What are you doing <@${message.author.id}>?! There was ${RANDOM_NUMBER.toString().replace(
-            /\B(?=(\d{3})+(?!\d))/g,
-            ","
-          )} Xocoins, Hidden Inside The ${chosenLocations[0]} 😭**`
-        );
+        return message.channel.send({
+          content:
+            `**What are you doing <@${message.author.id}>?! There was ${RANDOM_NUMBER.toString().replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              ","
+            )} Xocoins, Hidden Inside The ${chosenLocations[0]} 😭**`
+        });
       }
     });
 
-    message.channel.send(
-      `<@${message.author.id
-      }>\n**Which location would you like to search?** 🔍\nType the location in this channel.\n\`${chosenLocations.join("` `")}\``
-    );
+    message.channel.send({
+      content:
+        `<@${message.author.id
+        }>\n**Which location would you like to search?** 🔍\nType the location in this channel.\n\`${chosenLocations.join("` `")}\``
+    });
   },
 };

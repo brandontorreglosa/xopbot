@@ -5,22 +5,22 @@ module.exports = {
     cooldown: 10,
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.reply('**Please Do `x!createembed <footermsg> + <title> + <description>` \nYou Must Add The + To Make It Work!**')
+            return message.reply({ content: '**Please Do `x!createembed <footermsg> + <title> + <description>` \nYou Must Add The + To Make It Work!**', allowedMentions: { repliedUser: true } })
         }
         let splitArgs = args.join(' ').split('+');
         const footer = splitArgs[0];
-        if (!footer) return message.reply('**Please Add `<footermsg>`**')
+        if (!footer) return message.reply({ content: '**Please Add `<footermsg>`**', allowedMentions: { repliedUser: true } })
         const title = splitArgs[1];
-        if (!title) return message.reply('**Please Add `<title>`**')
+        if (!title) return message.reply({ content: '**Please Add `<title>`**', allowedMentions: { repliedUser: true }  })
         const description = splitArgs[2];
-        if (!description) return message.reply('**Please Add `<description>`**')
-    
+        if (!description) return message.reply({ content: '**Please Add `<description>`**', allowedMentions: { repliedUser: true }  })
+
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`#c30202`)
             .setTitle(`${title}`)
             .setDescription(`${description}`)
             .setFooter(`${footer}`)
-        message.channel.send(embed)
+        message.channel.send({ embeds: [embed] })
     }
 }

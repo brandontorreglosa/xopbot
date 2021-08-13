@@ -19,7 +19,7 @@ module.exports = {
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
 
 
-        message.channel.send(newEmbed);
+        message.channel.send({ embeds: [newEmbed] });
     }
 
 }

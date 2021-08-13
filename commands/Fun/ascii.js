@@ -13,11 +13,11 @@ module.exports = {
 
       let text = args.join(" ");
       if (!text) {
-         return message.channel.send(`**Please Provide Text For The Ascii Conversion!**`)
+         return message.channel.send({ content: `**Please Provide Text For The Ascii Conversion!**` })
       }
       let maxlen = 20
       if (text.length > 11) {
-         return message.channel.send(`**Please Put Text That Has 11 Characters Or Less Because The Conversion Won't Be That Good!**`)
+         return message.channel.send({ content: `**Please Put Text That Has 11 Characters Or Less Because The Conversion Won't Be That Good!**` })
       }
 
       figlet(text, function (err, data) {
@@ -26,7 +26,7 @@ module.exports = {
             .setColor('#c30202')
             .setTitle('Ascii Conversion')
             .setDescription('```' + data + '```')
-      message.channel.send(embed)
+         message.channel.send({ embeds: [embed] })
       })
    }
 }

@@ -10,7 +10,7 @@ module.exports = {
         try {
             const user = message.mentions.members.first()
             if (!args[0]) {
-                return message.reply("**Please Give The Voice Channel A Name!**")
+                return message.reply({ content: "**Please Give The Voice Channel A Name!**", allowedMentions: { repliedUser: true } })
             }
             message.guild.channels.create(args.slice(0).join(" "), { type: "voice" });
 
@@ -19,10 +19,10 @@ module.exports = {
                 .setTitle(`New Voice Channel Named ${message.channel}`)
                 .setDescription(`**Channel Was Created By ${message.author.username}**`)
                 .setColor("#c30202")
-            message.channel.send(embed);
+            message.channel.send({ embeds: [embed] });
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
-            errorlogs.send(`Error On Create Voice Channel Command!\n\nError:\n\n **${err}**`)
+            errorlogs.send({ content: `Error On Create Voice Channel Command!\n\nError:\n\n **${err}**` })
         }
     }
 }

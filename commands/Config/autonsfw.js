@@ -9,13 +9,13 @@ module.exports = {
     description: "Sends a random nsfw image from reddit",
     async execute(client, message, cmd, args, Discord) {
 
-        if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**')
+        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-        message.channel.send("🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**").then((msg) => {
+        message.channel.send({ content: "🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**" }).then((msg) => {
             setTimeout(function () {
-                msg.edit("🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**")
+                msg.edit({ content: "🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**" })
                 setTimeout(function () {
-                    msg.edit("✅🔞 **| AutoNSFW Started**")
+                    msg.edit({ content: "✅🔞 **| AutoNSFW Started**" })
                 }, 10000)
             }, 10000)
         })
@@ -33,10 +33,10 @@ module.exports = {
                 embed.setTimestamp()
                 embed.setTitle(`AUTONSFW By XOPBOT`)
                 embed.setURL(`${memeUrl}`)
-                embed.setImage(memeImage)
+                embed.setImage(`${memeImage}`)
                 embed.setColor('#c30202')
-                embed.setFooter(`AUTONSFW IS POG | 💬 ${memeNumComments}`)
-                message.channel.send(embed);
+                embed.setFooter(`AUTONSFW IS POG | 👍${memeUpvotes} 💬 ${memeNumComments}`)
+                message.channel.send({ embeds: [embed] });
             })
         }, 20000)
     }

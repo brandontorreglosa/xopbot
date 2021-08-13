@@ -6,15 +6,15 @@ module.exports = {
     description: "Reverses the given text",
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ")
-        if (!text) return message.reply("**Please Give Something To Reverse!**")
+        if (!text) return message.reply({ content: "**Please Give Something To Reverse!**", allowedMentions: { repliedUser: true }  })
         let Rarray = text.split("")
         let reverseArray = Rarray.reverse()
         let result = reverseArray.join("")
         const embed = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setColor('#c30202')
-        .setTitle('Reverse Conversion')
-        .setDescription(`**${result}**`)
-        message.channel.send(embed)
+            .setTimestamp()
+            .setColor('#c30202')
+            .setTitle('Reverse Conversion')
+            .setDescription(`**${result}**`)
+        message.channel.send({ embeds: [embed] })
     }
 }

@@ -20,7 +20,7 @@ module.exports = {
 
             const neededXp = Levels.xpFor(parseInt(user.level) + 1);
 
-            if (!user) return message.reply("**You Dont Have Any Xp, Try Sending More Messages!**");
+            if (!user) return message.reply({ content: "**You Dont Have Any Xp, Try Sending More Messages!**", allowedMentions: { repliedUser: true } });
 
             const rank = new canvacord.Rank()
                 .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png' }))
@@ -35,8 +35,8 @@ module.exports = {
                 .setDiscriminator(message.author.discriminator);
             rank.build()
                 .then(data => {
-                    const attachment = new Discord.MessageAttachment(data, "RankCard.png");
-                    message.channel.send(attachment);
+                    const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
+                    message.channel.send({ files: [{ attachment }] });
                 });
         }
 

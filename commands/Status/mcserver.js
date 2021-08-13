@@ -7,8 +7,8 @@ module.exports = {
     cooldown: 5,
     description: 'get information about a minecraft server',
     execute(client, message, cmd, args, Discord) {
-        if (!args[0]) return message.channel.send('**Please Enter A Minecraft Server Ip**');
-        if (!args[1]) return message.channel.send('**Please Enter A Minecraft Server Port**');
+        if (!args[0]) return message.channel.send({ content: '**Please Enter A Minecraft Server Ip \nDont Know? Visit: https://minecraftservers.org/**' });
+        if (!args[1]) return message.channel.send({ content: '**Please Enter A Minecraft Server Port \nDont Know? Visit: https://minecraftservers.org/**' });
 
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
             console.log(response);
@@ -24,10 +24,10 @@ module.exports = {
                 )
                 .setFooter('MC Server By Bot Developer Team');
 
-            message.channel.send(embed);
+            message.channel.send({ embeds: [embed] });
         })
             .catch((error) => {
-                message.channel.send('There Was An Error Finding This Server');
+                message.channel.send({ content: '**There Was An Error Finding This Server**' });
                 throw error;
             })
     }

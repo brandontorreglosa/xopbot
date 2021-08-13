@@ -15,6 +15,6 @@ module.exports = {
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTitle("Coinflip!")
             .setDescription(`You Flipping Flipped **${choice}**!`)
-        message.channel.send(embed)
+        message.channel.send({ embeds: [embed] })
     }
 }

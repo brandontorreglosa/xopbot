@@ -11,6 +11,6 @@ module.exports = {
             return `**${user.username} Was Killed By ${message.author.username} Who Used ${randomNumber} Power!**`;
         });
 
-        message.channel.send(kill_list);
+        message.channel.send({ content: kill_list });
     }
 }

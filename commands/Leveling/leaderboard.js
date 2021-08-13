@@ -15,7 +15,7 @@ module.exports = {
 
     const rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 10); // We grab top 10 users with most xp in the current server.
 
-    if (rawLeaderboard.length < 1) return reply("**Nobody's in leaderboard yet.**");
+    if (rawLeaderboard.length < 1) return reply({ content: "**Nobody Is Currently in The Leaderboard Yet!**", allowedMentions: { repliedUser: true } });
 
     const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true); // We process the leaderboard.
 
@@ -32,6 +32,6 @@ module.exports = {
       )
       .setFooter(`This Leaderboard Is Only For ${name} And Not Worldwide Servers!`)
 
-    message.channel.send(newEmbed);
+    message.channel.send({ embeds: [newEmbed] });
   }
 }

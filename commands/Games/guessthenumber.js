@@ -37,12 +37,12 @@ module.exports = {
         const provideaguess = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setDescription(`**❌ Please provide a guess!**`)
+            .setDescription(`**❌ Please Provide A Guess!**`)
 
         const pickinganumber = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setDescription('**Picking a number between 1 and 20000**')
+            .setDescription('**Picking A Number Between 1 And 20000**')
 
 
 
@@ -51,9 +51,9 @@ module.exports = {
 
         let guess = args[0];
         if (!guess && guildAttempts.get(guild.id).attempts === 1) {
-            return channel.send(pickinganumber)
+            return channel.send({ embeds: [pickinganumber] })
         } else if (!guess) {
-            return channel.send(provideaguess);
+            return channel.send({ embeds: [provideaguess] });
         }
 
         if (+guess === guildNumber.get(guild.id)) {
@@ -64,18 +64,18 @@ module.exports = {
                 .setColor('#00ff00')
                 .setDescription(`**✅ Perfect, <@${member.id}> The Number Was ${guildNumber.get(guild.id)}, It Only Took You ${attempts.attempts} Attempts!**`)
 
-            channel.send(guessedthenumber);
+            channel.send({ embeds: [guessedthenumber] });
             guildNumber.delete(guild.id);
             guildAttempts.delete(guild.id);
 
 
             return;
         } else if (+ guess < guildNumber.get(guild.id)) {
-            return message.reply(`**${guess} Is Too Low!**`);
+            return message.reply({ content: `**${guess} Is Too Low!**`, allowedMentions: { repliedUser: true }  });
         } else if (+guess > guildNumber.get(guild.id)) {
-            return message.reply(`**${guess} Is Too High!**`);
+            return message.reply({ content: `**${guess} Is Too High!**`, allowedMentions: { repliedUser: true } });
         } else {
-            return message.reply("***Invalid Number Please Try Again***");
+            return message.reply({ content: "***Invalid Number Please Try Again***", allowedMentions: { repliedUser: true }  });
         }
     },
 };

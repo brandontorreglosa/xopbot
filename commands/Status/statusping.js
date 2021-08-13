@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const ping = await getDBPingData();
     const messagePing = Date.now();
-    const msg = await message.channel.send('Loading...');
+    const msg = await message.channel.send({ content: 'Loading...' });
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed()
       .setTitle('🏓 Pong!')
@@ -31,7 +31,7 @@ module.exports = {
       content: '',
       embed,
     });
-  },
+},
 };
 
 async function getDBPingData() {

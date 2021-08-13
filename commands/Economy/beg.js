@@ -24,7 +24,6 @@ module.exports = {
       .setDescription(`You Begged And Got From XOPBOT **${randomNumber} Xocoins** 💸`)
       .setColor('#c30202')
 
-    message.channel.send(embed);
-    //return message.channel.send(`**${message.author.username}, You Begged And Received ${randomNumber}** **Xocoins** 💸`);
+    message.channel.send({ embeds: [embed] });
   },
 };

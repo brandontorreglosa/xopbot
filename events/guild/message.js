@@ -25,15 +25,13 @@ module.exports = async (Discord, client, message) => {
       .setTitle(`**👤 ${message.author.username}**`)
       .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
       .setFooter('Thank You For Being Active 🙏')
-    message.channel.send(someonelevelup)
+    message.channel.send({ embeds: [someonelevelup] })
 
     if (user.level == 1) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 1");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "Level 1",
-          color: "GREEN",
-        }
+        name: "Level 1",
+        color: "GREEN"
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "Level 1");
       if (message.member.roles.cache.has(role.id)) return;
@@ -43,10 +41,8 @@ module.exports = async (Discord, client, message) => {
     if (user.level == 10) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 10");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "Level 10",
-          color: "#3fbfbf",
-        }
+        name: "Level 10",
+        color: "#3fbfbf"
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "Level 10");
       if (message.member.roles.cache.has(role.id)) return;
@@ -56,10 +52,8 @@ module.exports = async (Discord, client, message) => {
     if (user.level == 20) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 20");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "Level 20",
-          color: "#ff5722",
-        }
+        name: "Level 20",
+        color: "#ff5722"
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "Level 20");
       if (message.member.roles.cache.has(role.id)) return;
@@ -69,10 +63,8 @@ module.exports = async (Discord, client, message) => {
     if (user.level == 30) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 30");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "Level 30",
-          color: "#969102",
-        }
+        name: "Level 30",
+        color: "#969102"
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "Level 30");
       if (message.member.roles.cache.has(role.id)) return;
@@ -82,10 +74,8 @@ module.exports = async (Discord, client, message) => {
     if (user.level == 40) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 40");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "Level 40",
-          color: "#0c0c0c",
-        }
+        name: "Level 40",
+        color: "#0c0c0c"
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "Level 40");
       if (message.member.roles.cache.has(role.id)) return;
@@ -95,10 +85,8 @@ module.exports = async (Discord, client, message) => {
     if (user.level == 50) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 50");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "Level 50",
-          color: "#fccc04",
-        }
+        name: "Level 50",
+        color: "#fccc04"
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "Level 50");
       if (message.member.roles.cache.has(role.id)) return;
@@ -108,10 +96,8 @@ module.exports = async (Discord, client, message) => {
     if (user.level == 60) {
       let role = message.guild.roles.cache.find(role => role.name == "God Level");
       if (!role) await message.guild.roles.create({
-        data: {
-          name: "God Level",
-          color: "#c30202",
-        }
+        name: "God Level",
+        color: "#c30202",
       }).catch(err => console.log(err));
       role = message.guild.roles.cache.find(role => role.name == "God Level");
       if (message.member.roles.cache.has(role.id)) return;
@@ -122,7 +108,7 @@ module.exports = async (Discord, client, message) => {
   // <----/AFk System/---->
   const status = quick.get(`${message.author.id}_${message.guild.id}_afk`);
 
-  if (status && status.active && message.guild.me.hasPermission('MANAGE_NICKNAMES' || 'ADMINISTRATOR')) {
+  if (status && status.active && message.guild.me.permissions.has('MANAGE_NICKNAMES' || 'ADMINISTRATOR')) {
 
     quick.set(`${message.author.id}_${message.guild.id}_afk`, {
       username: message.author.username,
@@ -134,12 +120,12 @@ module.exports = async (Discord, client, message) => {
       .setNickname(status.username)
 
       .then(() => {
-        message.reply(`**You Were AFK For ${ms(Date.now() - (status.date || 0))}**`);
+        message.reply({ content: `**You Were AFK For ${ms(Date.now() - (status.date || 0))}**`, allowedMentions: { repliedUser: true } });
       })
 
       .catch(_e => {
         quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-        message.reply('**Failed To Set Your Status.**');
+        message.reply({ content: '**Failed To Set Your Status.**', allowedMentions: { repliedUser: true } });
       });
   }
 
@@ -152,7 +138,7 @@ module.exports = async (Discord, client, message) => {
         message.channel.send(data.response)
       })
       .catch(() => {
-        message.channel.send("Couldnt Fetch Response!");
+        message.channel.send({ content: "Couldnt Fetch Response!" });
       })
   }
 
@@ -163,7 +149,7 @@ module.exports = async (Discord, client, message) => {
         message.channel.send(data.response)
       })
       .catch(() => {
-        message.channel.send("Couldnt Fetch Response!");
+        message.channel.send({ content: "Couldnt Fetch Response!" });
       })
   }
 
@@ -174,14 +160,14 @@ module.exports = async (Discord, client, message) => {
         message.channel.send(data.response)
       })
       .catch(() => {
-        message.channel.send("Couldnt Fetch Response!");
+        message.channel.send({ content: "Couldnt Fetch Response!" });
       })
   }
 
   // <----/Bot Mentioned/---->
 
   if (message.content === "<@831824859066925087>" || message.content === "<@!831824859066925087>") {
-    message.channel.send(`***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***`)
+    message.channel.send({ content: `***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***` })
   }
 
   // <----/Prefix System/---->
@@ -222,11 +208,11 @@ module.exports = async (Discord, client, message) => {
     client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
   if (!command) {
-    return message.reply(`**Couldn't Find That Command!**`)
+    return message.reply({ content: `**Couldn't Find That Command, Do (prefix)help And Check Again!**`, allowedMentions: { repliedUser: true } })
   }
 
   if (message.channel.id === "841362279353155656") {
-    message.channel.send(`**${message.author.tag} Used The Command ${command.name} In ${message.guild.name}**`)
+    message.channel.send({ content: `**${message.author.tag} Used The Command ${command.name} In ${message.guild.name}**` })
   }
 
   // <----/Permissions System/---->
@@ -271,24 +257,24 @@ module.exports = async (Discord, client, message) => {
       if (!validPermissions.includes(perm)) {
         return console.log(`Invalid Permissions ${perm}`);
       }
-      if (!message.member.hasPermission(perm)) {
+      if (!message.member.permissions.has(perm)) {
         invalidPerms.push(perm);
       }
     }
     if (invalidPerms.length) {
-      return message.channel.send(`**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`);
+      return message.reply({ content: `**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`, allowedMentions: { repliedUser: true } });
     }
   }
 
   // <----/Premium System/---->
 
   if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-    return message.reply("***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***")
+    return message.reply({ content: "***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***", allowedMentions: { repliedUser: true } })
 
   // <----/NSFW Registration System/---->
 
   if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-    return message.reply("***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***")
+    return message.reply({ content: "***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***", allowedMentions: { repliedUser: true } })
 
   // <----/Cooldown System/---->
 
@@ -308,14 +294,14 @@ module.exports = async (Discord, client, message) => {
 
           if (time_left.toFixed(1) >= 3600) {
             let hour = (time_left.toFixed(1) / 3600);
-            return message.reply(`**Please Wait ${parseInt(hour)} More Hours Before Using \`${command.name}\` Again!**`)
+            return message.reply({ content: `**Please Wait ${parseInt(hour)} More Hours Before Using \`${command.name}\` Again!**`, allowedMentions: { repliedUser: true } })
           }
           if (time_left.toFixed(1) >= 60) {
             let minute = (time_left.toFixed(1) / 60);
-            return message.reply(`**Please Wait ${parseInt(minute)} More Minutes Before Using \`${command.name}\` Again!**`)
+            return message.reply({ content: `**Please Wait ${parseInt(minute)} More Minutes Before Using \`${command.name}\` Again!**`, allowedMentions: { repliedUser: true } })
           }
           let seconds = (time_left.toFixed(1));
-          return message.reply(`**Please Wait ${parseInt(seconds)} More Seconds Before Using \`${command.name}\` Again!**`)
+          return message.reply({ content: `**Please Wait ${parseInt(seconds)} More Seconds Before Using \`${command.name}\` Again!**`, allowedMentions: { repliedUser: true } })
         } else {
           await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
           commandExecute();
@@ -344,7 +330,7 @@ module.exports = async (Discord, client, message) => {
     if (antilink) {
       if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
         message.delete();
-        message.reply("**No Links Allowed While Anti-Link Is Active For XOPBOT!**").then(msg => {
+        message.reply({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**", allowedMentions: {repliedUser: true} }).then(msg => {
           let time = '4s'
           setTimeout(function () {
             msg.delete();
@@ -368,7 +354,7 @@ module.exports = async (Discord, client, message) => {
     if (antiwords) {
       if (message.content.match("bitch") || message.content.match("hoe") || message.content.match("slut") || message.content.match("nigga") || message.content.match("nigg") || message.content.match("dick") || message.content.match("cunt") || message.content.match("shit") || message.content.match("fuck")) {
         message.delete();
-        message.reply("**No Bad Words Allowed Please Stop!**").then(msg => {
+        message.reply({ content: "**No Bad Words Allowed Please Stop!**", allowedMentions: {repliedUser: true} }).then(msg => {
           let time = '4s'
           setTimeout(function () {
             msg.delete();
@@ -406,21 +392,21 @@ module.exports = async (Discord, client, message) => {
         joinmessage = joinmessage.replace("{server}", `${member.guild.name}`)
         joinmessage = joinmessage.replace("{membercount}", `${member.guild.memberCount}`)
 
-        let embed20 = new Discord.MessageEmbed()
+        const embed20 = new Discord.MessageEmbed()
           .setDescription(joinmessage)
           .setColor("GREEN")
-        member.guild.channels.cache.get(channel).send(embed20);
+        member.guild.channels.cache.get(channel).send({ embeds: [embed20] });
       }
     } else if (data2) {
       var channel = data.Welcome
 
-      let embed200 = new Discord.MessageEmbed()
+      const embed200 = new Discord.MessageEmbed()
         .setTitle("Welcome")
         .setDescription(`${member}, Welcome to **${member.guild.name}**! We Hope You Like Our Server! Enjoy Your Stay here!`)
         .setFooter(`We Are Now ${member.guild.memberCount} Members`)
         .setColor("GREEN")
 
-      member.guild.channels.cache.get(channel).send(embed200)
+      member.guild.channels.cache.get(channel).send({ embeds: [embed200] })
     } else if (!data) {
       return;
     }
@@ -449,16 +435,16 @@ module.exports = async (Discord, client, message) => {
         leavemessage = leavemessage.replace("{server}", `${member.guild.name}`)
         leavemessage = leavemessage.replace("{membercount}", `${member.guild.memberCount}`)
 
-        let embed = new Discord.MessageEmbed()
+        const embed2678 = new Discord.MessageEmbed()
           .setDescription(leavemessage)
           .setColor("#c30202");
 
         let channel = data.Bye
 
-        member.guild.channels.cache.get(channel).send(embed);
+        member.guild.channels.cache.get(channel).send({ embeds: [embed2678] });
 
       } else if (!data2) {
-        let embed2 = new Discord.MessageEmbed()
+        const embed2 = new Discord.MessageEmbed()
           .setTitle("Goodbye")
           .setThumbnail(member.user.avatarURL())
           .setDescription(`**${member.user.tag}** Just Left This Server! We hope They Return Back Soon!`)
@@ -468,7 +454,7 @@ module.exports = async (Discord, client, message) => {
 
         let byechannel = data.Bye
 
-        member.guild.channels.cache.get(byechannel).send(embed2);
+        member.guild.channels.cache.get(byechannel).send({ embeds: [embed2] });
       }
     } else if (!data) {
       return;

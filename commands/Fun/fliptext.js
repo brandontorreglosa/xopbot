@@ -10,7 +10,7 @@ module.exports = {
   type: "Fun",
   async execute(client, message, cmd, args, Discord) {
     if (args.length < 1) {
-      return message.channel.send("**Please Enter Some Text To Flip!**")
+      return message.channel.send({ content: "**Please Enter Some Text To Flip!**" })
     }
     args.reverse();
     var flipped = [];
@@ -20,10 +20,10 @@ module.exports = {
     });
 
     const embed = new Discord.MessageEmbed()
-    .setTimestamp()
-    .setColor('#c30202')
-    .setTitle('Fliptext Conversion')
-    .setDescription(flipped.join(" "))
-    message.channel.send(embed);
+      .setTimestamp()
+      .setColor('#c30202')
+      .setTitle('Fliptext Conversion')
+      .setDescription(flipped.join(" "))
+    message.channel.send({ embeds: [embed] });
   }
 }

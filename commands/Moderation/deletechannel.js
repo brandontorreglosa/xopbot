@@ -11,7 +11,7 @@ module.exports = {
             const user = message.mentions.members.first()
             const fetchedChannel = message.mentions.channels.first();
             if (!fetchedChannel) {
-                return message.channel.send("`Usage: =delchannel <channel>`")
+                return message.reply({ content: "`Usage: (prefix)delchannel <channel>`", allowedMentions: { repliedUser: true } })
             }
             fetchedChannel.delete()
 
@@ -20,10 +20,10 @@ module.exports = {
                 .setTitle(`Deleted Channel Named ${fetchedChannel}`)
                 .setDescription(`**Channel Was Deleted By ${message.author.username}**`)
                 .setColor("#c30202")
-            await message.channel.send(embed);
+            await message.channel.send({ embeds: [embed] });
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
-            errorlogs.send(`Error On Delete Channel Command!\n\nError:\n\n **${err}**`)
+            errorlogs.send({ content: `Error On Delete Channel Command!\n\nError:\n\n **${err}**` })
         }
     }
 }

@@ -7,11 +7,11 @@ module.exports = {
     category: "Image",
     description: "Sends a random meme from reddit",
     async execute(client, message, cmd, args, Discord) {
-        message.channel.send("🔄 **| AutoMeme Starting... (`Please wait 20s`)**").then((msg) => {
+        message.channel.send({ content: "🔄 **| AutoMeme Starting... (`Please wait 20s`)**" }).then((msg) => {
             setTimeout(function () {
-                msg.edit("🔄 **| AutoMeme Starting... (`Please Wait 10s`)**")
+                msg.edit({ content: "🔄 **| AutoMeme Starting... (`Please Wait 10s`)**" })
                 setTimeout(function () {
-                    msg.edit("✅ **| AutoMeme Started**")
+                    msg.edit({ content: "✅ **| AutoMeme Started**" })
                 }, 10000)
             }, 10000)
         })
@@ -29,10 +29,10 @@ module.exports = {
                 embed.setTimestamp()
                 embed.setTitle(`${memeTitle}`)
                 embed.setURL(`${memeUrl}`)
-                embed.setImage(memeImage)
+                embed.setImage(`${memeImage}`)
                 embed.setColor('#c30202')
                 embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-                message.channel.send(embed);
+                message.channel.send({ embeds: [embed] });
             })
         }, 20000)
     }

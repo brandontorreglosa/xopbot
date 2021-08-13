@@ -114,7 +114,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed)
+            await message.channel.send({ embeds: [embed] })
         }
 
         else if (cmd === 'moderation') {
@@ -131,7 +131,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed2)
+            await message.channel.send({ embeds: [embed2] })
         }
 
         else if (cmd === 'utility') {
@@ -148,7 +148,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed3)
+            await message.channel.send({ embeds: [embed3] })
         }
 
         else if (cmd === 'bugs') {
@@ -165,7 +165,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed4)
+            await message.channel.send({ embeds: [embed4] })
         }
 
         else if (cmd === 'status') {
@@ -182,7 +182,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed5)
+            await message.channel.send({ embeds: [embed5] })
         }
 
         else if (cmd === 'socials') {
@@ -199,7 +199,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed6)
+            await message.channel.send({ embeds: [embed6] })
         }
 
         else if (cmd === 'fun') {
@@ -216,7 +216,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed7)
+            await message.channel.send({ embeds: [embed7] })
         }
 
         else if (cmd === 'music') {
@@ -233,7 +233,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed8)
+            await message.channel.send({ embeds: [embed8] })
         }
 
         else if (cmd === 'economy') {
@@ -250,7 +250,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed9)
+            await message.channel.send({ embeds: [embed9] })
         }
 
         else if (cmd === 'leveling') {
@@ -267,18 +267,18 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed10)
+            await message.channel.send({ embeds: [embed10] })
         }
 
         else if (cmd === 'nsfw') {
 
-            var errMessage = "**You Little Pervert! 😊 This Is Not A NSFW Channel! 🔞**";
+            const errMessage = "**You Little Pervert! 😊 This Is Not A NSFW Channel! 🔞**";
             if (!message.channel.nsfw) {
                 message.react('💢');
 
-                return message.reply(errMessage)
+                return message.reply({ content: errMessage, allowedMentions: { repliedUser: true } })
                     .then(message => {
-                        message.delete({ timeout: 6000 })
+                        setTimeout(() => message.delete(), 6000);
                     })
             }
 
@@ -294,7 +294,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed11)
+            await message.channel.send({ embeds: [embed11] })
         }
 
         else if (cmd === 'premium') {
@@ -311,7 +311,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed12)
+            await message.channel.send({ embeds: [embed12] })
         }
 
         else if (cmd === 'invites') {
@@ -328,7 +328,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed13)
+            await message.channel.send({ embeds: [embed13] })
         }
 
         else if (cmd === 'credits') {
@@ -347,7 +347,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed14)
+            await message.channel.send({ embeds: [embed14] })
         }
 
         else if (cmd === 'games') {
@@ -364,7 +364,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed115)
+            await message.channel.send({ embeds: [embed115] })
         }
 
         else if (cmd === 'config') {
@@ -381,7 +381,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed15)
+            await message.channel.send({ embeds: [embed15] })
         }
 
         else if (cmd === 'images') {
@@ -396,11 +396,11 @@ module.exports = {
                 .addFields(
                     { name: '__📷 Images (13)__', value: '`ad`-__***Wow You Became A AD!***__ \n`pet`-__***Aww You Got Pet!***__ \n`m&m`-__***Wow You Are A M&M!***__ \n`phub`-__***What Are You Doing?***__ \n`drip`-__***Get A Image Of A Drip User!***__ \n`alert`-__***Alert The World!***__ \n`facts`-__***Facts Only Mate!***__ \n`clown`-__***Wow You Are A Clown!***__ \n`drake`-__***The Drake Meme!***__ \n`water`-__***I Need Water Guide Me!***__ \n`clyde`-__***Get An Image Of Clyde Sending!***__ \n`biden`-__***Make Biden Tweet Something!***__  \n`grave`-__***Get An Image Of A User In A Grave!***__ ' },
                     { name: '__📷 Images 2 (13)__', value: '\n`stonks`-__***Wow Im Rich ASF!***__ \n`heaven`-__***Get A Image Of A User In Heaven!***__ \n`pikachu`-__***Pikachu Meme If You Know!***__ \n`uncover`-__***The Rick And Morty Meme!***__ \n`iamspeed`-__***Yes Im Fast Asf Boi You See!***__ \n`rickroll`-__***You Just Got Rickrolled!***__ \n`tableflip`-__***Get A Image Doing A Tableflip!***__ \n`fbiopenup`-__***Oh Shoot The FBI Is Here!***__ \n`batmanslap`-__***Batman Slap XOPBOT!***__ \n`carreverse`-__***Reverse The Car From The Cringe!***__ \n`wideavatar`-__***Get A Image Of A Users Wide Pfp!***__ \n`dockofshame`-__***Get A Image Of A User On The Dock!***__ \n`changemymind`-__***Change A Users Mind!***__' },
-                    { name: 'Total Images', value: '```26```'}
+                    { name: 'Total Images', value: '```26```' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed15)
+            await message.channel.send({ embeds: [embed15] })
         }
 
         else if (cmd === 'owner') {
@@ -419,271 +419,7 @@ module.exports = {
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
 
-            await message.channel.send(embed116)
+            await message.channel.send({ embeds: [embed116] })
         }
-
-        if (cmd === 'βοηθεια') {
-
-            message.react('✅');
-
-            const embed16 = new Discord.MessageEmbed()
-                .setAuthor(`XOPBOT Εντολες`, client.user.displayAvatarURL({ dynamic: true }))
-                //.setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                .setImage('https://share.creavite.co/KZRSRMoPxz3F8kPp.gif') //my banner for my bot 
-                //.setTitle('XOPBOT Commands')
-                .setColor('#c30202')
-                .addFields(
-                    {
-                        name: '__🛠️ Μετριοπαθεια__',
-                        value: '`x!μετριοπαθεια`',
-                        inline: true
-                    },
-                    {
-                        name: '__⚙ Χρησιμοτητα__',
-                        value: '`x!χρησιμοτητα`',
-                        inline: true
-                    },
-                    {
-                        name: '__🐛 Σφαλματα__',
-                        value: '`x!σφαλματα`',
-                        inline: true
-                    },
-                    {
-                        name: '__📈 Κατασταση__',
-                        value: '`x!κατασταση`',
-                        inline: true
-                    },
-                    {
-                        name: '__💬 Κοινωνικα__',
-                        value: '`x!κοινωνικα`',
-                        inline: true
-                    },
-                    {
-                        name: '__🎮 Παιχνιδια__',
-                        value: '`x!παιχνιδια`',
-                        inline: true
-                    },
-                    {
-                        name: '__🥳 Διασκεδαση__',
-                        value: '`x!διασκεδαση`',
-                        inline: true
-                    },
-                    {
-                        name: '__🎶 Μουσικη__',
-                        value: '`x!μουσικη`',
-                        inline: true
-                    },
-                    {
-                        name: '__🤑 Οικονομια__',
-                        value: '`x!οικονομια`',
-                        inline: true
-                    },
-                    {
-                        name: '__⏫ Ισοπεδωση__',
-                        value: '`x!ισοπεδωση`',
-                        inline: true
-                    },
-                    {
-                        name: '__🔗 Προσκαληση__',
-                        value: '`x!προσκαληση`',
-                        inline: true
-                    },
-
-
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed16)
-        }
-
-        else if (cmd === 'μετριοπαθεια') {
-
-            message.react('⛏');
-
-            const embed17 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🛠️ Moderation__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🛠️ Mετριοπαθεια__', value: '`ban`-__***Κανε Ban Ενα Member!***__  `\nkick`-__***Κανε Kick Ενα Member!***__  `\n\mute`-__***Κανε Mute Ενα Member!***__  `\n\mute timed`-__***Κανε Time Mute Ενα Member!***__  `\nunmute`-__***Κανε Unmute Ενα Member!***__  `\n\clear`-__***Κανε Clear Messages Απο Ενα Server!***__  `\n\command`-__***Δινει Βασικους Κανονες Απο Server!***__  `\n\slowmode`-__***Κανε Add Slowmode Σε Text Channel!***__ `\naddrole`-__***Δωσε Ενα Role Σε User!***__ `\nremoverole`-__***Σβησε Εωα Role Απο User!***__ `\nsetnick`-__***Κανε Set Server Nickname!***__ `\nresetnick`-__***Κανε Reset To Normal Nickname!***__ `\nlock`-__***Κανε Lock Channel Απο Συγκεκριμενο Role!***__ `\nunlock`-__***Κανε Unlock Channel Απο Συγκεκριμενο Role!***__' },
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed17)
-
-        }
-
-        else if (cmd === 'χρησιμοτητα') {
-
-            message.react('⚙');
-
-            const embed18 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__⚙ Utility__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__⚙ Χρησιμοτητα__', value: '`ticket`-__***Κανει Generate Ιδιωτικο Text Channel!***__ `\nafk`-__***Παρε AFK Status!***__ `\n\suggestions`-__***Κανε Suggest Στους Admins!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed18)
-        }
-
-        else if (cmd === 'σφαλματα') {
-
-            message.react('🐜');
-
-            const embed19 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🐛 Bugs__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🐛 Σφαλματα__', value: '`bugreport`-__***Κανε Report Ενα Bug Στους Admins!***__ `\nfindbugs`-__***Ψαξε Bugs Στο Server Σου!***__ `\nclearbugs`-__***Κανε Clear Bugs Απο Το Server Σου!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed19)
-        }
-
-        else if (cmd === 'κατασταση') {
-
-            message.react('💹');
-
-            const embed20 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__📈 Status__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__📈 Κατασταση__', value: '`mcserver`-__***Παρε Real-Time Κατασταση Για MCServers!***__  `\nstatusping`-__***Παρε Κατασταση Του Ping Του Server Σου!***__ `\nserverinfo`-__***Παρε Το Server Information!***__ `\nbotinfo`-__***Παρε Tο Bot Information!***__ `\ncovid`-__***Παρε Covid Information Για Τη Περιοχη Σου!***__ `\nuserinfo`-__***Παρε Real User Info!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed20)
-        }
-
-        else if (cmd === 'κοινωνικα') {
-
-            message.react('🗨');
-
-            const embed21 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__💬 Socials__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__💬 Κοινωνικα__', value: '`youtube`-__***Πηγαινε Στο Youtube Channel Μου!***__ `\nscratch`-__***Πηγαινε Στο Scratch Account Μου!***__ `\namino`-__***Πηγαινε Στο Amino Account Μου!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed21)
-        }
-
-        else if (cmd === 'διασκεδαση') {
-
-            message.react('🤪');
-
-            const embed22 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🥳 Fun__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🥳 Διασκεδαση__', value: '`ping`-__***Οχι Αληθινο Ping!***__ `\navatar`-__***Δειχνει Το User Avatar!***__ `\nbadges`-__***Δειχνει Το Users Badge!***__ `\n8ball`-__***Ρωτησε Τον 8ball Μια Ερωτηση!***__ `\nreverse`-__***Κανε Reverse Μια Λεξη Που Κανεις Send!***__ `\ncoinflip`-__***Κανε Flip A Coin!***__ `\nmeme`-__***Παρε Memes Απο Το Google!***__  `\nkill`-__***Κανε Kill Ενα User!***__ `\nhug`-__***Κανε Hug Ενα User!***__ `\nkiss`-__***Κανε Kiss Ενα User!***__ `\npp`-__***Παρε Ενα Users PP!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed22)
-        }
-
-        else if (cmd === 'μουσικη') {
-
-            message.react('🎵');
-
-            const embed23 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                // .setTitle('__🎶 Music__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🎶 Mουσικη__', value: '`play`-__***Κανε Play Ενα Τραγουδι Απο Το Youtube!***__  `\nstop`-__***Κανε Stop Tο Player!***__  `\n\skip`-__***Κανε Skip To Τραγουδι Στο Queue!***__ `\n\pause`-__***Κανε Pause Tο Τραγουδι Απο Να Κανει Play!***__ `\nunpause`-__***Κανε Unpause Tο Τραγουδι Ωστε Να Κανει Play!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed23)
-        }
-
-        else if (cmd === 'οικονομια') {
-
-            message.react('💵');
-
-            const embed24 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                // .setTitle('__🤑 Economy__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🤑 Οικονομια__', value: '`balance`-__***Παρε Το Δικo Σου Bank Και Wallet Balance!***__  `\ndeposit`-__***Καταθετησε Xocoins Στην Δικη Σου Τραπεζα!***__  `\nwithdraw`-__***Αποσυρωσε Xocoins Εξω Απο Το Bank Σου!***__  `\nbeg`-__***Παρακαλεσε Τον XOPBOT Για Xocoins!***__  `\ngive`-__***Ιδιωτικο Command!***__  `\nsearch`-__***Ψαξε Για Xocoins Σε Περιοχες!***__ `\nwork`-__***Δουλεψε Για Xocoins!***__ `\ndaily`-__***Παρε Ημερησια Δοση Xocoins!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed24)
-        }
-
-        else if (cmd === 'ισοπεδωση') {
-
-            message.react('🆙');
-
-            const embed25 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__⏫ Leveling__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__⏫ Ισοπεδωση__', value: '`xoprank`-__***Ιδιωτικο Command!***__ `\nrank`-__***Παρε Το Level Rank Card Σου!***__  `\nleaderboard`-__***Παρε Το Server Leaderboard!***__ `\nlevel`-__***Παρε Το Level Ενος User!***__ `\nedit`-__***Κανε Edit Level Η Xp!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed25)
-        }
-
-        else if (cmd === 'προσκαληση') {
-
-            message.react('🖇');
-
-            const embed26 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🔗 Invites__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🔗 Προσκαληση__', value: '`botinvite`-__***Κανε Invite Tο Bot Στο Server Σου!***__ `\nwebsiteinvite`-__***Πηγαινε Στο Official Website Του XOPBOT!***__' }
-                )
-                .setFooter(`Φτιαχτηκε Απο Τ(ο/η)ν: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed26)
-        }
-
-        else if (cmd === 'παιχνιδια') {
-
-            message.react('🎯');
-
-            const embed27 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🎮 Games__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🎮 Παιχνιδια__', value: '`guessthenumber`-__***Μαντεψε Tο Nουμερο!***__ `\nrps`-__***Παιξε Rock,Paper,Sciccors!***__ `\nhangman`-__***Παιξε Hangman!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed27)
-        }
-
     }
 }

@@ -34,12 +34,6 @@ module.exports = {
             .setColor('#c30202')
             .setTitle(`${user.username} Was Hugged!`)
             .setDescription(`**${user.username}** Was Hugged By **${message.author.username}** And Now **${user.username}** Is **${randomNumber}%** Happy!`)
-
-        //const hug_list = message.mentions.users.map(user => {
-
-        //return `**${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy! **`;
-        // });
-
-        message.channel.send(newEmbed);
+        message.channel.send({ embeds: [newEmbed] });
     }
 }

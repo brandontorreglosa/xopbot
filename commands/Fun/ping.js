@@ -4,6 +4,6 @@ module.exports = {
     cooldown: 2,
     description: "this is a ping command!",
     execute(client, message, cmd, args, Discord) {
-        message.channel.send('**Pong!**');
+        message.channel.send({ content: '**Pong!**' });
     }
 }

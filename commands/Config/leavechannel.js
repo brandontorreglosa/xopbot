@@ -8,11 +8,8 @@ module.exports = {
   description: "Change the goodbye channel per server!",
   aliases: ["gchannel", "goodbye"],
   async execute(client, message, cmd, args, Discord) {
-    if (!message.guild.me.hasPermission("MANAGE_CHANNELS")) {
-      return message.channel.send("**I Don't Have The `Manage Channels` Permission!**")
-    }
     if (!args[0]) {
-      return message.channel.send(`\`Usage: (prefix)leavechannel <#channel|off>\``);
+      return message.channel.send({ content: `\`Usage: (prefix)leavechannel <#channel|off>\`` });
     }
     if (message.mentions.channels.first()) {
       const data = await goodbyeSchema.findOne({
@@ -24,7 +21,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.channel.send(`**Goodbye Channel Set To ${message.mentions.channels.first()}**`);
+        message.channel.send({ content: `**Goodbye Channel Set To ${message.mentions.channels.first()}**` });
 
         let newData = new goodbyeSchema({
           Bye: message.mentions.channels.first().id,
@@ -32,7 +29,7 @@ module.exports = {
         });
         newData.save();
       } else if (!data) {
-        message.channel.send(`**Goodbye Channel Set To ${message.mentions.channels.first()}**`);
+        message.channel.send({ content: `**Goodbye Channel Set To ${message.mentions.channels.first()}**` });
 
         let newData = new goodbyeSchema({
           Bye: message.mentions.channels.first().id,
@@ -50,10 +47,10 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.channel.send(`**Goodbye Channel Has Been Turned Off!**`);
+        return message.channel.send({ content: `**Goodbye Channel Has Been Turned Off!**` });
 
       } else if (!data2) {
-        return message.channel.send(`**Goodbye Channel Isn't Even Setup Bot!**`);
+        return message.channel.send({ content: `**Goodbye Channel Isn't Even Setup Bot!**` });
       }
     }
   },

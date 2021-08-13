@@ -15,7 +15,7 @@ module.exports = {
             .setTimestamp()
             .setDescription(`${user}'s badges: ${flags.join(', ')}`)
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
-        message.channel.send(badgesuser)
+        message.channel.send({ embeds: [badgesuser] })
     }
 }
 

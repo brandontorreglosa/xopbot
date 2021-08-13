@@ -28,7 +28,7 @@ module.exports = {
       return chosenJobs.some((answer) => answer.toLowerCase() === m.content.toLowerCase()) && m.author.id === message.author.id;
     };
 
-    const COLLECTOR = message.channel.createMessageCollector(FILTER, { max: 1, time: 15000 });
+    const COLLECTOR = message.channel.createMessageCollector({ FILTER, max: 1, time: 15000 });
 
     COLLECTOR.on("collect", async (m) => {
       const EMBED = new Discord.MessageEmbed()
@@ -49,23 +49,25 @@ module.exports = {
         }
       );
 
-      message.channel.send(EMBED);
+      message.channel.send({ embeds: [EMBED] });
     });
 
     COLLECTOR.on("end", (collected) => {
       if (collected.size == 0) {
-        return message.channel.send(
-          `**What are you doing <@${message.author.id}>?! There was ₿${RANDOM_NUMBER.toString().replace(
-            /\B(?=(\d{3})+(?!\d))/g,
-            ","
-          )} If You Worked As A ${chosenJobs[0]} 😭**`
-        );
+        return message.channel.send({
+          content:
+            `**What are you doing <@${message.author.id}>?! There was ₿${RANDOM_NUMBER.toString().replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              ","
+            )} If You Worked As A ${chosenJobs[0]} 😭**`
+        });
       }
     });
 
-    message.channel.send(
-      `<@${message.author.id
-      }>\n**What Job Would You Do?** 💰\nType The Job In This Channel.\n\`${chosenJobs.join("` `")}\``
-    );
+    message.channel.send({
+      content:
+        `<@${message.author.id
+        }>\n**What Job Would You Do?** 💰\nType The Job In This Channel.\n\`${chosenJobs.join("` `")}\``
+    });
   },
 };

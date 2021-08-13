@@ -1,7 +1,13 @@
 const Discord = require('discord.js');
 const Levels = require('discord-xp');
 require('dotenv').config();
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTIONS"] });
+const client = new Discord.Client({
+    partials: ["MESSAGE", "CHANNEL", "REACTIONS"],
+    allowedMentions: {
+        parse: ['users', 'roles'],
+        repliedUser: true
+    }
+});
 const mongoose = require('mongoose');
 const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
@@ -11,7 +17,8 @@ const fs = require('fs')
 // <----/Client Events/---->
 
 client.db = new Database(process.env.MONGODB_SRV2)
-client.filters = process.env.filters;
+//client.filters = process.env.filters;
+//client.slashcommands = new Discord.Collection()
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 client.setMaxListeners(0);

@@ -13,16 +13,16 @@ module.exports = {
             response = await axios.get(url);
             data = response.data;
         } catch (e) {
-            return message.channel.send(`**An Error Has Occured, Try Again!**`)
+            return message.channel.send({ content: `**An Error Has Occured, Try Again!**` })
         }
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setTitle(`Random Meme That Is Old`)
-            .setDescription(data.caption)
+            .setDescription(`${data.caption}`)
             .setColor('#f3f3f3')
-            .setImage(data.image)
+            .setImage(`${data.image}`)
 
-        await message.channel.send(embed)
+        await message.channel.send({ embeds: [embed] })
     }
 }

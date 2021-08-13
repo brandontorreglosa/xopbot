@@ -9,13 +9,13 @@ module.exports = {
 
         var superagent = require('superagent');
 
-        if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**')
+        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**'})
 
         var lo = new Discord.MessageEmbed()
             .setDescription(`Sending 4k...`)
             .setTimestamp()
 
-        message.channel.send(lo).then(m => {
+        message.channel.send({ embeds: [lo]}).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
 

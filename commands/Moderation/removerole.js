@@ -6,24 +6,19 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     let target = message.mentions.members.first();
 
-    if (!target) return message.reply(`**I am unable to find the user**`)
+    if (!target) return message.reply({ content: `**I Am Unable To Find That User!**`, allowedMentions: { repliedUser: true } })
 
     let rrole = message.mentions.roles.first();
 
-    if (!rrole) return message.reply(`**I am unable to find the role**`)
-
-    // let ticon = target.user.avatarURL({ dynamic: true, size: 2048 });
-    // let aicon = message.author.avatarURL({ dynamic: true, size: 2048 });
+    if (!rrole) return message.reply({ content: `**I Am Unable To Find That Role!**`, allowedMentions: { repliedUser: true } })
 
     const embed = new Discord.MessageEmbed()
-      //   .setAuthor(target.user.username, ticon)
-      //   .setThumbnail(target.user.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
       .setDescription(`**${rrole} Was Removed From ${target}**`)
       .setFooter(`👑HACKERPROᵈᵉᵛ#1498`)
       .setTimestamp()
 
-    await message.channel.send(embed)
+    await message.channel.send({ embeds: [embed] })
 
     target.roles.remove(rrole)
 

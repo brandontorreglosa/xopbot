@@ -6,7 +6,7 @@ module.exports = {
     description: 'Removes all messages in the channel (Deletes the old channel and makes a copy of it with permissions intact)',
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.members.first() || message.author;
-        message.channel.send(`**This Will Remove All Conversation In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**`);
+        message.channel.send({ content: `**This Will Remove All Conversation In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**` });
 
         const filter = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
         const options = { max: 1, time: 30000, errors: ['time'] };
@@ -15,7 +15,7 @@ module.exports = {
             .catch(() => false);
 
         if (!proceed) {
-            return message.channel.send(`**${message.author.username}**, You Cancelled The Nuke Command!`);
+            return message.channel.send({ content: `**${message.author.username}**, You Cancelled The Nuke Command!` });
         };
 
         const embed = new Discord.MessageEmbed()
@@ -24,7 +24,7 @@ module.exports = {
             .setTitle('Incoming Nuke!')
             .setDescription(`**The Nuke Has Been Deployed, Say Goodbye To #${message.channel.name} \nTakes Up To 10 Seconds Max. To Clear Channel!**`)
             .setFooter(`Was Deployed By ${message.author.username} 😱`)
-        return message.channel.send(embed)
+        return message.channel.send({ embeds: [embed] })
             .then(() => setTimeout(() => message.channel.clone()
                 .then(() => message.channel.delete().catch(() => null)), 10000))
     }

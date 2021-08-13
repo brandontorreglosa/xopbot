@@ -16,7 +16,7 @@ module.exports = {
             response = await axios.get(url)
             corona = response.data
         } catch (error) {
-            return message.channel.send(`***${args[0]} doesn't exist, or data isn't being collected***`)
+            return message.channel.send({ content: `***${args[0]} Doesn't Exist, Or Data Isn't eing collected***` })
         }
 
         const embed = new MessageEmbed()
@@ -66,6 +66,6 @@ module.exports = {
                     inline: true
                 })
 
-        await message.channel.send(embed)
+        await message.channel.send({ embeds: [embed] })
     }
 };

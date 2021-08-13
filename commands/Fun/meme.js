@@ -21,10 +21,10 @@ module.exports = {
             embed.setTimestamp()
             embed.setTitle(`${memeTitle}`)
             embed.setURL(`${memeUrl}`)
-            embed.setImage(memeImage)
+            embed.setImage(`${memeImage}`)
             embed.setColor('#c30202')
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            message.channel.send(embed);
+            message.channel.send({ embeds: [embed] });
         })
     }
 }

@@ -8,11 +8,11 @@ module.exports = {
     usage: "<slowmode time in sec reason",
     async execute(client, message, cmd, args, Discord) {
         let duration = args[0]
-        if (isNaN(duration)) return message.reply("***Please give the time in seconds.***")
+        if (isNaN(duration)) return message.reply({ content: "***Please Give The Time In Seconds. Example = 5s!***", allowedMentions: { repliedUser: true } })
         let reason = args.slice(1).join(" ")
-        if (!reason) return message.reply("***Please Specify A Reason!***")
+        if (!reason) return message.reply({ content: "***Please Specify A Reason!***", allowedMentions: { repliedUser: true } })
 
         message.channel.setRateLimitPerUser(duration, reason)
-        message.reply(`***I have successfully Set The Slowmode To ${duration} Seconds With Reason - ${reason}***`)
+        message.reply({ content: `***I have successfully Set The Slowmode To ${duration} Seconds With Reason - ${reason}***`, allowedMentions: { repliedUser: true } })
     }
 }

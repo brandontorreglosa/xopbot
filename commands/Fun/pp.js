@@ -37,7 +37,7 @@ module.exports = {
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
         if (!member)
-            return message.reply(`***Mention Someone Or Provide Their User ID To Get Their PP Size!***`)
+            return message.reply({ content: `***Mention Someone Or Provide Their User ID To Get Their PP Size!***`, allowedMentions: { repliedUser: true } })
 
         const embed = new Discord.MessageEmbed()
             .setTitle('PP Size Detector')
@@ -46,6 +46,6 @@ module.exports = {
             .setTimestamp()
             .setColor(member.displayHexColor);
 
-        await message.channel.send(embed)
+        await message.channel.send({ embeds: [embed] })
     }
 }

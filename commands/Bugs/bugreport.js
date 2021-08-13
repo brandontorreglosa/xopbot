@@ -10,7 +10,7 @@ module.exports = {
 
         //look if there is a bug specified
         const query = args.join(' ');
-        if (!query) return message.reply('**Please Specify The Bug**')
+        if (!query) return message.reply({ content: '**Please Specify The Bug**', allowedMentions: { repliedUser: true } })
 
         //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()
@@ -21,8 +21,8 @@ module.exports = {
             .addField('Report', query)
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        channel.send(reportEmbed);
+        channel.send({ embeds: [reportEmbed] });
         //send the embed to the channel
-        message.channel.send("**Bug Report Has Been Sent!**")
+        message.reply({ content: "**Bug Report Has Been Sent!**", allowedMentions: { repliedUser: true } })
     }
 }

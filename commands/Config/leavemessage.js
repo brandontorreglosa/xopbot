@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const text = args.join(" ");
     if (!args[0]) {
-      return message.channel.send(`\`Usage: (prefix)leavemessage <Text|off>\``);
+      return message.channel.send({ content: `\`Usage: (prefix)leavemessage <Text|off>\`` });
     }
     if (text !== "off") {
       const data = await LeaveMsgSchema.findOne({
@@ -26,7 +26,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send(`**Leave Message Set To ${newData.ByeMsg}**`);
+        message.channel.send({ content: `**Leave Message Set To ${newData.ByeMsg}**` });
 
       } else if (!data) {
 
@@ -35,7 +35,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send(`Goodbye Message set to ${newData.ByeMsg}`);
+        message.channel.send({ content: `Goodbye Message set to ${newData.ByeMsg}` });
 
       }
     } else if (text === "off") {
@@ -48,10 +48,10 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.channel.send(`**Goodbye Message Has Been Turned Off!**`);
+        return message.channel.send({ content: `**Goodbye Message Has Been Turned Off!**` });
 
       } else if (!data2) {
-        return message.channel.send(`**Goodbye Message Isn't Even Setup Bot!**`);
+        return message.channel.send({ content: `**Goodbye Message Isn't Even Setup Bot!**` });
       }
     }
   },

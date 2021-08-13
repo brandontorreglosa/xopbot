@@ -8,9 +8,9 @@ module.exports = {
   description: "Deposit Xocoins into your bank!",
   async execute(client, message, cmd, args, Discord, profileData) {
     const amount = args[0];
-    if (amount % 1 != 0 || amount <= 0) return message.channel.send("**Deposit Amount Must Be A Whole number!**");
+    if (amount % 1 != 0 || amount <= 0) return message.channel.send({ content: "**Deposit Amount Must Be A Whole number!**" });
     try {
-      if (amount > profileData.coins) return message.channel.send(`**You Don't Have That Amount Of Coins to Deposit!**`);
+      if (amount > profileData.coins) return message.channel.send({ content: `**You Don't Have That Amount Of Coins to Deposit!**` });
       await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,
@@ -27,9 +27,7 @@ module.exports = {
         .setTitle(`${message.author.username}`)
         .setDescription(`You Deposited **${amount} Xocoins** Into Your **Bank** 💸`)
         .setColor('#c30202')
-
-      message.channel.send(embed);
-      // return message.channel.send(`**You Deposited ${amount} Xocoins Into Your Bank** 💸`);
+      message.channel.send({ embeds: [embed] });
     } catch (err) {
       console.log(err);
     }

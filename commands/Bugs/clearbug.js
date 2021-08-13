@@ -7,7 +7,7 @@ module.exports = {
     //Use your own execute parameters
     execute(client, message, cmd, args, Discord) {
 
-        message.channel.send(`**XOPBOT Cleared All Bugs From ${message.guild.name}! \nSome Bugs Will Stay Not All Can Be Removed!**`)
+        message.reply({ content: `**XOPBOT Cleared All Bugs From ${message.guild.name}! \nSome Bugs Will Stay Not All Can Be Removed!**`, allowedMentions: { repliedUser: true } });
 
     }
 }

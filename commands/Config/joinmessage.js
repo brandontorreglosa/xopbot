@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const text = args.join(" ");
     if (!args[0]) {
-      return message.channel.send(`\`Usage: (prefix)joinmessage <Text|off>\``);
+      return message.channel.send({ content: `\`Usage: (prefix)joinmessage <Text|off>\`` });
     }
     if (text !== "off") {
       const data = await JoinMsgSchema.findOne({
@@ -26,7 +26,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send(`**Join Message Set To ${newData.JoinMsg}**`);
+        message.channel.send({ content: `**Join Message Set To ${newData.JoinMsg}**` });
 
       } else if (!data) {
 
@@ -35,7 +35,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send(`**Join Message Set To ${newData.JoinMsg}**`);
+        message.channel.send({ content: `**Join Message Set To ${newData.JoinMsg}**` });
 
       }
     } else if (text === "off") {
@@ -48,10 +48,10 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.channel.send(`**Join Message Has Been Turned Off!**`);
+        return message.channel.send({ content: `**Join Message Has Been Turned Off!**` });
 
       } else if (!data2) {
-        return message.channel.send(`**Join Message Isn' Even Setup Bot!**`);
+        return message.channel.send({ content: `**Join Message Isn' Even Setup Bot!**` });
       }
     }
   },

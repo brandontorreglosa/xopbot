@@ -8,7 +8,7 @@ module.exports = {
     premium: true,
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (!args[0]) return message.channel.send("**Please Give Me Equation!**");
+            if (!args[0]) return message.channel.send({ content: "**Please Give Me Equation!**" });
 
             const embed = new MessageEmbed()
                 .setColor('#c30202')
@@ -16,9 +16,9 @@ module.exports = {
                 .setDescription(math.evaluate(args.join(" ")))
                 .setTimestamp();
 
-            message.channel.send(embed);
+            message.channel.send({ embeds: [embed] });
         } catch (err) {
-            message.channel.send("***Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`***");
+            message.channel.send({ content: "***Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`***" });
         }
     },
 };

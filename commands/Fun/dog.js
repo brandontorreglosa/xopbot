@@ -19,7 +19,7 @@ module.exports = {
           .setColor('#c30202')
           .setFooter(`🤣WHAT A DOG🤣`)
           .setURL(response.body.url);
-        message.channel.send(lewdembed);
+        message.channel.send({ embeds: [lewdembed] });
       })
   }
 };

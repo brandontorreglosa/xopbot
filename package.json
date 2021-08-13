@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
+    "@discordjs/voice": "^0.6.0",
     "axios": "^0.21.1",
     "booru": "^2.4.0",
     "canvacord": "^5.2.0",
@@ -19,7 +20,7 @@
     "discord-player": "^4.1.4",
     "discord-xp": "^1.1.14",
     "discord-ytdl-core": "^5.0.4",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.1.0-dev.1628640678.0266f28",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.4.0",
     "figlet": "^1.5.0",
