@@ -9,14 +9,13 @@ module.exports = {
 
         var superagent = require('superagent');
 
-        if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**')
+        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
         var lo = new Discord.MessageEmbed()
             .setDescription(`Sending Boobs...`)
             .setTimestamp()
 
-        message.channel.send(lo).then(m => {
-
+        message.channel.send({ embeds: [lo] }).then(m => {
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'boobs' }).end((err, response) => {
 
                 var embed_nsfw = new Discord.MessageEmbed()
@@ -25,7 +24,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('I Like Bigger Tits! :)')
                     .setColor('#c30202')
-                m.edit(embed_nsfw);
+                m.edit({ embeds: [embed_nsfw] });
             });
         });
     }

@@ -3,7 +3,7 @@ const Levels = require('discord-xp');
 require('dotenv').config();
 const client = new Discord.Client({
     partials: ["MESSAGE", "CHANNEL", "REACTIONS"],
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+    intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_MESSAGE_REACTIONS", "DIRECT_MESSAGES", "GUILD_INVITES"],
     allowedMentions: {
         parse: ['users', 'roles'],
         repliedUser: true    
