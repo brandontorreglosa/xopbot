@@ -3,9 +3,10 @@ const Levels = require('discord-xp');
 require('dotenv').config();
 const client = new Discord.Client({
     partials: ["MESSAGE", "CHANNEL", "REACTIONS"],
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
     allowedMentions: {
         parse: ['users', 'roles'],
-        repliedUser: true
+        repliedUser: true    
     }
 });
 const mongoose = require('mongoose');
