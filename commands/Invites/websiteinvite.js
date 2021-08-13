@@ -10,7 +10,7 @@ module.exports = {
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setColor('#c30202')
             .setTitle('Bot Website Invite')
-            .setURL('https://www.xopbot.tk/')
+            .setURL('https://xopbot-gg.glitch.me/')
             .setDescription('**This Is The Bot Website Invite Link**')
             .addFields(
                 { name: 'Bot Website Invite Link', value: '[Bot Website](https://xopbot-gg.glitch.me/)' }
