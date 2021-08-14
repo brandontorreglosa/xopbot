@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const Levels = require('discord-xp');
 require('dotenv').config();
+const { client, Collection, Intents } = require("discord.js");
 const client = new Discord.Client({
     partials: ["MESSAGE", "CHANNEL", "REACTIONS"],
     allowedMentions: { parse: ['users', 'roles'], repliedUser: true },
