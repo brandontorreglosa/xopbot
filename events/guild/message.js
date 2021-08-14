@@ -255,7 +255,7 @@ module.exports = async (Discord, client, message) => {
     let invalidPerms = []
     for (const perm of command.permissions) {
       if (!validPermissions.includes(perm)) {
-        return console.log(`Invalid Permissions ${perm}`);
+        return console.log({ content: `Invalid Permissions ${perm}` });
       }
       if (!message.member.permissions.has(perm)) {
         invalidPerms.push(perm);
@@ -330,7 +330,7 @@ module.exports = async (Discord, client, message) => {
     if (antilink) {
       if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
         message.delete();
-        message.reply({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**", allowedMentions: {repliedUser: true} }).then(msg => {
+        message.reply({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**", allowedMentions: { repliedUser: true } }).then(msg => {
           let time = '4s'
           setTimeout(function () {
             msg.delete();
@@ -354,7 +354,7 @@ module.exports = async (Discord, client, message) => {
     if (antiwords) {
       if (message.content.match("bitch") || message.content.match("hoe") || message.content.match("slut") || message.content.match("nigga") || message.content.match("nigg") || message.content.match("dick") || message.content.match("cunt") || message.content.match("shit") || message.content.match("fuck")) {
         message.delete();
-        message.reply({ content: "**No Bad Words Allowed Please Stop!**", allowedMentions: {repliedUser: true} }).then(msg => {
+        message.reply({ content: "**No Bad Words Allowed Please Stop!**", allowedMentions: { repliedUser: true } }).then(msg => {
           let time = '4s'
           setTimeout(function () {
             msg.delete();

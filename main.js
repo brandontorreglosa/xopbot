@@ -39,7 +39,7 @@ client.setMaxListeners(0);
 
 client.db.on("ready", () => {
 
-    console.log(`CONNECTED WITH DATABASE `)
+    console.log({ content: `CONNECTED WITH DATABASE ` })
 })
 
 client.on("ready", () => {
