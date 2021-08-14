@@ -10,7 +10,7 @@ module.exports = {
             .setTitle("Lets Play Rock Paper Scissors")
             .setDescription("Play Rock Paper Scissors Must React!")
             .setTimestamp()
-        let msg = await message.channel.send({embeds: [embed]})
+        let msg = await message.channel.send({ embeds: [embed] })
         await msg.react("🗻")
         await msg.react("✂")
         await msg.react("📄")
@@ -26,9 +26,9 @@ module.exports = {
                 if ((reaction.emoji.name === '🗻' && me === "✂") ||
                     (reaction.emoji.name === "✂" && me === "📄") ||
                     (reaction.emoji.name === "📄" && me === "🗻")) {
-                    message.reply("**You Won!**")
+                    message.reply({ content: "**You Won!**", allowedMentions: { repliedUser: true } })
                 } else {
-                    message.reply("**You Lost!**")
+                    message.reply({ content: "**You Lost!**", allowedMentions: { repliedUser: true } })
                 }
 
 
@@ -36,7 +36,7 @@ module.exports = {
         )
 
             .catch(collected => {
-                message.reply("**Game Ended Due To No Response!**")
+                message.reply({ content: "**Game Ended Due To No Response!**", allowedMentions: { repliedUser: true } })
             })
     }
 

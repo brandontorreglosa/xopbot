@@ -23,6 +23,6 @@ module.exports = {
         });
 
         const attachment = new Discord.MessageAttachment(image, "phub.png");
-        return message.channel.send(attachment);
+        return message.channel.send({ files: [{ attachment: image }] });
     }
 }

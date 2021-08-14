@@ -3,11 +3,17 @@ const Levels = require('discord-xp');
 require('dotenv').config();
 const client = new Discord.Client({
     partials: ["MESSAGE", "CHANNEL", "REACTIONS"],
-    intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_MESSAGE_REACTIONS", "DIRECT_MESSAGES", "GUILD_INVITES"],
-    allowedMentions: {
-        parse: ['users', 'roles'],
-        repliedUser: true    
-    }
+    allowedMentions: { parse: ['users', 'roles'], repliedUser: true },
+    intents: [
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+        Intents.FLAGS.GUILD_WEBHOOKS,
+        Intents.FLAGS.GUILD_VOICE_STATES,
+        Intents.FLAGS.GUILD_INVITES,
+        Intents.FLAGS.GUILD_BANS,
+    ],
 });
 const mongoose = require('mongoose');
 const { Database } = require('quickmongo');
@@ -18,8 +24,7 @@ const fs = require('fs')
 // <----/Client Events/---->
 
 client.db = new Database(process.env.MONGODB_SRV2)
-//client.filters = process.env.filters;
-//client.slashcommands = new Discord.Collection()
+client.slash = new Collection();
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 client.setMaxListeners(0);
