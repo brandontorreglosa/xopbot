@@ -26,8 +26,8 @@ const fs = require('fs')
 
 client.db = new Database(process.env.MONGODB_SRV2)
 client.slash = new Collection();
-client.commands = new Discord.Collection();
-client.events = new Discord.Collection();
+client.commands = new Collection();
+client.events = new Collection();
 client.setMaxListeners(0);
 
 // <----/Handlers System/---->
@@ -40,7 +40,7 @@ client.setMaxListeners(0);
 
 client.db.on("ready", () => {
 
-    console.log({ content: `CONNECTED WITH DATABASE ` })
+    console.log(`CONNECTED WITH DATABASE `)
 })
 
 client.on("ready", () => {
