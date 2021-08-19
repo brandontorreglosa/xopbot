@@ -31,6 +31,6 @@ module.exports = {
                               .setColor('#c30202')
                         m.edit({ embeds: [wow] })
                   })
-            }
-}
+            })
+      }
 }
