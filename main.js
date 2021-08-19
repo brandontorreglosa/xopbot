@@ -25,7 +25,6 @@ const fs = require('fs')
 // <----/Client Events/---->
 
 client.db = new Database(process.env.MONGODB_SRV2)
-client.slash = new Collection();
 client.commands = new Collection();
 client.events = new Collection();
 client.setMaxListeners(0);
