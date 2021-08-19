@@ -13,7 +13,6 @@ module.exports = {
     const result = Math.floor(Math.random() * replies.length); // Get a random respons for the array
     const question = args.join(' '); // join the args(Array<string>) to a question string
     // check permissions for embed
-    if (message.guild.me.permissions.has('EMBED_LINKS')) {
       const embed = new MessageEmbed() // create embed 
         .setTimestamp()
         .setAuthor('**🎱 The 8 Ball says...**')
@@ -21,8 +20,5 @@ module.exports = {
         .setColor('#c30202').addField('Question:', question)
         .addField('Answer:', replies[result]);
       await message.channel.send({ embeds: [embed] }); // send embed message
-    } else {
-      await message.channel.send({ content: `**Question:**\n${question}\n**Answer:**\n${replies[result]}` }); // no permissins so bot will default to a raw message
-    }
   },
 };
