@@ -31,7 +31,7 @@ client.setMaxListeners(0);
 
 // <----/Handlers System/---->
 
-['command_handler', 'event_handler', 'slash_handler'].forEach(handler => {
+['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, Discord);
 })
 
