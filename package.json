@@ -2,7 +2,7 @@
   "name": "discordbot",
   "version": "v60.0.0",
   "description": "XOPBOT Is A Multipurpose Bot With Over 130+ Commands That Make You Love The Bot!",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

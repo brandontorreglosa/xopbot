@@ -1,5 +1,5 @@
 module.exports = (Discord, client) => {
-    console.log({ content: 'XOPBOT Is Online!' });
+    console.log('XOPBOT Is Online!');
     client.user.setPresence({ status: 'dnd' })
 
     const activities = [
