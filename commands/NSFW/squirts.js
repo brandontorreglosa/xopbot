@@ -13,13 +13,13 @@ module.exports = {
       usage: "[command]",
       async execute(client, message, cmd, args, Discord) {
 
-            if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**')
+            if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
             var lo = new Discord.MessageEmbed()
                   .setDescription(`Sending Squirts...`)
                   .setTimestamp()
 
-            message.channel.send(lo).then(m => {
+            message.channel.send({ embeds: [lo] }).then(m => {
                   got('https://www.reddit.com/r/squirting/random.json').then(response => {
                         let content = JSON.parse(response.body);
                         var title = content[0].data.children[0].data.title;
@@ -30,7 +30,7 @@ module.exports = {
                               .setImage(amazeme)
                               .setFooter(`Squirt Some Liquid Hoe! :)`)
                               .setColor('#c30202')
-                        m.edit(wow)
+                        m.edit({ embeds: [wow] })
                   })
             })
       }

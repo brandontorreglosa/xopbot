@@ -9,13 +9,13 @@ module.exports = {
 
         var superagent = require('superagent');
 
-        if (!message.channel.nsfw) return message.channel.send('**This Is Not A NSFW Channel! 🔞**')
+        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
         var lo = new Discord.MessageEmbed()
             .setDescription(`Sending Pgif...`)
             .setTimestamp()
 
-        message.channel.send(lo).then(m => {
+        message.channel.send({ embeds: [lo] }).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'pgif' }).end((err, response) => {
 
@@ -25,7 +25,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('Whats Better Than Porn Gifs! :)')
                     .setColor('#c30202')
-                m.edit(embed_nsfw);
+                m.edit({ embeds: [embed_nsfw] });
             });
         });
     }

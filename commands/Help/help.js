@@ -3,7 +3,7 @@ const OWNER_ID = process.env.Owner_ID;
 
 module.exports = {
     name: "help",
-    aliases: ['moderation', 'utility', 'bugs', 'status', 'socials', 'fun', 'games', 'music', 'economy', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'config', 'images', 'owner', 'βοηθεια', 'μετριοπαθεια', 'χρησιμοτητα', 'σφαλματα', 'κατασταση', 'κοινωνικα', 'διασκεδαση', 'παιχνιδια', 'μουσικη', 'οικονομια', 'ισοπεδωση', 'προσκαληση'],
+    aliases: ['bugs', 'socials', 'games', 'music', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
@@ -117,40 +117,6 @@ module.exports = {
             await message.channel.send({ embeds: [embed] })
         }
 
-        else if (cmd === 'moderation') {
-
-            message.react('⛏');
-
-            const embed2 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🛠️ Moderation__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🛠️ Moderation (20)__', value: '`dm`-__***Dm A User!***__  \n`ban`-__***Ban A Member From A Server!***__ \n`unban`-__***Unban A Member From A Server!***__  \n`kick`-__***Kick A Member From A Server!***__ \n`mute`-__***Mute A Member From A Server!***__ \n`unmute`-__***Unmute A Member From A Server!***__ \n`nuke`-__***Clear A Channel!***__ \n`clear`-__***Clear Messages From A Server!***__  \n`command`-__***Gives Basic Server Rules Of A Server!***__  \n`slowmode`-__***Add Slowmode To A Text Channel!***__ \n`addrole`-__***Add A Role To A User!***__ \n`removerole`-__***Remove A Role From A User!***__ \n`createembed`-__***Create A Custom Embed!***__ \n`createtext`-__***Create A Text Channel!***__ \n`createvoice`-__***Create A Voice Channel!***__ \n`deletechannel`-__***Delete A Channel!***__ \n`userlock`-__***Lock A Role From A Specific Channel!***__ \n`userunlock`-__***Unlock A Role From A Specific Channel!***__ \n`channellock`-__***Lock A Channel!***__ \n`channelunlock`-__***Unlock A Channel!***__' },
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed2] })
-        }
-
-        else if (cmd === 'utility') {
-
-            message.react('⚙');
-
-            const embed3 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__⚙ Utility__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__⚙ Utility (9)__', value: '`ticket`-__***Generates Private Text Channel!***__ \n`webhook`-__***Send Something From A Webhook!***__ \n`xopchat`-__***Request For Xopchat!***__ \n`afk`-__***Get AFK Status!***__ \n`suggestions`-__***Make A Suggestion To The Admins!***__ \n`nickname`-__***Change Someones Nickname!***__ \n`anime`-__***Search For Anime!***__ \n`wiki`-__***Search Something On Wiki!***__ \n`google`-__***Search Something On Google!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed3] })
-        }
-
         else if (cmd === 'bugs') {
 
             message.react('🐜');
@@ -166,23 +132,6 @@ module.exports = {
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
             await message.channel.send({ embeds: [embed4] })
-        }
-
-        else if (cmd === 'status') {
-
-            message.react('💹');
-
-            const embed5 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__📈 Status__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__📈 Status (6)__', value: '`mcserver`-__***Get Real-Time Status Of MCServers!***__  \n`statusping`-__***Get A Status Ping Of Your Server!***__ \n`serverinfo`-__***Get Your Servers Information!***__ \n`botinfo`-__***Get The Bots Information!***__ \n`covid`-__***Get Covid Information Of A Area!***__ \n`userinfo`-__***Get A Real User Info!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed5] })
         }
 
         else if (cmd === 'socials') {
@@ -202,23 +151,6 @@ module.exports = {
             await message.channel.send({ embeds: [embed6] })
         }
 
-        else if (cmd === 'fun') {
-
-            message.react('🤪');
-
-            const embed7 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🥳 Fun__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🥳 Fun (18)__', value: '`ping`-__***Not Real Ping!***__ \n`avatar`-__***Shows A Users Avatar!***__ \n`badges`-__***Gives You A Users Badge!***__ \n`8ball`-__***Ask 8ball A Question!***__ \n`reverse`-__***Reverse A Word That You Send!***__ \n`coinflip`-__***Flip A Coin!***__ \n`meme`-__***Get Memes From Reddit!***__ \n`say`-__***XOPBOT Repeats The Word!***__ \n`ascii`-__***Convert Text To Ascii!***__ \n`fliptext`-__***Flip Your Text!***__ \n`dog`-__***Get A Random Dog!***__ \n`cat`-__***Get A Random Cat!***__ \n`respect`-__***Respect A User!***__ \n`hack`-__***Hack A User!***__  \n`kill`-__***Kill A User!***__ \n`hug`-__***Hug A User!***__ \n`kiss`-__***Kiss A User!***__ \n`pp`-__***Get A Users PP!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed7] })
-        }
-
         else if (cmd === 'music') {
 
             message.react('🎵');
@@ -234,23 +166,6 @@ module.exports = {
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
             await message.channel.send({ embeds: [embed8] })
-        }
-
-        else if (cmd === 'economy') {
-
-            message.react('💵');
-
-            const embed9 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                // .setTitle('__🤑 Economy__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🤑 Economy (11)__', value: '`shop(1-2)`-__***Get Something From The Shop!***__ \n`profile`-__***Get Your Profile***__ \n`balance`-__***Get Your Banks And Wallet Balance!***__  \n`deposit`-__***Deposit Xocoins Into Your Bank!***__  \n`withdraw`-__***Withdraw Money Out Of Your Bank!***__  \n`beg`-__***Beg From XOPBOT For Xocoins!***__ \n`coins-set`-__***Private Command!***__  \n`give`-__***Private Command!***__  \n`search`-__***Search For Xocoins On Locations!***__ \n`work`-__***Work For Xocoins!***__ \n`daily`-__***Get Daily Xocoins!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed9] })
         }
 
         else if (cmd === 'leveling') {
@@ -290,7 +205,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (44)__', value: '**Real Life NSFW**: \n`4k` \n`orgy` \n`neko` \n`pgif` \n`spanks` \n`squirts` \n`gangbang` \n`handcuffed` \n`threesome` \n`stripgirls` \n`doggystyle` \n`lesbians` \n`lewds` \n`sluts` \n`bigass` \n`bigboobs` \n`bikinis` \n`panties` \n`yogapants` \n`gonewild` \n`creampie` \n`cumsluts` \n`blowjob` \n`dildo` \n`milf` \n`bdsm` \n`anal` \n`ass` \n`pussy` \n`boobs` \n`thigh` \n**Anime NSFW**: \n`hentai` \n`hthigh` \n`hanal` \n`hboobs` \n`rule34` \n`cowgirl` \n`netorare` \n`succubus` \n`paizuri` \n`yuri` \n`hmidriff` \n`hneko` \n`hkitsune` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
+                    { name: '__🔞 NSFW (43)__', value: '**Real Life NSFW**: ``` 4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, stripgirls, doggystyle, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh \n**Anime NSFW**: ``` hentai, hthigh, hanal, hboobs, rule34, cowgirl, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -365,42 +280,6 @@ module.exports = {
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
             await message.channel.send({ embeds: [embed115] })
-        }
-
-        else if (cmd === 'config') {
-
-            message.react('🌘');
-
-            const embed15 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🎮 Games__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__⚠ Config (9)__', value: '`antiwords`-__***Setup Bad Words Detector!***__ \n`antilink`-__***Setup Antilink On A Server!***__ \n`autonsfw`-__***Setup Autonsfw On A Server!***__ \n`automeme`-__***Setup Automeme On A Server!***__ \n`joinchannel`-__***Setup The Join Channel!***__ \n`leavechannel`-__***Setup The Leave Channel!***__ \n`joinmesage`-__***Setup The Join Message!***__ \n`leavemessage`-__***Setup The Leave Message!***__ \n`setprefix`-__***Set The Server Prefix!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed15] })
-        }
-
-        else if (cmd === 'images') {
-
-            message.react('📸');
-
-            const embed15 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                //.setTitle('__🎮 Games__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__📷 Images (13)__', value: '`ad`-__***Wow You Became A AD!***__ \n`pet`-__***Aww You Got Pet!***__ \n`m&m`-__***Wow You Are A M&M!***__ \n`phub`-__***What Are You Doing?***__ \n`drip`-__***Get A Image Of A Drip User!***__ \n`alert`-__***Alert The World!***__ \n`facts`-__***Facts Only Mate!***__ \n`clown`-__***Wow You Are A Clown!***__ \n`drake`-__***The Drake Meme!***__ \n`water`-__***I Need Water Guide Me!***__ \n`clyde`-__***Get An Image Of Clyde Sending!***__ \n`biden`-__***Make Biden Tweet Something!***__  \n`grave`-__***Get An Image Of A User In A Grave!***__ ' },
-                    { name: '__📷 Images 2 (13)__', value: '\n`stonks`-__***Wow Im Rich ASF!***__ \n`heaven`-__***Get A Image Of A User In Heaven!***__ \n`pikachu`-__***Pikachu Meme If You Know!***__ \n`uncover`-__***The Rick And Morty Meme!***__ \n`iamspeed`-__***Yes Im Fast Asf Boi You See!***__ \n`rickroll`-__***You Just Got Rickrolled!***__ \n`tableflip`-__***Get A Image Doing A Tableflip!***__ \n`fbiopenup`-__***Oh Shoot The FBI Is Here!***__ \n`batmanslap`-__***Batman Slap XOPBOT!***__ \n`carreverse`-__***Reverse The Car From The Cringe!***__ \n`wideavatar`-__***Get A Image Of A Users Wide Pfp!***__ \n`dockofshame`-__***Get A Image Of A User On The Dock!***__ \n`changemymind`-__***Change A Users Mind!***__' },
-                    { name: 'Total Images', value: '```26```' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send({ embeds: [embed15] })
         }
 
         else if (cmd === 'owner') {
