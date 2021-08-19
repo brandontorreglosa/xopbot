@@ -10,7 +10,7 @@ module.exports = {
             .setTitle("Lets Play Rock Paper Scissors")
             .setDescription("Play Rock Paper Scissors Must React!")
             .setTimestamp()
-        let msg = await message.channel.send({ embeds: [embed] })
+        let msg = await message.channel.send(embed)
         await msg.react("🗻")
         await msg.react("✂")
         await msg.react("📄")

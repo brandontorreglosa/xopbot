@@ -16,6 +16,6 @@ module.exports = {
             .setTitle(`Avatar Link`)
             .setURL(`${user.displayAvatarURL({ dynamic: true })}`)
             .setImage(`${user.displayAvatarURL({ size: 2048, dynamic: true })}`)
-        message.channel.send({ embeds: [avatar_list] });
+        message.channel.send(avatar_list);
     }
 }

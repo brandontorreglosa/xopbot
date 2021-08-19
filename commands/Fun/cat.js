@@ -20,7 +20,7 @@ module.exports = {
           .setColor('#c30202')
           .setFooter(`owo`)
           .setURL(response.body.url);
-        message.channel.send({ embeds: [lewdembed] });
+        message.channel.send(lewdembed);
       })
   }
 };

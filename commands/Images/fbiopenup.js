@@ -20,7 +20,7 @@ module.exports = {
                 .setTitle(`RUN! The FBI Found You Thanks To ${message.author.username}`)
                 .setImage('https://cdn.discordapp.com/attachments/824319314495537175/874580794503467018/ezgif.com-gif-maker_1.gif')
                 .setFooter('You Are Now In Danger Get Out 😨')
-            user.send({ embeds: [embed] })
+            user.send(embed)
                 .catch(() => message.channel.send({ content: "**The FBI Couldn`t Get To That User! 😭**" }))
                 .then(() => message.channel.send({ content: `**The FBI Is Already At ${user.tag} House! 😉**` }));
         } catch (error) {

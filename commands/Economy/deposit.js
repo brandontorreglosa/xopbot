@@ -27,7 +27,7 @@ module.exports = {
         .setTitle(`${message.author.username}`)
         .setDescription(`You Deposited **${amount} Xocoins** Into Your **Bank** 💸`)
         .setColor('#c30202')
-      message.channel.send({ embeds: [embed] });
+      message.channel.send(embed);
     } catch (err) {
       console.log(err);
     }

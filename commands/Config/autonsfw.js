@@ -36,7 +36,7 @@ module.exports = {
                 embed.setImage(`${memeImage}`)
                 embed.setColor('#c30202')
                 embed.setFooter(`AUTONSFW IS POG | 👍${memeUpvotes} 💬 ${memeNumComments}`)
-                message.channel.send({ embeds: [embed] });
+                message.channel.send(embed);
             })
         }, 20000)
     }

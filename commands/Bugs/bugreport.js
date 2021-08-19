@@ -21,7 +21,7 @@ module.exports = {
             .addField('Report', query)
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        channel.send({ embeds: [reportEmbed] });
+        channel.send(reportEmbed);
         //send the embed to the channel
         message.reply({ content: "**Bug Report Has Been Sent!**", allowedMentions: { repliedUser: true } })
     }

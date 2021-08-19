@@ -23,7 +23,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor('#c30202')
                     .setDescription(`**${message.author.username}, Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
-                message.channel.send({ embeds: [embed1] })
+                message.channel.send(embed1)
             }
 
             let sayMessage = args.slice(0).join(' ');
@@ -33,7 +33,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setDescription(`**${sayMessage}**`)
-            message.channel.send({ embeds: [embed] });
+            message.channel.send(embed);
 
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)

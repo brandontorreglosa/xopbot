@@ -17,7 +17,7 @@ module.exports = {
             )
             .setFooter('You Can Also Join Our Support Server If U Click The Bot Invite!');
 
-        message.channel.send({ embeds: [newEmbed] });
+        message.channel.send(newEmbed);
     }
 
 }

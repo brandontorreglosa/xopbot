@@ -114,7 +114,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed] })
+            await message.channel.send(embed)
         }
 
         else if (cmd === 'bugs') {
@@ -131,7 +131,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed4] })
+            await message.channel.send(embed4)
         }
 
         else if (cmd === 'socials') {
@@ -148,7 +148,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed6] })
+            await message.channel.send(embed6)
         }
 
         else if (cmd === 'music') {
@@ -165,7 +165,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed8] })
+            await message.channel.send(embed8)
         }
 
         else if (cmd === 'leveling') {
@@ -182,7 +182,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed10] })
+            await message.channel.send(embed10)
         }
 
         else if (cmd === 'nsfw') {
@@ -209,7 +209,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed11] })
+            await message.channel.send(embed11)
         }
 
         else if (cmd === 'premium') {
@@ -226,7 +226,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed12] })
+            await message.channel.send(embed12)
         }
 
         else if (cmd === 'invites') {
@@ -243,7 +243,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed13] })
+            await message.channel.send(embed13)
         }
 
         else if (cmd === 'credits') {
@@ -262,7 +262,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed14] })
+            await message.channel.send(embed14)
         }
 
         else if (cmd === 'games') {
@@ -279,7 +279,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send({ embeds: [embed115] })
+            await message.channel.send(embed115)
         }
 
         else if (cmd === 'owner') {
@@ -298,7 +298,7 @@ module.exports = {
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
 
-            await message.channel.send({ embeds: [embed116] })
+            await message.channel.send(embed116)
         }
     }
 }

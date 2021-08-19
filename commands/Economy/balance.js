@@ -15,6 +15,6 @@ module.exports = {
       **💸 Wallet- ${profileData.coins} Xocoins** 
       **🏦 Bank- ${profileData.bank} Xocoins**
       `)
-    message.channel.send({ embeds: [newEmbed] })
+    message.channel.send(newEmbed)
   },
 };

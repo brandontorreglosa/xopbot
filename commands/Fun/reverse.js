@@ -15,6 +15,6 @@ module.exports = {
             .setColor('#c30202')
             .setTitle('Reverse Conversion')
             .setDescription(`**${result}**`)
-        message.channel.send({ embeds: [embed] })
+        message.channel.send(embed)
     }
 }

@@ -51,9 +51,9 @@ module.exports = {
 
         let guess = args[0];
         if (!guess && guildAttempts.get(guild.id).attempts === 1) {
-            return channel.send({ embeds: [pickinganumber] })
+            return channel.send(pickinganumber)
         } else if (!guess) {
-            return channel.send({ embeds: [provideaguess] });
+            return channel.send(provideaguess);
         }
 
         if (+guess === guildNumber.get(guild.id)) {
@@ -64,7 +64,7 @@ module.exports = {
                 .setColor('#00ff00')
                 .setDescription(`**✅ Perfect, <@${member.id}> The Number Was ${guildNumber.get(guild.id)}, It Only Took You ${attempts.attempts} Attempts!**`)
 
-            channel.send({ embeds: [guessedthenumber] });
+            channel.send(guessedthenumber);
             guildNumber.delete(guild.id);
             guildAttempts.delete(guild.id);
 

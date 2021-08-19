@@ -16,6 +16,6 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        await message.channel.send({ embeds: [embed3] })
+        await message.channel.send(embed3)
     }
 }

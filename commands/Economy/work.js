@@ -49,7 +49,7 @@ module.exports = {
         }
       );
 
-      message.channel.send({ embeds: [EMBED] });
+      message.channel.send(EMBED);
     });
 
     COLLECTOR.on("end", (collected) => {

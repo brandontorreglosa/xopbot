@@ -34,6 +34,6 @@ module.exports = {
             .setColor('#c30202')
             .setTitle(`${user.username} Was Hugged!`)
             .setDescription(`**${user.username}** Was Hugged By **${message.author.username}** And Now **${user.username}** Is **${randomNumber}%** Happy!`)
-        message.channel.send({ embeds: [newEmbed] });
+        message.channel.send(newEmbed);
     }
 }

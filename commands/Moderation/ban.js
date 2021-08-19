@@ -31,7 +31,7 @@ module.exports = {
         .setColor('#c30202')
         .setTitle(`You Are Banned From ${message.guild.name} 😢`)
         .setDescription(`Banned By: ${message.author.username} \nReason: ${reason} \nTry Not To Break The Rules Next Time!`)
-      userTarger.send({ embeds: [embed] })
+      userTarger.send(embed)
       .catch(() => message.channel.send({content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**`}))
       .then(() => message.channel.send({ content: `**<@${userTarger.user.id}> Has Been Banned For ${reason}!**` }))
     } else {

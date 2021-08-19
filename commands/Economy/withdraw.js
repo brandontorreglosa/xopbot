@@ -30,7 +30,7 @@ module.exports = {
         .setDescription(`You Withdrew **${amount} Xocoins** Into Your **Wallet** 💸`)
         .setColor('#c30202')
 
-      message.channel.send({ embeds: [embed] });
+      message.channel.send(embed);
     } catch (err) {
       console.log(err);
     }

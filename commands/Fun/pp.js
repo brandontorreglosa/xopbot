@@ -46,6 +46,6 @@ module.exports = {
             .setTimestamp()
             .setColor(member.displayHexColor);
 
-        await message.channel.send({ embeds: [embed] })
+        await message.channel.send(embed)
     }
 }

@@ -19,6 +19,6 @@ module.exports = {
         .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
         .setColor('#c30202').addField('Question:', question)
         .addField('Answer:', replies[result]);
-      await message.channel.send({ embeds: [embed] }); // send embed message
+      await message.channel.send(embed); // send embed message
   },
 };

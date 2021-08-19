@@ -26,7 +26,7 @@ module.exports = {
             .setColor('#c30202')
             .setTitle('Ascii Conversion')
             .setDescription('```' + data + '```')
-         message.channel.send({ embeds: [embed] })
+         message.channel.send(embed)
       })
    }
 }

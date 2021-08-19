@@ -30,6 +30,6 @@ module.exports = {
          .setColor('#c30202')
          .setFooter('Respect Forever')
 
-      message.channel.send({ embeds: [embed] });
+      message.channel.send(embed);
    }
 }

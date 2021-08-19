@@ -24,6 +24,6 @@ module.exports = {
       .setColor('#c30202')
       .setTitle('Fliptext Conversion')
       .setDescription(flipped.join(" "))
-    message.channel.send({ embeds: [embed] });
+    message.channel.send(embed);
   }
 }

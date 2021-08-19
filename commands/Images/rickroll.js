@@ -19,7 +19,7 @@ module.exports = {
                 .setTitle(`OMG! You Just Got Rickrolled By ${message.author.username}`)
                 .setImage('https://media1.tenor.com/images/23aeaaa34afd591deee6c163c96cb0ee/tenor.gif?itemid=7220603')
                 .setFooter('You Just Got Rickrolled 😆')
-            user.send({ embeds: [embed] })
+            user.send(embed)
                 .catch(() => message.channel.send({ content: "**That User Could Not Be Rickrolled! 😭**" }))
                 .then(() => message.channel.send({ content: `**I Have Rickrolled ${user.tag}! 😉**` }));
         } catch (error) {

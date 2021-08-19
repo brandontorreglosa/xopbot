@@ -32,7 +32,7 @@ module.exports = {
       .setDescription(`**🎁 ${prize} \n\nReact With 🎉 To Enter! \n\n1 Winner! \n\nHosted By ${message.author}!**`)
       .setTimestamp(Date.now() + ms(args[0]))
       .setColor(`BLUE`);
-    let m = await channel.send({ embeds: [Embed] });
+    let m = await channel.send(Embed);
     m.react("🎉");
     setTimeout(() => {
       if (m.reactions.cache.get("🎉").count <= 1) {

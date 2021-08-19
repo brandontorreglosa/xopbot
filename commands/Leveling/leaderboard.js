@@ -32,6 +32,6 @@ module.exports = {
       )
       .setFooter(`This Leaderboard Is Only For ${name} And Not Worldwide Servers!`)
 
-    message.channel.send({ embeds: [newEmbed] });
+    message.channel.send(newEmbed);
   }
 }

@@ -24,6 +24,6 @@ module.exports = {
       .setTitle(`${message.author.username}`)
       .setDescription(`You Received **${randomNumber}** Daily **Xocoins** 💸`)
       .setColor('#c30202')
-    message.channel.send({ embeds: [embed] });
+    message.channel.send(embed);
   },
 };
