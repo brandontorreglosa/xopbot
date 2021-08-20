@@ -1,4 +1,5 @@
 const disbutpages = require("discord-embeds-pages-buttons")
+const disbut = require("discord-buttons");
 module.exports = {
     name: 'config',
     cooldown: 5,
