@@ -16,7 +16,7 @@ module.exports = {
                 .setDescription(math.evaluate(args.join(" ")))
                 .setTimestamp();
 
-            message.channel.send({ embeds: [embed] });
+            message.channel.send(embed);
         } catch (err) {
             message.channel.send({ content: "***Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`***" });
         }

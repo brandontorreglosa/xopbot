@@ -20,7 +20,7 @@ module.exports = {
                 .setTitle(`Deleted Channel Named ${fetchedChannel}`)
                 .setDescription(`**Channel Was Deleted By ${message.author.username}**`)
                 .setColor("#c30202")
-            await message.channel.send({ embeds: [embed] });
+            await message.channel.send(embed);
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
             errorlogs.send({ content: `Error On Delete Channel Command!\n\nError:\n\n **${err}**` })

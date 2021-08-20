@@ -23,6 +23,6 @@ module.exports = {
             .setColor('#f3f3f3')
             .setImage(`${data.image}`)
 
-        await message.channel.send({ embeds: [embed] })
+        await message.channel.send(embed)
     }
 }

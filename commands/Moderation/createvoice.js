@@ -19,7 +19,7 @@ module.exports = {
                 .setTitle(`New Voice Channel Named ${message.channel}`)
                 .setDescription(`**Channel Was Created By ${message.author.username}**`)
                 .setColor("#c30202")
-            message.channel.send({ embeds: [embed] });
+            message.channel.send(embed);
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
             errorlogs.send({ content: `Error On Create Voice Channel Command!\n\nError:\n\n **${err}**` })

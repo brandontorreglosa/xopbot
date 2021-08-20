@@ -33,7 +33,7 @@ module.exports = {
         .setDescription(`${dmmessage}`)
         .setFooter(`Sent By ${message.author.username}`)
       user.user
-        .send({ embeds: [embed] })
+        .send(embed)
         .catch(() => message.channel.send({ content: "**That User Could Not Be DMED!**" }))
         .then(() => message.channel.send({ content: `**Sent A Message To ${user.user.tag}!**` }));
     } catch (error) {

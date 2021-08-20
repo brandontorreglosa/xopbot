@@ -30,6 +30,6 @@ module.exports = {
             )
             .setFooter('***Bot Developer @👑HACKERPROᵈᵉᵛ#1498!***');
 
-        message.channel.send({ embeds: [newEmbed] });
+        message.channel.send(newEmbed);
     }
 }

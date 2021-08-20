@@ -16,7 +16,7 @@ module.exports = {
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(messageArgs);
 
-        channel.send({ embeds: [embed] }).then((msg) => {
+        channel.send(embed).then((msg) => {
             msg.react('👍');
             msg.react('👎');
             message.delete();

@@ -21,7 +21,7 @@ module.exports = {
             .addField('Channel Id', query)
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        channel.send({ embeds: [reportEmbed] });
+        channel.send(reportEmbed);
         //send the embed to the channel
         message.channel.send({ content: "**We Have Sent The Request! \nCould Take 1 To 3 Days For The Request To Be Accepted!**" })
     }

@@ -18,7 +18,7 @@ module.exports = {
       .setFooter(`👑HACKERPROᵈᵉᵛ#1498`)
       .setTimestamp()
 
-    await message.channel.send({ embeds: [embed] })
+    await message.channel.send(embed)
 
     target.roles.remove(rrole)
 

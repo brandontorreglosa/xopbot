@@ -66,6 +66,6 @@ module.exports = {
                     inline: true
                 })
 
-        await message.channel.send({ embeds: [embed] })
+        await message.channel.send(embed)
     }
 };

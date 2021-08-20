@@ -12,6 +12,6 @@ module.exports = {
             .addField(
                 { name: 'Amino Link', value: '[Click Here](https://aminoapps.com/c/splatoon/page/user/hackerpro-tm-sc/065i_afjvjXqMXB1d68dB0Y5oqM8pnB)' }
             )
-        message.channel.send({ embeds: [amino] });
+        message.channel.send(amino);
     }
 }

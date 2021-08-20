@@ -18,7 +18,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor('#c30202')
                     .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
-                message.channel.send({ embeds: [embed] })
+                message.channel.send(embed)
                 // message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
             });
 

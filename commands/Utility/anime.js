@@ -36,7 +36,7 @@ module.exports = {
       //.setImage(body.data[0].attributes.coverImage.large)
 
       //try it
-      message.channel.send({ embeds: [embed] })
+      message.channel.send(embed)
     } catch (err) {
 
 

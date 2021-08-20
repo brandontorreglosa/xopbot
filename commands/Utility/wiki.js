@@ -19,6 +19,6 @@ module.exports = {
             .addField(`Results:`, `[Here's What I Found](${link})`)
             .setColor('#c30202')
 
-        message.channel.send({ embeds: [embed] });
+        message.channel.send(embed);
     }
 }

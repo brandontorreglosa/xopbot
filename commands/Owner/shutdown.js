@@ -16,7 +16,7 @@ module.exports = {
                 .setTitle('**XOPBOT Shutting Down**')
                 .setDescription(`**The Bot Was Shut Down! 😱 \nBy ${message.author.username}**`)
                 .setFooter('XOPBOT Can Start Again By Deploying It!')
-            message.channel.send({ embeds: [embed] }).then(m => {
+            message.channel.send(embed).then(m => {
                 client.destroy();
             });
         } catch (err) {

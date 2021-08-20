@@ -19,6 +19,6 @@ module.exports = {
         channel.permissionOverwrites.edit(role, {
             SEND_MESSAGES: false
         })
-        await channel.send({ embeds: [embed] })
+        await channel.send(embed)
     }
 }

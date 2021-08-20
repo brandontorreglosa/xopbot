@@ -24,7 +24,7 @@ module.exports = {
             .setTitle('Incoming Nuke!')
             .setDescription(`**The Nuke Has Been Deployed, Say Goodbye To #${message.channel.name} \nTakes Up To 10 Seconds Max. To Clear Channel!**`)
             .setFooter(`Was Deployed By ${message.author.username} 😱`)
-        return message.channel.send({ embeds: [embed] })
+        return message.channel.send(embed)
             .then(() => setTimeout(() => message.channel.clone()
                 .then(() => message.channel.delete().catch(() => null)), 10000))
     }

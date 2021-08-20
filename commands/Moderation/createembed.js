@@ -21,6 +21,6 @@ module.exports = {
             .setTitle(`${title}`)
             .setDescription(`${description}`)
             .setFooter(`${footer}`)
-        message.channel.send({ embeds: [embed] })
+        message.channel.send(embed)
     }
 }

@@ -30,7 +30,7 @@ module.exports = {
         .setColor('#c30202')
         .setTitle(`You Were Kicked From ${message.guild.name}`)
         .setDescription(`Kicked By: ${message.author.username} \nReason: ${reason} \nTry Not To Break The Rules Next Time!`)
-      memberTarger.send({ embeds: [embed] })
+      memberTarger.send(embed)
         .catch(() => message.channel.send({ content: `**Could Not Send To <@${memberTarger.user.id}> Reason Of Kick!**` }))
         .then(() => message.channel.send({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }));
     } else {

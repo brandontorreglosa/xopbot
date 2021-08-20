@@ -19,6 +19,6 @@ module.exports = {
             .setDescription(`**Searched For: **\n${text1} \n\n**Result: **\n[Here's What I Found](https://google.com/search?q=${text2})`)
             .setThumbnail(google)
             .setColor('#c30202')
-        message.channel.send({ embeds: [embed] });
+        message.channel.send(embed);
     }
 }

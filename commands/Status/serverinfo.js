@@ -33,7 +33,7 @@ module.exports = {
         .setColor("#c30202")
         .setTimestamp();
 
-      message.channel.send({ embeds: [serverembed] });
+      message.channel.send(serverembed);
 
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel)

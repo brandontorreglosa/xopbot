@@ -24,7 +24,7 @@ module.exports = {
                 )
                 .setFooter('MC Server By Bot Developer Team');
 
-            message.channel.send({ embeds: [embed] });
+            message.channel.send(embed);
         })
             .catch((error) => {
                 message.channel.send({ content: '**There Was An Error Finding This Server**' });

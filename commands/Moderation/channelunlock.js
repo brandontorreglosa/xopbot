@@ -19,6 +19,6 @@ module.exports = {
          .setTitle("Channel Updates")
          .setDescription(`**🔓 ${message.channel} Has Been Unlocked By ${message.author.username}!**`)
          .setColor('#c30202')
-      await message.channel.send({ embeds: [embed] });
+      await message.channel.send(embed);
    }
 }

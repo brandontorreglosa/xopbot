@@ -25,7 +25,7 @@ module.exports = async (Discord, client, message) => {
       .setTitle(`**👤 ${message.author.username}**`)
       .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
       .setFooter('Thank You For Being Active 🙏')
-    message.channel.send({ embeds: [someonelevelup] })
+    message.channel.send(someonelevelup)
 
     if (user.level == 1) {
       let role = message.guild.roles.cache.find(role => role.name == "Level 1");
@@ -395,7 +395,7 @@ module.exports = async (Discord, client, message) => {
         const embed20 = new Discord.MessageEmbed()
           .setDescription(joinmessage)
           .setColor("GREEN")
-        member.guild.channels.cache.get(channel).send({ embeds: [embed20] });
+        member.guild.channels.cache.get(channel).send(embed20);
       }
     } else if (data2) {
       var channel = data.Welcome
@@ -406,7 +406,7 @@ module.exports = async (Discord, client, message) => {
         .setFooter(`We Are Now ${member.guild.memberCount} Members`)
         .setColor("GREEN")
 
-      member.guild.channels.cache.get(channel).send({ embeds: [embed200] })
+      member.guild.channels.cache.get(channel).send(embed200)
     } else if (!data) {
       return;
     }
@@ -441,7 +441,7 @@ module.exports = async (Discord, client, message) => {
 
         let channel = data.Bye
 
-        member.guild.channels.cache.get(channel).send({ embeds: [embed2678] });
+        member.guild.channels.cache.get(channel).send(embed2678);
 
       } else if (!data2) {
         const embed2 = new Discord.MessageEmbed()
@@ -454,7 +454,7 @@ module.exports = async (Discord, client, message) => {
 
         let byechannel = data.Bye
 
-        member.guild.channels.cache.get(byechannel).send({ embeds: [embed2] });
+        member.guild.channels.cache.get(byechannel).send(embed2);
       }
     } else if (!data) {
       return;
