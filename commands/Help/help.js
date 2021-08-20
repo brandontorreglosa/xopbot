@@ -238,6 +238,24 @@ module.exports = {
 
             message.react('🔞');
 
+            const button8 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://pornhub.com/')
+                .setLabel('PornHub')
+
+            const button81 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xnxx.com/')
+                .setLabel('XNXX')
+
+            const button811 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://hanime.tv')
+                .setLabel('Hanime')
+
+            const row2 = new MessageActionRow()
+                .addComponents(button8, button81, button811)
+
             const embed11 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
@@ -248,7 +266,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed11)
+            await message.channel.send(embed11, row2)
         }
 
         else if (cmd === 'premium') {
@@ -256,9 +274,9 @@ module.exports = {
             message.react('🏆');
 
             const button9 = new MessageButton()
-            .setStyle('url')
-            .setURL('https://xopbot-gg.glitch.me/')
-            .setLabel('Website')
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed12 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -278,9 +296,9 @@ module.exports = {
             message.react('🖇');
 
             const button10 = new MessageButton()
-            .setStyle('url')
-            .setURL('https://xopbot-gg.glitch.me/')
-            .setLabel('Website')
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed13 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -299,6 +317,19 @@ module.exports = {
 
             message.react('📃');
 
+            const button11 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
+
+            const button12 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295')
+                .setLabel('Invite')
+
+            const row3 = new MessageActionRow()
+                .addComponents(button11, button12)
+
             const embed14 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
@@ -306,17 +337,21 @@ module.exports = {
                 .setColor('#c30202')
                 .addFields(
                     { name: '__🤖 Bot Credits__', value: '`Bot:`-__***The Bots Credits***__ \n`Bot Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Supporter`-__***@Trixer#8894***__' },
-                    { name: '__🤖 Bot Website Credits__', value: '`Bot Website:`-__***The Bots Credits Of The Website***__ \n`Bot Website Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Website Manager`-__***@Trixer#8894***__' },
-                    { name: '__🤖 Invites__', value: '[Bot Invite](https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295) \n[Bot Website](https://xopbot-gg.glitch.me/)' }
+                    { name: '__🤖 Bot Website Credits__', value: '`Bot Website:`-__***The Bots Credits Of The Website***__ \n`Bot Website Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Website Manager`-__***@Trixer#8894***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed14)
+            await message.channel.send(embed14, row3)
         }
 
         else if (cmd === 'games') {
 
             message.react('🎯');
+
+            const button13 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed115 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -324,16 +359,21 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🎮 Games (3)__', value: '`guessthenumber`-__***Guess The Number!***__ \n`rps`-__***Play Rock,Paper,Sciccors!***__ \n`hangman`-__***Play Hangman!***__' }
+                    { name: '__🎮 Games (3)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Guess The Number!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play Rock,Paper,Sciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed115)
+            await message.channel.send(embed115, button13)
         }
 
         else if (cmd === 'owner') {
 
             message.react('👷‍♂️');
+
+            const button14 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
 
@@ -342,12 +382,12 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__👷‍♂️ Owner (2)__', value: '`botservers`-__***Get The Bots Server Names!***__ \n`shutdown`-__***Shutdown The Bot!***__' }
+                    { name: '__👷‍♂️ Owner (2)__', value: '\n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
 
-            await message.channel.send(embed116)
+            await message.channel.send(embed116, button14)
         }
     }
 }
