@@ -309,7 +309,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (43)__', value: '**Real Life NSFW**: ``` 4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, stripgirls, doggystyle, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh \n**Anime NSFW**: ``` hentai, hthigh, hanal, hboobs, rule34, cowgirl, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
+                    { name: '__🔞 NSFW (43)__', value: '**Real Life NSFW**: ```4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, stripgirls, doggystyle, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: ```hentai, hthigh, hanal, hboobs, rule34, cowgirl, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune``` \n**Bot Invite**: (https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295)' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
