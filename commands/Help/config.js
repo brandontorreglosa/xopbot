@@ -1,5 +1,4 @@
 const ButtonPages = require('discord-button-pages');
-const DiscordButtons = require('discord-buttons');
 module.exports = {
     name: 'config',
     cooldown: 5,

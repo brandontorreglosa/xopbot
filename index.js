@@ -19,10 +19,8 @@ const client = new Client({
 const mongoose = require('mongoose');
 const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
+require('discord-buttons')(client);
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
-const ButtonPages = require('discord-button-pages');
-const DiscordButtons = require('discord-buttons')
-DiscordButtons(client);
 const fs = require('fs')
 
 // <----/Client Events/---->
