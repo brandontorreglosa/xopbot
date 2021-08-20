@@ -1,3 +1,4 @@
+const { MessageButton, MessageActionRow } = require('discord-buttons');
 const os = require('os')
 const OWNER_ID = process.env.Owner_ID;
 
@@ -11,6 +12,24 @@ module.exports = {
         if (cmd === 'help') {
 
             message.react('✅');
+
+            const button = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
+
+            const button2 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://github.com/HACKERPROTM')
+                .setLabel('Github')
+
+            const button3 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/#donations')
+                .setLabel('Donate')
+
+            const row = new MessageActionRow()
+                .addComponents(button, button2, button3);
 
             const embed = new Discord.MessageEmbed()
                 .setAuthor(`XOPBOT Commands`, client.user.displayAvatarURL({ dynamic: true }))
@@ -114,12 +133,17 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed)
+            await message.channel.send(embed, row)
         }
 
         else if (cmd === 'bugs') {
 
             message.react('🐜');
+
+            const button4 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed4 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -127,16 +151,21 @@ module.exports = {
                 //.setTitle('__🐛 Bugs__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🐛 Bugs (3)__', value: '`bugreport`-__***Report A Bug To Admins!***__ \n`findbugs`-__***Find Bugs On Your Server!***__ \n`clearbugs`-__***Clear Bugs From Your Server!***__' }
+                    { name: '__🐛 Bugs (3)__', value: '\n[bugreport](https://xopbot-gg.glitch.me/) \n__***Report A Bug To Admins!***__ \n[findbugs](https://xopbot-gg.glitch.me/) \n__***Find Bugs On Your Server!***__ \n[clearbugs](https://xopbot-gg.glitch.me/) \n__***Clear Bugs From Your Server!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed4)
+            await message.channel.send(embed4, button4)
         }
 
         else if (cmd === 'socials') {
 
             message.react('🗨');
+
+            const button5 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed6 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -144,16 +173,21 @@ module.exports = {
                 //.setTitle('__💬 Socials__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__💬 Socials (3)__', value: '`youtube`-__***Go To My Youtube Channel!***__ \n`scratch`-__***Go To My Scratch Account!***__ \n`amino`-__***Go To My Amino Account!***__' }
+                    { name: '__💬 Socials (3)__', value: '\n[youtube](https://xopbot-gg.glitch.me/) \n__***Go To My Youtube Channel!***__ \n[scratch](https://xopbot-gg.glitch.me/) \n__***Go To My Scratch Account!***__ \n[amino](https://xopbot-gg.glitch.me/) \n__***Go To My Amino Account!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed6)
+            await message.channel.send(embed6, button5)
         }
 
         else if (cmd === 'music') {
 
             message.react('🎵');
+
+            const button6 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed8 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -161,16 +195,21 @@ module.exports = {
                 // .setTitle('__🎶 Music__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🎶 Music (5)__', value: '`play`-__***Play Any Music From Youtube!***__  \n`stop`-__***Stop The Player!***__ \n`skip`-__***Skip To The Song In Queue!***__ \n`pause`-__***Pause The Song From Playing!***__ \n`unpause`-__***Unpause The Song To Play!***__' }
+                    { name: '__🎶 Music (5)__', value: '\n[play](https://xopbot-gg.glitch.me/) \n__***Play Any Music From Youtube!***__  \n[stop](https://xopbot-gg.glitch.me/) \n__***Stop The Player!***__ \n[skip](https://xopbot-gg.glitch.me/) \n__***Skip To The Song In Queue!***__ \n[pause](https://xopbot-gg.glitch.me/) \n__***Pause The Song From Playing!***__ \n[unpause](https://xopbot-gg.glitch.me/) \n__***Unpause The Song To Play!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed8)
+            await message.channel.send(embed8, button6)
         }
 
         else if (cmd === 'leveling') {
 
             message.react('🆙');
+
+            const button7 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot-gg.glitch.me/')
+                .setLabel('Website')
 
             const embed10 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -178,11 +217,11 @@ module.exports = {
                 //.setTitle('__⏫ Leveling__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__⏫ Leveling (4)__', value: '`rank`-__***Get Your Level Rank Card!***__  \n`leaderboard`-__***Get Your Servers Leaderboard!***__ \n`level`-__***Get A Users Level!***__ \n`edit`-__***Edit Level Or Xp!***__' }
+                    { name: '__⏫ Leveling (4)__', value: '\n[rank](https://xopbot-gg.glitch.me/) \n__***Get Your Level Rank Card!***__  \n[leaderboard](https://xopbot-gg.glitch.me/) \n__***Get Your Servers Leaderboard!***__ \n[level](https://xopbot-gg.glitch.me/) \n__***Get A Users Level!***__ \n[edit](https://xopbot-gg.glitch.me/) \n__***Edit Level Or Xp!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed10)
+            await message.channel.send(embed10, button7)
         }
 
         else if (cmd === 'nsfw') {
@@ -198,6 +237,8 @@ module.exports = {
             }
 
             message.react('🔞');
+
+            const 
 
             const embed11 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -222,7 +263,7 @@ module.exports = {
                 //.setTitle('__👑 Premium__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__👑 Premium (5)__', value: '`fakeuserinfo`-__***Get A Fake User Info! (Premium)***__ \n`weather`-__***Get Your Current Weather! (Premium)***__ \n`oldmeme`-__***Get Old Memes From Google! (Premium)***__ \n`tictactoe`-__***Play Tictactoe! (Premium)***__ \n`math`-__***Do Math Problems! (Premium)***__' }
+                    { name: '__👑 Premium (5)__', value: '\n[fakeuserinfo](https://xopbot-gg.glitch.me/) \n__***Get A Fake User Info! (Premium)***__ \n[weather](https://xopbot-gg.glitch.me/) \n__***Get Your Current Weather! (Premium)***__ \n[oldmeme](https://xopbot-gg.glitch.me/) \n__***Get Old Memes From Google! (Premium)***__ \n[tictactoe](https://xopbot-gg.glitch.me/) \n__***Play Tictactoe! (Premium)***__ \n[math](https://xopbot-gg.glitch.me/) \n__***Do Math Problems! (Premium)***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
