@@ -19,14 +19,16 @@ module.exports = {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
 
-                var embed_nsfw = new Discord.MessageEmbed()
+                const embed_nsfw = new Discord.MessageEmbed()
                     .setColor('#c30202')
                     .setDescription(`:underage: **4K Nudes**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                     .setTimestamp()
                     .setImage(response.body.message)
                     .setFooter('4k Sluts Amazing! :)')
 
-                m.edit({ embeds: [embed_nsfw] });
+                m.edit({
+                    embeds: [embed_nsfw]
+                });
             });
         });
     }
