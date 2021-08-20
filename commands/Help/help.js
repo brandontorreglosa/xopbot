@@ -255,6 +255,11 @@ module.exports = {
 
             message.react('🏆');
 
+            const button9 = new MessageButton()
+            .setStyle('url')
+            .setURL('https://xopbot-gg.glitch.me/')
+            .setLabel('Website')
+
             const embed12 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
@@ -265,12 +270,17 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed12)
+            await message.channel.send(embed12, button9)
         }
 
         else if (cmd === 'invites') {
 
             message.react('🖇');
+
+            const button10 = new MessageButton()
+            .setStyle('url')
+            .setURL('https://xopbot-gg.glitch.me/')
+            .setLabel('Website')
 
             const embed13 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -278,11 +288,11 @@ module.exports = {
                 //.setTitle('__🔗 Invites__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔗 Invites (3)__', value: '`botinvite`-__***Invite The Bot To Your Server!***__ \n`websiteinvite`-__***Go To XOPBOTs Official Website!***__ \n`voteinvite`-__***Vote For XOPBOT To Get Famous!***__' }
+                    { name: '__🔗 Invites (3)__', value: '\n[botinvite](https://xopbot-gg.glitch.me/) \n__***Invite The Bot To Your Server!***__ \n[websiteinvite](https://xopbot-gg.glitch.me/) \n__***Go To XOPBOTs Official Website!***__ \n[voteinvite](https://xopbot-gg.glitch.me/) \n__***Vote For XOPBOT To Get Famous!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed13)
+            await message.channel.send(embed13, button10)
         }
 
         else if (cmd === 'credits') {
