@@ -17,6 +17,7 @@
     "chartjs-node-canvas": "^3.2.0",
     "colornames": "^1.1.1",
     "disbotlist": "^1.0.4",
+    "discord-button-pages": "^1.1.9",
     "discord-buttons": "^4.0.0",
     "discord-buttons-pages": "^1.1.7",
     "discord-embeds-pages-buttons": "^1.2.5",

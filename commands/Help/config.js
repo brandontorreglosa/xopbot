@@ -1,5 +1,5 @@
-const disbutpages = require("discord-embeds-pages-buttons")
-const disbut = require("discord-buttons");
+const ButtonPages = require('discord-button-pages');
+const DiscordButtons = require('discord-buttons');
 module.exports = {
     name: 'config',
     cooldown: 5,
@@ -31,7 +31,7 @@ module.exports = {
 
         await message.channel.send(embed16)
 
-        const pages = [embed15, embed16]
-        disbutpages.pages(client, message, pages, 100000, disbut, "blurple", "⏩", "⏪", "❌", "red")
+        const embedPages = [embed15, embed16]
+        ButtonPages.createPages(client.interaction, msg, embedPages, 60 * 1000, "blurple", "⏩", "⏪", "❌");
     }
 }
