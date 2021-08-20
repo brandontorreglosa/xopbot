@@ -1,4 +1,4 @@
-const { MessageButton, MessageActionRow } = require('discord-buttons');
+const { MessageButton, MessageActionRow, MessageMenuOption, MessageMenu } = require('discord-buttons');
 const os = require('os')
 const OWNER_ID = process.env.Owner_ID;
 
@@ -12,6 +12,19 @@ module.exports = {
         if (cmd === 'help') {
 
             message.react('✅');
+
+            const option = new MessageMenuOption()
+                .setLabel('Your Label')
+                .setEmoji('🍔')
+                .setValue('menuid')
+                .setDescription('Custom Description!')
+
+            const select = new MessageMenu()
+                .setID('customid')
+                .setPlaceholder('Moderation [Beta]')
+                .setMaxValues(1)
+                .setMinValues(1)
+                .addOption(option)
 
             const button = new MessageButton()
                 .setStyle('url')
@@ -133,7 +146,7 @@ module.exports = {
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            await message.channel.send(embed, row)
+            await message.channel.send(embed, select, row)
         }
 
         else if (cmd === 'bugs') {
