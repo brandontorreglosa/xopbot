@@ -17,8 +17,6 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        await message.channel.send(embed15)
-
         const embed16 = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
@@ -28,8 +26,6 @@ module.exports = {
                 { name: '__⚠ Config (9)__', value: '\n[leavechannel](https://xopbot-gg.glitch.me/) \n__***Setup The Leave Channel!***__ \n\[joinmessage](https://xopbot-gg.glitch.me/) \n__***Setup The Join Message!***__ \n\[leavemessage](https://xopbot-gg.glitch.me/) \n__***Setup The Leave Message!***__ \n[setprefix](https://xopbot-gg.glitch.me/) \n__***Set The Server`s Custom Prefix!***__' }
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-        await message.channel.send(embed16)
 
         const embedPages = [embed15, embed16]
         ButtonPages.createPages(client.interaction, message, embedPages, 60 * 1000, "blurple", "⏩", "⏪", "❌");
