@@ -32,6 +32,6 @@ module.exports = {
         await message.channel.send(embed16)
 
         const embedPages = [embed15, embed16]
-        ButtonPages.createPages(client.interaction, msg, embedPages, 60 * 1000, "blurple", "⏩", "⏪", "❌");
+        ButtonPages.createPages(client.interaction, message, embedPages, 60 * 1000, "blurple", "⏩", "⏪", "❌");
     }
 }
