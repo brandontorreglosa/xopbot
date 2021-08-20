@@ -14,17 +14,51 @@ module.exports = {
             message.react('✅');
 
             const option = new MessageMenuOption()
-                .setLabel('Your Label')
-                .setEmoji('🍔')
+                .setLabel('**Utility**')
                 .setValue('menuid')
-                .setDescription('Custom Description!')
+
+            const option2 = new MessageMenuOption()
+                .setLabel('**Config**')
+                .setValue('menuid')
+
+            const option3 = new MessageMenuOption()
+                .setLabel('**Bugs**')
+                .setValue('menuid')
+
+            const option4 = new MessageMenuOption()
+                .setLabel('**Status**')
+                .setValue('menuid')
+
+            const option5 = new MessageMenuOption()
+                .setLabel('**Socials**')
+                .setValue('menuid')
+
+            const option6 = new MessageMenuOption()
+                .setLabel('**Games**')
+                .setValue('menuid')
+
+            const option7 = new MessageMenuOption()
+                .setLabel('**Fun**')
+                .setValue('menuid')
+
+            const option8 = new MessageMenuOption()
+                .setLabel('**Images**')
+                .setValue('menuid')
+
+            const option9 = new MessageMenuOption()
+                .setLabel('**Music**')
+                .setValue('menuid')
+
+            const option10 = new MessageMenuOption()
+                .setLabel('**Economy**')
+                .setValue('menuid')
 
             const select = new MessageMenu()
                 .setID('customid')
-                .setPlaceholder('Moderation [Beta]')
-                .setMaxValues(1)
-                .setMinValues(1)
-                .addOption(option)
+                .setPlaceholder('**Moderation**')
+                .setMaxValues(10)
+                .setMinValues(10)
+                .addOption(option, option2, option3, option4, option5, option6, option7, option8, option9, option10)
 
             const button = new MessageButton()
                 .setStyle('url')
