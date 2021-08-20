@@ -238,8 +238,6 @@ module.exports = {
 
             message.react('🔞');
 
-            const 
-
             const embed11 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
