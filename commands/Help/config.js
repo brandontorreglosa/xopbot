@@ -32,6 +32,6 @@ module.exports = {
         await message.channel.send(embed16)
 
         const pages = [embed15, embed16]
-        disbutpages.pages(client, message, pages, 100000, disbut, "green", "⏩", "⏪", "❌", "red")
+        disbutpages.pages(client, message, pages, 100000, disbut, "blurple", "⏩", "⏪", "❌", "red")
     }
 }
