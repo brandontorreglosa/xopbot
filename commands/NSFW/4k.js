@@ -15,7 +15,7 @@ module.exports = {
             .setDescription(`Sending 4k...`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [lo] }).then(m => {
+        message.channel.send(lo).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
 
