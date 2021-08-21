@@ -18,7 +18,7 @@ module.exports = {
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed10 = new Discord.MessageEmbed()
-        setThumbnail(client.user.displayAvatarURL())
+            .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🤑 Economy__')
             .setColor('#c30202')
@@ -27,30 +27,30 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            const pages = [embed9, embed10]
-            disbutpages.pages(message, pages, {
-              timeout: 120*1000,
-                buttons: {
-                    delete: {
-                        style: "red",
-                        emoji: "❌",
-                        text: "Delete"
-                    },
-                    forward: {
-                        style: "blurple",
-                        emoji: "⏩",
-                        text: "Forward"
-                    },
-                    backward: {
-                        style: "blurple",
-                        emoji: "⏪",
-                        text: "Backward"
-                    }
+        const pages = [embed9, embed10]
+        disbutpages.pages(message, pages, {
+            timeout: 120 * 1000,
+            buttons: {
+                delete: {
+                    style: "red",
+                    emoji: "❌",
+                    text: "Delete"
                 },
-                extraRows: [],
-                extraPos: "below",
-                message: "",
-                ephemeral: "**This Is Not Your Embed \nYou Cant Not Use It!**",
-            })
+                forward: {
+                    style: "blurple",
+                    emoji: "⏩",
+                    text: "Forward"
+                },
+                backward: {
+                    style: "blurple",
+                    emoji: "⏪",
+                    text: "Backward"
+                }
+            },
+            extraRows: [],
+            extraPos: "below",
+            message: "",
+            ephemeral: "**This Is Not Your Embed \nYou Cant Not Use It!**",
+        })
     }
 }
