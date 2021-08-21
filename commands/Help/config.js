@@ -50,7 +50,7 @@ module.exports = {
                 extraRows: [],
                 extraPos: "below",
                 message: "",
-                ephemeral: "You Did Not Request This Embed!",
+                ephemeral: "**This Is Not Your Embed \nYou Cant Not Use It!**",
             })
     }
 }

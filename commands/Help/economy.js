@@ -1,16 +1,11 @@
 const { MessageButton } = require("discord-buttons");
-
+const disbutpages = require("discord-embeds-pages-buttons")
 module.exports = {
     name: 'economy',
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
         message.react('💵');
-
-        const button = new MessageButton()
-            .setStyle('url')
-            .setURL('https://xopbot-gg.glitch.me/')
-            .setLabel('Website')
 
         const embed9 = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
@@ -22,6 +17,40 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        await message.channel.send(embed9, button)
+        const embed10 = new Discord.MessageEmbed()
+        setThumbnail(client.user.displayAvatarURL())
+            .setTimestamp()
+            // .setTitle('__🤑 Economy__')
+            .setColor('#c30202')
+            .addFields(
+                { name: '__🤑 Economy (10)__', value: '\n[coins-set](https://xopbot-gg.glitch.me/) \n__***Private Command!***__  \n[give](https://xopbot-gg.glitch.me/) \n__***Private Command!***__  \n[search](https://xopbot-gg.glitch.me/) \n__***Search For Xocoins On Locations!***__ \n[work](https://xopbot-gg.glitch.me/) \n__***Work For Xocoins!***__ \n[daily](https://xopbot-gg.glitch.me/) \n__***Get Daily Xocoins!***__' }
+            )
+            .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+
+            const pages = [embed9, embed10]
+            disbutpages.pages(message, pages, {
+              timeout: 120*1000,
+                buttons: {
+                    delete: {
+                        style: "red",
+                        emoji: "❌",
+                        text: "Delete"
+                    },
+                    forward: {
+                        style: "blurple",
+                        emoji: "⏩",
+                        text: "Forward"
+                    },
+                    backward: {
+                        style: "blurple",
+                        emoji: "⏪",
+                        text: "Backward"
+                    }
+                },
+                extraRows: [],
+                extraPos: "below",
+                message: "",
+                ephemeral: "**This Is Not Your Embed \nYou Cant Not Use It!**",
+            })
     }
 }
