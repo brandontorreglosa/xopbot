@@ -50,7 +50,7 @@ module.exports = {
             extraRows: [],
             extraPos: "below",
             message: "",
-            ephemeral: "**This Is Not Your Embed \nYou Cant Not Use It!**",
+            ephemeral: "**Button Failure! Reasons: \n1.`Not Your Embed!`\n2.`Buttons Timed OUT!`**",
         })
     }
 }
