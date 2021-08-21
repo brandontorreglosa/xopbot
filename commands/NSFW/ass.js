@@ -15,7 +15,7 @@ module.exports = {
             .setDescription(`Sending Ass...`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [lo] }).then(m => {
+        message.channel.send(lo).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'ass' }).end((err, response) => {
 
@@ -26,7 +26,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('Nice Juicy Ass! :)')
 
-                m.edit({ embeds: [embed_nsfw] });
+                m.edit(embed_nsfw);
             });
         });
     }

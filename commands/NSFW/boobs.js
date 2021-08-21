@@ -15,7 +15,7 @@ module.exports = {
             .setDescription(`Sending Boobs...`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [lo] }).then(m => {
+        message.channel.send(lo).then(m => {
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'boobs' }).end((err, response) => {
 
                 var embed_nsfw = new Discord.MessageEmbed()
@@ -24,7 +24,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('I Like Bigger Tits! :)')
                     .setColor('#c30202')
-                m.edit({ embeds: [embed_nsfw] });
+                m.edit(embed_nsfw);
             });
         });
     }

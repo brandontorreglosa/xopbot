@@ -12,7 +12,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🥳 Fun__')
             .setColor('#c30202')
-            .setDescription('**__🥳 Fun (18)__** \n[ping](https://xopbot-gg.glitch.me/) \n__***Not Real Ping!***__ \n[avatar](https://xopbot-gg.glitch.me/) \n__***Shows A Users Avatar!***__ \n[badges](https://xopbot-gg.glitch.me/) \n__***Gives You A Users Badge!***__ \n[8ball](https://xopbot-gg.glitch.me/) \n__***Ask 8ball A Question!***__ \n[reverse](https://xopbot-gg.glitch.me/) \n__***Reverse A Word That You Send!***__')
+            .setDescription('**__🥳 Fun (18)__** \n[ping](https://xopbot-gg.glitch.me/) \n__***Not Real Ping!***__ \n[avatar](https://xopbot-gg.glitch.me/) \n__***Shows A Users Avatar!***__ \n[badges](https://xopbot-gg.glitch.me/) \n__***Gives You A Users Badge!***__ \n[8ball](https://xopbot-gg.glitch.me/) \n__***Ask 8ball A Question!***__ \n[reverse](https://xopbot-gg.glitch.me/) \n__***Reverse A Word!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed8 = new Discord.MessageEmbed()
@@ -28,7 +28,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🥳 Fun__')
             .setColor('#c30202')
-            .setDescription('**__🥳 Fun (18)__** \n[dog](https://xopbot-gg.glitch.me/) \n__***Get A Random Dog!***__ \n[cat](https://xopbot-gg.glitch.me/) \n__***Get A Random Cat!***__ \n[respect](https://xopbot-gg.glitch.me/) \n__***Respect A User!***__ \n[hack](https://xopbot-gg.glitch.me/) \n__***Hack A User!***__  \n[kill](https://xopbot-gg.glitch.me/) \n__***Kill A User!***__')
+            .setDescription('**__🥳 Fun (18)__** \n[dog](https://xopbot-gg.glitch.me/) \n__***Get A Random Dog Image!***__ \n[cat](https://xopbot-gg.glitch.me/) \n__***Get A Random Cat Image!***__ \n[respect](https://xopbot-gg.glitch.me/) \n__***Respect Forever My Dude!***__ \n[hack](https://xopbot-gg.glitch.me/) \n__***Ima Hack LMAO!***__  \n[kill](https://xopbot-gg.glitch.me/) \n__***You Are Now Dead!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed10 = new Discord.MessageEmbed()

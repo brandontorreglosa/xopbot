@@ -14,7 +14,7 @@ module.exports = {
             .setDescription(`Sending Gonewild...`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [lo] }).then(m => {
+        message.channel.send(lo).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'gonewild' }).end((err, response) => {
 
@@ -25,7 +25,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('Hoes Went Crazy! :)')
 
-                m.edit({ embeds: [embed_nsfw] });
+                m.edit(embed_nsfw);
             });
         });
     }

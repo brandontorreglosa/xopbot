@@ -15,7 +15,7 @@ module.exports = {
             .setDescription(`Sending Hkitsune...`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [lo] }).then(m => {
+        message.channel.send(lo).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'hkitsune' }).end((err, response) => {
 
@@ -25,7 +25,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('Nice Huh :)')
                     .setColor('#c30202')
-                m.edit({ embeds: [embed_nsfw] });
+                m.edit(embed_nsfw);
             });
         });
     }

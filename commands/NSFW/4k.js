@@ -26,9 +26,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('4k Sluts Amazing! :)')
 
-                m.edit({
-                    embeds: [embed_nsfw]
-                });
+                m.edit(embed_nsfw);
             });
         });
     }
