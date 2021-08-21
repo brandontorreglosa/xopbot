@@ -5,6 +5,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const embed = new Discord.MessageEmbed()
             .setTitle('Boi')
+            .setFooter('boiiiiiiii')
         const embed2 = new Discord.MessageEmbed()
             .setTitle('Boi')
         const embed3 = new Discord.MessageEmbed()
