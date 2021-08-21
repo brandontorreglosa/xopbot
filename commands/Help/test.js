@@ -35,10 +35,10 @@ module.exports = {
                     text: "Backward"
                 }
             },
-            extraRows: false,
+            extraRows: [],
             extraPos: "below",
-            message: false,
-            ephemeral: false,
+            message: "",
+            ephemeral: "boi",
         })
     }
 }
