@@ -68,19 +68,19 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel(`Website`)
-                .setEmoji(`${xopemoji}`)
+                .setEmoji(`💻`)
 
             const button2 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://github.com/HACKERPROTM')
                 .setLabel(`Github`)
-                .setEmoji(`${heheemoji}`)
+                .setEmoji(`🌐`)
 
             const button3 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/#donations')
                 .setLabel(`Donate`)
-                .setEmoji(`${spongepog}`)
+                .setEmoji(`💰`)
 
             const row = new MessageActionRow()
                 .addComponents(button, button2, button3);
