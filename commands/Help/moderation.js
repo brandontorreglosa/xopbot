@@ -14,7 +14,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🛠️ Moderation__')
             .setColor('#c30202')
-            .setDescription('**__🛠️ Moderation (20)__** \n[dm](https://xopbot-gg.glitch.me/) \n__***Dm A User!***__  \n[ban](https://xopbot-gg.glitch.me/) \n__***Ban A Member From A Server!***__ \n[unban](https://xopbot-gg.glitch.me/) \n__***Unban A Member From A Server!***__  \n[kick](https://xopbot-gg.glitch.me/) \n__***Kick A Member From A Server!***__ \n[mute](https://xopbot-gg.glitch.me/) \n__***Mute A Member From A Server!***__')
+            .setDescription('**__🛠️ Moderation (20)__** \n[dm](https://xopbot-gg.glitch.me/) \n__***Dm A User!***__  \n[ban](https://xopbot-gg.glitch.me/) \n__***Ban A Member!***__ \n[unban](https://xopbot-gg.glitch.me/) \n__***Unban A Member!***__  \n[kick](https://xopbot-gg.glitch.me/) \n__***Kick A Member!***__ \n[mute](https://xopbot-gg.glitch.me/) \n__***Mute A Member!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed3 = new Discord.MessageEmbed()
@@ -22,7 +22,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🛠️ Moderation__')
             .setColor('#c30202')
-            .setDescription('**__🛠️ Moderation (20)__** \n[unmute](https://xopbot-gg.glitch.me/) \n__***Unmute A Member From A Server!***__ \n[nuke](https://xopbot-gg.glitch.me/) \n__***Nuke A Channel!***__ \n[clear](https://xopbot-gg.glitch.me/) \n__***Clear Messages!***__  \n[command](https://xopbot-gg.glitch.me/) \n__***Basic Server Rules, Only!***__  \n[slowmode](https://xopbot-gg.glitch.me/) \n__***Set Slowmode On A Channel!***__')
+            .setDescription('**__🛠️ Moderation (20)__** \n[unmute](https://xopbot-gg.glitch.me/) \n__***Unmute A Member!***__ \n[nuke](https://xopbot-gg.glitch.me/) \n__***Nuke A Channel!***__ \n[clear](https://xopbot-gg.glitch.me/) \n__***Clear Messages!***__  \n[command](https://xopbot-gg.glitch.me/) \n__***Basic Server Rules!***__  \n[slowmode](https://xopbot-gg.glitch.me/) \n__***Set A Slowmode!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
          const embed4 = new Discord.MessageEmbed()
