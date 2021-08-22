@@ -1,7 +1,9 @@
 const { MessageButton, MessageActionRow, MessageMenuOption, MessageMenu } = require('discord-buttons');
 const os = require('os')
 const OWNER_ID = process.env.Owner_ID;
-
+const xopemoji = client.emojis.cache.get('836214135866785806');
+const heheemoji = client.emojis.cache.get('862038389687320586');
+const spongepog = client.emojis.cache.get('824886938804682812');
 module.exports = {
     name: "help",
     aliases: ['bugs', 'socials', 'games', 'music', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
@@ -57,23 +59,23 @@ module.exports = {
                 .setID('customid')
                 .setPlaceholder('**Moderation**')
                 .setMaxValues(10)
-                .setMinValues(10)
+                .setMinValues(5)
                 .addOption(option, option2, option3, option4, option5, option6, option7, option8, option9, option10)
 
             const button = new MessageButton()
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
-                .setLabel('Website')
+                .setLabel(`${xopemoji} Website`)
 
             const button2 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://github.com/HACKERPROTM')
-                .setLabel('Github')
+                .setLabel(`${heheemoji} Github`)
 
             const button3 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/#donations')
-                .setLabel('Donate')
+                .setLabel(`${spongepog} Donate`)
 
             const row = new MessageActionRow()
                 .addComponents(button, button2, button3);
