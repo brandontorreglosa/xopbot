@@ -11,6 +11,7 @@ module.exports = {
             .setStyle('url')
             .setURL('https://xopbot-gg.glitch.me/')
             .setLabel('Website')
+            .setEmoji(`💻`)
 
         const embed5 = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())

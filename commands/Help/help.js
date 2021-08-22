@@ -198,6 +198,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed4 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -220,6 +221,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed6 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -242,6 +244,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed8 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -264,6 +267,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed10 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -296,16 +300,19 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://pornhub.com/')
                 .setLabel('PornHub')
+                .setEmoji(`👅`)
 
             const button81 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://xnxx.com/')
                 .setLabel('XNXX')
+                .setEmoji(`💦`)
 
             const button811 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://hanime.tv')
                 .setLabel('Hanime')
+                .setEmoji(`💋`)
 
             const row2 = new MessageActionRow()
                 .addComponents(button8, button81, button811)
@@ -331,6 +338,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed12 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -353,6 +361,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed13 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -375,11 +384,13 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const button12 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://discord.com/oauth2/authorize?client_id=831824859066925087&scope=bot&permissions=4294967295')
                 .setLabel('Invite')
+                .setEmoji(`🔗`)
 
             const row3 = new MessageActionRow()
                 .addComponents(button11, button12)
@@ -406,6 +417,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             const embed115 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
@@ -428,6 +440,7 @@ module.exports = {
                 .setStyle('url')
                 .setURL('https://xopbot-gg.glitch.me/')
                 .setLabel('Website')
+                .setEmoji(`💻`)
 
             if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
 

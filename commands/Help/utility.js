@@ -9,9 +9,10 @@ module.exports = {
         message.react('⚙');
 
         const button = new MessageButton()
-        .setStyle('url')
-        .setURL('https://xopbot-gg.glitch.me/')
-        .setLabel('Website')
+            .setStyle('url')
+            .setURL('https://xopbot-gg.glitch.me/')
+            .setLabel('Website')
+            .setEmoji(`💻`)
 
         const embed3 = new Discord.MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
