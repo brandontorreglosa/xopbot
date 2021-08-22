@@ -41,7 +41,7 @@ client.setMaxListeners(0);
 
 client.db.on("ready", () => {
 
-    console.log(`CONNECTED WITH DATABASE `)
+    console.log(`CONNECTED WITH DISBOTLIST`)
 })
 
 client.on("ready", () => {

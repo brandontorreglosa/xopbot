@@ -1,15 +1,17 @@
 const { MessageButton, MessageActionRow, MessageMenuOption, MessageMenu } = require('discord-buttons');
 const os = require('os')
 const OWNER_ID = process.env.Owner_ID;
-const xopemoji = client.emojis.cache.get('836214135866785806');
-const heheemoji = client.emojis.cache.get('862038389687320586');
-const spongepog = client.emojis.cache.get('824886938804682812');
+
 module.exports = {
     name: "help",
     aliases: ['bugs', 'socials', 'games', 'music', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
+        
+        const xopemoji = client.emojis.cache.get('836214135866785806');
+        const heheemoji = client.emojis.cache.get('862038389687320586');
+        const spongepog = client.emojis.cache.get('824886938804682812');
 
         if (cmd === 'help') {
 
