@@ -39,7 +39,10 @@ module.exports = {
                     role = await message.guild.roles.create({
                         name: "SUPPORTER",
                         color: "GREEN",
-                    })
+                    }).catch(err => console.log(err));
+                    role = message.guild.roles.cache.find(role => role.name == "SUPPORTER");
+                    if (message.member.roles.cache.has(role.id)) return;
+                    else await message.member.roles.add(role.id);
                 }
 
                 await message.guild.channels.create("MODMAIL", {
@@ -110,7 +113,7 @@ module.exports = {
                     topic: "ModMail is Direct Opened By **" + message.author.username + "** To Make Contact With " + message.author.tag
                 })
 
-                const nembed = new discord.MessageEmbed()
+                const nembed = new Discord.MessageEmbed()
                     .setAuthor("**DETAILS**", target.user.displayAvatarURL({
                         dynamic: true
                     }))
@@ -125,7 +128,7 @@ module.exports = {
 
                 channel.send(nembed)
 
-                let uembed = new discord.MessageEmbed()
+                let uembed = new Discord.MessageEmbed()
                     .setAuthor("DIRECT MAIL OPENED")
                     .setColor("GREEN")
                     .setThumbnail(client.user.displayAvatarURL())
@@ -134,7 +137,7 @@ module.exports = {
 
                 target.send(uembed);
 
-                let newEmbed = new discord.MessageEmbed()
+                let newEmbed = new Discord.MessageEmbed()
                     .setDescription("Opened The Mail: <#" + channel + ">")
                     .setColor("GREEN");
 
