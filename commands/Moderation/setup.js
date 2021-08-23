@@ -18,7 +18,6 @@ module.exports = {
 
             }
 
-
         })
 
         if (message.guild) {
@@ -76,10 +75,11 @@ module.exports = {
                     await message.channel.delete()
 
                     const yembed = new Discord.MessageEmbed()
-                        .setAuthor("**MAIL CLOSED**", client.user.displayAvatarURL())
+                        .setTimestamp()
+                        .setAuthor("MAIL CLOSED", client.user.displayAvatarURL())
                         .setColor("#c30202")
                         .setThumbnail(client.user.displayAvatarURL())
-                        .setFooter("**Mail Was Closed By**" + message.author.username)
+                        .setFooter("Mail Was Closed By" + message.author.username)
                     if (args[0]) yembed.setDescription(args.join(" "))
 
                     return person.send(yembed)
@@ -155,7 +155,7 @@ module.exports = {
 
                 if (!member) return message.channel.send({ content: '**Unable To Send Message!**' })
 
-                let lembed = new discord.MessageEmbed()
+                const lembed = new Discord.MessageEmbed()
                     .setColor("GREEN")
                     .setFooter(message.author.username, message.author.displayAvatarURL({
                         dynamic: true
@@ -184,7 +184,7 @@ module.exports = {
                     topic: "This Mail Was Created For Helping  **" + message.author.tag + " **"
                 })
 
-                const sembed = new discord.MessageEmbed()
+                const sembed = new Discord.MessageEmbed()
                     .setAuthor("MAIN OPENED")
                     .setColor("GREEN")
                     .setThumbnail(client.user.displayAvatarURL())
@@ -193,8 +193,8 @@ module.exports = {
                 message.author.send(sembed)
 
 
-                const eembed = new discord.MessageEmbed()
-                    .setAuthor("**DETAILS**", message.author.displayAvatarURL({
+                const eembed = new Discord.MessageEmbed()
+                    .setAuthor("DETAILS", message.author.displayAvatarURL({
                         dynamic: true
                     }))
                     .setColor("#c30202")
@@ -204,13 +204,13 @@ module.exports = {
                     .setDescription(message.content)
                     .addField("**Name**", message.author.username)
                     .addField("**Account Creation Date**", message.author.createdAt)
-                    .addField("**Direct Contact**", "`False`")
+                    .addField("Direct Contact", "`False`")
 
 
                 return mx.send(eembed)
             }
 
-            let xembed = new discord.MessageEmbed()
+            const xembed = new Discord.MessageEmbed()
                 .setColor("YELLOW")
                 .setFooter(message.author.tag, message.author.displayAvatarURL({
                     dynamic: true
