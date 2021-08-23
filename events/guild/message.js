@@ -32,8 +32,10 @@ try {
       if (user.level == 1) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 1");
         if (!role) await message.guild.roles.create({
-          name: "Level 1",
-          color: "GREEN"
+          data: {
+            name: "Level 1",
+            color: "GREEN"
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "Level 1");
         if (message.member.roles.cache.has(role.id)) return;
@@ -43,8 +45,10 @@ try {
       if (user.level == 10) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 10");
         if (!role) await message.guild.roles.create({
-          name: "Level 10",
-          color: "#3fbfbf"
+          data: {
+            name: "Level 10",
+            color: "#3fbfbf"
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "Level 10");
         if (message.member.roles.cache.has(role.id)) return;
@@ -54,8 +58,10 @@ try {
       if (user.level == 20) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 20");
         if (!role) await message.guild.roles.create({
-          name: "Level 20",
-          color: "#ff5722"
+          data: {
+            name: "Level 20",
+            color: "#ff5722"
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "Level 20");
         if (message.member.roles.cache.has(role.id)) return;
@@ -65,8 +71,10 @@ try {
       if (user.level == 30) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 30");
         if (!role) await message.guild.roles.create({
-          name: "Level 30",
-          color: "#969102"
+          data: {
+            name: "Level 30",
+            color: "#969102"
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "Level 30");
         if (message.member.roles.cache.has(role.id)) return;
@@ -76,8 +84,10 @@ try {
       if (user.level == 40) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 40");
         if (!role) await message.guild.roles.create({
-          name: "Level 40",
-          color: "#0c0c0c"
+          data: {
+            name: "Level 40",
+            color: "#0c0c0c"
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "Level 40");
         if (message.member.roles.cache.has(role.id)) return;
@@ -87,8 +97,10 @@ try {
       if (user.level == 50) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 50");
         if (!role) await message.guild.roles.create({
-          name: "Level 50",
-          color: "#fccc04"
+          data: {
+            name: "Level 50",
+            color: "#fccc04"
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "Level 50");
         if (message.member.roles.cache.has(role.id)) return;
@@ -98,8 +110,10 @@ try {
       if (user.level == 60) {
         let role = message.guild.roles.cache.find(role => role.name == "God Level");
         if (!role) await message.guild.roles.create({
-          name: "God Level",
-          color: "#c30202",
+          data: {
+            name: "God Level",
+            color: "#c30202",
+          }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "God Level");
         if (message.member.roles.cache.has(role.id)) return;

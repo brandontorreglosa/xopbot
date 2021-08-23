@@ -36,8 +36,10 @@ module.exports = {
 
                 if (!role) {
                     role = await message.guild.roles.create({
-                        name: "SUPPORTER",
-                        color: "GREEN",
+                        data: {
+                            name: "SUPPORTER",
+                            color: "GREEN",
+                        }
                     }).catch(err => console.log(err));
                     role = message.guild.roles.cache.find(role => role.name == "SUPPORTER");
                     if (message.member.roles.cache.has(role.id)) return;
