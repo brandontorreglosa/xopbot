@@ -5,21 +5,21 @@ module.exports = {
   permissions: ["SEND_MESSAGES"],
   description: "open a ticket!",
   async execute(client, message, cmd, args, Discord) {
-    if (!args[0]) {
-      return message.reply({ content: '`(prefix)ticket [section]`', allowedMentions: { repliedUser: true } })
-    }
-    const section = args.slice(0).join(" ");
-    if (!section) return message.reply({ content: '**Please Enter The Section/Parent ID For Tickets To Generate!**', allowedMentions: { repliedUser: true } })
+    // if (!args[0]) {
+    //   return message.reply({ content: '`(prefix)ticket [section]`', allowedMentions: { repliedUser: true } })
+    // }
+    // const section = args.slice(0).join(" ");
+    // if (!section) return message.reply({ content: '**Please Enter The Section/Parent ID For Tickets To Generate!**', allowedMentions: { repliedUser: true } })
     
     const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);
 
     channel.setParent("835210724284039199");
 
-    channel.permissionOverwrites.edit(message.guild.id, {
+    channel.updateOverwrite(message.guild.id, {
       SEND_MESSAGE: false,
       VIEW_CHANNEL: false,
     });
-    channel.permissionOverwrites.edit(message.author, {
+    channel.updateOverwrite(message.author, {
       SEND_MESSAGE: true,
       VIEW_CHANNEL: true,
     });
@@ -42,7 +42,7 @@ module.exports = {
     collector.on("collect", (reaction, user) => {
       switch (reaction.emoji.name) {
         case "🔒":
-          channel.permissionOverwrites.edit(message.author, { SEND_MESSAGES: false });
+          channel.updateOverwrite(message.author, { SEND_MESSAGES: false });
           break;
         case "⛔":
           channel.send({ content: "**Deleting This Channel In 5 Seconds!**" });

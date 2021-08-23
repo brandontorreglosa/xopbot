@@ -16,7 +16,7 @@ module.exports = {
             .setTimestamp()
             .setTitle("Channel Locked!")
             .setDescription(`**This channel Has Been Locked By ${message.author.tag} For This Role <@!${role}>**`)
-        channel.permissionOverwrites.edit(role, {
+        channel.updateOverwrite(role, {
             SEND_MESSAGES: false
         })
         await channel.send(embed)

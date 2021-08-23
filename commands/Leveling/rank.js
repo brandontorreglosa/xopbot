@@ -36,7 +36,7 @@ module.exports = {
             rank.build()
                 .then(data => {
                     const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
-                    message.channel.send({ files: [{ attachment }] });
+                    message.channel.send(attachment);
                 });
         }
 

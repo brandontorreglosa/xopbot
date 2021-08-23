@@ -8,7 +8,7 @@ module.exports = {
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.members.first()
 
-      message.channel.permissionOverwrites.set([
+      message.channel.overwritePermissions([
          {
             id: message.guild.id,
             null: ['SEND_MESSAGES'],

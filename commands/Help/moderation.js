@@ -38,7 +38,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🛠️ Moderation__')
             .setColor('#c30202')
-            .setDescription('**__🛠️ Moderation (20)__** \n[deletechannel](https://xopbot-gg.glitch.me/) \n__***Delete Channel!***__ \n[userlock](https://xopbot-gg.glitch.me/) \n__***Lock Role From Channel!***__ \n[userunlock](https://xopbot-gg.glitch.me/) \n__***Unlock Role From Channel!***__ \n[channellock](https://xopbot-gg.glitch.me/) \n__***Lock Channel!***__ \n[channelunlock](https://xopbot-gg.glitch.me/) \n__***Unlock Channel!***__')
+            .setDescription('**__🛠️ Moderation (20)__** \n[deletechannel](https://xopbot-gg.glitch.me/) \n__***Delete Channel!***__ \n[rolelock](https://xopbot-gg.glitch.me/) \n__***Lock Role From Channel!***__ \n[roleunlock](https://xopbot-gg.glitch.me/) \n__***Unlock Role From Channel!***__ \n[channellock](https://xopbot-gg.glitch.me/) \n__***Lock Channel!***__ \n[channelunlock](https://xopbot-gg.glitch.me/) \n__***Unlock Channel!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const pages = [embed2, embed3, embed4, embed5]

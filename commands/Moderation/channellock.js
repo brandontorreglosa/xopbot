@@ -10,7 +10,7 @@ module.exports = {
       const reason = args.slice(0).join(" ")
       if (!reason) return message.reply({ content: "***Please Specify A Reason!***", allowedMentions: { repliedUser: true } })
 
-      message.channel.permissionOverwrites.set([
+      message.channel.overwritePermissions([
          {
             id: message.guild.id,
             deny: ['SEND_MESSAGES'],
