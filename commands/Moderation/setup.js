@@ -89,14 +89,14 @@ module.exports = {
                     const memberTarget = message.guild.members.cache.get(target.id);
 
                     if (!helprole) {
-                        role = await message.guild.roles.create({
+                        helprole = await message.guild.roles.create({
                             data: {
                                 name: "Requester",
                                 color: "RED",
                             }
                         }).catch(err => console.log(err));
-                        role = message.guild.roles.cache.find(role => role.name == "Requester");
-                        if (message.member.roles.cache.has(role.id)) return;
+                        helprole = message.guild.roles.cache.find(role => role.name == "Requester");
+                        if (message.member.roles.cache.has(helprole.id)) return;
                     }
 
                     if (!args[1]) {
