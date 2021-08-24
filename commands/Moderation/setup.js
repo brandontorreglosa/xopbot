@@ -31,8 +31,8 @@ module.exports = {
                 }
 
 
-                let role = message.guild.roles.cache.find(role => role.name == "SUPPORTER")
-                let everyone = message.guild.roles.cache.find(role => role.name == "@everyone")
+                const role = message.guild.roles.cache.find(role => role.name == "SUPPORTER")
+                const everyone = message.guild.roles.cache.find(role => role.name == "@everyone")
 
                 if (!role) {
                     role = await message.guild.roles.create({
@@ -113,10 +113,6 @@ module.exports = {
                         permissionOverwrites: [{
                             id: helprole.id,
                             allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"]
-                        },
-                        {
-                            id: everyone.id,
-                            deny: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"]
                         }
                         ]
                     })
