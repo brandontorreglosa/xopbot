@@ -109,7 +109,7 @@ module.exports = {
                 }
 
 
-                const channel = await message.guild.channels.create("MODMAIL", target.id, {
+                const channel = await message.guild.channels.create(`MODMAIL: ${target.id}`, {
                     type: "text",
                     parent: category.id,
                     topic: "ModMail is Direct Opened By **" + message.author.username + "** To Make Contact With " + message.author.tag
