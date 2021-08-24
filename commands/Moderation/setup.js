@@ -31,8 +31,8 @@ module.exports = {
                 }
 
 
-                let role = message.guild.roles.cache.find((x) => x.name == "SUPPORTER")
-                let everyone = message.guild.roles.cache.find((x) => x.name == "@everyone")
+                let role = message.guild.roles.cache.find(role => role.name == "SUPPORTER")
+                let everyone = message.guild.roles.cache.find(role => role.name == "@everyone")
 
                 if (!role) {
                     role = await message.guild.roles.create({
@@ -109,14 +109,14 @@ module.exports = {
                 }
 
 
-                const channel = await message.guild.channels.create(target.id, {
+                const channel = await message.guild.channels.create("MODMAIL", target.id, {
                     type: "text",
                     parent: category.id,
                     topic: "ModMail is Direct Opened By **" + message.author.username + "** To Make Contact With " + message.author.tag
                 })
 
                 const nembed = new Discord.MessageEmbed()
-                    .setAuthor("**DETAILS**", target.user.displayAvatarURL({
+                    .setAuthor("DETAILS", target.user.displayAvatarURL({
                         dynamic: true
                     }))
                     .setColor("#c30202")
