@@ -65,6 +65,32 @@ module.exports = {
 
                 return message.channel.send({ content: "**Setup is Completed 😆**" })
 
+            } else if (cmd === "close") {
+
+
+                if (message.channel.parentID == message.guild.channels.cache.find((x) => x.name == "MODMAIL").id) {
+    
+                    const person = message.guild.members.cache.get(message.channel.name)
+    
+                    if (!person) {
+                        return message.channel.send({ content: "**I Am Unable To Close The Channel! Probaly Channel Name Is Changed.**" })
+                    }
+    
+                    await message.channel.delete()
+    
+                    const yembed = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setAuthor("MAIL CLOSED", client.user.displayAvatarURL())
+                        .setColor("#c30202")
+                        .setThumbnail(client.user.displayAvatarURL())
+                        .setFooter("Mail Was Closed By" + message.author.username)
+                    if (args[0]) yembed.setDescription(args.join(" "))
+    
+                    return person.send(yembed)
+    
+                }
+            }
+
             } else if (cmd == "open") {
                 const category = message.guild.channels.cache.find((x) => x.name == "MODMAIL")
 
@@ -122,32 +148,6 @@ module.exports = {
 
                 return message.channel.send(newEmbed);
             }
-
-        } else if (cmd === "close") {
-
-
-            if (message.channel.parentID == message.guild.channels.cache.find((x) => x.name == "MODMAIL").id) {
-
-                const person = message.guild.members.cache.get(message.channel.name)
-
-                if (!person) {
-                    return message.channel.send({ content: "**I Am Unable To Close The Channel! Probaly Channel Name Is Changed.**" })
-                }
-
-                await message.channel.delete()
-
-                const yembed = new Discord.MessageEmbed()
-                    .setTimestamp()
-                    .setAuthor("MAIL CLOSED", client.user.displayAvatarURL())
-                    .setColor("#c30202")
-                    .setThumbnail(client.user.displayAvatarURL())
-                    .setFooter("Mail Was Closed By" + message.author.username)
-                if (args[0]) yembed.setDescription(args.join(" "))
-
-                return person.send(yembed)
-
-            }
-        }
 
         if (message.channel.parentID) {
 
