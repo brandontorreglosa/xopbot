@@ -21,7 +21,6 @@ module.exports = {
         })
 
         if (message.guild) {
-
             if (cmd == "setup") {
                 if (!message.member.permissions.has("ADMINISTRATOR")) {
                     return message.reply({ content: "**You Need Admin Permissions To Setup XOPBOT Modmail System!**", allowedMentions: { repliedUser: true } })
@@ -31,10 +30,8 @@ module.exports = {
                     return message.reply({ content: "**I Need Admin Permissions To Setup The Modmail System!**", allowedMentions: { repliedUser: true } })
                 }
 
-
-                const role = message.guild.roles.cache.find(role => role.name == "SUPPORTER")
-                const everyone = message.guild.roles.cache.find(role => role.name == "@everyone")
-                const member1234 = message.author;
+                let role = message.guild.roles.cache.find(role => role.name == "SUPPORTER")
+                let everyone = message.guild.roles.cache.find(role => role.name == "@everyone")
 
                 if (!role) {
                     role = await message.guild.roles.create({
@@ -45,7 +42,7 @@ module.exports = {
                     }).catch(err => console.log(err));
                     role = message.guild.roles.cache.find(role => role.name == "SUPPORTER");
                     if (message.member.roles.cache.has(role.id)) return;
-                    else await member1234.roles.add(role.id);
+                    else await message.member.roles.add(role.id);
                 }
 
                 await message.guild.channels.create("MODMAIL", {
@@ -69,15 +66,15 @@ module.exports = {
 
 
                 if (message.channel.parentID == message.guild.channels.cache.find((x) => x.name == "MODMAIL").id) {
-    
+
                     const person = message.guild.members.cache.get(message.channel.name)
-    
+
                     if (!person) {
                         return message.channel.send({ content: "**I Am Unable To Close The Channel! Probaly Channel Name Is Changed.**" })
                     }
-    
+
                     await message.channel.delete()
-    
+
                     const yembed = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setAuthor("MAIL CLOSED", client.user.displayAvatarURL())
@@ -85,12 +82,10 @@ module.exports = {
                         .setThumbnail(client.user.displayAvatarURL())
                         .setFooter("Mail Was Closed By" + message.author.username)
                     if (args[0]) yembed.setDescription(args.join(" "))
-    
-                    return person.send(yembed)
-    
-                }
-            }
 
+                    return person.send(yembed)
+
+                }
             } else if (cmd == "open") {
                 const category = message.guild.channels.cache.find((x) => x.name == "MODMAIL")
 
@@ -112,10 +107,11 @@ module.exports = {
                     return message.channel.send({ content: "**Unable To Find This User!.**" })
                 }
 
+
                 const channel = await message.guild.channels.create(target.id, {
                     type: "text",
                     parent: category.id,
-                    topic: "ModMail is Direct Opened By **" + message.author.username + "** To Make Contact With " + message.author.tag,
+                    topic: "ModMail is Direct Opened By **" + message.author.username + "** To Make Contact With " + message.author.tag
                 })
 
                 const nembed = new Discord.MessageEmbed()
@@ -148,6 +144,7 @@ module.exports = {
 
                 return message.channel.send(newEmbed);
             }
+        }
 
         if (message.channel.parentID) {
 

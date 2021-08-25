@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
-        
+
         const xopemoji = client.emojis.cache.get('836214135866785806');
         const heheemoji = client.emojis.cache.get('862038389687320586');
         const spongepog = client.emojis.cache.get('824886938804682812');
@@ -323,7 +323,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (42)__', value: '**Real Life NSFW**: \n```4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: \n```hentai, hthigh, hanal, hboobs, rule34, cowgirl, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune```' },
+                    { name: '__🔞 NSFW (44)__', value: '**Real Life NSFW**: \n```4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, masturbation, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: \n```hentai, hthigh, hanal, hboobs, rule34, cowgirl, hmasturbation, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune```' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
