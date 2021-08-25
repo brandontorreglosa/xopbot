@@ -19,7 +19,7 @@ module.exports = {
                   .setDescription(`Sending Squirts...`)
                   .setTimestamp()
 
-            message.channel.send({ embeds: [lo] }).then(m => {
+            message.channel.send(lo).then(m => {
                   got('https://www.reddit.com/r/squirting/random.json').then(response => {
                         let content = JSON.parse(response.body);
                         var title = content[0].data.children[0].data.title;
@@ -30,7 +30,7 @@ module.exports = {
                               .setImage(amazeme)
                               .setFooter(`Squirt Some Liquid Hoe! :)`)
                               .setColor('#c30202')
-                        m.edit({ embeds: [wow] })
+                        m.edit(wow)
                   })
             })
       }

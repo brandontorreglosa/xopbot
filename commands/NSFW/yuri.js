@@ -18,7 +18,7 @@ module.exports = {
                   .setDescription(`Sending Yuri...`)
                   .setTimestamp()
 
-            message.channel.send({ embeds: [lo] }).then(m => {
+            message.channel.send(lo).then(m => {
                   got('https://www.reddit.com/r/yuri/random.json').then(response => {
                         let content = JSON.parse(response.body);
                         var title = content[0].data.children[0].data.title;
@@ -29,7 +29,7 @@ module.exports = {
                               .setImage(amazeme)
                               .setFooter(`Girls On Girls But In Anime! :)`)
                               .setColor('#c30202')
-                        m.edit({ embeds: [wow] })
+                        m.edit(wow)
                   })
             })
       }

@@ -14,7 +14,7 @@ module.exports = {
             .setDescription(`Sending Thigh...`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [lo] }).then(m => {
+        message.channel.send(lo).then(m => {
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: 'thigh' }).end((err, response) => {
 
@@ -24,7 +24,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('That Thigh Is Just Godly Sexy! :)')
                     .setColor('#c30202')
-                m.edit({ embeds: [embed_nsfw] });
+                m.edit(embed_nsfw);
             });
         });
     }

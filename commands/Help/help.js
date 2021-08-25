@@ -323,7 +323,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🔞 NSFW (43)__', value: '**Real Life NSFW**: \n```4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, stripgirls, doggystyle, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: \n```hentai, hthigh, hanal, hboobs, rule34, cowgirl, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune```' },
+                    { name: '__🔞 NSFW (42)__', value: '**Real Life NSFW**: \n```4k, orgy, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: \n```hentai, hthigh, hanal, hboobs, rule34, cowgirl, netorare, succubus, paizuri, yuri, hmidriff, hneko, hkitsune```' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
