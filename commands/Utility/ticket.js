@@ -63,8 +63,13 @@ module.exports = {
         }
       });
 
+      const embed101 = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setTitle(`${message.author.username}`)
+      .setDescription(`We Will Be Right With You! ${channel}`)
+
       message.channel
-        .send({ content: `We Will Be Right With You! ${channel}` })
+        .send(embed101)
         .then(() => {
           setTimeout(() => message.delete(), 7000);
          // setTimeout(() => message.delete(), 3000);
