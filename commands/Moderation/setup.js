@@ -3,6 +3,9 @@ module.exports = {
     aliases: ['close', 'open'],
     permissions: ["SEND_MESSAGES"],
     async execute(client, message, cmd, args, Discord) {
+
+        const ServerID = message.guild.id;
+
         client.on("channelDelete", (channel) => {
             if (channel.parentID == channel.guild.channels.cache.find((x) => x.name == "MODMAIL").id) {
                 const person = channel.guild.members.cache.find((x) => x.id == channel.name)
