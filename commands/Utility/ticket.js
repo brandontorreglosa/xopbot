@@ -11,7 +11,7 @@ module.exports = {
         type: "category",
         topic: "All the mail will be here :D",
       })
-      message.channel.send({ content: '**Ticket`s Category Is Now Setup! 😃' })
+      message.channel.send({ content: '**Ticket`s Category Is Now Setup! 😃**' })
     }
 
     else if (cmd === 'ticket') {
@@ -65,9 +65,9 @@ module.exports = {
 
       message.channel
         .send({ content: `We Will Be Right With You! ${channel}` })
-        .then((msg) => {
-          setTimeout(() => msg.delete(), 7000);
-          setTimeout(() => message.delete(), 3000);
+        .then(() => {
+          setTimeout(() => message.delete(), 7000);
+         // setTimeout(() => message.delete(), 3000);
         })
         .catch((err) => {
           throw err;
