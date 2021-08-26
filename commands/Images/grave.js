@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "grave",
     permissions: ["SEND_MESSAGES"],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
         const mention = message.mentions.members.first() || message.member;

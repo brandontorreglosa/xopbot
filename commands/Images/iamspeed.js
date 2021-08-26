@@ -4,7 +4,7 @@ module.exports = {
     name: "iamspeed",
     permissions: ["SEND_MESSAGES"],
     aliases: ['iams', 'iaspeed'],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 

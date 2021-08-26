@@ -4,7 +4,7 @@ module.exports = {
     name: "m&m",
     aliases: ['mnm'],
     permissions: ["SEND_MESSAGES"],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 

@@ -4,7 +4,7 @@ module.exports = {
     name: "dockofshame",
     permissions: ["SEND_MESSAGES"],
     aliases: ['dcofsh', 'dos'],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 

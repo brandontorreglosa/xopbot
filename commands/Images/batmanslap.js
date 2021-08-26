@@ -4,7 +4,7 @@ module.exports = {
     name: "batmanslap",
     permissions: ["SEND_MESSAGES"],
     aliases: ['bmanslap', 'batslap'],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 

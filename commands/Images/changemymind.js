@@ -4,7 +4,7 @@ module.exports = {
     name: "changemymind",
     permissions: ["SEND_MESSAGES"],
     aliases: ['chmm', 'chmym'],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ");

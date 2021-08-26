@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "drip",
     permissions: ["SEND_MESSAGES"],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 

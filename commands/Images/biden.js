@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'biden',
   permissions: ["SEND_MESSAGES"],
-  cooldown: 3,
+  cooldown: 5,
   description: 'Get a custom clyde message!',
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {

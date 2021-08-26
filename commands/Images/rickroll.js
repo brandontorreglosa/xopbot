@@ -2,7 +2,7 @@ const errorChannel = process.env.errorChannel;
 module.exports = {
     name: 'rickroll',
     permissions: ["SEND_MESSAGES"],
-    cooldown: 5,
+    cooldown: 10,
     description: 'get Rickrolled',
     async execute(client, message, cmd, args, Discord) {
         try {

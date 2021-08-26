@@ -4,7 +4,7 @@ module.exports = {
     name: "carreverse",
     permissions: ["SEND_MESSAGES"],
     aliases: ['crr', 'carr'],
-    cooldown: 3,
+    cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ");

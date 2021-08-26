@@ -4,7 +4,7 @@ module.exports = {
     name: "wideavatar",
     permissions: ["SEND_MESSAGES"],
     aliases: ['wpfp', 'wprofile'],
-    cooldown: 3,
+    cooldown: 5,
     description: "Get a  widened avatar of a user",
     async execute(client, message, cmd, args, Discord) {
         const mention = message.mentions.members.first() || message.member;
