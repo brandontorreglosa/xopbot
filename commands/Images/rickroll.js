@@ -22,10 +22,10 @@ module.exports = {
             user.send(embed)
                 .catch(() => message.channel.send({ content: "**That User Could Not Be Rickrolled! 😭**" }))
                 .then(() => message.channel.send({ content: `**I Have Rickrolled ${user.tag}! 😉**` }));
-        } catch (error) {
+        } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.channel.send({ content: "**Looks Like An Error Has Occured!**" });
-            errorlogs.send({ content: "Error On Rickroll Command\n Error:\n" + error })
+            errorlogs.send({ content: `**Error On Rickroll Command!\n\nError:\n\n ${err}**` })
         }
     }
 }

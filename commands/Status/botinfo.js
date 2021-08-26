@@ -42,7 +42,7 @@ module.exports = {
                 },
                 {
                     name: '🤖 Bot Version',
-                    value: 'v60.0.0',
+                    value: 'v60.2.0',
                     inline: true
                 },
                 {
