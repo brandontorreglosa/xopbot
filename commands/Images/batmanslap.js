@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const lineReply = require('discord-reply');
 module.exports = {
     name: "batmanslap",
     permissions: ["SEND_MESSAGES"],
