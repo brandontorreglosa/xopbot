@@ -6,27 +6,27 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     description: 'what are you doing here?',
     async execute(client, message, cmd, args, Discord) {
-        const mention = message.mentions.members.first() || message.member;
-        const avatar = mention.user.displayAvatarURL({ format: "png" });
+        if (!args[0]) {
+            return message.lineReplyNoMention({ content: '**You Must Do `x!phub text1 / text2` \nYou Must Add The / For It Work!**' }) //, allowedMentions: { repliedUser: true } })
+        }
+        let splitArgs = args.join(' ').split('/');
+        const text = splitArgs[0];
+        if (!text) {
+            return message.lineReplyNoMention({ content: "**Enter The First Text!**" }) //, allowedMentions: { repliedUser: true } })
+        }
+        if (text.length > 70) return message.reply({ content: `**You Cant Go Over 70 Characters!**`, allowedMentions: { repliedUser: true } })
 
-        if (!args[0])
-            return message.lineReplyNoMention({ content: '**Please Provide Some Text!**'}) //, allowedMentions: { repliedUser: true } })
-
-        const bidenMessage = args.slice(0).join(' ')
-        const member = message.author.tag;
-        if (bidenMessage.length > 15) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 15 Characters!**'}) //, allowedMentions: { repliedUser: true } });
-
-        const image2 = await Canvas.phub({
-            username: member,
-            message: bidenMessage,
-            image: avatar,
-        });
+        const text2 = splitArgs[1];
+        if (!text2) {
+            return message.lineReplyNoMention({ content: "**Enter The Second Text!**" }) //, allowedMentions: { repliedUser: true } })
+        }
+        if (text2.length > 70) return message.lineReplyNoMention({ content: `**You Cant Go Over 70 Characters!**` }) //, allowedMentions: { repliedUser: true }})
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setTitle('PHUB')
             .setColor('#c30202')
-            .setImage(`${image2}`)
+            .setImage(`https://api.alexflipnote.dev/pornhub?text=${text}&text2=${text2}`)
 
         message.lineReplyNoMention(embed)
 

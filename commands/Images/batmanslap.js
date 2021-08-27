@@ -28,7 +28,7 @@ module.exports = {
         if (!text2) {
             return message.lineReplyNoMention({ content: "**Enter The Second Text!**" }) //, allowedMentions: { repliedUser: true } })
         }
-        if (text2.length > 50) return message.reply({ content: `**You Cant Go Over 50 Characters!**`, allowedMentions: { repliedUser: true } })
+        if (text2.length > 50) return message.lineReplyNoMention({ content: `**You Cant Go Over 50 Characters!**` }) //, allowedMentions: { repliedUser: true } })
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
