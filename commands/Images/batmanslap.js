@@ -9,7 +9,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         if(!args[0]) {
-            return message.reply({ content: '**`(preifx)batmanslap text1 / text2` \nMust Add / For It To Work!**', allowedMentions: { repliedUser: true } })
+            return message.reply({ content: '**`(prefix)batmanslap text1 / text2` \nMust Add / For It To Work!**', allowedMentions: { repliedUser: true } })
         }
 
         const mention = message.mentions.members.first() || message.member;
@@ -29,6 +29,14 @@ module.exports = {
         }
         if (text2.length > 50) return message.reply({ content: `**You Cant Go Over 50 Characters!**`, allowedMentions: { repliedUser: true } })
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
+        const embed = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setTitle('BATMANSLAP')
+        .setColor('#c30202')
+        .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`)
+    
+    message.channel.send(embed)
+
+       // message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
     }
 }
