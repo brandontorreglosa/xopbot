@@ -17,7 +17,7 @@ module.exports = {
       .setTitle('ALERT')
       .setDescription('**Currently Not Working! Fixing Issue ASAP**')
       .setColor('#c30202')
-      .setImage(`https://api.popcatdev.repl.co/alert?text=${alertMessage}`)
+      .setImage(`https://api.popcat.xyz/alert?text=${alertMessage}`)
 
     message.lineReplyNoMention(embed)
 

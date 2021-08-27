@@ -16,7 +16,7 @@ module.exports = {
       .setTimestamp()
       .setTitle('PIKACHU')
       .setColor('#c30202')
-      .setImage(`https://api.popcatdev.repl.co/pikachu?text=${pikachuMessage}`)
+      .setImage(`https://api.popcat.xyz/pikachu?text=${pikachuMessage}`)
 
     message.lineReplyNoMention(embed)
 

@@ -26,7 +26,7 @@ module.exports = {
         .setTimestamp()
         .setTitle('DRAKE')
         .setColor('#c30202')
-        .setImage(`https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`)
+        .setImage(`https://api.popcat.xyz/drake?text1=${text}&text2=${text2}`)
 
         message.lineReplyNoMention(embed)
 

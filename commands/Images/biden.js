@@ -16,7 +16,7 @@ module.exports = {
       .setTimestamp()
       .setTitle('BIDEN')
       .setColor('#c30202')
-      .setImage(`https://api.popcatdev.repl.co/biden?text=${bidenMessage}`)
+      .setImage(`https://api.popcat.xyz/biden?text=${bidenMessage}`)
 
     message.lineReplyNoMention(embed)
 

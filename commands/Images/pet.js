@@ -15,7 +15,7 @@ module.exports = {
       .setTimestamp()
       .setTitle('PET')
       .setColor('#c30202')
-      .setImage(`https://api.popcatdev.repl.co/pet?image=${avatar}`)
+      .setImage(`https://api.popcat.xyz/pet?image=${avatar}`)
 
     message.lineReplyNoMention(embed)
 
