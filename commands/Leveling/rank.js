@@ -3,7 +3,7 @@ const Levels = require("discord-xp");
 const canvacord = require("canvacord");
 const { createCanvas, loadImage } = require('canvas');
 const bdaySchema = require('../../models/bdayprofile');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'rank',
     aliases: ['profile'],
@@ -20,7 +20,7 @@ module.exports = {
 
             const neededXp = Levels.xpFor(parseInt(user.level) + 1);
 
-            if (!user) return message.reply({ content: "**You Dont Have Any Xp, Try Sending More Messages!**", allowedMentions: { repliedUser: true } });
+            if (!user) return message.lineReplyNoMention({ content: "**You Dont Have Any Xp, Try Sending More Messages!**" }) // allowedMentions: { repliedUser: true } });
 
             const rank = new canvacord.Rank()
                 .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png' }))
@@ -36,7 +36,7 @@ module.exports = {
             rank.build()
                 .then(data => {
                     const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
-                    message.channel.send(attachment);
+                    message.lineReplyNoMention(attachment);
                 });
         }
 
@@ -242,7 +242,7 @@ module.exports = {
             ctx.drawImage(avatar, 75, 150, 150, 150);
             ctx.restore();
 
-            message.channel.send({
+            message.lineReplyNoMention({
                 files: [{
                     attachment: canvas.toBuffer(),
                     name: 'xopbotprofile.png'

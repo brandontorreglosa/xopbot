@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'botinvite',
     permissions: ["SEND_MESSAGES"],
@@ -17,7 +18,7 @@ module.exports = {
             )
             .setFooter('You Can Also Join Our Support Server If U Click The Bot Invite!');
 
-        message.channel.send(newEmbed);
+        message.lineReplyNoMention(newEmbed);
     }
 
 }

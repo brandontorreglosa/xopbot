@@ -1,5 +1,5 @@
 const Levels = require('discord-xp');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'leaderboard',
   aliases: ['lb', 'ldb'],
@@ -32,6 +32,6 @@ module.exports = {
       )
       .setFooter(`This Leaderboard Is Only For ${name} And Not Worldwide Servers!`)
 
-    message.channel.send(newEmbed);
+    message.lineReplyNoMention(newEmbed);
   }
 }

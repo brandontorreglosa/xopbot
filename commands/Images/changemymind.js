@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "changemymind",
     permissions: ["SEND_MESSAGES"],
@@ -19,7 +19,7 @@ module.exports = {
             .setColor('#c30202')
             .setImage(`https://vacefron.nl/api/changemymind?text=${text}`)
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
 
         //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/changemymind?text=${text}`, name: "changemymind.png" }] });
     }

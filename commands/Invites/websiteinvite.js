@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'websiteinvite',
     cooldown: 3,
@@ -19,7 +20,7 @@ module.exports = {
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
 
 
-        message.channel.send(newEmbed);
+        message.lineReplyNoMention(newEmbed);
     }
 
 }

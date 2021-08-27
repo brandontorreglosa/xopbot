@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "rps",
     permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
             .setTitle("Lets Play Rock Paper Scissors")
             .setDescription("Play Rock Paper Scissors Must React!")
             .setTimestamp()
-        let msg = await message.channel.send(embed)
+        let msg = await message.lineReplyNoMention(embed)
         await msg.react("🗻")
         await msg.react("✂")
         await msg.react("📄")
@@ -26,9 +27,9 @@ module.exports = {
                 if ((reaction.emoji.name === '🗻' && me === "✂") ||
                     (reaction.emoji.name === "✂" && me === "📄") ||
                     (reaction.emoji.name === "📄" && me === "🗻")) {
-                    message.reply({ content: "**You Won!**", allowedMentions: { repliedUser: true } })
+                    message.lineReplyNoMention({ content: "**You Won!**" }) // allowedMentions: { repliedUser: true } })
                 } else {
-                    message.reply({ content: "**You Lost!**", allowedMentions: { repliedUser: true } })
+                    message.lineReplyNoMention({ content: "**You Lost!**" }) // allowedMentions: { repliedUser: true } })
                 }
 
 
@@ -36,7 +37,7 @@ module.exports = {
         )
 
             .catch(collected => {
-                message.reply({ content: "**Game Ended Due To No Response!**", allowedMentions: { repliedUser: true } })
+                message.lineReplyNoMention({ content: "**Game Ended Due To No Response!**" }) // allowedMentions: { repliedUser: true } })
             })
     }
 

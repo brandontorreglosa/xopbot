@@ -21,6 +21,7 @@ function guildAttemptsMap(message) {
     }
 }
 
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "guessthenumber",
     aliases: ['gtn', 'guess'],
@@ -71,11 +72,11 @@ module.exports = {
 
             return;
         } else if (+ guess < guildNumber.get(guild.id)) {
-            return message.reply({ content: `**${guess} Is Too Low!**`, allowedMentions: { repliedUser: true }  });
+            return message.lineReplyNoMention({ content: `**${guess} Is Too Low!**`, allowedMentions: { repliedUser: true }  });
         } else if (+guess > guildNumber.get(guild.id)) {
-            return message.reply({ content: `**${guess} Is Too High!**`, allowedMentions: { repliedUser: true } });
+            return message.lineReplyNoMention({ content: `**${guess} Is Too High!**`, allowedMentions: { repliedUser: true } });
         } else {
-            return message.reply({ content: "***Invalid Number Please Try Again***", allowedMentions: { repliedUser: true }  });
+            return message.lineReplyNoMention({ content: "***Invalid Number Please Try Again***", allowedMentions: { repliedUser: true }  });
         }
     },
 };

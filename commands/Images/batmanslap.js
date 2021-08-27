@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "batmanslap",
     permissions: ["SEND_MESSAGES"],
@@ -13,6 +14,7 @@ module.exports = {
 
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
+        const xopbot = client.user.displayAvatarURL({ size: 2048, format: 'png' })
 
         let splitargs = args.join(' ').split('/');
 
@@ -32,9 +34,9 @@ module.exports = {
             .setTimestamp()
             .setTitle('BATMANSLAP')
             .setColor('#c30202')
-            .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`)
+            .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=${xopbot}`)
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
 
         //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
     }

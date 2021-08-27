@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "uncover",
     permissions: ["SEND_MESSAGES"],
@@ -16,7 +16,7 @@ module.exports = {
             .setColor('#c30202')
             .setImage(`https://api.popcatdev.repl.co/uncover?image=${avatar}`)
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
 
         // message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/uncover?image=${avatar}`, name: "xopbotrickandmortyuncover.png" }] });
     }

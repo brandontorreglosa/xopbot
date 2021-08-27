@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'facts',
   permissions: ["SEND_MESSAGES"],
@@ -18,7 +18,7 @@ module.exports = {
       .setColor('#c30202')
       .setImage(`https://api.popcatdev.repl.co/facts?text=${factsMessage}`)
 
-    message.channel.send(embed)
+    message.lineReplyNoMention(embed)
 
     //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
   }

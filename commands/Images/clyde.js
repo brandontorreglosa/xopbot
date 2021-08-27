@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'clyde',
   permissions: ["SEND_MESSAGES"],
@@ -18,7 +18,7 @@ module.exports = {
       .setColor('#c30202')
       .setImage(`https://ctk-api.herokuapp.com/clyde/${clydeMessage}`)
 
-    message.channel.send(embed)
+    message.lineReplyNoMention(embed)
 
     //message.channel.send({ files: [{ attachment: `https://ctk-api.herokuapp.com/clyde/${clydeMessage}`, name: 'file.jpg' }] });
   }

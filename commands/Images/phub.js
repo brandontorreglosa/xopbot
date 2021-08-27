@@ -1,5 +1,5 @@
 const { Canvas } = require('canvacord');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'phub',
     cooldown: 8,
@@ -28,7 +28,7 @@ module.exports = {
             .setColor('#c30202')
             .setImage(`${image}`)
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
 
         // const attachment = new Discord.MessageAttachment(image, "phub.png");
         // return message.channel.send({ files: [{ attachment: image }] });
