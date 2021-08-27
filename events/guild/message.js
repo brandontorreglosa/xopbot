@@ -8,6 +8,7 @@ const fs = require('fs');
 const ms = require('ms');
 require('dotenv').config();
 const cooldown = require('../../models/cooldown');
+const lineReplyNoMention = require('discord-reply');
 
 try {
 
@@ -27,7 +28,7 @@ try {
         .setTitle(`**👤 ${message.author.username}**`)
         .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
         .setFooter('Thank You For Being Active 🙏')
-      message.channel.send(someonelevelup)
+      message.lineReplyNoMention(someonelevelup)
 
       if (user.level == 1) {
         let role = message.guild.roles.cache.find(role => role.name == "Level 1");
@@ -136,12 +137,12 @@ try {
         .setNickname(status.username)
 
         .then(() => {
-          message.reply({ content: `**You Were AFK For ${ms(Date.now() - (status.date || 0))}**`, allowedMentions: { repliedUser: true } });
+          message.lineReplyNoMention({ content: `**You Were AFK For ${ms(Date.now() - (status.date || 0))}**` }) //, allowedMentions: { repliedUser: true } });
         })
 
         .catch(_e => {
           quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-          message.reply({ content: '**Failed To Set Your Status.**', allowedMentions: { repliedUser: true } });
+          message.lineReplyNoMention({ content: '**Failed To Set Your Status.**' }) //, allowedMentions: { repliedUser: true } });
         });
     }
 
@@ -151,10 +152,10 @@ try {
       fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&`)
         .then(response => response.json())
         .then(data => {
-          message.channel.send(data.response)
+          message.lineReplyNoMention(data.response)
         })
         .catch(() => {
-          message.channel.send({ content: "Couldnt Fetch Response!" });
+          message.lineReplyNoMention({ content: "Couldnt Fetch Response!" });
         })
     }
 
@@ -162,10 +163,10 @@ try {
       fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&`)
         .then(response => response.json())
         .then(data => {
-          message.channel.send(data.response)
+          message.lineReplyNoMention(data.response)
         })
         .catch(() => {
-          message.channel.send({ content: "Couldnt Fetch Response!" });
+          message.lineReplyNoMention({ content: "Couldnt Fetch Response!" });
         })
     }
 
@@ -173,17 +174,17 @@ try {
       fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&`)
         .then(response => response.json())
         .then(data => {
-          message.channel.send(data.response)
+          message.lineReplyNoMention(data.response)
         })
         .catch(() => {
-          message.channel.send({ content: "Couldnt Fetch Response!" });
+          message.lineReplyNoMention({ content: "Couldnt Fetch Response!" });
         })
     }
 
     // <----/Bot Mentioned/---->
 
     if (message.content === "<@831824859066925087>" || message.content === "<@!831824859066925087>") {
-      message.channel.send({ content: `***${message.author} My Prefix Is x! And You Can Do x!help To Get My Commands!***` })
+      message.lineReplyNoMention({ content: '***My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!***' })
     }
 
     // <----/Prefix System/---->
@@ -224,7 +225,12 @@ try {
       client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
     if (!command) {
-      return message.reply({ content: `**Couldn't Find That Command, Do (prefix)help And Check Again!**`, allowedMentions: { repliedUser: true } })
+      const embederror = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setTitle('ERROR')
+        .setDescription('**Couldnt Find That Command, Do (prefix)help And Check Again!**')
+      return message.lineReplyNoMention(embederror)
     }
 
     if (message.channel.id === "841362279353155656") {
@@ -278,19 +284,19 @@ try {
         }
       }
       if (invalidPerms.length) {
-        return message.reply({ content: `**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`, allowedMentions: { repliedUser: true } });
+        return message.lineReplyNoMention({ content: `**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**` }) //, allowedMentions: { repliedUser: true } });
       }
     }
 
     // <----/Premium System/---->
 
     if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-      return message.reply({ content: "***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***", allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/NSFW Registration System/---->
 
     if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-      return message.reply({ content: "***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***", allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/Cooldown System/---->
 
@@ -310,14 +316,14 @@ try {
 
             if (time_left.toFixed(1) >= 3600) {
               let hour = (time_left.toFixed(1) / 3600);
-              return message.reply({ content: `**Please Wait ${parseInt(hour)} More Hours Before Using \`${command.name}\` Again!**`, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(hour)} More Hours Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 60) {
               let minute = (time_left.toFixed(1) / 60);
-              return message.reply({ content: `**Please Wait ${parseInt(minute)} More Minutes Before Using \`${command.name}\` Again!**`, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(minute)} More Minutes Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             let seconds = (time_left.toFixed(1));
-            return message.reply({ content: `**Please Wait ${parseInt(seconds)} More Seconds Before Using \`${command.name}\` Again!**`, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(seconds)} More Seconds Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
           } else {
             await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
             commandExecute();
@@ -346,7 +352,7 @@ try {
       if (antilink) {
         if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
           message.delete();
-          message.reply({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**", allowedMentions: { repliedUser: true } }).then(msg => {
+          message.lineReplyNoMention({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**"}).then(msg => { //, allowedMentions: { repliedUser: true } })
             let time = '4s'
             setTimeout(function () {
               msg.delete();
@@ -370,7 +376,7 @@ try {
       if (antiwords) {
         if (message.content.match("bitch") || message.content.match("hoe") || message.content.match("slut") || message.content.match("nigga") || message.content.match("nigg") || message.content.match("dick") || message.content.match("cunt") || message.content.match("shit") || message.content.match("fuck")) {
           message.delete();
-          message.reply({ content: "**No Bad Words Allowed Please Stop!**", allowedMentions: { repliedUser: true } }).then(msg => {
+          message.lineReplyNoMention({ content: "**No Bad Words Allowed Please Stop!**"}).then(msg => { //, allowedMentions: { repliedUser: true } }).then(msg => {
             let time = '4s'
             setTimeout(function () {
               msg.delete();
