@@ -10,6 +10,14 @@ module.exports = {
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ dynamic: true, size: 2048, format: "png" });
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/wide?image=${avatar}`, name: "xopbotwideavatar.png" }] });
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setTitle('WIDEAVATAR')
+            .setColor('#c30202')
+            .setImage(`https://vacefron.nl/api/wide?image=${avatar}`)
+
+        message.channel.send(embed)
+
+        //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/wide?image=${avatar}`, name: "xopbotwideavatar.png" }] });
     }
 }

@@ -10,8 +10,16 @@ module.exports = {
       return message.reply({ content: '`Usage: (prefix)facts <msg>`', allowedMentions: { repliedUser: true } })
     }
     let factsMessage = args.slice(0).join(' ');
-    if (factsMessage.length > 25) return message.reply({ content: '**You Are Not Allowed To Go Over 25 Characters!**', allowedMentions: { repliedUser: true }  });
+    if (factsMessage.length > 25) return message.reply({ content: '**You Are Not Allowed To Go Over 25 Characters!**', allowedMentions: { repliedUser: true } });
 
-    message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
+    const embed = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setTitle('FACTS')
+      .setColor('#c30202')
+      .setImage(`https://api.popcatdev.repl.co/facts?text=${factsMessage}`)
+
+    message.channel.send(embed)
+
+    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
   }
 }

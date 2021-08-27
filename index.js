@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+require('discord-inline-reply');
 const Levels = require('discord-xp');
 require('dotenv').config();
 const { Client, Collection, Intents } = require("discord.js");

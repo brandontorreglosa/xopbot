@@ -22,7 +22,15 @@ module.exports = {
             image: avatar,
         });
 
-        const attachment = new Discord.MessageAttachment(image, "phub.png");
-        return message.channel.send({ files: [{ attachment: image }] });
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setTitle('PHUB')
+            .setColor('#c30202')
+            .setImage(`${image}`)
+
+        message.channel.send(embed)
+
+        // const attachment = new Discord.MessageAttachment(image, "phub.png");
+        // return message.channel.send({ files: [{ attachment: image }] });
     }
 }

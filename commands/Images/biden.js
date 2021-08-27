@@ -12,6 +12,14 @@ module.exports = {
     let bidenMessage = args.slice(0).join(' ');
     if (bidenMessage.length > 65) return message.reply({ content: '**You Are Not Allowed To Go Over 65 Characters!**', allowedMentions: { repliedUser: true } });
 
-    message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/biden?text=${bidenMessage}`, name: 'xopbotbiden.jpg' }] });
+    const embed = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setTitle('BIDEN')
+      .setColor('#c30202')
+      .setImage(`https://api.popcatdev.repl.co/biden?text=${bidenMessage}`)
+
+    message.channel.send(embed)
+
+    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/biden?text=${bidenMessage}`, name: 'xopbotbiden.jpg' }] });
   }
 }

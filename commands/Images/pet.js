@@ -1,16 +1,24 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: "pet",
-    permissions: ["SEND_MESSAGES"],
-    cooldown: 5,
-    description: "Image Manipulation Command",
-    async execute(client, message, cmd, args, Discord) {
+  name: "pet",
+  permissions: ["SEND_MESSAGES"],
+  cooldown: 5,
+  description: "Image Manipulation Command",
+  async execute(client, message, cmd, args, Discord) {
 
-        const mention = message.mentions.members.first() || message.member;
-        const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
+    const mention = message.mentions.members.first() || message.member;
+    const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
 
-        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/pet?image=${avatar}`, name: "xopbotpet.gif" }] });
-    }
+    const embed = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setTitle('PET')
+      .setColor('#c30202')
+      .setImage(`https://api.popcatdev.repl.co/pet?image=${avatar}`)
+
+    message.channel.send(embed)
+
+    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/pet?image=${avatar}`, name: "xopbotpet.gif" }] });
+  }
 }

@@ -13,6 +13,14 @@ module.exports = {
         }
         if (text.length > 15) return message.reply({ content: '**You Are Not Allowed To Go Over 15 Characters!**', allowedMentions: { repliedUser: true } });
 
-        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/changemymind?text=${text}`, name: "changemymind.png" }] });
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setTitle('CHANGEMYMIND')
+            .setColor('#c30202')
+            .setImage(`https://vacefron.nl/api/changemymind?text=${text}`)
+
+        message.channel.send(embed)
+
+        //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/changemymind?text=${text}`, name: "changemymind.png" }] });
     }
 }

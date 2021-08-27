@@ -22,6 +22,14 @@ module.exports = {
         }
         if (text2.length > 70) return message.reply({ content: `**You Cant Go Over 70 Characters!**`, allowedMentions: { repliedUser: true } })
 
-        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setTitle('DRAKE')
+            .setColor('#c30202')
+            .setImage(`https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`)
+
+        message.channel.send(embed)
+
+        // message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
     }
 }
