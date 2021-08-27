@@ -10,13 +10,6 @@ module.exports = {
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('AD')
-            .setColor('#c30202')
-            .setImage(`https://api.popcatdev.repl.co/ad?image=${avatar}`)
-
-        message.channel.send(embed)
-        // message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotad.png" }] });
+        message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotad.png" }] });
     }
 }

@@ -8,7 +8,7 @@ module.exports = {
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
 
-        if(!args[0]) {
+        if (!args[0]) {
             return message.reply({ content: '**`(prefix)batmanslap text1 / text2` \nMust Add / For It To Work!**', allowedMentions: { repliedUser: true } })
         }
 
@@ -29,14 +29,6 @@ module.exports = {
         }
         if (text2.length > 50) return message.reply({ content: `**You Cant Go Over 50 Characters!**`, allowedMentions: { repliedUser: true } })
 
-        const embed = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setTitle('BATMANSLAP')
-        .setColor('#c30202')
-        .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`)
-    
-    message.channel.send(embed)
-
-       // message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
+        message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
     }
 }
