@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'hug',
     permissions: ["SEND_MESSAGES"],
@@ -34,6 +35,6 @@ module.exports = {
             .setColor('#c30202')
             .setTitle(`${user.username} Was Hugged!`)
             .setDescription(`**${user.username}** Was Hugged By **${message.author.username}** And Now **${user.username}** Is **${randomNumber}%** Happy!`)
-        message.channel.send(newEmbed);
+        message.lineReplyNoMention(newEmbed);
     }
 }

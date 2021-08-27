@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'kiss',
     permissions: ["SEND_MESSAGES"],
@@ -25,13 +26,13 @@ module.exports = {
             'Do NOTHING :( R.I.P :('
         ];
 
-        let randomChoices = Choices.sort(() => Math.random() - Math.random()).slice(0, 1);
+        const randomChoices = Choices.sort(() => Math.random() - Math.random()).slice(0, 1);
 
         const randomNumber = Math.floor(Math.random() * 2000) + 1;
         const hug_list = message.mentions.users.map(user => {
             return `**${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy And Would Like To ${randomChoices}!**`;
         });
 
-        message.channel.send({ content: hug_list });
+        message.lineReplyNoMention({ content: hug_list });
     }
 }

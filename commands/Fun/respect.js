@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
    name: "respect",
    cooldown: 3,
@@ -30,6 +30,6 @@ module.exports = {
          .setColor('#c30202')
          .setFooter('Respect Forever')
 
-      message.channel.send(embed);
+      message.lineReplyNoMention(embed);
    }
 }

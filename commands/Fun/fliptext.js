@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const flip = require("flip-text");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "fliptext",
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +10,7 @@ module.exports = {
   type: "Fun",
   async execute(client, message, cmd, args, Discord) {
     if (args.length < 1) {
-      return message.channel.send({ content: "**Please Enter Some Text To Flip!**" })
+      return message.lineReplyNoMention({ content: "**Please Enter Some Text To Flip!**" })
     }
     args.reverse();
     var flipped = [];
@@ -24,6 +24,6 @@ module.exports = {
       .setColor('#c30202')
       .setTitle('Fliptext Conversion')
       .setDescription(flipped.join(" "))
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 }

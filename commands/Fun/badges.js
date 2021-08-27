@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'badges',
     permissions: ["SEND_MESSAGES"],
@@ -15,7 +16,7 @@ module.exports = {
             .setTimestamp()
             .setDescription(`${user}'s badges: ${flags.join(', ')}`)
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
-        message.channel.send(badgesuser)
+        message.lineReplyNoMention(badgesuser)
     }
 }
 

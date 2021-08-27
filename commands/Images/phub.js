@@ -10,13 +10,13 @@ module.exports = {
         const avatar = mention.user.displayAvatarURL({ format: "png" });
 
         if (!args[0])
-            return message.reply({ content: '**Please Provide Some Text!**', allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**Please Provide Some Text!**'}) //, allowedMentions: { repliedUser: true } })
 
         const bidenMessage = args.slice(0).join(' ')
         const member = message.author.tag;
-        if (bidenMessage.length > 15) return message.reply({ content: '**You Are Not Allowed To Go Over 15 Characters!**', allowedMentions: { repliedUser: true } });
+        if (bidenMessage.length > 15) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 15 Characters!**'}) //, allowedMentions: { repliedUser: true } });
 
-        const image = await Canvas.phub({
+        const image2 = await Canvas.phub({
             username: member,
             message: bidenMessage,
             image: avatar,
@@ -26,7 +26,7 @@ module.exports = {
             .setTimestamp()
             .setTitle('PHUB')
             .setColor('#c30202')
-            .setImage(`${image}`)
+            .setImage(`${image2}`)
 
         message.lineReplyNoMention(embed)
 

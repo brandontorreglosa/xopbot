@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "coinflip",
     cooldown: 2,
@@ -15,6 +15,6 @@ module.exports = {
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTitle("Coinflip!")
             .setDescription(`You Flipping Flipped **${choice}**!`)
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

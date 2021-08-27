@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "reverse",
     cooldown: 3,
@@ -15,6 +16,6 @@ module.exports = {
             .setColor('#c30202')
             .setTitle('Reverse Conversion')
             .setDescription(`**${result}**`)
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

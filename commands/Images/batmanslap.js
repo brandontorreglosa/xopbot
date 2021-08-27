@@ -9,7 +9,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         if (!args[0]) {
-            return message.reply({ content: '**`(prefix)batmanslap text1 / text2` \nMust Add / For It To Work!**', allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**`(prefix)batmanslap text1 / text2` \nMust Add / For It To Work!**' }) //, allowedMentions: { repliedUser: true } })
         }
 
         const mention = message.mentions.members.first() || message.member;
@@ -20,13 +20,13 @@ module.exports = {
 
         const text = splitargs[0];
         if (!text) {
-            return message.reply({ content: "**Enter Some Text!**", allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: "**Enter Some Text!**" }) //, allowedMentions: { repliedUser: true } })
         }
-        if (text.length > 50) return message.reply({ content: `**You Cant Go Over 50 Characters!**`, allowedMentions: { repliedUser: true } })
+        if (text.length > 50) return message.lineReplyNoMention({ content: `**You Cant Go Over 50 Characters!**` }) //, allowedMentions: { repliedUser: true } })
 
         const text2 = splitargs[1];
         if (!text2) {
-            return message.reply({ content: "**Enter The Second Text!**", allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: "**Enter The Second Text!**" }) //, allowedMentions: { repliedUser: true } })
         }
         if (text2.length > 50) return message.reply({ content: `**You Cant Go Over 50 Characters!**`, allowedMentions: { repliedUser: true } })
 

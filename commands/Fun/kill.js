@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'kill',
     permissions: ["SEND_MESSAGES"],
@@ -11,6 +12,6 @@ module.exports = {
             return `**${user.username} Was Killed By ${message.author.username} Who Used ${randomNumber} Power!**`;
         });
 
-        message.channel.send({ content: kill_list });
+        message.lineReplyNoMention({ content: kill_list });
     }
 }

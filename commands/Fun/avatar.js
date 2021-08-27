@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'avatar',
     permissions: ["SEND_MESSAGES"],
@@ -16,6 +17,6 @@ module.exports = {
             .setTitle(`Avatar Link`)
             .setURL(`${user.displayAvatarURL({ dynamic: true })}`)
             .setImage(`${user.displayAvatarURL({ size: 2048, dynamic: true })}`)
-        message.channel.send(avatar_list);
+        message.lineReplyNoMention(avatar_list);
     }
 }

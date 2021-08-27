@@ -9,9 +9,9 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ");
         if (!text) {
-            return message.reply({ content: "**Enter Some Text!**", allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: "**Enter Some Text!**" }) //, allowedMentions: { repliedUser: true } })
         }
-        if (text.length > 15) return message.reply({ content: '**You Are Not Allowed To Go Over 15 Characters!**', allowedMentions: { repliedUser: true } });
+        if (text.length > 15) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 15 Characters!**' }) //, allowedMentions: { repliedUser: true } });
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
