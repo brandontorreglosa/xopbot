@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: '4k',
     cooldown: 3,
@@ -9,13 +10,7 @@ module.exports = {
 
         var superagent = require('superagent');
 
-        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
-
-        var lo = new Discord.MessageEmbed()
-            .setDescription(`Sending 4k...`)
-            .setTimestamp()
-
-        message.channel.send(lo).then(m => {
+        if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
             superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
 
@@ -26,8 +21,7 @@ module.exports = {
                     .setImage(response.body.message)
                     .setFooter('4k Sluts Amazing! :)')
 
-                m.edit(embed_nsfw);
+                message.lineReplyNoMention(embed_nsfw);
             });
-        });
     }
 }
