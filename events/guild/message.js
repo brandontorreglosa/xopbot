@@ -184,7 +184,12 @@ try {
     // <----/Bot Mentioned/---->
 
     if (message.content === "<@831824859066925087>" || message.content === "<@!831824859066925087>") {
-      message.lineReplyNoMention({ content: '***My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!***' })
+      const botembedmentioned = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setTitle('You Ping Me?')
+        .setDescription('***My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!***')
+      message.lineReplyNoMention(botembedmentioned)
     }
 
     // <----/Prefix System/---->
@@ -229,7 +234,7 @@ try {
         .setTimestamp()
         .setColor('#c30202')
         .setTitle('ERROR')
-        .setDescription('**Couldnt Find That Command, Do (prefix)help And Check Again!**')
+        .setDescription('**Couldnt Find That Command, Do `(prefix)help` And Check Again!**')
       return message.lineReplyNoMention(embederror)
     }
 
@@ -284,7 +289,12 @@ try {
         }
       }
       if (invalidPerms.length) {
-        return message.lineReplyNoMention({ content: `**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**` }) //, allowedMentions: { repliedUser: true } });
+        const invalidembedperm = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setTitle('WAIT!')
+          .setDescription(`**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`)
+        return message.lineReplyNoMention(invalidembedperm) //, allowedMentions: { repliedUser: true } });
       }
     }
 
@@ -352,7 +362,7 @@ try {
       if (antilink) {
         if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
           message.delete();
-          message.lineReplyNoMention({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**"}).then(msg => { //, allowedMentions: { repliedUser: true } })
+          message.lineReplyNoMention({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**" }).then(msg => { //, allowedMentions: { repliedUser: true } })
             let time = '4s'
             setTimeout(function () {
               msg.delete();
@@ -376,7 +386,7 @@ try {
       if (antiwords) {
         if (message.content.match("bitch") || message.content.match("hoe") || message.content.match("slut") || message.content.match("nigga") || message.content.match("nigg") || message.content.match("dick") || message.content.match("cunt") || message.content.match("shit") || message.content.match("fuck")) {
           message.delete();
-          message.lineReplyNoMention({ content: "**No Bad Words Allowed Please Stop!**"}).then(msg => { //, allowedMentions: { repliedUser: true } }).then(msg => {
+          message.lineReplyNoMention({ content: "**No Bad Words Allowed Please Stop!**" }).then(msg => { //, allowedMentions: { repliedUser: true } }).then(msg => {
             let time = '4s'
             setTimeout(function () {
               msg.delete();
