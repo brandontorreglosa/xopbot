@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const lineReply = require('discord-reply');
 module.exports = {
     name: "batmanslap",
     permissions: ["SEND_MESSAGES"],
@@ -35,7 +34,7 @@ module.exports = {
             .setColor('#c30202')
             .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`)
 
-        message.lineReply(embed)
+        message.channel.send(embed)
 
         //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
     }

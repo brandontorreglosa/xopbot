@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const lineReply = require('discord-reply');
 module.exports = {
     name: "ad",
     permissions: ["SEND_MESSAGES"],
@@ -16,7 +16,7 @@ module.exports = {
             .setColor('#c30202')
             .setImage(`https://api.popcatdev.repl.co/ad?image=${avatar}`)
 
-        message.channel.send(embed)
+        message.lineReply(embed)
 
         //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotad.png" }] });
     }
