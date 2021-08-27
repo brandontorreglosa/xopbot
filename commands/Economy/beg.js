@@ -1,4 +1,5 @@
 const profileModel = require("../../models/profileSchema");
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "beg",
   permissions: ["SEND_MESSAGES"],
@@ -24,6 +25,6 @@ module.exports = {
       .setDescription(`You Begged And Got From XOPBOT **${randomNumber} Xocoins** 💸`)
       .setColor('#c30202')
 
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   },
 };

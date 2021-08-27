@@ -1,5 +1,5 @@
 const Discord = module.require("discord.js");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
    name: "channellock",
    cooldown: 10,
@@ -8,7 +8,7 @@ module.exports = {
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.members.first()
       const reason = args.slice(0).join(" ")
-      if (!reason) return message.reply({ content: "***Please Specify A Reason!***", allowedMentions: { repliedUser: true } })
+      if (!reason) return message.lineReplyNoMention({ content: "***Please Specify A Reason!***"}) //, allowedMentions: { repliedUser: true } })
 
       message.channel.overwritePermissions([
          {
@@ -21,6 +21,6 @@ module.exports = {
          .setTitle("Channel Updates")
          .setDescription(`**🔒 ${message.channel} Has Been Locked By ${message.author.username}! \n${reason}**`)
          .setColor('#c30202')
-      await message.channel.send(embed);
+      await message.lineReplyNoMention(embed);
    }
 }

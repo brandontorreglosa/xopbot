@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const errorChannel = process.env.errorChannel;
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "createtext",
     aliases: ['newtextc', 'ctextc'],
@@ -10,7 +11,7 @@ module.exports = {
         try {
             const user = message.mentions.members.first()
             if (!args[0]) {
-                return message.reply({ content: "**Please Give The Text Channel A Name!**", allowedMentions: { repliedUser: true } })
+                return message.lineReplyNoMention({ content: "**Please Give The Text Channel A Name!**" }) //, allowedMentions: { repliedUser: true } })
             }
             message.guild.channels.create(args.slice(0).join(" "), { type: "text" });
 
@@ -19,7 +20,7 @@ module.exports = {
                 .setTitle(`New Text Channel Named ${message.channel}`)
                 .setDescription(`**Channel Was Created By ${message.author.username}**`)
                 .setColor("#c30202")
-            message.channel.send(embed);
+            message.lineReplyNoMention(embed);
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
             errorlogs.send({ content: `Error On Create Text Channel Command!\n\nError:\n\n **${err}**` })

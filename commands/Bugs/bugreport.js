@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
 
         //look if there is a bug specified
         const query = args.join(' ');
-        if (!query) return message.reply({ content: '**Please Specify The Bug**', allowedMentions: { repliedUser: true } })
+        if (!query) return message.lineReplyNoMention({ content: '**Please Specify The Bug**'}) //, allowedMentions: { repliedUser: true } })
 
         //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()
@@ -23,6 +24,6 @@ module.exports = {
             .setTimestamp()
         channel.send(reportEmbed);
         //send the embed to the channel
-        message.reply({ content: "**Bug Report Has Been Sent!**", allowedMentions: { repliedUser: true } })
+        message.lineReplyNoMention({ content: "**Bug Report Has Been Sent!**"}) //, allowedMentions: { repliedUser: true } })
     }
 }

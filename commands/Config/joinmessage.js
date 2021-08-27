@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const JoinMsgSchema = require("../../models/joinmsg");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "joinmessage",
   cooldown: 10,
@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const text = args.join(" ");
     if (!args[0]) {
-      return message.channel.send({ content: `\`Usage: (prefix)joinmessage <Text|off>\`` });
+      return message.lineReplyNoMention({ content: `\`Usage: (prefix)joinmessage <Text|off>\`` });
     }
     if (text !== "off") {
       const data = await JoinMsgSchema.findOne({
@@ -26,7 +26,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send({ content: `**Join Message Set To ${newData.JoinMsg}**` });
+        message.lineReplyNoMention({ content: `**Join Message Set To ${newData.JoinMsg}**` });
 
       } else if (!data) {
 
@@ -35,7 +35,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.channel.send({ content: `**Join Message Set To ${newData.JoinMsg}**` });
+        message.lineReplyNoMention({ content: `**Join Message Set To ${newData.JoinMsg}**` });
 
       }
     } else if (text === "off") {
@@ -48,10 +48,10 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.channel.send({ content: `**Join Message Has Been Turned Off!**` });
+        return message.lineReplyNoMention({ content: `**Join Message Has Been Turned Off!**` });
 
       } else if (!data2) {
-        return message.channel.send({ content: `**Join Message Isn' Even Setup Bot!**` });
+        return message.lineReplyNoMention({ content: `**Join Message Isn' Even Setup Bot!**` });
       }
     }
   },

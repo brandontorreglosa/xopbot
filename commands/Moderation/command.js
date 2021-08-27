@@ -1,4 +1,4 @@
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'command',
     cooldown: 5,
@@ -21,7 +21,7 @@ module.exports = {
             .setImage('https://th.bing.com/th/id/R9b49851638e4bd8b010e80d0034cecd9?rik=l9sPq5ljKRkgFQ&riu=http%3a%2f%2fwww.referralcoach.com%2fwp-content%2fuploads%2f2016%2f12%2f12-15-16-Blog-Pic-1024x576.jpg&ehk=q5E2VRH4Zd1qPcJ%2buxnbVdfl5HDsDDQzsAsfYu9EzIQ%3d&risl=&pid=ImgRaw')
             .setFooter('Make Sure To Read This Rules Again Because Your Close To Getting Banned!');
 
-        message.channel.send(newEmbed);
+        message.lineReplyNoMention(newEmbed);
     }
 
 

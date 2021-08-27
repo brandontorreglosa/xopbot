@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "balance",
   permissions: ["SEND_MESSAGES"],
@@ -15,6 +16,6 @@ module.exports = {
       **💸 Wallet- ${profileData.coins} Xocoins** 
       **🏦 Bank- ${profileData.bank} Xocoins**
       `)
-    message.channel.send(newEmbed)
+    message.lineReplyNoMention(newEmbed)
   },
 };

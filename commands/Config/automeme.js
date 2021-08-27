@@ -1,5 +1,5 @@
 const got = require('got');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "automeme",
     cooldown: 300,

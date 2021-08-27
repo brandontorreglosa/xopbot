@@ -1,5 +1,5 @@
 const got = require('got');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "autonsfw",
     cooldown: 300,
@@ -9,7 +9,7 @@ module.exports = {
     description: "Sends a random nsfw image from reddit",
     async execute(client, message, cmd, args, Discord) {
 
-        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
+        if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
         message.channel.send({ content: "🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**" }).then((msg) => {
             setTimeout(function () {

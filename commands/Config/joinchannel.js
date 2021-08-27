@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const welcomeSchema = require("../../models/welcome");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "joinchannel",
   cooldown: 15,
@@ -9,7 +9,7 @@ module.exports = {
   aliases: ["jchannel", "jwelcome"],
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.channel.send({ content: `\`Usage: (prefix)joinchannel <#channel|off>\`` })
+      return message.lineReplyNoMention({ content: `\`Usage: (prefix)joinchannel <#channel|off>\`` })
     }
     if (message.mentions.channels.first()) {
       const data = await welcomeSchema.findOne({
@@ -21,7 +21,7 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.channel.send({ content: `**Join Channel Set To ${message.mentions.channels.first()}**` });
+        message.lineReplyNoMention({ content: `**Join Channel Set To ${message.mentions.channels.first()}**` });
 
         let newData = new welcomeSchema({
           Welcome: message.mentions.channels.first().id,
@@ -29,7 +29,7 @@ module.exports = {
         });
         newData.save();
       } else if (!data) {
-        message.channel.send({ content: `**Join Channel Set To ${message.mentions.channels.first()}**` });
+        message.lineReplyNoMention({ content: `**Join Channel Set To ${message.mentions.channels.first()}**` });
 
         let newData = new welcomeSchema({
           Welcome: message.mentions.channels.first().id,
@@ -47,10 +47,10 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.channel.send({ content: `**Join Channel Has Been Turned Off!**` });
+        return message.lineReplyNoMention({ content: `**Join Channel Has Been Turned Off!**` });
 
       } else if (!data2) {
-        return message.channel.send({ content: `**Join Channel Isn't Even Setup Bot!**` });
+        return message.lineReplyNoMention({ content: `**Join Channel Isn't Even Setup Bot!**` });
       }
     }
   }

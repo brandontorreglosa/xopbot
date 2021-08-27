@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const antilinkSchema = require("../../models/antilink");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "antilink",
   cooldown: 15,
@@ -8,7 +8,7 @@ module.exports = {
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.channel.send({ content: `Usage: \`(prefix)antilink <on|off>\`` })
+      return message.lineReplyNoMention({ content: `Usage: \`(prefix)antilink <on|off>\`` })
     }
     if (args[0] === "On" || args[0] === "on") {
       const data = await antilinkSchema.findOne({
@@ -20,14 +20,14 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.channel.send({ content: `**Antilink is now active!**` });
+        message.lineReplyNoMention({ content: `**Antilink is now active!**` });
 
         let newData = new antilinkSchema({
           GuildID: message.guild.id,
         });
         newData.save();
       } else if (!data) {
-        message.channel.send({ content: `**Antilink is now active**` });
+        message.lineReplyNoMention({ content: `**Antilink is now active**` });
 
         let newData = new antilinkSchema({
           GuildID: message.guild.id,
@@ -44,10 +44,10 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.channel.send({ content: `**Antilink has been turned off!**` });
+        return message.lineReplyNoMention({ content: `**Antilink has been turned off!**` });
 
       } else if (!data2) {
-        return message.channel.send({ content: `**Antilink Isn't Even Setup Bot!**` });
+        return message.lineReplyNoMention({ content: `**Antilink Isn't Even Setup Bot!**` });
       }
     }
   }

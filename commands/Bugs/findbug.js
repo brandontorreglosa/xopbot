@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'findbug',
     aliases: ['bugsearch', 'findbugs', 'fb'],
@@ -14,7 +15,7 @@ module.exports = {
         const randomNumber6 = Math.floor(Math.random() * 5) + 1; //server bugs
         const randomNumber7 = Math.floor(Math.random() * 200) + 1;//bot response bugs
 
-        message.reply({ content: `**XOPBOT Looked For Bugs On ${message.guild.name}** \nOn Bot Commands He Found **${randomNumber} Bugs** \n\On Roles He Found **${randomNumber2} Bugs** \n\On Message He Found **${randomNumber3} Bugs** \n\On Streaming He Found **${randomNumber4} Bugs** \nOn Voice He Found **${randomNumber5} Bugs** \nOn Server He Found **${randomNumber6} Bugs** \nOn Bot Response He Found **${randomNumber7} Bugs**`, allowedMentions: { repliedUser: true } });
+        message.lineReplyNoMention({ content: `**XOPBOT Looked For Bugs On ${message.guild.name}** \nOn Bot Commands He Found **${randomNumber} Bugs** \n\On Roles He Found **${randomNumber2} Bugs** \n\On Message He Found **${randomNumber3} Bugs** \n\On Streaming He Found **${randomNumber4} Bugs** \nOn Voice He Found **${randomNumber5} Bugs** \nOn Server He Found **${randomNumber6} Bugs** \nOn Bot Response He Found **${randomNumber7} Bugs**`, allowedMentions: { repliedUser: true } });
 
     }
 }

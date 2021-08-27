@@ -1,5 +1,5 @@
 const profileModel = require("../../models/profileSchema");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "work",
   aliases: [],
@@ -49,12 +49,12 @@ module.exports = {
         }
       );
 
-      message.channel.send(EMBED);
+      message.lineReplyNoMention(EMBED);
     });
 
     COLLECTOR.on("end", (collected) => {
       if (collected.size == 0) {
-        return message.channel.send({
+        return message.lineReplyNoMention({
           content:
             `**What are you doing <@${message.author.id}>?! There was ₿${RANDOM_NUMBER.toString().replace(
               /\B(?=(\d{3})+(?!\d))/g,
@@ -64,7 +64,7 @@ module.exports = {
       }
     });
 
-    message.channel.send({
+    message.lineReplyNoMention({
       content:
         `<@${message.author.id
         }>\n**What Job Would You Do?** 💰\nType The Job In This Channel.\n\`${chosenJobs.join("` `")}\``

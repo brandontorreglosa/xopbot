@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'addrole',
     cooldown: 5,
@@ -9,7 +10,7 @@ module.exports = {
             const addroleError = new Discord.MessageEmbed()
                 .setDescription(`**Please Mention A Member In Order To Give Them The Role!**`)
                 .setColor('#c30202')
-            return message.channel.send(addroleError)
+            return message.lineReplyNoMention(addroleError)
         }
         args.shift()
         let roleToGive = message.mentions.roles.first()
@@ -19,7 +20,7 @@ module.exports = {
                 .setTimestamp()
                 .setDescription(`**No Roles Provided!**`)
                 .setColor('#c30202')
-            return message.channel.send(addroleError2)
+            return message.lineReplyNoMention(addroleError2)
         }
         const mentionedPosition = member.roles.highest.position
         const selfPosition = message.member.roles.highest.position
@@ -29,14 +30,14 @@ module.exports = {
                 .setTimestamp()
                 .setDescription(`**You Cannot Add Role To ${member} As Their Role Is Higher/Equal To Yours!**`)
                 .setColor('#c30202')
-            return message.channel.send(posi)
+            return message.lineReplyNoMention(posi)
         }
         if (member.roles.cache.get(roleToGive.id)) {
             const addroleError3 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setDescription(`**${member} Already Has That Role!**`)
                 .setColor('#c30202')
-            return message.channel.send(addroleError3)
+            return message.lineReplyNoMention(addroleError3)
         }
         member.roles.add(roleToGive)
         const embed = new Discord.MessageEmbed()
@@ -46,7 +47,7 @@ module.exports = {
             .setColor("BLUE")
         // .setFooter(`Requested By: ${message.author.tag} \nIf The Role Is Higher Than The Bots Order \nThe Bot Wont Be Able To Add That Role!`, message.author.displayAvatarURL())
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
 
 
     }
