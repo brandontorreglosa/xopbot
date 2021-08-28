@@ -13,6 +13,8 @@ module.exports = {
         if (!args[0]) {
             return message.lineReplyNoMention('`(prefix)opinion <text>`')
         }
+        const text = args.slice(0).join(' ');
+        if (text.length > 45) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 45 Characters!**' })
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
