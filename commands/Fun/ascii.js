@@ -13,7 +13,7 @@ module.exports = {
 
       let text = args.join(" ");
       if (!text) {
-         return message.lineReplyNoMention({ content: `**Please Provide Text For The Ascii Conversion!**` })
+         return message.lineReplyNoMention({ content: '**`(prefix)ascii <text>`**' })
       }
       let maxlen = 20
       if (text.length > 11) {

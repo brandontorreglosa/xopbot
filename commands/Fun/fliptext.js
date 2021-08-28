@@ -10,7 +10,7 @@ module.exports = {
   type: "Fun",
   async execute(client, message, cmd, args, Discord) {
     if (args.length < 1) {
-      return message.lineReplyNoMention({ content: "**Please Enter Some Text To Flip!**" })
+      return message.lineReplyNoMention({ content: "**`(prefix)fliptext <text>`**" })
     }
     args.reverse();
     var flipped = [];

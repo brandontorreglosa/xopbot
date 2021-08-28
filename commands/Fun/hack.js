@@ -7,7 +7,7 @@ module.exports = {
   description: "Another Fun Command",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.channel.send({ content: "**Woah.... Slow Down!! Who Are We Hacking Here Mate..??**" })
+      return message.channel.send({ content: "**`(prefix)hack <@user>`**" })
     }
     const randomNumber = Math.floor(Math.random() * 500) + 1;
     const randomnumber2 = Math.floor(Math.random() * 11500) + 1;

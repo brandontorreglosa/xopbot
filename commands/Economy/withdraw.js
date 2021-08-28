@@ -9,7 +9,7 @@ module.exports = {
   description: "withdraw coins from your bank",
   async execute(client, message, cmd, args, Discord, profileData) {
     const amount = args[0];
-    if (amount % 1 != 0 || amount <= 0) return message.lineReplyNoMention({ content: "**Withdraw Amount Must Be A Whole Number!**" });
+    if (amount % 1 != 0 || amount <= 0) return message.lineReplyNoMention({ content: "**`(prefix)withdraw <number>`**" });
 
     try {
       if (amount > profileData.bank) return message.lineReplyNoMention({ content: `**You Don't Have That Amount Of Xocoins To Withdraw!**` });
