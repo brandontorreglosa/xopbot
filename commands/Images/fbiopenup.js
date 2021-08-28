@@ -10,7 +10,7 @@ module.exports = {
         try {
             const user = message.mentions.users.first()
             if (!args[0]) {
-                return message.lineReplyNoMention({ content: '**You Must Mention A User For The FBI To Get! 🤪**' }) //, allowedMentions: { repliedUser: true } })
+                return message.lineReplyNoMention({ content: '**`(prefix)fbiopenup <@user>`**' }) //, allowedMentions: { repliedUser: true } })
             }
             if (message.mentions.users.first().bot) {
                 return message.lineReplyNoMention({ content: '**You Can Not Send The FBI To Bot`s! They Will Escape 😢**' }) //, allowedMentions: { repliedUser: true } })

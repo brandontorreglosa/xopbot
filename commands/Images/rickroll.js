@@ -9,7 +9,7 @@ module.exports = {
         try {
             const user = message.mentions.users.first()
             if (!args[0]) {
-                return message.lineReplyNoMention({ content: '**You Must Mention A User To Rickroll! 🤪**' }) //, allowedMentions: { repliedUser: true } })
+                return message.lineReplyNoMention({ content: '**`(prefix)rickroll <@user>`**' }) //, allowedMentions: { repliedUser: true } })
             }
             if (message.mentions.users.first().bot) {
                 return message.lineReplyNoMention({ content: '**You Can Not Rickroll Bot`s! They Wont See It 😢**' }) //, allowedMentions: { repliedUser: true } })

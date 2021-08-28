@@ -7,7 +7,7 @@ module.exports = {
     description: 'what are you doing here?',
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**You Must Do `x!phub text1 / text2` \nYou Must Add The / For It Work!**' }) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**`(prefix)phub <text> / <text2>` \nYou Must Add The / For It Work!**' }) //, allowedMentions: { repliedUser: true } })
         }
         let splitArgs = args.join(' ').split('/');
         const text = splitArgs[0];

@@ -10,7 +10,7 @@ module.exports = {
         try {
 
             if (!args[0]) {
-                message.lineReplyNoMention({ content: "**Please Add Some Text!**" }) //, allowedMentions: { repliedUser: true } })
+                message.lineReplyNoMention({ content: "**`(prefix)water <text>`**" }) //, allowedMentions: { repliedUser: true } })
             }
 
             if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt")) {

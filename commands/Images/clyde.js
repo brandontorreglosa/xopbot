@@ -7,7 +7,7 @@ module.exports = {
   description: 'Get a custom clyde message!',
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '`Usage: (prefix)clyde <msg>`' }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: '**`(prefix)clyde <text>`**' }) //, allowedMentions: { repliedUser: true } })
     }
     let clydeMessage = args.slice(0).join(' ');
     if (clydeMessage.length > 65) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 65 Characters!**' }) //, allowedMentions: { repliedUser: true } });
