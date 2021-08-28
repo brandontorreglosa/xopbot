@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
-    name: "ad",
+    name: "opinion",
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Image Manipulation Command",
@@ -16,7 +16,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setTitle('AD')
+            .setTitle('OPINION')
             .setColor('#c30202')
             .setImage(`https://api.popcat.xyz/opinion?image=${avatar}&text=${text}`)
 
