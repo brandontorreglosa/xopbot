@@ -188,7 +188,7 @@ try {
         .setTimestamp()
         .setColor('#c30202')
         .setTitle('You Ping Me?')
-        .setDescription('***My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!***')
+        .setDescription('**My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!**')
       message.lineReplyNoMention(botembedmentioned)
     }
 
