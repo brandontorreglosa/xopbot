@@ -8,7 +8,7 @@ module.exports = {
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.members.first();
       if (!user) {
-         return message.channel.send({ content: "**You Need To Mention Someone!**"})
+         return message.lineReplyNoMention({ content: "**`(prefix)respect <@user>`**"})
       }
       var gif = [
          `https://media.tenor.com/images/0eb1f1ff68936dbde97bebfa4145e6f0/tenor.gif`,
