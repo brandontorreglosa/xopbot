@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'pgif',
     cooldown: 5,
@@ -9,24 +10,17 @@ module.exports = {
 
         var superagent = require('superagent');
 
-        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
+        if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-        var lo = new Discord.MessageEmbed()
-            .setDescription(`Sending Pgif...`)
-            .setTimestamp()
+        superagent.get('https://nekobot.xyz/api/image').query({ type: 'pgif' }).end((err, response) => {
 
-        message.channel.send(lo).then(m => {
-
-            superagent.get('https://nekobot.xyz/api/image').query({ type: 'pgif' }).end((err, response) => {
-
-                var embed_nsfw = new Discord.MessageEmbed()
-                    .setDescription(`:underage: **Porn Gif**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
-                    .setTimestamp()
-                    .setImage(response.body.message)
-                    .setFooter('Whats Better Than Porn Gifs! :)')
-                    .setColor('#c30202')
-                m.edit(embed_nsfw);
-            });
+            var embed_nsfw = new Discord.MessageEmbed()
+                .setDescription(`:underage: **Porn Gif**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
+                .setTimestamp()
+                .setImage(response.body.message)
+                .setFooter('Whats Better Than Porn Gifs! :)')
+                .setColor('#c30202')
+            message.lineReplyNoMention(embed_nsfw);
         });
     }
 }

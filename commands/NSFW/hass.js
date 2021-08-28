@@ -18,7 +18,7 @@ module.exports = {
                 .setDescription(`:underage: **Hentai Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                 .setTimestamp()
                 .setImage(response.body.message)
-                .setFooter('Nice Huh :)')
+                .setFooter('OMFG, That Anime Booty! :)')
                 .setColor('#c30202')
             message.lineReplyNoMention(embed_nsfw);
         });

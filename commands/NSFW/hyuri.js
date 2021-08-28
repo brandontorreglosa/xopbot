@@ -3,26 +3,26 @@ const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CO
 const lineReplyNoMention = require('discord-reply');
 
 module.exports = {
-      name: "sluts",
+      name: "hyuri",
       cooldown: 3,
       nsfw: true,
       permissions: ["SEND_MESSAGES"],
       category: "NSFW",
-      description: "Sends random sluts",
+      description: "Sends random yuri",
       usage: "[command]",
       async execute(client, message, cmd, args, Discord) {
 
             if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-            got('https://www.reddit.com/r/sluts/random.json').then(response => {
+            got('https://www.reddit.com/r/yuri/random.json').then(response => {
                   let content = JSON.parse(response.body);
                   var title = content[0].data.children[0].data.title;
                   var amazeme = content[0].data.children[0].data.url;
                   let wow = new discord.MessageEmbed()
                         .setTimestamp()
-                        .setDescription(`:underage: **Sluts**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
+                        .setDescription(`:underage: **Hentai Yuri**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                         .setImage(amazeme)
-                        .setFooter(`You Sluts Do Anything For A Dick! :)`)
+                        .setFooter(`Girls On Girls But In Anime! :)`)
                         .setColor('#c30202')
                   message.lineReplyNoMention(wow)
             })

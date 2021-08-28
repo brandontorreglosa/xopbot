@@ -3,7 +3,7 @@ const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CO
 const lineReplyNoMention = require('discord-reply');
 
 module.exports = {
-      name: "cowgirl",
+      name: "hcowgirl",
       nsfw: true,
       cooldown: 3,
       permissions: ["SEND_MESSAGES"],
@@ -20,7 +20,7 @@ module.exports = {
                   var amazeme = content[0].data.children[0].data.url;
                   let wow = new discord.MessageEmbed()
                         .setTimestamp()
-                        .setDescription(`:underage: **Cowgirl**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
+                        .setDescription(`:underage: **Hentai Cowgirl**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                         .setImage(amazeme)
                         .setFooter(`Moo! Can I Have Some Milk! :)`)
                         .setColor('#c30202')
