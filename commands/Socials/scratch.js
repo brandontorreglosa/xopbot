@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'scratch',
     cooldown: 3,
@@ -12,6 +13,6 @@ module.exports = {
             .addField(
                 { name: 'Scratch Link', value: '[Click Here](https://scratch.mit.edu/users/COOLBLUEINKLINGTM/)' }
             )
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     }
 }

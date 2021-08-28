@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'amino',
     cooldown: 2,
@@ -12,6 +13,6 @@ module.exports = {
             .addField(
                 { name: 'Amino Link', value: '[Click Here](https://aminoapps.com/c/splatoon/page/user/hackerpro-tm-sc/065i_afjvjXqMXB1d68dB0Y5oqM8pnB)' }
             )
-        message.channel.send(amino);
+        message.lineReplyNoMention(amino);
     }
 }

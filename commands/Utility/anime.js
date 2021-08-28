@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "anime",
   permissions: ["SEND_MESSAGES"],
@@ -12,10 +12,10 @@ module.exports = {
 
     if (!args.length) {
 
-      return message.channel.send({ content: "**Please Give Anime Name For XOPBOT To Find!**" })
+      return message.lineReplyNoMention({ content: "**`(prefix)anime <animename>`**" })
 
     }
-    await message.channel.send({ content: "Loading Anime...." })
+    await message.lineReplyNoMention({ content: "**Loading Anime....**" })
 
     try {
 
@@ -36,11 +36,11 @@ module.exports = {
       //.setImage(body.data[0].attributes.coverImage.large)
 
       //try it
-      message.channel.send(embed)
+      message.lineReplyNoMention(embed)
     } catch (err) {
 
 
-      return message.channel.send({ content: "**XOPBOT Was Unable To Find This Anime!**" });
+      return message.lineReplyNoMention({ content: "**XOPBOT Was Unable To Find This Anime Series!**" });
 
     }
 

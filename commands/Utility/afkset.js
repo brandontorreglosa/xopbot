@@ -1,5 +1,5 @@
 const quick = require('quick.db');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'afkset',
   cooldown: 5,
@@ -17,12 +17,12 @@ module.exports = {
     message.member
       .setNickname(`[AFK] ${message.member.displayName.replace('[AFK]', '')}`)
       .then(() => {
-        return message.reply({ content: `**Status Succesfully Has Been Set To AFK.**`, allowedMentions: { repliedUser: true } });
+        return message.lineReplyNoMention({ content: `**Status Succesfully Has Been Set To AFK.**`}) //, allowedMentions: { repliedUser: true } });
       })
 
       .catch(_e => {
         quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-        return message.channel.send({ content: '**Failed To Set Your Status Due To Very High Role Try Demoting.**' });
+        return message.lineReplyNoMention({ content: '**Failed To Set Your Status Due To Very High Role Try Demoting.**' });
       });
   },
 };

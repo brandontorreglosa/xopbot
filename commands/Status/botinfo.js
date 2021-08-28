@@ -1,4 +1,4 @@
-
+const lineReplyNoMention = require('discord-reply');
 const os = require('os')
 
 module.exports = {
@@ -83,6 +83,6 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        await message.channel.send(embed)
+        await message.lineReplyNoMention(embed)
     }
 }

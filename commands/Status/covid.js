@@ -1,6 +1,7 @@
 const axios = require('axios');
 const { MessageEmbed } = require('discord.js')
 
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "covid",
     cooldown: 3,
@@ -16,7 +17,7 @@ module.exports = {
             response = await axios.get(url)
             corona = response.data
         } catch (error) {
-            return message.channel.send({ content: `***${args[0]} Doesn't Exist, Or Data Isn't eing collected***` })
+            return message.lineReplyNoMention({ content: '**`(prefix)covid <country>`**' })
         }
 
         const embed = new MessageEmbed()
@@ -66,6 +67,6 @@ module.exports = {
                     inline: true
                 })
 
-        await message.channel.send(embed)
+        await message.lineReplyNoMention(embed)
     }
 };

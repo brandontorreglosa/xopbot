@@ -1,3 +1,4 @@
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "ticket",
   cooldown: 10,
@@ -5,20 +6,20 @@ module.exports = {
   permissions: ["SEND_MESSAGES"],
   description: "open a ticket!",
   async execute(client, message, cmd, args, Discord) {
-    
+
     if (cmd === 'ticket-set') {
       message.guild.channels.create("Tickets", {
         type: "category",
         topic: "All the mail will be here :D",
       })
-      message.channel.send({ content: '**Ticket`s Category Is Now Setup! 😃**' })
+      message.lineReplyNoMention({ content: '**Ticket`s Category Is Now Setup! 😃**' })
     }
 
     else if (cmd === 'ticket') {
       const category = message.guild.channels.cache.find((x) => x.name == "Tickets")
 
       if (!category) {
-        return message.channel.send({ content: "**XOPBOT Ticket System Not Setup! Do `(prefix)ticket-set`**" })
+        return message.lineReplyNoMention({ content: "**XOPBOT Ticket System Not Setup! Do `(prefix)ticket-set`**" })
       }
 
       const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`, {
@@ -64,15 +65,15 @@ module.exports = {
       });
 
       const embed101 = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle(`${message.author.username}`)
-      .setDescription(`We Will Be Right With You! ${channel}`)
+        .setTimestamp()
+        .setTitle(`${message.author.username}`)
+        .setDescription(`We Will Be Right With You! ${channel}`)
 
-      message.channel
-        .send(embed101)
+      message
+        .lineReplyNoMention(embed101)
         .then(() => {
           setTimeout(() => message.delete(), 7000);
-         // setTimeout(() => message.delete(), 3000);
+          // setTimeout(() => message.delete(), 3000);
         })
         .catch((err) => {
           throw err;

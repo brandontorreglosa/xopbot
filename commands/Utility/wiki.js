@@ -1,5 +1,5 @@
 const Discord = module.require("discord.js");
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "wiki",
     cooldown: 5,
@@ -9,7 +9,7 @@ module.exports = {
         const search = args.join("_");
         const msg = args.join(" ");
         if (!msg) {
-            return message.channel.send({ content: "**You Need To Enter Some Text to Search For!**" })
+            return message.lineReplyNoMention({ content: "**`(prefix)wiki <search>`**" })
         }
         const link = `https://www.wikipedia.org/w/index.php?search=${search}&ns0=1`;
         const embed = new Discord.MessageEmbed()
@@ -19,6 +19,6 @@ module.exports = {
             .addField(`Results:`, `[Here's What I Found](${link})`)
             .setColor('#c30202')
 
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     }
 }

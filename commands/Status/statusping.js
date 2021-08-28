@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const quick = require('quick.db');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'statusping',
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +10,6 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const ping = await getDBPingData();
     const messagePing = Date.now();
-    const msg = await message.channel.send({ content: 'Loading...' });
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed()
       .setTitle('🏓 Pong!')
@@ -27,11 +26,8 @@ module.exports = {
       .setColor('#c30202')
       .setTimestamp();
 
-    msg.edit({
-      content: '',
-      embed,
-    });
-},
+    message.lineReplyNoMention(embed)
+  },
 };
 
 async function getDBPingData() {

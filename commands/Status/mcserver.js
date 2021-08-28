@@ -1,5 +1,5 @@
 const util = require('minecraft-server-util');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'mcserver',
     permissions: ["SEND_MESSAGES"],
@@ -7,8 +7,8 @@ module.exports = {
     cooldown: 5,
     description: 'get information about a minecraft server',
     execute(client, message, cmd, args, Discord) {
-        if (!args[0]) return message.channel.send({ content: '**Please Enter A Minecraft Server Ip \nDont Know? Visit: https://minecraftservers.org/**' });
-        if (!args[1]) return message.channel.send({ content: '**Please Enter A Minecraft Server Port \nDont Know? Visit: https://minecraftservers.org/**' });
+        if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)mcserver <serverip>` \nDont Know? Visit: https://minecraftservers.org/**' });
+        if (!args[1]) return message.lineReplyNoMention({ content: '**Please Add `<serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
 
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
             console.log(response);
@@ -24,10 +24,10 @@ module.exports = {
                 )
                 .setFooter('MC Server By Bot Developer Team');
 
-            message.channel.send(embed);
+            message.lineReplyNoMention(embed);
         })
             .catch((error) => {
-                message.channel.send({ content: '**There Was An Error Finding This Server**' });
+                message.lineReplyNoMention({ content: '**There Was An Error Finding This Server**' });
                 throw error;
             })
     }

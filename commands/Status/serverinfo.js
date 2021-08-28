@@ -1,5 +1,6 @@
 const errorChannel = process.env.errorChannel;
 const moment = require("moment");
+const lineReplyNoMention = require('discord-reply');
 
 module.exports = {
   name: 'serverinfo',
@@ -33,7 +34,7 @@ module.exports = {
         .setColor("#c30202")
         .setTimestamp();
 
-      message.channel.send(serverembed);
+      message.lineReplyNoMention(serverembed);
 
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel)
