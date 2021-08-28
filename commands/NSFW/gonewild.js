@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'gonewild',
     cooldown: 3,
@@ -8,25 +9,18 @@ module.exports = {
 
         var superagent = require('superagent');
 
-        if (!message.channel.nsfw) return message.channel.send({ content: '**This Is Not A NSFW Channel! 🔞**' })
+        if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-        var lo = new Discord.MessageEmbed()
-            .setDescription(`Sending Gonewild...`)
-            .setTimestamp()
+        superagent.get('https://nekobot.xyz/api/image').query({ type: 'gonewild' }).end((err, response) => {
 
-        message.channel.send(lo).then(m => {
+            var embed_nsfw = new Discord.MessageEmbed()
+                .setColor('#c30202')
+                .setDescription(`:underage: **Gonewild Porn**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
+                .setTimestamp()
+                .setImage(response.body.message)
+                .setFooter('Hoes Went Crazy! :)')
 
-            superagent.get('https://nekobot.xyz/api/image').query({ type: 'gonewild' }).end((err, response) => {
-
-                var embed_nsfw = new Discord.MessageEmbed()
-                    .setColor('#c30202')
-                    .setDescription(`:underage: **Gonewild Porn**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
-                    .setTimestamp()
-                    .setImage(response.body.message)
-                    .setFooter('Hoes Went Crazy! :)')
-
-                m.edit(embed_nsfw);
-            });
+            message.lineReplyNoMention(embed_nsfw);
         });
     }
 }

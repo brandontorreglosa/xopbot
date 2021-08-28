@@ -15,17 +15,17 @@ module.exports = {
 
             if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-                  got('https://www.reddit.com/r/BigAss/random.json').then(response => {
-                        let content = JSON.parse(response.body);
-                        var title = content[0].data.children[0].data.title;
-                        var amazeme = content[0].data.children[0].data.url;
-                        let wow = new discord.MessageEmbed()
-                              .setTimestamp()
-                              .setDescription(`:underage: **Big Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
-                              .setImage(amazeme)
-                              .setFooter(`Give Me Those Huge Balloons! :)`)
-                              .setColor('#c30202')
-                        message.lineReplyNoMention(wow)
-                  })
+            got('https://www.reddit.com/r/BigAss/random.json').then(response => {
+                  let content = JSON.parse(response.body);
+                  var title = content[0].data.children[0].data.title;
+                  var amazeme = content[0].data.children[0].data.url;
+                  let wow = new discord.MessageEmbed()
+                        .setTimestamp()
+                        .setDescription(`:underage: **Big Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
+                        .setImage(amazeme)
+                        .setFooter(`Give Me Those Huge Balloons! :)`)
+                        .setColor('#c30202')
+                  message.lineReplyNoMention(wow)
+            })
       }
 }

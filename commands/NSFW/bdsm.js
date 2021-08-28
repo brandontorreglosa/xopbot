@@ -14,17 +14,17 @@ module.exports = {
 
             if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-                  got('https://www.reddit.com/r/bdsm/random.json').then(response => {
-                        let content = JSON.parse(response.body);
-                        var title = content[0].data.children[0].data.title;
-                        var amazeme = content[0].data.children[0].data.url;
-                        let wow = new discord.MessageEmbed()
-                              .setTimestamp()
-                              .setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
-                              .setImage(amazeme)
-                              .setFooter(`I Love Tying Hoes! :)`)
-                              .setColor('#c30202')
-                        message.lineReplyNoMention(wow)
-                  })
+            got('https://www.reddit.com/r/bdsm/random.json').then(response => {
+                  let content = JSON.parse(response.body);
+                  var title = content[0].data.children[0].data.title;
+                  var amazeme = content[0].data.children[0].data.url;
+                  let wow = new discord.MessageEmbed()
+                        .setTimestamp()
+                        .setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
+                        .setImage(amazeme)
+                        .setFooter(`I Love Tying Hoes! :)`)
+                        .setColor('#c30202')
+                  message.lineReplyNoMention(wow)
+            })
       }
 }

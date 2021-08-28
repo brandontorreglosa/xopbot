@@ -1,5 +1,5 @@
 const weather = require('weather-js');
-
+const lineReplyNoMention = require('discord-reply');
 const Discord = require('discord.js');
 
 module.exports = {
@@ -12,10 +12,10 @@ module.exports = {
 
         weather.find({ search: args.join(" "), degreeType: 'F' }, function (error, result) {
             // 'C' can be changed to 'F' for farneheit results
-            if (error) return message.channel.send({ content: error });
-            if (!args[0]) return message.channel.send({ content: '**Please Specify A Location!**' })
+            if (error) return message.lineReplyNoMention({ content: error });
+            if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)weather <location>`**' })
 
-            if (result === undefined || result.length === 0) return message.channel.send({ content: '**Invalid** Location!' });
+            if (result === undefined || result.length === 0) return message.lineReplyNoMention({ content: '**Invalid** Location!' });
 
             var current = result[0].current;
             var location = result[0].location;
@@ -34,7 +34,7 @@ module.exports = {
                 .addField('Humidity', `${current.humidity}%`, true)
 
 
-            message.channel.send(weatherinfo)
+            message.lineReplyNoMention(weatherinfo)
         })
     }
 }

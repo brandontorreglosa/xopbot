@@ -1,6 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
-
+const lineReplyNoMention = require('discord-reply');
 
 const queue = new Map();
 
@@ -13,13 +13,13 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         const voice_channel = message.member.voice.channel;
-        if (!voice_channel) return message.channel.send({ content: '***You Need To Be In A Voice Channel To Execute This Command!***' });
+        if (!voice_channel) return message.lineReplyNoMention({ content: '***You Need To Be In A Voice Channel To Execute This Command!***' });
 
         const server_queue = queue.get(message.guild.id);
 
 
         if (cmd === 'play') {
-            if (!args.length) return message.channel.send({ content: '***You Need To Send The Second Argument!***' });
+            if (!args.length) return message.lineReplyNoMention({ content: '***You Need To Send The Second Argument!***' });
             let song = {};
 
 
@@ -37,7 +37,7 @@ module.exports = {
                 if (video) {
                     song = { title: video.title, url: video.url }
                 } else {
-                    message.channel.send({ content: '***Error Finding Video.***' });
+                    message.lineReplyNoMention({ content: '***Error Finding Video.***' });
                 }
             }
 
@@ -64,12 +64,12 @@ module.exports = {
                     video_player(message.guild, queue_constructor.songs[0]);
                 } catch (err) {
                     queue.delete(message.guild.id);
-                    message.channel.send({ content: '***There Was An Error Connecting!***' });
+                    message.lineReplyNoMention({ content: '***There Was An Error Connecting!***' });
                     throw err;
                 }
             } else {
                 server_queue.songs.push(song);
-                return message.channel.send({ content: `🎶 **${song.title}** Added To Queue!` });
+                return message.lineReplyNoMention({ content: `🎶 **${song.title}** Added To Queue!` });
             }
         }
 
@@ -102,32 +102,32 @@ const video_player = async (guild, song) => {
 }
 
 const skip_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.channel.send({ content: '***You Need To Be In A Voice Channel To Execute This Command!***' });
+    if (!message.member.voice.channel) return message.lineReplyNoMention({ content: '***You Need To Be In A Voice Channel To Execute This Command!***' });
     if (!server_queue) {
-        return message.channel.send({ content: `***There Are No Songs In Queue 🎶***` });
+        return message.lineReplyNoMention({ content: `***There Are No Songs In Queue 🎶***` });
     }
     server_queue.connection.dispatcher.end();
 }
 
 const stop_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.channel.send({ content: '***You Need To Be In A Voice Channel To Execute This Command!***' });
+    if (!message.member.voice.channel) return message.lineReplyNoMention({ content: '***You Need To Be In A Voice Channel To Execute This Command!***' });
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
-    message.channel.send({ content: "***XOPBOT Is Leaving Voice Channel 😭***" })
+    message.lineReplyNoMention({ content: "***XOPBOT Is Leaving Voice Channel 😭***" })
 }
 
 
 const pause_song = (message, server_queue) => {
-    if (server_queue.connection.dispatcher.paused) return message.channel.send({ content: "***Song Has Already Been Paused!***" });
+    if (server_queue.connection.dispatcher.paused) return message.lineReplyNoMention({ content: "***Song Has Already Been Paused!***" });
     server_queue.connection.dispatcher.pause();
-    message.channel.send({ content: "***⏸ Paused The Music For You!***" });
+    message.lineReplyNoMention({ content: "***⏸ Paused The Music For You!***" });
 }
 
 
 const unpause_song = (message, server_queue) => {
-    if (!server_queue.connection.dispatcher.paused) return message.channel.send({ content: "***Song Isn't Paused Yet!***" });
+    if (!server_queue.connection.dispatcher.paused) return message.lineReplyNoMention({ content: "***Song Isn't Paused Yet!***" });
     server_queue.connection.dispatcher.resume();
-    message.channel.send({ content: "***▶ Resumed The Music For You!***" });
+    message.lineReplyNoMention({ content: "***▶ Resumed The Music For You!***" });
 }
 
 //   const volume_song = (message, server_queue) => {

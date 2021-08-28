@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "oldmeme",
     permissions: ["SEND_MESSAGES"],
@@ -13,7 +13,7 @@ module.exports = {
             response = await axios.get(url);
             data = response.data;
         } catch (e) {
-            return message.channel.send({ content: `**An Error Has Occured, Try Again!**` })
+            return message.lineReplyNoMention({ content: `**An Error Has Occured, Try Again!**` })
         }
 
         const embed = new Discord.MessageEmbed()
@@ -23,6 +23,6 @@ module.exports = {
             .setColor('#f3f3f3')
             .setImage(`${data.image}`)
 
-        await message.channel.send(embed)
+        await message.lineReplyNoMention(embed)
     }
 }

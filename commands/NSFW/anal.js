@@ -11,16 +11,16 @@ module.exports = {
 
         if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-            superagent.get('https://nekobot.xyz/api/image').query({ type: 'anal' }).end((err, response) => {
+        superagent.get('https://nekobot.xyz/api/image').query({ type: 'anal' }).end((err, response) => {
 
-                var embed_nsfw = new Discord.MessageEmbed()
-                    .setColor('#c30202')
-                    .setDescription(`:underage: **Anal**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
-                    .setTimestamp()
-                    .setImage(response.body.message)
-                    .setFooter('Anal Fucking Is Great! :)')
+            var embed_nsfw = new Discord.MessageEmbed()
+                .setColor('#c30202')
+                .setDescription(`:underage: **Anal**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
+                .setTimestamp()
+                .setImage(response.body.message)
+                .setFooter('Anal Fucking Is Great! :)')
 
-                message.lineReplyNoMention(embed_nsfw);
-            });
+            message.lineReplyNoMention(embed_nsfw);
+        });
     }
 }

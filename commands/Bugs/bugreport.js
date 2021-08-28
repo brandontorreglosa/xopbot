@@ -11,7 +11,7 @@ module.exports = {
 
         //look if there is a bug specified
         const query = args.join(' ');
-        if (!query) return message.lineReplyNoMention({ content: '**Please Specify The Bug**'}) //, allowedMentions: { repliedUser: true } })
+        if (!query) return message.lineReplyNoMention({ content: '**(prefix)bugreport <bug>**'}) //, allowedMentions: { repliedUser: true } })
 
         //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()

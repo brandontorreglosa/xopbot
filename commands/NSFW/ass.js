@@ -12,16 +12,16 @@ module.exports = {
 
         if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-            superagent.get('https://nekobot.xyz/api/image').query({ type: 'ass' }).end((err, response) => {
+        superagent.get('https://nekobot.xyz/api/image').query({ type: 'ass' }).end((err, response) => {
 
-                var embed_nsfw = new Discord.MessageEmbed()
-                    .setColor('#c30202')
-                    .setDescription(`:underage: **Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
-                    .setTimestamp()
-                    .setImage(response.body.message)
-                    .setFooter('Nice Juicy Ass! :)')
+            var embed_nsfw = new Discord.MessageEmbed()
+                .setColor('#c30202')
+                .setDescription(`:underage: **Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
+                .setTimestamp()
+                .setImage(response.body.message)
+                .setFooter('Nice Juicy Ass! :)')
 
-                message.lineReplyNoMention(embed_nsfw);
-            });
+            message.lineReplyNoMention(embed_nsfw);
+        });
     }
 }

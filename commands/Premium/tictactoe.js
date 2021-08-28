@@ -1,5 +1,5 @@
 const { tictactoe } = require('reconlx')
-
+const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'tictactoe',
     cooldown: 10,
@@ -7,7 +7,7 @@ module.exports = {
     premium: true,
     async execute(client, message, cmd, args, Discord) {
         const member = message.mentions.members.first()
-        if (!member) return message.channel.send({ content: '***Please Specify A Member!***' })
+        if (!member) return message.lineReplyNoMention({ content: '**`(prefix)tictactoe <@member>`**' })
 
         new tictactoe({
             player_two: member,
