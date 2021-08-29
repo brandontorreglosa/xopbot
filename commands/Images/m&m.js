@@ -12,14 +12,14 @@ module.exports = {
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('M&M')
-            .setColor('#c30202')
-            .setImage(`https://api.popcat.xyz/mnm?image=${avatar}`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('M&M')
+        //     .setColor('#c30202')
+        //     .setImage(`https://api.popcat.xyz/mnm?image=${avatar}`)
 
-        message.lineReplyNoMention(embed)
+        // message.lineReplyNoMention(embed)
 
-        //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/mnm?image=${avatar}`, name: "xopbotm&m.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/mnm?image=${avatar}`, name: "xopbotm&m.png" }] });
     }
 }

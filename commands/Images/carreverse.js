@@ -13,14 +13,14 @@ module.exports = {
         }
         if (text.length > 15) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 15 Characters!**' }) //, allowedMentions: { repliedUser: true }});
 
-    const embed = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setTitle('CARREVERSE')
-        .setColor('#c30202')
-        .setImage(`https://vacefron.nl/api/carreverse?text=${text}`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('CARREVERSE')
+        //     .setColor('#c30202')
+        //     .setImage(`https://vacefron.nl/api/carreverse?text=${text}`)
 
-        message.lineReplyNoMention(embed)
+        //     message.lineReplyNoMention(embed)
 
-    message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/carreverse?text=${text}`, name: "carreverse.png" }] });
-}
+        message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/carreverse?text=${text}`, name: "xopbotcarreverse.png" }] });
+    }
 }

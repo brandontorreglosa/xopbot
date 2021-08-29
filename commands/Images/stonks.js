@@ -10,14 +10,14 @@ module.exports = {
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('STONKS')
-            .setColor('#c30202')
-            .setImage(`https://vacefron.nl/api/stonks?user=${avatar}&nostonks=BOOL`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('STONKS')
+        //     .setColor('#c30202')
+        //     .setImage(`https://vacefron.nl/api/stonks?user=${avatar}&nostonks=BOOL`)
 
-        message.lineReplyNoMention(embed)
+        // message.lineReplyNoMention(embed)
 
-        //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/stonks?user=${avatar}&nostonks=BOOL`, name: "xopbotstonks.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/stonks?user=${avatar}&nostonks=BOOL`, name: "xopbotstonks.png" }] });
     }
 }

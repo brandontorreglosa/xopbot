@@ -10,6 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const ping = await getDBPingData();
     const messagePing = Date.now();
+    const msg = await message.lineReplyNoMention({ content: 'Loading...' });
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed()
       .setTitle('🏓 Pong!')
@@ -26,7 +27,10 @@ module.exports = {
       .setColor('#c30202')
       .setTimestamp();
 
-    message.lineReplyNoMention(embed)
+    msg.edit({
+      content: '',
+      embed,
+    });
   },
 };
 

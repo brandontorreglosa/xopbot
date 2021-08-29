@@ -21,6 +21,6 @@ module.exports = {
 
         // message.lineReplyNoMention(embed)
 
-        message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/changemymind?text=${text}`, name: "changemymind.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/changemymind?text=${text}`, name: "xopbotchangemymind.png" }] });
     }
 }

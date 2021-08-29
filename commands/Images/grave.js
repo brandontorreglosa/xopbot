@@ -9,14 +9,14 @@ module.exports = {
     const mention = message.mentions.members.first() || message.member;
     const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle('GRAVE')
-      .setColor('#c30202')
-      .setImage(`https://vacefron.nl/api/grave?user=${avatar}`)
+    // const embed = new Discord.MessageEmbed()
+    //   .setTimestamp()
+    //   .setTitle('GRAVE')
+    //   .setColor('#c30202')
+    //   .setImage(`https://vacefron.nl/api/grave?user=${avatar}`)
 
-    message.lineReplyNoMention(embed)
+    // message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/grave?user=${avatar}`, name: "xopbotgrave.png" }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/grave?user=${avatar}`, name: "xopbotgrave.png" }] });
   }
 }

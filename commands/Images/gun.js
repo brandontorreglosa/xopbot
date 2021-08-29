@@ -10,14 +10,14 @@ module.exports = {
         const mention = message.mentions.members.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('GUN')
-            .setColor('#c30202')
-            .setImage(`https://api.popcat.xyz/gun?image=${avatar}`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('GUN')
+        //     .setColor('#c30202')
+        //     .setImage(`https://api.popcat.xyz/gun?image=${avatar}`)
 
-        message.lineReplyNoMention(embed)
+        // message.lineReplyNoMention(embed)
 
-        //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotad.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotad.png" }] });
     }
 }
