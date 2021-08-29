@@ -12,14 +12,14 @@ module.exports = {
     let pikachuMessage = args.slice(0).join(' ');
     if (pikachuMessage.length > 35) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 35 Characters!**' }) //, allowedMentions: { repliedUser: true } });
 
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle('PIKACHU')
-      .setColor('#c30202')
-      .setImage(`https://api.popcat.xyz/pikachu?text=${pikachuMessage}`)
+    // const embed = new Discord.MessageEmbed()
+    //   .setTimestamp()
+    //   .setTitle('PIKACHU')
+    //   .setColor('#c30202')
+    //   .setImage(`https://api.popcat.xyz/pikachu?text=${pikachuMessage}`)
 
-    message.lineReplyNoMention(embed)
+    // message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/pikachu?text=${pikachuMessage}`, name: 'xopbotpikachu.jpg' }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/pikachu?text=${pikachuMessage}`, name: 'xopbotpikachu.jpg' }] });
   }
 }

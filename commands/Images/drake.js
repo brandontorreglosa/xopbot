@@ -22,14 +22,14 @@ module.exports = {
         }
         if (text2.length > 70) return message.lineReplyNoMention({ content: `**You Cant Go Over 70 Characters!**` }) //, allowedMentions: { repliedUser: true }})
 
-    const embed = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setTitle('DRAKE')
-        .setColor('#c30202')
-        .setImage(`https://api.popcat.xyz/drake?text1=${text}&text2=${text2}`)
+    // const embed = new Discord.MessageEmbed()
+    //     .setTimestamp()
+    //     .setTitle('DRAKE')
+    //     .setColor('#c30202')
+    //     .setImage(`https://api.popcat.xyz/drake?text1=${text}&text2=${text2}`)
 
-        message.lineReplyNoMention(embed)
+    //     message.lineReplyNoMention(embed)
 
-    // message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
 }
 }

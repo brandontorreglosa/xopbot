@@ -22,15 +22,13 @@ module.exports = {
         }
         if (text2.length > 70) return message.lineReplyNoMention({ content: `**You Cant Go Over 70 Characters!**` }) //, allowedMentions: { repliedUser: true }})
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('PHUB')
-            .setColor('#c30202')
-            .setImage(`https://api.alexflipnote.dev/pornhub?text=${text}&text2=${text2}`)
+        const image = await Canvas.phub({
+            username: member,
+            message: bidenMessage,
+            image: avatar,
+        });
 
-        message.lineReplyNoMention(embed)
-
-        // const attachment = new Discord.MessageAttachment(image, "phub.png");
-        // return message.channel.send({ files: [{ attachment: image }] });
+        const attachment = new Discord.MessageAttachment(image, "xopbotphub.png");
+        return message.channel.send({ files: [{ attachment: image }] });
     }
 }

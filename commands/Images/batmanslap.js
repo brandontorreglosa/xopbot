@@ -30,14 +30,14 @@ module.exports = {
         }
         if (text2.length > 50) return message.lineReplyNoMention({ content: `**You Cant Go Over 50 Characters!**` }) //, allowedMentions: { repliedUser: true } })
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('BATMANSLAP')
-            .setColor('#c30202')
-            .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=${xopbot}`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('BATMANSLAP')
+        //     .setColor('#c30202')
+        //     .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=${xopbot}`)
 
-        message.lineReplyNoMention(embed)
+        // message.lineReplyNoMention(embed)
 
-        //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=https://cdn.discordapp.com/avatars/831824859066925087/be9c11f1817e227ac146cbacd0660aac.webp`, name: "xopbotbatmanslap.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=${xopbot}`, name: "xopbotbatmanslap.png" }] });
     }
 }

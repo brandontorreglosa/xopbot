@@ -16,14 +16,14 @@ module.exports = {
         const text = args.slice(0).join(' ');
         if (text.length > 45) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 45 Characters!**' })
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('OPINION')
-            .setColor('#c30202')
-            .setImage(`https://api.popcat.xyz/opinion?image=${avatar}&text=${text}`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('OPINION')
+        //     .setColor('#c30202')
+        //     .setImage(`https://api.popcat.xyz/opinion?image=${avatar}&text=${text}`)
 
-        message.lineReplyNoMention(embed)
+        // message.lineReplyNoMention(embed)
 
-        //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotad.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/ad?image=${avatar}`, name: "xopbotopinion.png" }] });
     }
 }

@@ -21,6 +21,6 @@ module.exports = {
 
         message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/carreverse?text=${text}`, name: "carreverse.png" }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/carreverse?text=${text}`, name: "carreverse.png" }] });
 }
 }

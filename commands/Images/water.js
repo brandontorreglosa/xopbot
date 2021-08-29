@@ -21,15 +21,15 @@ module.exports = {
             let sayMessage = args.slice(0).join(' ');
         if (sayMessage.length > 50) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 50 Characters!**'}) //, allowedMentions: { repliedUser: true } });
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle('WATER')
-            .setColor('#c30202')
-            .setImage(`https://vacefron.nl/api/water?text=${sayMessage}`)
+        // const embed = new Discord.MessageEmbed()
+        //     .setTimestamp()
+        //     .setTitle('WATER')
+        //     .setColor('#c30202')
+        //     .setImage(`https://vacefron.nl/api/water?text=${sayMessage}`)
 
-        message.lineReplyNoMention(embed)
+        // message.lineReplyNoMention(embed)
 
-        //message.channel.send({ files: [{ attachment: `https://vacefron.nl/api/water?text=${sayMessage}`, name: "xopbotwater.png" }] });
+        message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/water?text=${sayMessage}`, name: "xopbotwater.png" }] });
     } catch(err) {
         const errorlogs = client.channels.cache.get(errorChannel)
         errorlogs.send({ content: `**Error On Water Command!\n\nError:\n\n ${err}**` })

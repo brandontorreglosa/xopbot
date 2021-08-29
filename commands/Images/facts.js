@@ -12,14 +12,14 @@ module.exports = {
     let factsMessage = args.slice(0).join(' ');
     if (factsMessage.length > 25) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 25 Characters!**' }) //, allowedMentions: { repliedUser: true } });
 
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle('FACTS')
-      .setColor('#c30202')
-      .setImage(`https://api.popcat.xyz/facts?text=${factsMessage}`)
+    // const embed = new Discord.MessageEmbed()
+    //   .setTimestamp()
+    //   .setTitle('FACTS')
+    //   .setColor('#c30202')
+    //   .setImage(`https://api.popcat.xyz/facts?text=${factsMessage}`)
 
-    message.lineReplyNoMention(embed)
+    // message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
   }
 }

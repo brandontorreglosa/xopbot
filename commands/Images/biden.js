@@ -12,14 +12,14 @@ module.exports = {
     let bidenMessage = args.slice(0).join(' ');
     if (bidenMessage.length > 65) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 65 Characters!**' }) //, allowedMentions: { repliedUser: true } });
 
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle('BIDEN')
-      .setColor('#c30202')
-      .setImage(`https://api.popcat.xyz/biden?text=${bidenMessage}`)
+    // const embed = new Discord.MessageEmbed()
+    //   .setTimestamp()
+    //   .setTitle('BIDEN')
+    //   .setColor('#c30202')
+    //   .setImage(`https://api.popcat.xyz/biden?text=${bidenMessage}`)
 
-    message.lineReplyNoMention(embed)
+    // message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/biden?text=${bidenMessage}`, name: 'xopbotbiden.jpg' }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/biden?text=${bidenMessage}`, name: 'xopbotbiden.jpg' }] });
   }
 }

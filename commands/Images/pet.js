@@ -11,14 +11,14 @@ module.exports = {
     const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
 
 
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle('PET')
-      .setColor('#c30202')
-      .setImage(`https://api.popcat.xyz/pet?image=${avatar}`)
+    // const embed = new Discord.MessageEmbed()
+    //   .setTimestamp()
+    //   .setTitle('PET')
+    //   .setColor('#c30202')
+    //   .setImage(`https://api.popcat.xyz/pet?image=${avatar}`)
 
-    message.lineReplyNoMention(embed)
+    // message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/pet?image=${avatar}`, name: "xopbotpet.gif" }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/pet?image=${avatar}`, name: "xopbotpet.gif" }] });
   }
 }
