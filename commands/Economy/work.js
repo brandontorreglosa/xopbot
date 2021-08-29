@@ -28,7 +28,7 @@ module.exports = {
       return chosenJobs.some((answer) => answer.toLowerCase() === m.content.toLowerCase()) && m.author.id === message.author.id;
     };
 
-    const COLLECTOR = message.channel.createMessageCollector({ FILTER, max: 1, time: 15000 });
+    const COLLECTOR = message.channel.createMessageCollector(FILTER, { max: 1, time: 15000 });
 
     COLLECTOR.on("collect", async (m) => {
       const EMBED = new Discord.MessageEmbed()
