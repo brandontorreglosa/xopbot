@@ -7,7 +7,7 @@ module.exports = {
   permissions: [],
   description: "Check the user balance",
   execute(client, message, cmd, args, Discord, profileData) {
-    const user = message.mentions.members.first() || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.displayName.toLowerCase() === args.join(" ").toLowerCase()) || message.member
+    const user = message.author;
     const newEmbed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${user.user.username} Balance`, user.user.displayAvatarURL({ dynamic: true }))
