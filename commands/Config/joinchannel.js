@@ -9,7 +9,7 @@ module.exports = {
   aliases: ["jchannel", "jwelcome"],
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: `\`Usage: (prefix)joinchannel <#channel|off>\`` })
+      return message.lineReplyNoMention({ content: '**`(prefix)joinchannel <channel/off>`**' })
     }
     if (message.mentions.channels.first()) {
       const data = await welcomeSchema.findOne({

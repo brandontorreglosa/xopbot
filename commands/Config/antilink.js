@@ -8,7 +8,7 @@ module.exports = {
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: `Usage: \`(prefix)antilink <on|off>\`` })
+      return message.lineReplyNoMention({ content: '**`(prefix)antilink <on/off>`**' })
     }
     if (args[0] === "On" || args[0] === "on") {
       const data = await antilinkSchema.findOne({

@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const text = args.join(" ");
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: `\`Usage: (prefix)joinmessage <Text|off>\`` });
+      return message.lineReplyNoMention({ content: '**`(prefix)joinmessage <text/off>`**' });
     }
     if (text !== "off") {
       const data = await JoinMsgSchema.findOne({

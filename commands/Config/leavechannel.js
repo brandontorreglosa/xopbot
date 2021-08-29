@@ -9,7 +9,7 @@ module.exports = {
   aliases: ["gchannel", "goodbye"],
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: `\`Usage: (prefix)leavechannel <#channel|off>\`` });
+      return message.lineReplyNoMention({ content: '**`(prefix)leavechannel <channel/off>`**' });
     }
     if (message.mentions.channels.first()) {
       const data = await goodbyeSchema.findOne({
