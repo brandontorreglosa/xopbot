@@ -9,8 +9,8 @@ module.exports = {
         if (!args[0]) {
             return message.lineReplyNoMention({ content: '**`(prefix)phub <text>`**' }) //, allowedMentions: { repliedUser: true } })
         }
-        const mention = message.author;
-        const avatar = mention.user.displayAvatarURL({ format: "png" });
+        const user = message.mentions.users.first() || message.author;
+        const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
         const member = message.author.tag;
 
         let splitArgs = args.join(' ').split('/');
