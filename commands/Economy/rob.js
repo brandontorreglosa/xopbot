@@ -17,7 +17,7 @@ module.exports = {
 
         if (random() === true) {
             const RobAmount = Math.floor(Math.random() * 3000)
-            if ((await client.bal(user.id)) < RobAmount) return message.lineReplyNoMention({ content: `**${user.username} Has Less Than ${RobAmount} For You To Rob!**` });
+            if ((await client.bal(user.id)) < RobAmount) return message.lineReplyNoMention({ content: `**${user.username} Has Less Than ${RobAmount} Xocoins For You To Rob!**` });
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
@@ -28,7 +28,7 @@ module.exports = {
             client.rmv(user.id, RobAmount)
         } else {
             const LooseAmount = Math.floor(Math.random() * 2000)
-            if ((await client.bal(message.author.id)) < LooseAmount) return message.lineReplyNoMention({ content: `**${message.author.username} Is Now In Debt For ${LooseAmount}!**` });
+            if ((await client.bal(message.author.id)) < LooseAmount) return message.lineReplyNoMention({ content: `**${message.author.username} Is Now In Debt For ${LooseAmount} Xocoins!**` });
             const embed1 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
