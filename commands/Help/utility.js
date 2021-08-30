@@ -1,5 +1,5 @@
 const { MessageButton } = require("discord-buttons");
-
+const disbutpages = require("discord-embeds-pages-buttons")
 module.exports = {
     name: 'utility',
     aliases: ['util', 'utils'],
