@@ -13,7 +13,7 @@ module.exports = {
     
     const newEmbed = new Discord.MessageEmbed()
       .setTimestamp()
-      .setAuthor(`${user.username} Balance`, user.displayAvatarURL({ dynamic: true }))
+      .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
       .setDescription(`
       **💸 Wallet- ${bal} Xocoins** 
