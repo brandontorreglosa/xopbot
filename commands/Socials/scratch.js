@@ -10,9 +10,7 @@ module.exports = {
             .setTimestamp()
             .setTitle('My Scratch Account')
             .setURL('https://scratch.mit.edu/users/COOLBLUEINKLINGTM/')
-            .addField(
-                { name: 'Scratch Link', value: '[Click Here](https://scratch.mit.edu/users/COOLBLUEINKLINGTM/)' }
-            )
+            .setDescription('`Scratch Link` \n[Click Here](https://scratch.mit.edu/users/COOLBLUEINKLINGTM/)')
         message.lineReplyNoMention(embed);
     }
 }

@@ -10,9 +10,7 @@ module.exports = {
       .setTimestamp()
       .setTitle('My Youtube Account')
       .setURL('https://www.youtube.com/channel/UCCfKUHKPwTullX7aoFUjCIQ')
-      .addField(
-        { name: 'Youtube Link', value: '[Click Here](https://www.youtube.com/channel/UCCfKUHKPwTullX7aoFUjCIQ)' }
-      )
+      .setDescription('`Youtube Link` \n[Click Here](https://www.youtube.com/channel/UCCfKUHKPwTullX7aoFUjCIQ)')
     message.lineReplyNoMention(embed);
   }
 }

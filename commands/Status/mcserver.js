@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 5,
     description: 'get information about a minecraft server',
     execute(client, message, cmd, args, Discord) {
-        if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)mcserver <serverip>` \nDont Know? Visit: https://minecraftservers.org/**' });
+        if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)mcserver <serverip> <serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
         if (!args[1]) return message.lineReplyNoMention({ content: '**Please Add `<serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
 
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
