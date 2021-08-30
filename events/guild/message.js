@@ -306,16 +306,28 @@ try {
           if (current_time < expiration_time) {
             const time_left = (expiration_time - current_time) / 1000
 
+            if (time_left.toFixed(1) >= 2628000) {
+              let month = (time_left.toFixed(1) / 2628000);
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(month)} More Month(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            }
+            if (time_left.toFixed(1) >= 604800) {
+              let week = (time_left.toFixed(1) / 604800);
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(week)} More Week(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            }
+            if (time_left.toFixed(1) >= 86400) {
+              let day = (time_left.toFixed(1) / 86400);
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(day)} More Day(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            }
             if (time_left.toFixed(1) >= 3600) {
               let hour = (time_left.toFixed(1) / 3600);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(hour)} More Hours Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(hour)} More Hour(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 60) {
               let minute = (time_left.toFixed(1) / 60);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(minute)} More Minutes Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(minute)} More Minute(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             let seconds = (time_left.toFixed(1));
-            return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(seconds)} More Seconds Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(seconds)} More Second(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
           } else {
             await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
             commandExecute();
