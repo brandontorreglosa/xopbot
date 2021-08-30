@@ -26,6 +26,7 @@ const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 const fs = require('fs')
 const schema = require('./models/schema')
 const bankschema = require('./models/bankschema')
+const debtschema = require('./models/debtschema')
 
 // <----/Client Events/---->
 
@@ -139,5 +140,37 @@ client.bankrmv = (id, bank) => {
     })
 }
 
+client.debt = (id) => new Promise(async ful => {
+    const data = await debtschema.findOne({ id });
+    if (!data) return ful(0);
+    ful(data.debt);
+})
+
+
+
+
+client.debtadd = (id, coins) => {
+    debtschema.findOne({ id }, async (err, data) => {
+        if (err) throw err;
+        if (data) {
+            data.debt += debt;
+        } else {
+            data = new debtschema({ id, debt })
+        }
+        data.save()
+    })
+}
+
+client.debtrmv = (id, coins) => {
+    debtschema.findOne({ id }, async (err, data) => {
+        if (err) throw err;
+        if (data) {
+            data.debt -= debt;
+        } else {
+            data = new debtschema({ id, debt: -debt })
+        }
+        data.save()
+    })
+}
 
 client.login(process.env.DISCORD_TOKEN);

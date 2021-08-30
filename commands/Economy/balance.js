@@ -10,15 +10,13 @@ module.exports = {
     const user = message.mentions.users.first() || message.author;
     const bal = await client.bal(user.id);
     const bank = await client.bank(user.id)
-    
+    const debt = await client.debt(user.id)
+
     const newEmbed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
-      .setDescription(`
-      **💸 Wallet- ${bal} Xocoins** 
-      **🏦 Bank- ${bank} Xocoins**
-      `)
+      .setDescription(`**💸 Wallet ${bal} Xocoins** \n**🏦 Bank ${bank} Xocoins** \n**📄 Debt ${debt} Xocoins**`)
     message.lineReplyNoMention(newEmbed)
   },
 };

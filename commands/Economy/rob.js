@@ -28,7 +28,10 @@ module.exports = {
             client.rmv(user.id, RobAmount)
         } else {
             const LooseAmount = Math.floor(Math.random() * 2000)
-            if ((await client.bal(message.author.id)) < LooseAmount) return message.lineReplyNoMention({ content: `**${message.author.username} Is Now In Debt For ${LooseAmount} Xocoins!**` });
+            if ((await client.bal(message.author.id)) < LooseAmount) {
+                message.lineReplyNoMention({ content: `**${message.author.username} Is Now In Debt For ${LooseAmount} Xocoins!**` })
+                client.debtadd(message.author.id, LooseAmount)
+            }
             const embed1 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
