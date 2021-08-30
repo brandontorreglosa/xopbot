@@ -306,6 +306,10 @@ try {
           if (current_time < expiration_time) {
             const time_left = (expiration_time - current_time) / 1000
 
+            if (time_left.toFixed(1) >= 31536000) {
+              let year = (time_left.toFixed(1) / 31536000);
+              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(year)} More Year(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            }
             if (time_left.toFixed(1) >= 2628000) {
               let month = (time_left.toFixed(1) / 2628000);
               return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(month)} More Month(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
