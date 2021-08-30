@@ -1,5 +1,4 @@
 const fetch = require("node-fetch").default;
-const profileModel = require("../../models/profileSchema");
 const premiumSchema = require("../../models/premium");
 const nsfwSchema = require("../../models/registernsfw")
 const quick = require('quick.db');
@@ -204,23 +203,6 @@ try {
     let prefix = prefixes[message.guild.id].prefix;
     if (!message.content.startsWith(prefix)) return;
 
-    let profileData;
-    try {
-      profileData = await profileModel.findOne({ userID: message.author.id });
-      if (!profileData) {
-        let profile = await profileModel.create({
-          userID: message.author.id,
-          serverID: message.guild.id,
-          coins: 1000,
-          bank: 0,
-        });
-        profile.save();
-      }
-    } catch (err) {
-      console.log(err);
-    }
-
-
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
@@ -311,7 +293,7 @@ try {
     // <----/Cooldown System/---->
 
     async function commandExecute() {
-      if (command) command.execute(client, message, cmd, args, Discord, profileData)
+      if (command) command.execute(client, message, cmd, args, Discord)
     }
     if (command.cooldown) {
       const current_time = Date.now();

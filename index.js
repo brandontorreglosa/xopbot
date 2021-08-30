@@ -24,6 +24,8 @@ const disbut = require('discord-buttons');
 disbut(client);
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 const fs = require('fs')
+const schema = require('./models/schema')
+const bankschema = require('./models/bankschema')
 
 // <----/Client Events/---->
 
@@ -66,5 +68,76 @@ mongoose.connect(process.env.MONGODB_SRV, {
     .catch((err) => {
         console.log(err);
     });
+
+// <----/Economy System/---->
+
+
+client.bal = (id) => new Promise(async ful => {
+    const data = await schema.findOne({ id });
+    if (!data) return ful(0);
+    ful(data.coins);
+})
+
+
+
+
+client.add = (id, coins) => {
+    schema.findOne({ id }, async (err, data) => {
+        if (err) throw err;
+        if (data) {
+            data.coins += coins;
+        } else {
+            data = new schema({ id, coins })
+        }
+        data.save()
+    })
+}
+
+client.rmv = (id, coins) => {
+    schema.findOne({ id }, async (err, data) => {
+        if (err) throw err;
+        if (data) {
+            data.coins -= coins;
+        } else {
+            data = new schema({ id, coins: -coins })
+        }
+        data.save()
+    })
+}
+
+
+client.bank = (id) => new Promise(async ful => {
+    const data = await bankschema.findOne({ id });
+    if (!data) return ful(0);
+    ful(data.bank);
+})
+
+
+
+
+client.bankadd = (id, bank) => {
+    bankschema.findOne({ id }, async (err, data) => {
+        if (err) throw err;
+        if (data) {
+            data.bank += bank;
+        } else {
+            data = new bankschema({ id, bank })
+        }
+        data.save()
+    })
+}
+
+client.bankrmv = (id, bank) => {
+    bankschema.findOne({ id }, async (err, data) => {
+        if (err) throw err;
+        if (data) {
+            data.bank -= bank;
+        } else {
+            data = new bankschema({ id, bank: -bank })
+        }
+        data.save()
+    })
+}
+
 
 client.login(process.env.DISCORD_TOKEN);

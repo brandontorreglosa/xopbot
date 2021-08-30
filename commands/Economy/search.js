@@ -1,10 +1,9 @@
-const profileModel = require("../../models/profileSchema");
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "search",
   aliases: [],
   permissions: ["SEND_MESSAGES"],
-  cooldown: 43200,
+  cooldown: 120,
   category: "economy",
   description: {
     usage: "a-search",
@@ -42,7 +41,7 @@ module.exports = {
 
     let chosenLocations = LOCATIONS.sort(() => Math.random() - Math.random()).slice(0, 3);
 
-    const RANDOM_NUMBER = Math.floor(Math.random() * (10000 - 100 + 1)) + 100;
+    const RANDOM_NUMBER = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
 
     const FILTER = (m) => {
       return chosenLocations.some((answer) => answer.toLowerCase() === m.content.toLowerCase()) && m.author.id === message.author.id;
@@ -58,16 +57,7 @@ module.exports = {
         .setDescription(`**You Found ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
         .setFooter(`What A True Detective You Are.`);
 
-      await profileModel.findOneAndUpdate(
-        {
-          userID: message.author.id,
-        },
-        {
-          $inc: {
-            coins: RANDOM_NUMBER,
-          },
-        }
-      );
+        client.add(message.author.id, RANDOM_NUMBER)
 
       message.lineReplyNoMention(EMBED);
     });

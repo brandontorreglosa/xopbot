@@ -1,4 +1,3 @@
-const profileModel = require("../../models/profileSchema");
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "work",
@@ -22,7 +21,7 @@ module.exports = {
 
     let chosenJobs = JOBS.sort(() => Math.random() - Math.random()).slice(0, 3);
 
-    const RANDOM_NUMBER = Math.floor(Math.random() * (15000 - 100 + 1)) + 100;
+    const RANDOM_NUMBER = Math.floor(Math.random() * (10000 - 100 + 1)) + 100;
 
     const FILTER = (m) => {
       return chosenJobs.some((answer) => answer.toLowerCase() === m.content.toLowerCase()) && m.author.id === message.author.id;
@@ -38,16 +37,7 @@ module.exports = {
         .setDescription(`**You Worked And Got Paid ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
         .setFooter(`Man You Worked Hard As A ${m.content}`);
 
-      await profileModel.findOneAndUpdate(
-        {
-          userID: message.author.id,
-        },
-        {
-          $inc: {
-            coins: RANDOM_NUMBER,
-          },
-        }
-      );
+      client.add(message.author.id, RANDOM_NUMBER)
 
       message.lineReplyNoMention(EMBED);
     });

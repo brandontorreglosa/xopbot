@@ -1,4 +1,3 @@
-const profileModel = require("../../models/profileSchema");
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "withdraw",
@@ -9,22 +8,17 @@ module.exports = {
   description: "withdraw coins from your bank",
   async execute(client, message, cmd, args, Discord, profileData) {
     const amount = args[0];
-    if (amount % 1 != 0 || amount <= 0) return message.lineReplyNoMention({ content: "**`(prefix)withdraw <number>`**" });
+    if (!args[0]) {
+      return message.lineReplyNoMention({ content: "**`(prefix)withdraw <coins>`**" });
+    }
 
     try {
-      if (amount > profileData.bank) return message.lineReplyNoMention({ content: `**You Don't Have That Amount Of Xocoins To Withdraw!**` });
+      if ((await client.bank(message.author.id)) < amount)
+        return message.lineReplyNoMention({ content: `**You Don't Have That Amount Of Xocoins To Withdraw!**` });
 
-      await profileModel.findOneAndUpdate(
-        {
-          userID: message.author.id,
-        },
-        {
-          $inc: {
-            coins: amount,
-            bank: -amount,
-          },
-        }
-      );
+      client.add(message.author.id, amount)
+      client.bankrmv(message.author.id, amount)
+
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(`${message.author.username}`)
