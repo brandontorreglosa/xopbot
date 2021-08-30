@@ -42,6 +42,8 @@ module.exports = {
         else if (cmd === 'profile') {
 
             const user = message.mentions.users.first() || message.author;
+            const bal = await client.bal(user.id)
+            const bank = await client.bank(user.id)
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
@@ -140,8 +142,8 @@ module.exports = {
             ctx.beginPath();
             ctx.font = '18px Arial'
             ctx.fillStyle = 'rgba(0,0,0,0.8)'
-            ctx.fillText(`💸: ${profileData.coins}`, 330, 512, 80)
-            ctx.fillText(`🏦: ${profileData.bank}`, 430, 512, 80)
+            ctx.fillText(`💸: ${bal}`, 330, 512, 80)
+            ctx.fillText(`🏦: ${bank}`, 430, 512, 80)
 
             // add the tip shape
             ctx.beginPath();
