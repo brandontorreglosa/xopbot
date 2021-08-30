@@ -3,7 +3,7 @@ module.exports = {
   name: "deposit",
   permissions: ["SEND_MESSAGES"],
   aliases: ["dep"],
-  cooldown: 3,
+  cooldown: 10,
   permissions: [],
   description: "Deposit Xocoins into your bank!",
   async execute(client, message, cmd, args, Discord, profileData) {
@@ -22,7 +22,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(`${message.author.username}`)
-        .setDescription(`You Deposited **${amount} Xocoins** Into Your **Bank** 💸`)
+        .setDescription(`**You Deposited ${amount} Xocoins Into Your Bank! 💸**`)
         .setColor('#c30202')
       message.lineReplyNoMention(embed);
     } catch (err) {

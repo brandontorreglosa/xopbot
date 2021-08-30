@@ -1,13 +1,13 @@
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "give",
-  cooldown: 3,
+  cooldown: 10,
   aliases: [],
   permissions: ["SEND_MESSAGES"],
   description: "give a player some Xocoins",
   async execute(client, message, cmd, args, Discord, profileData) {
     if (!args[0]) {
-      return message.lineReplyNoMention('**`(prefix)give <@user> <coins>`**')
+      return message.lineReplyNoMention({ content: '**`(prefix)give <@user> <coins>`**' })
     }
 
     const user = message.mentions.users.first();
@@ -15,7 +15,7 @@ module.exports = {
 
     const amount = args[1];
     if (!args[1]) {
-      return message.lineReplyNoMention('**Please Specify The Coins To Give!**')
+      return message.lineReplyNoMention({ content: '**Please Specify The Coins To Give!**' })
     }
 
     if ((await client.bal(message.author.id)) < amount) return message.lineReplyNoMention({ content: "**You Dont Have That Many Xocoins!**" });
@@ -23,7 +23,12 @@ module.exports = {
     try {
       await client.rmv(message.author.id, amount)
       await client.add(user.id, amount)
-      return message.lineReplyNoMention({ content: `**This User Has Been Given ${amount} Of Xocoins!** 💸` });
+      const embed = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setTitle(`${message.author.username}`)
+        .setDescription(`**This User Has Been Given ${amount} Of Xocoins!** 💸`)
+      return message.lineReplyNoMention(embed);
     } catch (err) {
       console.log(err);
     }

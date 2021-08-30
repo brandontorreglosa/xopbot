@@ -1,7 +1,7 @@
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "withdraw",
-  cooldown: 3,
+  cooldown: 10,
   permissions: ["SEND_MESSAGES"],
   aliases: ["wd"],
   permissions: [],
@@ -22,7 +22,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(`${message.author.username}`)
-        .setDescription(`You Withdrew **${amount} Xocoins** Into Your **Wallet** 💸`)
+        .setDescription(`**You Withdrew ${amount} Xocoins Into Your Wallet! 💸**`)
         .setColor('#c30202')
 
       message.lineReplyNoMention(embed);
