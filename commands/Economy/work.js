@@ -4,7 +4,7 @@ module.exports = {
   aliases: [],
   permissions: ["SEND_MESSAGES"],
   cooldown: 10800,
-  execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord, profileData) {
     const JOBS = [
       "Plumber",
       "Coder",
