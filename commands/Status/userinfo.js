@@ -25,7 +25,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setTitle(`${user.user.username} stats`)
+            .setTitle(`${user.user.username}\`s Stats`)
             .setColor('#c30202')
             .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
             .addFields(
