@@ -22,7 +22,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setTitle(`${message.author.username}`)
-                .setDescription(`**Congrats You Have Stolen ${RobAmount} From ${user.username}! 💸**`)
+                .setDescription(`**Congrats You Have Stolen ${RobAmount} Xocoins From ${user.username}! 💸**`)
             message.lineReplyNoMention(embed)
             client.add(message.author.id, RobAmount)
             client.rmv(user.id, RobAmount)
@@ -36,7 +36,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setTitle(`${message.author.username}`)
-                .setDescription(`**Awwww! You Just Lost ${LooseAmount} Better Luck Next Time! 💸**`)
+                .setDescription(`**Awwww! You Just Lost ${LooseAmount} Xocoins Better Luck Next Time! 💸**`)
             message.lineReplyNoMention(embed1)
             client.rmv(message.author.id, LooseAmount)
         }

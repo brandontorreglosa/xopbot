@@ -9,12 +9,13 @@ module.exports = {
   async execute(client, message, cmd, args, Discord, profileData) {
     const amount = args[0];
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: "**`(prefix)deposit <coins>`**" });
+      return message.lineReplyNoMention({ content: "**`(prefix)deposit <xocoins>`**" });
     }
 
     try {
       if ((await client.bal(message.author.id)) < amount)
         return message.lineReplyNoMention({ content: `**You Don't Have That Amount Of Coins to Deposit!**` });
+      if (isNaN(args[0])) return message.lineReplyNoMention({ content: '**That Is Not A Number!**' })
 
       client.rmv(message.author.id, amount)
       client.bankadd(message.author.id, amount)

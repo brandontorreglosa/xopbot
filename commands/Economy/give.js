@@ -7,7 +7,7 @@ module.exports = {
   description: "give a player some Xocoins",
   async execute(client, message, cmd, args, Discord, profileData) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)give <@user> <coins>`**' })
+      return message.lineReplyNoMention({ content: '**`(prefix)give <@user> <xocoins>`**' })
     }
 
     const user = message.mentions.users.first();
@@ -19,6 +19,7 @@ module.exports = {
     }
 
     if ((await client.bal(message.author.id)) < amount) return message.lineReplyNoMention({ content: "**You Dont Have That Many Xocoins!**" });
+    if (isNaN(args[1])) return message.lineReplyNoMention({ content: '**That Is Not A Number!**' })
 
     try {
       await client.rmv(message.author.id, amount)
