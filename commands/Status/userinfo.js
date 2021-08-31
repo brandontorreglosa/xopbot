@@ -25,7 +25,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setTitle(`${user.username}\`s User Information`, user.displayAvatarURL())
+            .setTitle(`${user.username}\`s User Information`)
             .setColor('#c30202')
             .setDescription(`**Name:** \n \`${user.username}\` \n**Discriminator:** \`#${user.discriminator}\` \n**ID:** \n \`${user.id}\` \n**Current Status:** \n \`${status}\` \n**Avatar Link:** \n \`[Click Here](${user.user.displayAvatarURL()}\` `)
             //     {
