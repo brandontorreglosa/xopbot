@@ -9,7 +9,7 @@ module.exports = (Discord, client) => {
         '👑HACKERPROᵈᵉᵛ#1498 Made This Bot',
         'https://xopbot-gg.glitch.me/',
         'Version 60.2.0',
-        '170+ Commands',
+        '180+ Commands',
         '24/7 Uptime'
     ];
 
