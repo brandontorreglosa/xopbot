@@ -27,53 +27,8 @@ module.exports = {
             .setTimestamp()
             .setTitle(`${user.user.username}\`s User Information`)
             .setColor('#c30202')
-            .setDescription(`**ID:** \n \`${user.id}\` \n**Name:** \n \`${user.user.username}\` \n**Discriminator:** \`#${user.user.discriminator}\` \n**Current Status:** \n \`${status}\` \n**Avatar Link:** \n[Click Here](${user.user.displayAvatarURL()} `)
-            //     {
-            //         name: "Name: ",
-            //         value: user.user.username,
-            //         inline: true
-            //     },
-            //     {
-            //         name: "#️⃣ Discriminator: ",
-            //         value: `#${user.user.discriminator}`,
-            //         inline: true
-            //     },
-            //     {
-            //         name: "🆔 ID: ",
-            //         value: user.user.id,
-            //     },
-            //     {
-            //         name: "Current Status: ",
-            //         value: status,
-            //         inline: true
-            //     },
-            //     {
-            //         name: "Activity: ",
-            //         value: user.presence.activities[0] ? user.presence.activities[0].name : `User isn't playing a game!`,
-            //         inline: true
-            //     },
-            //     {
-            //         name: 'Avatar link: ',
-            //         value: `[Click Here](${user.user.displayAvatarURL()})`
-            //     },
-            //     {
-            //         name: 'Creation Date: ',
-            //         value: user.user.createdAt.toLocaleDateString("en-us"),
-            //         inline: true
-            //     },
-            //     {
-            //         name: 'Joined Date: ',
-            //         value: user.joinedAt.toLocaleDateString("en-us"),
-            //         inline: true
-            //     },
-            //     {
-            //         name: 'User Roles: ',
-            //         value: user.roles.cache.map(role => role.toString()).join(" ,"),
-            //         inline: true
-            //     }
-            // )
+            .setDescription(`**ID:** \n \`${user.id}\` \n**Name:** \n \`${user.user.username}\` \n**Discriminator:** \n \`#${user.user.discriminator}\` \n**User Roles:** \n${user.roles.cache.map(role => role.toString()).join(" ,")} \n**Joined Date:** \n \`${user.joinedAt.toLocaleDateString("en-us")}\` \n**Creation Date:** \n \`${user.user.createdAt.toLocaleDateString("en-us")}\` \n**Current Status:** \n \`${status}\` `)
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
         await message.lineReplyNoMention(embed)
     }
 }
