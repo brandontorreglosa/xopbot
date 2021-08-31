@@ -25,7 +25,6 @@ disbut(client);
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 const client12 = require('alexflipnote.js');
 const AlexClient = new client12('Xs7IYMWumg1ccrsJFd_a49qgZkWoIgFaoGTeMkdF')
-AlexClient(client)
 const fs = require('fs')
 const schema = require('./models/schema')
 const bankschema = require('./models/bankschema')
