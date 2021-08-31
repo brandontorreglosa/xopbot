@@ -7,7 +7,7 @@ module.exports = {
     description: "Unlocks a given channel for a particular role!",
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first()
-        if (!channel) return message.lineReplyNoMention({ content: "**Please Mention A Valid Channel!**" }) //, allowedMentions: { repliedUser: true } })
+        if (!channel) return message.lineReplyNoMention({ content: "**`(prefix)roleunlock <#channel> <roleID>`**" }) //, allowedMentions: { repliedUser: true } })
         const roletofind = args.slice(1).join(" ")
         const role = message.guild.roles.cache.find(r => r.id === roletofind)
         if (!role) return message.lineReplyNoMention({ content: "**Please Give A Valid Role Id!**" }) //, allowedMentions: { repliedUser: true } })

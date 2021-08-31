@@ -10,7 +10,7 @@ module.exports = {
 
         const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
 
-        if (!member) return message.lineReplyNoMention({ content: '***Please Specify A Valid User!***' }) //, allowedMentions: { repliedUser: true } });
+        if (!member) return message.lineReplyNoMention({ content: '**Please Specify A Valid User!**' }) //, allowedMentions: { repliedUser: true } });
 
         premiumSchema.findOne(
             {
@@ -20,11 +20,11 @@ module.exports = {
                 if (data)
                     return message.lineReplyNoMention({
                         content:
-                            "***This User Does Not Have Premium! 😭 \nBuy Premium From Here (https://www.patreon.com/user?u=52511474&fan_landing=true)***" //, allowedMentions: { repliedUser: true }
+                            "**This User Does Not Have Premium! 😭 \nBuy Premium From Here (https://www.patreon.com/user?u=52511474&fan_landing=true)**" //, allowedMentions: { repliedUser: true }
                     });
 
                 data.delete();
-                message.lineReplyNoMention({ content: `***Removed ${member} From The Premium Database! 💲***` });
+                message.lineReplyNoMention({ content: `**Removed ${member} From The Premium Database! 💲**` });
             }
         );
 

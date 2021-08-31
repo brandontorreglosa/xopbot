@@ -283,12 +283,12 @@ try {
     // <----/Premium System/---->
 
     if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-      return message.lineReplyNoMention({ content: "***You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)***" }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "**You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)**" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/NSFW Registration System/---->
 
     if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-      return message.lineReplyNoMention({ content: "***You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊***" }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "**You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊**" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/Cooldown System/---->
 

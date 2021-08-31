@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 5,
     description: 'Edit Xp Level',
     async execute(client, message, cmd, args, Discord) {
-        let usage = '(prefix)edit @member [xp, level] [add, set, remove] <number>';
+        let usage = '(prefix)edit @user [xp, level] [add, set, remove] <number>';
         const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
         if (!args[0]) return message.lineReplyNoMention({ content: `**You Need To State More Arguments \`${usage}\`**` });

@@ -8,7 +8,7 @@ module.exports = {
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.members.first()
       const reason = args.slice(0).join(" ")
-      if (!reason) return message.lineReplyNoMention({ content: "***Please Specify A Reason!***"}) //, allowedMentions: { repliedUser: true } })
+      if (!reason) return message.lineReplyNoMention({ content: "**`(prefix)channellock <reason>`**"}) //, allowedMentions: { repliedUser: true } })
 
       message.channel.overwritePermissions([
          {

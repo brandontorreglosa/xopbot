@@ -76,7 +76,7 @@ module.exports = {
         } else if (+guess > guildNumber.get(guild.id)) {
             return message.lineReplyNoMention({ content: `**${guess} Is Too High!**`, allowedMentions: { repliedUser: true } });
         } else {
-            return message.lineReplyNoMention({ content: "***Invalid Number Please Try Again***", allowedMentions: { repliedUser: true }  });
+            return message.lineReplyNoMention({ content: "**Invalid Number Please Try Again**", allowedMentions: { repliedUser: true }  });
         }
     },
 };

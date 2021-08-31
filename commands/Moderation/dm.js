@@ -14,7 +14,7 @@ module.exports = {
       if (!user)
         return message.lineReplyNoMention({
           content:
-            `**You Did Not Mention A User!**`
+            '**`(prefix)dm <@user>`**'
         });
       if (message.mentions.users.first().bot) {
         return message.lineReplyNoMention({ content: '**You Can Not DM Bot`s As They Will Never Send Back!**'}) //, allowedMentions: { repliedUser: true } })

@@ -27,13 +27,13 @@ module.exports = {
                 if (data)
                     return message.lineReplyNoMention({
                         content:
-                            "***You Have Already Registered For NSFW Commands!***" //, allowedMentions: { repliedUser: true }
+                            "**You Have Already Registered For NSFW Commands!**" //, allowedMentions: { repliedUser: true }
                     });
 
                 new nsfwSchema({
                     User: member.id
                 }).save();
-                return message.lineReplyNoMention({ content: `***Added ${member} To The NSFW Database! 🔞 \nHave Fun You Little Perv 😊***`}) //, allowedMentions: { repliedUser: true } });
+                return message.lineReplyNoMention({ content: `**Added ${member} To The NSFW Database! 🔞 \nHave Fun You Little Perv 😊**`}) //, allowedMentions: { repliedUser: true } });
             }
         );
 

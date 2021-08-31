@@ -9,7 +9,7 @@ module.exports = {
         const roletofind = args.slice(1).join(" ")
         const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**You Did Not Mention A User To Mute!**' }) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**`(prefix)mute <@user>`**' }) //, allowedMentions: { repliedUser: true } })
         }
         if (message.mentions.users.first().bot) {
             return message.lineReplyNoMention({ content: '**You Can Not Mute Bot`s!**' }) //, allowedMentions: { repliedUser: true } })
@@ -31,12 +31,12 @@ module.exports = {
 
             if (!args[1]) {
                 memberTarget.roles.add(muteRole.id);
-                message.lineReplyNoMention({ content: `*** <@${memberTarget.user.id}> Has Been Muted!***` });
+                message.lineReplyNoMention({ content: `** <@${memberTarget.user.id}> Has Been Muted!**` });
                 return
             }
 
             memberTarget.roles.add(muteRole.id);
-            message.lineReplyNoMention({ content: `*** <@${memberTarget.user.id})> Has Been Muted For ${ms(ms(args[1]))}***` });
+            message.lineReplyNoMention({ content: `** <@${memberTarget.user.id})> Has Been Muted For ${ms(ms(args[1]))}**` });
 
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);

@@ -7,10 +7,10 @@ module.exports = {
   execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**You Did Not Mention A User To Kick!**' })//, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: '**`(prefix)kick <@user> <reason>`**' })//, allowedMentions: { repliedUser: true } })
     }
     const reason = args.slice(1).join(" ")
-    if (!reason) return message.lineReplyNoMention({ content: "***Please Specify A Reason!***" })//, allowedMentions: { repliedUser: true } })
+    if (!reason) return message.lineReplyNoMention({ content: "**Please Specify A Reason!**" })//, allowedMentions: { repliedUser: true } })
 
     if (message.author.id === member.id) {
       return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Kick Yourself!**' })//, allowedMentions: { repliedUser: true } });

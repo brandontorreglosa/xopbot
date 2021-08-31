@@ -12,7 +12,7 @@ module.exports = {
             const user = message.mentions.members.first()
             const fetchedChannel = message.mentions.channels.first();
             if (!fetchedChannel) {
-                return message.lineReplyNoMention({ content: "`Usage: (prefix)delchannel <channel>`"}) //, allowedMentions: { repliedUser: true } })
+                return message.lineReplyNoMention({ content: "**`(prefix)deletechannel <#channel>`**"}) //, allowedMentions: { repliedUser: true } })
             }
             fetchedChannel.delete()
 

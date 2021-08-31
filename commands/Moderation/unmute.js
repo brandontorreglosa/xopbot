@@ -7,7 +7,7 @@ module.exports = {
   execute(client, message, cmd, args, Discord) {
     const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**You Must Mention A User To Unmute!**'}) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: '**`(prefix)unmute <@user>`**'}) //, allowedMentions: { repliedUser: true } })
     }
     if (message.mentions.users.first().bot) {
       return message.lineReplyNoMention({ content: '**You Can Not Unmute Bot`s!**'}) //, allowedMentions: { repliedUser: true } })
@@ -30,7 +30,7 @@ module.exports = {
 
       memberTarget.roles.remove(muteRole.id);
       //memberTarget.roles.add(mainRole.id);
-      message.lineReplyNoMention({ content: `*** <@${memberTarget.user.id}> Has Been Unmuted!***` });
+      message.lineReplyNoMention({ content: `** <@${memberTarget.user.id}> Has Been Unmuted!**` });
     } else {
       message.lineReplyNoMention({ content: '**Cant Find The User Because It Dont Exist Or He Is Cheating!**' });
     }

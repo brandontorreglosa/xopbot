@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 10,
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**Please Do `x!createembed <footermsg> + <title> + <description>` \nYou Must Add The + To Make It Work!**' }) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**`(prefix)createembed <footermsg> + <title> + <description>` \nYou Must Add The + To Make It Work!**' }) //, allowedMentions: { repliedUser: true } })
         }
         let splitArgs = args.join(' ').split('+');
         const footer = splitArgs[0];

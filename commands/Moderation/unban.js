@@ -7,7 +7,7 @@ module.exports = {
   execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**You Must Mention A User To Unban!**' }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: '**`(prefix)unban <@user>`**' }) //, allowedMentions: { repliedUser: true } })
     }
     if (message.author.id === member.id) {
       return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Unban Yourself!**' }) //, allowedMentions: { repliedUser: true } });

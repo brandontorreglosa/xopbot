@@ -6,7 +6,7 @@ module.exports = {
     description: "Clear messages!",
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (!args[0]) return message.lineReplyNoMention({ content: "**Please Enter The Amount Of Messages To Clear!**"}) //, allowedMentions: { repliedUser: true } });
+            if (!args[0]) return message.lineReplyNoMention({ content: "**`(prefix)clear <number>`**"}) //, allowedMentions: { repliedUser: true } });
 
             if (isNaN(args[0])) return message.lineReplyNoMention({ content: "**Please Type A Real Number!**"}) //, allowedMentions: { repliedUser: true } });
 

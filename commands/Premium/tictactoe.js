@@ -7,7 +7,7 @@ module.exports = {
     premium: true,
     async execute(client, message, cmd, args, Discord) {
         const member = message.mentions.members.first()
-        if (!member) return message.lineReplyNoMention({ content: '**`(prefix)tictactoe <@member>`**' })
+        if (!member) return message.lineReplyNoMention({ content: '**`(prefix)tictactoe <@user>`**' })
 
         new tictactoe({
             player_two: member,

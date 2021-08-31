@@ -18,7 +18,7 @@ module.exports = {
 
             message.lineReplyNoMention(embed);
         } catch (err) {
-            message.lineReplyNoMention({ content: "***Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`***" });
+            message.lineReplyNoMention({ content: "**Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`**" });
         }
     },
 };

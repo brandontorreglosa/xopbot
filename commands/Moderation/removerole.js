@@ -7,7 +7,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     let target = message.mentions.members.first();
 
-    if (!target) return message.lineReplyNoMention({ content: `**I Am Unable To Find That User!**` }) //, allowedMentions: { repliedUser: true } })
+    if (!target) return message.lineReplyNoMention({ content: '**`(prefix)removerole <@user> <@role>`**' }) //, allowedMentions: { repliedUser: true } })
 
     let rrole = message.mentions.roles.first();
 

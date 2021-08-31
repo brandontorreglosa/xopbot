@@ -11,7 +11,7 @@ module.exports = {
         try {
             const user = message.mentions.members.first()
             if (!args[0]) {
-                return message.lineReplyNoMention({ content: "**Please Give The Voice Channel A Name!**" }) //, allowedMentions: { repliedUser: true } })
+                return message.lineReplyNoMention({ content: "**`(prefix)createvoice <name>`**" }) //, allowedMentions: { repliedUser: true } })
             }
             message.guild.channels.create(args.slice(0).join(" "), { type: "voice" });
 

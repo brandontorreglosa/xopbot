@@ -19,7 +19,7 @@ module.exports = {
             .setTimestamp()
             .setColor('#c30202')
             .setTitle('Fake User Info')
-            .setDescription('***Get A Fake Users Information***')
+            .setDescription('**Get A Fake Users Information**')
             .addFields(
                 { name: 'Coolness', value: `${randomNumber}%` },
                 { name: 'Gaming Skills', value: `${randomNumber2}%` },
@@ -29,7 +29,7 @@ module.exports = {
                 { name: 'Richness', value: `${randomNumber3}$ A Month` },
                 { name: 'Sleeping', value: `${randomNumber4} Hours` }
             )
-            .setFooter('***Bot Developer @👑HACKERPROᵈᵉᵛ#1498!***');
+            .setFooter('**Bot Developer @👑HACKERPROᵈᵉᵛ#1498!**');
 
         message.lineReplyNoMention(newEmbed);
     }

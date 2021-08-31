@@ -10,7 +10,7 @@ module.exports = {
 
         const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
 
-        if (!member) return message.lineReplyNoMention({ content: '***Please Specify A Valid User!***' }) //, allowedMentions: { repliedUser: true } });
+        if (!member) return message.lineReplyNoMention({ content: '**Please Specify A Valid User!**' }) //, allowedMentions: { repliedUser: true } });
 
         premiumSchema.findOne(
             {
@@ -20,13 +20,13 @@ module.exports = {
                 if (data)
                     return message.lineReplyNoMention({
                         content:
-                            "***This User Has Already Premium Features***" //, allowedMentions: { repliedUser: true }
+                            "**This User Has Already Premium Features**" //, allowedMentions: { repliedUser: true }
                     });
 
                 new premiumSchema({
                     User: member.id
                 }).save();
-                return message.lineReplyNoMention({ content: `***Added ${member} To The Premium Database! 💲***` }) //, allowedMentions: { repliedUser: true } });
+                return message.lineReplyNoMention({ content: `**Added ${member} To The Premium Database! 💲**` }) //, allowedMentions: { repliedUser: true } });
             }
         );
 
