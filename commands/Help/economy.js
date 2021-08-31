@@ -23,7 +23,7 @@ module.exports = {
             // .setTitle('__🤑 Economy__')
             .setColor('#c30202')
             .addFields(
-                { name: '__🤑 Economy (15)__', value: '\n[rob](https://xopbot-gg.glitch.me/) \n__***Rob A Users Xocoins!***__  \n[give](https://xopbot-gg.glitch.me/) \n__***Give Some Xocoins!***__  \n[search](https://xopbot-gg.glitch.me/) \n__***Search For Xocoins, In Places!***__ \n[work](https://xopbot-gg.glitch.me/) \n__***Work For Xocoins!***__ \n[inventory](https://xopbot-gg.glitch.me/) \n__***View Your Inventory!***__' }
+                { name: '__🤑 Economy (15)__', value: '\n[rob](https://xopbot-gg.glitch.me/) \n__***Rob A Users Xocoins!***__  \n[give](https://xopbot-gg.glitch.me/) \n__***Give Some Xocoins!***__  \n[search](https://xopbot-gg.glitch.me/) \n__***Search For Xocoins!***__ \n[work](https://xopbot-gg.glitch.me/) \n__***Work For Xocoins!***__ \n[inventory](https://xopbot-gg.glitch.me/) \n__***View Your Inventory!***__' }
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
