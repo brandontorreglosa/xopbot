@@ -7,15 +7,15 @@ module.exports = {
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
         const roletofind = args.slice(1).join(" ")
-        const target = message.mentions.users.first();
+        const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**You Did Not Mention A User To Mute!**'}) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**You Did Not Mention A User To Mute!**' }) //, allowedMentions: { repliedUser: true } })
         }
         if (message.mentions.users.first().bot) {
-            return message.lineReplyNoMention({ content: '**You Can Not Mute Bot`s!**'}) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: '**You Can Not Mute Bot`s!**' }) //, allowedMentions: { repliedUser: true } })
         }
         if (message.author.id === target.id) {
-            return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Mute Yourself!**'}) //, allowedMentions: { repliedUser: true } });
+            return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Mute Yourself!**' }) //, allowedMentions: { repliedUser: true } });
         }
 
         if (target.id === message.guild.owner.id) {

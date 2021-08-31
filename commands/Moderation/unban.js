@@ -5,7 +5,7 @@ module.exports = {
   permissions: ["BAN_MEMBERS"],
   description: "This Command Unbans Member",
   execute(client, message, cmd, args, Discord) {
-    const member = message.mentions.users.first();
+    const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
       return message.lineReplyNoMention({ content: '**You Must Mention A User To Unban!**' }) //, allowedMentions: { repliedUser: true } })
     }

@@ -5,7 +5,7 @@ module.exports = {
   cooldown: 3,
   description: "This Command Bans Member",
   execute(client, message, cmd, args, Discord) {
-    const user = message.mentions.users.first();
+    const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
       return message.lineReplyNoMention({ content: '**You Must Mention A User To Ban!**' }) //, allowedMentions: { repliedUser: true } })
     }

@@ -5,7 +5,7 @@ module.exports = {
   cooldown: 3,
   description: "This Command Kicks Member",
   execute(client, message, cmd, args, Discord) {
-    const member = message.mentions.users.first();
+    const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
       return message.lineReplyNoMention({ content: '**You Did Not Mention A User To Kick!**' })//, allowedMentions: { repliedUser: true } })
     }

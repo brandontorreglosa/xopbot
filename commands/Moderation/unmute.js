@@ -5,7 +5,7 @@ module.exports = {
   permissions: ["MUTE_MEMBERS"],
   description: "This Unmutes A Member",
   execute(client, message, cmd, args, Discord) {
-    const target = message.mentions.users.first();
+    const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
       return message.lineReplyNoMention({ content: '**You Must Mention A User To Unmute!**'}) //, allowedMentions: { repliedUser: true } })
     }
