@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['usi', 'ui'],
     cooldown: 3,
     async execute(client, message, cmd, args, Discord) {
-        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
         let status;
         switch (user.presence.status) {
@@ -25,7 +25,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setTitle(`${user.user.username}\`s User Information`)
+            .setTitle(`${user.user.username}\`s User Information`, user.user.displayAvatarURL({ dynamic: true }))
             .setColor('#c30202')
             .setDescription(`**ID:** \n \`${user.id}\` \n**Name:** \n \`${user.user.username}\` \n**Discriminator:** \n \`#${user.user.discriminator}\` \n**User Roles:** \n${user.roles.cache.map(role => role.toString()).join(" ,")} \n**Joined Date:** \n \`${user.joinedAt.toLocaleDateString("en-us")}\` \n**Creation Date:** \n \`${user.user.createdAt.toLocaleDateString("en-us")}\` \n**Current Status:** \n \`${status}\` `)
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
