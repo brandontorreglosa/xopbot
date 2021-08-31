@@ -21,6 +21,6 @@ module.exports = {
 
     message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://api.popcatdev.repl.co/alert?text=${alertMessage}`, name: 'xopbotalert.jpg' }] });
+    //message.channel.send({ files: [{ attachment: `https://api.popcat.xyz/alert?text=${alertMessage}`, name: 'xopbotalert.jpg' }] });
   }
 }

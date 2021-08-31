@@ -11,7 +11,7 @@ module.exports = {
         }
 
         if (message.mentions.users.first().bot) {
-            return message.lineReplyNoMention({ content: '**You Can Not Rob Bot`s, Thats Too Evil!**' })
+            return message.lineReplyNoMention({ content: '**You Can Not Rob Bot`s . Thats Too Evil!**' })
         }
 
         function random() {

@@ -20,6 +20,6 @@ module.exports = {
 
     // message.lineReplyNoMention(embed)
 
-    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcatdev.repl.co/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://api.popcat.xyz/facts?text=${factsMessage}`, name: 'xopbotfacts.jpg' }] });
   }
 }
