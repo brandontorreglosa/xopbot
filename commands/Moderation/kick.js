@@ -25,7 +25,6 @@ module.exports = {
 
     if (member) {
       const memberTarger = message.guild.members.cache.get(member.id);
-      memberTarger.kick();
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
@@ -33,7 +32,8 @@ module.exports = {
         .setDescription(`Kicked By: ${message.author.username} \nReason: ${reason} \nTry Not To Break The Rules Next Time!`)
       memberTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${memberTarger.user.id}> Reason Of Kick!**` }))
-        .then(() => message.lineReplyNoMention({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }));
+        .then(() => message.lineReplyNoMention({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }))
+        .then(() => memberTarger.kick());
     } else {
       message.channel.send({ content: '**You Cant Kick This Member Because It Dont Exist!**' });
     }

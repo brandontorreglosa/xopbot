@@ -24,9 +24,7 @@ module.exports = {
     }
 
     if (user) {
-      const userTarger = message.guild.members.cache.get(member.id);
-      userTarger.ban();
-
+      const userTarger = message.guild.members.cache.get(user.id);
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
@@ -35,6 +33,7 @@ module.exports = {
       userTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }))
         .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For ${reason}!**` }))
+        .then(() => userTarger.ban());
     } else {
       message.lineReplyNoMention({ content: '**You Cant Ban This Member Because It Dont Exist!**' });
     }
