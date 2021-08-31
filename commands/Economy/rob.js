@@ -7,7 +7,11 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first()
         if (!args[0]) {
-            return message.lineReplyNoMention('**`(prefix)rob <@user>`**')
+            return message.lineReplyNoMention({ content: '**`(prefix)rob <@user>`**' })
+        }
+
+        if (message.mentions.users.first().bot) {
+            return message.lineReplyNoMention({ content: '**You Can Not Rob Bot`s, Thats Too Evil!**' })
         }
 
         function random() {

@@ -20,6 +20,6 @@ module.exports = {
 
     // message.lineReplyNoMention(embed)
 
-    message.lineReplyNoMention({ files: [{ attachment: `https://ctk-api.herokuapp.com/clyde/${clydeMessage}`, name: 'file.jpg' }] });
+    message.lineReplyNoMention({ files: [{ attachment: `https://ctk-api.herokuapp.com/clyde/${clydeMessage}`, name: 'xopbotclyde.jpg' }] });
   }
 }
