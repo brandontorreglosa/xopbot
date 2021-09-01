@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const moment = require("moment");
 module.exports = {
     name: "userinfo",
     permissions: ["SEND_MESSAGES"],
@@ -27,7 +28,7 @@ module.exports = {
             .setTimestamp()
             .setAuthor(`${user.user.username}\`s User Information`, user.user.displayAvatarURL({ dynamic: true }))
             .setColor('#c30202')
-            .setDescription(`**ID:** \`${user.id}\` \n**Name:** \`${user.user.username}\` \n**Discriminator:** \`#${user.user.discriminator}\` \n**User Status:** \`${status}\` \n**User Roles:** ${user.roles.cache.map(role => role.toString()).join(" ,")} \n**Joined Date:** \`${user.joinedAt.toLocaleDateString("en-us")}\` \n**Creation Date:** \`${user.user.createdAt.toLocaleDateString("en-us")}\` `)
+            .setDescription(`**ID:** \`${user.id}\` \n**Name:** \`${user.user.username}\` \n**Discriminator:** \`#${user.user.discriminator}\` \n**User Status:** \`${status}\` \n**User Roles:** ${user.roles.cache.map(role => role.toString()).join(" ,")} \n**Joined Date:** \`${moment(user.joinedAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` \n**Creation Date:** \`${moment(user.user.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` `)
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
         await message.lineReplyNoMention(embed)
     }
