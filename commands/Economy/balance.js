@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 5,
   permissions: [],
   description: "Check the user balance",
-  async execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord) {
     const user = message.mentions.users.first() || message.author;
     const bal = await client.bal(user.id);
     const bank = await client.bank(user.id)

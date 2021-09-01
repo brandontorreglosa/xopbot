@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 10,
   permissions: [],
   description: "Deposit Xocoins into your bank!",
-  async execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord) {
     const amount = args[0];
     if (!args[0]) {
       return message.lineReplyNoMention({ content: "**`(prefix)deposit <xocoins>`**" });

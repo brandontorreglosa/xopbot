@@ -10,7 +10,7 @@ module.exports = {
     content: "Choose your search location and have a chance at some bits!",
     examples: ["a-search"],
   },
-  async execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord) {
     const LOCATIONS = [
       "Car",
       "Van",

@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 5,
   permissions: [],
   description: "beg for coins",
-  async execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 500) + 1;
     const embed = new Discord.MessageEmbed()
       .setTimestamp()

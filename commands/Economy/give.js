@@ -5,7 +5,7 @@ module.exports = {
   aliases: [],
   permissions: ["SEND_MESSAGES"],
   description: "give a player some Xocoins",
-  async execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
       return message.lineReplyNoMention({ content: '**`(prefix)give <@user> <xocoins>`**' })
     }

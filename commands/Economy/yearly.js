@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 31536000,
   permissions: [],
   description: "yearly Xocoins",
-  async execute(client, message, cmd, args, Discord, profileData) {
+  async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 1000000) + 5000;
     const embed = new Discord.MessageEmbed()
       .setTimestamp()

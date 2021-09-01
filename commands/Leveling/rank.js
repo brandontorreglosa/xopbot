@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     description: 'get rank',
-    async execute(client, message, cmd, args, Discord, profileData) {
+    async execute(client, message, cmd, args, Discord) {
 
         if (cmd === 'rank') {
 
