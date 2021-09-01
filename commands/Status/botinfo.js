@@ -27,62 +27,10 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             //.setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
-            .setTitle(`Bot Information`, client.user.displayAvatarURL({ dynamic: true }))
+            .setAuthor(`Bot Information`, client.user.displayAvatarURL({ dynamic: true }))
             .setColor('#c30202')
-            .addFields(
-                {
-                    name: '👷‍♂ Developer',
-                    value: `👑HACKERPROᵈᵉᵛ#1498`,
-                    inline: true
-                },
-                {
-                    name: '⛏ Prefix',
-                    value: 'x!',
-                    inline: true
-                },
-                {
-                    name: '🤖 Bot Version',
-                    value: 'v60.2.0',
-                    inline: true
-                },
-                {
-                    name: '🌐 Servers',
-                    value: `Serving ${client.guilds.cache.size} Servers.`,
-                    inline: true
-                },
-                {
-                    name: '📺 Channels',
-                    value: `Serving ${client.channels.cache.size} Channels.`,
-                    inline: true
-                },
-                {
-                    name: '👥 Server Users',
-                    value: `Serving ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
-                    inline: true
-                },
-                {
-                    name: '🤖 Bot Status',
-                    value: status,
-                    inline: true
-                },
-                {
-                    name: '⏳ Ping',
-                    value: `${Math.round(client.ws.ping)}ms`,
-                    inline: true
-                },
-                {
-                    name: '🎉 Creation Date',
-                    value: client.user.createdAt,
-                    inline: true
-                }
-                // {
-                //     name: '🌎 Server Info',
-                //     value: `Cores: ${os.cpus().length}`,
-                //     inline: true
-                // }
-            )
+            .setDescription(`**ID:** \n \`${client.id}\` \n**DEV:** \n \`👑HACKERPROᵈᵉᵛ#1498\` \n**Name:** \n \`XOPBOT\` \n**Prefix:** \n \`x!\` \n**Status:** \n \`${status}\` \n**Version:** \n \`60.2.0\` \n**Users:** \n \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)}\` \n**Servers:** \n \`${client.guilds.cache.size}\` \n**Categories:** \n \`18\` \n**Commands:** \n \`180+\` \n**Creation Date:** \n \`${client.user.createdAt}\` `)
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
         await message.lineReplyNoMention(embed)
     }
 }
