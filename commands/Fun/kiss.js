@@ -4,7 +4,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     cooldown: 3,
     description: 'kiss a user',
-    async execute(message, args) {
+    async execute(client, message, cmd, args, Discord) {
         if(!args[0]) {
             return message.lineReplyNoMention('**`(prefix)kiss <@user>`**')
         }
@@ -33,7 +33,7 @@ module.exports = {
 
         const randomNumber = Math.floor(Math.random() * 2000) + 1;
         const hug_list = message.mentions.users.map(user => {
-            return `**${user.username} Was Hugged By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy And Would Like To ${randomChoices}!**`;
+            return `**${user.username} Was Kissed By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy And Would Like To ${randomChoices}!**`;
         });
 
         message.lineReplyNoMention({ content: hug_list });
