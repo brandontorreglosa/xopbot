@@ -32,8 +32,8 @@ module.exports = {
         .setDescription(`Banned By: ${message.author.username} \nReason: ${reason} \nTry Not To Break The Rules Next Time!`)
       userTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }))
-        .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For ${reason}!**` }))
-        .then(() => userTarger.ban());
+        .then(() => setTimeout(() => userTarger.ban()
+          .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For ${reason}!**` }))))
     } else {
       message.lineReplyNoMention({ content: '**You Cant Ban This Member Because It Dont Exist!**' });
     }
