@@ -5,8 +5,7 @@ module.exports = {
     permissions: ["ADMINISTRATOR"],
     cooldown: 4200,
     description: 'kill a user',
-    //Use your own execute parameters
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         const randomNumber = Math.floor(Math.random() * 100) + 1; //bot commands bugs
         const randomNumber2 = Math.floor(Math.random() * 50) + 1; //roles bugs
         const randomNumber3 = Math.floor(Math.random() * 150) + 1; //messages bugs

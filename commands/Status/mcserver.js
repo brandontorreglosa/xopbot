@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['mcs'],
     cooldown: 5,
     description: 'get information about a minecraft server',
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)mcserver <serverip> <serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
         if (!args[1]) return message.lineReplyNoMention({ content: '**Please Add `<serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
 

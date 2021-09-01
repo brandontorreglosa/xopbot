@@ -4,7 +4,7 @@ module.exports = {
   cooldown: 3,
   permissions: ["BAN_MEMBERS"],
   description: "This Command Unbans Member",
-  execute(client, message, cmd, args, Discord) {
+  async execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
     if (!args[0]) {
       return message.lineReplyNoMention({ content: '**`(prefix)unban <@user>`**' }) //, allowedMentions: { repliedUser: true } })

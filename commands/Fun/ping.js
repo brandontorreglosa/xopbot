@@ -4,7 +4,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     cooldown: 2,
     description: "this is a ping command!",
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         message.lineReplyNoMention({ content: '**Pong!**' });
     }
 }

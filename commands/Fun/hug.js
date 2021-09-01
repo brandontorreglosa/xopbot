@@ -5,8 +5,11 @@ module.exports = {
     aliases: [],
     cooldown: 2,
     description: 'hug a user',
-    //Use your own execute parameters
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
+
+        if(!args[0]) {
+            return message.lineReplyNoMention('**`(prefix)hug <@user`**')
+        }
 
         const links = [
             'https://media.giphy.com/media/sX755wvr2Q6gE/giphy.gif',

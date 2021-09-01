@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 3,
     aliases: ['binv'],
     description: "Embeds!",
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))

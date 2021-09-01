@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 2,
     permissions: ["SEND_MESSAGES"],
     description: "Sends The Owners Youtube Channel!",
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         const amino = new Discord.MessageEmbed()
             .setColor('#c30202')
             .setTimestamp()

@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 5,
     permissions: ["MANAGE_MESSAGES"],
     description: "Embeds!",
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')

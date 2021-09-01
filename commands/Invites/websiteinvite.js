@@ -5,7 +5,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     aliases: ['winv', 'webinvite', 'wi'],
     description: "Embeds!",
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))

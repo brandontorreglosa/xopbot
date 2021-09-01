@@ -4,7 +4,10 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     cooldown: 3,
     description: 'kiss a user',
-    execute(message, args) {
+    async execute(message, args) {
+        if(!args[0]) {
+            return message.lineReplyNoMention('**`(prefix)kiss <@user>`**')
+        }
         const Choices = [
             'Marry You',
             'Ask You For Date',

@@ -5,7 +5,6 @@ module.exports = {
     aliases: ['icon', 'pfp', 'profilepic'],
     cooldown: 2,
     description: 'Return a user(s) avatar picture!',
-    //Use your own execute parameters
     async execute(client, message, cmd, args, Discord) {
 
         const user = message.mentions.users.first() || message.author;

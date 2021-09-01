@@ -6,8 +6,7 @@ module.exports = {
     cooldown: 2,
     premium: true,
     description: 'get a users info',
-    //Use your own execute parameters
-    execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args, Discord) {
         const randomNumber = Math.floor(Math.random() * 100) + 1;
         const randomNumber2 = Math.floor(Math.random() * 300) + 1;
         const randomNumber3 = Math.floor(Math.random() * 50) + 1;
