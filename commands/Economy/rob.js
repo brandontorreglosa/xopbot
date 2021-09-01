@@ -43,6 +43,7 @@ module.exports = {
                 .setDescription(`**Awwww! You Just Lost ${LooseAmount} Xocoins Better Luck Next Time! 💸**`)
             message.lineReplyNoMention(embed1)
             client.rmv(message.author.id, LooseAmount)
+            client.add(user.id, LooseAmount)
         }
     }
 }
