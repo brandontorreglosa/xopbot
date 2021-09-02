@@ -9,9 +9,7 @@ module.exports = {
         const user = message.mentions.users.first() || message.author;
         const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
 
-        const image = await Canvas.facepalm({
-            image: avatar,
-        });
+        const image = await Canvas.facepalm(avatar);
 
         const attachment = new Discord.MessageAttachment(image, "xopbotfacepalm.png");
         return message.lineReplyNoMention({ files: [{ attachment: image }] });
