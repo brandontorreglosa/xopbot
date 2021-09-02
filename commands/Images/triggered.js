@@ -11,7 +11,7 @@ module.exports = {
 
         const image = await Canvas.trigger(avatar);
 
-        const attachment = new Discord.MessageAttachment(image, "xopbottriggered.png");
+        const attachment = new Discord.MessageAttachment(image, "xopbottriggered.gif");
         return message.lineReplyNoMention({ files: [{ attachment: image }] });
     }
 }

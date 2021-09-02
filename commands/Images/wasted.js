@@ -1,7 +1,7 @@
 const { Canvas } = require('canvacord');
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
-    name: 'facepalm',
+    name: 'wasted',
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     description: 'what are you doing here?',
@@ -11,7 +11,7 @@ module.exports = {
 
         const image = await Canvas.wasted(avatar);
 
-        const attachment = new Discord.MessageAttachment(image, "xopbotwasted.png");
+        const attachment = new Discord.MessageAttachment(image, "xopbotwasted.gif");
         return message.lineReplyNoMention({ files: [{ attachment: image }] });
     }
 }
