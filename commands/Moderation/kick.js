@@ -29,7 +29,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setTitle(`You Were Kicked From ${message.guild.name}`)
-        .setDescription(`Kicked By: ${message.author.username} \nReason: ${reason} \nTry Not To Break The Rules Next Time!`)
+        .setDescription(`**Kicked By: ${message.author.username} \nReason: \`${reason}\`**`)
       memberTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${memberTarger.user.id}> Reason Of Kick!**` }))
         .then(() => setTimeout(() => memberTarger.kick()

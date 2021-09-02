@@ -29,7 +29,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setTitle(`You Are Banned From ${message.guild.name} 😢`)
-        .setDescription(`Banned By: ${message.author.username} \nReason: ${reason} \nTry Not To Break The Rules Next Time!`)
+        .setDescription(`**Banned By: ${message.author.username} \nReason: \`${reason}\`**`)
       userTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }))
         .then(() => setTimeout(() => userTarger.ban()

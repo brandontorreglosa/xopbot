@@ -27,6 +27,6 @@ module.exports = {
         });
 
         const attachment = new Discord.MessageAttachment(image, "xopbotphub.png");
-        return message.channel.send({ files: [{ attachment: image }] });
+        return message.lineReplyNoMention({ files: [{ attachment: image }] });
     }
 }
