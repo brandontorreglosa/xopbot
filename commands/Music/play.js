@@ -224,7 +224,6 @@ module.exports = {
             }
 
             try {
-                message.client.distube.stop(message)
                 message.member.voice.channel.leave();
                 const leavevcembed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -262,11 +261,11 @@ module.exports = {
                 if (!args[0]) {
                     return message.lineReplyNoMention('**`(prefix)lyrics <song>`**')
                 }
-                const song1 = args.join(' ');
-                if (!song1 && queue.song[0]) song = queue.song[0].name;
+                const song = args.join(' ');
+                if (!song && queue.song[0]) song = queue.song[0].name;
 
                 const lyrics = null;
-                yrics = await lyricsFinder(song, "");
+                lyrics = await lyricsFinder(song, "");
                 if (!lyrics) lyrics = `**XOPBOT Couldnt Find Any Lyrics For That Song**`;
 
                 const lyricsembed = new Discord.MessageEmbed()
