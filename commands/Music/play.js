@@ -1,7 +1,7 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 const errorChannel = process.env.errorChannel;
-const db = rwquire('quick.db');
+const db = require('quick.db');
 module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
