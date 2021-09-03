@@ -196,7 +196,7 @@ client.distube
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**Adding Song To Queue: 🎶 [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
+            .setDescription(`**Adding Song To Queue: 🎶 \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
             .setFooter(`👁 ${song.views} 👍 ${song.likes} 👎 ${song.dislikes}`)
         message.lineReplyNoMention(embed);
