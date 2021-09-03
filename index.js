@@ -186,7 +186,7 @@ client.distube
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setTitle(`${message.author.username}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Added: \`${playlist.title}\` | Playlist: \`${playlist.total_items}\` Songs | Queue: \`- [${song.user}] -\` 🎶**`)
             .setThumbnail(playlist.thumbnail)
         message.lineReplyNoMention(embed);
@@ -195,7 +195,7 @@ client.distube
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setTitle(`${message.author.username}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Adding Song To Queue: 🎶 [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
             .setFooter(`👁 ${song.views} 👍 ${song.likes} 👎 ${song.dislikes}`)
@@ -205,7 +205,7 @@ client.distube
         const thing = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setTitle(`${message.author.username}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Channel Is Empty. XOPBOT Leaving The Channel! 😭**`)
         message.lineReplyNoMention(thing);
     })
@@ -221,7 +221,7 @@ client.distube
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setTitle(`${message.author.username}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**There Are No More Songs In The Queue! ⏯**`)
         message.lineReplyNoMention(embed);
     })
@@ -232,7 +232,7 @@ client.distube
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setTitle(`${message.author.username}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`Can't find related video to play. Stop playing music.`)
         message.lineReplyNoMention(embed);
     })
@@ -246,8 +246,8 @@ client.distube
     .on("playSong", (message, queue, song) => {
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor(color)
-            .setTitle(`${message.author.username}`)
+            .setColor(`${color}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Started Playing: 🎶 \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
             .setFooter(`👁 ${song.views} 👍 ${song.likes} 👎 ${song.dislikes}`)
@@ -256,7 +256,8 @@ client.distube
     // DisTubeOptions.searchSongs = true
     .on("searchCancel", message => {
         const embed = new Discord.MessageEmbed()
-            .setColor(color)
+            .setTimestamp()
+            .setColor(`${color}`)
             .setDescription(`Searching canceled!`)
         message.lineReplyNoMention(embed);
     })
@@ -264,7 +265,8 @@ client.distube
     .on("searchResult", (message, result) => {
         let i = 0
         const embed = new Discord.MessageEmbed()
-            .setColor(color)
+            .setTimestamp()
+            .setColor(`${color}`)
             .setAuthor(message.client.user.username, message.client.user.displayAvatarURL())
             .setDescription(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
             .setFooter(`Enter anything else or wait 60 seconds to cancel`);
