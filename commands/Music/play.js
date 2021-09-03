@@ -1,10 +1,11 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 const errorChannel = process.env.errorChannel;
+const db = rwquire('quick.db');
 module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
-    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop'],
+    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop', 'leave', 'lyrics', 'queue', 'volume'],
     cooldown: 2,
     description: 'Advanced music bot',
     async execute(client, message, cmd, args, Discord) {
@@ -57,8 +58,8 @@ module.exports = {
                 const stopembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle(`${message.author.username}`)
-                    .setDescription('**XOPBOT Is Leaving Voice Channel! 😭**')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription('**XOPBOT Stopped All Music From Playing! 😭**')
                 return message.lineReplyNoMention(stopembed);
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -120,7 +121,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle(`${message.author.username}`)
-                    .setDescription(`**Resumed The Music For You! ▶**`)
+                    .setDescription(`**XOPBOT Resumed The Music For You! ▶**`)
                 return message.lineReplyNoMention(ressong1);
             }
 
@@ -129,8 +130,8 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle(`${message.author.username}`)
-                    .setDescription(`**Paused The Music For You! ⏸**`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**XOPBOT Paused The Music For You! ⏸**`)
                 message.lineReplyNoMention(embed);
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -163,8 +164,8 @@ module.exports = {
                 const ressong2 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle(`${message.author.username}`)
-                    .setDescription(`**Resumed The Music For You! ▶**`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**XOPBOT Resumed The Music For You! ▶**`)
                 return message.lineReplyNoMention(ressong2);
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -202,13 +203,82 @@ module.exports = {
                 const loopembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle(`${message.author.username}`)
-                    .setDescription('**Loop Mode Set To `' + mode + '`**')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription('**XOPBOT Set Loop Mode To `' + mode + '` For You! 👍**')
                 return message.lineReplyNoMention(loopembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
-                //message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Loop Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'leave') {
+            if (!message.member.voice.channel) {
+                const embednovc1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc1);
+            }
+
+            try {
+                message.client.distube.stop(message)
+                message.member.voice.channel.leave();
+                const leavevcembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription('**XOPBOT Left The Voice Channel For You! 😢**')
+                return message.lineReplyNoMention(leavevcembed)
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Leave Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'lyrics') {
+            if (!message.member.voice.channel) {
+                const embednovc1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc1);
+            }
+
+            if (!queue) {
+                const embednovc77 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc77);
+            }
+
+            try {
+                if (!args[0]) {
+                    return message.lineReplyNoMention('**`(prefix)lyrics <song>`**')
+                }
+                const song1 = args.join(' ');
+                if (!song1 && queue.song[0]) song = queue.song[0].name;
+
+                const lyrics = null;
+                yrics = await lyricsFinder(song, "");
+                if (!lyrics) lyrics = `**XOPBOT Couldnt Find Any Lyrics For That Song**`;
+
+                const lyricsembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Lyrics Of [${song1}](https://xopbot-gg.glitch.me/): \n\`${lyrics}\` **`)
+                return message.lineReplyNoMention(lyricsembed)
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Lyrics Command!\n\nError:\n\n ${err}**` })
             }
         }
     }
