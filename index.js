@@ -250,6 +250,7 @@ client.distube
             .setTitle(`${message.author.username}`)
             .setDescription(`**Started Playing: 🎶 \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
+            .setFooter(`👁 ${song.views} 👍 ${song.likes} 👎 ${song.dislikes}`)
         message.lineReplyNoMention(embed);
     })
     // DisTubeOptions.searchSongs = true
