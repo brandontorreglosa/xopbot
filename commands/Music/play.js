@@ -89,7 +89,7 @@ module.exports = {
 
             if (queue.pause) {
                 message.client.distube.resume(message)
-                const ressong1 = new MessageEmbed()
+                const ressong1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle(`${message.author.username}`)
@@ -99,7 +99,7 @@ module.exports = {
 
             try {
                 message.client.distube.pause(message)
-                const embed = new MessageEmbed()
+                const embed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle(`${message.author.username}`)
@@ -124,7 +124,7 @@ module.exports = {
 
             try {
                 message.client.distube.resume(message)
-                const ressong2 = new MessageEmbed()
+                const ressong2 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle(`${message.author.username}`)
