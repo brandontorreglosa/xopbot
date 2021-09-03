@@ -54,6 +54,7 @@
     "snekfetch": "^4.0.4",
     "superagent": "^6.1.0",
     "weather-js": "^2.0.0",
+    "weky": "^3.1.5",
     "youtube-sr": "^4.1.7",
     "yt-search": "^2.7.6",
     "ytdl-core": "^4.9.1"
