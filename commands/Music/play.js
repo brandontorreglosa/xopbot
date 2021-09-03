@@ -5,7 +5,7 @@ const db = require('quick.db');
 module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
-    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop', 'leave', 'lyrics', 'queue', 'volume'],
+    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop', 'leave', 'jump', 'queue', 'volume'],
     cooldown: 2,
     description: 'Advanced music bot',
     async execute(client, message, cmd, args, Discord) {
@@ -238,7 +238,7 @@ module.exports = {
             }
         }
 
-        else if (cmd === 'lyrics') {
+        else if (cmd === 'volume') {
             if (!message.member.voice.channel) {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -259,25 +259,23 @@ module.exports = {
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention('**`(prefix)lyrics <song>`**')
+                    return message.lineReplyNoMention('**`(prefix)volume <number>`**')
                 }
-                const song = args.join(' ');
-                if (!song && queue.song[0]) song = queue.song[0].name;
-
-                const lyrics = null;
-                lyrics = await lyricsFinder(song, "");
-                if (!lyrics) lyrics = `**XOPBOT Couldnt Find Any Lyrics For That Song**`;
-
-                const lyricsembed = new Discord.MessageEmbed()
+                const volume = parseInt(args[0])
+                if (isNaN(volume)) {
+                    return message.lineReplyNoMention('**That Is Not A Number!**')
+                }
+                message.client.distube.setVolume(message, volume);
+                const volembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Lyrics Of [${song1}](https://xopbot-gg.glitch.me/): \n\`${lyrics}\` **`)
-                return message.lineReplyNoMention(lyricsembed)
+                    .setDescription(`**XOPBOT Set Volume To \`${volume}\` For You! 😃**`)
+                return message.lineReplyNoMention(volembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
                 message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
-                errorlogs.send({ content: `**Error On Lyrics Command!\n\nError:\n\n ${err}**` })
+                errorlogs.send({ content: `**Error On Volume Command!\n\nError:\n\n ${err}**` })
             }
         }
     }
