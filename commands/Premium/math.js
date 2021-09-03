@@ -1,4 +1,4 @@
-const math = require('mathjs');
+const { Calculator } = require("weky");
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'math',
@@ -7,18 +7,16 @@ module.exports = {
     aliases: ['mathprob', 'mathproblem'],
     premium: true,
     async execute(client, message, cmd, args, Discord) {
-        try {
-            if (!args[0]) return message.channel.send({ content: "**`(prefix)math <equation>`**" });
-
-            const embed = new MessageEmbed()
-                .setColor('#c30202')
-                .setTitle(`Result`)
-                .setDescription(math.evaluate(args.join(" ")))
-                .setTimestamp();
-
-            message.lineReplyNoMention(embed);
-        } catch (err) {
-            message.lineReplyNoMention({ content: "**Your Question Is Not A Valid Equation! \nMade By `👑HACKERPROᵈᵉᵛ#1498`**" });
-        }
-    },
-};
+        await Calculator({
+            message: message,
+            embed: {
+                title: 'Calculator v12',
+                color: '#c30202',
+                timestamp: true
+            },
+            disabledQuery: '**Calculator Is Disabled!**',
+            invalidQuery: '**The Provided Equation Is Invalid!**',
+            othersMessage: '**Only <@{{author}}> Can Use The Buttons!**'
+        });
+    }
+}

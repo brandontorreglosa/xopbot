@@ -35,7 +35,6 @@
     "got": "^11.8.2",
     "jimp": "^0.16.1",
     "lyrics-finder": "^21.7.0",
-    "mathjs": "^9.4.2",
     "minecraft-server-util": "^3.5.1",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
