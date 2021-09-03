@@ -258,7 +258,8 @@ client.distube
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setDescription(`Searching canceled!`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Searching Canceled!**`)
         message.lineReplyNoMention(embed);
     })
     // DisTubeOptions.searchSongs = true
