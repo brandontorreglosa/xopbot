@@ -173,7 +173,7 @@ client.distube = new DisTube(client, {
     searchSongs: true,
     emitNewSongOnly: true,
     highWaterMark: 1024 * 1024 * 64,
-    leaveOnEmpty: false,
+    leaveOnEmpty: true,
     leaveOnFinish: false,
     leaveOnStop: false,
     searchSongs: false,
@@ -196,8 +196,9 @@ client.distube
             .setTimestamp()
             .setColor(`${color}`)
             .setTitle(`${message.author.username}`)
-            .setDescription(`**[${song.name}](${song.url}) - \`[${song.formattedDuration}]\` \n Added Song To The Queue! 🎶**`)
+            .setDescription(`**Adding Song To Queue: 🎶 [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
+            .setFooter(`👁 ${song.views} 👍 ${song.likes} 👎 ${song.dislikes}`)
         message.lineReplyNoMention(embed);
     })
     .on("empty", message => {
@@ -205,7 +206,7 @@ client.distube
             .setTimestamp()
             .setColor(`${color}`)
             .setTitle(`${message.author.username}`)
-            .setDescription(`**Channel Is Empty. Leaving The Channel! 😭**`)
+            .setDescription(`**Channel Is Empty. XOPBOT Leaving The Channel! 😭**`)
         message.lineReplyNoMention(thing);
     })
     .on("error", (message, err) => {
@@ -221,7 +222,7 @@ client.distube
             .setTimestamp()
             .setColor(`${color}`)
             .setTitle(`${message.author.username}`)
-            .setDescription(`**No More Songs In The Queue! ⏯**`)
+            .setDescription(`**There Are No More Songs In The Queue! ⏯**`)
         message.lineReplyNoMention(embed);
     })
     .on("initQueue", queue => {
@@ -247,7 +248,7 @@ client.distube
             .setTimestamp()
             .setColor(color)
             .setTitle(`${message.author.username}`)
-            .setDescription(`**Started Playing: [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
+            .setDescription(`**Started Playing: 🎶 \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
         message.lineReplyNoMention(embed);
     })
