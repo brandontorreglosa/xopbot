@@ -1,148 +1,169 @@
-const ytdl = require('ytdl-core');
-const ytSearch = require('yt-search');
 const lineReplyNoMention = require('discord-reply');
-
-const queue = new Map();
-
+const color = process.env.Color;
+const errorChannel = process.env.errorChannel;
 module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
-    aliases: ['skip', 'stop', 'pause', 'unpause'],
+    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop'],
     cooldown: 2,
     description: 'Advanced music bot',
     async execute(client, message, cmd, args, Discord) {
 
-        const voice_channel = message.member.voice.channel;
-        if (!voice_channel) return message.lineReplyNoMention({ content: '**You Need To Be In A Voice Channel To Execute This Command!**' });
-
-        const server_queue = queue.get(message.guild.id);
-
+        const queue = message.client.distube.getQueue(message);
 
         if (cmd === 'play') {
-            if (!args.length) return message.lineReplyNoMention({ content: '**You Need To Send The Second Argument!**' });
-            let song = {};
-
-
-            if (ytdl.validateURL(args[0])) {
-                const song_info = await ytdl.getInfo(args[0]);
-                song = { title: song_info.videoDetails.title, url: song_info.videoDetails.video_url }
-            } else {
-
-                const video_finder = async (query) => {
-                    const video_result = await ytSearch(query);
-                    return (video_result.videos.length > 1) ? video_result.videos[0] : null;
-                }
-
-                const video = await video_finder(args.join(' '));
-                if (video) {
-                    song = { title: video.title, url: video.url }
-                } else {
-                    message.lineReplyNoMention({ content: '**Error Finding Video.**' });
-                }
+            if (!message.member.voice.channel) {
+                const embednovc1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc1);
             }
 
-
-            if (!server_queue) {
-
-                const queue_constructor = {
-                    voice_channel: voice_channel,
-                    text_channel: message.channel,
-                    connection: null,
-                    songs: [],
-                    //loopone: false,
-                    //loopall: false,
+            try {
+                if (!args[0]) {
+                    return message.lineReplyNoMention('**`(prefix)play <song>`**')
                 }
-
-
-                queue.set(message.guild.id, queue_constructor);
-                queue_constructor.songs.push(song);
-
-
-                try {
-                    const connection = await voice_channel.join();
-                    queue_constructor.connection = connection;
-                    video_player(message.guild, queue_constructor.songs[0]);
-                } catch (err) {
-                    queue.delete(message.guild.id);
-                    message.lineReplyNoMention({ content: '**There Was An Error Connecting!**' });
-                    throw err;
-                }
-            } else {
-                server_queue.songs.push(song);
-                return message.lineReplyNoMention({ content: `🎶 **${song.title}** Added To Queue!` });
+                message.client.distube.play(message, args.join(' '))
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Play Command!\n\nError:\n\n ${err}**` })
             }
         }
 
-        else if (cmd === 'skip') skip_song(message, server_queue);
-        else if (cmd === 'stop') stop_song(message, server_queue);
-        else if (cmd === 'pause') pause_song(message, server_queue);
-        else if (cmd === 'unpause') unpause_song(message, server_queue);
-        //else if(cmd === 'volume') volume_song(message, server_queue);
-        // else if(cmd === 'loop') loop_song(args, server_queue);
+        else if (cmd === 'stop') {
+            if (!queue) {
+                const embednovc2 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc2);
+            }
+
+            try {
+                message.client.distube.stop(message)
+                const stopembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**XOPBOT Is Leaving Voice Channel! 😭**')
+                return message.lineReplyNoMention(stopembed);
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Stop Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'skip') {
+            if (!queue) {
+                const embednovc3 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc3);
+            }
+
+            try {
+                message.client.distube.skip(message)
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Skip Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'pause') {
+            if (!queue) {
+                const embednovc4 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc4);
+            }
+
+            if (queue.pause) {
+                message.client.distube.resume(message)
+                const ressong1 = new MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle(`${message.author.username}`)
+                    .setDescription(`**Resumed The Music For You! ▶**`)
+                return message.lineReplyNoMention(ressong1);
+            }
+
+            try {
+                message.client.distube.pause(message)
+                const embed = new MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle(`${message.author.username}`)
+                    .setDescription(`**Paused The Music For You! ⏸**`)
+                message.lineReplyNoMention(embed);
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Pause Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'unpause') {
+            if (!queue) {
+                const embednovc5 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc5);
+            }
+
+            try {
+                message.client.distube.resume(message)
+                const ressong2 = new MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle(`${message.author.username}`)
+                    .setDescription(`**Resumed The Music For You! ▶**`)
+                return message.lineReplyNoMention(ressong2);
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Unpause Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'loop') {
+            if (!queue) {
+                const embednovc6 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc6);
+            }
+
+            try {
+                if (!args[0]) {
+                    return message.lineReplyNoMention('**`(prefix)loop <(Repeat queue)(Repeat song)(Off)>`**')
+                }
+                const mode = message.client.distube.setRepeatMode(message, parseInt(args[0]));
+                mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
+
+                const loopembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle(`${message.author.username}`)
+                    .setDescription('**Loop Mode Set To `' + mode + '`**')
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Loop Command!\n\nError:\n\n ${err}**` })
+            }
+        }
     }
-
 }
-
-const video_player = async (guild, song) => {
-    const song_queue = queue.get(guild.id);
-
-
-    if (!song) {
-        song_queue.voice_channel.leave();
-        queue.delete(guild.id);
-        return;
-    }
-    const stream = ytdl(song.url, { filter: 'audioonly' });
-    song_queue.connection.play(stream, { seek: 0, volume: 0.5 })
-        .on('finish', () => {
-            song_queue.songs.shift();
-            video_player(guild, song_queue.songs[0]);
-        });
-    await song_queue.text_channel.send({ content: `🎶 Now Playing **${song.title}**` })
-}
-
-const skip_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.lineReplyNoMention({ content: '**You Need To Be In A Voice Channel To Execute This Command!**' });
-    if (!server_queue) {
-        return message.lineReplyNoMention({ content: `**There Are No Songs In Queue 🎶**` });
-    }
-    server_queue.connection.dispatcher.end();
-}
-
-const stop_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.lineReplyNoMention({ content: '**You Need To Be In A Voice Channel To Execute This Command!**' });
-    server_queue.songs = [];
-    server_queue.connection.dispatcher.end();
-    message.lineReplyNoMention({ content: "**XOPBOT Is Leaving Voice Channel 😭**" })
-}
-
-
-const pause_song = (message, server_queue) => {
-    if (server_queue.connection.dispatcher.paused) return message.lineReplyNoMention({ content: "**Song Has Already Been Paused!**" });
-    server_queue.connection.dispatcher.pause();
-    message.lineReplyNoMention({ content: "**⏸ Paused The Music For You!**" });
-}
-
-
-const unpause_song = (message, server_queue) => {
-    if (!server_queue.connection.dispatcher.paused) return message.lineReplyNoMention({ content: "**Song Isn't Paused Yet!**" });
-    server_queue.connection.dispatcher.resume();
-    message.lineReplyNoMention({ content: "**▶ Resumed The Music For You!**" });
-}
-
-//   const volume_song = (message, server_queue) => {
-//     if (!message.member.voice.channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
-// 		//const serverQueue = message.client.queue.get(message.guild.id);
-// 		//if (!server_queue) return message.channel.send('There is nothing playing.');
-// 		if (!args[0]) return message.channel.send(`The current volume is: **${server_queue.volume}**`);
-// 	    server_queue.volume = args;
-// 		server_queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 5);
-// 		return message.channel.send(`I Set The Volume To: **${args[0]}**`);
-//   }
-
-//   const loop_song = (message, server_queue) => {
-//     if (!message.member.voice.channel) return message.channel.send('***You Need To Be In A Voice Channel To Execute This Command!***');
-//     server_queue.songs = [];
-//     server_queue.connection.dispatcher.loop();
-//     message.channel.send("***Looped The Song!***");
-//   }
