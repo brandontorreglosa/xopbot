@@ -34,6 +34,15 @@ module.exports = {
         }
 
         else if (cmd === 'stop') {
+            if (!message.member.voice.channel) {
+                const embednovc3 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc3);
+            }
+
             if (!queue) {
                 const embednovc2 = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -59,13 +68,22 @@ module.exports = {
         }
 
         else if (cmd === 'skip') {
+            if (!message.member.voice.channel) {
+                const embednovc4 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc4);
+            }
+
             if (!queue) {
-                const embednovc3 = new Discord.MessageEmbed()
+                const embednovc33 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle('Error `404`')
                     .setDescription('**There Are No Songs In Queue! 🎶**')
-                return message.lineReplyNoMention(embednovc3);
+                return message.lineReplyNoMention(embednovc33);
             }
 
             try {
@@ -78,13 +96,22 @@ module.exports = {
         }
 
         else if (cmd === 'pause') {
+            if (!message.member.voice.channel) {
+                const embednovc5 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc5);
+            }
+
             if (!queue) {
-                const embednovc4 = new Discord.MessageEmbed()
+                const embednovc44 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle('Error `404`')
                     .setDescription('**There Are No Songs In Queue! 🎶**')
-                return message.lineReplyNoMention(embednovc4);
+                return message.lineReplyNoMention(embednovc44);
             }
 
             if (queue.pause) {
@@ -113,13 +140,22 @@ module.exports = {
         }
 
         else if (cmd === 'unpause') {
+            if (!message.member.voice.channel) {
+                const embednovc6 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc6);
+            }
+
             if (!queue) {
-                const embednovc5 = new Discord.MessageEmbed()
+                const embednovc55 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle('Error `404`')
                     .setDescription('**There Are No Songs In Queue! 🎶**')
-                return message.lineReplyNoMention(embednovc5);
+                return message.lineReplyNoMention(embednovc55);
             }
 
             try {
@@ -138,13 +174,22 @@ module.exports = {
         }
 
         else if (cmd === 'loop') {
+            if (!message.member.voice.channel) {
+                const embednovc7 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc7);
+            }
+
             if (!queue) {
-                const embednovc6 = new Discord.MessageEmbed()
+                const embednovc66 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle('Error `404`')
                     .setDescription('**There Are No Songs In Queue! 🎶**')
-                return message.lineReplyNoMention(embednovc6);
+                return message.lineReplyNoMention(embednovc66);
             }
 
             try {
@@ -159,9 +204,10 @@ module.exports = {
                     .setColor(`${color}`)
                     .setTitle(`${message.author.username}`)
                     .setDescription('**Loop Mode Set To `' + mode + '`**')
+                return message.lineReplyNoMention(loopembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
-                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                //message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Loop Command!\n\nError:\n\n ${err}**` })
             }
         }
