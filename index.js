@@ -19,7 +19,6 @@ const client = new Client({
     ],
 });
 const mongoose = require('mongoose');
-const { Database } = require('quickmongo');
 const disbot = require("disbotlist");
 const disbut = require('discord-buttons');
 disbut(client);
@@ -35,7 +34,6 @@ const debtschema = require('./models/debtschema')
 
 // <----/Client Events/---->
 
-client.db = new Database(process.env.MONGODB_SRV2)
 client.commands = new Collection();
 client.events = new Collection();
 client.setMaxListeners(0);
