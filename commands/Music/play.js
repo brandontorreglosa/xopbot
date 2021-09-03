@@ -48,7 +48,7 @@ module.exports = {
                 const stopembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setTitle(`${message.author.username}`)
                     .setDescription('**XOPBOT Is Leaving Voice Channel! 😭**')
                 return message.lineReplyNoMention(stopembed);
             } catch (err) {

@@ -24,6 +24,7 @@ const disbot = require("disbotlist");
 const disbut = require('discord-buttons');
 disbut(client);
 const DisTube = require('distube');
+const color = process.env.Color;
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 const client12 = require('alexflipnote.js');
 const AlexClient = new client12('Xs7IYMWumg1ccrsJFd_a49qgZkWoIgFaoGTeMkdF')
@@ -76,15 +77,11 @@ mongoose.connect(process.env.MONGODB_SRV, {
 
 // <----/Economy System/---->
 
-
 client.bal = (id) => new Promise(async ful => {
     const data = await schema.findOne({ id });
     if (!data) return ful(0);
     ful(data.coins);
 })
-
-
-
 
 client.add = (id, coins) => {
     schema.findOne({ id }, async (err, data) => {
@@ -110,15 +107,11 @@ client.rmv = (id, coins) => {
     })
 }
 
-
 client.bank = (id) => new Promise(async ful => {
     const data = await bankschema.findOne({ id });
     if (!data) return ful(0);
     ful(data.bank);
 })
-
-
-
 
 client.bankadd = (id, bank) => {
     bankschema.findOne({ id }, async (err, data) => {
@@ -149,9 +142,6 @@ client.debt = (id) => new Promise(async ful => {
     if (!data) return ful(0);
     ful(data.debt);
 })
-
-
-
 
 client.debtadd = (id, coins) => {
     debtschema.findOne({ id }, async (err, data) => {
@@ -193,58 +183,68 @@ client.distube = new DisTube(client, {
 
 client.distube
     .on("addList", (message, queue, playlist) => {
-        const embed = new MessageEmbed()
-            .setColor(color)
-            .setDescription(`Added **${playlist.title}** playlist (${playlist.total_items} songs) to the queue - [${song.user}]`)
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setTitle(`${message.author.username}`)
+            .setDescription(`**Added: \`${playlist.title}\` | Playlist: \`${playlist.total_items}\` Songs | Queue: \`- [${song.user}] -\` 🎶**`)
             .setThumbnail(playlist.thumbnail)
-            .setFooter(`Request by: ${message.author.tag}`, message.client.user.displayAvatarURL());
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     })
     .on("addSong", (message, queue, song) => {
-        const embed = new MessageEmbed()
-            .setColor(color)
-            .setDescription(`Added **[${song.name}](${song.url})** - [${song.user}] \`[${song.formattedDuration}]\` to the queue`)
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setTitle(`${message.author.username}`)
+            .setDescription(`**Added: [${song.name}](${song.url}) - [${song.user}] - \`[${song.formattedDuration}]\` To The Queue! 🎶**`)
             .setThumbnail(song.thumbnail)
-            .setFooter(`Music | \©️${new Date().getFullYear()} ${client.config.foot}`);
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     })
     .on("empty", message => {
-        let thing = new MessageEmbed()
-            .setColor(color)
-            .setDescription(`Channel is empty. Leaving the channel`)
-        message.channel.send(thing);
+        const thing = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setTitle(`${message.author.username}`)
+            .setDescription(`**Channel Is Empty. Leaving The Channel! 😭**`)
+        message.lineReplyNoMention(thing);
     })
     .on("error", (message, err) => {
-        const embed = new MessageEmbed()
-            .setColor(color)
-            .setDescription(`An error encountered: ${err}`)
-        message.channel.send(embed);
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setTitle(`Error \`404\` `)
+            .setDescription(`**Error Has Occured!**`)
+        message.lineReplyNoMention(embed);
     })
     .on("finish", message => {
-        const embed = new MessageEmbed()
-            .setColor(color)
-            .setDescription(`No more song in queue`)
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setTitle(`${message.author.username}`)
+            .setDescription(`**No More Song In The Queue! ⏯**`)
         message.channel.send(embed);
     })
     .on("initQueue", queue => {
         queue.autoplay = false;
     })
     .on("noRelated", message => {
-        const embed = new MessageEmbed()
-            .setColor(color)
+        const embed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setTitle(`${message.author.username}`)
             .setDescription(`Can't find related video to play. Stop playing music.`)
         message.channel.send(embed);
     })
     .on("playList", (message, queue, playlist, song) => {
-        const embed = new MessageEmbed()
-            .setColor(color)
+        const embed = new Discord.MessageEmbed()
+            .setColor(`${color}`)
             .setDescription(`Play **${playlist.name}** playlist (${playlist.songs.length} songs)\nNow playing **[${song.name}](${song.url})** [${song.user}] - \`[${song.formattedDuration}]\``)
             .setThumbnail(playlist.thumbnail)
             .setFooter(`Music | \©️${new Date().getFullYear()} ${client.config.foot}`);
         message.channel.send(embed);
     })
     .on("playSong", (message, queue, song) => {
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor(color)
             .setDescription(`Started Playing **[${song.name}](${song.url})** - [${song.user}] \`[${song.formattedDuration}]\``)
             .setThumbnail(song.thumbnail)
@@ -253,7 +253,7 @@ client.distube
     })
     // DisTubeOptions.searchSongs = true
     .on("searchCancel", message => {
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor(color)
             .setDescription(`Searching canceled!`)
         message.channel.send(embed);
@@ -261,7 +261,7 @@ client.distube
     // DisTubeOptions.searchSongs = true
     .on("searchResult", (message, result) => {
         let i = 0
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor(color)
             .setAuthor(message.client.user.username, message.client.user.displayAvatarURL())
             .setDescription(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
