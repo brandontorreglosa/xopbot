@@ -204,7 +204,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription('**XOPBOT Set Loop Mode To `' + mode + '` For You! 👍**')
+                    .setDescription(`**XOPBOT Set Loop Mode To \`${mode}\` For You! 👍**`)
                 return message.lineReplyNoMention(loopembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -266,7 +266,7 @@ module.exports = {
                 if (isNaN(volume)) {
                     return message.lineReplyNoMention('**That Is Not A Number!**')
                 }
-                if(volume > maxvolume) return message.lineReplyNoMention('**The Volume Cant Go More Higher Than \`500\`%! That Will Result In Destruction!**')
+                if (volume > maxvolume) return message.lineReplyNoMention('**The Volume Cant Go More Higher Than \`500\`%! That Will Result In Destruction!**')
                 message.client.distube.setVolume(message, volume);
                 const volembed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -278,6 +278,80 @@ module.exports = {
                 const errorlogs = client.channels.cache.get(errorChannel);
                 message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Volume Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'jump') {
+            if (!message.member.voice.channel) {
+                const embednovc1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc1);
+            }
+
+            if (!queue) {
+                const embednovc88 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc88);
+            }
+
+            try {
+                if (!args[0]) {
+                    return message.lineReplyNoMention('**`(prefix)jump <songnumber>`**')
+                }
+                const jumpsong = parseInt(args[0])
+                if (isNaN(jumpsong)) {
+                    return message.lineReplyNoMention('**That Is Not A Number!**')
+                }
+                message.client.distube.jump(message, jumpsong);
+                const jumpembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**XOPBOT Jumped Song To \`${jumpsong}\` For You! 🤪**`)
+                return message.lineReplyNoMention(jumpembed)
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Jump Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'queue') {
+            if (!message.member.voice.channel) {
+                const embednovc1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc1);
+            }
+
+            if (!queue) {
+                const embednovc99 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**There Are No Songs In Queue! 🎶**')
+                return message.lineReplyNoMention(embednovc99);
+            }
+
+            try {
+                const queueembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}**. [${song.name}](${song.url}) - \`${song.formattedDuration}\``).slice(0, 10).join("\n"))
+                return message.lineReplyNoMention(queueembed)
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Queue Command!\n\nError:\n\n ${err}**` })
             }
         }
     }
