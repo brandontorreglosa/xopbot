@@ -7,7 +7,7 @@ module.exports = {
   description: "This Command Kicks Member",
   async execute(client, message, cmd, args, Discord) {
     try {
-      const member = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+      const member = message.mentions.users.first()
       if (!args[0]) {
         return message.lineReplyNoMention({ content: '**`(prefix)kick <@user> <reason>`**' })//, allowedMentions: { repliedUser: true } })
       }

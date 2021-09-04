@@ -7,7 +7,7 @@ module.exports = {
   description: "This Command Bans Member",
   async execute(client, message, cmd, args, Discord) {
     try {
-      const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+      const user = message.mentions.users.first()
       if (!args[0]) {
         return message.lineReplyNoMention({ content: '**`(prefix)ban <@user> <reason>`**' }) //, allowedMentions: { repliedUser: true } })
       }

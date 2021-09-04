@@ -7,7 +7,7 @@ module.exports = {
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
         const roletofind = args.slice(1).join(" ")
-        const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+        const target = message.mentions.users.first()
         if (!args[0]) {
             return message.lineReplyNoMention({ content: '**`(prefix)mute <@user>`**' }) //, allowedMentions: { repliedUser: true } })
         }
