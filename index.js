@@ -46,7 +46,7 @@ client.setMaxListeners(0);
 
 // <----/Disbotlist Servercount System/---->
 
-client.db.on("ready", () => {
+client.on("ready", () => {
 
     console.log(`CONNECTED WITH DISBOTLIST`)
 })
