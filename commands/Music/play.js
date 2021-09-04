@@ -302,7 +302,7 @@ module.exports = {
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention('**`(prefix)jump <songnumber>`**')
+                    return message.lineReplyNoMention('**`(prefix)jump <queuesongnumber>`**')
                 }
                 const jumpnu = parseInt(args[0])
                 if (isNaN(jumpnu)) {
