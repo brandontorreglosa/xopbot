@@ -36,8 +36,8 @@ module.exports = {
           .setColor('#c30202')
           .setTitle(`You Are Banned From ${message.guild.name} 😢`)
           .setDescription(`**Banned By: ${message.author.username} \nReason: \`${reason}\`**`)
-        userTarger.send(embed).catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }));
-        message.guild.member(userTarger).ban().catch(() => message.lineReplyNoMention({ content: `**Could Not Ban <@${userTarger.user.id}>!**` }))
+        message.guild.member(userTarger).ban({ reason: `**Banned By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention({ content: `**Could Not Ban <@${userTarger.user.id}>!**` }))
+        userTarger.send(embed).catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }))
           .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For \`${reason}\`!**` }))
       } else {
         message.lineReplyNoMention({ content: '**You Cant Ban This Member Because It Dont Exist!**' });

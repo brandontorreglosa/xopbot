@@ -36,8 +36,8 @@ module.exports = {
           .setColor('#c30202')
           .setTitle(`You Were Kicked From ${message.guild.name}`)
           .setDescription(`**Kicked By: ${message.author.username} \nReason: \`${reason}\`**`)
+        message.guild.member(memberTarger).kick({ reason: `**Kicked By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention({ content: `**Could Not Kick <@${memberTarger.user.id}>!**` }))
         memberTarger.send(embed).catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${memberTarger.user.id}> Reason Of Kick!**` }))
-        message.guild.member(memberTarger).kick().catch(() => message.lineReplyNoMention({ content: `**Could Not Kick <@${memberTarger.user.id}>!**` }))
           .then(() => message.lineReplyNoMention({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }))
       } else {
         message.channel.send({ content: '**You Cant Kick This Member Because It Dont Exist!**' });
