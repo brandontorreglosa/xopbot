@@ -3,7 +3,7 @@ const ms = require('ms');
 module.exports = {
     name: 'mute',
     permissions: ["MUTE_MEMBERS"],
-    cooldown: 3,
+    cooldown: 5,
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
         const roletofind = args.slice(1).join(" ")

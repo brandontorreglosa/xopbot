@@ -208,7 +208,7 @@ module.exports = {
                 return message.lineReplyNoMention(loopembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
-                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+               // message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Loop Command!\n\nError:\n\n ${err}**` })
             }
         }
@@ -317,7 +317,7 @@ module.exports = {
                 return message.lineReplyNoMention(jumpembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
-                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+               // message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Jump Command!\n\nError:\n\n ${err}**` })
             }
         }
