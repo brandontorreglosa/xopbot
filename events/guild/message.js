@@ -322,11 +322,11 @@ try {
         if (!validPermissions1.includes(perm1)) {
           return console.log(`Invalid Permissions ${perm1}`);
         }
-        if (!message.guild.me.permissions.has(perm)) {
-          invalidPerms1.push(perm);
+        if (!message.guild.me.permissions.has(perm1)) {
+          invalidPerms1.push(perm1);
         }
       }
-      if (invalidPerms.length) {
+      if (invalidPerms1.length) {
         const invalidembedperm1 = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
