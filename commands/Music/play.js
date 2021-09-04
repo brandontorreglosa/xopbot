@@ -262,15 +262,17 @@ module.exports = {
                     return message.lineReplyNoMention('**`(prefix)volume <number>`**')
                 }
                 const volume = parseInt(args[0])
+                const maxvolume = 500
                 if (isNaN(volume)) {
                     return message.lineReplyNoMention('**That Is Not A Number!**')
                 }
+                if(volume > maxvolume) return message.lineReplyNoMention('**The Volume Cant Go More Higher Than \`500\`%! That Will Result In Destruction!**')
                 message.client.distube.setVolume(message, volume);
                 const volembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**XOPBOT Set Volume To \`${volume}\` For You! 😃**`)
+                    .setDescription(`**XOPBOT Set Volume To \`${volume}\`% For You! 😃**`)
                 return message.lineReplyNoMention(volembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
