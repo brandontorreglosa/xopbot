@@ -12,6 +12,10 @@ module.exports = {
     if (message.author.id === member.id) {
       return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Unban Yourself!**' }) //, allowedMentions: { repliedUser: true } });
     }
+    if (member.id === client.user.id) {
+      return message.lineReplyNoMention({ content: `**You Can Not Unban Me Through Me Lol!**` })
+    };
+
     if (member) {
       const memberTarger = message.guild.members.cache.get(member.id);
       memberTarger.unban();

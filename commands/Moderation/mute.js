@@ -17,6 +17,9 @@ module.exports = {
         if (message.author.id === target.id) {
             return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Mute Yourself!**' }) //, allowedMentions: { repliedUser: true } });
         }
+        if (member.id === client.user.id) {
+            return message.lineReplyNoMention({ content: `**You Can Not Mute Me Through Me Lol!**` })
+          };      
 
         if (target.id === message.guild.owner.id) {
             return message.lineReplyNoMention({
