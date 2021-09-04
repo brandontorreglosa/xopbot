@@ -16,6 +16,10 @@ module.exports = {
       return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Kick Yourself!**' })//, allowedMentions: { repliedUser: true } });
     }
 
+    if (member.id === client.user.id) {
+      return message.lineReplyNoMention({ content: `**You Can Not Ban Me Through Me Lol!**` })
+    };
+
     if (member.id === message.guild.owner.id) {
       return message.lineReplyNoMention({
         content:
@@ -32,8 +36,9 @@ module.exports = {
         .setDescription(`**Kicked By: ${message.author.username} \nReason: \`${reason}\`**`)
       memberTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${memberTarger.user.id}> Reason Of Kick!**` }))
-        .then(() => setTimeout(() => memberTarger.kick()
-          .then(() => message.lineReplyNoMention({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }))))
+      return memberTarger.kick()
+        .catch(() => message.lineReplyNoMention({ content: `**Could Not Kick <@${memberTarger.user.id}>!**` }))
+        .then(() => message.lineReplyNoMention({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }))
     } else {
       message.channel.send({ content: '**You Cant Kick This Member Because It Dont Exist!**' });
     }

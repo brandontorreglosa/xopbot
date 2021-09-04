@@ -16,6 +16,10 @@ module.exports = {
       return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Ban Yourself!**' }) //, allowedMentions: { repliedUser: true } });
     }
 
+    if (member.id === client.user.id) {
+      return message.lineReplyNoMention({ content: `**You Can Not Ban Me Through Me Lol!**` })
+    };
+
     if (user.id === message.guild.owner.id) {
       return message.lineReplyNoMention({
         content:
@@ -30,10 +34,11 @@ module.exports = {
         .setColor('#c30202')
         .setTitle(`You Are Banned From ${message.guild.name} 😢`)
         .setDescription(`**Banned By: ${message.author.username} \nReason: \`${reason}\`**`)
-      userTarger.send(embed)
+      await userTarger.send(embed)
         .catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }))
-        .then(() => setTimeout(() => userTarger.ban()
-          .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For ${reason}!**` }))))
+      return userTarger.ban()
+        .catch(() => message.lineReplyNoMention({ content: `**Could Not Ban <@${userTarger.user.id}>!**` }))
+        .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For \`${reason}\`!**` }))
     } else {
       message.lineReplyNoMention({ content: '**You Cant Ban This Member Because It Dont Exist!**' });
     }
