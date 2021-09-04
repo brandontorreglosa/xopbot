@@ -304,11 +304,11 @@ module.exports = {
                 if (!args[0]) {
                     return message.lineReplyNoMention('**`(prefix)jump <songnumber>`**')
                 }
-                const jumpsong = parseInt(args[0])
+                const jumpnu = parseInt(args[0])
                 if (isNaN(jumpsong)) {
                     return message.lineReplyNoMention('**That Is Not A Number!**')
                 }
-                message.client.distube.jump(message, jumpsong);
+                message.client.distube.jump(message, jumpnu);
                 const jumpembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
@@ -346,7 +346,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}**. [${song.name}](${song.url}) - \`${song.formattedDuration}\``).slice(0, 10).join("\n"))
+                    .setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}. [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`).slice(0, 10).join("\n"))
                 return message.lineReplyNoMention(queueembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
