@@ -24,7 +24,7 @@ module.exports = {
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention('**`(prefix)play <song>`**')
+                    return message.lineReplyNoMention({ content: '**`(prefix)play <song>`**' })
                 }
                 message.client.distube.play(message, args.join(' '))
             } catch (err) {
@@ -195,7 +195,7 @@ module.exports = {
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention('**`(prefix)loop <(Repeat queue)(Repeat song)(Off)>`**')
+                    return message.lineReplyNoMention({ content: '**`(prefix)loop <(Repeat queue)(Repeat song)(Off)>`**' })
                 }
                 const mode = message.client.distube.setRepeatMode(message, parseInt(args[0]));
                 mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
@@ -208,7 +208,7 @@ module.exports = {
                 return message.lineReplyNoMention(loopembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
-               // message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                // message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Loop Command!\n\nError:\n\n ${err}**` })
             }
         }
@@ -259,14 +259,14 @@ module.exports = {
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention('**`(prefix)volume <number>`**')
+                    return message.lineReplyNoMention({ content: '**`(prefix)volume <number>`**' })
                 }
                 const volume = parseInt(args[0])
                 const maxvolume = 500
                 if (isNaN(volume)) {
-                    return message.lineReplyNoMention('**That Is Not A Number!**')
+                    return message.lineReplyNoMention({ content: '**That Is Not A Number!**' })
                 }
-                if (volume > maxvolume) return message.lineReplyNoMention('**The Volume Cant Go More Higher Than \`500\`%! That Will Result In Destruction!**')
+                if (volume > maxvolume) return message.lineReplyNoMention({ content: '**The Volume Cant Go More Higher Than \`500\`%! That Will Result In Destruction!**' })
                 message.client.distube.setVolume(message, volume);
                 const volembed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -302,11 +302,11 @@ module.exports = {
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention('**`(prefix)jump <queuesongnumber>`**')
+                    return message.lineReplyNoMention({ content: '**`(prefix)jump <queuesongnumber>`**' })
                 }
                 const jumpnu = parseInt(args[0])
                 if (isNaN(jumpnu)) {
-                    return message.lineReplyNoMention('**That Is Not A Number!**')
+                    return message.lineReplyNoMention({ content: '**That Is Not A Number!**' })
                 }
                 message.client.distube.jump(message, jumpnu);
                 const jumpembed = new Discord.MessageEmbed()
@@ -317,7 +317,7 @@ module.exports = {
                 return message.lineReplyNoMention(jumpembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
-               // message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                // message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Jump Command!\n\nError:\n\n ${err}**` })
             }
         }

@@ -14,7 +14,10 @@ module.exports = {
     }
     if (member.id === client.user.id) {
       return message.lineReplyNoMention({ content: `**You Can Not Unban Me Through Me Lol!**` })
-    };
+    }
+    if (message.member.roles.highest.position < member.roles.highest.position) {
+      return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
+    }
 
     if (member) {
       const memberTarger = message.guild.members.cache.get(member.id);

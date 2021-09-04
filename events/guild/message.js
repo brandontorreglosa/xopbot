@@ -280,6 +280,62 @@ try {
       }
     }
 
+    //<----/Client Permissions/---->
+
+    const validPermissions1 = [
+      "CREATE_INSTANT_INVITE",
+      "KICK_MEMBERS",
+      "BAN_MEMBERS",
+      "ADMINISTRATOR",
+      "MANAGE_CHANNELS",
+      "MANAGE_GUILD",
+      "ADD_REACTIONS",
+      "VIEW_AUDIT_LOG",
+      "PRIORITY_SPEAKER",
+      "STREAM",
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "SEND_TTS_MESSAGES",
+      "MANAGE_MESSAGES",
+      "EMBED_LINKS",
+      "ATTACH_FILES",
+      "READ_MESSAGE_HISTORY",
+      "MENTION_EVERYONE",
+      "USE_EXTERNAL_EMOJIS",
+      "VIEW_GUILD_INSIGHTS",
+      "CONNECT",
+      "SPEAK",
+      "MUTE_MEMBERS",
+      "DEAFEN_MEMBERS",
+      "MOVE_MEMBERS",
+      "USE_VAD",
+      "CHANGE_NICKNAME",
+      "MANAGE_NICKNAMES",
+      "MANAGE_ROLES",
+      "MANAGE_WEBHOOKS",
+      "MANAGE_EMOJIS",
+    ]
+
+    if (command.clientpermissions.length) {
+      let invalidPerms1 = []
+      for (const perm1 of command.clientpermissions) {
+        if (!validPermissions1.includes(perm1)) {
+          return console.log(`Invalid Permissions ${perm1}`);
+        }
+        if (!message.guild.me.permissions.has(perm)) {
+          invalidPerms1.push(perm);
+        }
+      }
+      if (invalidPerms.length) {
+        const invalidembedperm1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setTitle('OH NO!')
+          .setDescription(`**Hold Your Horses! I Have Missing Permissions: \`${invalidPerms}\`**`)
+        return message.lineReplyNoMention(invalidembedperm1) //, allowedMentions: { repliedUser: true } });
+      }
+    }
+
     // <----/Premium System/---->
 
     if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))

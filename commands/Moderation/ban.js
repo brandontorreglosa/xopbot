@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 const errorChannel = process.env.errorChannel;
 module.exports = {
   name: 'ban',
+  clientpermissions: ["BAN_MEMBERS"],
   permissions: ["BAN_MEMBERS"],
   cooldown: 5,
   description: "This Command Bans Member",
@@ -20,7 +21,11 @@ module.exports = {
 
       if (member.id === client.user.id) {
         return message.lineReplyNoMention({ content: `**You Can Not Ban Me Through Me Lol!**` })
-      };
+      }
+
+      if (message.member.roles.highest.position < member.roles.highest.position) {
+        return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
+      }
 
       if (user.id === message.guild.owner.id) {
         return message.lineReplyNoMention({
@@ -36,8 +41,8 @@ module.exports = {
           .setColor('#c30202')
           .setTitle(`You Are Banned From ${message.guild.name} 😢`)
           .setDescription(`**Banned By: ${message.author.username} \nReason: \`${reason}\`**`)
-        message.guild.member(userTarger).ban({ reason: `**Banned By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention({ content: `**Could Not Ban <@${userTarger.user.id}>!**` }))
         userTarger.send(embed).catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${userTarger.user.id}> Reason Of Ban!**` }))
+        message.guild.member(userTarger).ban({ reason: `**Banned By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention({ content: `**Could Not Ban <@${userTarger.user.id}>!**` }))
           .then(() => message.lineReplyNoMention({ content: `**<@${userTarger.user.id}> Has Been Banned For \`${reason}\`!**` }))
       } else {
         message.lineReplyNoMention({ content: '**You Cant Ban This Member Because It Dont Exist!**' });

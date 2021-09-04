@@ -19,7 +19,11 @@ module.exports = {
         }
         if (member.id === client.user.id) {
             return message.lineReplyNoMention({ content: `**You Can Not Mute Me Through Me Lol!**` })
-          };      
+        }
+
+        if (message.member.roles.highest.position < member.roles.highest.position) {
+            return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
+        }
 
         if (target.id === message.guild.owner.id) {
             return message.lineReplyNoMention({
