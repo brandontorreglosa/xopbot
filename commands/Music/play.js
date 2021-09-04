@@ -305,7 +305,7 @@ module.exports = {
                     return message.lineReplyNoMention('**`(prefix)jump <songnumber>`**')
                 }
                 const jumpnu = parseInt(args[0])
-                if (isNaN(jumpsong)) {
+                if (isNaN(jumpnu)) {
                     return message.lineReplyNoMention('**That Is Not A Number!**')
                 }
                 message.client.distube.jump(message, jumpnu);
