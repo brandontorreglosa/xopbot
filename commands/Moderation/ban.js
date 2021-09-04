@@ -2,7 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 const errorChannel = process.env.errorChannel;
 module.exports = {
   name: 'ban',
-  clientpermissions: ["BAN_MEMBERS"],
+  clientpermissions: ["BAN_MEMBERS", "SEND_MESSAGES", "EMBED_LINKS"],
   permissions: ["BAN_MEMBERS"],
   cooldown: 5,
   description: "This Command Bans Member",
@@ -18,14 +18,13 @@ module.exports = {
       if (message.author.id === user.id) {
         return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Ban Yourself!**' }) //, allowedMentions: { repliedUser: true } });
       }
-
       if (member.id === client.user.id) {
         return message.lineReplyNoMention({ content: `**You Can Not Ban Me Through Me Lol!**` })
       }
 
-      if (message.member.roles.highest.position < member.roles.highest.position) {
-        return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-      }
+      // if (message.member.roles.highest.position < member.roles.highest.position) {
+      //   return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
+      // }
 
       if (user.id === message.guild.owner.id) {
         return message.lineReplyNoMention({

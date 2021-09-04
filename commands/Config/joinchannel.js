@@ -5,6 +5,7 @@ module.exports = {
   name: "joinchannel",
   cooldown: 15,
   permissions: ["MANAGE_CHANNELS"],
+  clientpermissions: ["MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
   description: "Change the welcome channel per server!",
   aliases: ["jchannel", "jwelcome"],
   async execute(client, message, cmd, args, Discord) {

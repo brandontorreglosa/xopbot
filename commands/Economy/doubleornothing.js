@@ -4,6 +4,7 @@ module.exports = {
     cooldown: 25,
     aliases: ['dbornot', 'doubleorno'],
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Game Command",
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)doubleornothing <xocoins>`**' })

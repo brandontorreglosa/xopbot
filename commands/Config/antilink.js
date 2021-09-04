@@ -5,6 +5,7 @@ module.exports = {
   name: "antilink",
   cooldown: 15,
   permissions: ["ADMINISTRATOR"],
+  clientpermissions: ["ADMINISTRATOR"],
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {

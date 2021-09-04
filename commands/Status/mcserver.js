@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'mcserver',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['mcs'],
     cooldown: 5,
     description: 'get information about a minecraft server',

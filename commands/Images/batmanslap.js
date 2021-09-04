@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "batmanslap",
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['bmanslap', 'batslap'],
     cooldown: 5,
     description: "Image Manipulation Command",

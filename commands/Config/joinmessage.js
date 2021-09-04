@@ -5,6 +5,7 @@ module.exports = {
   name: "joinmessage",
   cooldown: 10,
   permissions: ["MANAGE_CHANNELS"],
+  clientpermissions: ["MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
   description: "Change the welcome message per server!",
   aliases: ["joinmsg", "welcomemsg", "jmsg"],
   async execute(client, message, cmd, args, Discord) {

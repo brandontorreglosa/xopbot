@@ -5,6 +5,7 @@ module.exports = {
   name: "dm",
   cooldown: 8,
   permissions: ["MANAGE_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   description: "Send DM message to a user",
   async execute(client, message, cmd, args, Discord) {
     try {

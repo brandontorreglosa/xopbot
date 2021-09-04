@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "wideavatar",
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['wpfp', 'wprofile'],
     cooldown: 5,
     description: "Get a  widened avatar of a user",

@@ -4,6 +4,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'giveaway',
   permissions: ["MANAGE_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_MESSAGES"],
   cooldown: 10,
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)giveaway <time(s)(m)(h)(d)> <channel> <prize>`**' });

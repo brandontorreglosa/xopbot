@@ -4,10 +4,11 @@ module.exports = {
     name: "automeme",
     cooldown: 300,
     permissions: ["ADMINISTRATOR"],
+    clientpermissions: ["MANAGE_MESSAGES", "SEND_MESSAGES", "EMBED_LINKS"],
     category: "Image",
     description: "Sends a random meme from reddit",
     async execute(client, message, cmd, args, Discord) {
-        message.channel.send({ content: "🔄 **| AutoMeme Starting... (`Please wait 20s`)**" }).then((msg) => {
+        message.lineReplyNoMention({ content: "🔄 **| AutoMeme Starting... (`Please wait 20s`)**" }).then((msg) => {
             setTimeout(function () {
                 msg.edit({ content: "🔄 **| AutoMeme Starting... (`Please Wait 10s`)**" })
                 setTimeout(function () {
@@ -32,7 +33,7 @@ module.exports = {
                 embed.setImage(`${memeImage}`)
                 embed.setColor('#c30202')
                 embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-                message.channel.send(embed);
+                message.lineReplyNoMention(embed);
             })
         }, 20000)
     }

@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "rps",
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES"],
     aliases: [],
     cooldown: 3,
     description: "play rock paper sciccors",

@@ -4,6 +4,7 @@ module.exports = {
     name: 'webhook',
     cooldown: 5,
     permissions: ["MANAGE_CHANNELS"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
             return message.reply({ content: 'Please Enter A Text To Send!', allowedMentions: { repliedUser: true } })

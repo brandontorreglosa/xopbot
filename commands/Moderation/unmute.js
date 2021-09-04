@@ -3,6 +3,7 @@ module.exports = {
   name: 'unmute',
   cooldown: 3,
   permissions: ["MUTE_MEMBERS"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MUTE_MEMBERS"],
   description: "This Unmutes A Member",
   async execute(client, message, cmd, args, Discord) {
     const target = message.mentions.users.first()
@@ -18,9 +19,9 @@ module.exports = {
     if (member.id === client.user.id) {
       return message.lineReplyNoMention({ content: `**You Can Not Unmute Me Through Me Lol!**` })
     }
-    if (message.member.roles.highest.position < member.roles.highest.position) {
-      return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-    }
+    // if (message.member.roles.highest.position < member.roles.highest.position) {
+    //   return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
+    // }
 
     if (user.id === message.guild.owner.id) {
       return message.lineReplyNoMention({

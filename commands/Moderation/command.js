@@ -3,6 +3,7 @@ module.exports = {
     name: 'command',
     cooldown: 5,
     permissions: ["MANAGE_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Embeds!",
     async execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()

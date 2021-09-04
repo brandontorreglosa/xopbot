@@ -4,6 +4,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "fliptext",
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   cooldown: 4,
   description: "Flip some text",
   usage: "fliptext <text>",

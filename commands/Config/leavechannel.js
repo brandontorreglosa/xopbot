@@ -5,6 +5,7 @@ module.exports = {
   name: "leavechannel",
   cooldown: 15,
   permissions: ["MANAGE_CHANNELS"],
+  clientpermissions: ["MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
   description: "Change the goodbye channel per server!",
   aliases: ["gchannel", "goodbye"],
   async execute(client, message, cmd, args, Discord) {

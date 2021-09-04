@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'botinvite',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 3,
     aliases: ['binv'],
     description: "Embeds!",

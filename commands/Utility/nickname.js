@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "nickname",
     permissions: ["MANAGE_NICKNAMES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_NICKNAMES"],
     cooldown: 3,
     description: "Change the Nickname of other Users",
     async execute(client, message, cmd, args, Discord) {

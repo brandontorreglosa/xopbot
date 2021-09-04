@@ -4,6 +4,7 @@ module.exports = {
     name: 'donate-premium',
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['donate-p', 'd-p'],
     async execute(client, message, cmd, args, Discord) {
         if (message.member.id != "600094534386319370") return message.lineReplyNoMention({ content: `**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command 😔**` });

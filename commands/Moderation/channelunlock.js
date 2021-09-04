@@ -4,6 +4,7 @@ module.exports = {
    name: "channelunlock",
    cooldown: 10,
    permissions: ["ADMINISTRATOR"],
+   clientpermissions: ["ADMINISTRATOR"],
    description: "Unlocks a Channel",
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.members.first()

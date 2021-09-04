@@ -4,6 +4,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'statusping',
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: ['stp', 'sping'],
   cooldown: 4,
   description: 'Get bot ping For The Server.',

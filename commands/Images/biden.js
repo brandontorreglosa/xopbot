@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: 'biden',
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   cooldown: 5,
   description: 'Get a custom clyde message!',
   async execute(client, message, cmd, args, Discord) {

@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'badges',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 3,
     aliases: ['usersbadge'],
     async execute(client, message, cmd, args, Discord) {

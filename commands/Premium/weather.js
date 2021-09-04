@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'weather',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     premium: true,
     aliases: ['wthr'],
     cooldown: 2,

@@ -4,6 +4,7 @@ module.exports = {
     name: 'wasted',
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: 'what are you doing here?',
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first() || message.author;

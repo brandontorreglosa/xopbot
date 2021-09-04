@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "beg",
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: [],
   cooldown: 5,
   permissions: [],

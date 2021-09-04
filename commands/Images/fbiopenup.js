@@ -4,6 +4,7 @@ module.exports = {
     name: 'fbiopenup',
     aliases: ['fbi', 'fbi-open-up'],
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 10,
     description: 'Knock Knock FBI OPEN UP!',
     async execute(client, message, cmd, args, Discord) {

@@ -3,6 +3,7 @@ const ms = require('ms');
 module.exports = {
     name: 'mute',
     permissions: ["MUTE_MEMBERS"],
+    clientpermissions: ["MUTE_MEMBERS", "SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 5,
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
@@ -21,9 +22,9 @@ module.exports = {
             return message.lineReplyNoMention({ content: `**You Can Not Mute Me Through Me Lol!**` })
         }
 
-        if (message.member.roles.highest.position < member.roles.highest.position) {
-            return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-        }
+        // if (message.member.roles.highest.position < member.roles.highest.position) {
+        //     return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
+        // }
 
         if (target.id === message.guild.owner.id) {
             return message.lineReplyNoMention({

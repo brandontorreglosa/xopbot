@@ -4,6 +4,7 @@ module.exports = {
     name: "wiki",
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Get Search Results from Wikipedia",
     async execute(client, message, cmd, args, Discord) {
         const search = args.join("_");

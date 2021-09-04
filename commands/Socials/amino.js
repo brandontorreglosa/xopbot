@@ -3,6 +3,7 @@ module.exports = {
     name: 'amino',
     cooldown: 2,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Sends The Owners Youtube Channel!",
     async execute(client, message, cmd, args, Discord) {
         const amino = new Discord.MessageEmbed()

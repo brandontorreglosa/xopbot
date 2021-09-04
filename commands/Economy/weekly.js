@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "weekly",
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: [],
   cooldown: 604800,
   permissions: [],

@@ -3,6 +3,7 @@ module.exports = {
     name: 'clearbug',
     aliases: ['clearbugs', 'cb'],
     permissions: ["ADMINISTRATOR"],
+    clientpermissions: ["ADMINISTRATOR"],
     cooldown: 4200,
     description: 'kill a user',
     async execute(client, message, cmd, args, Discord) {

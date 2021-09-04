@@ -5,6 +5,7 @@ module.exports = {
     name: "createvoice",
     aliases: ['newvoicec', 'cvoicec'],
     permissions: ["MANAGE_CHANNELS"],
+    clientpermissions: ["MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 30,
     description: "Create voice Channels in your Server",
     async execute(client, message, cmd, args, Discord) {

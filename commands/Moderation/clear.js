@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'clear',
     permissions: ["MANAGE_MESSAGES"],
+    clientpermissions: ["MANAGE_MESSAGES", "SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 4,
     description: "Clear messages!",
     async execute(client, message, cmd, args, Discord) {

@@ -4,6 +4,7 @@ module.exports = {
     cooldown: 15,
     aliases: ['clearall'],
     permissions: ['MANAGE_MESSAGES', 'MANAGE_CHANNELS'],
+    clientpermissions: ["MANAGE_MESSAGES", "MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
     description: 'Removes all messages in the channel (Deletes the old channel and makes a copy of it with permissions intact)',
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.members.first() || message.author;

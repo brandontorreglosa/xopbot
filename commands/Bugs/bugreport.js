@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES"],
     aliases: ['bug', 'reportbug'],
     cooldown: 20,
     description: 'let users report bugs',

@@ -4,6 +4,7 @@ module.exports = {
     cooldown: 3,
     aliases: ['rv'],
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Reverses the given text",
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ")

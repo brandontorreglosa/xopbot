@@ -2,9 +2,10 @@ const { MessageEmbed } = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "coinflip",
-    cooldown: 2,
+    cooldown: 3,
     aliases: ['cf'],
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "flips a coin!",
     async execute(client, message, cmd, args, Discord) {
         const choices = ["Heads", "Tails"];

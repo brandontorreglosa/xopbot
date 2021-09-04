@@ -5,13 +5,14 @@ module.exports = {
     cooldown: 300,
     nsfw: true,
     permissions: ["ADMINISTRATOR"],
+    clientpermissions: ["MANAGE_MESSAGES", "SEND_MESSAGES", "EMBED_LINKS"],
     category: "Image",
     description: "Sends a random nsfw image from reddit",
     async execute(client, message, cmd, args, Discord) {
 
         if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-        message.channel.send({ content: "🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**" }).then((msg) => {
+        message.lineReplyNoMention({ content: "🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**" }).then((msg) => {
             setTimeout(function () {
                 msg.edit({ content: "🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**" })
                 setTimeout(function () {
@@ -36,7 +37,7 @@ module.exports = {
                 embed.setImage(`${memeImage}`)
                 embed.setColor('#c30202')
                 embed.setFooter(`AUTONSFW IS POG | 👍${memeUpvotes} 💬 ${memeNumComments}`)
-                message.channel.send(embed);
+                message.lineReplyNoMention(embed);
             })
         }, 20000)
     }

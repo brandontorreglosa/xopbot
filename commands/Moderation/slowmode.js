@@ -3,6 +3,7 @@ module.exports = {
     name: "slowmode",
     cooldown: 5,
     permissions: ["MANAGE_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_MESSAGES"],
     aliases: ['smd'],
     category: "Mods",
     description: "Set the slowmode in a channel.",

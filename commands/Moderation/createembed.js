@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'createembed',
     permissions: ["MANAGE_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['embedcreator', 'create-ebed', 'create-embed'],
     cooldown: 10,
     async execute(client, message, cmd, args, Discord) {

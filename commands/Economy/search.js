@@ -3,6 +3,7 @@ module.exports = {
   name: "search",
   aliases: [],
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   cooldown: 120,
   category: "economy",
   description: {

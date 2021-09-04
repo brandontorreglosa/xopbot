@@ -4,6 +4,7 @@ module.exports = {
     name: "meme",
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     category: "Image",
     description: "Sends a random meme from reddit",
 

@@ -4,6 +4,7 @@ module.exports = {
     name: 'tictactoe',
     cooldown: 10,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     premium: true,
     async execute(client, message, cmd, args, Discord) {
         const member = message.mentions.members.first()

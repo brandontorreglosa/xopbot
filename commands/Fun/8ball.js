@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: '8ball',
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: ['8b', '8ba'],
   cooldown: 5,
   description: 'Asks a question and let the bot determine your fate :sparkler:',

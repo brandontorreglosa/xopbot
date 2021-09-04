@@ -2,6 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'kill',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES"],
     aliases: ['slaughter', 'cut'],
     cooldown: 2,
     description: 'kill a user',

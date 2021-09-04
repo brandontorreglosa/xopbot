@@ -3,12 +3,13 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'math',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 3,
     aliases: ['mathprob', 'mathproblem'],
     premium: true,
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (!args[0]) return message.channel.send({ content: "**`(prefix)math <equation>`**" });
+            if (!args[0]) return message.lineReplyNoMention({ content: "**`(prefix)math <equation>`**" });
 
             const embed = new MessageEmbed()
                 .setColor('#c30202')

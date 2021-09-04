@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "rolelock",
     permissions: ["ADMINISTRATOR"],
+    clientpermissions: ["ADMINISTRATOR"],
     cooldown: 3,
     description: "Locks a given channel for a particular role!",
     async execute(client, message, cmd, args, Discord) {

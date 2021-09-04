@@ -2,8 +2,9 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'avatar',
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['icon', 'pfp', 'profilepic'],
-    cooldown: 2,
+    cooldown: 5,
     description: 'Return a user(s) avatar picture!',
     async execute(client, message, cmd, args, Discord) {
 

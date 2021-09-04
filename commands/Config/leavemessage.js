@@ -5,6 +5,7 @@ module.exports = {
   name: "leavemessage",
   cooldown: 10,
   permissions: ["MANAGE_CHANNELS"],
+  clientpermissions: ["MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
   description: "Change the welcome message per server!",
   aliases: ["leavemsg", "goodbyemsg", "lmsg"],
   async execute(client, message, cmd, args, Discord) {

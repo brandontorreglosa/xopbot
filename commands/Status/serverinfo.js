@@ -7,6 +7,7 @@ module.exports = {
   aliases: ['si'],
   cooldown: 20,
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
 
     try {

@@ -4,6 +4,7 @@ module.exports = {
     name: 'economy',
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
         message.react('💵');
 

@@ -5,6 +5,7 @@ module.exports = {
     cooldown: 15,
     aliases: ['inv'],
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES"],
     description: "Inventory Command!",
     async execute(client, message, cmd, args, Discord) {
         inventory.findOne(

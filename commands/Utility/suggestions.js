@@ -3,6 +3,7 @@ module.exports = {
     name: 'suggestions',
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_CHANNELS"],
     aliases: ['sgs', 'suggest'],
     permissions: [],
     description: 'Create A Suggestion!',

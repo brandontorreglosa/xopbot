@@ -7,6 +7,7 @@ module.exports = {
     aliases: ['bugs', 'socials', 'games', 'music', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
 
         const xopemoji = client.emojis.cache.get('836214135866785806');

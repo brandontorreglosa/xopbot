@@ -8,6 +8,7 @@ module.exports = {
     aliases: ['profile'],
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: 'get rank',
     async execute(client, message, cmd, args, Discord) {
 

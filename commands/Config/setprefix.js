@@ -4,6 +4,7 @@ module.exports = {
   name: 'setprefix',
   cooldown: 10,
   permissions: ["ADMINISTRATOR"],
+  clientpermissions: ["SEND_MESSAGES", "SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
 
     if (!args[0]) return message.lineReplyNoMention({ content: "**`(prefix)setprefix <newprefix>`**" }) //, allowedMentions: { repliedUser: true } });

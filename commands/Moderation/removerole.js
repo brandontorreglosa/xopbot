@@ -4,6 +4,7 @@ module.exports = {
   cooldown: 5,
   aliases: ['delrole', 'deleterole'],
   permissions: ["MANAGE_ROLES"],
+  clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
     let target = message.mentions.members.first();
 

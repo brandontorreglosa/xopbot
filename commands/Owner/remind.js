@@ -4,6 +4,7 @@ module.exports = {
     name: "remind",
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     category: "utility",
     description: {
         usage: "remind <time> <reminder>",

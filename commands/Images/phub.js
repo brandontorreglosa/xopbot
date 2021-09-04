@@ -4,6 +4,7 @@ module.exports = {
     name: 'phub',
     cooldown: 8,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: 'what are you doing here?',
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {

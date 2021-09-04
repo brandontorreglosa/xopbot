@@ -4,6 +4,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
    name: "ascii",
    permissions: ["SEND_MESSAGES"],
+   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
    cooldown: 5,
    aliases: [],
    category: "Fun",

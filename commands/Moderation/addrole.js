@@ -4,6 +4,7 @@ module.exports = {
     cooldown: 5,
     aliases: ['addnewrole'],
     permissions: ["MANAGE_ROLES"],
+    clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"], 
     async execute(client, message, cmd, args, Discord) {
         const member = message.mentions.members.first()
         if (!member) {

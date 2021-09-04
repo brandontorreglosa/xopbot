@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "hack",
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES"],
   cooldown: 3,
   description: "Another Fun Command",
   async execute(client, message, cmd, args, Discord) {

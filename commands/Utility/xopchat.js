@@ -3,6 +3,7 @@ module.exports = {
     name: "xopchat",
     permissions: ["SEND_MESSAGES"],
     aliases: ['iwantxopchat', 'requestxopchat'],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 600000,
     description: 'let users request xop-chat',
     async execute(client, message, cmd, args, Discord) {

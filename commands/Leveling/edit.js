@@ -3,6 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: 'edit',
     permissions: ["ADMINISTRATOR"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     cooldown: 5,
     description: 'Edit Xp Level',
     async execute(client, message, cmd, args, Discord) {

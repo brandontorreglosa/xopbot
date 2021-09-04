@@ -331,7 +331,7 @@ try {
           .setTimestamp()
           .setColor('#c30202')
           .setTitle('OH NO!')
-          .setDescription(`**Hold Your Horses! I Have Missing Permissions: \`${invalidPerms1}\`**`)
+          .setDescription(`**Hold Your Horses! XOPBOT Has Missing Permissions: \`${invalidPerms1}\`**`)
         return message.lineReplyNoMention(invalidembedperm1) //, allowedMentions: { repliedUser: true } });
       }
     }

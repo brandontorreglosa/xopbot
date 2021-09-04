@@ -3,6 +3,7 @@ module.exports = {
   name: "withdraw",
   cooldown: 10,
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: ["wd"],
   permissions: [],
   description: "withdraw coins from your bank",

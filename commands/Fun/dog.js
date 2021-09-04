@@ -5,7 +5,8 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
   name: "dog",
   permissions: ["SEND_MESSAGES"],
-  cooldown: 3,
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
+  cooldown: 5,
   category: "fun",
   description: "Sends a random dog image",
   usage: "[command]",

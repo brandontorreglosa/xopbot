@@ -6,6 +6,7 @@ module.exports = {
     aliases: ['delchannel', 'delch'],
     cooldown: 30,
     permissions: ["MANAGE_CHANNELS"],
+    clientpermissions: ["MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
     description: "Delete Channels From your Server",
     async execute(client, message, cmd, args, Discord) {
         try {

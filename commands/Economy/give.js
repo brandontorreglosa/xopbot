@@ -4,6 +4,7 @@ module.exports = {
   cooldown: 10,
   aliases: [],
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   description: "give a player some Xocoins",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {

@@ -3,6 +3,7 @@ module.exports = {
     name: 'voteinvite',
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['vinv', 'voin'],
     description: "Embeds!",
     async execute(client, message, cmd, args, Discord) {

@@ -5,6 +5,7 @@ const db = require('quick.db');
 module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "CONNECT", "SPEAK"],
     aliases: ['skip', 'stop', 'pause', 'unpause', 'loop', 'leave', 'jump', 'queue', 'volume'],
     cooldown: 2,
     description: 'Advanced music bot',

@@ -6,6 +6,7 @@ module.exports = {
     name: "covid",
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['corona', 'c19'],
     async execute(client, message, cmd, args, Discord) {
         const baseUrl = "https://corona.lmao.ninja/v2";

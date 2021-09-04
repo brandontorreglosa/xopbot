@@ -8,6 +8,7 @@ module.exports = {
     name: "botservers",
     cooldown: 3,
     permissions: ["ADMINISTRATOR"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['bserver', 'bs'],
     description: "Check what Servers the bot is in!",
     async execute(client, message, cmd, args, Discord) {

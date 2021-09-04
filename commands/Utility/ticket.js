@@ -4,6 +4,7 @@ module.exports = {
   cooldown: 10,
   aliases: ['ticket-set'],
   permissions: ["SEND_MESSAGES"],
+  clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_CHANNELS"],
   description: "open a ticket!",
   async execute(client, message, cmd, args, Discord) {
 

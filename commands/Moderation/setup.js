@@ -3,6 +3,7 @@ module.exports = {
     name: 'setup',
     aliases: ['close', 'open'],
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["ADMINISTRATOR"],
     async execute(client, message, cmd, args, Discord) {
 
         const ServerID = message.guild.id;
