@@ -8,11 +8,26 @@ module.exports = {
     category: "Image",
     description: "Sends a random meme from reddit",
     async execute(client, message, cmd, args, Discord) {
-        message.lineReplyNoMention({ content: "🔄 **| AutoMeme Starting... (`Please wait 20s`)**" }).then((msg) => {
+        const on1 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('🔄 **| AutoMeme Starting... (`Please wait 20s`)**')
+        const on2 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('🔄 **| AutoMeme Starting... (`Please Wait 10s`)**')
+        const on3 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('✅ **| AutoMeme Started**')
+        message.lineReplyNoMention(on1).then((msg) => {
             setTimeout(function () {
-                msg.edit({ content: "🔄 **| AutoMeme Starting... (`Please Wait 10s`)**" })
+                msg.edit(on2)
                 setTimeout(function () {
-                    msg.edit({ content: "✅ **| AutoMeme Started**" })
+                    msg.edit(on3)
                 }, 10000)
             }, 10000)
         })

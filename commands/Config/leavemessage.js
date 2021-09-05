@@ -11,7 +11,12 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const text = args.join(" ");
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: `\`Usage: (prefix)leavemessage <Text|off>\`` });
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)leavemessage <text/off>\`**`)
+      return message.lineReplyNoMention(nopr)
     }
     if (text !== "off") {
       const data = await LeaveMsgSchema.findOne({
@@ -27,7 +32,12 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.lineReplyNoMention({ content: `**Leave Message Set To ${newData.ByeMsg}**` });
+        const lvmsg1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Message Set To \`${newData.ByeMsg}\`!**`)
+        message.lineReplyNoMention(lvmsg1)
 
       } else if (!data) {
 
@@ -36,7 +46,12 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.lineReplyNoMention({ content: `Goodbye Message set to ${newData.ByeMsg}` });
+        const lvmsg2 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Message Set To \`${newData.ByeMsg}\`!**`)
+        message.lineReplyNoMention(lvmsg2)
 
       }
     } else if (text === "off") {
@@ -49,10 +64,20 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.lineReplyNoMention({ content: `**Goodbye Message Has Been Turned Off!**` });
+        const lvnoset = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Message Has Been \`🔴 Disabled\`!**`)
+        return message.lineReplyNoMention(lvnoset)
 
       } else if (!data2) {
-        return message.lineReplyNoMention({ content: `**Goodbye Message Isn't Even Setup Bot!**` });
+        const lvsetno = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Message Not Even Setup Bot!**`)
+        return message.lineReplyNoMention(lvsetno)
       }
     }
   },

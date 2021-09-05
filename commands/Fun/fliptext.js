@@ -11,7 +11,12 @@ module.exports = {
   type: "Fun",
   async execute(client, message, cmd, args, Discord) {
     if (args.length < 1) {
-      return message.lineReplyNoMention({ content: "**`(prefix)fliptext <text>`**" })
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)fliptext <text\`**`)
+      return message.lineReplyNoMention(nopr)
     }
     args.reverse();
     var flipped = [];

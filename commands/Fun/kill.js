@@ -8,13 +8,27 @@ module.exports = {
     description: 'kill a user',
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.lineReplyNoMention('**`(prefix)kill <@user>`**')
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)kill <@user>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
-        const randomNumber = Math.floor(Math.random() * 500) + 1;
-        const kill_list = message.mentions.users.map(user => {
-            return `**${user.username} Was Killed By ${message.author.username} Who Used ${randomNumber} Power!**`;
-        });
 
-        message.lineReplyNoMention({ content: kill_list });
+        const links = [
+            'https://th.bing.com/th/id/OIP.PO3uT4EYhVyD6gVGNJjzJgHaE9?pid=ImgDet&rs=1',
+            'https://th.bing.com/th/id/OIP.877cS00bngniZF0m2--FAgHaEK?pid=ImgDet&rs=1'
+        ]
+        const user = message.mentions.users.first()
+        const randomLinks = links[Math.floor(Math.random() * links.length)];
+        const randomNumber = Math.floor(Math.random() * 500) + 1;
+        const kill_list = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setTitle(`${user.username} Was Killed!`)
+            .setDescription(`**\`${user.username}\` Was Killed By \`${message.author.username}\` Who Used \`${randomNumber}\` Power!**`)
+            .setImage(`${randomLinks}`)
+        return message.lineReplyNoMention(kill_list)
     }
 }

@@ -8,7 +8,14 @@ module.exports = {
     description: "Reverses the given text",
     async execute(client, message, cmd, args, Discord) {
         const text = args.join(" ")
-        if (!text) return message.lineReplyNoMention({ content: "**`(prefix)reverse <text>`**"}) //, allowedMentions: { repliedUser: true }  })
+        if (!text) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)reverse <text>\`**`)
+            return message.lineReplyNoMention(nopr)
+        }
         let Rarray = text.split("")
         let reverseArray = Rarray.reverse()
         let result = reverseArray.join("")

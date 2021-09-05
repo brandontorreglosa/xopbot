@@ -43,22 +43,24 @@ module.exports = {
       message.lineReplyNoMention(EMBED);
     });
 
+    const whatuding = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**What Are You Doing?! There Was \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, If You Worked As A \`${chosenJobs[0]}\`! 😭**`)
+
     COLLECTOR.on("end", (collected) => {
       if (collected.size == 0) {
-        return message.lineReplyNoMention({
-          content:
-            `**What are you doing <@${message.author.id}>?! There was ₿${RANDOM_NUMBER.toString().replace(
-              /\B(?=(\d{3})+(?!\d))/g,
-              ","
-            )} If You Worked As A ${chosenJobs[0]} 😭**`
-        });
+        return message.lineReplyNoMention(whatuding)
       }
     });
 
-    message.lineReplyNoMention({
-      content:
-        `<@${message.author.id
-        }>\n**What Job Would You Do?** 💰\nType The Job In This Channel.\n\`${chosenJobs.join("` `")}\``
-    });
+    const findjb = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**What Job Will You Do? 💰 \nType The Job In This Channel. \n\`${chosenJobs.join("` `")}\`**`)
+
+    message.lineReplyNoMention(findjb)
   },
 };

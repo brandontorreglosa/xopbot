@@ -6,13 +6,18 @@ module.exports = {
     cooldown: 3,
     description: 'kiss a user',
     async execute(client, message, cmd, args, Discord) {
-        if(!args[0]) {
-            return message.lineReplyNoMention('**`(prefix)kiss <@user>`**')
+        if (!args[0]) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)kiss <@user>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
         const Choices = [
             'Marry You',
             'Ask You For Date',
-            'Rickroll',
+            'Rickroll You',
             'Kiss You Back',
             'Punch You Back',
             'Ignore What Just Happened',
@@ -33,10 +38,12 @@ module.exports = {
         const randomChoices = Choices.sort(() => Math.random() - Math.random()).slice(0, 1);
 
         const randomNumber = Math.floor(Math.random() * 2000) + 1;
-        const hug_list = message.mentions.users.map(user => {
-            return `**${user.username} Was Kissed By ${message.author.username} And Now ${user.username} Is ${randomNumber}% Happy And Would Like To ${randomChoices}!**`;
-        });
-
-        message.lineReplyNoMention({ content: hug_list });
+        const user = message.mentions.users.first()
+        const hug_list = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${user.username} Was Kissed!`)
+            .setDescription(`**\`${user.username}\` Was Kissed By \`${message.author.username}\` And Now \`${user.username}\` Is \`${randomNumber}\` Happy And Would Like To \`${randomChoices}\`!**`)
+        return message.lineReplyNoMention(hug_list)
     }
 }

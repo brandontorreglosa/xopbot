@@ -11,8 +11,8 @@ module.exports = {
     const randomNumber = Math.floor(Math.random() * 5000) + 5000;
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
-      .setTitle(`${message.author.username}`)
-      .setDescription(`**You Received ${randomNumber} Daily Xocoins! 💸**`)
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**You Received \`${randomNumber}\` Daily Xocoins! 💸**`)
       .setColor('#c30202')
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)

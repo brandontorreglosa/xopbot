@@ -10,7 +10,12 @@ module.exports = {
   aliases: ["jchannel", "jwelcome"],
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)joinchannel <channel/off>`**' })
+      const nospec = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**`(prefix)joinchannel <#channel/off>`**')
+      return message.lineReplyNoMention(nospec)
     }
     if (message.mentions.channels.first()) {
       const data = await welcomeSchema.findOne({
@@ -22,7 +27,12 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.lineReplyNoMention({ content: `**Join Channel Set To ${message.mentions.channels.first()}**` });
+        const jc1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Join Channel Set To \`${message.mentions.channels.first()}\`!**`)
+        message.lineReplyNoMention(jc1)
 
         let newData = new welcomeSchema({
           Welcome: message.mentions.channels.first().id,
@@ -30,7 +40,12 @@ module.exports = {
         });
         newData.save();
       } else if (!data) {
-        message.lineReplyNoMention({ content: `**Join Channel Set To ${message.mentions.channels.first()}**` });
+        const jc2 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Join Channel Set To \`${message.mentions.channels.first()}\`!**`)
+        message.lineReplyNoMention(jc2)
 
         let newData = new welcomeSchema({
           Welcome: message.mentions.channels.first().id,
@@ -48,10 +63,20 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.lineReplyNoMention({ content: `**Join Channel Has Been Turned Off!**` });
+        const jcoff1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Join Channel Has Been `🔴 Disabled`!**')
+        return message.lineReplyNoMention(jcoff1)
 
       } else if (!data2) {
-        return message.lineReplyNoMention({ content: `**Join Channel Isn't Even Setup Bot!**` });
+        const nojcset = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Join Channel Not Even Setup Bot!**')
+        return message.lineReplyNoMention(nojcset)
       }
     }
   }

@@ -2,7 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
-    clientpermissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['bug', 'reportbug'],
     cooldown: 20,
     description: 'let users report bugs',
@@ -12,7 +12,12 @@ module.exports = {
 
         //look if there is a bug specified
         const query = args.join(' ');
-        if (!query) return message.lineReplyNoMention({ content: '**`(prefix)bugreport <bug>`**'}) //, allowedMentions: { repliedUser: true } })
+        const queryembed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('**`(prefix)bugreport <bug>`**')
+        if (!query) return message.lineReplyNoMention(queryembed) //, allowedMentions: { repliedUser: true } })
 
         //create an embed for the bug report
         const reportEmbed = new Discord.MessageEmbed()
@@ -25,6 +30,6 @@ module.exports = {
             .setTimestamp()
         channel.send(reportEmbed);
         //send the embed to the channel
-        message.lineReplyNoMention({ content: "**Bug Report Has Been Sent!**"}) //, allowedMentions: { repliedUser: true } })
+        message.lineReplyNoMention({ content: "**Bug Report Has Been Sent!**" }) //, allowedMentions: { repliedUser: true } })
     }
 }

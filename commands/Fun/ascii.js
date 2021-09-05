@@ -14,11 +14,21 @@ module.exports = {
 
       let text = args.join(" ");
       if (!text) {
-         return message.lineReplyNoMention({ content: '**`(prefix)ascii <text>`**' })
+         const nopr = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**\`(prefix)ascii <text>\`**`)
+         return message.lineReplyNoMention(nopr)
       }
       let maxlen = 20
       if (text.length > 11) {
-         return message.lineReplyNoMention({ content: `**Please Put Text That Has 11 Characters Or Less Because The Conversion Won't Be That Good!**` })
+         const maxlenembed = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Please Put Text That Has 11 Characters Or Less Because The Conversion Won\`t Be That Good!**`)
+         return message.lineReplyNoMention(maxlenembed)
       }
 
       figlet(text, function (err, data) {

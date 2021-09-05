@@ -12,7 +12,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setTitle(`${message.author.username}`)
-      .setDescription(`**You Received ${randomNumber} Yearly Xocoins! 💸**`)
+      .setDescription(`**You Received \`${randomNumber}\` Yearly Xocoins! 💸**`)
       .setColor('#c30202')
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)

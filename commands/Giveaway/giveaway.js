@@ -7,7 +7,7 @@ module.exports = {
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_MESSAGES"],
   cooldown: 10,
   async execute(client, message, cmd, args, Discord) {
-    if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)giveaway <time(s)(m)(h)(d)> <channel> <prize>`**' });
+    if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)giveaway <time(s)(m)(h)(d)> <#channel> <prize>`**' });
     if (
       !args[0].endsWith("d") &&
       !args[0].endsWith("h") &&

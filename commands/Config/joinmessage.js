@@ -11,7 +11,12 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const text = args.join(" ");
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)joinmessage <text/off>`**' });
+      const nojcmsg = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**`(prefix)joinmessage <text/off>`**')
+      return message.lineReplyNoMention(nojcmsg)
     }
     if (text !== "off") {
       const data = await JoinMsgSchema.findOne({
@@ -27,7 +32,12 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.lineReplyNoMention({ content: `**Join Message Set To ${newData.JoinMsg}**` });
+        const jcmsg1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Join Message Set To \`${newData.JoinMsg}\`!**`)
+        message.lineReplyNoMention(jcmsg1)
 
       } else if (!data) {
 
@@ -36,7 +46,12 @@ module.exports = {
           GuildID: message.guild.id,
         });
         newData.save();
-        message.lineReplyNoMention({ content: `**Join Message Set To ${newData.JoinMsg}**` });
+        const jcmsg2 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Join Message Set To \`${newData.JoinMsg}\`!**`)
+        message.lineReplyNoMention(jcmsg2)
 
       }
     } else if (text === "off") {
@@ -48,11 +63,20 @@ module.exports = {
         await JoinMsgSchema.findOneAndRemove({
           GuildID: message.guild.id,
         });
-
-        return message.lineReplyNoMention({ content: `**Join Message Has Been Turned Off!**` });
+        const jcdis = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Join Message Has Been `🔴 Disabled`!**')
+        return message.lineReplyNoMention(jcdis)
 
       } else if (!data2) {
-        return message.lineReplyNoMention({ content: `**Join Message Isn' Even Setup Bot!**` });
+        const jcnoset = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Join Channel Not Even Setup Bot!**')
+        message.lineReplyNoMention(jcnoset)
       }
     }
   },

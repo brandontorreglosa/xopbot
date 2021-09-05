@@ -9,7 +9,12 @@ module.exports = {
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)antilink <on/off>`**' })
+      const nospec = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**`(prefix)antilink <on/off>`**')
+      return message.lineReplyNoMention(nospec)
     }
     if (args[0] === "On" || args[0] === "on") {
       const data = await antilinkSchema.findOne({
@@ -21,14 +26,24 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.lineReplyNoMention({ content: `**Antilink is now active!**` });
+        const on1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antilink Is Now `🟢 Enabled`!**')
+        message.lineReplyNoMention(on1);
 
         let newData = new antilinkSchema({
           GuildID: message.guild.id,
         });
         newData.save();
       } else if (!data) {
-        message.lineReplyNoMention({ content: `**Antilink is now active**` });
+        const on2 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antilink Is Now `🟢 Enabled`!**')
+        message.lineReplyNoMention(on2);
 
         let newData = new antilinkSchema({
           GuildID: message.guild.id,
@@ -44,11 +59,20 @@ module.exports = {
         await antilinkSchema.findOneAndRemove({
           GuildID: message.guild.id,
         });
-
-        return message.lineReplyNoMention({ content: `**Antilink has been turned off!**` });
+        const off1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antilink Is Now `🔴 Disabled`!**')
+        return message.lineReplyNoMention(off1);
 
       } else if (!data2) {
-        return message.lineReplyNoMention({ content: `**Antilink Isn't Even Setup Bot!**` });
+        const noset = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antilink Not Even Setup Bot!**')
+        return message.lineReplyNoMention(noset);
       }
     }
   }

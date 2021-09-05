@@ -11,8 +11,8 @@ module.exports = {
     const randomNumber = Math.floor(Math.random() * 500) + 1;
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
-      .setTitle(`${message.author.username}`)
-      .setDescription(`**You Begged And Got From XOPBOT ${randomNumber} Xocoins! 💸**`)
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**You Begged And Got From XOPBOT \`${randomNumber}\` Xocoins! 💸**`)
       .setColor('#c30202')
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)

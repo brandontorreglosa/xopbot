@@ -37,7 +37,7 @@ module.exports = {
       "Wardrobe",
       "Hospital",
       "Gaming Arena",
-      "Hackerprotms Server",
+      "Server",
     ];
 
     let chosenLocations = LOCATIONS.sort(() => Math.random() - Math.random()).slice(0, 3);
@@ -55,30 +55,31 @@ module.exports = {
         .setTimestamp()
         .setColor("#c30202")
         .setTitle(`${message.author.username} Searched ${m.content} 🕵️`)
-        .setDescription(`**You Found ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
+        .setDescription(`**You Found \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!** 💸`)
         .setFooter(`What A True Detective You Are.`);
 
-        client.add(message.author.id, RANDOM_NUMBER)
+      client.add(message.author.id, RANDOM_NUMBER)
 
       message.lineReplyNoMention(EMBED);
     });
+    const whatuding = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**What Are You Doing?! There Was \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, Hidden Inside The \`${chosenLocations[0]}\`! 😭**`)
 
     COLLECTOR.on("end", (collected) => {
       if (collected.size == 0) {
-        return message.lineReplyNoMention({
-          content:
-            `**What are you doing <@${message.author.id}>?! There was ${RANDOM_NUMBER.toString().replace(
-              /\B(?=(\d{3})+(?!\d))/g,
-              ","
-            )} Xocoins, Hidden Inside The ${chosenLocations[0]} 😭**`
-        });
+        return message.lineReplyNoMention(whatuding);
       }
     });
 
-    message.lineReplyNoMention({
-      content:
-        `<@${message.author.id
-        }>\n**Which location would you like to search?** 🔍\nType the location in this channel.\n\`${chosenLocations.join("` `")}\``
-    });
+    const chloc = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**Wich Location Would You Like To Search? 🔍 \nType The Location In This Channel. \n\`${chosenLocations.join("` `")}\`**`)
+
+    message.lineReplyNoMention(chloc);
   },
 };

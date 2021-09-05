@@ -12,11 +12,27 @@ module.exports = {
 
         if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
 
-        message.lineReplyNoMention({ content: "🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**" }).then((msg) => {
+        const on1 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**')
+        const on2 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**')
+        const on3 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('✅🔞 **| AutoNSFW Started**')
+
+        message.lineReplyNoMention(on1).then((msg) => {
             setTimeout(function () {
-                msg.edit({ content: "🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**" })
+                msg.edit(on2)
                 setTimeout(function () {
-                    msg.edit({ content: "✅🔞 **| AutoNSFW Started**" })
+                    msg.edit(on3)
                 }, 10000)
             }, 10000)
         })

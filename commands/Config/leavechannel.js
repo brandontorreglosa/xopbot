@@ -10,7 +10,12 @@ module.exports = {
   aliases: ["gchannel", "goodbye"],
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)leavechannel <channel/off>`**' });
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**`(prefix)leavechannel <#channel/off>`**')
+      return message.lineReplyNoMention(nopr)
     }
     if (message.mentions.channels.first()) {
       const data = await goodbyeSchema.findOne({
@@ -22,7 +27,12 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.lineReplyNoMention({ content: `**Goodbye Channel Set To ${message.mentions.channels.first()}**` });
+        const lvc1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Channel Set To \`${message.mentions.channels.first()}\`!**`)
+        message.lineReplyNoMention(lvc1)
 
         let newData = new goodbyeSchema({
           Bye: message.mentions.channels.first().id,
@@ -30,7 +40,12 @@ module.exports = {
         });
         newData.save();
       } else if (!data) {
-        message.lineReplyNoMention({ content: `**Goodbye Channel Set To ${message.mentions.channels.first()}**` });
+        const lvc2 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Channel Set To \`${message.mentions.channels.first()}\`!**`)
+        message.lineReplyNoMention(lvc2)
 
         let newData = new goodbyeSchema({
           Bye: message.mentions.channels.first().id,
@@ -47,11 +62,20 @@ module.exports = {
         await goodbyeSchema.findOneAndRemove({
           GuildID: message.guild.id,
         });
-
-        return message.lineReplyNoMention({ content: `**Goodbye Channel Has Been Turned Off!**` });
+        const lvcoff = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Channel Has Been \`🔴 Disabled\`!**`)
+        return message.lineReplyNoMention(lvcoff)
 
       } else if (!data2) {
-        return message.lineReplyNoMention({ content: `**Goodbye Channel Isn't Even Setup Bot!**` });
+        const lvcnoset = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Leave Channel Not Even Setup Bot!**`)
+        message.lineReplyNoMention(lvcnoset)
       }
     }
   },

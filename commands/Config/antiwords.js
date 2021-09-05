@@ -9,7 +9,12 @@ module.exports = {
   description: "Setup antilink per server!",
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)antiwords <on/off>`**' })
+      const nospec = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**`(prefix)antiwords <on/off>`**')
+      return message.lineReplyNoMention(nospec)
     }
     if (args[0] === "On" || args[0] === "on") {
       const data = await antiwordsSchema.findOne({
@@ -21,14 +26,24 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        message.lineReplyNoMention({ content: `**Antiwords is now active!**` });
+        const on1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antiwords Is Now `🟢 Enabled`!**')
+        message.lineReplyNoMention(on1);
 
         let newData = new antiwordsSchema({
           GuildID: message.guild.id,
         });
         newData.save();
       } else if (!data) {
-        message.lineReplyNoMention({ content: `**Antiwords is now active**` });
+        const on2 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antiwords Is Now `🟢 Enabled`!**')
+        message.lineReplyNoMention(on2);
 
         let newData = new antiwordsSchema({
           GuildID: message.guild.id,
@@ -45,10 +60,20 @@ module.exports = {
           GuildID: message.guild.id,
         });
 
-        return message.lineReplyNoMention({ content: `**Antiwords has been turned off!**` });
+        const off1 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antiwords Is Now `🔴 Disabled`!**')
+        return message.lineReplyNoMention(off1);
 
       } else if (!data2) {
-        return message.lineReplyNoMention({ content: `**Antiwords Isn't Even Setup Bot!**` });
+        const noset = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription('**Antiwords Not Even Setup Bot!**')
+        return message.lineReplyNoMention(noset);
       }
     }
   }

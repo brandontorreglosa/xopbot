@@ -15,7 +15,12 @@ module.exports = {
             const user = message.mentions.users.first();
 
             if (!args[0]) {
-                message.lineReplyNoMention({ content: "**`(prefix)say <text>`**" })
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`(prefix)say <text>\`**`)
+                return message.lineReplyNoMention(nopr)
             }
 
             if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt") || message.content.match("@")) {
@@ -28,11 +33,19 @@ module.exports = {
             }
 
             let sayMessage = args.slice(0).join(' ');
-            if (sayMessage.length > 100) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 100 Characters!**' });
+            if (sayMessage.length > 100) {
+                const maxlen = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**You Are Not Allowed To Go Over 100 Characters!**`)
+                return message.lineReplyNoMention(maxlen)
+            }
 
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**${sayMessage}**`)
             message.lineReplyNoMention(embed);
 

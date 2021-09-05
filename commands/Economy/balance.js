@@ -17,7 +17,7 @@ module.exports = {
       .setTimestamp()
       .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
       .setColor('#c30202')
-      .setDescription(`**💸 Wallet ${bal} Xocoins** \n**🏦 Bank ${bank} Xocoins** \n**💰 Debt ${debt} Xocoins**`)
+      .setDescription(`**💸 Wallet \`${bal}\` Xocoins** \n**🏦 Bank \`${bank}\` Xocoins** \n**💰 Debt \`${debt}\` Xocoins**`)
     message.lineReplyNoMention(newEmbed)
   },
 };

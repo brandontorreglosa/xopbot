@@ -4,12 +4,26 @@ module.exports = {
   name: 'setprefix',
   cooldown: 10,
   permissions: ["ADMINISTRATOR"],
-  clientpermissions: ["SEND_MESSAGES", "SEND_MESSAGES", "EMBED_LINKS"],
+  clientpermissions: ["SEND_MESSAGES", "MANAGE_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
 
-    if (!args[0]) return message.lineReplyNoMention({ content: "**`(prefix)setprefix <newprefix>`**" }) //, allowedMentions: { repliedUser: true } });
-    let Prefixset = args.slice(0).join(" ");
-    if (Prefixset.length > 5) return message.lineReplyNoMention({ content: '**Prefix Can Not Be Longer Than 5 Characters!**' }) //, allowedMentions: { repliedUser: true } })
+    if (!args[0]) {
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)setprefix <newprefix>\`**`)
+      return message.lineReplyNoMention(nopr)
+    }
+    const Prefixset = args.slice(0).join(" ");
+    if (Prefixset.length > 5) {
+      const maxpr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Prefix Can Not Be Longer Than 5 Characters!**`)
+      return message.lineReplyNoMention(maxpr)
+    }
 
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json"));
     prefixes[message.guild.id] = {
@@ -19,8 +33,12 @@ module.exports = {
     fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) => {
       if (err) console.log(err);
     })
-
-    message.lineReplyNoMention({ content: `**Prefix Has Been Set To ||${Prefixset}||**` });
+    const newpr = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**Prefix Has Been Set To \`${Prefixset}\`!**`)
+    message.lineReplyNoMention(newpr);
     return; //return
   }
 }

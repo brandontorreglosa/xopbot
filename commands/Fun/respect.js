@@ -9,7 +9,12 @@ module.exports = {
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.members.first();
       if (!user) {
-         return message.lineReplyNoMention({ content: "**`(prefix)respect <@user>`**"})
+         const nopr = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**\`(prefix)respect <@user>\`**`)
+         return message.lineReplyNoMention(nopr)
       }
       var gif = [
          `https://media.tenor.com/images/0eb1f1ff68936dbde97bebfa4145e6f0/tenor.gif`,
