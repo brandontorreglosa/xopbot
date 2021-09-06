@@ -7,7 +7,6 @@ module.exports = {
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   description: "give a player some Xocoins",
   async execute(client, message, cmd, args, Discord) {
-    const maxtodep = 10000000;
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
@@ -45,15 +44,6 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Bet!**`)
       return message.lineReplyNoMention(noxocamount)
-    }
-
-    if ((await client.bal(user.id)) > maxtodep) {
-      const maxbanmyd = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setColor('#c30202')
-        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**The User\`s Wallet Cant Hold More Than \`${maxtodep.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!**`)
-      message.lineReplyNoMention(maxbanmyd)
     }
 
     if (isNaN(args[1])) {
