@@ -215,8 +215,8 @@ try {
       const embederror = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
-        .setTitle('ERROR')
-        .setDescription('**Couldnt Find That Command, Do `(prefix)help` And Check Again!**')
+        .setTitle('Error \`404\`')
+        .setDescription('**Couldnt Find That Command, Do `x!help` And Try Again!**')
       return message.lineReplyNoMention(embederror)
     }
 
