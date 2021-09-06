@@ -24,7 +24,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**You Dont Have \`${amount}\` Xocoins To Depsoit!**`)
+          .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Depsoit!**`)
         message.lineReplyNoMention(noxoc)
       }
       if (isNaN(args[0])) {
@@ -32,7 +32,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**\`${amount}\` Is Not A Number!**`)
+          .setDescription(`**\`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
         return message.lineReplyNoMention(non)
       }
 
@@ -42,7 +42,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**You Deposited \`${amount}\` Xocoins Into Your Bank! 💸**`)
+        .setDescription(`**You Deposited \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Into Your Bank! 💸**`)
         .setColor('#c30202')
       message.lineReplyNoMention(embed);
     } catch (err) {

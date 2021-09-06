@@ -12,7 +12,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**You Begged And Got From XOPBOT \`${randomNumber}\` Xocoins! 💸**`)
+      .setDescription(`**You Begged And Got From XOPBOT \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins! 💸**`)
       .setColor('#c30202')
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)

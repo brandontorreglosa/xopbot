@@ -24,7 +24,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**You Dont Have \`${amount}\` Xocoins To Withdraw!**`)
+          .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Withdraw!**`)
         return message.lineReplyNoMention(noxoc)
       }
       if (isNaN(args[0])) {
@@ -32,7 +32,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**\`${amount}\` Is Not A Number!**`)
+          .setDescription(`**\`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
         return message.lineReplyNoMention(nonum)
       }
 
@@ -42,7 +42,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(`${message.author.username}`)
-        .setDescription(`**You Withdrew \`${amount}\` Xocoins Into Your Wallet! 💸**`)
+        .setDescription(`**You Withdrew \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Into Your Wallet! 💸**`)
         .setColor('#c30202')
 
       message.lineReplyNoMention(embed);

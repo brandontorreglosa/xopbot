@@ -41,7 +41,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**You Dont Have \`${amount}\` Xocoins To Bet!**`)
+        .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Bet!**`)
       return message.lineReplyNoMention(noxocamount)
     }
 
@@ -50,7 +50,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**\`${amount}\` Is Not A Number!**`)
+        .setDescription(`**\`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
       return message.lineReplyNoMention(xocnonum)
     }
 

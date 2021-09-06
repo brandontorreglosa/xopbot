@@ -35,7 +35,7 @@ module.exports = {
         .setTimestamp()
         .setColor("#c30202")
         .setTitle(`${message.author.username} Worked As A ${m.content} 💻`)
-        .setDescription(`**You Worked And Got Paid ${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Xocoins!** 💸`)
+        .setDescription(`**You Worked And Got Paid \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!** 💸`)
         .setFooter(`Man You Worked Hard As A ${m.content}`);
 
       client.add(message.author.id, RANDOM_NUMBER)

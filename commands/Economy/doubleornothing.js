@@ -23,7 +23,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`${amountToBet}\` Is Not A Number!**`)
+                .setDescription(`**\`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
             return message.lineReplyNoMention(notnum)
         }
 
@@ -32,7 +32,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**You Dont Have \`${amountToBet}\` Xocoins To Bet!**`)
+                .setDescription(`**You Dont Have \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Bet!**`)
             return message.lineReplyNoMention(xocnom)
         }
 
@@ -47,7 +47,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setTitle(`${message.author.username}`)
-                .setDescription(`**Congrats You Have Won \`${winAmount}\` Xocoins!**`)
+                .setDescription(`**Congrats You Have Won \`${winAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!**`)
             message.lineReplyNoMention(embed)
             client.add(message.author.id, winAmount)
         } else {
@@ -55,7 +55,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setTitle()
-                .setDescription(`Awwww! You Just Lost \`${amountToBet}\` Xocoins To A Bet!`)
+                .setDescription(`Awwww! You Just Lost \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To A Bet!`)
             message.lineReplyNoMention(embed1)
             client.rmv(message.author.id, amountToBet)
         }
