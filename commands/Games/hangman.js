@@ -4,7 +4,7 @@ module.exports = {
     name: 'hangman',
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 3,
+    cooldown: 10,
     //premium: true,
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])

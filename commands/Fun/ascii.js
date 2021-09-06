@@ -27,7 +27,7 @@ module.exports = {
             .setTimestamp()
             .setColor('#c30202')
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**Please Put Text That Has 11 Characters Or Less Because The Conversion Won\`t Be That Good!**`)
+            .setDescription(`**Please Put Text That Has \`11\` Characters Or Less Because The Conversion Won\`t Be That Good!**`)
          return message.lineReplyNoMention(maxlenembed)
       }
 

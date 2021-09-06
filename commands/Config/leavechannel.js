@@ -31,7 +31,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Leave Channel Set To \`${message.mentions.channels.first()}\`!**`)
+          .setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(lvc1)
 
         let newData = new goodbyeSchema({
@@ -44,7 +44,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Leave Channel Set To \`${message.mentions.channels.first()}\`!**`)
+          .setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(lvc2)
 
         let newData = new goodbyeSchema({

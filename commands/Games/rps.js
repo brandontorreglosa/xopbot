@@ -2,9 +2,9 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "rps",
     permissions: ["SEND_MESSAGES"],
-    clientpermissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: [],
-    cooldown: 3,
+    cooldown: 10,
     description: "play rock paper sciccors",
     async execute(client, message, cmd, args, Discord) {
         const embed = new Discord.MessageEmbed()
@@ -28,9 +28,19 @@ module.exports = {
                 if ((reaction.emoji.name === '🗻' && me === "✂") ||
                     (reaction.emoji.name === "✂" && me === "📄") ||
                     (reaction.emoji.name === "📄" && me === "🗻")) {
-                    message.lineReplyNoMention({ content: "**You Won!**" }) // allowedMentions: { repliedUser: true } })
+                    const usewon = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Won! 😆**`)
+                    message.lineReplyNoMention(usewon)
                 } else {
-                    message.lineReplyNoMention({ content: "**You Lost!**" }) // allowedMentions: { repliedUser: true } })
+                    const uselost = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Lost! 😢**`)
+                    message.lineReplyNoMention(uselost)
                 }
 
 
@@ -38,7 +48,12 @@ module.exports = {
         )
 
             .catch(collected => {
-                message.lineReplyNoMention({ content: "**Game Ended Due To No Response!**" }) // allowedMentions: { repliedUser: true } })
+                const nogam = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Game \`Ended\` Due To No Response!**`)
+                message.lineReplyNoMention(nogam)
             })
     }
 

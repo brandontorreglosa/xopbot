@@ -21,7 +21,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Prefix Can Not Be Longer Than 5 Characters!**`)
+        .setDescription(`**Prefix Can Not Be Longer Than \`5\` Characters!**`)
       return message.lineReplyNoMention(maxpr)
     }
 

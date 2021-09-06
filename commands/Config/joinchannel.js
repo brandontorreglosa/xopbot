@@ -31,7 +31,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Join Channel Set To \`${message.mentions.channels.first()}\`!**`)
+          .setDescription(`**Join Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(jc1)
 
         let newData = new welcomeSchema({
@@ -44,7 +44,7 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Join Channel Set To \`${message.mentions.channels.first()}\`!**`)
+          .setDescription(`**Join Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(jc2)
 
         let newData = new welcomeSchema({

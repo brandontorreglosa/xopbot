@@ -30,7 +30,7 @@ module.exports = {
       .setTimestamp()
       .setColor('#c30202')
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**\`[0.99%]\` Finding \`${tohack.displayName}\`\`s Email And Password.....**`)
+      .setDescription(`**\`[0.99%]\` Finding \`${tohack.displayName}\`'s Email And Password.....**`)
 
     const n3 = new Discord.MessageEmbed()
       .setTimestamp()

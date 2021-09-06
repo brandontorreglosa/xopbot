@@ -27,7 +27,7 @@ module.exports = {
     aliases: ['gtn', 'guess'],
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 3,
+    cooldown: 15,
     category: "games",
     description: {
         usage: 'guesseasy <guesseasy number>',
@@ -44,7 +44,7 @@ module.exports = {
         const pickinganumber = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setDescription('**Picking A Number Between 1 And 20000**')
+            .setDescription('**Picking A Number Between \`1\` And \`20000\`**')
 
 
 
@@ -64,7 +64,7 @@ module.exports = {
             const guessedthenumber = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#00ff00')
-                .setDescription(`**✅ Perfect, <@${member.id}> The Number Was ${guildNumber.get(guild.id)}, It Only Took You ${attempts.attempts} Attempts!**`)
+                .setDescription(`**✅ Perfect, \`<@${member.id}>\` The Number Was \`${guildNumber.get(guild.id)}\`, It Only Took You \`${attempts.attempts}\` Attempts!**`)
 
             channel.send(guessedthenumber);
             guildNumber.delete(guild.id);
@@ -73,11 +73,26 @@ module.exports = {
 
             return;
         } else if (+ guess < guildNumber.get(guild.id)) {
-            return message.lineReplyNoMention({ content: `**${guess} Is Too Low!**`, allowedMentions: { repliedUser: true }  });
+            const lowgsin = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`${guess}\` Is Too Low!**`)
+            return message.lineReplyNoMention(lowgsin)
         } else if (+guess > guildNumber.get(guild.id)) {
-            return message.lineReplyNoMention({ content: `**${guess} Is Too High!**`, allowedMentions: { repliedUser: true } });
+            const highgsin = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`${guess}\` Is Too High!**`)
+            return message.lineReplyNoMention(highgsin)
         } else {
-            return message.lineReplyNoMention({ content: "**Invalid Number Please Try Again**", allowedMentions: { repliedUser: true }  });
+            const invgsin = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Invalid Number Please Try Again!**`)
+            return message.lineReplyNoMention(invgsin)
         }
     },
 };

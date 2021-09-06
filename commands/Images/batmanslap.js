@@ -10,7 +10,12 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**`(prefix)batmanslap <text> / <text2>` \nMust Add / For It To Work!**' }) //, allowedMentions: { repliedUser: true } })
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)batmanslap <text> / <text2>\` \nMust Add / For It To Work!**`)
+            return message.lineReplyNoMention(nopr)
         }
 
         const mention = message.mentions.members.first() || message.member;
@@ -21,15 +26,39 @@ module.exports = {
 
         const text = splitargs[0];
         if (!text) {
-            return message.lineReplyNoMention({ content: "**Enter Some Text!**" }) //, allowedMentions: { repliedUser: true } })
+            const notxt = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Enter Some Text!**`)
+            return message.lineReplyNoMention(notxt)
         }
-        if (text.length > 50) return message.lineReplyNoMention({ content: `**You Cant Go Over 50 Characters!**` }) //, allowedMentions: { repliedUser: true } })
+        if (text.length > 50) {
+            const maxlen = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Are Not Allowed To Go Over \`50\` Characters!**`)
+            return message.lineReplyNoMention(maxlen)
+        }
 
         const text2 = splitargs[1];
         if (!text2) {
-            return message.lineReplyNoMention({ content: "**Enter The Second Text!**" }) //, allowedMentions: { repliedUser: true } })
+            const notxt2 = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Enter The Second Text!**`)
+            return message.lineReplyNoMention(notxt2)
         }
-        if (text2.length > 50) return message.lineReplyNoMention({ content: `**You Cant Go Over 50 Characters!**` }) //, allowedMentions: { repliedUser: true } })
+        if (text2.length > 50) {
+            const maxlen2 = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Are Not Allowed To Go Over \`50\` Characters!**`)
+            return message.lineReplyNoMention(maxlen2)
+        }
 
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()

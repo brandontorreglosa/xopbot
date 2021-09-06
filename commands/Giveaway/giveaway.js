@@ -7,27 +7,64 @@ module.exports = {
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_MESSAGES"],
   cooldown: 10,
   async execute(client, message, cmd, args, Discord) {
-    if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)giveaway <time(s)(m)(h)(d)> <#channel> <prize>`**' });
+    const noformat = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**You Did Not Use The Correct Formatting!**`)
+
+    if (!args[0]) {
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)giveaway <time(s)(m)(h)(d)> <#channel> <prize>\`**`)
+      return message.lineReplyNoMention(nopr)
+    }
+    const timetogive = args[0];
     if (
       !args[0].endsWith("d") &&
       !args[0].endsWith("h") &&
       !args[0].endsWith("m") &&
       !args[0].endsWith("s")
     )
-      return message.lineReplyNoMention({
-        content:
-          `**You Did Not Use The Correct Formatting For The Time!**`
-      });
-    if (isNaN(args[0][0])) return message.lineReplyNoMention({ content: `**That Is Not A Number!**` });
-    let channel = message.mentions.channels.first();
+      return message.lineReplyNoMention(noformat)
+
+    if (isNaN(args[0][0])) {
+      const nonum = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`${timetogive}\` Is Not A Number!**`)
+      return message.lineReplyNoMention(nonum)
+    }
+
+    const channel = message.mentions.channels.first();
+
+    const thatnotxtc = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**I Could Not Find The Channel \`${channel}\`!**`)
+
     if (!channel)
-      return message.lineReplyNoMention({
-        content:
-          `**I Could Not Find That Channel In The Guild!**`
-      });
-    let prize = args.slice(2).join(" ");
-    if (!prize) return message.lineReplyNoMention({ content: `**No Prize Was Specified!**` });
-    message.lineReplyNoMention({ content: `**Giveaway Has Been Created In ${channel}**` });
+      return message.lineReplyNoMention(thatnotxtc)
+    const prize = args.slice(2).join(" ");
+    if (!prize) {
+      const thatnopriz = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**No Prize Was Specified!**`)
+      return message.lineReplyNoMention(thatnopriz)
+    }
+    const successch = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**Giveaway Has Been Created In ${channel}!**`)
+
+    message.lineReplyNoMention(successch);
     const Embed = new MessageEmbed()
       .setTitle(`New giveaway!`)
       .setDescription(`**🎁 ${prize} \n\nReact With 🎉 To Enter! \n\n1 Winner! \n\nHosted By ${message.author}!**`)
@@ -37,21 +74,33 @@ module.exports = {
     m.react("🎉");
     setTimeout(() => {
       if (m.reactions.cache.get("🎉").count <= 1) {
-        message.lineReplyNoMention({ content: `**Reactions: ${m.reactions.cache.get("🎉").count}**` });
-        return message.lineReplyNoMention({
-          content:
-            `**😭 Not Enough People Reacted For XOPBOT To Draw A Winner!**`
-        });
+        const ractcatch = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Reactions: \`${m.reactions.cache.get("🎉").count}\`!**`)
+
+        message.lineReplyNoMention(ractcatch);
+
+        const nooneract = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Not Enough people Reacted For XOPBOt To Draw A Winner! 😭**`)
+
+        return message.lineReplyNoMention(nooneract)
       }
 
-      let winner = m.reactions.cache
+      const winner = m.reactions.cache
         .get("🎉")
         .users.cache.filter((u) => !u.bot)
         .random();
-      channel.send({
-        content:
-          `**🥳 The Winner Of The Giveaway For ${prize} Is... ${winner}**`
-      });
+      const winisok = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**The Winner Of The Giveaway For \`${prize}\` Is... \`${winner}\`**`)
+      channel.send(winisok);
     }, ms(args[0]));
   },
 };

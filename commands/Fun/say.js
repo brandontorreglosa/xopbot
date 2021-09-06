@@ -38,7 +38,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor('#c30202')
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**You Are Not Allowed To Go Over 100 Characters!**`)
+                    .setDescription(`**You Are Not Allowed To Go Over \`100\` Characters!**`)
                 return message.lineReplyNoMention(maxlen)
             }
 
