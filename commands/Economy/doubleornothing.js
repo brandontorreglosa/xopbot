@@ -19,7 +19,7 @@ module.exports = {
 
         const amountToBet = parseInt(args[0])
 
-        if ((await client.bank(message.author.id)) = maxtodep) {
+        if ((await client.bank(message.author.id)) > maxtodep) {
             const maxbanmyd = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')

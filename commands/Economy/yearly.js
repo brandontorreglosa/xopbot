@@ -9,7 +9,7 @@ module.exports = {
   description: "yearly Xocoins",
   async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 1000000) + 5000;
-    if ((await client.bal(message.author.id)) = maxtodep) {
+    if ((await client.bal(message.author.id)) > maxtodep) {
       const maxbanmyd = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')

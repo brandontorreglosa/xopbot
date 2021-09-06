@@ -47,7 +47,7 @@ module.exports = {
       return message.lineReplyNoMention(noxocamount)
     }
 
-    if ((await client.bal(user.id)) = maxtodep) {
+    if ((await client.bal(user.id)) > maxtodep) {
       const maxbanmyd = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')

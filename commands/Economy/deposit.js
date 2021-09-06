@@ -28,7 +28,7 @@ module.exports = {
           .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Depsoit!**`)
         message.lineReplyNoMention(noxoc)
       }
-      if ((await client.bank(message.author.id)) = maxtodep) {
+      if ((await client.bank(message.author.id)) > maxtodep) {
         const maxbanmyd = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')

@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 500) + 1;
     const maxtodep = 10000000;
-    if ((await client.bal(message.author.id)) = maxtodep) {
+    if ((await client.bal(message.author.id)) > maxtodep) {
       const maxbanmyd = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
