@@ -204,7 +204,7 @@ client.distube
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**Channel Is Empty. XOPBOT Leaving The Channel! 😭**`)
+            .setDescription(`**Channel Is \`Empty\`. XOPBOT Leaving The Channel! 😭**`)
         message.lineReplyNoMention(thing);
     })
     .on("error", (message, err) => {
