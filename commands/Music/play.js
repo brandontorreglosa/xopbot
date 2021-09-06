@@ -60,7 +60,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription('**XOPBOT Stopped All Music From Playing! 😭**')
+                    .setDescription('**XOPBOT \`Stopped\` All Music From Playing! 😭**')
                 return message.lineReplyNoMention(stopembed);
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -122,7 +122,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setTitle(`${message.author.username}`)
-                    .setDescription(`**XOPBOT Resumed The Music For You! ▶**`)
+                    .setDescription(`**XOPBOT \`Resumed\` The Music For You! ▶**`)
                 return message.lineReplyNoMention(ressong1);
             }
 
@@ -132,7 +132,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**XOPBOT Paused The Music For You! ⏸**`)
+                    .setDescription(`**XOPBOT \`Paused\` The Music For You! ⏸**`)
                 message.lineReplyNoMention(embed);
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -166,7 +166,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**XOPBOT Resumed The Music For You! ▶**`)
+                    .setDescription(`**XOPBOT \`Resumed\` The Music For You! ▶**`)
                 return message.lineReplyNoMention(ressong2);
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -230,7 +230,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription('**XOPBOT Left The Voice Channel For You! 😢**')
+                    .setDescription('**XOPBOT \`Left\` The Voice Channel For You! 😢**')
                 return message.lineReplyNoMention(leavevcembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -314,7 +314,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**XOPBOT Jumped Song To \`${jumpsong}\` For You! 🤪**`)
+                    .setDescription(`**XOPBOT Jumped Song To \`${jumpnu}\` For You! 🤪**`)
                 return message.lineReplyNoMention(jumpembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -353,6 +353,31 @@ module.exports = {
                 const errorlogs = client.channels.cache.get(errorChannel);
                 message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
                 errorlogs.send({ content: `**Error On Queue Command!\n\nError:\n\n ${err}**` })
+            }
+        }
+
+        else if (cmd === 'join') {
+            if (!message.member.voice.channel) {
+                const embednovc1 = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setTitle('Error `404`')
+                    .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
+                return message.lineReplyNoMention(embednovc1);
+            }
+
+            try {
+                message.member.voice.channel.leave();
+                const leavevcembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription('**XOPBOT \`Joined\` The Voice Channel For You! 😉**')
+                return message.lineReplyNoMention(leavevcembed)
+            } catch (err) {
+                const errorlogs = client.channels.cache.get(errorChannel);
+                message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+                errorlogs.send({ content: `**Error On Join Command!\n\nError:\n\n ${err}**` })
             }
         }
     }

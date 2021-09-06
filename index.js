@@ -196,7 +196,7 @@ client.distube
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Adding Song To Queue: 🎶 \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
-            .setFooter(`👁 \`${song.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` 👍 \`${song.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` 👎 \`${song.dislikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\``)
+            .setFooter(`👁 ${song.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 👍 ${song.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 👎 ${song.dislikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`)
         message.lineReplyNoMention(embed);
     })
     .on("empty", message => {
@@ -248,7 +248,7 @@ client.distube
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Started Playing: 🎶 \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`)
             .setThumbnail(song.thumbnail)
-            .setFooter(`👁 \`${song.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` 👍 \`${song.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` 👎 \`${song.dislikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\``)
+            .setFooter(`👁 ${song.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 👍 ${song.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 👎 ${song.dislikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`)
         message.lineReplyNoMention(embed);
     })
     // DisTubeOptions.searchSongs = true
