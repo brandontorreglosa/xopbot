@@ -481,9 +481,9 @@ try {
             .setTimestamp()
             .setTitle('Welcome!')
             .setDescription(joinmessage)
-            .setImage(`https://api.popcat.xyz/welcomecard?background=https://1.bp.blogspot.com/-WjAFpo5alPQ/X1XUTr7vmoI/AAAAAAAA64Q/xsAeXXEB_Kgz9xTikBMc8maBJaIy42E7wCLcBGAsYHQ/s2560/neon-man-4k-ix-3840x2160.png&text1=${member}&text2=Welcome+To+${message.guild.name}&text3=${message.guild.memberCount}&avatar=${message.guild.iconURL()}`)
             .setColor("GREEN")
           member.guild.channels.cache.get(channel).send(embed20);
+          member.guild.channels.cache.get(channel).send({ files: [{ attachment: `https://api.popcat.xyz/welcomecard?background=https://1.bp.blogspot.com/-WjAFpo5alPQ/X1XUTr7vmoI/AAAAAAAA64Q/xsAeXXEB_Kgz9xTikBMc8maBJaIy42E7wCLcBGAsYHQ/s2560/neon-man-4k-ix-3840x2160.png&text1=${member}&text2=Welcome+To+${message.guild.name}&text3=${message.guild.memberCount}&avatar=${message.guild.iconURL()}`, name: "xopbotwelcomecard.png" }] })
         }
       } else if (data2) {
         var channel = data.Welcome
