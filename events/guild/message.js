@@ -459,7 +459,7 @@ try {
     const welcomeData = require("../../models/welcome")
     const welcomemsg = require("../../models/joinmsg")
     client.on(`guildMemberAdd`, async (member) => {
-
+      const pfp = `${member.displayAvatarURL({ size: 2048, dynamic: true })}`
       const data = await welcomeData.findOne({
         GuildID: member.guild.id,
       })
@@ -479,7 +479,10 @@ try {
           joinmessage = joinmessage.replace("{membercount}", `${member.guild.memberCount}`)
 
           const embed20 = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setTitle('Welcome!')
             .setDescription(joinmessage)
+            .setImage(`https://api.popcat.xyz/welcomecard?background=https://1.bp.blogspot.com/-WjAFpo5alPQ/X1XUTr7vmoI/AAAAAAAA64Q/xsAeXXEB_Kgz9xTikBMc8maBJaIy42E7wCLcBGAsYHQ/s2560/neon-man-4k-ix-3840x2160.png&text1=${member}&text2=Welcome+To+${message.guild.name}&text3=${message.guild.memberCount}&avatar=${pfp}`)
             .setColor("GREEN")
           member.guild.channels.cache.get(channel).send(embed20);
         }
@@ -487,7 +490,8 @@ try {
         var channel = data.Welcome
 
         const embed200 = new Discord.MessageEmbed()
-          .setTitle("Welcome")
+          .setTimestamp()
+          .setTitle("Welcome!")
           .setDescription(`${member}, Welcome to **${member.guild.name}**! We Hope You Like Our Server! Enjoy Your Stay here!`)
           .setFooter(`We Are Now ${member.guild.memberCount} Members`)
           .setColor("GREEN")
