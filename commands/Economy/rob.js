@@ -6,6 +6,7 @@ module.exports = {
     cooldown: 20,
     description: "Rob Command!",
     async execute(client, message, cmd, args, Discord) {
+        const maxtodep = 10000000;
         const user = message.mentions.users.first()
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()

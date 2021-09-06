@@ -7,6 +7,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Game Command",
     async execute(client, message, cmd, args, Discord) {
+        const maxtodep = 10000000;
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
@@ -18,6 +19,14 @@ module.exports = {
 
         const amountToBet = parseInt(args[0])
 
+        if ((await client.bank(message.author.id)) = maxtodep) {
+            const maxbanmyd = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**The Wallet Cant Hold More Than \`${maxtodep.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!**`)
+            message.lineReplyNoMention(maxbanmyd)
+        }
         if (isNaN(args[0])) {
             const notnum = new Discord.MessageEmbed()
                 .setTimestamp()
