@@ -78,7 +78,7 @@ module.exports = {
       .setTimestamp()
       .setColor('#c30202')
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**Wich Location Would You Like To Search? 🔍 \nType The Location In This Channel. \n\`${chosenLocations.join("` `")}\`**`)
+      .setDescription(`**Which Location Would You Like To Search? 🔍 \nType The Location In This Channel. \n\`${chosenLocations.join("` `")}\`**`)
 
     message.lineReplyNoMention(chloc);
   },

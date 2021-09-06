@@ -8,10 +8,22 @@ module.exports = {
   description: 'Get a custom clyde message!',
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)facts <text>`**' }) //, allowedMentions: { repliedUser: true } })
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)facts <text>\`**`)
+      return message.lineReplyNoMention(nopr)
     }
     let factsMessage = args.slice(0).join(' ');
-    if (factsMessage.length > 25) return message.lineReplyNoMention({ content: '**You Are Not Allowed To Go Over 25 Characters!**' }) //, allowedMentions: { repliedUser: true } });
+    if (factsMessage.length > 25) {
+      const maxlen = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**You Are Not Allowed To Go Over \`25\` Characters!**`)
+      return message.lineReplyNoMention(maxlen)
+    }
 
     // const embed = new Discord.MessageEmbed()
     //   .setTimestamp()

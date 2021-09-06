@@ -11,11 +11,34 @@ module.exports = {
         try {
             const user = message.mentions.users.first()
             if (!args[0]) {
-                return message.lineReplyNoMention({ content: '**`(prefix)fbiopenup <@user>`**' }) //, allowedMentions: { repliedUser: true } })
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`(prefix)fbiopenup <@user>\`**`)
+                return message.lineReplyNoMention(nopr)
             }
             if (message.mentions.users.first().bot) {
-                return message.lineReplyNoMention({ content: '**You Can Not Send The FBI To Bot`s! They Will Escape 😢**' }) //, allowedMentions: { repliedUser: true } })
+                const nobots = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**You Can Not Send Bots . They Will Escape! 😢**`)
+                return message.lineReplyNoMention(nobots)
             }
+
+            const errfbi = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**The FBI Couldn\`t Get To \`${user.tag}\`! 😭**`)
+
+            const fbihouse = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**The FBI Found And Is Already At \`${user.tag}\`'s House! 😉**`)
+
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
@@ -23,8 +46,8 @@ module.exports = {
                 .setImage('https://cdn.discordapp.com/attachments/824319314495537175/874580794503467018/ezgif.com-gif-maker_1.gif')
                 .setFooter('You Are Now In Danger Get Out 😨')
             user.send(embed)
-                .catch(() => message.lineReplyNoMention({ content: "**The FBI Couldn`t Get To That User! 😭**" }))
-                .then(() => message.lineReplyNoMention({ content: `**The FBI Is Already At ${user.tag} House! 😉**` }));
+                .catch(() => message.lineReplyNoMention(errfbi))
+                .then(() => message.lineReplyNoMention(fbihouse));
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
