@@ -45,15 +45,14 @@ module.exports = {
         return message.lineReplyNoMention(non)
       }
 
-      client.rmv(message.author.id, amount)
-      client.bankadd(message.author.id, amount)
-
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Deposited \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Into Your Bank! 💸**`)
         .setColor('#c30202')
       message.lineReplyNoMention(embed);
+      client.rmv(message.author.id, amount)
+      client.bankadd(message.author.id, amount)
     } catch (err) {
       console.log(err);
     }

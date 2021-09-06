@@ -45,16 +45,14 @@ module.exports = {
         return message.lineReplyNoMention(nonum)
       }
 
-
-      client.add(message.author.id, amount)
-      client.bankrmv(message.author.id, amount)
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(`${message.author.username}`)
         .setDescription(`**You Withdrew \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Into Your Wallet! 💸**`)
         .setColor('#c30202')
-
       message.lineReplyNoMention(embed);
+      client.add(message.author.id, amount)
+      client.bankrmv(message.author.id, amount)
     } catch (err) {
       console.log(err);
     }
