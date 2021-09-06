@@ -16,13 +16,14 @@ module.exports = {
       return message.lineReplyNoMention(nopr)
     }
 
+    const giveuser1 = args[0];
     const user = message.mentions.users.first();
     if (!user) {
       const nouserhere = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**\`${user}\` Does Not Exist In This Server!**`)
+        .setDescription(`**\`${giveuser1}\` Does Not Exist In This Server!**`)
       return message.lineReplyNoMention(nouserhere)
     }
 
@@ -61,7 +62,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setTitle(`${message.author.username}`)
-        .setDescription(`**This User Has Been Given \`${amount}\` Of Xocoins!** 💸`)
+        .setDescription(`**This User Has Been Given \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Of Xocoins!** 💸`)
       return message.lineReplyNoMention(embed);
     } catch (err) {
       console.log(err);
