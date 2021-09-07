@@ -11,7 +11,7 @@ module.exports = {
     const randomNumber = Math.floor(Math.random() * 20000) + 5000;
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
-      .setTitle(`${message.author.username}`)
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**You Received \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Weekly Xocoins! 💸**`)
       .setColor('#c30202')
     message.lineReplyNoMention(embed);
