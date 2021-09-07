@@ -6,7 +6,7 @@ module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "CONNECT", "SPEAK"],
-    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop', 'leave', 'jump', 'queue', 'volume'],
+    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop', 'leave', 'join', 'jump', 'queue', 'volume'],
     cooldown: 2,
     description: 'Advanced music bot',
     async execute(client, message, cmd, args, Discord) {
@@ -367,7 +367,7 @@ module.exports = {
             }
 
             try {
-                message.member.voice.channel.leave();
+                message.member.voice.channel.join();
                 const leavevcembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
