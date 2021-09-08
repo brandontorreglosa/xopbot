@@ -16,7 +16,14 @@ module.exports = {
 
     const rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 10); // We grab top 10 users with most xp in the current server.
 
-    if (rawLeaderboard.length < 1) return reply({ content: "**Nobody Is Currently in The Leaderboard Yet!**", allowedMentions: { repliedUser: true } });
+    if (rawLeaderboard.length < 1) {
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**No User Is Currently In The Leaderboard Of \`${name}\`!**`)
+      return message.lineReplyNoMention(nopr)
+    }
 
     const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true); // We process the leaderboard.
 
