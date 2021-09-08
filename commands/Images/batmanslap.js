@@ -18,7 +18,7 @@ module.exports = {
             return message.lineReplyNoMention(nopr)
         }
 
-        const mention = message.mentions.members.first() || message.member;
+        const mention = message.mentions.users.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
         const xopbot = client.user.displayAvatarURL({ size: 2048, format: 'png' })
 

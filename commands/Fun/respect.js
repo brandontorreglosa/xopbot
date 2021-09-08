@@ -7,7 +7,7 @@ module.exports = {
    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
    description: "Returns Random Respect GIF",
    async execute(client, message, cmd, args, Discord) {
-      const user = message.mentions.members.first();
+      const user = message.mentions.users.first();
       if (!user) {
          const nopr = new Discord.MessageEmbed()
             .setTimestamp()
@@ -31,7 +31,7 @@ module.exports = {
       ];
       const embed = new Discord.MessageEmbed()
          .setTimestamp()
-         .setTitle(`**${message.author.username} Respects ${user.displayName}**`)
+         .setTitle(`**${message.author.username} Respects ${user.username}**`)
          .setImage(`${gif[Math.floor(Math.random() * gif.length)]}`)
          .setColor('#c30202')
          .setFooter('Respect Forever')

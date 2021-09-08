@@ -10,7 +10,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     try {
       let user =
-        message.mentions.members.first() ||
+        message.mentions.users.first() ||
         message.guild.members.cache.get(args[0]);
       if (!user)
         return message.lineReplyNoMention({

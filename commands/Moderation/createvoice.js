@@ -10,7 +10,7 @@ module.exports = {
     description: "Create voice Channels in your Server",
     async execute(client, message, cmd, args, Discord) {
         try {
-            const user = message.mentions.members.first()
+            const user = message.mentions.users.first()
             if (!args[0]) {
                 return message.lineReplyNoMention({ content: "**`(prefix)createvoice <name>`**" }) //, allowedMentions: { repliedUser: true } })
             }

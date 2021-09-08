@@ -6,7 +6,7 @@ module.exports = {
   permissions: ["MANAGE_ROLES"],
   clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
-    let target = message.mentions.members.first();
+    let target = message.mentions.users.first();
 
     if (!target) return message.lineReplyNoMention({ content: '**`(prefix)removerole <@user> <@role>`**' }) //, allowedMentions: { repliedUser: true } })
 

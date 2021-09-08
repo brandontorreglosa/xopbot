@@ -8,7 +8,7 @@
 // 	category: 'moderation',
 // 	description: 'Warn anyone who do not obey the rules',
 // 	async execute(client, message, cmd, args, Discord) {
-// 		const user = message.mentions.members.first();
+// 		const user = message.mentions.users.first();
 
 // 		if (!user) {
 // 			return message.channel.send(

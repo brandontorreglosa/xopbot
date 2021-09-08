@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 5,
     description: "Shows Level Of You Or User!",
     async execute(client, message, cmd, args, Discord) {
-        let mentionedMember = message.mentions.members.first()
+        let mentionedMember = message.mentions.users.first()
         if (!args[0]) {
             return message.lineReplyNoMention({ content: '**Please Mention A User To Check His Level!**' }) // allowedMentions: { repliedUser: true } })
         }

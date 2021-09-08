@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 5,
     description: "Get a  widened avatar of a user",
     async execute(client, message, cmd, args, Discord) {
-        const mention = message.mentions.members.first() || message.member;
+        const mention = message.mentions.users.first() || message.member;
         const avatar = mention.user.displayAvatarURL({ dynamic: true, size: 2048, format: "png" });
 
         // const embed = new Discord.MessageEmbed()

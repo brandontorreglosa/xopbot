@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['usi', 'ui'],
     cooldown: 3,
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+        const user = message.users.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
         let status;
         switch (user.presence.status) {

@@ -10,7 +10,7 @@ module.exports = {
     description: "Delete Channels From your Server",
     async execute(client, message, cmd, args, Discord) {
         try {
-            const user = message.mentions.members.first()
+            const user = message.mentions.users.first()
             const fetchedChannel = message.mentions.channels.first();
             if (!fetchedChannel) {
                 return message.lineReplyNoMention({ content: "**`(prefix)deletechannel <#channel>`**"}) //, allowedMentions: { repliedUser: true } })

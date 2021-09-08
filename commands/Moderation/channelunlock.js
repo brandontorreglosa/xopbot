@@ -7,7 +7,7 @@ module.exports = {
    clientpermissions: ["ADMINISTRATOR"],
    description: "Unlocks a Channel",
    async execute(client, message, cmd, args, Discord) {
-      const user = message.mentions.members.first()
+      const user = message.mentions.users.first()
 
       message.channel.overwritePermissions([
          {

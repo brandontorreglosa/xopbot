@@ -18,25 +18,25 @@ module.exports = {
 
     const randomNumber = Math.floor(Math.random() * 500) + 1;
     const randomnumber2 = Math.floor(Math.random() * 11500) + 1;
-    const tohack = message.mentions.members.first()
+    const tohack = message.mentions.users.first()
 
     const n1 = new Discord.MessageEmbed()
       .setTimestamp()
       .setColor('#c30202')
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**\`[0.10%]\` You Started Hacking \`${tohack.displayName}\`.....**`)
+      .setDescription(`**\`[0.10%]\` You Started Hacking \`${tohack.username}\`.....**`)
 
     const n2 = new Discord.MessageEmbed()
       .setTimestamp()
       .setColor('#c30202')
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**\`[0.99%]\` Finding \`${tohack.displayName}\`'s Email And Password.....**`)
+      .setDescription(`**\`[0.99%]\` Finding \`${tohack.username}\`'s Email And Password.....**`)
 
     const n3 = new Discord.MessageEmbed()
       .setTimestamp()
       .setColor('#c30202')
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**\`[10.74%]\` E-Mail: \`${tohack.displayName}@gmail.com\` \nPassword: \`${randomnumber2}${randomNumber}\`**`)
+      .setDescription(`**\`[10.74%]\` E-Mail: \`${tohack.username}@gmail.com\` \nPassword: \`${randomnumber2}${randomNumber}\`**`)
 
     const n4 = new Discord.MessageEmbed()
       .setTimestamp()
@@ -78,7 +78,7 @@ module.exports = {
       .setTimestamp()
       .setColor('#c30202')
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**\`[70.09%]\` Finished Hacking \`${tohack.displayName}\`!**`)
+      .setDescription(`**\`[70.09%]\` Finished Hacking \`${tohack.username}\`!**`)
 
     const n11 = new Discord.MessageEmbed()
       .setTimestamp()

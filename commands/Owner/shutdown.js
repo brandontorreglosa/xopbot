@@ -11,7 +11,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         try {
             if (!OWNER_ID) return message.lineReplyNoMention({ content: "**You Cant Shutdown XOPBOT Only The Developer! 👿**" });
-            const user = message.mentions.members.first || message.author;
+            const user = message.mentions.users.first || message.author;
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
