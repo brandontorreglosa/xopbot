@@ -15,7 +15,7 @@ module.exports = {
             .setColor('#c30202')
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**\`(prefix)channellock <reason>\`**`)
-         return message.lineReplyNoMention()
+         return message.lineReplyNoMention(nopr)
       }
 
       message.channel.overwritePermissions([
