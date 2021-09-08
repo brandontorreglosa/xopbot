@@ -8,8 +8,8 @@ module.exports = {
   description: "Image Manipulation Command",
   async execute(client, message, cmd, args, Discord) {
 
-    const mention = message.mentions.users.first() || message.member;
-    const avatar = mention.displayAvatarURL({ size: 2048, format: "png" });
+    const user = message.mentions.users.first() || message.member;
+    const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
 
 
     // const embed = new Discord.MessageEmbed()

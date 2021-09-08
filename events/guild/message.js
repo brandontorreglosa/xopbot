@@ -214,7 +214,7 @@ try {
       const embederror = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
-        .setAuthor(`Error \`404\``, message.author.displayAvatarURL({ dynamic: true }))
+        .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Couldnt Find That Command, Do `x!help` And Try Again!**')
       return message.lineReplyNoMention(embederror)
     }
@@ -343,7 +343,7 @@ try {
     // <----/NSFW Registration System/---->
 
     if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-      return message.lineReplyNoMention({ content: "**You Need To \`Register\` For \`NSFW Usage\` To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊**" }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "**You Need To \`Register\` For \`NSFW Usage\` To Do This Command! 🔞 \nRequirments: \n```18+ Years Old \nMature Adult \nMature Behavior \nFull Responsibility``` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊**" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/Cooldown System/---->
 
