@@ -7,16 +7,34 @@ module.exports = {
     cooldown: 5,
     description: "Shows Level Of You Or User!",
     async execute(client, message, cmd, args, Discord) {
-        let mentionedMember = message.mentions.users.first()
+        const mentionedMember = message.mentions.users.first()
+        const catcherr = args[0];
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**Please Mention A User To Check His Level!**' }) // allowedMentions: { repliedUser: true } })
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)level <@user>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
 
         const target = await Levels.fetch(mentionedMember.user.id, message.guild.id);
-        if (!target) return message.lineReplyNoMention({ content: '**The Member Mentioned Does Not Exist In This Server!**' });
+        if (!target) {
+            const nomen = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`${catcherr}\` Is Not A Valid User!**`)
+            return message.lineReplyNoMention(nomen)
+        }
 
         try {
-            message.lineReplyNoMention({ content: `**${mentionedMember.user.tag} Level Is ${target.level} And Has ${target.xp}/${Levels.xpFor(target.level + 1)}**` })
+            const success = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`${mentionedMember.user.tag}\`'s Level Is \`${target.level}\` And Has \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
+            message.lineReplyNoMention(success)
         } catch (err) {
             console.log(err);
         }

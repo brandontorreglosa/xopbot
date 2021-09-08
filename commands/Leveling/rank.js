@@ -20,7 +20,14 @@ module.exports = {
 
             const neededXp = Levels.xpFor(parseInt(user.level) + 1);
 
-            if (!user) return message.lineReplyNoMention({ content: "**You Dont Have Any Xp, Try Sending More Messages!**" }) // allowedMentions: { repliedUser: true } });
+            if (!user) {
+                const fakuser = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`${user/username}\` Currently Has No Xp!**`)
+                return message.lineReplyNoMention(fakuser)
+            }
 
             const rank = new canvacord.Rank()
                 .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png' }))
@@ -31,8 +38,8 @@ module.exports = {
                 .setStatus(message.member.presence.status)
                 .setBackground("IMAGE", "https://th.bing.com/th/id/Rcf6f575500f15f55cddf043c1a79d902?rik=M0%2bN0%2bVBxLmchA&pid=ImgRaw")
                 .setProgressBar("#c30202")
-                .setUsername(message.author.username)
-                .setDiscriminator(message.author.discriminator);
+                .setUsername(user.username)
+                .setDiscriminator(user.discriminator);
             rank.build()
                 .then(data => {
                     const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
