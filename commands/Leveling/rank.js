@@ -25,7 +25,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor('#c30202')
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**\`${user/username}\` Currently Has No Xp!**`)
+                    .setDescription(`**\`${target.username}\` Currently Has No Xp!**`)
                 return message.lineReplyNoMention(fakuser)
             }
 
@@ -38,8 +38,8 @@ module.exports = {
                 .setStatus(message.member.presence.status)
                 .setBackground("IMAGE", "https://th.bing.com/th/id/Rcf6f575500f15f55cddf043c1a79d902?rik=M0%2bN0%2bVBxLmchA&pid=ImgRaw")
                 .setProgressBar("#c30202")
-                .setUsername(user.username)
-                .setDiscriminator(user.discriminator);
+                .setUsername(target.username)
+                .setDiscriminator(target.discriminator);
             rank.build()
                 .then(data => {
                     const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
