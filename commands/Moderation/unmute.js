@@ -13,10 +13,10 @@ module.exports = {
     if (message.mentions.users.first().bot) {
       return message.lineReplyNoMention({ content: '**You Can Not Unmute Bot`s!**' }) //, allowedMentions: { repliedUser: true } })
     }
-    if (message.author.id === user.id) {
+    if (message.author.id === target.id) {
       return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Unmute Yourself!**' }) //, allowedMentions: { repliedUser: true } });
     }
-    if (member.id === client.user.id) {
+    if (target.id === client.user.id) {
       return message.lineReplyNoMention({ content: `**You Can Not Unmute Me Through Me Lol!**` })
     }
     // if (message.member.roles.highest.position < member.roles.highest.position) {
