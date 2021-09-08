@@ -54,7 +54,7 @@ module.exports = {
                 return message.lineReplyNoMention(statxp)
             }
             const value = Number(args[3]);
-            const levelUser = await Levels.fetch(mentionedMember.user.id, message.guild.id);
+            const levelUser = await Levels.fetch(mentionedMember.id, message.guild.id);
             if (!levelUser) {
                 const nolvlu = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -73,12 +73,12 @@ module.exports = {
                     return message.lineReplyNoMention(nopr2)
                 }
                 try {
-                    await Levels.appendXp(mentionedMember.user.id, message.guild.id, value);
+                    await Levels.appendXp(mentionedMember.id, message.guild.id, value);
                     const successxp = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setColor('#c30202')
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**Added: \`${value}\` Xp To \`${mentionedMember.user.tag}\`!**`)
+                        .setDescription(`**Added: \`${value}\` Xp To \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successxp)
                 } catch (err) {
                     console.log(err);
@@ -93,12 +93,12 @@ module.exports = {
                     return message.lineReplyNoMention(nopr3)
                 }
                 try {
-                    await Levels.subtractXp(mentionedMember.user.id, message.guild.id, value);
+                    await Levels.subtractXp(mentionedMember.id, message.guild.id, value);
                     const successrmv = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setColor('#c30202')
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**Removed: \`${value}\` Xp From \`${mentionedMember.user.tag}\`!**`)
+                        .setDescription(`**Removed: \`${value}\` Xp From \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successrmv)
                 } catch (err) {
                     console.log(err);
@@ -113,12 +113,12 @@ module.exports = {
                     return message.lineReplyNoMention(nopr4)
                 }
                 try {
-                    await Levels.setXp(mentionedMember.user.id, message.guild.id, value);
+                    await Levels.setXp(mentionedMember.id, message.guild.id, value);
                     const successset = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setColor('#c30202')
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**Set: \`${value}\` Xp To \`${mentionedMember.user.tag}\`!**`)
+                        .setDescription(`**Set: \`${value}\` Xp To \`${mentionedMember.tag}\`!**`)
                     return message.lineReplyNoMention(successset)
                 } catch (err) {
                     console.log(err);
@@ -136,7 +136,7 @@ module.exports = {
                 return message.lineReplyNoMention(nopr5)
             }
             const value = Number(args[3]);
-            const levelUser = await Levels.fetch(mentionedMember.user.id, message.guild.id);
+            const levelUser = await Levels.fetch(mentionedMember.id, message.guild.id);
             if (!levelUser) {
                 const nopr6 = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -155,12 +155,12 @@ module.exports = {
                     return message.lineReplyNoMention(nopr7)
                 }
                 try {
-                    await Levels.appendLevel(mentionedMember.user.id, message.guild.id, value);
+                    await Levels.appendLevel(mentionedMember.id, message.guild.id, value);
                     const successlvl = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setColor('#c30202')
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**Added: \`${value}\` Level(s) To \`${mentionedMember.user.tag}\`!**`)
+                        .setDescription(`**Added: \`${value}\` Level(s) To \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successlvl)
                 } catch (err) {
                     console.log(err);
@@ -175,12 +175,12 @@ module.exports = {
                     return message.lineReplyNoMention(nopr8)
                 }
                 try {
-                    await Levels.subtractLevel(mentionedMember.user.id, message.guild.id, value);
+                    await Levels.subtractLevel(mentionedMember.id, message.guild.id, value);
                     const successrmv1 = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setColor('#c30202')
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**Removed: \`${value}\` Level(s) From \`${mentionedMember.user.tag}\`!**`)
+                        .setDescription(`**Removed: \`${value}\` Level(s) From \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successrmv1)
                 } catch (err) {
                     console.log(err);
@@ -195,12 +195,12 @@ module.exports = {
                     return message.lineReplyNoMention(nopr9)
                 }
                 try {
-                    await Levels.setLevel(mentionedMember.user.id, message.guild.id, value);
+                    await Levels.setLevel(mentionedMember.id, message.guild.id, value);
                     const successset1 = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setColor('#c30202')
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**Set: \`${value}\` Level(s)**`)
+                        .setDescription(`**Set: \`${value}\` Level(s) To \`${mentionedMember.tag}\`**`)
                     message.lineReplyNoMention(successset1)
                 } catch (err) {
                     console.log(err);
