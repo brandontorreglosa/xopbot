@@ -30,12 +30,12 @@ module.exports = {
             }
 
             const rank = new canvacord.Rank()
-                .setAvatar(message.author.displayAvatarURL({ dynamic: false, format: 'png' }))
+                .setAvatar(target.displayAvatarURL({ dynamic: false, format: 'png' }))
                 // .setRank(leaderboard)
                 .setLevel(user.level)
                 .setCurrentXP(user.xp)
                 .setRequiredXP(neededXp)
-                .setStatus(message.member.presence.status)
+                .setStatus(target.presence.status)
                 .setBackground("IMAGE", "https://th.bing.com/th/id/Rcf6f575500f15f55cddf043c1a79d902?rik=M0%2bN0%2bVBxLmchA&pid=ImgRaw")
                 .setProgressBar("#c30202")
                 .setUsername(target.username)

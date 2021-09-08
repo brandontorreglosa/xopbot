@@ -33,7 +33,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`${mentionedMember.user.tag}\`'s Level Is \`${target.level}\` And Has \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
+                .setDescription(`**\`${mentionedMember.tag}\`'s Level Is \`${target.level}\` And Has \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
             message.lineReplyNoMention(success)
         } catch (err) {
             console.log(err);
