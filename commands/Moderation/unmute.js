@@ -23,7 +23,7 @@ module.exports = {
     //   return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
     // }
 
-    if (user.id === message.guild.owner.id) {
+    if (target.id === message.guild.owner.id) {
       return message.lineReplyNoMention({
         content:
           '**You Jerk, How You Can Unmute Server Owner! 👿**' //, allowedMentions: { repliedUser: true }
