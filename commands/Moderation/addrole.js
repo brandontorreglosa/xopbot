@@ -6,8 +6,8 @@ module.exports = {
     permissions: ["MANAGE_ROLES"],
     clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"], 
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.users.first()
-        if (!user) {
+        const member = message.mentions.users.first()
+        if (!member) {
             const addroleError = new Discord.MessageEmbed()
                 .setDescription(`**Please Mention A Member In Order To Give Them The Role!**`)
                 .setColor('#c30202')
@@ -29,7 +29,7 @@ module.exports = {
         if (selfPosition <= mentionedPosition) {
             const posi = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setDescription(`**You Cannot Add Role To ${user} As Their Role Is Higher/Equal To Yours!**`)
+                .setDescription(`**You Cannot Add Role To ${member} As Their Role Is Higher/Equal To Yours!**`)
                 .setColor('#c30202')
             return message.lineReplyNoMention(posi)
         }
@@ -44,7 +44,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             // .setTitle(`The Role ${roleToGive} Has Been Added To ${member}`)
-            .setDescription(`The Role ${roleToGive} Has Been Added To ${user}`)
+            .setDescription(`The Role ${roleToGive} Has Been Added To ${member}`)
             .setColor("BLUE")
         // .setFooter(`Requested By: ${message.author.tag} \nIf The Role Is Higher Than The Bots Order \nThe Bot Wont Be Able To Add That Role!`, message.author.displayAvatarURL())
 
