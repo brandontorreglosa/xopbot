@@ -18,7 +18,7 @@ module.exports = {
             return message.lineReplyNoMention(nopr)
         }
 
-        const target = await Levels.fetch(mentionedMember.user.id, message.guild.id);
+        const target = await Levels.fetch(mentionedMember.id, message.guild.id);
         if (!target) {
             const nomen = new Discord.MessageEmbed()
                 .setTimestamp()
