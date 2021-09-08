@@ -14,7 +14,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`(prefix)batmanslap <text> / <text2>\` \nMust Add / For It To Work!**`)
+                .setDescription(`**\`(prefix)batmanslap <text> / <text2>\` \nMust Add \`/ \`For It To Work!**`)
             return message.lineReplyNoMention(nopr)
         }
 

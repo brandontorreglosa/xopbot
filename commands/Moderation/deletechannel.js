@@ -13,7 +13,12 @@ module.exports = {
             const user = message.mentions.users.first()
             const fetchedChannel = message.mentions.channels.first();
             if (!fetchedChannel) {
-                return message.lineReplyNoMention({ content: "**`(prefix)deletechannel <#channel>`**"}) //, allowedMentions: { repliedUser: true } })
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`(prefix)deletechannel <#channel>\`**`)
+                return message.lineReplyNoMention(nopr)
             }
             fetchedChannel.delete()
 

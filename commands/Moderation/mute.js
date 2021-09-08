@@ -10,7 +10,12 @@ module.exports = {
         const roletofind = args.slice(1).join(" ")
         const target = message.mentions.users.first()
         if (!args[0]) {
-            return message.lineReplyNoMention({ content: '**`(prefix)mute <@user>`**' }) //, allowedMentions: { repliedUser: true } })
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)mute <@user>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
         if (message.mentions.users.first().bot) {
             return message.lineReplyNoMention({ content: '**You Can Not Mute Bot`s!**' }) //, allowedMentions: { repliedUser: true } })
@@ -21,11 +26,6 @@ module.exports = {
         if (target.id === client.user.id) {
             return message.lineReplyNoMention({ content: `**You Can Not Mute Me Through Me Lol!**` })
         }
-
-        // if (message.member.roles.highest.position < member.roles.highest.position) {
-        //     return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-        // }
-
         if (target.id === message.guild.owner.id) {
             return message.lineReplyNoMention({
                 content:

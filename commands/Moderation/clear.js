@@ -7,17 +7,52 @@ module.exports = {
     description: "Clear messages!",
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (!args[0]) return message.lineReplyNoMention({ content: "**`(prefix)clear <number>`**"}) //, allowedMentions: { repliedUser: true } });
+            const aman = args[0];
+            if (!args[0]) {
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`(prefix)clear <number>\`**`)
+                return message.lineReplyNoMention(nopr)
+            }
 
-            if (isNaN(args[0])) return message.lineReplyNoMention({ content: "**Please Type A Real Number!**"}) //, allowedMentions: { repliedUser: true } });
+            if (isNaN(args[0])) {
+                const nonum = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`${aman}\` Is Not A Number!**`)
+                return message.lineReplyNoMention(nonum)
+            }
 
-            if (args[0] > 100) return message.lineReplyNoMention({ content: "**You Cant Delete More Than 100 messages!**"}) //, allowedMentions: { repliedUser: true } });
+            if (args[0] > 100) {
+                const maxlen = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**You Are Not Allowed To Delete More Than \`100\` Messages!**`)
+                return message.lineReplyNoMention(maxlen)
+            }
 
-            if (args[0] < 1) return message.lineReplyNoMention({ content: "**You Have To Delete At Least One Message!**"}) //, allowedMentions: { repliedUser: true } });
+            if (args[0] < 1) {
+                const minlen = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**You Have To Delete At Least \`1\` Message!**`)
+                return message.lineReplyNoMention(minlen)
+            }
 
             await message.channel.messages.fetch({ limit: args[0] }).then(messages => {
                 message.channel.bulkDelete(messages)
-                message.lineReplyNoMention({ content: `**Successfully** Deleted **${messages.size}** Messages.`}) //, allowedMentions: { repliedUser: true } })
+                const success = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Successfully Deleted \`${messsages, size}\` Messages!**`)
+
+                message.lineReplyNoMention(success)
                     .then(message => {
                         setTimeout(() => message.delete(), 4000);
                     })

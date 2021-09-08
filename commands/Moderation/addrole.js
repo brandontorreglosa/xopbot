@@ -6,12 +6,14 @@ module.exports = {
     permissions: ["MANAGE_ROLES"],
     clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
-        const member = message.mentions.users.first()
-        if (!member) {
-            const addroleError = new Discord.MessageEmbed()
-                .setDescription(`**Please Mention A Member In Order To Give Them The Role!**`)
+        const user = message.mentions.users.first()
+        if (!user) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
                 .setColor('#c30202')
-            return message.lineReplyNoMention(addroleError)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)addrole <@user> <@role>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
         args.shift()
         const roleToGive = message.mentions.roles.first()
@@ -22,14 +24,12 @@ module.exports = {
                 .setColor('#c30202')
             return message.lineReplyNoMention(addroleError2)
         }
-        member.roles.add(roleToGive)
+        user.roles.add(roleToGive)
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            // .setTitle(`The Role ${roleToGive} Has Been Added To ${member}`)
-            .setDescription(`The Role ${roleToGive} Has Been Added To ${member}`)
-            .setColor("BLUE")
-        // .setFooter(`Requested By: ${message.author.tag} \nIf The Role Is Higher Than The Bots Order \nThe Bot Wont Be Able To Add That Role!`, message.author.displayAvatarURL())
-
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Added: \`${roleToGive}\` To \`${user.username}\`**`)
         message.lineReplyNoMention(embed)
 
 

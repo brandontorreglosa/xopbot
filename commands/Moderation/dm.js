@@ -9,23 +9,55 @@ module.exports = {
   description: "Send DM message to a user",
   async execute(client, message, cmd, args, Discord) {
     try {
-      let user =
+      const user =
         message.mentions.users.first() ||
         message.guild.members.cache.get(args[0]);
-      if (!user)
-        return message.lineReplyNoMention({
-          content:
-            '**`(prefix)dm <@user>`**'
-        });
+      if (!user) {
+        const nopr = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**\`(prefix)dm <@user> <text>\`**`)
+        return message.lineReplyNoMention(nopr)
+      }
       if (message.mentions.users.first().bot) {
-        return message.lineReplyNoMention({ content: '**You Can Not DM Bot`s As They Will Never Send Back!**'}) //, allowedMentions: { repliedUser: true } })
+        const nodmbots = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**You Can Not DM Bot\`s As they Will Never Send Back!**`)
+        return message.lineReplyNoMention(nodmbots)
       }
       if (message.author.id === user.id) {
-        return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not DM Yourself!**'}) //, allowedMentions: { repliedUser: true } });
+        const nodmyourself = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Are You Alright? You Can Not DM Yourself!**`)
+        return message.lineReplyNoMention(nodmyourself)
       }
       const dmmessage = args.slice(1).join(" ")
-      if (!dmmessage)
-        return message.lineReplyNoMention({ content: "**You Did Not Specify Your Message!**" });
+      if (!dmmessage) {
+        const nodmmsg = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**You Did Not Specify Your Message!**`)
+        return message.lineReplyNoMention(nodmmsg)
+      }
+
+      const rmvdm = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Could Not Dm \`${user.user.tag}\`!**`)
+
+      const successdm = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Successfully Sent Message To \`${user.user.tag}\`!**`)
+
 
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
@@ -34,8 +66,8 @@ module.exports = {
         .setFooter(`Sent By ${message.author.username}`)
       user.user
         .send(embed)
-        .catch(() => message.lineReplyNoMention({ content: "**That User Could Not Be DMED!**" }))
-        .then(() => message.lineReplyNoMention({ content: `**Sent A Message To ${user.user.tag}!**` }));
+        .catch(() => message.lineReplyNoMention(rmvdm))
+        .then(() => message.lineReplyNoMention(successdm));
     } catch (error) {
       const errorlogs = client.channels.cache.get(errorChannel);
       message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured**" });

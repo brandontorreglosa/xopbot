@@ -17,7 +17,7 @@ module.exports = {
       ]);
       const embed = new Discord.MessageEmbed()
          .setTimestamp()
-         .setTitle("Channel Updates")
+         .setAuthor(`Channel Updates!`, message.author.displayAvatarURL({ dynamic: true }))
          .setDescription(`**🔓 ${message.channel} Has Been Unlocked By ${message.author.username}!**`)
          .setColor('#c30202')
       await message.lineReplyNoMention(embed);

@@ -9,9 +9,7 @@ module.exports = {
     category: "Image",
     description: "Sends a random nsfw image from reddit",
     async execute(client, message, cmd, args, Discord) {
-
         if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
-
         const on1 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')

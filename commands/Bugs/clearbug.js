@@ -7,7 +7,6 @@ module.exports = {
     cooldown: 4200,
     description: 'kill a user',
     async execute(client, message, cmd, args, Discord) {
-
         const clearbugembed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')

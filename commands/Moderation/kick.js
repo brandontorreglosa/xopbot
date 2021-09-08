@@ -9,42 +9,85 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     try {
       const member = message.mentions.users.first()
+      const catcherban = args[0];
       if (!args[0]) {
-        return message.lineReplyNoMention({ content: '**`(prefix)kick <@user> <reason>`**' })//, allowedMentions: { repliedUser: true } })
+        const nopr = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**\`(prefix)kick <@user> <reason>\`**`)
+        return message.lineReplyNoMention(nopr)
       }
       const reason = args.slice(1).join(" ")
-      if (!reason) return message.lineReplyNoMention({ content: "**Please Specify A Reason!**" })//, allowedMentions: { repliedUser: true } })
+      if (!reason) {
+        const norr = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Please Give A Reason To Kick That User!**`)
+        return message.lineReplyNoMention(norr)
+      }
 
       if (message.author.id === member.id) {
-        return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Kick Yourself!**' })//, allowedMentions: { repliedUser: true } });
+        const cantbanyourself = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Are You Alright? You Can Not Kick Yourself!**`)
+        return message.lineReplyNoMention(cantbanyourself)
       }
       if (member.id === client.user.id) {
-        return message.lineReplyNoMention({ content: `**You Can Not Ban Me Through Me Lol!**` })
+        const nobanbot = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**You Can't Just Kick Me Through Me, Thats Way Too Evil!**`)
+        return message.lineReplyNoMention(nobanbot)
       }
-
-      // if (message.member.roles.highest.position < member.roles.highest.position) {
-      //   return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-      // }
-
       if (member.id === message.guild.owner.id) {
-        return message.lineReplyNoMention({
-          content:
-            '**You Jerk, How You Can Kick Server Owner! 👿**' //, allowedMentions: { repliedUser: true }
-        });
+        const nobanowner = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**You Jerk, How Can You Kick Server Owner! 👿**`)
+        return message.lineReplyNoMention(nobanowner)
       }
-
       if (member) {
         const memberTarger = message.guild.members.cache.get(member.id);
+        const unsucer = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Could Not Send To \`${memberTarger.user.id}\` Reason Of Kick!**`)
+
+        const funsucer = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Could Not Kick \`${memberTarger.user.id}\`!**`)
+
+        const idkr12 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
+
+        const successful = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Kicked Successfully \`${memberTarger.user.id}\` For \`${reason}\`!**`)
+
         const embed = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setTitle(`You Were Kicked From ${message.guild.name}`)
           .setDescription(`**Kicked By: ${message.author.username} \nReason: \`${reason}\`**`)
-        memberTarger.send(embed).catch(() => message.lineReplyNoMention({ content: `**Could Not Send To <@${memberTarger.user.id}> Reason Of Kick!**` }))
-        message.guild.member(memberTarger).kick({ reason: `**Kicked By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention({ content: `**Could Not Kick <@${memberTarger.user.id}>!**` }))
-          .then(() => message.lineReplyNoMention({ content: `**<@${memberTarger.user.id}> Has Been Kicked For ${reason}!**` }))
+        memberTarger.send(embed).catch(() => message.lineReplyNoMention(unsucer))
+        message.guild.member(memberTarger).kick({ reason: `**Kicked By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention(funsucer))
+          .then(() => message.lineReplyNoMention(successful))
       } else {
-        message.lineReplyNoMention({ content: '**You Cant Kick This Member Because It Dont Exist!**' });
+        message.lineReplyNoMention(idkr12);
       }
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel);

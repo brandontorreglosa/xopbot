@@ -20,19 +20,16 @@ module.exports = {
       const data = await antilinkSchema.findOne({
         GuildID: message.guild.id,
       });
-
       if (data) {
         await antilinkSchema.findOneAndRemove({
           GuildID: message.guild.id,
         });
-
         const on1 = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Is Now `🟢 Enabled`!**')
         message.lineReplyNoMention(on1);
-
         let newData = new antilinkSchema({
           GuildID: message.guild.id,
         });
@@ -44,7 +41,6 @@ module.exports = {
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Is Now `🟢 Enabled`!**')
         message.lineReplyNoMention(on2);
-
         let newData = new antilinkSchema({
           GuildID: message.guild.id,
         });
@@ -54,7 +50,6 @@ module.exports = {
       const data2 = await antilinkSchema.findOne({
         GuildID: message.guild.id,
       });
-
       if (data2) {
         await antilinkSchema.findOneAndRemove({
           GuildID: message.guild.id,
@@ -65,7 +60,6 @@ module.exports = {
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Is Now `🔴 Disabled`!**')
         return message.lineReplyNoMention(off1);
-
       } else if (!data2) {
         const noset = new Discord.MessageEmbed()
           .setTimestamp()

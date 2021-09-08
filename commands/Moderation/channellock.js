@@ -9,7 +9,14 @@ module.exports = {
    async execute(client, message, cmd, args, Discord) {
       const user = message.mentions.users.first()
       const reason = args.slice(0).join(" ")
-      if (!reason) return message.lineReplyNoMention({ content: "**`(prefix)channellock <reason>`**"}) //, allowedMentions: { repliedUser: true } })
+      if (!reason) {
+         const nopr = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**\`(prefix)channellock <reason>\`**`)
+         return message.lineReplyNoMention()
+      }
 
       message.channel.overwritePermissions([
          {
@@ -19,7 +26,7 @@ module.exports = {
       ]);
       const embed = new Discord.MessageEmbed()
          .setTimestamp()
-         .setTitle("Channel Updates")
+         .setAuthor(`Channel Updates!`, message.author.displayAvatarURL({ dynamic: true }))
          .setDescription(`**🔒 ${message.channel} Has Been Locked By ${message.author.username}! \n${reason}**`)
          .setColor('#c30202')
       await message.lineReplyNoMention(embed);

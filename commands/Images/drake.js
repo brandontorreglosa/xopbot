@@ -12,7 +12,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`(prefix)drake <text> / <text2>\` \nYou Must Add / For It To Work!**`)
+                .setDescription(`**\`(prefix)drake <text> / <text2>\` \nYou Must Add \`/\` For It To Work!**`)
             return message.lineReplyNoMention(nopr)
         }
         let splitArgs = args.join(' ').split('/');
