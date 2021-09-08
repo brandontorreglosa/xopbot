@@ -7,11 +7,11 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     premium: true,
     async execute(client, message, cmd, args, Discord) {
-        const member = message.mentions.users.first()
+        const user = message.mentions.users.first()
         if (!member) return message.lineReplyNoMention({ content: '**`(prefix)tictactoe <@user>`**' })
 
         new tictactoe({
-            player_two: member,
+            player_two: user,
             message: message
         })
     }
