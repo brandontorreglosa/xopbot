@@ -3,7 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "water",
     permissions: ["SEND_MESSAGES"],
-    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_MESSAGES"],
     cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {

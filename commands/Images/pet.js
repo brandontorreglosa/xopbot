@@ -9,7 +9,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
 
     const mention = message.mentions.users.first() || message.member;
-    const avatar = mention.user.displayAvatarURL({ size: 2048, format: "png" });
+    const avatar = mention.displayAvatarURL({ size: 2048, format: "png" });
 
 
     // const embed = new Discord.MessageEmbed()

@@ -22,9 +22,8 @@ try {
       const user = await Levels.fetch(message.author.id, message.guild.id);
       const someonelevelup = new Discord.MessageEmbed()
         .setTimestamp()
-        .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
         .setColor('#c30202')
-        .setTitle(`**👤 ${message.author.username}**`)
+        .setAuthor(`🔝 You Leveled Up!`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
         .setFooter('Thank You For Being Active 🙏')
       message.lineReplyNoMention(someonelevelup)
@@ -186,7 +185,7 @@ try {
       const botembedmentioned = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
-        .setTitle('You Ping Me?')
+        .setAuthor(`You Ping Me?`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!**')
       message.lineReplyNoMention(botembedmentioned)
     }
@@ -215,7 +214,7 @@ try {
       const embederror = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
-        .setTitle('Error \`404\`')
+        .setAuthor(`Error \`404\``, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Couldnt Find That Command, Do `x!help` And Try Again!**')
       return message.lineReplyNoMention(embederror)
     }
@@ -274,7 +273,7 @@ try {
         const invalidembedperm = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
-          .setTitle('WAIT!')
+          .setAuthor(`Wait!`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`)
         return message.lineReplyNoMention(invalidembedperm) //, allowedMentions: { repliedUser: true } });
       }
@@ -330,8 +329,8 @@ try {
         const invalidembedperm1 = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
-          .setTitle('OH NO!')
-          .setDescription(`**Hold Your Horses! XOPBOT Has Missing Permissions: \`${invalidPerms1}\`**`)
+          .setAuthor(`Oh No!`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Hold Your Beer! XOPBOT Has Missing Permissions: \`${invalidPerms1}\`**`)
         return message.lineReplyNoMention(invalidembedperm1) //, allowedMentions: { repliedUser: true } });
       }
     }
@@ -339,12 +338,12 @@ try {
     // <----/Premium System/---->
 
     if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-      return message.lineReplyNoMention({ content: "**You Need To Buy Premium To Use This Command! 💰 \nBuy The Premium Pack `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)**" }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "**You Need To Buy \`Premium\` To Use This Command! 💰 \nBuy The Premium Pack: `Noob XOPBOT` Down Here ⤵ \n(https://www.patreon.com/user?u=52511474&fan_landing=true)**" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/NSFW Registration System/---->
 
     if (command.nsfw && !(await nsfwSchema.findOne({ User: message.author.id })))
-      return message.lineReplyNoMention({ content: "**You Need To Register For NSFW Usage To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊**" }) //, allowedMentions: { repliedUser: true } })
+      return message.lineReplyNoMention({ content: "**You Need To \`Register\` For \`NSFW Usage\` To Do This Command! 🔞 \nRequirments: \n`18+ Years Old` \n`Mature Adult` \n`Mature Behavior` \n`Full Responsibility` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊**" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/Cooldown System/---->
 
@@ -364,30 +363,30 @@ try {
 
             if (time_left.toFixed(1) >= 31536000) {
               let year = (time_left.toFixed(1) / 31536000);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(year)} More Year(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(year)}\` More Year(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 2628000) {
               let month = (time_left.toFixed(1) / 2628000);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(month)} More Month(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(month)}\` More Month(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 604800) {
               let week = (time_left.toFixed(1) / 604800);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(week)} More Week(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(week)}\` More Week(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 86400) {
               let day = (time_left.toFixed(1) / 86400);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(day)} More Day(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(day)}\` More Day(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 3600) {
               let hour = (time_left.toFixed(1) / 3600);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(hour)} More Hour(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(hour)}\` More Hour(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 60) {
               let minute = (time_left.toFixed(1) / 60);
-              return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(minute)} More Minute(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(minute)}\` More Minute(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
             }
             let seconds = (time_left.toFixed(1));
-            return message.lineReplyNoMention({ content: `**Please Wait ${parseInt(seconds)} More Second(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(seconds)}\` More Second(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
           } else {
             await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
             commandExecute();
@@ -416,7 +415,7 @@ try {
       if (antilink) {
         if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
           message.delete();
-          message.lineReplyNoMention({ content: "**No Links Allowed While Anti-Link Is Active For XOPBOT!**" }).then(msg => { //, allowedMentions: { repliedUser: true } })
+          message.lineReplyNoMention({ content: "**No \`Links\` Allowed While \`Anti-Link\` Is Active For \`XOPBOT\`!**" }).then(msg => { //, allowedMentions: { repliedUser: true } })
             let time = '4s'
             setTimeout(function () {
               msg.delete();
@@ -440,7 +439,7 @@ try {
       if (antiwords) {
         if (message.content.match("bitch") || message.content.match("hoe") || message.content.match("slut") || message.content.match("nigga") || message.content.match("nigg") || message.content.match("dick") || message.content.match("cunt") || message.content.match("shit") || message.content.match("fuck")) {
           message.delete();
-          message.lineReplyNoMention({ content: "**No Bad Words Allowed Please Stop!**" }).then(msg => { //, allowedMentions: { repliedUser: true } }).then(msg => {
+          message.lineReplyNoMention({ content: "**No \`Bad Words\` Allowed Please Stop!**" }).then(msg => { //, allowedMentions: { repliedUser: true } }).then(msg => {
             let time = '4s'
             setTimeout(function () {
               msg.delete();

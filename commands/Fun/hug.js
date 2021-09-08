@@ -38,7 +38,7 @@ module.exports = {
             .setImage(`${randomLinks}`)
             .setColor('#c30202')
             .setTitle(`${user.username} Was Hugged!`)
-            .setDescription(`**${user.username}** Was Hugged By **${message.author.username}** And Now **${user.username}** Is **${randomNumber}%** Happy!`)
+            .setDescription(`**\`${user.username}\` Was Hugged By \`${message.author.username}\` And Now \`${user.username}\` Is \`${randomNumber}\`% Happy!**`)
         message.lineReplyNoMention(newEmbed);
     }
 }

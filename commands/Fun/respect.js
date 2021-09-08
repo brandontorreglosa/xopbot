@@ -31,7 +31,7 @@ module.exports = {
       ];
       const embed = new Discord.MessageEmbed()
          .setTimestamp()
-         .setTitle(`**${message.author.username} Respects ${user.username}**`)
+         .setTitle(`**\`${message.author.username}\` Respects \`${user.username}\`**`)
          .setImage(`${gif[Math.floor(Math.random() * gif.length)]}`)
          .setColor('#c30202')
          .setFooter('Respect Forever')

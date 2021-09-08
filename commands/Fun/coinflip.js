@@ -15,7 +15,7 @@ module.exports = {
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTitle("Coinflip!")
-            .setDescription(`You Flipping Flipped **${choice}**!`)
+            .setDescription(`**You Flipping Flipped \`${choice}\`**!`)
         message.lineReplyNoMention(embed)
     }
 }
