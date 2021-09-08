@@ -14,21 +14,13 @@ module.exports = {
             return message.lineReplyNoMention(addroleError)
         }
         args.shift()
-        let roleToGive = message.mentions.roles.first()
-
+        const roleToGive = message.mentions.roles.first()
         if (!roleToGive) {
             const addroleError2 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setDescription(`**No Roles Provided!**`)
                 .setColor('#c30202')
             return message.lineReplyNoMention(addroleError2)
-        }
-        if (member.roles.cache.get(roleToGive.id)) {
-            const addroleError3 = new Discord.MessageEmbed()
-                .setTimestamp()
-                .setDescription(`**${user} Already Has That Role!**`)
-                .setColor('#c30202')
-            return message.lineReplyNoMention(addroleError3)
         }
         member.roles.add(roleToGive)
         const embed = new Discord.MessageEmbed()
