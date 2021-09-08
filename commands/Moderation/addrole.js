@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 5,
     aliases: ['addnewrole'],
     permissions: ["MANAGE_ROLES"],
-    clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"], 
+    clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
         const member = message.mentions.users.first()
         if (!member) {
@@ -22,16 +22,6 @@ module.exports = {
                 .setDescription(`**No Roles Provided!**`)
                 .setColor('#c30202')
             return message.lineReplyNoMention(addroleError2)
-        }
-        const mentionedPosition = member.roles.highest.position
-        const selfPosition = message.member.roles.highest.position
-
-        if (selfPosition <= mentionedPosition) {
-            const posi = new Discord.MessageEmbed()
-                .setTimestamp()
-                .setDescription(`**You Cannot Add Role To ${member} As Their Role Is Higher/Equal To Yours!**`)
-                .setColor('#c30202')
-            return message.lineReplyNoMention(posi)
         }
         if (member.roles.cache.get(roleToGive.id)) {
             const addroleError3 = new Discord.MessageEmbed()
