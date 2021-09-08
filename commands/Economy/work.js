@@ -34,7 +34,7 @@ module.exports = {
       const EMBED = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor("#c30202")
-        .setTitle(`${message.author.username} Worked As A ${m.content} 💻`)
+        .setAuthor(`${message.author.username} Worked Hard As A ${m.content} 👷‍♂️💦`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Worked And Got Paid \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!** 💸`)
         .setFooter(`Man You Worked Hard As A ${m.content}`);
 

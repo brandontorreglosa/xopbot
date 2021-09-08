@@ -54,7 +54,7 @@ module.exports = {
       const EMBED = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor("#c30202")
-        .setTitle(`${message.author.username} Searched ${m.content} 🕵️`)
+        .setAuthor(`${message.author.username} Searched ${m.content} 🕵️‍♂️`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Found \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!** 💸`)
         .setFooter(`What A True Detective You Are.`);
 
