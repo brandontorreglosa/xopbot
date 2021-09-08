@@ -43,7 +43,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTitle('PP Size Detector')
-            .setDescription(`${user.username}'s PP Is This Big\n\`\`\`${pp[Math.floor(Math.random() * pp.length)]}\`\`\``)
+            .setDescription(`${user.user.username}'s PP Is This Big\n\`\`\`${pp[Math.floor(Math.random() * pp.length)]}\`\`\``)
             .setFooter(`Requested By ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
             .setColor("#c30202");

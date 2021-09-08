@@ -314,7 +314,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**XOPBOT Jumped Song To \`${jumpnu}\` For You! 🤪**`)
+                    .setDescription(`**XOPBOT Jumped Queue To \`${jumpnu}\` For You! 🤪**`)
                 return message.lineReplyNoMention(jumpembed)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
