@@ -13,7 +13,16 @@ module.exports = {
         // const channel = await message.guild.channels.create(`💡suggestions`);
 
         let messageArgs = args.join(' ');
+        if (!args[0]) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)suggest <suggestion>\`**`)
+            return message.lineReplyNoMention(nopr)
+        }
         const embed = new Discord.MessageEmbed()
+            .setTimestamp()
             .setColor('#c30202')
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(messageArgs);
