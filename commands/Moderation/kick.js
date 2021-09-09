@@ -65,19 +65,19 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Send To \`${memberTarger.user.id}\` Reason Of Kick!**`)
+          .setDescription(`**Could Not Send To \`${memberTarger.username}\` Reason Of Kick!**`)
 
         const funsucer = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Kick \`${memberTarger.user.id}\`!**`)
+          .setDescription(`**Could Not Kick \`${memberTarger.username}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Kicked Successfully \`${memberTarger.user.id}\` For \`${reason}\`!**`)
+          .setDescription(`**Kicked Successfully \`${memberTarger.username}\` For \`${reason}\`!**`)
 
         const embed = new Discord.MessageEmbed()
           .setTimestamp()

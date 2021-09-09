@@ -65,19 +65,19 @@ module.exports = {
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Send To \`${userTarger.user.id}\` Reason Of Ban!**`)
+          .setDescription(`**Could Not Send To \`${userTarger.username}\` Reason Of Ban!**`)
 
         const funsucer = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Ban \`${userTarger.user.id}\`!**`)
+          .setDescription(`**Could Not Ban \`${userTarger.username}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Banned Successfully \`${userTarger.user.id}\` For \`${reason}\`!**`)
+          .setDescription(`**Banned Successfully \`${userTarger.username}\` For \`${reason}\`!**`)
 
         const embed = new Discord.MessageEmbed()
           .setTimestamp()

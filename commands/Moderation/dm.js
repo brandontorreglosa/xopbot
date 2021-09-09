@@ -50,13 +50,13 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Could Not Dm \`${user.user.tag}\`!**`)
+        .setDescription(`**Could Not Dm \`${user.username}\`!**`)
 
       const successdm = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Successfully Sent Message To \`${user.user.tag}\`!**`)
+        .setDescription(`**Successfully Sent Message To \`${user.username}\`!**`)
 
 
       const embed = new Discord.MessageEmbed()
