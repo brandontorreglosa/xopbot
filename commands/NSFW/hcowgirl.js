@@ -7,6 +7,7 @@ module.exports = {
       nsfw: true,
       cooldown: 3,
       permissions: ["SEND_MESSAGES"],
+      clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
       category: "NSFW",
       description: "Sends random cowgirls",
       usage: "[command]",

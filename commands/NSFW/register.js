@@ -4,6 +4,7 @@ module.exports = {
     name: 'register',
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['register-nsfw', 'nsfw-register'],
     async execute(client, message, cmd, args, Discord) {
         const member = message.author;

@@ -8,6 +8,7 @@ module.exports = {
       nsfw: true,
       aliases: ['girlscuffed', 'cuffed'],
       permissions: ["SEND_MESSAGES"],
+      clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
       category: "NSFW",
       description: "Sends random Bigass",
       usage: "[command]",

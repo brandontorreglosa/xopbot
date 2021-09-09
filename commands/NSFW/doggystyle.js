@@ -8,6 +8,7 @@ module.exports = {
       nsfw: true,
       aliases: ['dogstyle'],
       permissions: ["SEND_MESSAGES"],
+      clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
       category: "NSFW",
       description: "Sends random doggystyle",
       usage: "[command]",

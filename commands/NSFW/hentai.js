@@ -5,6 +5,7 @@ module.exports = {
     cooldown: 3,
     nsfw: true,
     permissions: ["SEND_MESSAGES"],
+    clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
 
         var superagent = require('superagent');
