@@ -52,6 +52,13 @@ module.exports = {
           .setDescription(`**You Jerk, How Can You Ban Server Owner! 👿**`)
         return message.lineReplyNoMention(nobanowner)
       }
+
+      const idkr12 = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
+        
       if (user) {
         const userTarger = message.guild.members.cache.get(user.id);
         const unsucer = new Discord.MessageEmbed()
@@ -65,12 +72,6 @@ module.exports = {
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Could Not Ban \`${userTarger.user.id}\`!**`)
-
-        const idkr12 = new Discord.MessageEmbed()
-          .setTimestamp()
-          .setColor('#c30202')
-          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()

@@ -8,10 +8,25 @@ module.exports = {
     description: "Unlocks a given channel for a particular role!",
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first()
-        if (!channel) return message.lineReplyNoMention({ content: "**`(prefix)roleunlock <#channel> <roleID>`**" }) //, allowedMentions: { repliedUser: true } })
+        if (!channel) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)roleunlock <#channel> <roleID>\`**`)
+            return message.lineReplyNoMention(nopr)
+        }
         const roletofind = args.slice(1).join(" ")
+        const fetcherofrr = args[1];
         const role = message.guild.roles.cache.find(r => r.id === roletofind)
-        if (!role) return message.lineReplyNoMention({ content: "**Please Give A Valid Role Id!**" }) //, allowedMentions: { repliedUser: true } })
+        if (!role) {
+            const norrspec = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`${fetcherofrr}\` Is Not A Valid Role ID!**`)
+            return message.lineReplyNoMention(norrspec)
+        }
         const embed = new MessageEmbed()
             .setColor('#c30202')
             .setTimestamp()

@@ -6,20 +6,34 @@ module.exports = {
   permissions: ["MANAGE_ROLES"],
   clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
-    let target = message.mentions.users.first();
+    const target = message.mentions.users.first();
 
-    if (!target) return message.lineReplyNoMention({ content: '**`(prefix)removerole <@user> <@role>`**' }) //, allowedMentions: { repliedUser: true } })
+    if (!target) {
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)removerole <@user> <@role>\`**`)
+      return message.lineReplyNoMention(nopr)
+    }
 
-    let rrole = message.mentions.roles.first();
+    const rrole = message.mentions.roles.first();
+    const fetchrole = args[1];
 
-    if (!rrole) return message.lineReplyNoMention({ content: `**I Am Unable To Find That Role!**` }) //, allowedMentions: { repliedUser: true } })
+    if (!rrole) {
+      const norrspec = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**I Was Unable To Find The Role \`${fetchrole}\`!**`)
+      return message.lineReplyNoMention(norrspec)
+    }
 
     const embed = new Discord.MessageEmbed()
-      .setColor('#c30202')
-      .setDescription(`**${rrole} Was Removed From ${target}**`)
-      .setFooter(`👑HACKERPROᵈᵉᵛ#1498`)
       .setTimestamp()
-
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**Removed: \`${rrole}\` From \`${target.username}\`!**`)
     await message.lineReplyNoMention(embed)
 
     target.roles.remove(rrole)

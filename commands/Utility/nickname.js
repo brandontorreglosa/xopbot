@@ -7,19 +7,34 @@ module.exports = {
     cooldown: 3,
     description: "Change the Nickname of other Users",
     async execute(client, message, cmd, args, Discord) {
-        let mentionMember = message.mentions.members.first();
-        let newNickname = args.slice(1).join(' ');
+        const mentionMember = message.mentions.members.first();
+        const newNickname = args.slice(1).join(' ');
         if (!mentionMember) {
-            return message.reply({ content: "**`(prefix)nickname <@user> <nickname>`**" }) //, allowedMentions: { repliedUser: true } });
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)nickname <@user> <nickname>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
         if (!newNickname) {
-            return message.reply({ content: "**Please Add `<nickname>`**" }) //, allowedMentions: { repliedUser: true } });
+            const erispec = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Please Add The Nickname!**`)
+            return message.lineReplyNoMention(erispec)
         }
         try {
             mentionMember.setNickname(newNickname);
         } catch (error) {
             message.lineReplyNoMention({ content: "**Can't Change Nickname Of This User, Does He Have A Higher Role?**" }) //, allowedMentions: { repliedUser: true } });
         }
-        message.lineReplyNoMention({ content: `**Changed Nickname Of ${mentionMember} To ${newNickname}!**` });
+        const success = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Changed Nickname Of \`${mentionMember}\` To \`${newNickname}\`!**`)
+        message.lineReplyNoMention(success)
     }
 }

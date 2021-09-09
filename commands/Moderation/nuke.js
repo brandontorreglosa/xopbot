@@ -8,7 +8,12 @@ module.exports = {
     description: 'Removes all messages in the channel (Deletes the old channel and makes a copy of it with permissions intact)',
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first() || message.author;
-        message.lineReplyNoMention({ content: `**This Will Remove All Conversation In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**` });
+        const nopr = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**This Will Clear All Messages In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**`)
+        message.lineReplyNoMention(nopr)
 
         const filter = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
         const options = { max: 1, time: 30000, errors: ['time'] };
@@ -17,7 +22,12 @@ module.exports = {
             .catch(() => false);
 
         if (!proceed) {
-            return message.lineReplyNoMention({ content: `**${message.author.username}**, You Cancelled The Nuke Command!` });
+            const nonukeplz = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Cancelled The Nuke Command Successfully!**`)
+            return message.lineReplyNoMention(nonukeplz)
         };
 
         const embed = new Discord.MessageEmbed()

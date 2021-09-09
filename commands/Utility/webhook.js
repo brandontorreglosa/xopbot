@@ -7,7 +7,12 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            return message.reply({ content: 'Please Enter A Text To Send!', allowedMentions: { repliedUser: true } })
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)webhook <text>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
         const wc = new WebhookClient('857856391528316938', 'EN3jEXAvuGpkcQmtLZc2FRdNdxad5h4Md0HSLa6Y4b2-dMXJiW0FbMDX9Fta1W-uziWx')
         const embed = new MessageEmbed()

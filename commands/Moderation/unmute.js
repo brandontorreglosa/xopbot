@@ -7,39 +7,65 @@ module.exports = {
   description: "This Unmutes A Member",
   async execute(client, message, cmd, args, Discord) {
     const target = message.mentions.users.first()
+    const fettag = args[0];
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)unmute <@user>`**' }) //, allowedMentions: { repliedUser: true } })
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)unmute <@user>\`**`)
+      return message.lineReplyNoMention(nopr)
     }
     if (message.mentions.users.first().bot) {
-      return message.lineReplyNoMention({ content: '**You Can Not Unmute Bot`s!**' }) //, allowedMentions: { repliedUser: true } })
+      const nobots = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**You Can Not Unmute Bot\`s!**`)
+      return message.lineReplyNoMention(nobots)
     }
     if (message.author.id === target.id) {
-      return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Unmute Yourself!**' }) //, allowedMentions: { repliedUser: true } });
+      const nomuteyourself = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Are You Alright? You Can Not Unmute Yourself!**`)
+      return message.lineReplyNoMention(nomuteyourself);
     }
     if (target.id === client.user.id) {
-      return message.lineReplyNoMention({ content: `**You Can Not Unmute Me Through Me Lol!**` })
+      const nomuteme = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**You Can Not Unmute Me Through Me, Thats Way Too Evil!**`)
+      return message.lineReplyNoMention(nomuteme)
     }
-    // if (message.member.roles.highest.position < member.roles.highest.position) {
-    //   return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-    // }
-
     if (target.id === message.guild.owner.id) {
-      return message.lineReplyNoMention({
-        content:
-          '**You Jerk, How You Can Unmute Server Owner! 👿**' //, allowedMentions: { repliedUser: true }
-      });
+      const nomuteserverowner = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**You Jerk, How  You Can Unmute Server Owner! 👿**`)
+      return message.lineReplyNoMention(nomuteserverowner)
     }
     if (target) {
-      //let mainRole = message.guild.roles.cache.find(role => role.name === 'Verified');
-      let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
-
-      let memberTarget = message.guild.members.cache.get(target.id);
+      const muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+      const memberTarget = message.guild.members.cache.get(target.id);
 
       memberTarget.roles.remove(muteRole.id);
-      //memberTarget.roles.add(mainRole.id);
-      message.lineReplyNoMention({ content: `** <@${memberTarget.user.id}> Has Been Unmuted!**` });
+      const successsful = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Unmuted Successfully \`${memberTarget.user.id}\`!**`)
+      message.lineReplyNoMention(successsful)
     } else {
-      message.lineReplyNoMention({ content: '**Cant Find The User Because It Dont Exist Or He Is Cheating!**' });
+      const unsucer = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Could Not Unmute \`${fettag}\`!**`)
+      message.lineReplyNoMention(unsucer)
     }
   }
 }

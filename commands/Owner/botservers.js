@@ -13,7 +13,14 @@ module.exports = {
     description: "Check what Servers the bot is in!",
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (message.author.id != OWNER_ID) return message.lineReplyNoMention({ content: `**❌ Developer Only ❌**` });
+            if (message.author.id != OWNER_ID) {
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command! 😔**`)
+                return message.lineReplyNoMention(nopr)
+            }
             let data = [];
             client.guilds.cache.forEach(x => {
                 const embed = new Discord.MessageEmbed()
@@ -21,7 +28,6 @@ module.exports = {
                     .setColor('#c30202')
                     .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
                 message.lineReplyNoMention(embed)
-                // message.channel.send(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
             });
 
             if (data.length > 0) {

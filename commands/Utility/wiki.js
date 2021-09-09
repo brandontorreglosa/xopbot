@@ -10,7 +10,12 @@ module.exports = {
         const search = args.join("_");
         const msg = args.join(" ");
         if (!msg) {
-            return message.lineReplyNoMention({ content: "**`(prefix)wiki <search>`**" })
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)wiki <search>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
         const link = `https://www.wikipedia.org/w/index.php?search=${search}&ns0=1`;
         const embed = new Discord.MessageEmbed()

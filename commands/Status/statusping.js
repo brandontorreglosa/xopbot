@@ -9,9 +9,16 @@ module.exports = {
   cooldown: 4,
   description: 'Get bot ping For The Server.',
   async execute(client, message, cmd, args, Discord) {
+
+    const nopr = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**Loading...**`)
+
     const ping = await getDBPingData();
     const messagePing = Date.now();
-    const msg = await message.lineReplyNoMention({ content: 'Loading...' });
+    const msg = await message.lineReplyNoMention(nopr);
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed()
       .setTitle('🏓 Pong!')

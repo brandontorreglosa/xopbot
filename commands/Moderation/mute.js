@@ -7,52 +7,84 @@ module.exports = {
     cooldown: 5,
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
-        const roletofind = args.slice(1).join(" ")
+        const fetchmute = args[0];
         const target = message.mentions.users.first()
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`(prefix)mute <@user>\`**`)
+                .setDescription(`**\`(prefix)mute <@user> <[optional]time(s)(m)(h)(d)>\`**`)
             return message.lineReplyNoMention(nopr)
         }
         if (message.mentions.users.first().bot) {
-            return message.lineReplyNoMention({ content: '**You Can Not Mute Bot`s!**' }) //, allowedMentions: { repliedUser: true } })
+            const nomutebots = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Can Not Mute Bot\`s!**`)
+            return message.lineReplyNoMention(nomutebots)
         }
         if (message.author.id === target.id) {
-            return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Mute Yourself!**' }) //, allowedMentions: { repliedUser: true } });
+            const annieareyouok = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Are You Alright? You Can Not Mute Yourself!**`)
+            return message.lineReplyNoMention(annieareyouok)
         }
         if (target.id === client.user.id) {
-            return message.lineReplyNoMention({ content: `**You Can Not Mute Me Through Me Lol!**` })
+            const whymuteme = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Can't Just Mute Me Through Me, Thats Way Too Evil! **`)
+            return message.lineReplyNoMention(whymuteme)
         }
         if (target.id === message.guild.owner.id) {
-            return message.lineReplyNoMention({
-                content:
-                    '**You Jerk, How You Can Mute Server Owner! 👿**' //, allowedMentions: { repliedUser: true }
-            });
+            const howyoumuteserver = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Jerk, How You Can Mute Server Owner! 👿**`)
+            return message.lineReplyNoMention()
         }
-        if (target) {
-            let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
 
-            let memberTarget = message.guild.members.cache.get(target.id);
+        const faksucer = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor('#c30202')
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Could Not Mute \`${fetchmute}\`! Try The Down Solutions: \nCheck If You Have The \`Muted\` Role Created. \nCheck If The \`User\` Actually Exists!**`)
+
+        if (target) {
+            const muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+            const memberTarget = message.guild.members.cache.get(target.id);
 
             if (!args[1]) {
                 memberTarget.roles.add(muteRole.id);
-                message.lineReplyNoMention({ content: `** <@${memberTarget.user.id}> Has Been Muted!**` });
+                const sucermute = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Muted Successfully \`${memberTarget.user.id}\`!**`)
+                message.lineReplyNoMention(sucermute);
                 return
             }
 
             memberTarget.roles.add(muteRole.id);
-            message.lineReplyNoMention({ content: `** <@${memberTarget.user.id})> Has Been Muted For ${ms(ms(args[1]))}**` });
+            const tempsucermute = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Temporary Muted Successfully \`${memberTarget.user.id}\` For \`${ms(ms(args[1]))}\`!**`)
+            message.lineReplyNoMention(tempsucermute)
 
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);
             }, ms(args[1]));
 
         } else {
-            message.lineReplyNoMention({ content: "**This User Does Not Exist! Try Checking The Down Solutions: \nMake Sure You Have Made The Muted Role `Muted` \nMake Sure Bot Is Not `Offline` \nMake Sure That The User Actually Exists \nAsk Help From `@👑HACKERPROᵈᵉᵛ#1498` If Not Any Of Those Solutions Work**" });  // \nMake Sure You Have Made The Verified Role `Verified` 
-
+            message.lineReplyNoMention(faksucer)
         }
     }
 }

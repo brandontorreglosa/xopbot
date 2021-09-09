@@ -8,8 +8,22 @@ module.exports = {
     cooldown: 5,
     description: 'get information about a minecraft server',
     async execute(client, message, cmd, args, Discord) {
-        if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)mcserver <serverip> <serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
-        if (!args[1]) return message.lineReplyNoMention({ content: '**Please Add `<serverport>` \nDont Know? Visit: https://minecraftservers.org/**' });
+        if (!args[0]) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)mcserver <serverip> <serverport>\` \nDont Know? Visit: https://minecraftservers.org/**`)
+            return message.lineReplyNoMention(nopr)
+        }
+        if (!args[1]) {
+            const nopr1 = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Please Add The Server Port! \nDont Know? Visit: https://minecraftservers.org/**`)
+            return message.lineReplyNoMention(nopr1)
+        }
 
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
             console.log(response);

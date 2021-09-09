@@ -10,18 +10,24 @@ module.exports = {
   description: "Get anime information",
   usage: "`a!anime <anime_name>`",
   async execute(client, message, cmd, args, Discord) {
+    const load = new Discord.MessageEmbed()
+      .setTimestamp()
+      .setColor('#c30202')
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setDescription(`**Loading...**`)
 
-    if (!args.length) {
-
-      return message.lineReplyNoMention({ content: "**`(prefix)anime <animename>`**" })
-
+    if (!args[0]) {
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)anime <series>\`**`)
+      return message.lineReplyNoMention(nopr)
     }
-    await message.lineReplyNoMention({ content: "**Loading Anime....**" })
+    const msg = await message.lineReplyNoMention(load)
 
     try {
-
-      let body = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`)
-
+      const body = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`)
       body = await body.json()
 
       const embed = new Discord.MessageEmbed()
@@ -33,16 +39,9 @@ module.exports = {
         .addField("Ratings", body.data[0].attributes.averageRating)
         .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
         .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-      //.setImage(body.data[0].attributes.coverImage.large)
-
-      //try it
-      message.lineReplyNoMention(embed)
+      msg.edit(embed)
     } catch (err) {
-
-
       return message.lineReplyNoMention({ content: "**XOPBOT Was Unable To Find This Anime Series!**" });
-
     }
 
   }

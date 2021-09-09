@@ -8,7 +8,14 @@ module.exports = {
     premium: true,
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first()
-        if (!member) return message.lineReplyNoMention({ content: '**`(prefix)tictactoe <@user>`**' })
+        if (!user) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)tictactoe <@user>\`**`)
+            return message.lineReplyNoMention(nopr)
+        }
 
         new tictactoe({
             player_two: user,

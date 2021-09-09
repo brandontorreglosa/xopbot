@@ -1,6 +1,4 @@
 const axios = require('axios');
-const { MessageEmbed } = require('discord.js')
-
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "covid",
@@ -18,10 +16,15 @@ module.exports = {
             response = await axios.get(url)
             corona = response.data
         } catch (error) {
-            return message.lineReplyNoMention({ content: '**`(prefix)covid <country>`**' })
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)covid <location>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
 
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setTitle(args[0] ? `${args[0].toUpperCase()} Stats` : 'Total Corona Cases World Wide')
             .setColor('#c30202')

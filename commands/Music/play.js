@@ -18,14 +18,19 @@ module.exports = {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc1);
             }
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention({ content: '**`(prefix)play <song>`**' })
+                    const nopr = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**\`(prefix)play <song>\`**`)
+                    return message.lineReplyNoMention(nopr)
                 }
                 message.client.distube.play(message, args.join(' '))
             } catch (err) {
@@ -40,7 +45,7 @@ module.exports = {
                 const embednovc3 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc3);
             }
@@ -49,7 +54,7 @@ module.exports = {
                 const embednovc2 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc2);
             }
@@ -74,7 +79,7 @@ module.exports = {
                 const embednovc4 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc4);
             }
@@ -83,7 +88,7 @@ module.exports = {
                 const embednovc33 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc33);
             }
@@ -111,7 +116,7 @@ module.exports = {
                 const embednovc44 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc44);
             }
@@ -121,7 +126,7 @@ module.exports = {
                 const ressong1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle(`${message.author.username}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**XOPBOT \`Resumed\` The Music For You! ▶**`)
                 return message.lineReplyNoMention(ressong1);
             }
@@ -146,7 +151,7 @@ module.exports = {
                 const embednovc6 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc6);
             }
@@ -155,7 +160,7 @@ module.exports = {
                 const embednovc55 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc55);
             }
@@ -180,7 +185,7 @@ module.exports = {
                 const embednovc7 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc7);
             }
@@ -189,14 +194,19 @@ module.exports = {
                 const embednovc66 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc66);
             }
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention({ content: '**`(prefix)loop <(Repeat queue)(Repeat song)(Off)>`**' })
+                    const nopr2 = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**\`(prefix)loop <(Repeat queue)(Repeat song)(Off)>\`**`)
+                    return message.lineReplyNoMention(nopr2)
                 }
                 const mode = message.client.distube.setRepeatMode(message, parseInt(args[0]));
                 mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
@@ -219,7 +229,7 @@ module.exports = {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc1);
             }
@@ -244,7 +254,7 @@ module.exports = {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc1);
             }
@@ -253,21 +263,38 @@ module.exports = {
                 const embednovc77 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc77);
             }
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention({ content: '**`(prefix)volume <number>`**' })
+                    const nopr3 = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**\`(prefix)volume <number>\`**`)
+                    return message.lineReplyNoMention(nopr3)
                 }
                 const volume = parseInt(args[0])
                 const maxvolume = 500
                 if (isNaN(volume)) {
-                    return message.lineReplyNoMention({ content: '**That Is Not A Number!**' })
+                    const fakvolume = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**\`${volume}\` Is Not A Number!**`)
+                    return message.lineReplyNoMention(fakvolume)
                 }
-                if (volume > maxvolume) return message.lineReplyNoMention({ content: '**The Volume Cant Go More Higher Than \`500\`%! That Will Result In Destruction!**' })
+                if (volume > maxvolume) {
+                    const nomorevolthanm = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**The Max Volume Is \`500\`%, Higher Than That Will Destroy Devices!**`)
+                    return message.lineReplyNoMention(nomorevolthanm)
+                }
                 message.client.distube.setVolume(message, volume);
                 const volembed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -287,7 +314,7 @@ module.exports = {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc1);
             }
@@ -296,18 +323,28 @@ module.exports = {
                 const embednovc88 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc88);
             }
 
             try {
                 if (!args[0]) {
-                    return message.lineReplyNoMention({ content: '**`(prefix)jump <queuesongnumber>`**' })
+                    const nopr4 = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**\`(prefix)jump <queuenumber>\`**`)
+                    return message.lineReplyNoMention(nopr4)
                 }
                 const jumpnu = parseInt(args[0])
                 if (isNaN(jumpnu)) {
-                    return message.lineReplyNoMention({ content: '**That Is Not A Number!**' })
+                    const nonumsongal = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor('#c30202')
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**\`${jumpnu}\` Is Not A Number!**`)
+                    return message.lineReplyNoMention(nonumsongal)
                 }
                 message.client.distube.jump(message, jumpnu);
                 const jumpembed = new Discord.MessageEmbed()
@@ -328,7 +365,7 @@ module.exports = {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc1);
             }
@@ -337,7 +374,7 @@ module.exports = {
                 const embednovc99 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**There Are No Songs In Queue! 🎶**')
                 return message.lineReplyNoMention(embednovc99);
             }
@@ -361,7 +398,7 @@ module.exports = {
                 const embednovc1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc1);
             }

@@ -18,17 +18,20 @@ module.exports = {
         const notime = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setDescription(`**Please Specify The Time!**`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**\`(prefix)remind <time(s)(m)(h)(d)> <reminder>\`**`)
 
         const wrongtime = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setDescription(`**Sorry I Only Do d, m, h, or s.**`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Sorry I Only Do \`(d)(h)(m)(s)\`!**`)
 
         const reminderembed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#c30202')
-            .setDescription(`**Please Tell Me What You Want To Be Reminded Off**`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Please Tell Me What You Want To Be Reminded Off!**`)
 
         if (!args[0]) return message.lineReplyNoMention(notime)
         if (
@@ -45,15 +48,16 @@ module.exports = {
         const remindertime = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#33F304')
-            .setDescription(`\**Your reminder will go off in ${time}**`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Your Reminder Will Go Off In \`${time}\`!**`)
 
         message.lineReplyNoMention(remindertime)
 
         const reminderdm = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor('#7289DA')
-            .setTitle('**REMINDER**')
-            .setDescription(`**It Has Been ${time} Here Is Your Reminder:** ${reminder}`)
+            .setAuthor(`REMINDER`, client.user.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**It Has Been \`${time}\`! \n Here Is Your Reminder: \`${reminder}\`!**`)
 
         setTimeout(async function () {
             try {

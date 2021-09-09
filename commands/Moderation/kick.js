@@ -52,6 +52,13 @@ module.exports = {
           .setDescription(`**You Jerk, How Can You Kick Server Owner! 👿**`)
         return message.lineReplyNoMention(nobanowner)
       }
+
+      const reps = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
+        
       if (member) {
         const memberTarger = message.guild.members.cache.get(member.id);
         const unsucer = new Discord.MessageEmbed()
@@ -65,12 +72,6 @@ module.exports = {
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Could Not Kick \`${memberTarger.user.id}\`!**`)
-
-        const idkr12 = new Discord.MessageEmbed()
-          .setTimestamp()
-          .setColor('#c30202')
-          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
@@ -87,7 +88,7 @@ module.exports = {
         message.guild.member(memberTarger).kick({ reason: `**Kicked By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention(funsucer))
           .then(() => message.lineReplyNoMention(successful))
       } else {
-        message.lineReplyNoMention(idkr12);
+        return message.lineReplyNoMention(reps);
       }
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel);

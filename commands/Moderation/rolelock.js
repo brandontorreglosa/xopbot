@@ -1,4 +1,3 @@
-const { MessageEmbed } = require("discord.js")
 const lineReplyNoMention = require('discord-reply');
 module.exports = {
     name: "rolelock",
@@ -8,11 +7,26 @@ module.exports = {
     description: "Locks a given channel for a particular role!",
     async execute(client, message, cmd, args, Discord) {
         const channel = message.mentions.channels.first()
-        if (!channel) return message.lineReplyNoMention({ content: "**`(prefix)rolelock <#channel> <roleID>`**" }) //, allowedMentions: { repliedUser: true } })
+        if (!channel) {
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)rolelock <#channel> <roleID>\`**`)
+            return message.lineReplyNoMention(nopr)
+        }
         const roletofind = args.slice(1).join(" ")
+        const fetchunvalidrr = args[1];
         const role = message.guild.roles.cache.find(r => r.id === roletofind)
-        if (!role) return message.lineReplyNoMention({ content: "**Please Give A Valid Role Id!**" }) //, allowedMentions: { repliedUser: true } })
-        const embed = new MessageEmbed()
+        if (!role) {
+            const norspecas = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor('#c30202')
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`${fetchunvalidrr}\` Is Not A Valid Role ID!**`)
+            return message.lineReplyNoMention(norspecas)
+        }
+        const embed = new Discord.MessageEmbed()
             .setColor('#c30202')
             .setTimestamp()
             .setTitle("Channel Locked!")

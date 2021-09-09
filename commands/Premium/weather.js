@@ -10,13 +10,25 @@ module.exports = {
     aliases: ['wthr'],
     cooldown: 2,
     async execute(client, message, cmd, args, Discord) {
-
+        const catcherv2 = args.slice(0).join(" ");
         weather.find({ search: args.join(" "), degreeType: 'F' }, function (error, result) {
-            // 'C' can be changed to 'F' for farneheit results
-            if (error) return message.lineReplyNoMention({ content: error });
-            if (!args[0]) return message.lineReplyNoMention({ content: '**`(prefix)weather <location>`**' })
+            if (!args[0]) {
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`(prefix)weather <location>\`**`)
+                return message.lineReplyNoMention(nopr)
+            }
 
-            if (result === undefined || result.length === 0) return message.lineReplyNoMention({ content: '**Invalid** Location!' });
+            if (result === undefined || result.length === 0) {
+                const notloc = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`${catcherv2}\` Is Not A Valid Location!**`)
+                return message.lineReplyNoMention(notloc)
+            }
 
             var current = result[0].current;
             var location = result[0].location;
@@ -33,8 +45,6 @@ module.exports = {
                 .addField('Wind', current.winddisplay, true)
                 .addField('Feels like', `${current.feelslike}°`, true)
                 .addField('Humidity', `${current.humidity}%`, true)
-
-
             message.lineReplyNoMention(weatherinfo)
         })
     }

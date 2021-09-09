@@ -7,25 +7,48 @@ module.exports = {
   description: "This Command Unbans Member",
   async execute(client, message, cmd, args, Discord) {
     const member = message.mentions.users.first()
+    const fetcherunban = args[0];
     if (!args[0]) {
-      return message.lineReplyNoMention({ content: '**`(prefix)unban <@user>`**' }) //, allowedMentions: { repliedUser: true } })
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**\`(prefix)unban <@user>\`**`)
+      return message.lineReplyNoMention(nopr)
     }
     if (message.author.id === member.id) {
-      return message.lineReplyNoMention({ content: '**Are You Alright? You Can Not Unban Yourself!**' }) //, allowedMentions: { repliedUser: true } });
+      const nounbanyou = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Are You Alright? You Can Not Unban Yourself!**`)
+      return message.lineReplyNoMention(nounbanyou)
     }
     if (member.id === client.user.id) {
-      return message.lineReplyNoMention({ content: `**You Can Not Unban Me Through Me Lol!**` })
+      const whyunbanme = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**You Can Not Unban Me Through Me, Thats Way Too Evil!**`)
+      return message.lineReplyNoMention(whyunbanme)
     }
-    // if (message.member.roles.highest.position < member.roles.highest.position) {
-    //   return message.lineReplyNoMention({ content: '**That User Has Higher Role Than Me!**' })
-    // }
 
     if (member) {
       const memberTarger = message.guild.members.cache.get(member.id);
       memberTarger.unban();
-      message.lineReplyNoMention({ content: "**User Has Been Unbanned!**" });
+      const successunban = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Unbanned Successfully \`${memberTarger.user.id}\`**`)
+      message.lineReplyNoMention(successunban)
     } else {
-      message.lineReplyNoMention({ content: '**You Cant Unban This Member Because It Dont Exist Or He Has Deleted Account!**' });
+      const unsuccess = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor('#c30202')
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Could Not Unban \`${fetcherunban}\`. Account Might Have Been Deleted!**`)
+      message.lineReplyNoMention(unsuccess)
     }
   }
 }

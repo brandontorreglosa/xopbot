@@ -18,7 +18,12 @@ module.exports = {
     message.member
       .setNickname(`[AFK] ${message.member.displayName.replace('[AFK]', '')}`)
       .then(() => {
-        return message.lineReplyNoMention({ content: `**Status Succesfully Has Been Set To AFK.**`}) //, allowedMentions: { repliedUser: true } });
+        const success = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**Status Successfully Set To \`[AFK]\`!**`)
+        return message.lineReplyNoMention(success)
       })
 
       .catch(_e => {

@@ -10,7 +10,14 @@ module.exports = {
     description: "Shut's down the bot",
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (!OWNER_ID) return message.lineReplyNoMention({ content: "**You Cant Shutdown XOPBOT Only The Developer! 👿**" });
+            if (!OWNER_ID) {
+                const nopr = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor('#c30202')
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command! 😔**`)
+                return message.lineReplyNoMention(nopr)
+            }
             const user = message.mentions.users.first || message.author;
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
