@@ -53,31 +53,40 @@ module.exports = {
         return message.lineReplyNoMention(nobanowner)
       }
 
-      const idkr12 = new Discord.MessageEmbed()
+      if (!user) {
+        const idkr12 = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
+        return message.lineReplyNoMention(idkr12)
+      }
+
+      const rapdab = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
-        
+        .setDescription(`**\`${catcherban}\` Is Currently Not Bannable!**`)
+
       if (user) {
         const userTarger = message.guild.members.cache.get(user.id);
         const unsucer = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Send To \`${userTarger.username}\` Reason Of Ban!**`)
+          .setDescription(`**Could Not Send To \`${user.username}\` Reason Of Ban!**`)
 
         const funsucer = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Ban \`${userTarger.username}\`!**`)
+          .setDescription(`**Could Not Ban \`${user.username}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Banned Successfully \`${userTarger.username}\` For \`${reason}\`!**`)
+          .setDescription(`**Banned Successfully \`${user.username}\` For \`${reason}\`!**`)
 
         const embed = new Discord.MessageEmbed()
           .setTimestamp()

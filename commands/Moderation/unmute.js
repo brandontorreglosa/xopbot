@@ -57,7 +57,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Unmuted Successfully \`${memberTarget.username}\`!**`)
+        .setDescription(`**Unmuted Successfully \`${target.username}\`!**`)
       message.lineReplyNoMention(successsful)
     } else {
       const unsucer = new Discord.MessageEmbed()

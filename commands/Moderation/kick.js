@@ -53,31 +53,40 @@ module.exports = {
         return message.lineReplyNoMention(nobanowner)
       }
 
-      const reps = new Discord.MessageEmbed()
+      if (!member) {
+        const reps = new Discord.MessageEmbed()
+          .setTimestamp()
+          .setColor('#c30202')
+          .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+          .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
+        return message.lineReplyNoMention(reps)
+      }
+
+      const rapdab = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
-        
+        .setDescription(`**\`${catcherban}\` Is Not Currently Kickable!**`)
+
       if (member) {
         const memberTarger = message.guild.members.cache.get(member.id);
         const unsucer = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Send To \`${memberTarger.username}\` Reason Of Kick!**`)
+          .setDescription(`**Could Not Send To \`${member.username}\` Reason Of Kick!**`)
 
         const funsucer = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Could Not Kick \`${memberTarger.username}\`!**`)
+          .setDescription(`**Could Not Kick \`${member.username}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
           .setColor('#c30202')
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Kicked Successfully \`${memberTarger.username}\` For \`${reason}\`!**`)
+          .setDescription(`**Kicked Successfully \`${member.username}\` For \`${reason}\`!**`)
 
         const embed = new Discord.MessageEmbed()
           .setTimestamp()
@@ -88,7 +97,7 @@ module.exports = {
         message.guild.member(memberTarger).kick({ reason: `**Kicked By ${message.author.username} \nReason: \`${reason}\`**` }).catch(() => message.lineReplyNoMention(funsucer))
           .then(() => message.lineReplyNoMention(successful))
       } else {
-        return message.lineReplyNoMention(reps);
+        return message.lineReplyNoMention(rapdab);
       }
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel);

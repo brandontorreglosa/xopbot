@@ -66,7 +66,7 @@ module.exports = {
                     .setTimestamp()
                     .setColor('#c30202')
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Muted Successfully \`${memberTarget.username}\`!**`)
+                    .setDescription(`**Muted Successfully \`${target.username}\`!**`)
                 message.lineReplyNoMention(sucermute);
                 return
             }
@@ -76,7 +76,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor('#c30202')
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**Temporary Muted Successfully \`${memberTarget.username}\` For \`${ms(ms(args[1]))}\`!**`)
+                .setDescription(`**Temporary Muted Successfully \`${target.username}\` For \`${ms(ms(args[1]))}\`!**`)
             message.lineReplyNoMention(tempsucermute)
 
             setTimeout(function () {

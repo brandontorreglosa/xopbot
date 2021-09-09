@@ -64,9 +64,7 @@ module.exports = {
         .setColor('#c30202')
         .setDescription(`${dmmessage}`)
         .setFooter(`Sent By ${message.author.username}`)
-      user.user
-        .send(embed)
-        .catch(() => message.lineReplyNoMention(rmvdm))
+      user.send(embed).catch(() => message.lineReplyNoMention(rmvdm))
         .then(() => message.lineReplyNoMention(successdm));
     } catch (error) {
       const errorlogs = client.channels.cache.get(errorChannel);

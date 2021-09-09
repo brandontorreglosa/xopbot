@@ -40,7 +40,7 @@ module.exports = {
         .setTimestamp()
         .setColor('#c30202')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Unbanned Successfully \`${memberTarger.username}\`**`)
+        .setDescription(`**Unbanned Successfully \`${member.username}\`**`)
       message.lineReplyNoMention(successunban)
     } else {
       const unsuccess = new Discord.MessageEmbed()
