@@ -27,7 +27,7 @@ module.exports = {
     aliases: ['gtn', 'guess'],
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 15,
+    cooldown: 5,
     category: "games",
     description: {
         usage: 'guesseasy <guesseasy number>',

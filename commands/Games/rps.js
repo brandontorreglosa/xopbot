@@ -4,7 +4,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: [],
-    cooldown: 10,
+    cooldown: 5,
     description: "play rock paper sciccors",
     async execute(client, message, cmd, args, Discord) {
         const embed = new Discord.MessageEmbed()
