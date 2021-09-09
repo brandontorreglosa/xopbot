@@ -107,7 +107,7 @@ module.exports = {
                 const embednovc5 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setTitle('Error `404`')
+                    .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**You Need To Be In A Voice Channel To Execute This Command!**')
                 return message.lineReplyNoMention(embednovc5);
             }

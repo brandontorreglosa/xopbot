@@ -211,7 +211,7 @@ client.distube
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
-            .setTitle(`Error \`404\` `)
+            .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Error Has Occured!**`)
         message.lineReplyNoMention(embed);
     })
