@@ -1,4 +1,4 @@
-const { Connect4 } = require("discord-gamecord")
+const { XOPConnect4 } = require("xoppack")
 
 module.exports = {
     name: "connect4",
@@ -15,7 +15,7 @@ module.exports = {
                 .setDescription(`**\`(prefix)connect4 <@user>\`**`)
             return message.lineReplyNoMention(noch)
         }
-        new Connect4({
+        new XOPConnect4({
             message: message,
             opponent: message.mentions.users.first(),
             embed: {
@@ -29,10 +29,10 @@ module.exports = {
             turnMessage: 'Its Now **{player}** Turn!',
             winMessage: '**{winner}** Won The Game!',
             gameEndMessage: 'The Game Was Unfinished!',
-            drawMessage: 'The Game Ended With A Draw!!',
-            askMessage: 'Hey **{opponent}**, **{challenger}** Challenged You For A Game Of Connect 4!',
+            drawMessage: 'The Game Ended With A Draw!',
+            askerMessage: 'Hey **{opponent}**, **{challenger}** Challenged You For A Game Of Connect 4!',
             cancelMessage: 'Looks Like They Didn\`t Want To Play!',
-            timeEndMessage: 'Since The Opponent Didnt Answer, I Ended The Game!',
+            timerEndMessage: 'Since The Opponent Didnt Answer, I Ended The Game!',
         }).startGame();
     },
 };
