@@ -1,4 +1,4 @@
-const { Snake } = require("discord-gamecord")
+const { XOPSnake } = require("xoppack")
 
 module.exports = {
     name: "snake",
@@ -7,7 +7,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "snake in discord!",
     async execute(client, message, cmd, args, Discord) {
-        new Snake({
+        new XOPSnake({
             message: message,
             embed: {
                 title: 'Snake Game v2',
@@ -23,7 +23,7 @@ module.exports = {
                 down: '⬇️',
                 left: '⬅️',
             },
-            othersMessage: '**You Are Not Allowed To Use The Buttons For The Snake Game!**',
+            othersuserMessage: '**You Are Not Allowed To Use The Buttons For The Snake Game!**',
         }).startGame();
     },
 };
