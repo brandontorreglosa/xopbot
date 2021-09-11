@@ -1,5 +1,5 @@
 const lineReplyNoMention = require('discord-reply')
-const { XOPRPS } = require('discord-gamecord')
+const { XOPRockPaperScissors } = require('xoppack')
 module.exports = {
     name: "rps",
     permissions: ["SEND_MESSAGES"],
@@ -16,7 +16,7 @@ module.exports = {
                 .setDescription(`**\`(prefix)rps <@user>\`**`)
             return message.lineReplyNoMention(noch)
         }
-        new XOPRPS({
+        new XOPRockPaperScissors({
             message: message,
             opponent: message.mentions.users.first(),
             embed: {
