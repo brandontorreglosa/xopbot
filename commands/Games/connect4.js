@@ -1,5 +1,5 @@
 const { XOPConnect4 } = require("xoppack")
-
+const lineReplyNoMention = require('discord-reply')
 module.exports = {
     name: "connect4",
     cooldown: 10,
