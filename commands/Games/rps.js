@@ -1,5 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
-const { XOPRockPaperScissors } = require('discord-gamecord')
+const { XOPRPS } = require('discord-gamecord')
 module.exports = {
     name: "rps",
     permissions: ["SEND_MESSAGES"],
@@ -9,7 +9,7 @@ module.exports = {
     description: "play rock paper sciccors",
     async execute(client, message, cmd, args, Discord) {
 
-        new XOPRockPaperScissors({
+        new XOPRPS({
             message: message,
             opponent: message.mentions.users.first(),
             embed: {
