@@ -10,9 +10,9 @@ module.exports = {
         new XOPSnake({
             message: message,
             embed: {
-                title: 'Snake Game v2',
+                title: 'Snake Game',
                 color: '#c30202',
-                OverTitle: "Game Over!",
+                OverTitle: "**Game Over!**",
             },
             snake: { head: '🔴', body: '🟥', tail: '🔴' },
             emojis: {
