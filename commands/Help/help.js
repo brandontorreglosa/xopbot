@@ -4,7 +4,7 @@ const OWNER_ID = process.env.Owner_ID;
 
 module.exports = {
     name: "help",
-    aliases: ['bugs', 'socials', 'games', 'music', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
+    aliases: ['bugs', 'socials', 'games', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
@@ -235,29 +235,6 @@ module.exports = {
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
             await message.channel.send(embed6, button5)
-        }
-
-        else if (cmd === 'music') {
-
-            message.react('🎵');
-
-            const button6 = new MessageButton()
-                .setStyle('url')
-                .setURL('https://xopbot-gg.glitch.me/')
-                .setLabel('Website')
-                .setEmoji(`💻`)
-
-            const embed8 = new Discord.MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-                // .setTitle('__🎶 Music__')
-                .setColor('#c30202')
-                .addFields(
-                    { name: '__🎶 Music (5)__', value: '\n[play](https://xopbot-gg.glitch.me/) \n__***Play Any Music From Youtube!***__  \n[stop](https://xopbot-gg.glitch.me/) \n__***Stop The Player!***__ \n[skip](https://xopbot-gg.glitch.me/) \n__***Skip To The Song In Queue!***__ \n[pause](https://xopbot-gg.glitch.me/) \n__***Pause The Song From Playing!***__ \n[unpause](https://xopbot-gg.glitch.me/) \n__***Unpause The Song To Play!***__' }
-                )
-                .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-
-            await message.channel.send(embed8, button6)
         }
 
         else if (cmd === 'leveling') {

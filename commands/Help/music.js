@@ -1,7 +1,6 @@
 const disbutpages = require("discord-embeds-pages-buttons")
 module.exports = {
-    name: 'utility',
-    aliases: ['util', 'utils'],
+    name: 'music',
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
