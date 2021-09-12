@@ -67,7 +67,7 @@ module.exports = {
 
         const pages = [embed15, embed16, embed17, embed18, embed19, embed20, embed21]
         disbutpages.pages(message, pages, {
-            timeout: 120 * 1000,
+            timeout: 540 * 1000,
             buttons: {
                 delete: {
                     style: "red",

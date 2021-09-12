@@ -426,7 +426,7 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor('#c30202')
                 .addFields(
-                    { name: '__🎮 Games (3)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Guess The Number!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play Rock,Paper,Sciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__' }
+                    { name: '__🎮 Games (5)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Play GuessTheNumber!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play RockPaperSciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__ \n[snake](https://xopbot-gg.glitch.me/) \n__***Play Snake Game!***__ \n[connect4](https://xopbot-gg.glitch.me/) \n__***Play Connect4!***__'}
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -443,7 +443,7 @@ module.exports = {
                 .setLabel('Website')
                 .setEmoji(`💻`)
 
-            if (message.author.id != OWNER_ID) return message.channel.send(`**❌ Developer Only ❌**`);
+            if (message.author.id != OWNER_ID) return message.channel.send(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command! 😔**`);
 
             const embed116 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
