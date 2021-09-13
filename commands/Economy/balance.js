@@ -16,7 +16,7 @@ module.exports = {
     const newEmbed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
-      .setColor('#34b7db')
+      .setColor('#28a2cb') //#34b7db 
       .setDescription(`**💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins** \n**🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins** \n**💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**`)
     message.lineReplyNoMention(newEmbed)
   },
