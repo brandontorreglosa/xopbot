@@ -43,13 +43,13 @@ module.exports = {
                 .setDiscriminator(target.discriminator);
             rank.build()
                 .then(data => {
-                    const rankembed = new Discord.MessageEmbed()
-                        .setTimestamp()
-                        .setColor(`${color1}`)
-                        .setImage(`${data}`)
-                    message.lineReplyNoMention(rankembed)
-                    // const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
-                    // message.lineReplyNoMention(attachment);
+                    // const rankembed = new Discord.MessageEmbed()
+                    //     .setTimestamp()
+                    //     .setColor(`${color1}`)
+                    //     .setImage(`${data}`)
+                    // message.lineReplyNoMention(rankembed)
+                    const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
+                    message.lineReplyNoMention(attachment);
                 });
         }
 
