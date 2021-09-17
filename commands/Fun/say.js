@@ -27,7 +27,8 @@ module.exports = {
                 const embed1 = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
-                    .setDescription(`**${message.author.username}, Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
                 message.lineReplyNoMention(embed1)
             }
 
