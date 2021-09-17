@@ -3,7 +3,7 @@ const Levels = require("discord-xp");
 const canvacord = require("canvacord");
 const { createCanvas, loadImage } = require('canvas');
 const lineReplyNoMention = require('discord-reply');
-const color = process.env.Color;
+const color1 = process.env.Color;
 module.exports = {
     name: 'rank',
     aliases: ['profile'],
@@ -45,7 +45,7 @@ module.exports = {
                 .then(data => {
                     const rankembed = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor(`${color}`)
+                        .setColor(`${color1}`)
                         .setImage(`${data}`)
                     message.lineReplyNoMention(rankembed)
                     // const attachment = new Discord.MessageAttachment(data, "xopbotrankcard.png");
