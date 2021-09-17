@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'ping',
     permissions: ["SEND_MESSAGES"],
@@ -8,7 +9,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const fakping = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username} 🏓 PONG!`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Why Da F@k You Ping Me? \nIF You Need Help You Can Do \`x!help\` And Get My CMDS!**`)
         return message.lineReplyNoMention(fakping)

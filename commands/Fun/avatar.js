@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'avatar',
     permissions: ["SEND_MESSAGES"],
@@ -12,7 +13,7 @@ module.exports = {
 
         const avatar_list = new Discord.MessageEmbed()
             .setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true }))
-            .setColor(`#c30202`)
+            .setColor(`${color}`)
             .setTimestamp()
             .setTitle(`Avatar Link`)
             .setURL(`${user.displayAvatarURL({ dynamic: true })}`)

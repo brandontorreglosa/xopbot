@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "search",
   aliases: [],
@@ -53,7 +54,7 @@ module.exports = {
     COLLECTOR.on("collect", async (m) => {
       const EMBED = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor("#c30202")
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username} Searched ${m.content} 🕵️‍♂️`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Found \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!** 💸`)
         .setFooter(`What A True Detective You Are.`);
@@ -64,7 +65,7 @@ module.exports = {
     });
     const whatuding = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**What Are You Doing?! There Was \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, Hidden Inside The \`${chosenLocations[0]}\`! 😭**`)
 
@@ -76,7 +77,7 @@ module.exports = {
 
     const chloc = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Which Location Would You Like To Search? 🔍 \nType The Location In This Channel. \n\`${chosenLocations.join("` `")}\`**`)
 

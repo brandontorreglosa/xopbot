@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'doubleornothing',
     cooldown: 25,
@@ -10,7 +11,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)doubleornothing <xocoins>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -21,7 +22,7 @@ module.exports = {
         if (isNaN(args[0])) {
             const notnum = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
             return message.lineReplyNoMention(notnum)
@@ -30,7 +31,7 @@ module.exports = {
         if (await client.bal(message.author.id) < amountToBet) {
             const xocnom = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Dont Have \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Bet!**`)
             return message.lineReplyNoMention(xocnom)
@@ -45,7 +46,7 @@ module.exports = {
             const winAmount = amountToBet * 2
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Congrats You Have Won \`${winAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!**`)
             message.lineReplyNoMention(embed)
@@ -53,7 +54,7 @@ module.exports = {
         } else {
             const embed1 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Awwww! You Just Lost \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To A Bet!**`)
             message.lineReplyNoMention(embed1)

@@ -1,4 +1,5 @@
 const disbutpages = require("discord-embeds-pages-buttons")
+const color = process.env.Color;
 module.exports = {
     name: 'music',
     cooldown: 5,
@@ -11,7 +12,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🎶 Music__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .addFields(
                 { name: '__🎶 Music (10)__', value: '\n[play](https://xopbot-gg.glitch.me/) \n__***Play Any Music!***__  \n[stop](https://xopbot-gg.glitch.me/) \n__***Stop The Player!***__ \n[skip](https://xopbot-gg.glitch.me/) \n__***Skip The Song In Queue!***__ \n[pause](https://xopbot-gg.glitch.me/) \n__***Pause The Song!***__ \n[unpause](https://xopbot-gg.glitch.me/) \n__***Unpause The Song!***__' }
             )
@@ -21,7 +22,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🎶 Music__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .addFields(
                 { name: '__🎶 Music (10)__', value: '\n[jump](https://xopbot-gg.glitch.me/) \n__***Jump The Song In Queue!***__ \n[loop](https://xopbot-gg.glitch.me/) \n__***Loop The Queue/etc.***__ \n[volume](https://xopbot-gg.glitch.me/) \n__***Set The Volume!***__ \n[join](https://xopbot-gg.glitch.me/) \n__***Bot Joins VCC!***__ \n[leave](https://xopbot-gg.glitch.me/) \n__***Bot Leaves VCC!***__' }
             )

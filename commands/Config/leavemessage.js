@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const LeaveMsgSchema = require("../../models/leavemessage");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "leavemessage",
   cooldown: 10,
@@ -13,7 +14,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)leavemessage <text/off>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -34,7 +35,7 @@ module.exports = {
         newData.save();
         const lvmsg1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Set To \`${newData.ByeMsg}\`!**`)
         message.lineReplyNoMention(lvmsg1)
@@ -48,7 +49,7 @@ module.exports = {
         newData.save();
         const lvmsg2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Set To \`${newData.ByeMsg}\`!**`)
         message.lineReplyNoMention(lvmsg2)
@@ -66,7 +67,7 @@ module.exports = {
 
         const lvnoset = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Has Been \`🔴 Disabled\`!**`)
         return message.lineReplyNoMention(lvnoset)
@@ -74,7 +75,7 @@ module.exports = {
       } else if (!data2) {
         const lvsetno = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Not Even Setup Bot!**`)
         return message.lineReplyNoMention(lvsetno)

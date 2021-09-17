@@ -1,5 +1,6 @@
 const { MessageButton } = require("discord-buttons");
 const disbutpages = require("discord-embeds-pages-buttons")
+const color = process.env.Color;
 module.exports = {
     name: 'economy',
     cooldown: 5,
@@ -12,7 +13,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🤑 Economy__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .addFields(
                 { name: '__🤑 Economy (15)__', value: '\n[profile](https://xopbot-gg.glitch.me/) \n__***Get Your Profile***__ \n[balance](https://xopbot-gg.glitch.me/) \n__***Your Total Balance!***__  \n[deposit](https://xopbot-gg.glitch.me/) \n__***Deposit Into Your Bank!***__  \n[withdraw](https://xopbot-gg.glitch.me/) \n__***Withdraw From Your Bank!***__  \n[beg](https://xopbot-gg.glitch.me/) \n__***Beg For Xocoins!***__' }
             )
@@ -22,7 +23,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🤑 Economy__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .addFields(
                 { name: '__🤑 Economy (15)__', value: '\n[rob](https://xopbot-gg.glitch.me/) \n__***Rob A Users Xocoins!***__  \n[give](https://xopbot-gg.glitch.me/) \n__***Give Some Xocoins!***__  \n[search](https://xopbot-gg.glitch.me/) \n__***Search For Xocoins!***__ \n[work](https://xopbot-gg.glitch.me/) \n__***Work For Xocoins!***__ \n[inventory](https://xopbot-gg.glitch.me/) \n__***View Your Inventory!***__' }
             )
@@ -32,7 +33,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🤑 Economy__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .addFields(
                 { name: '__🤑 Economy (15)__', value: '\n[doubleornothing](https://xopbot-gg.glitch.me/) \n__***Make A Bet To XOPBOT!***__ \n[daily](https://xopbot-gg.glitch.me/) \n__***Get Daily Xocoins!***__ \n[weekly](https://xopbot-gg.glitch.me/) \n__***Get Weekly Xocoins!***__ \n[monthly](https://xopbot-gg.glitch.me/) \n__***Get Monthly Xocoins!***__ \n[yearly](https://xopbot-gg.glitch.me/) \n__***Get Yearly Xocoins!***__' }
             )

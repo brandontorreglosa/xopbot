@@ -1,6 +1,7 @@
 const ms = require('ms')
 const { MessageEmbed } = require('discord.js')
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'giveaway',
   permissions: ["MANAGE_MESSAGES"],
@@ -9,14 +10,14 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const noformat = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**You Did Not Use The Correct Formatting!**`)
 
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)giveaway <time(s)(m)(h)(d)> <#channel> <prize>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -33,7 +34,7 @@ module.exports = {
     if (isNaN(args[0][0])) {
       const nonum = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`${timetogive}\` Is Not A Number!**`)
       return message.lineReplyNoMention(nonum)
@@ -43,7 +44,7 @@ module.exports = {
 
     const thatnotxtc = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**I Could Not Find The Channel \`${channel}\`!**`)
 
@@ -53,14 +54,14 @@ module.exports = {
     if (!prize) {
       const thatnopriz = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**No Prize Was Specified!**`)
       return message.lineReplyNoMention(thatnopriz)
     }
     const successch = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Giveaway Has Been Created In ${channel}!**`)
 
@@ -76,7 +77,7 @@ module.exports = {
       if (m.reactions.cache.get("🎉").count <= 1) {
         const ractcatch = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Reactions: \`${m.reactions.cache.get("🎉").count}\`!**`)
 
@@ -84,7 +85,7 @@ module.exports = {
 
         const nooneract = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Not Enough people Reacted For XOPBOt To Draw A Winner! 😭**`)
 
@@ -97,7 +98,7 @@ module.exports = {
         .random();
       const winisok = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**The Winner Of The Giveaway For \`${prize}\` Is... \`${winner}\`**`)
       channel.send(winisok);

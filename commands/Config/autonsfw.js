@@ -1,5 +1,6 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "autonsfw",
     cooldown: 300,
@@ -12,17 +13,17 @@ module.exports = {
         if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
         const on1 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**')
         const on2 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**')
         const on3 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('✅🔞 **| AutoNSFW Started**')
 
@@ -49,7 +50,7 @@ module.exports = {
                 embed.setTitle(`AUTONSFW By XOPBOT`)
                 embed.setURL(`${memeUrl}`)
                 embed.setImage(`${memeImage}`)
-                embed.setColor('#c30202')
+                embed.setColor(`${color}`)
                 embed.setFooter(`AUTONSFW IS POG | 👍${memeUpvotes} 💬 ${memeNumComments}`)
                 message.lineReplyNoMention(embed);
             })

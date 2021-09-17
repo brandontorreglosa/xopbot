@@ -1,5 +1,6 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "automeme",
     cooldown: 300,
@@ -10,17 +11,17 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const on1 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('🔄 **| AutoMeme Starting... (`Please wait 20s`)**')
         const on2 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('🔄 **| AutoMeme Starting... (`Please Wait 10s`)**')
         const on3 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('✅ **| AutoMeme Started**')
         message.lineReplyNoMention(on1).then((msg) => {
@@ -46,7 +47,7 @@ module.exports = {
                 embed.setTitle(`${memeTitle}`)
                 embed.setURL(`${memeUrl}`)
                 embed.setImage(`${memeImage}`)
-                embed.setColor('#c30202')
+                embed.setColor(`${color}`)
                 embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
                 message.lineReplyNoMention(embed);
             })

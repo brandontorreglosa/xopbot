@@ -1,5 +1,6 @@
 const fs = require('fs');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'setprefix',
   cooldown: 10,
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)setprefix <newprefix>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -19,7 +20,7 @@ module.exports = {
     if (Prefixset.length > 5) {
       const maxpr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Prefix Can Not Be Longer Than \`5\` Characters!**`)
       return message.lineReplyNoMention(maxpr)
@@ -35,7 +36,7 @@ module.exports = {
     })
     const newpr = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Prefix Has Been Set To \`${Prefixset}\`!**`)
     message.lineReplyNoMention(newpr);

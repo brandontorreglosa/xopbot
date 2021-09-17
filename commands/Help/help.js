@@ -1,7 +1,7 @@
 const { MessageButton, MessageActionRow, MessageMenuOption, MessageMenu } = require('discord-buttons');
 const os = require('os')
 const OWNER_ID = process.env.Owner_ID;
-
+const color = process.env.Color;
 module.exports = {
     name: "help",
     aliases: ['bugs', 'socials', 'games', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
@@ -92,7 +92,7 @@ module.exports = {
                 .setTimestamp()
                 .setImage('https://cdn.discordapp.com/attachments/824319314495537175/861288765145088030/standard_1.gif') //my banner for my bot 
                 //.setTitle('XOPBOT Commands')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     {
                         name: '__🛠️ Moderation__',
@@ -205,7 +205,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__🐛 Bugs__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__🐛 Bugs (3)__', value: '\n[bugreport](https://xopbot-gg.glitch.me/) \n__***Report A Bug To Admins!***__ \n[findbugs](https://xopbot-gg.glitch.me/) \n__***Find Bugs On Your Server!***__ \n[clearbugs](https://xopbot-gg.glitch.me/) \n__***Clear Bugs From Your Server!***__' }
                 )
@@ -228,7 +228,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__💬 Socials__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__💬 Socials (3)__', value: '\n[youtube](https://xopbot-gg.glitch.me/) \n__***Go To My Youtube Channel!***__ \n[scratch](https://xopbot-gg.glitch.me/) \n__***Go To My Scratch Account!***__ \n[amino](https://xopbot-gg.glitch.me/) \n__***Go To My Amino Account!***__' }
                 )
@@ -251,7 +251,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__⏫ Leveling__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__⏫ Leveling (4)__', value: '\n[rank](https://xopbot-gg.glitch.me/) \n__***Get Your Level Rank Card!***__  \n[leaderboard](https://xopbot-gg.glitch.me/) \n__***Get Your Servers Leaderboard!***__ \n[level](https://xopbot-gg.glitch.me/) \n__***Get A Users Level!***__ \n[edit](https://xopbot-gg.glitch.me/) \n__***Edit Level Or Xp!***__' }
                 )
@@ -299,7 +299,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__🔞 NSFW__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__🔞 NSFW (45)__', value: '**Real Life NSFW**: \n```4k, orgy, gapes, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, masturbation, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: \n```hentai, hthigh, hanal, hboobs, hrule34, hcowgirl, hmasturbation, hnetorare, hsuccubus, hpaizuri, hyuri, hmidriff, hneko, hkitsune```' },
                 )
@@ -322,7 +322,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__👑 Premium__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__👑 Premium (5)__', value: '\n[fakeuserinfo](https://xopbot-gg.glitch.me/) \n__***Get A Fake User Info! (Premium)***__ \n[weather](https://xopbot-gg.glitch.me/) \n__***Get Your Current Weather! (Premium)***__ \n[oldmeme](https://xopbot-gg.glitch.me/) \n__***Get Old Memes From Google! (Premium)***__ \n[tictactoe](https://xopbot-gg.glitch.me/) \n__***Play Tictactoe! (Premium)***__ \n[math](https://xopbot-gg.glitch.me/) \n__***Do Math Problems! (Premium)***__' }
                 )
@@ -345,7 +345,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__🔗 Invites__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__🔗 Invites (3)__', value: '\n[botinvite](https://xopbot-gg.glitch.me/) \n__***Invite The Bot To Your Server!***__ \n[websiteinvite](https://xopbot-gg.glitch.me/) \n__***Go To XOPBOTs Official Website!***__ \n[voteinvite](https://xopbot-gg.glitch.me/) \n__***Vote For XOPBOT To Get Famous!***__' }
                 )
@@ -377,7 +377,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__🤖 Credits__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__🤖 Bot Credits__', value: '`Bot:`-__***The Bots Credits***__ \n`Bot Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Supporter`-__***@Trixer#8894***__' },
                     { name: '__🤖 Bot Website Credits__', value: '`Bot Website:`-__***The Bots Credits Of The Website***__ \n`Bot Website Creator`-__***@👑HACKERPROᵈᵉᵛ#1498***__ \n`Bot Website Manager`-__***@Trixer#8894***__' }
@@ -401,9 +401,9 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 //.setTitle('__🎮 Games__')
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
-                    { name: '__🎮 Games (5)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Play GuessTheNumber!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play RockPaperSciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__ \n[snake](https://xopbot-gg.glitch.me/) \n__***Play Snake Game!***__ \n[connect4](https://xopbot-gg.glitch.me/) \n__***Play Connect4!***__'}
+                    { name: '__🎮 Games (5)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Play GuessTheNumber!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play RockPaperSciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__ \n[snake](https://xopbot-gg.glitch.me/) \n__***Play Snake Game!***__ \n[connect4](https://xopbot-gg.glitch.me/) \n__***Play Connect4!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -425,7 +425,7 @@ module.exports = {
             const embed116 = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .addFields(
                     { name: '__👷‍♂️ Owner (5)__', value: '\n[donate-premium](https://xopbot-gg.glitch.me/) \n__***Give Premium To User!***__\n[delete-premium](https://xopbot-gg.glitch.me/) \n__***Remove Premium From User!***__ \n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__ \n[remind](https://xopbot-gg.glitch.me/) \n__***Remind Me Something!***__' }
                 )

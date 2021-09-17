@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
    name: "respect",
    cooldown: 3,
@@ -11,7 +12,7 @@ module.exports = {
       if (!user) {
          const nopr = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**\`(prefix)respect <@user>\`**`)
          return message.lineReplyNoMention(nopr)
@@ -33,7 +34,7 @@ module.exports = {
          .setTimestamp()
          .setTitle(`**\`${message.author.username}\` Respects \`${user.username}\`**`)
          .setImage(`${gif[Math.floor(Math.random() * gif.length)]}`)
-         .setColor('#c30202')
+         .setColor(`${color}`)
          .setFooter('Respect Forever')
 
       message.lineReplyNoMention(embed);

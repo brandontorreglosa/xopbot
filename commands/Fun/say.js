@@ -1,5 +1,6 @@
 const errorChannel = process.env.errorChannel;
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'say',
     cooldown: 3,
@@ -9,15 +10,13 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
 
         try {
-
             //const channel = client.channels.cache.get('860085472944848927')
-
             const user = message.mentions.users.first();
 
             if (!args[0]) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`(prefix)say <text>\`**`)
                 return message.lineReplyNoMention(nopr)
@@ -27,7 +26,7 @@ module.exports = {
                 message.delete();
                 const embed1 = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setDescription(`**${message.author.username}, Im Not Allowed To Say Bad Words Or Ping! Lol Cry 😂**`)
                 message.lineReplyNoMention(embed1)
             }
@@ -36,7 +35,7 @@ module.exports = {
             if (sayMessage.length > 100) {
                 const maxlen = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Are Not Allowed To Go Over \`100\` Characters!**`)
                 return message.lineReplyNoMention(maxlen)
@@ -44,7 +43,7 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**${sayMessage}**`)
             message.lineReplyNoMention(embed);

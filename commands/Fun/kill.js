@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'kill',
     permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)kill <@user>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -25,7 +26,7 @@ module.exports = {
         const randomNumber = Math.floor(Math.random() * 500) + 1;
         const kill_list = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle(`${user.username} Was Killed!`)
             .setDescription(`**\`${user.username}\` Was Killed By \`${message.author.username}\` Who Used \`${randomNumber}\` Power!**`)
             .setImage(`${randomLinks}`)

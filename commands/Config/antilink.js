@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const antilinkSchema = require("../../models/antilink");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "antilink",
   cooldown: 15,
@@ -11,7 +12,7 @@ module.exports = {
     if (!args[0]) {
       const nospec = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**`(prefix)antilink <on/off>`**')
       return message.lineReplyNoMention(nospec)
@@ -26,7 +27,7 @@ module.exports = {
         });
         const on1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Is Now `🟢 Enabled`!**')
         message.lineReplyNoMention(on1);
@@ -37,7 +38,7 @@ module.exports = {
       } else if (!data) {
         const on2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Is Now `🟢 Enabled`!**')
         message.lineReplyNoMention(on2);
@@ -56,14 +57,14 @@ module.exports = {
         });
         const off1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Is Now `🔴 Disabled`!**')
         return message.lineReplyNoMention(off1);
       } else if (!data2) {
         const noset = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Antilink Not Even Setup Bot!**')
         return message.lineReplyNoMention(noset);

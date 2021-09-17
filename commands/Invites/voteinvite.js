@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'voteinvite',
     cooldown: 3,
@@ -10,7 +11,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Vote Invite')
             .setURL('https://top.gg/bot/831824859066925087')
             .setDescription('**Love XOPBOT? 😍 Well Then! \nYou Can Vote Down Here ⤵**')

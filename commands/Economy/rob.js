@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'rob',
     permissions: ["SEND_MESSAGES"],
@@ -11,7 +12,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)rob <@user>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -20,7 +21,7 @@ module.exports = {
         if (message.mentions.users.first().bot) {
             const baduserrobbots = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Can Not Rob Bot\`s . Thats Too Evil!**`)
             return message.lineReplyNoMention(baduserrobbots)
@@ -36,14 +37,14 @@ module.exports = {
             if ((await client.bal(user.id)) < RobAmount) {
                 const lessxocc = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`${user.username}\` Has Less Than \`${RobAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins For You To Rob!**`)
                 return message.lineReplyNoMention(lessxocc)
             }
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setTitle(`${message.author.username}`)
                 .setDescription(`**Congrats You Have Stolen \`${RobAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins From \`${user.username}\`! 💸**`)
             message.lineReplyNoMention(embed)
@@ -54,7 +55,7 @@ module.exports = {
             if ((await client.bal(message.author.id)) < LooseAmount) {
                 const debtembed = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Are Now In Debt For \`${LooseAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!**`)
                 message.lineReplyNoMention(debtembed)
@@ -62,7 +63,7 @@ module.exports = {
             }
             const embed1 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setTitle(`${message.author.username}`)
                 .setDescription(`**Awwww! You Just Lost \`${LooseAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Better Luck Next Time! 💸**`)
             message.lineReplyNoMention(embed1)

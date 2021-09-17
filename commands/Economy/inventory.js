@@ -1,5 +1,6 @@
 const inventory = require("../../models/inventory");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'inventory',
     cooldown: 15,
@@ -11,7 +12,7 @@ module.exports = {
         
         const nodeta = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Your Inventory Is Currently Empty!**`)
 

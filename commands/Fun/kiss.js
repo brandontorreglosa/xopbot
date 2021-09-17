@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'kiss',
     permissions: ["SEND_MESSAGES"],
@@ -9,7 +10,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)kiss <@user>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -41,7 +42,7 @@ module.exports = {
         const user = message.mentions.users.first()
         const hug_list = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${user.username} Was Kissed!`)
             .setDescription(`**\`${user.username}\` Was Kissed By \`${message.author.username}\` And Now \`${user.username}\` Is \`${randomNumber}\` Happy And Would Like To \`${randomChoices}\`!**`)
         return message.lineReplyNoMention(hug_list)

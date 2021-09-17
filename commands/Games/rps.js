@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply')
 const { XOPRockPaperScissors } = require('xoppack')
+const color = process.env.Color;
 module.exports = {
     name: "rps",
     permissions: ["SEND_MESSAGES"],
@@ -11,7 +12,7 @@ module.exports = {
         if (!args[0]) {
             const noch = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)rps <@user>\`**`)
             return message.lineReplyNoMention(noch)
@@ -22,7 +23,7 @@ module.exports = {
             embed: {
                 title: 'Rock Paper Scissors Game',
                 description: '**Press A Button Below To Start!**',
-                color: '#c30202',
+                color: `${color}`,
             },
             buttons: {
                 rock: '🗻',

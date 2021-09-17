@@ -22,6 +22,7 @@ function guildAttemptsMap(message) {
 }
 
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "guessthenumber",
     aliases: ['gtn', 'guess'],
@@ -38,12 +39,12 @@ module.exports = {
 
         const provideaguess = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setDescription(`**❌ Please Provide A Guess!**`)
 
         const pickinganumber = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setDescription('**Picking A Number Between \`1\` And \`20000\`**')
 
 
@@ -75,21 +76,21 @@ module.exports = {
         } else if (+ guess < guildNumber.get(guild.id)) {
             const lowgsin = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${guess}\` Is Too Low!**`)
             return message.lineReplyNoMention(lowgsin)
         } else if (+guess > guildNumber.get(guild.id)) {
             const highgsin = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${guess}\` Is Too High!**`)
             return message.lineReplyNoMention(highgsin)
         } else {
             const invgsin = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Invalid Number Please Try Again!**`)
             return message.lineReplyNoMention(invgsin)

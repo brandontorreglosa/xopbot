@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'botinvite',
     permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Bot Invite')
             .setURL('https://discord.gg/Sy38Uysm4G')
             .setDescription('**This Is The Bot Server Invite Link**')

@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'hug',
     permissions: ["SEND_MESSAGES"],
@@ -7,9 +8,13 @@ module.exports = {
     cooldown: 2,
     description: 'hug a user',
     async execute(client, message, cmd, args, Discord) {
-
         if (!args[0]) {
-            return message.lineReplyNoMention('**`(prefix)hug <@user`**')
+            const nopr = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**\`(prefix)hug <@user>\`**`)
+            return message.lineReplyNoMention(nopr)
         }
 
         const links = [
@@ -36,7 +41,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setImage(`${randomLinks}`)
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle(`${user.username} Was Hugged!`)
             .setDescription(`**\`${user.username}\` Was Hugged By \`${message.author.username}\` And Now \`${user.username}\` Is \`${randomNumber}\`% Happy!**`)
         message.lineReplyNoMention(newEmbed);

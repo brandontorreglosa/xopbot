@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'pp',
     cooldown: 3,
@@ -33,7 +34,10 @@ module.exports = {
             '8======================D',
             '8=======================D',
             '8========================D',
-            '8=========================D'
+            '8=========================D',
+            '8==========================D',
+            '8===========================D',
+            '8============================D'
         ];
 
         const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.member;
@@ -46,7 +50,7 @@ module.exports = {
             .setDescription(`\`${user.user.username}\`'s PP Is This Big\n\`\`\`${pp[Math.floor(Math.random() * pp.length)]}\`\`\``)
             .setFooter(`Requested By ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-            .setColor("#c30202");
+            .setColor(`${color}`);
         await message.lineReplyNoMention(embed)
     }
 }

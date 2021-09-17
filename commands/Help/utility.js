@@ -1,5 +1,6 @@
 const { MessageButton } = require("discord-buttons");
 const disbutpages = require("discord-embeds-pages-buttons")
+const color = process.env.Color;
 module.exports = {
     name: 'utility',
     aliases: ['util', 'utils'],
@@ -19,7 +20,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             //.setTitle('__⚙ Utility__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setDescription('**__⚙ Utility (9)__** \n[ticket](https://xopbot-gg.glitch.me/) \n__***Generates A Ticket!***__ \n[webhook](https://xopbot-gg.glitch.me/) \n__***Send From A Webhook!***__ \n[xopchat](https://xopbot-gg.glitch.me/) \n__***Request For Xopchat!***__ \n[afk](https://xopbot-gg.glitch.me/) \n__***Get AFK Status!***__ \n[suggest](https://xopbot-gg.glitch.me/) \n__***Make Suggestions!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -27,7 +28,7 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             //.setTitle('__⚙ Utility__')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setDescription('**__⚙ Utility (9)__** \n[nickname](https://xopbot-gg.glitch.me/) \n__***Change Nickname!***__ \n[anime](https://xopbot-gg.glitch.me/) \n__***Search For Anime!***__ \n[wiki](https://xopbot-gg.glitch.me/) \n__***Search On Wiki!***__ \n[google](https://xopbot-gg.glitch.me/) \n__***Search On Google!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 

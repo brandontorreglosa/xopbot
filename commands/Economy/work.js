@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "work",
   aliases: [],
@@ -33,7 +34,7 @@ module.exports = {
     COLLECTOR.on("collect", async (m) => {
       const EMBED = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor("#c30202")
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username} Worked Hard As A ${m.content} 👷‍♂️💦`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Worked And Got Paid \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!** 💸`)
         .setFooter(`Man You Worked Hard As A ${m.content}`);
@@ -45,7 +46,7 @@ module.exports = {
 
     const whatuding = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**What Are You Doing?! There Was \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, If You Worked As A \`${chosenJobs[0]}\`! 😭**`)
 
@@ -57,7 +58,7 @@ module.exports = {
 
     const findjb = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**What Job Will You Do? 💰 \nType The Job In This Channel. \n\`${chosenJobs.join("` `")}\`**`)
 

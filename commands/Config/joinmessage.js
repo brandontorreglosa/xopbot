@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const JoinMsgSchema = require("../../models/joinmsg");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "joinmessage",
   cooldown: 10,
@@ -13,7 +14,7 @@ module.exports = {
     if (!args[0]) {
       const nojcmsg = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**`(prefix)joinmessage <text/off>`**')
       return message.lineReplyNoMention(nojcmsg)
@@ -34,7 +35,7 @@ module.exports = {
         newData.save();
         const jcmsg1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Join Message Set To \`${newData.JoinMsg}\`!**`)
         message.lineReplyNoMention(jcmsg1)
@@ -48,7 +49,7 @@ module.exports = {
         newData.save();
         const jcmsg2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Join Message Set To \`${newData.JoinMsg}\`!**`)
         message.lineReplyNoMention(jcmsg2)
@@ -65,7 +66,7 @@ module.exports = {
         });
         const jcdis = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Join Message Has Been `🔴 Disabled`!**')
         return message.lineReplyNoMention(jcdis)
@@ -73,7 +74,7 @@ module.exports = {
       } else if (!data2) {
         const jcnoset = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Join Channel Not Even Setup Bot!**')
         message.lineReplyNoMention(jcnoset)

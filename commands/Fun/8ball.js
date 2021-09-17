@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: '8ball',
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)8ball <question>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -24,7 +25,7 @@ module.exports = {
       .setTimestamp()
       .setAuthor('**🎱 The 8 Ball says...**')
       .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-      .setColor('#c30202').addField('Question:', question)
+      .setColor(`${color}`).addField('Question:', question)
       .addField('Answer:', replies[result]);
     await message.lineReplyNoMention(embed);
   },

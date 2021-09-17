@@ -1,5 +1,6 @@
 const { XOPConnect4 } = require("xoppack")
 const lineReplyNoMention = require('discord-reply')
+const color = process.env.Color;
 module.exports = {
     name: "connect4",
     cooldown: 10,
@@ -10,7 +11,7 @@ module.exports = {
         if (!args[0]) {
             const noch = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)connect4 <@user>\`**`)
             return message.lineReplyNoMention(noch)
@@ -20,7 +21,7 @@ module.exports = {
             opponent: message.mentions.users.first(),
             embed: {
                 title: 'Connect 4 Game',
-                color: '#c30202',
+                color: `${color}`,
             },
             emojis: {
                 player1: '🔴',

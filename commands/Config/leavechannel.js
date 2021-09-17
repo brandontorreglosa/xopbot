@@ -1,6 +1,7 @@
 const Discord = module.require("discord.js")
 const goodbyeSchema = require("../../models/leavechannel");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "leavechannel",
   cooldown: 15,
@@ -12,7 +13,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**`(prefix)leavechannel <#channel/off>`**')
       return message.lineReplyNoMention(nopr)
@@ -29,7 +30,7 @@ module.exports = {
 
         const lvc1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(lvc1)
@@ -42,7 +43,7 @@ module.exports = {
       } else if (!data) {
         const lvc2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(lvc2)
@@ -64,7 +65,7 @@ module.exports = {
         });
         const lvcoff = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Has Been \`🔴 Disabled\`!**`)
         return message.lineReplyNoMention(lvcoff)
@@ -72,7 +73,7 @@ module.exports = {
       } else if (!data2) {
         const lvcnoset = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Not Even Setup Bot!**`)
         message.lineReplyNoMention(lvcnoset)

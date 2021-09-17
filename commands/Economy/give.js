@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "give",
   cooldown: 10,
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)give <@user> <xocoins>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -21,7 +22,7 @@ module.exports = {
     if (!user) {
       const nouserhere = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`${giveuser1}\` Does Not Exist In This Server!**`)
       return message.lineReplyNoMention(nouserhere)
@@ -31,7 +32,7 @@ module.exports = {
     if (!args[1]) {
       const noxocspec = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Please Specify The Xocoins To Give!**`)
       return message.lineReplyNoMention(noxocspec)
@@ -40,7 +41,7 @@ module.exports = {
     if ((await client.bal(message.author.id)) < amount) {
       const noxocamount = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Bet!**`)
       return message.lineReplyNoMention(noxocamount)
@@ -49,7 +50,7 @@ module.exports = {
     if (isNaN(args[1])) {
       const xocnonum = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
       return message.lineReplyNoMention(xocnonum)
@@ -60,7 +61,7 @@ module.exports = {
       await client.add(user.id, amount)
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setTitle(`${message.author.username}`)
         .setDescription(`**This User Has Been Given \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Of Xocoins!** 💸`)
       return message.lineReplyNoMention(embed);

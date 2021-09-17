@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "yearly",
   permissions: ["SEND_MESSAGES"],
@@ -13,7 +14,7 @@ module.exports = {
       .setTimestamp()
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**You Received \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Yearly Xocoins! 💸**`)
-      .setColor('#c30202')
+      .setColor(`${color}`)
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)
   },

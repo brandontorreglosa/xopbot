@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "coinflip",
     cooldown: 3,
@@ -11,7 +12,7 @@ module.exports = {
         const choices = ["Heads", "Tails"];
         const choice = choices[Math.floor(Math.random() * choices.length)];
         let embed = new MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTitle("Coinflip!")

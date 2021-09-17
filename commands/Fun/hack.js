@@ -1,5 +1,6 @@
 const ms = require("ms");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "hack",
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)hack <@user>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -22,85 +23,85 @@ module.exports = {
 
     const n1 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[0.10%]\` You Started Hacking \`${tohack.username}\`.....**`)
 
     const n2 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[0.99%]\` Finding \`${tohack.username}\`'s Email And Password.....**`)
 
     const n3 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[10.74%]\` E-Mail: \`${tohack.username}@gmail.com\` \nPassword: \`${randomnumber2}${randomNumber}\`**`)
 
     const n4 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[15.54%]\` Finding Other Accounts.....**`)
 
     const n5 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[25.86%]\` Finding Hackable Account.....**`)
 
     const n6 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[32.45%]\` Hacking Microsoft Account.....**`)
 
     const n7 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[38.65%]\` Hacked Microsoft Account!**`)
 
     const n8 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[47.62%]\` Collecting Info And Cookies.....**`)
 
     const n9 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[58.48%]\` Selling Data To CIA (Central Intelligence Agency)....**`)
 
     const n10 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[70.09%]\` Finished Hacking \`${tohack.username}\`!**`)
 
     const n11 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[78.88%]\` Encrypting Your IP!**`)
 
     const n12 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[89.98%]\` Encrypted Your IP: \`${message.author.discriminator}\`!**`)
 
     const n13 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[99.98%]\` Deleting Your Hacking Evidence.....**`)
 
     const n14 = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**\`[100%]\` You Are Now Wanted In The States! 😄**`)
 

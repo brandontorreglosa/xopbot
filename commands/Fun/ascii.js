@@ -1,6 +1,7 @@
 const discord = require("discord.js");
 const figlet = require("figlet");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
    name: "ascii",
    permissions: ["SEND_MESSAGES"],
@@ -16,7 +17,7 @@ module.exports = {
       if (!text) {
          const nopr = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**\`(prefix)ascii <text>\`**`)
          return message.lineReplyNoMention(nopr)
@@ -25,7 +26,7 @@ module.exports = {
       if (text.length > 11) {
          const maxlenembed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Please Put Text That Has \`11\` Characters Or Less Because The Conversion Won\`t Be That Good!**`)
          return message.lineReplyNoMention(maxlenembed)
@@ -34,7 +35,7 @@ module.exports = {
       figlet(text, function (err, data) {
          const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Ascii Conversion')
             .setDescription('```' + data + '```')
          message.lineReplyNoMention(embed)

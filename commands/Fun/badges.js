@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'badges',
     permissions: ["SEND_MESSAGES"],
@@ -13,7 +14,7 @@ module.exports = {
         console.log(flags);
 
         const badgesuser = new Discord.MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTimestamp()
             .setDescription(`\`${user.username}\`'s badges: \`${flags.join(', ')}\``)
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())

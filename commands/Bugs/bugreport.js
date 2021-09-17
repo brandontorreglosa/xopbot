@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
@@ -11,12 +12,12 @@ module.exports = {
         const query = args.join(' ');
         const queryembed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('**`(prefix)bugreport <bug>`**')
         if (!query) return message.lineReplyNoMention(queryembed) //, allowedMentions: { repliedUser: true } })
         const reportEmbed = new Discord.MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('**New Bug Found!**')
             .addField('Author', message.author.toString(), true)
             .addField('Guild', message.guild.name, true)

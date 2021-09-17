@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "withdraw",
   cooldown: 10,
@@ -12,7 +13,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)withdraw <xocoins>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -22,7 +23,7 @@ module.exports = {
       if ((await client.bank(message.author.id)) < amount) {
         const noxoc = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Dont Have \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Withdraw!**`)
         return message.lineReplyNoMention(noxoc)
@@ -30,7 +31,7 @@ module.exports = {
       if (isNaN(args[0])) {
         const nonum = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**\`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
         return message.lineReplyNoMention(nonum)
@@ -40,7 +41,7 @@ module.exports = {
         .setTimestamp()
         .setTitle(`${message.author.username}`)
         .setDescription(`**You Withdrew \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Into Your Wallet! 💸**`)
-        .setColor('#c30202')
+        .setColor(`${color}`)
       message.lineReplyNoMention(embed);
       client.add(message.author.id, amount)
       client.bankrmv(message.author.id, amount)

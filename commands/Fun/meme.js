@@ -1,5 +1,6 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "meme",
     cooldown: 3,
@@ -23,7 +24,7 @@ module.exports = {
             embed.setTitle(`${memeTitle}`)
             embed.setURL(`${memeUrl}`)
             embed.setImage(`${memeImage}`)
-            embed.setColor('#c30202')
+            embed.setColor(`${color}`)
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
             message.lineReplyNoMention(embed);
         })

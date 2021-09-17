@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'websiteinvite',
     cooldown: 3,
@@ -10,7 +11,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Bot Website Invite')
             .setURL('https://xopbot-gg.glitch.me/')
             .setDescription('**This Is The Bot Website Invite Link**')

@@ -1,5 +1,6 @@
 const Levels = require('discord-xp');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'level',
     permissions: ["SEND_MESSAGES"],

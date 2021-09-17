@@ -1,5 +1,6 @@
 const { hangman } = require('reconlx')
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'hangman',
     permissions: ["SEND_MESSAGES"],
@@ -11,7 +12,7 @@ module.exports = {
         if (!channel) {
             const noch = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)hangman <word>\`**`)
             return message.lineReplyNoMention(noch)
@@ -20,7 +21,7 @@ module.exports = {
         if (!word) {
             const noword = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Please Specify A Word To Guess!**`)
             return message.lineReplyNoMention(noword)

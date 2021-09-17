@@ -1,6 +1,7 @@
 const superagent = require("snekfetch");
 const Discord = require('discord.js')
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 
 module.exports = {
   name: "dog",
@@ -18,7 +19,7 @@ module.exports = {
           .setTimestamp()
           .setTitle("🐶")
           .setImage(response.body.url)
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setFooter(`🤣WHAT A DOG🤣`)
           .setURL(response.body.url);
         message.lineReplyNoMention(lewdembed);

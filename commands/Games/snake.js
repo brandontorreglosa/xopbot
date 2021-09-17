@@ -1,5 +1,5 @@
 const { XOPSnake } = require("xoppack")
-
+const color = process.env.Color;
 module.exports = {
     name: "snake",
     cooldown: 10,
@@ -11,7 +11,7 @@ module.exports = {
             message: message,
             embed: {
                 title: 'Snake Game',
-                color: '#c30202',
+                color: `${color}`,
                 OverTitle: "**Game Over!**",
             },
             snake: { head: '🔴', body: '🟥', tail: '🔴' },
