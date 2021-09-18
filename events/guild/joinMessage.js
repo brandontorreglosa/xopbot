@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const lineReplyNoMention = require('discord-reply');
 const { MessageButton } = require('discord-buttons');
 const color = process.env.Color;
-const xopemoji = client.emojis.get('888783517012594729');
+const xopemoji = client.emojis.get(888783517012594729);
 client.on("guildCreate", (guild) => {
 
     let channelToSendTo;
