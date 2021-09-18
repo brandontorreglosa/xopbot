@@ -27,7 +27,7 @@ module.exports = {
                 if (!args[0]) {
                     const nopr = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`(prefix)play <song>\`**`)
                     return message.lineReplyNoMention(nopr)
@@ -203,7 +203,7 @@ module.exports = {
                 if (!args[0]) {
                     const nopr2 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`(prefix)loop <(Repeat queue)(Repeat song)(Off)>\`**`)
                     return message.lineReplyNoMention(nopr2)
@@ -272,7 +272,7 @@ module.exports = {
                 if (!args[0]) {
                     const nopr3 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`(prefix)volume <number>\`**`)
                     return message.lineReplyNoMention(nopr3)
@@ -282,7 +282,7 @@ module.exports = {
                 if (isNaN(volume)) {
                     const fakvolume = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${volume}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(fakvolume)
@@ -290,7 +290,7 @@ module.exports = {
                 if (volume > maxvolume) {
                     const nomorevolthanm = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**The Max Volume Is \`500\`%, Higher Than That Will Destroy Devices!**`)
                     return message.lineReplyNoMention(nomorevolthanm)
@@ -332,7 +332,7 @@ module.exports = {
                 if (!args[0]) {
                     const nopr4 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`(prefix)jump <queuenumber>\`**`)
                     return message.lineReplyNoMention(nopr4)
@@ -382,6 +382,7 @@ module.exports = {
             try {
                 const queueembed = new Discord.MessageEmbed()
                     .setTimestamp()
+                    .setThumbnail('https://cdn.discordapp.com/attachments/824319314495537175/888652527770431498/XOPBOT_Playlist.png')
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}. [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`).slice(0, 10).join("\n"))
