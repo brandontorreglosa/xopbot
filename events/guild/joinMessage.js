@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const lineReplyNoMention = require('discord-reply');
 const { MessageButton } = require('discord-buttons');
 const color = process.env.Color;
-const xopemoji = client.emojis.get(888783517012594729);
+// const xopemoji = client.emojis.get(888783517012594729);
 client.on("guildCreate", (guild) => {
 
     let channelToSendTo;
@@ -38,6 +38,6 @@ client.on("guildCreate", (guild) => {
         .setTimestamp()
         .setColor(`${color}`)
         .setAuthor(`You Added Me In ${message.guild.name}!`, message.guild.iconURL())
-        .setDescription(`**${xopemoji} Thank You For Inviting Me To \`${message.guild.name}\` \nName Is \`XOPBOT\` Im A Multipurpose Bot With Over 200+ Commands And \`24/7\` Uptime \nMy Prefix Is \`x!\` And You Can Get My Commands By Doing \`x!help\` \nYou Can Also Check Out My Websites Down Below⤵**`)
+        .setDescription(`**Thank You For Inviting Me To \`${message.guild.name}\` \nName Is \`XOPBOT\` Im A Multipurpose Bot With Over 200+ Commands And \`24/7\` Uptime \nMy Prefix Is \`x!\` And You Can Get My Commands By Doing \`x!help\` \nYou Can Also Check Out My Websites Down Below⤵**`)
     channelToSendTo.send(embed, row3)
 })
