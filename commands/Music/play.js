@@ -60,6 +60,28 @@ module.exports = {
             }
 
             try {
+                const stopvote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Stop All Music From Playing. Continue?**`)
+                message.lineReplyNoMention(stopvote)
+
+                const filter = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options = { max: 1, time: 30000, errors: ['time'] };
+                const proceed = await message.channel.awaitMessages(filter, options)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed) {
+                    const nostopcmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Stop Command Successfully!**`)
+                    return message.lineReplyNoMention(nostopcmdplz)
+                };
+
                 message.client.distube.stop(message)
                 const stopembed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -94,6 +116,28 @@ module.exports = {
             }
 
             try {
+                const skipvote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Skip To The Next Song. Continue?**`)
+                message.lineReplyNoMention(skipvote)
+
+                const filter1 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options1 = { max: 1, time: 30000, errors: ['time'] };
+                const proceed1 = await message.channel.awaitMessages(filter1, options1)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed1) {
+                    const noskipcmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Skip Command Successfully!**`)
+                    return message.lineReplyNoMention(noskipcmdplz)
+                };
+
                 message.client.distube.skip(message)
             } catch (err) {
                 const errorlogs = client.channels.cache.get(errorChannel);
@@ -132,6 +176,28 @@ module.exports = {
             }
 
             try {
+                const pausevote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Pause The Song From Playing. Continue?**`)
+                message.lineReplyNoMention(pausevote)
+
+                const filter2 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options2 = { max: 1, time: 30000, errors: ['time'] };
+                const proceed2 = await message.channel.awaitMessages(filter2, options2)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed2) {
+                    const nopausecmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Pause Command Successfully!**`)
+                    return message.lineReplyNoMention(nopausecmdplz)
+                };
+
                 message.client.distube.pause(message)
                 const embed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -166,6 +232,28 @@ module.exports = {
             }
 
             try {
+                const unpausevote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Resume The Music To Play. Continue?**`)
+                message.lineReplyNoMention(unpausevote)
+
+                const filter3 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options3 = { max: 1, time: 30000, errors: ['time'] };
+                const proceed3 = await message.channel.awaitMessages(filter3, options3)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed3) {
+                    const nounpausecmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Unpause Command Successfully!**`)
+                    return message.lineReplyNoMention(nounpausecmdplz)
+                };
+
                 message.client.distube.resume(message)
                 const ressong2 = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -208,6 +296,28 @@ module.exports = {
                         .setDescription(`**\`(prefix)loop <(Repeat queue)(Repeat song)(Off)>\`**`)
                     return message.lineReplyNoMention(nopr2)
                 }
+                const loopvote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Loop The (Song)(Queue) To That Mode. Continue?**`)
+                message.lineReplyNoMention(loopvote)
+
+                const filter4 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options4 = { max: 1, time: 30000, errors: ['time'] };
+                const proceed4 = await message.channel.awaitMessages(filter4, options4)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed4) {
+                    const noloopcmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Loop Command Successfully!**`)
+                    return message.lineReplyNoMention(noloopcmdplz)
+                };
+
                 const mode = message.client.distube.setRepeatMode(message, parseInt(args[0]));
                 mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
 
@@ -235,6 +345,27 @@ module.exports = {
             }
 
             try {
+                const leavevote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Make XOPBOT Leave The Voice Channel. Continue?**`)
+                message.lineReplyNoMention(leavevote)
+
+                const filter5 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options5 = { max: 1, time: 30000, errors: ['time'] };
+                const proceed5 = await message.channel.awaitMessages(filter5, options5)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed5) {
+                    const noleavecmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Leave Command Successfully!**`)
+                    return message.lineReplyNoMention(noleavecmdplz)
+                };
                 message.member.voice.channel.leave();
                 const leavevcembed = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -405,6 +536,28 @@ module.exports = {
             }
 
             try {
+                const joinvote = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**This Will Make XOPBOT Join The Voice Channel. Continue?**`)
+                message.lineReplyNoMention(joinvote)
+
+                const filter6 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+                const options6 = { max: 1, time: 30000, errors: ['time'] };
+                const proceed6 = await message.channel.awaitMessages(filter6, options6)
+                    .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+                    .catch(() => false);
+
+                if (!proceed6) {
+                    const nostopcmdplz = new Discord.MessageEmbed()
+                        .setTimestamp()
+                        .setColor(`${color}`)
+                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                        .setDescription(`**You Cancelled The Join Command Successfully!**`)
+                    return message.lineReplyNoMention(nostopcmdplz)
+                };
+
                 message.member.voice.channel.join();
                 const leavevcembed = new Discord.MessageEmbed()
                     .setTimestamp()
