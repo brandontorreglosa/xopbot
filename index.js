@@ -171,7 +171,7 @@ client.distube = new DisTube(client, {
     searchSongs: true,
     emitNewSongOnly: true,
     highWaterMark: 1024 * 1024 * 64,
-    leaveOnEmpty: true,
+    leaveOnEmpty: false,
     leaveOnFinish: false,
     leaveOnStop: false,
     searchSongs: false,
@@ -204,8 +204,20 @@ client.distube
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**Channel Is \`Empty\`. XOPBOT Leaving The Channel! 😭**`)
-        message.lineReplyNoMention(thing);
+            .setDescription(`**Channel Is \`Empty\`. XOPBOT Leaving The Channel In \`2m\`! 😭**`)
+
+            const leftdavcc = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**Channel Was \`Empty\` For Over \`2m\` So XOPBOT Left! 😭**`)
+
+        message.lineReplyNoMention(thing).then((msg) => {
+            setTimeout(function () {
+                msg.edit(leftdavcc)
+                message.member.voice.channel.leave()
+            }, 120000)
+        })
     })
     .on("error", (message, err) => {
         const embed = new Discord.MessageEmbed()
