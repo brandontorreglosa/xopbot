@@ -62,7 +62,7 @@ module.exports = {
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
             const color = 'rgb(52, 183, 219)'
-            const def = await loadImage('https://th.bing.com/th/id/R.dfbd6e7b7bc79c83e26ade40fa66e12d?rik=0NXBiN8%2bjK%2bEgg&pid=ImgRaw');
+            const def = await loadImage('https://th.bing.com/th/id/R.089af52d047769a08d68738ee93483a4?rik=1stZo7clhLcTWw&pid=ImgRaw&r=0');
             const defpattern = await loadImage('https://i.imgur.com/nx5qJUb.png' || 'https://i.imgur.com/bnLhXeW.jpg');
             const avatar = await loadImage(message.author.displayAvatarURL({ format: 'png' }));
 

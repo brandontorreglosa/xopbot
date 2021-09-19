@@ -28,7 +28,7 @@ module.exports = {
 
     const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true); // We process the leaderboard.
 
-    const lb = leaderboard.map(e => `**${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}**`); // We map the outputs.
+    const lb = leaderboard.map(e => `**${e.position}. \`${e.username}#${e.discriminator}\` \nLevel: \`${e.level}\` \nXP: \`${e.xp.toLocaleString()}\`**`); // We map the outputs.
 
 
     const newEmbed = new Discord.MessageEmbed()
@@ -37,7 +37,7 @@ module.exports = {
       .setTitle('LeaderBoard')
       .setColor(`${color}`)
       .addFields(
-        { name: '**Level Leaderboard**', value: `\n\n${lb.join("\n\n")}` }
+        { name: '**Level Leaderboard**', value: `\n\n${lb.join("\n")}` }
       )
       .setFooter(`This Leaderboard Is Only For ${name} And Not Worldwide Servers!`)
 
