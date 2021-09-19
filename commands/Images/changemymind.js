@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "changemymind",
     permissions: ["SEND_MESSAGES"],
@@ -12,7 +13,7 @@ module.exports = {
         if (!text) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)changemymind <text>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -20,7 +21,7 @@ module.exports = {
         if (text.length > 15) {
             const maxlen = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Are Not Allowed To Go Over \`15\` Characters!**`)
             return message.lineReplyNoMention(maxlen)
@@ -28,7 +29,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('CHANGEMYMIND')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://vacefron.nl/api/changemymind?text=${text}`)
 
         // message.lineReplyNoMention(embed)
