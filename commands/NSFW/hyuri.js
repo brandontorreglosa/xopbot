@@ -1,11 +1,12 @@
 const discord = require("discord.js");
 const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CODE WOULD NOT WORK
 const lineReplyNoMention = require('discord-reply');
-
+const color = process.env.Color;
 module.exports = {
       name: "hyuri",
       cooldown: 3,
       nsfw: true,
+      premium: true,
       permissions: ["SEND_MESSAGES"],
       clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
       category: "NSFW",
@@ -24,7 +25,7 @@ module.exports = {
                         .setDescription(`:underage: **Hentai Yuri**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                         .setImage(amazeme)
                         .setFooter(`Girls On Girls But In Anime! :)`)
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                   message.lineReplyNoMention(wow)
             })
       }

@@ -2,6 +2,8 @@ const Discord = module.require("discord.js")
 const goodbyeSchema = require("../../models/leavechannel");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const gcolor = process.env.Gcolor;
+const rcolor = process.env.Rcolor;
 module.exports = {
   name: "leavechannel",
   cooldown: 15,
@@ -30,7 +32,7 @@ module.exports = {
 
         const lvc1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${gcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(lvc1)
@@ -43,7 +45,7 @@ module.exports = {
       } else if (!data) {
         const lvc2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${gcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
         message.lineReplyNoMention(lvc2)
@@ -65,7 +67,7 @@ module.exports = {
         });
         const lvcoff = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${rcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Channel Has Been \`🔴 Disabled\`!**`)
         return message.lineReplyNoMention(lvcoff)

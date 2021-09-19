@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'pgif',
     cooldown: 5,
@@ -20,7 +21,7 @@ module.exports = {
                 .setTimestamp()
                 .setImage(response.body.message)
                 .setFooter('Whats Better Than Porn Gifs! :)')
-                .setColor('#c30202')
+                .setColor(`${color}`)
             message.lineReplyNoMention(embed_nsfw);
         });
     }

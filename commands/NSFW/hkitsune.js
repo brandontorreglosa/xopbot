@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'hkitsune',
     cooldown: 3,
     nsfw: true,
+    premium: true,
     aliases: ['hkits'],
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
@@ -20,7 +22,7 @@ module.exports = {
                 .setTimestamp()
                 .setImage(response.body.message)
                 .setFooter('Nice Huh :)')
-                .setColor('#c30202')
+                .setColor(`${color}`)
             message.lineReplyNoMention(embed_nsfw);
         });
     }

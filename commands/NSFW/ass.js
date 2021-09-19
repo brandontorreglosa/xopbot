@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'ass',
     cooldown: 3,
@@ -16,7 +17,7 @@ module.exports = {
         superagent.get('https://nekobot.xyz/api/image').query({ type: 'ass' }).end((err, response) => {
 
             var embed_nsfw = new Discord.MessageEmbed()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setDescription(`:underage: **Ass**\n**[Provided To You By The Bot Supporters Of XOPBOT](${response.body.message})**`)
                 .setTimestamp()
                 .setImage(response.body.message)

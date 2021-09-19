@@ -1,6 +1,7 @@
 const fs = require('fs');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const gcolor = process.env.Gcolor;
 module.exports = {
   name: 'setprefix',
   cooldown: 10,
@@ -36,7 +37,7 @@ module.exports = {
     })
     const newpr = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor(`${color}`)
+      .setColor(`${gcolor}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Prefix Has Been Set To \`${Prefixset}\`!**`)
     message.lineReplyNoMention(newpr);

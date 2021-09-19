@@ -2,6 +2,8 @@ const Discord = require("discord.js")
 const JoinMsgSchema = require("../../models/joinmsg");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const gcolor = process.env.Gcolor;
+const rcolor = process.env.Rcolor;
 module.exports = {
   name: "joinmessage",
   cooldown: 10,
@@ -35,7 +37,7 @@ module.exports = {
         newData.save();
         const jcmsg1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${gcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Join Message Set To \`${newData.JoinMsg}\`!**`)
         message.lineReplyNoMention(jcmsg1)
@@ -49,7 +51,7 @@ module.exports = {
         newData.save();
         const jcmsg2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${gcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Join Message Set To \`${newData.JoinMsg}\`!**`)
         message.lineReplyNoMention(jcmsg2)
@@ -66,7 +68,7 @@ module.exports = {
         });
         const jcdis = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${rcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription('**Join Message Has Been `🔴 Disabled`!**')
         return message.lineReplyNoMention(jcdis)

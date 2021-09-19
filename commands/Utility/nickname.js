@@ -35,7 +35,7 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**Changed Nickname Of \`${mentionMember}\` To \`${newNickname}\`!**`)
+            .setDescription(`**Changed Nickname Of \`${mentionMember.username}\` To \`${newNickname}\`!**`)
         message.lineReplyNoMention(success)
     }
 }

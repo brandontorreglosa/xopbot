@@ -1,10 +1,11 @@
 const discord = require("discord.js");
 const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CODE WOULD NOT WORK
 const lineReplyNoMention = require('discord-reply');
-
+const color = process.env.Color;
 module.exports = {
       name: "hsuccubus",
       nsfw: true,
+      premium: true,
       cooldown: 3,
       permissions: ["SEND_MESSAGES"],
       clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
@@ -24,7 +25,7 @@ module.exports = {
                         .setDescription(`:underage: **Hentai Succubus**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                         .setImage(amazeme)
                         .setFooter(`Nice Yeah :)`)
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                   message.lineReplyNoMention(wow)
             })
       }

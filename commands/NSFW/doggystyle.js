@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const got = require("got"); //MAKE SURE TO INSTALL THE PACKAGE "GOT" ELSE THE CODE WOULD NOT WORK
 const lineReplyNoMention = require('discord-reply');
-
+const color = process.env.Color;
 module.exports = {
       name: "doggystyle",
       cooldown: 3,
@@ -25,7 +25,7 @@ module.exports = {
                         .setDescription(`:underage: **Doggy Style**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
                         .setImage(amazeme)
                         .setFooter(`I Love When They Do This! :)`)
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                   message.lineReplyNoMention(wow)
             })
       }

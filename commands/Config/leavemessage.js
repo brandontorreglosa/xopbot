@@ -2,6 +2,8 @@ const Discord = require("discord.js")
 const LeaveMsgSchema = require("../../models/leavemessage");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const gcolor = process.env.Gcolor;
+const rcolor = process.env.Rcolor;
 module.exports = {
   name: "leavemessage",
   cooldown: 10,
@@ -35,7 +37,7 @@ module.exports = {
         newData.save();
         const lvmsg1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${gcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Set To \`${newData.ByeMsg}\`!**`)
         message.lineReplyNoMention(lvmsg1)
@@ -49,7 +51,7 @@ module.exports = {
         newData.save();
         const lvmsg2 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${gcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Set To \`${newData.ByeMsg}\`!**`)
         message.lineReplyNoMention(lvmsg2)
@@ -67,7 +69,7 @@ module.exports = {
 
         const lvnoset = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor(`${color}`)
+          .setColor(`${rcolor}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Leave Message Has Been \`🔴 Disabled\`!**`)
         return message.lineReplyNoMention(lvnoset)

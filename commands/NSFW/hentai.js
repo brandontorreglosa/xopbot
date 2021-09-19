@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'hentai',
     cooldown: 3,
     nsfw: true,
+    premium: true,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
@@ -19,7 +21,7 @@ module.exports = {
                 .setTimestamp()
                 .setImage(response.body.message)
                 .setFooter('You Anime Perveret! :)')
-                .setColor('#c30202')
+                .setColor(`${color}`)
             message.lineReplyNoMention(embed_nsfw);
         });
     }
