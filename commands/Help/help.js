@@ -262,11 +262,16 @@ module.exports = {
 
         else if (cmd === 'nsfw') {
 
-            const errMessage = "**You Little Pervert! 😊 This Is Not A NSFW Channel! 🔞**";
+            const nsfenochcembed = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription("**You Little Pervert! 😊 This Is Not A NSFW Channel! 🔞**")
+
             if (!message.channel.nsfw) {
                 message.react('💢');
 
-                return message.reply({ content: errMessage, allowedMentions: { repliedUser: true } })
+                return message.lineReplyNoMention(nsfenochcembed)
                     .then(message => {
                         setTimeout(() => message.delete(), 6000);
                     })
@@ -301,7 +306,7 @@ module.exports = {
                 //.setTitle('__🔞 NSFW__')
                 .setColor(`${color}`)
                 .addFields(
-                    { name: '__🔞 NSFW (45)__', value: '**Real Life NSFW**: \n```4k, orgy, gapes, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, masturbation, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW**: \n```hentai, hthigh, hanal, hboobs, hrule34, hcowgirl, hmasturbation, hnetorare, hsuccubus, hpaizuri, hyuri, hmidriff, hneko, hkitsune```' },
+                    { name: '__🔞 NSFW (45)__', value: '**Real Life NSFW**: \n```4k, orgy, gapes, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, masturbation, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW (Premium)**: \n```hentai, hthigh, hanal, hboobs, hrule34, hcowgirl, hmasturbation, hnetorare, hsuccubus, hpaizuri, hyuri, hmidriff, hneko, hkitsune```' },
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
