@@ -34,12 +34,12 @@ module.exports = {
     const newEmbed = new Discord.MessageEmbed()
       .setTimestamp()
       .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-      .setTitle('LeaderBoard')
+      .setTitle('Leaderboard')
       .setColor(`${color}`)
       .addFields(
         { name: '**Level Leaderboard**', value: `\n\n${lb.join("\n\n")}` }
       )
-      .setFooter(`This Leaderboard Is Only For ${name} And Not Worldwide Servers!`)
+      .setFooter(`Leaderboard Only For ${name} Not Other Servers!`)
 
     message.lineReplyNoMention(newEmbed);
   }
