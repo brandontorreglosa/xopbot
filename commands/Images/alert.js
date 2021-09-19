@@ -26,15 +26,15 @@ module.exports = {
       return message.lineReplyNoMention(maclen)
     }
 
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setTitle('ALERT')
-      .setDescription('**Currently Not Working! Fixing Issue ASAP**')
-      .setColor(`${color}`)
-      .setImage(`https://api.popcat.xyz/alert?text=${alertMessage}`)
+    // const embed = new Discord.MessageEmbed()
+    //   .setTimestamp()
+    //   .setTitle('ALERT')
+    //   .setDescription('**Currently Not Working! Fixing Issue ASAP**')
+    //   .setColor(`${color}`)
+    //   .setImage(`https://api.popcat.xyz/alert?text=${alertMessage}`)
 
-    message.lineReplyNoMention(embed)
+    // message.lineReplyNoMention(embed)
 
-    //message.channel.send({ files: [{ attachment: `https://api.popcat.xyz/alert?text=${alertMessage}`, name: 'xopbotalert.jpg' }] });
+    message.channel.send({ files: [{ attachment: `https://api.popcat.xyz/alert?text=${alertMessage}`, name: 'xopbotalert.jpg' }] });
   }
 }
