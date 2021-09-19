@@ -1,5 +1,5 @@
-const { Client } = require('../../index')
-const client = new Client();
+const Client = require('../../index')
+const client = Client;
 const { MessageEmbed } = require('discord.js')
 const { MessageButton, MessageActionRow } = require('discord-buttons')
 client.on("guildCreate", (guild) => {

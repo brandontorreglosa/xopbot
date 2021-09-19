@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'alert',
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)alert <text>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -19,7 +20,7 @@ module.exports = {
     if (alertMessage.length > 65) {
       const maclen = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Are Not Allowed To Go Over \`65\` Characters!**`)
       return message.lineReplyNoMention(maclen)
@@ -29,7 +30,7 @@ module.exports = {
       .setTimestamp()
       .setTitle('ALERT')
       .setDescription('**Currently Not Working! Fixing Issue ASAP**')
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setImage(`https://api.popcat.xyz/alert?text=${alertMessage}`)
 
     message.lineReplyNoMention(embed)

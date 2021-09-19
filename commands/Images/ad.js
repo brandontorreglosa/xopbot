@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "ad",
     permissions: ["SEND_MESSAGES"],
@@ -14,7 +15,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('AD')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://api.popcat.xyz/ad?image=${avatar}`)
 
         // message.lineReplyNoMention(embed)
