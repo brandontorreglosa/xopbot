@@ -136,7 +136,7 @@ try {
         .setNickname(status.username)
 
         .then(() => {
-          message.lineReplyNoMention({ content: `**You Were AFK For ${ms(Date.now() - (status.date || 0))}**` }) //, allowedMentions: { repliedUser: true } });
+          message.lineReplyNoMention({ content: `**You Were AFK For \`${ms(Date.now() - (status.date || 0))}\`**` }) //, allowedMentions: { repliedUser: true } });
         })
 
         .catch(_e => {
