@@ -37,7 +37,7 @@ module.exports = {
       .setTitle('LeaderBoard')
       .setColor(`${color}`)
       .addFields(
-        { name: '**Level Leaderboard**', value: `\n\n${lb.join("\n")}` }
+        { name: '**Level Leaderboard**', value: `\n\n${lb.join("\n\n")}` }
       )
       .setFooter(`This Leaderboard Is Only For ${name} And Not Worldwide Servers!`)
 
