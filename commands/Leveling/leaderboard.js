@@ -20,7 +20,7 @@ module.exports = {
     if (rawLeaderboard.length < 1) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**No User Is Currently In The Leaderboard Of \`${name}\`!**`)
       return message.lineReplyNoMention(nopr)
@@ -35,7 +35,7 @@ module.exports = {
       .setTimestamp()
       .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
       .setTitle('LeaderBoard')
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .addFields(
         { name: '**Level Leaderboard**', value: `\n\n${lb.join("\n\n")}` }
       )

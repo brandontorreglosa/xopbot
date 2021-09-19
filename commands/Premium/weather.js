@@ -1,7 +1,7 @@
 const weather = require('weather-js');
 const lineReplyNoMention = require('discord-reply');
 const Discord = require('discord.js');
-
+const color = process.env.Color;
 module.exports = {
     name: 'weather',
     permissions: ["SEND_MESSAGES"],
@@ -15,7 +15,7 @@ module.exports = {
             if (!args[0]) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`(prefix)weather <location>\`**`)
                 return message.lineReplyNoMention(nopr)
@@ -24,7 +24,7 @@ module.exports = {
             if (result === undefined || result.length === 0) {
                 const notloc = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`${catcherv2}\` Is Not A Valid Location!**`)
                 return message.lineReplyNoMention(notloc)

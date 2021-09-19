@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'command',
     cooldown: 5,
@@ -8,7 +9,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Rules')
             .setURL('https://www.youtube.com/channel/UCCfKUHKPwTullX7aoFUjCIQ/featured')
             .setDescription('**These Are The Server Rules Please Read Them Carefully ^_^**')

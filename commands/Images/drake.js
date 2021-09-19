@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "drake",
     permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)drake <text> / <text2>\` \nYou Must Add \`/\` For It To Work!**`)
             return message.lineReplyNoMention(nopr)
@@ -20,7 +21,7 @@ module.exports = {
         if (!text) {
             const textto1 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Enter Some Text!**`)
             return message.lineReplyNoMention(textto1)
@@ -28,7 +29,7 @@ module.exports = {
         if (text.length > 70) {
             const maxlen = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Are Not Allowed To Go Over \`70\` Characters!**`)
             return message.lineReplyNoMention(maxlen)
@@ -38,7 +39,7 @@ module.exports = {
         if (!text2) {
             const texto2 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Enter The Second Text!**`)
             return message.lineReplyNoMention(texto2)
@@ -46,7 +47,7 @@ module.exports = {
         if (text2.length > 70) {
             const maxlen2 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Are Not Allowed To Go Over \`70\` Characters!**`)
             return message.lineReplyNoMention(maxlen2)
@@ -55,7 +56,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('DRAKE')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://api.popcat.xyz/drake?text1=${text}&text2=${text2}`)
 
         //     message.lineReplyNoMention(embed)

@@ -1,5 +1,6 @@
 const math = require('mathjs');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'math',
     permissions: ["SEND_MESSAGES"],
@@ -13,14 +14,14 @@ module.exports = {
             if (!args[0]) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`(prefix)math <equation>\`**`)
                 return message.lineReplyNoMention(nopr)
             }
 
             const embed = new MessageEmbed()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`RESULT`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(math.evaluate(args.join(" ")))
                 .setTimestamp();
@@ -30,7 +31,7 @@ module.exports = {
             const catcher = args.slice(0).join(" ");
             const noequatic = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${catcher}\` Is Not A Valid Equation!**`)
             message.lineReplyNoMention(noequatic)

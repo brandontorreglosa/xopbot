@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'clear',
     permissions: ["MANAGE_MESSAGES"],
@@ -11,7 +12,7 @@ module.exports = {
             if (!args[0]) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`(prefix)clear <number>\`**`)
                 return message.lineReplyNoMention(nopr)
@@ -20,7 +21,7 @@ module.exports = {
             if (isNaN(args[0])) {
                 const nonum = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`${aman}\` Is Not A Number!**`)
                 return message.lineReplyNoMention(nonum)
@@ -29,7 +30,7 @@ module.exports = {
             if (args[0] > 100) {
                 const maxlen = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Are Not Allowed To Delete More Than \`100\` Messages!**`)
                 return message.lineReplyNoMention(maxlen)
@@ -38,7 +39,7 @@ module.exports = {
             if (args[0] < 1) {
                 const minlen = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Have To Delete At Least \`1\` Message!**`)
                 return message.lineReplyNoMention(minlen)
@@ -48,7 +49,7 @@ module.exports = {
                 message.channel.bulkDelete(messages)
                 const success = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**Successfully Deleted \`${messsages, size}\` Messages!**`)
 

@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const OWNER_ID = process.env.Owner_ID;
 const errorChannel = process.env.errorChannel;
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 require('dotenv').config();
 
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
             if (message.author.id != OWNER_ID) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command! 😔**`)
                 return message.lineReplyNoMention(nopr)
@@ -25,7 +26,7 @@ module.exports = {
             client.guilds.cache.forEach(x => {
                 const embed = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setDescription(`🔹**${x.name}** | \`${x.memberCount}\` Members (ID: ${x.id})\n............................`);
                 message.lineReplyNoMention(embed)
             });

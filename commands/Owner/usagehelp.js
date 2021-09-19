@@ -1,6 +1,6 @@
 // const recon = require('reconlx');
 // const ReactionPages = recon.ReactionPages;
-
+// const color = process.env.Color;
 
 // module.exports = {
 //     name: 'usagehelp',
@@ -11,7 +11,7 @@
 //     execute(client, message, cmd, args, Discord) {
 //         const embed1 = new Discord.MessageEmbed()
 //         .setTimestamp()
-//         .setColor('#c30202')
+//         .setColor(`${color}`)
 //         .setTitle(' Usage Help Menu')
 //         .setURL('https://www.youtube.com/watch?v=K_I8-UUINTg')
 //         .setDescription('***This Is The Usage Help Menu Please Read The Commands Carefully ^_^***')
@@ -41,7 +41,7 @@
 
 //             const embed2 = new Discord.MessageEmbed()
 //             .setTimestamp()
-//             .setColor('#c30202')
+//             .setColor(`${color}`)
 //             .setTitle(' Usage Help Menu')
 //             .setURL('https://www.youtube.com/watch?v=K_I8-UUINTg')
 //             .setDescription('***This Is The Usage Help Menu Please Read The Commands Carefully ^_^***')

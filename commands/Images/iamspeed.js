@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "iamspeed",
   permissions: ["SEND_MESSAGES"],
@@ -16,7 +17,7 @@ module.exports = {
     // const embed = new Discord.MessageEmbed()
     //   .setTimestamp()
     //   .setTitle('IAMSPEED')
-    //   .setColor('#c30202')
+    //   .setColor(`${color}`)
     //   .setImage(`https://vacefron.nl/api/iamspeed?user=${avatar}`)
 
     // message.lineReplyNoMention(embed)

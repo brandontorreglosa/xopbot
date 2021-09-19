@@ -472,7 +472,7 @@ module.exports = {
                 if (isNaN(jumpnu)) {
                     const nonumsongal = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${jumpnu}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nonumsongal)

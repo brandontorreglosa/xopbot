@@ -1,5 +1,6 @@
 const { Canvas } = require('canvacord');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'phub',
     cooldown: 8,
@@ -10,7 +11,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)phub <text>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -24,7 +25,7 @@ module.exports = {
         if (!text) {
             const notxt1 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Enter Some Text!**`)
             return message.lineReplyNoMention(notxt1)
@@ -32,7 +33,7 @@ module.exports = {
         if (text.length > 70) {
             const maxlen = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Are Not Allowed To Go Over \`70\` Characters!**`)
             return message.lineReplyNoMention(maxlen)

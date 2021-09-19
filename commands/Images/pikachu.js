@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'pikachu',
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)pikachu <text>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -19,7 +20,7 @@ module.exports = {
     if (pikachuMessage.length > 35) {
       const maxlen = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Are Not allowed To Go Over \`35\` Characters!**`)
       return message.lineReplyNoMention(maxlen)
@@ -28,7 +29,7 @@ module.exports = {
     // const embed = new Discord.MessageEmbed()
     //   .setTimestamp()
     //   .setTitle('PIKACHU')
-    //   .setColor('#c30202')
+    //   .setColor(`${color}`)
     //   .setImage(`https://api.popcat.xyz/pikachu?text=${pikachuMessage}`)
 
     // message.lineReplyNoMention(embed)

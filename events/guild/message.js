@@ -8,6 +8,7 @@ const ms = require('ms');
 require('dotenv').config();
 const cooldown = require('../../models/cooldown');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 
 try {
 
@@ -22,7 +23,7 @@ try {
       const user = await Levels.fetch(message.author.id, message.guild.id);
       const someonelevelup = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`🔝 You Leveled Up!`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
         .setFooter('Thank You For Being Active 🙏')
@@ -111,7 +112,7 @@ try {
         if (!role) await message.guild.roles.create({
           data: {
             name: "God Level",
-            color: "#c30202",
+            color: "#34b7db",
           }
         }).catch(err => console.log(err));
         role = message.guild.roles.cache.find(role => role.name == "God Level");
@@ -184,7 +185,7 @@ try {
     if (message.content === "<@831824859066925087>" || message.content === "<@!831824859066925087>") {
       const botembedmentioned = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`You Ping Me?`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**My Prefix Is `x!` And You Can Do `x!help` To Get My Commands!**')
       message.lineReplyNoMention(botembedmentioned)
@@ -213,7 +214,7 @@ try {
     if (!command) {
       const embederror = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`Error 404`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Couldnt Find That Command, Do `x!help` And Try Again!**')
       return message.lineReplyNoMention(embederror)
@@ -272,7 +273,7 @@ try {
       if (invalidPerms.length) {
         const invalidembedperm = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`Wait!`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`)
         return message.lineReplyNoMention(invalidembedperm) //, allowedMentions: { repliedUser: true } });
@@ -328,7 +329,7 @@ try {
       if (invalidPerms1.length) {
         const invalidembedperm1 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`Oh No!`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Hold Your Beer! XOPBOT Has Missing Permissions: \`${invalidPerms1}\`**`)
         return message.lineReplyNoMention(invalidembedperm1) //, allowedMentions: { repliedUser: true } });
@@ -527,7 +528,7 @@ try {
             .setTimestamp()
             .setTitle('Goodbye!')
             .setDescription(leavemessage)
-            .setColor("#c30202");
+            .setColor(`${color}`);
 
           let channel = data.Bye
 
@@ -540,7 +541,7 @@ try {
             .setDescription(`**${member.user.tag}** Just Left This Server! We hope They Return Back Soon!`)
             .setFooter(`We Now Have ${member.guild.memberCount} Members!`)
             .setThumbnail(member.user.avatarURL())
-            .setColor("#c30202")
+            .setColor(`${color}`)
 
           let byechannel = data.Bye
 

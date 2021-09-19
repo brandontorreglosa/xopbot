@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "dockofshame",
     permissions: ["SEND_MESSAGES"],
@@ -15,7 +16,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('DOCKOFSHAME')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://vacefron.nl/api/dockofshame?user=${avatar}`)
 
         // message.lineReplyNoMention(embed)

@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "wideavatar",
     permissions: ["SEND_MESSAGES"],
@@ -14,7 +15,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('WIDEAVATAR')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://vacefron.nl/api/wide?image=${avatar}`)
 
         // message.lineReplyNoMention(embed)

@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'fakeuserinfo',
     permissions: ["SEND_MESSAGES"],
@@ -17,7 +18,7 @@ module.exports = {
         const randomNumber7 = Math.floor(Math.random() * 100) + 1;
         const newEmbed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Fake User Info')
             .setDescription('**Get A Fake Users Information**')
             .addFields(

@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "water",
     permissions: ["SEND_MESSAGES"],
@@ -11,7 +12,7 @@ module.exports = {
             if (!args[0]) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`(prefix)water <text>\`**`)
                 return message.lineReplyNoMention(nopr)
@@ -26,7 +27,7 @@ module.exports = {
             if (sayMessage.length > 50) {
                 const maxlen = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Are Not Allowed To Go Over \`50\` Characters!**`)
                 return message.lineReplyNoMention(maxlen)
@@ -34,7 +35,7 @@ module.exports = {
             // const embed = new Discord.MessageEmbed()
             //     .setTimestamp()
             //     .setTitle('WATER')
-            //     .setColor('#c30202')
+            //     .setColor(`${color}`)
             //     .setImage(`https://vacefron.nl/api/water?text=${sayMessage}`)
 
             // message.lineReplyNoMention(embed)

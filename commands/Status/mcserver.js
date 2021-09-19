@@ -1,5 +1,6 @@
 const util = require('minecraft-server-util');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'mcserver',
     permissions: ["SEND_MESSAGES"],
@@ -11,7 +12,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)mcserver <serverip> <serverport>\` \nDont Know? Visit: https://minecraftservers.org/**`)
             return message.lineReplyNoMention(nopr)
@@ -19,7 +20,7 @@ module.exports = {
         if (!args[1]) {
             const nopr1 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Please Add The Server Port! \nDont Know? Visit: https://minecraftservers.org/**`)
             return message.lineReplyNoMention(nopr1)

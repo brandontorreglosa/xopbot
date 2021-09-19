@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'setup',
     aliases: ['close', 'open'],
@@ -83,7 +84,7 @@ module.exports = {
                     const yembed = new Discord.MessageEmbed()
                         .setTimestamp()
                         .setAuthor("MAIL CLOSED", client.user.displayAvatarURL())
-                        .setColor("#c30202")
+                        .setColor(`${color}`)
                         .setThumbnail(client.user.displayAvatarURL())
                         .setFooter("Mail Was Closed By" + message.author.username)
                     if (args[0]) yembed.setDescription(args.join(" "))
@@ -123,7 +124,7 @@ module.exports = {
                     .setAuthor("DETAILS", target.user.displayAvatarURL({
                         dynamic: true
                     }))
-                    .setColor("#c30202")
+                    .setColor(`${color}`)
                     .setThumbnail(target.user.displayAvatarURL({
                         dynamic: true
                     }))
@@ -203,7 +204,7 @@ module.exports = {
                     .setAuthor("DETAILS", message.author.displayAvatarURL({
                         dynamic: true
                     }))
-                    .setColor("#c30202")
+                    .setColor(`${color}`)
                     .setThumbnail(message.author.displayAvatarURL({
                         dynamic: true
                     }))

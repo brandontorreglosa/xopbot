@@ -1,5 +1,6 @@
 const axios = require('axios');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "covid",
     cooldown: 3,
@@ -18,7 +19,7 @@ module.exports = {
         } catch (error) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)covid <location>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -27,7 +28,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setTitle(args[0] ? `${args[0].toUpperCase()} Stats` : 'Total Corona Cases World Wide')
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setThumbnail(args[0] ? corona.countryInfo.flag : 'https://i.giphy.com/YPbrUhP9Ryhgi2psz3.gif')
             .addFields(
                 {

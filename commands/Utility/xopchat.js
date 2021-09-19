@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "xopchat",
     permissions: ["SEND_MESSAGES"],
@@ -12,13 +13,13 @@ module.exports = {
         if (!query) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)xopchat <channelID>\`**`)
             return message.lineReplyNoMention(nopr)
         }
         const reportEmbed = new Discord.MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('**Xop-Chat Request Wanted!**')
             .addField('Author', message.author.toString(), true)
             .addField('Guild', message.guild.name, true)

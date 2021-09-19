@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'unban',
   cooldown: 3,
@@ -11,7 +12,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)unban <@user>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -19,7 +20,7 @@ module.exports = {
     if (message.author.id === member.id) {
       const nounbanyou = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Are You Alright? You Can Not Unban Yourself!**`)
       return message.lineReplyNoMention(nounbanyou)
@@ -27,7 +28,7 @@ module.exports = {
     if (member.id === client.user.id) {
       const whyunbanme = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Can Not Unban Me Through Me, Thats Way Too Evil!**`)
       return message.lineReplyNoMention(whyunbanme)
@@ -38,14 +39,14 @@ module.exports = {
       memberTarger.unban();
       const successunban = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Unbanned Successfully \`${member.username}\`**`)
       message.lineReplyNoMention(successunban)
     } else {
       const unsuccess = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Could Not Unban \`${fetcherunban}\`. Account Might Have Been Deleted!**`)
       message.lineReplyNoMention(unsuccess)

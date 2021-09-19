@@ -24,7 +24,7 @@ module.exports = {
             if (!user) {
                 const fakuser = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color1}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`${target.username}\` Currently Has No Xp!**`)
                 return message.lineReplyNoMention(fakuser)
@@ -37,8 +37,8 @@ module.exports = {
                 .setCurrentXP(user.xp)
                 .setRequiredXP(neededXp)
                 .setStatus(target.presence.status)
-                .setBackground("IMAGE", "https://th.bing.com/th/id/Rcf6f575500f15f55cddf043c1a79d902?rik=M0%2bN0%2bVBxLmchA&pid=ImgRaw")
-                .setProgressBar("#c30202")
+                .setBackground("IMAGE", "https://th.bing.com/th/id/R.9d2bce98532d6b9f755d8465e6348f33?rik=nMEHMQFPMcx2%2fA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fzvTLpqP.jpg&ehk=wHwiQmCHja6I1Fofvau9xirO8UguWEHwcb6HeiBPwXA%3d&risl=&pid=ImgRaw&r=0")
+                .setProgressBar(`${color1}`)
                 .setUsername(target.username)
                 .setDiscriminator(target.discriminator);
             rank.build()
@@ -61,7 +61,7 @@ module.exports = {
 
             const canvas = createCanvas(800, 600);
             const ctx = canvas.getContext('2d');
-            const color = 'rgb(195, 2, 2)'
+            const color = 'rgb(52, 183, 219)'
             const def = await loadImage('https://th.bing.com/th/id/R.dfbd6e7b7bc79c83e26ade40fa66e12d?rik=0NXBiN8%2bjK%2bEgg&pid=ImgRaw');
             const defpattern = await loadImage('https://i.imgur.com/nx5qJUb.png' || 'https://i.imgur.com/bnLhXeW.jpg');
             const avatar = await loadImage(message.author.displayAvatarURL({ format: 'png' }));

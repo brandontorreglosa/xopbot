@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "nickname",
     permissions: ["MANAGE_NICKNAMES"],
@@ -12,7 +13,7 @@ module.exports = {
         if (!mentionMember) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)nickname <@user> <nickname>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -20,7 +21,7 @@ module.exports = {
         if (!newNickname) {
             const erispec = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Please Add The Nickname!**`)
             return message.lineReplyNoMention(erispec)
@@ -32,7 +33,7 @@ module.exports = {
         }
         const success = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Changed Nickname Of \`${mentionMember}\` To \`${newNickname}\`!**`)
         message.lineReplyNoMention(success)

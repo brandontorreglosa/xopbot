@@ -1,5 +1,7 @@
 const ms = require('ms')
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
+const gcolor = process.env.Gcolor;
 module.exports = {
     name: "remind",
     cooldown: 3,
@@ -17,19 +19,19 @@ module.exports = {
 
         const notime = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**\`(prefix)remind <time(s)(m)(h)(d)> <reminder>\`**`)
 
         const wrongtime = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Sorry I Only Do \`(d)(h)(m)(s)\`!**`)
 
         const reminderembed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Please Tell Me What You Want To Be Reminded Off!**`)
 
@@ -47,7 +49,7 @@ module.exports = {
 
         const remindertime = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#33F304')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Your Reminder Will Go Off In \`${time}\`!**`)
 
@@ -55,7 +57,7 @@ module.exports = {
 
         const reminderdm = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#7289DA')
+            .setColor(`${gcolor}`)
             .setAuthor(`REMINDER`, client.user.displayAvatarURL({ dynamic: true }))
             .setDescription(`**It Has Been \`${time}\`! \n Here Is Your Reminder: \`${reminder}\`!**`)
 

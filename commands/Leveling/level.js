@@ -13,7 +13,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)level <@user>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -23,7 +23,7 @@ module.exports = {
         if (!target) {
             const nomen = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${catcherr}\` Is Not A Valid User!**`)
             return message.lineReplyNoMention(nomen)
@@ -32,7 +32,7 @@ module.exports = {
         try {
             const success = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${mentionedMember.tag}\`'s Level Is \`${target.level}\` And Has \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
             message.lineReplyNoMention(success)

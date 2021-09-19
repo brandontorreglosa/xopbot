@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'addrole',
     cooldown: 5,
@@ -10,7 +11,7 @@ module.exports = {
         if (!user) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)addrole <@user> <@role>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -21,13 +22,13 @@ module.exports = {
             const addroleError2 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setDescription(`**No Roles Provided!**`)
-                .setColor('#c30202')
+                .setColor(`${color}`)
             return message.lineReplyNoMention(addroleError2)
         }
         user.roles.add(roleToGive)
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Added: \`${roleToGive}\` To \`${user.username}\`**`)
         message.lineReplyNoMention(embed)

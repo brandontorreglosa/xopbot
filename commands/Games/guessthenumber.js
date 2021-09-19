@@ -23,6 +23,7 @@ function guildAttemptsMap(message) {
 
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const gcolor = process.env.Gcolor;
 module.exports = {
     name: "guessthenumber",
     aliases: ['gtn', 'guess'],
@@ -64,7 +65,7 @@ module.exports = {
 
             const guessedthenumber = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#00ff00')
+                .setColor(`${gcolor}`)
                 .setDescription(`**✅ Perfect, \`<@${member.id}>\` The Number Was \`${guildNumber.get(guild.id)}\`, It Only Took You \`${attempts.attempts}\` Attempts!**`)
 
             channel.send(guessedthenumber);

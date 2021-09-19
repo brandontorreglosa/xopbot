@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const errorChannel = process.env.errorChannel;
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "deletechannel",
     aliases: ['delchannel', 'delch'],
@@ -15,7 +16,7 @@ module.exports = {
             if (!fetchedChannel) {
                 const nopr = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**\`(prefix)deletechannel <#channel>\`**`)
                 return message.lineReplyNoMention(nopr)
@@ -26,7 +27,7 @@ module.exports = {
                 .setTimestamp()
                 .setTitle(`Deleted Channel Named ${fetchedChannel}`)
                 .setDescription(`**Channel Was Deleted By ${message.author.username}**`)
-                .setColor("#c30202")
+                .setColor(`${color}`)
             await message.lineReplyNoMention(embed);
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)

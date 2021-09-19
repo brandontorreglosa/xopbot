@@ -1,5 +1,6 @@
 const { tictactoe } = require('reconlx')
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'tictactoe',
     cooldown: 10,
@@ -11,7 +12,7 @@ module.exports = {
         if (!user) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)tictactoe <@user>\`**`)
             return message.lineReplyNoMention(nopr)

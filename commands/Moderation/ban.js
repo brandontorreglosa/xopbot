@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const errorChannel = process.env.errorChannel;
+const color = process.env.Color;
 module.exports = {
   name: 'ban',
   clientpermissions: ["BAN_MEMBERS", "SEND_MESSAGES", "EMBED_LINKS"],
@@ -13,7 +14,7 @@ module.exports = {
       if (!args[0]) {
         const nopr = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**\`(prefix)ban <@user> <reason>\`**`)
         return message.lineReplyNoMention(nopr)
@@ -22,7 +23,7 @@ module.exports = {
       if (!reason) {
         const norr = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Please Give A Reason To Ban That User!**`)
         return message.lineReplyNoMention(norr)
@@ -31,7 +32,7 @@ module.exports = {
       if (message.author.id === user.id) {
         const cantbanyourself = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Are You Alright? You Can Not Ban Yourself!**`)
         return message.lineReplyNoMention(cantbanyourself)
@@ -39,7 +40,7 @@ module.exports = {
       if (user.id === client.user.id) {
         const nobanbot = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Can't Just Ban Me Through Me, Thats Way Too Evil!**`)
         return message.lineReplyNoMention(nobanbot)
@@ -47,7 +48,7 @@ module.exports = {
       if (user.id === message.guild.owner.id) {
         const nobanowner = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Jerk, How Can You Ban Server Owner! 👿**`)
         return message.lineReplyNoMention(nobanowner)
@@ -56,7 +57,7 @@ module.exports = {
       if (!user) {
         const idkr12 = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
         return message.lineReplyNoMention(idkr12)
@@ -64,7 +65,7 @@ module.exports = {
 
       const rapdab = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`${catcherban}\` Is Currently Not Bannable!**`)
 
@@ -72,25 +73,25 @@ module.exports = {
         const userTarger = message.guild.members.cache.get(user.id);
         const unsucer = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Could Not Send To \`${user.username}\` Reason Of Ban!**`)
 
         const funsucer = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Could Not Ban \`${user.username}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Banned Successfully \`${user.username}\` For \`${reason}\`!**`)
 
         const embed = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setTitle(`You Are Banned From ${message.guild.name} 😢`)
           .setDescription(`**Banned By: ${message.author.username} \nReason: \`${reason}\`**`)
         userTarger.send(embed).catch(() => message.lineReplyNoMention(unsucer))

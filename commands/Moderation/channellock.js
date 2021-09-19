@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
    name: "channellock",
    cooldown: 10,
@@ -12,7 +13,7 @@ module.exports = {
       if (!reason) {
          const nopr = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**\`(prefix)channellock <reason>\`**`)
          return message.lineReplyNoMention(nopr)
@@ -28,7 +29,7 @@ module.exports = {
          .setTimestamp()
          .setAuthor(`Channel Updates!`, message.author.displayAvatarURL({ dynamic: true }))
          .setDescription(`**🔒 ${message.channel} Has Been Locked By ${message.author.username}! \n${reason}**`)
-         .setColor('#c30202')
+         .setColor(`${color}`)
       await message.lineReplyNoMention(embed);
    }
 }

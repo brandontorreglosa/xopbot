@@ -15,7 +15,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${usage}\`**`)
             return message.lineReplyNoMention(nopr)
@@ -23,7 +23,7 @@ module.exports = {
         if (!mentionedMember) {
             const nomen = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${catchnomen}\` Is Not A Valid User!**`)
             return message.lineReplyNoMention(nomen)
@@ -31,7 +31,7 @@ module.exports = {
         if (!args[1]) {
             const nopr1 = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Please Specify If Your Editing \`xp\` Or \`level\`!**`)
             return message.lineReplyNoMention(nopr1)
@@ -40,7 +40,7 @@ module.exports = {
         if (!['xp', 'level'].includes(args[1])) {
             const noxplvl = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${fakearg}\` Is Not \`xp\` Or \`level\`!**`)
             return message.lineReplyNoMention(noxplvl)
@@ -49,7 +49,7 @@ module.exports = {
             if (!['add', 'set', 'remove'].includes(args[2])) {
                 const statxp = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Need To Specify If Your \`(Adding)(Setting)(Removing)\` The \`xp\`!**`)
                 return message.lineReplyNoMention(statxp)
@@ -59,7 +59,7 @@ module.exports = {
             if (!levelUser) {
                 const nolvlu = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**The User Does Not Exist In The Database OF \`XOPBOT\`!**`)
                 return message.lineReplyNoMention(nolvlu)
@@ -68,7 +68,7 @@ module.exports = {
                 if (!value) {
                     const nopr2 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${value}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nopr2)
@@ -77,7 +77,7 @@ module.exports = {
                     await Levels.appendXp(mentionedMember.id, message.guild.id, value);
                     const successxp = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**Added: \`${value}\` Xp To \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successxp)
@@ -88,7 +88,7 @@ module.exports = {
                 if (!value) {
                     const nopr3 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${value}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nopr3)
@@ -97,7 +97,7 @@ module.exports = {
                     await Levels.subtractXp(mentionedMember.id, message.guild.id, value);
                     const successrmv = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**Removed: \`${value}\` Xp From \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successrmv)
@@ -108,7 +108,7 @@ module.exports = {
                 if (!value) {
                     const nopr4 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${value}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nopr4)
@@ -117,7 +117,7 @@ module.exports = {
                     await Levels.setXp(mentionedMember.id, message.guild.id, value);
                     const successset = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**Set: \`${value}\` Xp To \`${mentionedMember.tag}\`!**`)
                     return message.lineReplyNoMention(successset)
@@ -131,7 +131,7 @@ module.exports = {
             if (!['add', 'set', 'remove'].includes(args[2])) {
                 const nopr5 = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Need To Specify If Your \`(Adding)(Setting)(Removing)\` The \`Level\`!**`)
                 return message.lineReplyNoMention(nopr5)
@@ -141,7 +141,7 @@ module.exports = {
             if (!levelUser) {
                 const nopr6 = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**The User Does Not Exist In The Database Of \`XOPBOT\`!**`)
                 return message.lineReplyNoMention(nopr6)
@@ -150,7 +150,7 @@ module.exports = {
                 if (!value) {
                     const nopr7 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${value}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nopr7)
@@ -159,7 +159,7 @@ module.exports = {
                     await Levels.appendLevel(mentionedMember.id, message.guild.id, value);
                     const successlvl = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**Added: \`${value}\` Level(s) To \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successlvl)
@@ -170,7 +170,7 @@ module.exports = {
                 if (!value) {
                     const nopr8 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${value}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nopr8)
@@ -179,7 +179,7 @@ module.exports = {
                     await Levels.subtractLevel(mentionedMember.id, message.guild.id, value);
                     const successrmv1 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**Removed: \`${value}\` Level(s) From \`${mentionedMember.tag}\`!**`)
                     message.lineReplyNoMention(successrmv1)
@@ -190,7 +190,7 @@ module.exports = {
                 if (!value) {
                     const nopr9 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**\`${value}\` Is Not A Number!**`)
                     return message.lineReplyNoMention(nopr9)
@@ -199,7 +199,7 @@ module.exports = {
                     await Levels.setLevel(mentionedMember.id, message.guild.id, value);
                     const successset1 = new Discord.MessageEmbed()
                         .setTimestamp()
-                        .setColor('#c30202')
+                        .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**Set: \`${value}\` Level(s) To \`${mentionedMember.tag}\`**`)
                     message.lineReplyNoMention(successset1)

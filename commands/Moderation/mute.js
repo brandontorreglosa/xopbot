@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const ms = require('ms');
+const color = process.env.Color;
 module.exports = {
     name: 'mute',
     permissions: ["MUTE_MEMBERS"],
@@ -12,7 +13,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)mute <@user> <[optional]time(s)(m)(h)(d)>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -20,7 +21,7 @@ module.exports = {
         if (message.mentions.users.first().bot) {
             const nomutebots = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Can Not Mute Bot\`s!**`)
             return message.lineReplyNoMention(nomutebots)
@@ -28,7 +29,7 @@ module.exports = {
         if (message.author.id === target.id) {
             const annieareyouok = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Are You Alright? You Can Not Mute Yourself!**`)
             return message.lineReplyNoMention(annieareyouok)
@@ -36,7 +37,7 @@ module.exports = {
         if (target.id === client.user.id) {
             const whymuteme = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Can't Just Mute Me Through Me, Thats Way Too Evil! **`)
             return message.lineReplyNoMention(whymuteme)
@@ -44,7 +45,7 @@ module.exports = {
         if (target.id === message.guild.owner.id) {
             const howyoumuteserver = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Jerk, How You Can Mute Server Owner! 👿**`)
             return message.lineReplyNoMention()
@@ -52,7 +53,7 @@ module.exports = {
 
         const faksucer = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Could Not Mute \`${fetchmute}\`! Try The Down Solutions: \nCheck If You Have The \`Muted\` Role Created. \nCheck If The \`User\` Actually Exists!**`)
 
@@ -64,7 +65,7 @@ module.exports = {
                 memberTarget.roles.add(muteRole.id);
                 const sucermute = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**Muted Successfully \`${target.username}\`!**`)
                 message.lineReplyNoMention(sucermute);
@@ -74,7 +75,7 @@ module.exports = {
             memberTarget.roles.add(muteRole.id);
             const tempsucermute = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Temporary Muted Successfully \`${target.username}\` For \`${ms(ms(args[1]))}\`!**`)
             message.lineReplyNoMention(tempsucermute)

@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'nuke',
     cooldown: 15,
@@ -10,7 +11,7 @@ module.exports = {
         const user = message.mentions.users.first() || message.author;
         const nopr = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**This Will Clear All Messages In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**`)
         message.lineReplyNoMention(nopr)
@@ -24,7 +25,7 @@ module.exports = {
         if (!proceed) {
             const nonukeplz = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Cancelled The Nuke Command Successfully!**`)
             return message.lineReplyNoMention(nonukeplz)
@@ -32,7 +33,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTitle('Incoming Nuke!')
             .setDescription(`**The Nuke Has Been Deployed, Say Goodbye To #${message.channel.name} \nTakes Up To 10 Seconds Max. To Clear Channel!**`)
             .setFooter(`Was Deployed By ${message.author.username} 😱`)

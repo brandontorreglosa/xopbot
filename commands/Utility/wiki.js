@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "wiki",
     cooldown: 5,
@@ -12,7 +13,7 @@ module.exports = {
         if (!msg) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)wiki <search>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -23,7 +24,7 @@ module.exports = {
             .setTitle("Wikipedia Search")
             .addField(`You Searched For:`, `${msg}`)
             .addField(`Results:`, `[Here's What I Found](${link})`)
-            .setColor('#c30202')
+            .setColor(`${color}`)
 
         message.lineReplyNoMention(embed);
     }

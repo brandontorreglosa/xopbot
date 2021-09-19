@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "tableflip",
     permissions: ["SEND_MESSAGES"],
@@ -13,7 +14,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('TABLEFLIP')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://vacefron.nl/api/tableflip?user=${avatar}`)
 
         // message.lineReplyNoMention(embed)

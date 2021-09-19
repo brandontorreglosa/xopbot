@@ -1,6 +1,7 @@
 const errorChannel = process.env.errorChannel;
 const Discord = module.require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "dm",
   cooldown: 8,
@@ -15,7 +16,7 @@ module.exports = {
       if (!user) {
         const nopr = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**\`(prefix)dm <@user> <text>\`**`)
         return message.lineReplyNoMention(nopr)
@@ -23,7 +24,7 @@ module.exports = {
       if (message.mentions.users.first().bot) {
         const nodmbots = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Can Not DM Bot\`s As they Will Never Send Back!**`)
         return message.lineReplyNoMention(nodmbots)
@@ -31,7 +32,7 @@ module.exports = {
       if (message.author.id === user.id) {
         const nodmyourself = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Are You Alright? You Can Not DM Yourself!**`)
         return message.lineReplyNoMention(nodmyourself)
@@ -40,7 +41,7 @@ module.exports = {
       if (!dmmessage) {
         const nodmmsg = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Did Not Specify Your Message!**`)
         return message.lineReplyNoMention(nodmmsg)
@@ -48,20 +49,20 @@ module.exports = {
 
       const rmvdm = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Could Not Dm \`${user.username}\`!**`)
 
       const successdm = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Successfully Sent Message To \`${user.username}\`!**`)
 
 
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setDescription(`${dmmessage}`)
         .setFooter(`Sent By ${message.author.username}`)
       user.send(embed).catch(() => message.lineReplyNoMention(rmvdm))

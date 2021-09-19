@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'amino',
     cooldown: 2,
@@ -7,7 +8,7 @@ module.exports = {
     description: "Sends The Owners Youtube Channel!",
     async execute(client, message, cmd, args, Discord) {
         const amino = new Discord.MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTimestamp()
             .setTitle('My Amino Account')
             .setURL('https://aminoapps.com/c/splatoon/page/user/hackerpro-tm-sc/065i_afjvjXqMXB1d68dB0Y5oqM8pnB')

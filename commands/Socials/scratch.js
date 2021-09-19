@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'scratch',
     cooldown: 3,
@@ -7,7 +8,7 @@ module.exports = {
     description: "Sends The Owners Youtube Channel!",
     async execute(client, message, cmd, args, Discord) {
         const embed = new Discord.MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTimestamp()
             .setTitle('My Scratch Account')
             .setURL('https://scratch.mit.edu/users/COOLBLUEINKLINGTM/')

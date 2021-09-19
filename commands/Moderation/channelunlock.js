@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
    name: "channelunlock",
    cooldown: 10,
@@ -19,7 +20,7 @@ module.exports = {
          .setTimestamp()
          .setAuthor(`Channel Updates!`, message.author.displayAvatarURL({ dynamic: true }))
          .setDescription(`**🔓 ${message.channel} Has Been Unlocked By ${message.author.username}!**`)
-         .setColor('#c30202')
+         .setColor(`${color}`)
       await message.lineReplyNoMention(embed);
    }
 }

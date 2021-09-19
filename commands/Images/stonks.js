@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "stonks",
     permissions: ["SEND_MESSAGES"],
@@ -14,7 +15,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('STONKS')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://vacefron.nl/api/stonks?user=${avatar}&nostonks=BOOL`)
 
         // message.lineReplyNoMention(embed)

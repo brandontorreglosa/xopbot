@@ -1,5 +1,6 @@
 const quick = require('quick.db');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'afkset',
   cooldown: 5,
@@ -20,7 +21,7 @@ module.exports = {
       .then(() => {
         const success = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Status Successfully Set To \`[AFK]\`!**`)
         return message.lineReplyNoMention(success)

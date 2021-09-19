@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'clyde',
   permissions: ["SEND_MESSAGES"],
@@ -10,7 +11,7 @@ module.exports = {
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)clyde <text>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -19,7 +20,7 @@ module.exports = {
     if (clydeMessage.length > 65) {
       const maxlen = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**You Are Not Allowed To Go Over \`65\` Characters!**`)
       return message.lineReplyNoMention(maxlen)
@@ -27,7 +28,7 @@ module.exports = {
     // const embed = new Discord.MessageEmbed()
     //   .setTimestamp()
     //   .setTitle('CLYDE')
-    //   .setColor('#c30202')
+    //   .setColor(`${color}`)
     //   .setImage(`https://ctk-api.herokuapp.com/clyde/${clydeMessage}`)
 
     // message.lineReplyNoMention(embed)

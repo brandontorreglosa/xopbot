@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const errorChannel = process.env.errorChannel;
+const color = process.env.Color;
 module.exports = {
   name: 'kick',
   clientpermissions: ["KICK_MEMBERS", "SEND_MESSAGES", "EMBED_LINKS"],
@@ -13,7 +14,7 @@ module.exports = {
       if (!args[0]) {
         const nopr = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**\`(prefix)kick <@user> <reason>\`**`)
         return message.lineReplyNoMention(nopr)
@@ -22,7 +23,7 @@ module.exports = {
       if (!reason) {
         const norr = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Please Give A Reason To Kick That User!**`)
         return message.lineReplyNoMention(norr)
@@ -31,7 +32,7 @@ module.exports = {
       if (message.author.id === member.id) {
         const cantbanyourself = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Are You Alright? You Can Not Kick Yourself!**`)
         return message.lineReplyNoMention(cantbanyourself)
@@ -39,7 +40,7 @@ module.exports = {
       if (member.id === client.user.id) {
         const nobanbot = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Can't Just Kick Me Through Me, Thats Way Too Evil!**`)
         return message.lineReplyNoMention(nobanbot)
@@ -47,7 +48,7 @@ module.exports = {
       if (member.id === message.guild.owner.id) {
         const nobanowner = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Jerk, How Can You Kick Server Owner! 👿**`)
         return message.lineReplyNoMention(nobanowner)
@@ -56,7 +57,7 @@ module.exports = {
       if (!member) {
         const reps = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**I Searched Everywhere And Could Not Find \`${catcherban}\`!**`)
         return message.lineReplyNoMention(reps)
@@ -64,7 +65,7 @@ module.exports = {
 
       const rapdab = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`${catcherban}\` Is Not Currently Kickable!**`)
 
@@ -72,25 +73,25 @@ module.exports = {
         const memberTarger = message.guild.members.cache.get(member.id);
         const unsucer = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Could Not Send To \`${member.username}\` Reason Of Kick!**`)
 
         const funsucer = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Could Not Kick \`${member.username}\`!**`)
 
         const successful = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**Kicked Successfully \`${member.username}\` For \`${reason}\`!**`)
 
         const embed = new Discord.MessageEmbed()
           .setTimestamp()
-          .setColor('#c30202')
+          .setColor(`${color}`)
           .setTitle(`You Were Kicked From ${message.guild.name}`)
           .setDescription(`**Kicked By: ${message.author.username} \nReason: \`${reason}\`**`)
         memberTarger.send(embed).catch(() => message.lineReplyNoMention(unsucer))

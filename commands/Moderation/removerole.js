@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'removerole',
   cooldown: 5,
@@ -11,7 +12,7 @@ module.exports = {
     if (!target) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)removerole <@user> <@role>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -23,7 +24,7 @@ module.exports = {
     if (!rrole) {
       const norrspec = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**I Was Unable To Find The Role \`${fetchrole}\`!**`)
       return message.lineReplyNoMention(norrspec)
@@ -31,7 +32,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Removed: \`${rrole}\` From \`${target.username}\`!**`)
     await message.lineReplyNoMention(embed)

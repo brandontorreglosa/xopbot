@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "opinion",
     permissions: ["SEND_MESSAGES"],
@@ -14,7 +15,7 @@ module.exports = {
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)opinion <text>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -23,7 +24,7 @@ module.exports = {
         if (text.length > 45) {
             const maxlen = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**You Are Not Allowed To Go Over \`45\` Characters!**`)
             return message.lineReplyNoMention(maxlen)
@@ -32,7 +33,7 @@ module.exports = {
         // const embed = new Discord.MessageEmbed()
         //     .setTimestamp()
         //     .setTitle('OPINION')
-        //     .setColor('#c30202')
+        //     .setColor(`${color}`)
         //     .setImage(`https://api.popcat.xyz/opinion?image=${avatar}&text=${text}`)
 
         // message.lineReplyNoMention(embed)

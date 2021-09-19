@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "anime",
   permissions: ["SEND_MESSAGES"],
@@ -12,14 +13,14 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const load = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Loading...**`)
 
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)anime <series>\`**`)
       return message.lineReplyNoMention(nopr)
@@ -33,7 +34,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTimestamp()
         .setTitle(body.data[0].attributes.slug)
-        .setColor('#c30202')
+        .setColor(`${color}`)
         .setDescription(body.data[0].attributes.synopsis)
         .setThumbnail(body.data[0].attributes.posterImage.original)
         .addField("Ratings", body.data[0].attributes.averageRating)

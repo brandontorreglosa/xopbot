@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const quick = require('quick.db');
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: 'statusping',
   permissions: ["SEND_MESSAGES"],
@@ -12,7 +13,7 @@ module.exports = {
 
     const nopr = new Discord.MessageEmbed()
       .setTimestamp()
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**Loading...**`)
 
@@ -22,7 +23,7 @@ module.exports = {
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed()
       .setTitle('🏓 Pong!')
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setDescription(
         `
         Database ping data:
@@ -32,7 +33,7 @@ module.exports = {
         Message ping: \`${endMessagePing}ms\`
       `
       )
-      .setColor('#c30202')
+      .setColor(`${color}`)
       .setTimestamp();
 
     msg.edit({

@@ -1,7 +1,7 @@
 const errorChannel = process.env.errorChannel;
 const moment = require("moment");
 const lineReplyNoMention = require('discord-reply');
-
+const color = process.env.Color;
 module.exports = {
   name: 'serverinfo',
   aliases: ['si'],
@@ -32,7 +32,7 @@ module.exports = {
         .addField(`Misc. Info`, `Created On: \n\`${moment(message.guild.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\``)
         .setThumbnail(message.guild.iconURL())
         .setFooter(`ID: ${message.guild.id}`, message.guild.iconURL())
-        .setColor("#c30202")
+        .setColor(`${color}`)
         .setTimestamp();
 
       message.lineReplyNoMention(serverembed);

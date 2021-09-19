@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: "roleunlock",
     permissions: ["ADMINISTRATOR"],
@@ -11,7 +12,7 @@ module.exports = {
         if (!channel) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)roleunlock <#channel> <roleID>\`**`)
             return message.lineReplyNoMention(nopr)
@@ -22,13 +23,13 @@ module.exports = {
         if (!role) {
             const norrspec = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${fetcherofrr}\` Is Not A Valid Role ID!**`)
             return message.lineReplyNoMention(norrspec)
         }
         const embed = new MessageEmbed()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setTimestamp()
             .setTitle("Channel Unlocked!")
             .setDescription(`**This Channel Has Been Unlocked By ${message.author.tag} For This Role <@!${role}>**`)

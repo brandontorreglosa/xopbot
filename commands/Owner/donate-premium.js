@@ -1,5 +1,6 @@
 const premiumSchema = require("../../models/premium");
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
     name: 'donate-premium',
     cooldown: 3,
@@ -10,7 +11,7 @@ module.exports = {
         if (message.member.id != "600094534386319370") {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command! 😔**`)
             return message.lineReplyNoMention(nopr)
@@ -21,7 +22,7 @@ module.exports = {
         if (!member) {
             const nomemn = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setColor('#c30202')
+                .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`${notvalmem}\` Is Not A Valid User!**`)
             return message.lineReplyNoMention(nomemn)
@@ -29,7 +30,7 @@ module.exports = {
 
         const alpremium = new Discord.MessageEmbed()
             .setTimestamp()
-            .setColor('#c30202')
+            .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**\`${member.username}\` Already Has Premium Features!**`)
 
@@ -46,7 +47,7 @@ module.exports = {
                 }).save();
                 const success = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setColor('#c30202')
+                    .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**Added Successfully \`${member.username}\` To The Premium Database! 💲**`)
                 return message.lineReplyNoMention(success)
