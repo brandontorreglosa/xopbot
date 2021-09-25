@@ -269,7 +269,7 @@ module.exports = {
                 .setDescription("**You Little Pervert! 😊 This Is Not A NSFW Channel! 🔞**")
 
             if (!message.channel.nsfw) {
-                message.react('💢');
+                message.delete()
 
                 return message.lineReplyNoMention(nsfenochcembed)
                     .then(message => {
@@ -432,7 +432,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .addFields(
-                    { name: '__👷‍♂️ Owner (5)__', value: '\n[donate-premium](https://xopbot-gg.glitch.me/) \n__***Give Premium To User!***__\n[delete-premium](https://xopbot-gg.glitch.me/) \n__***Remove Premium From User!***__ \n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__ \n[remind](https://xopbot-gg.glitch.me/) \n__***Remind Me Something!***__' }
+                    { name: '__👷‍♂️ Owner (6)__', value: '\n[donate-premium](https://xopbot-gg.glitch.me/) \n__***Give Premium To User!***__\n[delete-premium](https://xopbot-gg.glitch.me/) \n__***Remove Premium From User!***__ \n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[leaveservers](https://xopbot-gg.glitch.me/) \n__***Make Bot Leave Servers!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__ \n[remind](https://xopbot-gg.glitch.me/) \n__***Remind Me Something!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 

@@ -23,7 +23,7 @@ module.exports = {
             }
             let data = [];
             client.guilds.cache.forEach(x => {
-                if (x.memberCount <= 10) {
+                if (x.memberCount <= 5) {
                     x.leave()
                     const embed = new Discord.MessageEmbed()
                         .setTimestamp()
