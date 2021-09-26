@@ -24,7 +24,30 @@ module.exports = {
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('✅ **| AutoMeme Started**')
-        message.lineReplyNoMention(on1).then((msg) => {
+
+        const stopvote = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**This Year Currently On Reddit: \nThere Has Been \`Dirty Users\` On \`SFW Subreddits\` And Spam \`NSFW Content\` \nIf U Dont Want NSFW Please Dont Execute This! \nDo U Still Agree To Continue?**`)
+        message.lineReplyNoMention(stopvote)
+
+        const filter = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
+        const options = { max: 1, time: 30000, errors: ['time'] };
+        const proceed = await message.channel.awaitMessages(filter, options)
+            .then(collected => ['y', 'yes'].includes(collected.first().content.toLowerCase()) ? true : false)
+            .catch(() => false);
+
+        if (!proceed) {
+            const nostopcmdplz = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Cancelled The Automeme Command Successfully!**`)
+            return message.lineReplyNoMention(nostopcmdplz)
+        };
+
+        await message.lineReplyNoMention(on1).then((msg) => {
             setTimeout(function () {
                 msg.edit(on2)
                 setTimeout(function () {
@@ -49,7 +72,7 @@ module.exports = {
                 embed.setImage(`${memeImage}`)
                 embed.setColor(`${color}`)
                 embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-                message.lineReplyNoMention(embed);
+                await message.lineReplyNoMention(embed);
             })
         }, 20000)
     }
