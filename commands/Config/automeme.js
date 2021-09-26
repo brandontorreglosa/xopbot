@@ -72,7 +72,7 @@ module.exports = {
                 embed.setImage(`${memeImage}`)
                 embed.setColor(`${color}`)
                 embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-                await message.lineReplyNoMention(embed);
+                message.lineReplyNoMention(embed);
             })
         }, 20000)
     }
