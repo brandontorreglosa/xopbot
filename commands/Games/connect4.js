@@ -33,7 +33,7 @@ module.exports = {
             drawMessage: '**The Game Ended With A Draw!**',
             askerMessage: '**Hey {opponent}, {challenger} Challenged You For A Game Of Connect 4!**',
             cancelMessage: '**Looks Like They Didn\`t Want To Play!**',
-            timerEndMessage: '**Since The Opponent Didnt Answer, I Ended The Game!**',
+            timerEndMessage: '**Since The Opponent Didnt Answer I Ended The Game!**',
         }).startGame();
     },
 };

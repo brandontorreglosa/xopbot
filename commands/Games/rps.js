@@ -35,7 +35,7 @@ module.exports = {
             noChangeMessage: '**You Cannot Change Your Button Selection!**',
             askerMessage: '**Hey {opponent}, {challenger} Challenged You For A Game Of Rock Paper Scissors!**',
             cancelMessage: '**Looks Like They Didn\`t Want To Play!**',
-            timerEndMessage: '**Since The Opponent Didnt Answer, I Ended The Game!**',
+            timerEndMessage: '**Since The Opponent Didnt Answer I Ended The Game!**',
             drawMessage: '**The Game Ended With a Draw!**',
             winMessage: '**{winner} Won The Game!**',
             gameEndMessage: '**The Game Was Unfinished!**',
