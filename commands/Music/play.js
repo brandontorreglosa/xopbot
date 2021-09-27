@@ -65,6 +65,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Stop All Music From Playing. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(stopvote)
 
                 const filter = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
@@ -121,6 +122,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Skip To The Next Song. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(skipvote)
 
                 const filter1 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
@@ -181,6 +183,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Pause The Song From Playing. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(pausevote)
 
                 const filter2 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
@@ -237,6 +240,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Resume The Music To Play. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(unpausevote)
 
                 const filter3 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
@@ -301,6 +305,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Loop The (Song)(Queue) To That Mode. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(loopvote)
 
                 const filter4 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
@@ -350,6 +355,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Make XOPBOT Leave The Voice Channel. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(leavevote)
 
                 const filter5 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
@@ -541,6 +547,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**This Will Make XOPBOT Join The Voice Channel. Continue?**`)
+                    .setFooter('Please Reply With Yes Or No!')
                 message.lineReplyNoMention(joinvote)
 
                 const filter6 = _message => message.author.id === _message.author.id && ['y', 'n', 'yes', 'no'].includes(_message.content.toLowerCase());
