@@ -60,6 +60,9 @@ module.exports = {
             });
         } catch (err) {
             return message.lineReplyNoMention({ content: '**Cannot Delete Message Old Than 14 Days!**' })
+            .then(message => {
+                setTimeout(() => message.delete(), 6000);
+            })
         }
 
     }
