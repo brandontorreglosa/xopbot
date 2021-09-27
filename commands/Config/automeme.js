@@ -13,7 +13,7 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('🔄 **| AutoMeme Starting... (`Please wait 20s`)**')
+            .setDescription('🔄 **| AutoMeme Starting... (`Please Wait 20s`)**')
         const on2 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)

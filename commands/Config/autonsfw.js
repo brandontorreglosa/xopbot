@@ -15,7 +15,7 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please wait 20s`)**')
+            .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please Wait 20s`)**')
         const on2 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
@@ -36,7 +36,7 @@ module.exports = {
             }, 10000)
         })
         setInterval(() => {
-            got('https://reddit.com/r/rule34/random.json').then(response => {
+            got('https://reddit.com/r/porn/random.json').then(response => {
                 let content = JSON.parse(response.body);
                 let permalink = content[0].data.children[0].data.permalink;
                 let memeUrl = `https://reddit.com${permalink}`;
