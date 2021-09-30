@@ -519,7 +519,7 @@ module.exports = {
             try {
                 const queueembed = new Discord.MessageEmbed()
                     .setTimestamp()
-                    .setThumbnail('https://cdn.discordapp.com/attachments/824319314495537175/888652527770431498/XOPBOT_Playlist.png')
+                    .setThumbnail('https://cdn.discordapp.com/attachments/824319314495537175/893023202169749504/XOPBOT_Playlist.png')
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}. [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`).slice(0, 10).join("\n"))

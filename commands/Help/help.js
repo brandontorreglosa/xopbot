@@ -90,7 +90,7 @@ module.exports = {
                 .setAuthor(`XOPBOT Commands`, client.user.displayAvatarURL({ dynamic: true }))
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
-                .setImage('https://cdn.discordapp.com/attachments/824319314495537175/888487952949342248/standard_2.gif') //my banner for my bot 
+                .setImage('https://cdn.discordapp.com/attachments/824319314495537175/893021829181083668/standard_2.gif') //my banner for my bot 
                 //.setTitle('XOPBOT Commands')
                 .setColor(`${color}`)
                 .addFields(
