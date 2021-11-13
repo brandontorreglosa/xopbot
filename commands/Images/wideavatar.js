@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     description: "Get a  widened avatar of a user",
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.users.first() || message.member;
+        const user = message.mentions.users.first() ||  message.author;
         const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
 
         // const embed = new Discord.MessageEmbed()

@@ -9,7 +9,7 @@ module.exports = {
   description: "Image Manipulation Command",
   async execute(client, message, cmd, args, Discord) {
 
-    const user = message.mentions.users.first() || message.member;
+    const user = message.mentions.users.first() ||  message.author;
     const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
 
 

@@ -40,7 +40,7 @@ module.exports = {
             '8============================D'
         ];
 
-        const user = message.mentions.users.first() || message.member;
+        const user = message.mentions.users.first() ||  message.author;
 
         if (!user)
             return message.lineReplyNoMention({ content: `**Mention Someone Or Provide Their User ID To Get Their PP Size!**` }) //, allowedMentions: { repliedUser: true } })
