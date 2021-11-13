@@ -186,7 +186,7 @@ module.exports = {
                     },
                     {
                         name: '__📢 XMAS__',
-                        value: '```bash " Merry Christmas Everyone! " ```'
+                        value: '```" Merry Christmas Everyone! " ```'
                     }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
