@@ -183,9 +183,9 @@ module.exports = {
                         name: '__🤖 Credits__',
                         value: '`x!credits`',
                         inline: true
-                    }
+                    },
                     {
-                        name: '__📢 XMAS__'
+                        name: '__📢 XMAS__',
                         value: '```bash \n" Merry Christmas Everyone! " \n ```'
                     }
                 )
