@@ -184,7 +184,10 @@ module.exports = {
                         value: '`x!credits`',
                         inline: true
                     }
-
+                    {
+                        name: '__📢 XMAS__'
+                        value: '```bash \n" Merry Christmas Everyone! " \n ```'
+                    }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
