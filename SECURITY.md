@@ -7,9 +7,9 @@ This Are The Current Versions Help Is Supported
 
 | Version  | Supported          |
 | ------   | ------------------ |
-| 60.5.0   | :white_check_mark: |
-| 60.1.0   | :white_check_mark: |
 | 60.0.0   | :white_check_mark: |
+| 59.1.0   | :white_check_mark: |
+| 59.0.0   | :white_check_mark: |
 | 50.0.0   | :white_check_mark: |
 | 48.0.0   | :x:                |
 | 46.0.0   | :x:                |

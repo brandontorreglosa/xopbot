@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const Color = process.env.Color;
 module.exports = {
   name: "balance",
   permissions: ["SEND_MESSAGES"],
@@ -16,7 +17,7 @@ module.exports = {
     const newEmbed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
-      .setColor('#34b7db')
+      .setColor(`${Color}`)
       .setDescription(`**💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins** \n**🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins** \n**💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**`)
     message.lineReplyNoMention(newEmbed)
   },

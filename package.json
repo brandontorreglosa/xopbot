@@ -1,6 +1,6 @@
 {
   "name": "discordbot",
-  "version": "v60.5.0",
+  "version": "v60.0.0",
   "description": "XOPBOT Is A Multipurpose Bot With Over 200+ Commands That Make You Love The Bot!",
   "main": "index.js",
   "scripts": {
