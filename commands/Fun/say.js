@@ -32,6 +32,15 @@ module.exports = {
                 message.lineReplyNoMention(embed1)
             }
 
+            if (message.content.match("Im") || message.content.match("I'm") || message.content.match("im") || message.content.match("i'm")) {
+                const yourembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**OK! Your ${yourmsg}**`)
+                message.lineReplyNoMention(yourembed)
+            }
+            const yourmsg = args[1];
             let sayMessage = args.slice(0).join(' ');
             if (sayMessage.length > 100) {
                 const maxlen = new Discord.MessageEmbed()
