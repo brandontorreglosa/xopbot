@@ -22,6 +22,8 @@ module.exports = {
                 return message.lineReplyNoMention(nopr)
             }
 
+            const yourmsg = args[1];
+
             if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt") || message.content.match("@")) {
                 message.delete();
                 const embed1 = new Discord.MessageEmbed()
@@ -40,7 +42,7 @@ module.exports = {
                     .setDescription(`**OK! Your ${yourmsg}**`)
                 message.lineReplyNoMention(yourembed)
             }
-            const yourmsg = args[1];
+
             let sayMessage = args.slice(0).join(' ');
             if (sayMessage.length > 100) {
                 const maxlen = new Discord.MessageEmbed()
