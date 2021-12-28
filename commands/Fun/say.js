@@ -43,15 +43,7 @@ module.exports = {
                 return message.lineReplyNoMention(maxlen)
             }
 
-            const embed = new Discord.MessageEmbed()
-                .setTimestamp()
-                .setColor(`${color}`)
-                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**${sayMessage}**`)
-            message.lineReplyNoMention(embed);
-
             if (message.content.match("Im") || message.content.match("I'm") || message.content.match("im") || message.content.match("i'm")) {
-                message.delete();
                 const yourembed = new Discord.MessageEmbed()
                     .setTimestamp()
                     .setColor(`${color}`)
@@ -59,6 +51,13 @@ module.exports = {
                     .setDescription(`**OK! Your ${yourmsg}**`)
                 message.lineReplyNoMention(yourembed)
             }
+
+            const embed = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**${sayMessage}**`)
+            message.lineReplyNoMention(embed);
 
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
