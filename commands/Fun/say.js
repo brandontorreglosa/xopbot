@@ -33,7 +33,7 @@ module.exports = {
             }
 
             let sayMessage = args.slice(0).join(' ');
-            let yourmsg = args[1];
+            let yourmsg = args.slice(1).join(' ');
             if (sayMessage.length > 100) {
                 const maxlen = new Discord.MessageEmbed()
                     .setTimestamp()
