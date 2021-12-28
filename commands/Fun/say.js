@@ -22,8 +22,6 @@ module.exports = {
                 return message.lineReplyNoMention(nopr)
             }
 
-            const yourmsg = args[1];
-
             if (message.content.match("gore") || message.content.match("boob") || message.content.match("tits") || message.content.match("fuck") || message.content.match("shit") || message.content.match("nigga") || message.content.match("hoe") || message.content.match("bitch") || message.content.match("dick") || message.content.match("gay") || message.content.match("lesbian") || message.content.match("blowjob") || message.content.match("porn") || message.content.match("cunt") || message.content.match("@")) {
                 message.delete();
                 const embed1 = new Discord.MessageEmbed()
@@ -34,16 +32,8 @@ module.exports = {
                 message.lineReplyNoMention(embed1)
             }
 
-            if (message.content.match("Im") || message.content.match("I'm") || message.content.match("im") || message.content.match("i'm")) {
-                const yourembed = new Discord.MessageEmbed()
-                    .setTimestamp()
-                    .setColor(`${color}`)
-                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**OK! Your ${yourmsg}**`)
-                message.lineReplyNoMention(yourembed)
-            }
-
             let sayMessage = args.slice(0).join(' ');
+            let yourmsg = args[1];
             if (sayMessage.length > 100) {
                 const maxlen = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -59,6 +49,16 @@ module.exports = {
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**${sayMessage}**`)
             message.lineReplyNoMention(embed);
+
+            if (message.content.match("Im") || message.content.match("I'm") || message.content.match("im") || message.content.match("i'm")) {
+                message.delete();
+                const yourembed = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**OK! Your ${yourmsg}**`)
+                message.lineReplyNoMention(yourembed)
+            }
 
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
