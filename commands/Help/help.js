@@ -185,8 +185,8 @@ module.exports = {
                         inline: true
                     },
                     {
-                        name: '__📢 XMAS__',
-                        value: '```Merry Christmas Everyone! Use x!xmas For A Chance To Get 10M Xocoins```'
+                        name: '__📢 Announcment__',
+                        value: '```Website Domain Changed! New Domain Is https://xopbot.glitch.me/```'
                     }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())

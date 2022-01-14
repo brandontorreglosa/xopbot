@@ -15,7 +15,7 @@ module.exports = {
             //.setTitle('__🎮 Games__')
             .setColor(`${color}`)
             .addFields(
-                { name: '__⚠ Config (9)__', value: '\n[antiwords](https://xopbot-gg.glitch.me/) \n__***Setup A Antiword!***__ \n[antilink](https://xopbot-gg.glitch.me/) \n__***Setup A Antilink!***__ \n[autonsfw](https://xopbot-gg.glitch.me/) \n__***Setup Autonsfw!***__ \n[automeme](https://xopbot-gg.glitch.me/) \n__***Setup Automeme!***__ \n[joinchannel](https://xopbot-gg.glitch.me/) \n__***Setup A Join Channel!***__' }
+                { name: '__⚠ Config (9)__', value: '\n[antiwords](https://xopbot.glitch.me/) \n__***Setup A Antiword!***__ \n[antilink](https://xopbot.glitch.me/) \n__***Setup A Antilink!***__ \n[autonsfw](https://xopbot.glitch.me/) \n__***Setup Autonsfw!***__ \n[automeme](https://xopbot.glitch.me/) \n__***Setup Automeme!***__ \n[joinchannel](https://xopbot.glitch.me/) \n__***Setup A Join Channel!***__' }
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -25,7 +25,7 @@ module.exports = {
             //.setTitle('__🎮 Games__')
             .setColor(`${color}`)
             .addFields(
-                { name: '__⚠ Config (9)__', value: '\n[leavechannel](https://xopbot-gg.glitch.me/) \n__***Setup A Leave Channel!***__ \n\[joinmessage](https://xopbot-gg.glitch.me/) \n__***Setup A Join Message!***__ \n\[leavemessage](https://xopbot-gg.glitch.me/) \n__***Setup A Leave Message!***__ \n[setprefix](https://xopbot-gg.glitch.me/) \n__***Set A Custom Prefix!***__' }
+                { name: '__⚠ Config (9)__', value: '\n[leavechannel](https://xopbot.glitch.me/) \n__***Setup A Leave Channel!***__ \n\[joinmessage](https://xopbot.glitch.me/) \n__***Setup A Join Message!***__ \n\[leavemessage](https://xopbot.glitch.me/) \n__***Setup A Leave Message!***__ \n[setprefix](https://xopbot.glitch.me/) \n__***Set A Custom Prefix!***__' }
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 

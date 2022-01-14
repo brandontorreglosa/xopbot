@@ -10,7 +10,7 @@ module.exports = {
 
         const button = new MessageButton()
             .setStyle('url')
-            .setURL('https://xopbot-gg.glitch.me/')
+            .setURL('https://xopbot.glitch.me/')
             .setLabel('Website')
             .setEmoji(`💻`)
 
@@ -19,7 +19,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__📈 Status__')
             .setColor(`${color}`)
-            .setDescription('**__📈 Status (6)__** \n[mcserver](https://xopbot-gg.glitch.me/) \n__***Get MCSERVERS Stats!***__  \n[statusping](https://xopbot-gg.glitch.me/) \n__***Get A Status Ping!***__ \n[serverinfo](https://xopbot-gg.glitch.me/) \n__***Get Server Info!***__ \n[botinfo](https://xopbot-gg.glitch.me/) \n__***Get Bot Info!***__ \n[covid](https://xopbot-gg.glitch.me/) \n__***Get Covid Info!***__ \n[userinfo](https://xopbot-gg.glitch.me/) \n__***Get User Info!***__')
+            .setDescription('**__📈 Status (6)__** \n[mcserver](https://xopbot.glitch.me/) \n__***Get MCSERVERS Stats!***__  \n[statusping](https://xopbot.glitch.me/) \n__***Get A Status Ping!***__ \n[serverinfo](https://xopbot.glitch.me/) \n__***Get Server Info!***__ \n[botinfo](https://xopbot.glitch.me/) \n__***Get Bot Info!***__ \n[covid](https://xopbot.glitch.me/) \n__***Get Covid Info!***__ \n[userinfo](https://xopbot.glitch.me/) \n__***Get User Info!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         await message.channel.send(embed5, button)

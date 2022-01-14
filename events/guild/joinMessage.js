@@ -16,7 +16,7 @@ module.exports = (Discord, client) => {
 
         const button11 = new MessageButton()
             .setStyle('url')
-            .setURL('https://xopbot-gg.glitch.me/')
+            .setURL('https://xopbot.glitch.me/')
             .setLabel('Website')
             .setEmoji(`💻`)
 

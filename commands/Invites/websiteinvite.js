@@ -13,10 +13,10 @@ module.exports = {
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setColor(`${color}`)
             .setTitle('Bot Website Invite')
-            .setURL('https://xopbot-gg.glitch.me/')
+            .setURL('https://xopbot.glitch.me/')
             .setDescription('**This Is The Bot Website Invite Link**')
             .addFields(
-                { name: 'Bot Website Invite Link', value: '[Bot Website](https://xopbot-gg.glitch.me/)' }
+                { name: 'Bot Website Invite Link', value: '[Bot Website](https://xopbot.glitch.me/)' }
 
             )
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
