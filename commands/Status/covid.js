@@ -30,48 +30,7 @@ module.exports = {
             .setTitle(args[0] ? `${args[0].toUpperCase()} Stats` : 'Total Corona Cases World Wide')
             .setColor(`${color}`)
             .setThumbnail(args[0] ? corona.countryInfo.flag : 'https://i.giphy.com/YPbrUhP9Ryhgi2psz3.gif')
-            .addFields(
-                {
-                    name: '🔍 Total Cases:',
-                    value: corona.cases.toLocaleString(),
-                    inline: true
-                },
-                {
-                    name: '😵 Total Deaths:',
-                    value: corona.deaths.toLocaleString(),
-                    inline: true
-                },
-                {
-                    name: '😇 Total Recovered:',
-                    value: corona.recovered.toLocaleString(),
-                    inline: true
-                },
-                {
-                    name: '🦠 Active Cases:',
-                    value: corona.active.toLocaleString(),
-                    inline: true
-                },
-                {
-                    name: '\u200b',
-                    value: '\u200b',
-                    inline: true
-                },
-                {
-                    name: '🤧 Critical Cases:',
-                    value: corona.critical.toLocaleString(),
-                    inline: true
-                },
-                {
-                    name: '🙌 Today Recoveries:',
-                    value: corona.todayRecovered.toLocaleString().replace("-", ""),
-                    inline: true
-                },
-                {
-                    name: '☠️ Todays Deaths:',
-                    value: corona.todayDeaths.toLocaleString(),
-                    inline: true
-                })
-
+            .setDescription(`**🔍 Total Cases:** \n \`${corona.cases.toLocaleString()}\` \n**😵 Total Deaths:** \n \`${corona.deaths.toLocaleString()}\` \n**😇 Total Recovered:** \n \`${corona.recovered.toLocaleString()}\` \n**🦠 Active Cases:** \n \`${corona.active.toLocaleString()}\` \n**🤧 Critical Cases:** \n \`${corona.critical.toLocaleString()}\` \n**🙌 Today's Recoveries:** \n \`${corona.todayRecovered.toLocaleString()}\` \n**☠️ Today's Deaths:** \n \`${corona.todayDeaths.toLocaleString()}\` `)
         await message.lineReplyNoMention(embed)
     }
 };
