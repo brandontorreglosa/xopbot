@@ -13,16 +13,16 @@ module.exports = {
         let status;
         switch (client.presence.status) {
             case "online":
-                status = "🟢 Online";
+                status = "😃 Online";
                 break;
             case "dnd":
-                status = "🔴 Dnd";
+                status = "👿 Do Not Disturb";
                 break;
             case "idle":
-                status = "🟡 Idle";
+                status = "😒 Idle";
                 break;
             case "offline":
-                status = "⚫ Offline";
+                status = "😴 Offline";
                 break;
         }
 

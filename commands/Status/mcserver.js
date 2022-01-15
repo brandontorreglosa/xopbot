@@ -33,10 +33,10 @@ module.exports = {
                 .setTitle('**MC Server Status**')
                 .setURL('https://minecraftservers.org/')
                 .addFields(
-                    { name: 'Server IP', value: response.host },
-                    { name: 'Online Players', value: response.onlinePlayers },
-                    { name: 'Max Players', value: response.maxPlayers },
-                    { name: 'Version', value: response.version }
+                    { name: '🌐 Server IP', value: response.host },
+                    { name: '👥 Online Players', value: response.onlinePlayers },
+                    { name: '👨‍👩‍👦‍👦 Max Players', value: response.maxPlayers },
+                    { name: '🔢 Version', value: response.version }
                 )
                 .setFooter('MC Server By Bot Developer Team');
 

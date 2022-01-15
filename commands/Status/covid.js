@@ -32,22 +32,22 @@ module.exports = {
             .setThumbnail(args[0] ? corona.countryInfo.flag : 'https://i.giphy.com/YPbrUhP9Ryhgi2psz3.gif')
             .addFields(
                 {
-                    name: 'Total Cases:',
+                    name: '🔍 Total Cases:',
                     value: corona.cases.toLocaleString(),
                     inline: true
                 },
                 {
-                    name: 'Total Deaths:',
+                    name: '😵 Total Deaths:',
                     value: corona.deaths.toLocaleString(),
                     inline: true
                 },
                 {
-                    name: 'Total Recovered:',
+                    name: '😇 Total Recovered:',
                     value: corona.recovered.toLocaleString(),
                     inline: true
                 },
                 {
-                    name: 'Active Cases:',
+                    name: '🦠 Active Cases:',
                     value: corona.active.toLocaleString(),
                     inline: true
                 },
@@ -57,17 +57,17 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: 'Critical Cases:',
+                    name: '🤧 Critical Cases:',
                     value: corona.critical.toLocaleString(),
                     inline: true
                 },
                 {
-                    name: 'Today Recoveries:',
+                    name: '🙌 Today Recoveries:',
                     value: corona.todayRecovered.toLocaleString().replace("-", ""),
                     inline: true
                 },
                 {
-                    name: 'Todays Deaths:',
+                    name: '☠️ Todays Deaths:',
                     value: corona.todayDeaths.toLocaleString(),
                     inline: true
                 })

@@ -26,11 +26,11 @@ module.exports = {
       .setColor(`${color}`)
       .setDescription(
         `
-        Database ping data:
-        Fetches ping: \`${ping.endGet}ms\`
-        Wrights ping: \`${ping.endWright}ms\`
-        Average ping: \`${ping.avarage}ms\`
-        Message ping: \`${endMessagePing}ms\`
+        🌐 Database Ping Data:
+        🎣 Fetches Ping: \`${ping.endGet}ms\`
+        📝 Wrights Ping: \`${ping.endWright}ms\`
+        😕 Average Ping: \`${ping.avarage}ms\`
+        💬 Message Ping: \`${endMessagePing}ms\`
       `
       )
       .setColor(`${color}`)
