@@ -67,7 +67,7 @@ module.exports = {
 
             const button = new MessageButton()
                 .setStyle('url')
-                .setURL('https://xopbot-gg.glitch.me/')
+                .setURL('https://xopbot.glitch.me/')
                 .setLabel(`Website`)
                 .setEmoji(`💻`)
 
@@ -79,7 +79,7 @@ module.exports = {
 
             const button3 = new MessageButton()
                 .setStyle('url')
-                .setURL('https://xopbot-gg.glitch.me/#donations')
+                .setURL('https://xopbot.glitch.me/#donations')
                 .setLabel(`Donate`)
                 .setEmoji(`💰`)
 
