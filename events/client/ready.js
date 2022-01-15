@@ -14,5 +14,5 @@ module.exports = (Discord, client) => {
     ];
 
     let i = 0;
-    setInterval(() => client.user.setActivity(`x!help | ${activities[i++ % activities.length]}`, { type: 'LISTENING' }), 10000);
+    setInterval(() => client.user.setActivity(`x!help | ${activities[i++ % activities.length]}`, { type: 'PLAYING' }), 10000);
 }
