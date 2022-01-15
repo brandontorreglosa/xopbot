@@ -8,7 +8,7 @@ module.exports = {
     aliases: ['usi', 'ui'],
     cooldown: 3,
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.member;
+        const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
 
         let status;
         switch (user.presence.status) {
@@ -30,7 +30,7 @@ module.exports = {
             .setTimestamp()
             .setAuthor(`${user.user.username}\`s User Information`, user.user.displayAvatarURL({ dynamic: true }))
             .setColor(`${color}`)
-            .setDescription(`**ID:** \`${user.id}\` \n**Name:** \`${user.user.username}\` \n**Discriminator:** \`#${user.user.discriminator}\` \n**User Status:** \`${status}\` \n**User Roles:** ${user.roles.cache.map(role => role.toString()).join(" ,")} \n**Joined Date:** \`${moment(user.joinedAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` \n**Creation Date:** \`${moment(user.user.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` `)
+            .setDescription(`**ID:** \`${user.id}\` \n**Name:** \`${user.username}\` \n**Discriminator:** \`#${user.discriminator}\` \n**User Status:** \`${status}\` \n**User Roles:** ${user.roles.cache.map(role => role.toString()).join(" ,")} \n**Joined Date:** \`${moment(user.joinedAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` \n**Creation Date:** \`${moment(user.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` `)
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
         await message.lineReplyNoMention(embed)
     }
