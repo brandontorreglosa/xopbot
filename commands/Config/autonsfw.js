@@ -1,6 +1,7 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+var superagent = require('superagent');
 module.exports = {
     name: "autonsfw",
     cooldown: 300,
@@ -59,20 +60,14 @@ module.exports = {
             }, 10000)
         })
         setInterval(() => {
-            got('https://www.reddit.com/r/bdsm/random.json').then(response => {
-                let content = JSON.parse(response.body);
-                let permalink = content[0].data.children[0].data.permalink;
-                let memeUrl = `https://reddit.com${permalink}`;
-                let memeImage = content[0].data.children[0].data.url;
-                let memeUpvotes = content[0].data.children[0].data.ups;
-                let memeNumComments = content[0].data.children[0].data.num_comments;
+            superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
                 const embed = new Discord.MessageEmbed()
                 embed.setTimestamp()
                 embed.setTitle(`AUTONSFW By XOPBOT`)
-                embed.setURL(`${memeUrl}`)
-                embed.setImage(`${memeImage}`)
+                embed.setURL(response.body.image)
+                embed.setImage(response.body.image)
                 embed.setColor(`${color}`)
-                embed.setFooter(`AUTONSFW IS POG | 👍${memeUpvotes} 💬 ${memeNumComments}`)
+                embed.setFooter(`AUTONSFW IS POG`)
                 message.lineReplyNoMention(embed);
             })
         }, 20000)
