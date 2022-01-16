@@ -1,7 +1,6 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-var superagent = require('superagent');
 module.exports = {
     name: "autonsfw",
     cooldown: 300,
@@ -60,14 +59,23 @@ module.exports = {
             }, 10000)
         })
         setInterval(() => {
-            superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
-                const embed01 = new Discord.MessageEmbed()
-                .setTimestamp()
-                .setTitle(`[AUTONSFW By XOPBOT](${response.body.message})`)
-                .setImage(response.body.message)
-                .setColor(`${color}`)
-                .setFooter(`AUTONSFW IS POG`)
-                message.lineReplyNoMention(embed01);
+            got('https://www.reddit.com/r/bdsm/random.json').then(response => {
+                let content = JSON.parse(response.body);
+                let permalink = content[0].data.children[0].data.permalink;
+                let memeUrl = `https://reddit.com${permalink}`;
+                let memeImage = content[0].data.children[0].data.url;
+                let memeTitle = content[0].data.children[0].data.title;
+                let memeUpvotes = content[0].data.children[0].data.ups;
+                let memeDownvotes = content[0].data.children[0].data.downs;
+                let memeNumComments = content[0].data.children[0].data.num_comments;
+                const embed = new Discord.MessageEmbed()
+                embed.setTimestamp()
+                embed.setTitle(`${memeTitle}`)
+                embed.setURL(`${memeUrl}`)
+                embed.setImage(`${memeImage}`)
+                embed.setColor(`${color}`)
+                embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+                message.lineReplyNoMention(embed);
             })
         }, 20000)
     }
