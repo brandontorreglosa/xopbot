@@ -61,14 +61,13 @@ module.exports = {
         })
         setInterval(() => {
             superagent.get('https://nekobot.xyz/api/image').query({ type: '4k' }).end((err, response) => {
-                const embed = new Discord.MessageEmbed()
-                embed.setTimestamp()
-                embed.setTitle(`AUTONSFW By XOPBOT`)
-                embed.setURL(response.body.message)
-                embed.setImage(response.body.message)
-                embed.setColor(`${color}`)
-                embed.setFooter(`AUTONSFW IS POG`)
-                message.lineReplyNoMention(embed);
+                const embed01 = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setTitle(`[AUTONSFW By XOPBOT](${response.body.message})`)
+                .setImage(response.body.message)
+                .setColor(`${color}`)
+                .setFooter(`AUTONSFW IS POG`)
+                message.lineReplyNoMention(embed01);
             })
         }, 20000)
     }
