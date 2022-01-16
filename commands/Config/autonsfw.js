@@ -64,8 +64,8 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                 embed.setTimestamp()
                 embed.setTitle(`AUTONSFW By XOPBOT`)
-                embed.setURL(response.body.image)
-                embed.setImage(response.body.image)
+                embed.setURL(response.body.message)
+                embed.setImage(response.body.message)
                 embed.setColor(`${color}`)
                 embed.setFooter(`AUTONSFW IS POG`)
                 message.lineReplyNoMention(embed);
