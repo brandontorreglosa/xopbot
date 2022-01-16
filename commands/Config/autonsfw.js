@@ -1,6 +1,7 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const discord = require("discord.js");
 module.exports = {
     name: "autonsfw",
     cooldown: 300,
