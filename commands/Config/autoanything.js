@@ -18,7 +18,7 @@ module.exports = {
                 .setDescription('**`(prefix)antoanything <subreddit>`**')
             return message.lineReplyNoMention(nospec)
         }
-        const autoa = args.slice(1).join(' ');
+        let autoa = args.slice(0).join(' ');
         const on1 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
