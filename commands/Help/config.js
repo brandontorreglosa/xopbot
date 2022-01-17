@@ -15,7 +15,7 @@ module.exports = {
             //.setTitle('__🎮 Games__')
             .setColor(`${color}`)
             .addFields(
-                { name: '__⚠ Config (9)__', value: '\n[antiwords](https://xopbot.glitch.me/) \n__***Setup A Antiword!***__ \n[antilink](https://xopbot.glitch.me/) \n__***Setup A Antilink!***__ \n[autonsfw](https://xopbot.glitch.me/) \n__***Setup Autonsfw!***__ \n[automeme](https://xopbot.glitch.me/) \n__***Setup Automeme!***__ \n[joinchannel](https://xopbot.glitch.me/) \n__***Setup A Join Channel!***__' }
+                { name: '__⚠ Config (9)__', value: '\n[antiwords](https://xopbot.glitch.me/) \n__***Setup A Antiword!***__ \n[antilink](https://xopbot.glitch.me/) \n__***Setup A Antilink!***__ \n[autoany](https://xopbot.glitch.me/) \n__***Catch Any Subreddit!***__ \n[automeme](https://xopbot.glitch.me/) \n__***Setup Automeme!***__ \n[joinchannel](https://xopbot.glitch.me/) \n__***Setup A Join Channel!***__' }
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
