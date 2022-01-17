@@ -73,18 +73,24 @@ module.exports = {
 
             const button2 = new MessageButton()
                 .setStyle('url')
-                .setURL('https://github.com/HACKERPROTM')
-                .setLabel(`Github`)
-                .setEmoji(`🌐`)
-
-            const button3 = new MessageButton()
-                .setStyle('url')
                 .setURL('https://xopbot.glitch.me/#donations')
                 .setLabel(`Donate`)
                 .setEmoji(`💰`)
 
+            const button3 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot.glitch.me/services/api/home')
+                .setLabel(`API`)
+                .setEmoji(`🌐`)
+
+            const button19 = new MessageButton()
+                .setStyle('url')
+                .setURL('https://xopbot.glitch.me/policy/privacy')
+                .setLabel('PTOS')
+                .setEmoji('🕵️‍♂️')
+
             const row = new MessageActionRow()
-                .addComponents(button, button2, button3);
+                .addComponents(button, button2, button3, button19);
 
             const embed = new Discord.MessageEmbed()
                 .setAuthor(`XOPBOT Commands`, client.user.displayAvatarURL({ dynamic: true }))
