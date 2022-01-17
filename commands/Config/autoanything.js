@@ -1,38 +1,45 @@
 const got = require('got');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const discord = require("discord.js");
 module.exports = {
-    name: "autonsfw",
+    name: "autoanything",
     cooldown: 300,
-    nsfw: true,
     permissions: ["ADMINISTRATOR"],
+    aliases: ['autoany', 'autoathing'],
     clientpermissions: ["MANAGE_MESSAGES", "SEND_MESSAGES", "EMBED_LINKS"],
     category: "Image",
-    description: "Sends a random nsfw image from reddit",
+    description: "Sends a random meme from reddit",
     async execute(client, message, cmd, args, Discord) {
-        if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
+        if (!args[0]) {
+            const nospec = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription('**`(prefix)antoanything <subreddit>`**')
+            return message.lineReplyNoMention(nospec)
+        }
+        const autoa = args[1];
         const on1 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please Wait 20s`)**')
+            .setDescription('🔃 **| AutoAnything Starting... (`Please Wait 20s`)**')
         const on2 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('🔄🔞 **| AutoNSFW Starting... (`Please Wait 10s`)**')
+            .setDescription('🔃 **| AutoAnything Starting... (`Please Wait 10s`)**')
         const on3 = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('✅🔞 **| AutoNSFW Started**')
+            .setDescription('✅ **| AutoAnything Started**')
 
         const stopvote = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**By Executing This Command You Agree Your Over \`18+\`! Continue?**`)
+            .setDescription(`**Do You Accept The Terms: \n1) No \`NSFW\` Is Allowed. \n2) No \`Racist\` Subreddits. \n3) No Subreddit Against Our [PTOS](https://xopbot.glitch.me/policy/privacy). \n4) No \`Sexist\` Or \`Insulting\` Subreddit. \n5) Have Fun Using It! \nDo You Agree To Continue?**`)
             .setFooter('Please Reply With Yes Or No!')
         message.lineReplyNoMention(stopvote)
 
@@ -47,7 +54,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**You Cancelled The Autonsfw Command Successfully!**`)
+                .setDescription(`**You Cancelled The Automeme Command Successfully!**`)
             return message.lineReplyNoMention(nostopcmdplz)
         };
 
@@ -60,17 +67,23 @@ module.exports = {
             }, 10000)
         })
         setInterval(() => {
-            got('https://www.reddit.com/r/bdsm/random.json').then(response => {
+            got(`https://www.reddit.com/r/${autoa}/random.json`).then(response => {
                 let content = JSON.parse(response.body);
-                var title = content[0].data.children[0].data.title;
-                var amazeme = content[0].data.children[0].data.url;
-                let wow = new discord.MessageEmbed()
-                    .setTimestamp()
-                    .setDescription(`:underage: **BDSM**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
-                    .setImage(amazeme)
-                    .setFooter(`I Love Tying Hoes! :)`)
-                    .setColor(`${color}`)
-                message.lineReplyNoMention(wow)
+                let permalink = content[0].data.children[0].data.permalink;
+                let memeUrl = `https://reddit.com${permalink}`;
+                let memeImage = content[0].data.children[0].data.url;
+                let memeTitle = content[0].data.children[0].data.title;
+                let memeUpvotes = content[0].data.children[0].data.ups;
+                let memeDownvotes = content[0].data.children[0].data.downs;
+                let memeNumComments = content[0].data.children[0].data.num_comments;
+                const embed = new Discord.MessageEmbed()
+                embed.setTimestamp()
+                embed.setTitle(`${memeTitle}`)
+                embed.setURL(`${memeUrl}`)
+                embed.setImage(`${memeImage}`)
+                embed.setColor(`${color}`)
+                embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+                message.lineReplyNoMention(embed);
             })
         }, 20000)
     }
