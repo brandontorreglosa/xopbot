@@ -68,13 +68,13 @@ module.exports = {
             const button = new MessageButton()
                 .setStyle('url')
                 .setURL('https://xopbot.glitch.me/')
-                .setLabel(`Website`)
+                .setLabel(`Site`)
                 .setEmoji(`💻`)
 
             const button2 = new MessageButton()
                 .setStyle('url')
                 .setURL('https://xopbot.glitch.me/#donations')
-                .setLabel(`Donate`)
+                .setLabel(`Offer`)
                 .setEmoji(`💰`)
 
             const button3 = new MessageButton()
