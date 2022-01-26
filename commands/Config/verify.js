@@ -50,7 +50,7 @@ module.exports = {
             };
 
             const verifieduser = message.guild.roles.cache.find(role => role.name === 'Verified');
-            await user.roles.add(verifieduser);
+            await user.roles.add(verifieduser.id);
             await message.lineReplyNoMention(success);
 
         } catch (err) {
