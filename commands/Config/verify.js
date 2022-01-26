@@ -48,8 +48,6 @@ module.exports = {
                 '5gf67',
             ]
 
-            const randomNumber = Math.floor(Math.random() * randomCode.length);
-
             const success = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${gcolor}`)
@@ -66,13 +64,13 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**Please Type In Here The Code: \`${randomNumber}\` To Verify! \n This Just Makes Sure Your Not A Robot. 🤖⛔**`)
+                .setDescription(`**Type The Code: \`13-v-cdshkIK\` Or \`x-v-IGur78o9\` To Verify! \n This Just Makes Sure Your Not A Robot. 🤖⛔ \n So You Can Then Have Server Access In \`${message.guild.name}\`.**`)
             message.lineReplyNoMention(verify)
 
-            const filter = _message => message.author.id === _message.author.id && [`${randomNumber}`, 'n', 'no'].includes(_message.content.toLowerCase());
+            const filter = _message => message.author.id === _message.author.id && [`13-v-cdshkIK`, 'x-v-IGur78o9', 'n', 'no'].includes(_message.content.toLowerCase());
             const options = { max: 1, time: 30000, errors: ['time'] };
             const proceed = await message.channel.awaitMessages(filter, options)
-                .then(collected => [`${randomNumber}`].includes(collected.first().content.toLowerCase()) ? true : false)
+                .then(collected => [`13-v-cdshkIK`, 'x-v-IGur78o9'].includes(collected.first().content.toLowerCase()) ? true : false)
                 .catch(() => false);
 
             if (!proceed) {
