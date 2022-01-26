@@ -49,14 +49,13 @@ module.exports = {
                 return message.lineReplyNoMention(nostopcmdplz)
             };
 
-            const verifieduser = message.guild.roles.cache.find(role => role.name == "Verified");
-            if (user.roles.cache.has(verifieduser)) return message.lineReplyNoMention(alreadyv).then(() => channel.send({ content: `**ATTENTION! PTOS WAS ABUSED JUST NOW! \nUser: \`${message.author.username}\` Abused The PTOS. \nPlease Check The Before Reports For A Same Incident. \n Contact Developer For Futher Notice If Needed. \n Email: ||brandontorreglosa@gmail.com|| Or Website ||https://xopbot.glitch.me||**` }));
-            else await user.roles.add(verifieduser);
+            const verifieduser = message.guild.roles.cache.find(role => role.name === 'Verified');
+            await user.roles.add(verifieduser);
             await message.lineReplyNoMention(success);
 
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel);
-            message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
+            message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured! \nCheck If The Role \`Verified\` Is On The Server And Try Again!**" });
             errorlogs.send({ content: `**Error On Verification Command!\n\nError:\n\n ${err}**` })
         }
     }
