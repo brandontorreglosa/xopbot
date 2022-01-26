@@ -14,39 +14,6 @@ module.exports = {
         try {
             const user = message.author;
             const channel = client.channels.cache.get('839389883486306304')
-            const randomCode = [
-                '24309',
-                '34504',
-                '22234',
-                '83482',
-                '82378',
-                '73267',
-                '82341',
-                'lt-67',
-                '78299',
-                'cdchs',
-                'ver-1',
-                'big-t',
-                'goog-',
-                'xobop',
-                'hjews',
-                '1h5f7',
-                'uuebh',
-                'hbsbs',
-                'hshsh',
-                'hjhjh',
-                'iwjjw',
-                'ip-12',
-                'ser-3',
-                'cad-2',
-                '75t45',
-                'hdhdb',
-                'tit-1',
-                'bruh1',
-                'tooth',
-                'twerz',
-                '5gf67',
-            ]
 
             const success = new Discord.MessageEmbed()
                 .setTimestamp()
@@ -88,12 +55,11 @@ module.exports = {
                     name: "Verified",
                     color: "GREEN"
                 }
-            }).catch(err => console.log(err));
-            role = message.guild.roles.cache.find(role => role.name == "Verified");
+            });
             if (user.roles.cache.has(role.id)) return message.lineReplyNoMention(alreadyv).then(() => channel.send({ content: `**ATTENTION! PTOS WAS ABUSED JUST NOW! \nUser: \`${message.author.username}\` Abused The PTOS. \nPlease Check The Before Reports For A Same Incident. \n Contact Developer For Futher Notice If Needed. \n Email: ||brandontorreglosa@gmail.com|| Or Website ||https://xopbot.glitch.me||**` }));
             else await user.roles.add(role.id);
-
             await message.lineReplyNoMention(success);
+
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
