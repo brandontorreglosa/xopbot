@@ -49,6 +49,7 @@
     "superagent": "^6.1.0",
     "tar": "^6.1.11",
     "weather-js": "^2.0.0",
-    "xoppack": "^1.4.0"
+    "xoppack": "^1.4.0",
+    "ytdl-core": "^4.10.0"
   }
 }
