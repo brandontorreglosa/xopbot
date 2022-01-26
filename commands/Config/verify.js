@@ -64,13 +64,13 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**Type The Code: \`13-v-cdshkIK\` Or \`x-v-IGur78o9\` To Verify! \n This Just Makes Sure Your Not A Robot. 🤖⛔ \n So You Can Then Have Server Access In \`${message.guild.name}\`.**`)
+                .setDescription(`**Type The Code: \`verifymeinobot\` Or \`userverify\` To Verify! \n This Just Makes Sure Your Not A Robot. 🤖⛔ \n So You Can Then Have Server Access In \`${message.guild.name}\`.**`)
             message.lineReplyNoMention(verify)
 
-            const filter = _message => message.author.id === _message.author.id && [`13-v-cdshkI`, 'n', 'x-v-IGur78o9', 'no'].includes(_message.content.toLowerCase());
+            const filter = _message => message.author.id === _message.author.id && [`userverify`, 'n', 'verifymeinobot', 'no'].includes(_message.content.toLowerCase());
             const options = { max: 1, time: 30000, errors: ['time'] };
             const proceed = await message.channel.awaitMessages(filter, options)
-                .then(collected => [`13-v-cdshkI`, 'x-v-IGur78o9'].includes(collected.first().content.toLowerCase()) ? true : false)
+                .then(collected => [`userverify`, 'verifymeinobot'].includes(collected.first().content.toLowerCase()) ? true : false)
                 .catch(() => false);
 
             if (!proceed) {
