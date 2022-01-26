@@ -12,7 +12,7 @@ module.exports = {
     description: "verify yourself through here",
     async execute(client, message, cmd, args, Discord) {
         try {
-            const user = message.mentions.users.first()
+            const user = message.author;
             const channel = client.channels.cache.get('839389883486306304')
             const randomCode = [
                 '24309',
@@ -79,7 +79,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription(`**You Cancelled The Verification Command Successfully!**`)
-                return user.send(nostopcmdplz)
+                return message.lineReplyNoMention(nostopcmdplz)
             };
 
             const role = message.guild.roles.cache.find(role => role.name == "Verified");
