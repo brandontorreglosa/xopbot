@@ -53,7 +53,7 @@ module.exports = {
                 });
         }
 
-        else if (cmd === 'profile') {
+        else if (cmd === 'profilecard') {
 
             const user = message.mentions.users.first() || message.author;
             const bal = await client.bal(user.id)
@@ -264,6 +264,34 @@ module.exports = {
                 }]
             })
 
+        }
+
+        else if (cmd === 'profile') {
+            const user = message.mentions.users.first() || message.author;
+            const target = await Levels.fetch(user.id, message.guild.id);
+
+            if (!target) {
+                const fakuser = new Discord.MessageEmbed()
+                    .setTimestamp()
+                    .setColor(`${color1}`)
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**\`${user.username}\` Currently Has No Xp!**`)
+                return message.lineReplyNoMention(fakuser)
+            }
+
+            const choices = ["POG", "Shit"];
+            const rar = choices[Math.floor(Math.random() * choices.length)];
+            const bal = await client.bal(user.id);
+            const bank = await client.bank(user.id)
+            const debt = await client.debt(user.id)
+            const net = bal + bank;
+            const userproc = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
+                .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+                .setColor(`${color1}`)
+                .setDescription(`**Xocoins \n\n💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} \n🌐 Networth \`${net}\` \n\nExperience \n⬆️ Level \`${target.level}\` \n🧓 Experience \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
+                .setFooter(`Thats Some ${rar} Stats`)
         }
     }
 }
