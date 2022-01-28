@@ -6,7 +6,7 @@ const lineReplyNoMention = require('discord-reply');
 const color1 = process.env.Color;
 module.exports = {
     name: 'rank',
-    aliases: ['profile'],
+    aliases: ['profile', 'profilecard'],
     cooldown: 3,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
