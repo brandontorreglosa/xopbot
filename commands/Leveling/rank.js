@@ -290,7 +290,7 @@ module.exports = {
                 .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
                 .setThumbnail(user.displayAvatarURL({ dynamic: true }))
                 .setColor(`${color1}`)
-                .setDescription(`**Xocoins \n\n💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} \n🌐 Networth \`${net}\` \n\nExperience \n⬆️ Level \`${target.level}\` \n🧓 Experience \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
+                .setDescription(`**Xocoins \n\n💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🌐 Networth \`${net.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n\nExperience \n⬆️ Level \`${target.level}\` \n🧓 XP \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
                 .setFooter(`Thats Some ${rar} Stats`)
             message.lineReplyNoMention(userproc);
         }
