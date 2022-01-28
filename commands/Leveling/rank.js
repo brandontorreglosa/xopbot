@@ -279,18 +279,24 @@ module.exports = {
                 return message.lineReplyNoMention(fakuser)
             }
 
-            const choices = ["POG", "Shit"];
+            const choices = ["POG", "SHIT", "GAY", "DOPE", "GANGSTA", "SICK", "YUCKY", "DREAMY"];
             const rar = choices[Math.floor(Math.random() * choices.length)];
+            const fch = ["Pizza", "Burger", "Cheesecake", "Spaghetti", "Carbonara", "Applepie", "Meatloaf"];
+            const food = fch[Math.floor(Math.random() * fch.length)];
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            const randomNumber1 = Math.floor(Math.random() * 150) + 1;
+            const randomNumber2 = Math.floor(Math.random() * 100) + 1;
+            const randomNumber3 = Math.floor(Math.random() * 250) + 1;
             const bal = await client.bal(user.id);
-            const bank = await client.bank(user.id)
-            const debt = await client.debt(user.id)
+            const bank = await client.bank(user.id);
+            const debt = await client.debt(user.id);
             const net = bal + bank;
             const userproc = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true }))
                 .setThumbnail(user.displayAvatarURL({ dynamic: true }))
                 .setColor(`${color1}`)
-                .setDescription(`**Xocoins \n\n💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🌐 Networth \`${net.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n\nExperience \n⬆️ Level \`${target.level}\` \n🧓 XP \`${target.xp}/${Levels.xpFor(target.level + 1)}\`**`)
+                .setDescription(`**Xocoins \n\🌐 Networth \`${net.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` \n\nExperience \n\⬆️ Level \`${target.level}\` \n🧓 XP \`${target.xp}/${Levels.xpFor(target.level + 1)}\` \n\nMisc \n\🤓 Smart \`${randomNumber}%\` \n🥴 Idiot \`${randomNumber1}%\` \n😎 Coolness \`${randomNumber2}%\` \n🤼 Homophobic \`${randomNumber3}%\` \n😋 FAV Food \`${food}\`**`)
                 .setFooter(`Thats Some ${rar} Stats`)
             message.lineReplyNoMention(userproc);
         }
