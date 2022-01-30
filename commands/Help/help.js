@@ -151,7 +151,7 @@ module.exports = {
                         inline: true,
                     },
                     {
-                        name: '__<:uwudogmeme:828235782619267083> Music__',
+                        name: '__<a:uwudogmeme:828235782619267083> Music__',
                         value: '`x!music`',
                         inline: true
                     },
