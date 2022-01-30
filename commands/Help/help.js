@@ -146,7 +146,7 @@ module.exports = {
                         inline: true
                     },
                     {
-                        name: '__📷 Images__',
+                        name: '__:BonkGoToHornyJail:824886935091675177 Images__',
                         value: '`x!images`',
                         inline: true,
                     },
@@ -166,7 +166,7 @@ module.exports = {
                         inline: true
                     },
                     {
-                        name: '__⏫ Leveling__',
+                        name: '__:Stonks:824886940079489025 Leveling__',
                         value: '`x!leveling`',
                         inline: true
                     },
