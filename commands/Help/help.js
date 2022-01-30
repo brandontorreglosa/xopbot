@@ -101,7 +101,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .addFields(
                     {
-                        name: '__<:amongusBan:829300772860592136> Moderation__',
+                        name: '__<a:Beatdaping:816745455639330867> Moderation__',
                         value: '`x!moderation`',
                         inline: true
                     },
@@ -151,7 +151,7 @@ module.exports = {
                         inline: true,
                     },
                     {
-                        name: '__<a:uwudogmeme:828235782619267083> Music__',
+                        name: '__<:KEK4K:806238250602725376> Music__',
                         value: '`x!music`',
                         inline: true
                     },
