@@ -101,7 +101,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .addFields(
                     {
-                        name: '__<a:Beatdaping:816745455639330867> Moderation__',
+                        name: '__🛠️ Moderation__',
                         value: '`x!moderation`',
                         inline: true
                     },
@@ -151,7 +151,7 @@ module.exports = {
                         inline: true,
                     },
                     {
-                        name: '__<:KEK4K:806238250602725376> Music__',
+                        name: '__🎶 Music__',
                         value: '`x!music`',
                         inline: true
                     },
