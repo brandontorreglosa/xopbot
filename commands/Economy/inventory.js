@@ -23,7 +23,7 @@ module.exports = {
                 const mappedData = Object.keys(data.Inventory)
                     .map((key) => {
                         const text = key;
-                        const result = key.replace("hunting-rifle", "🔫")
+                        text.replace("hunting-gun", "🔫")
                         return `**(${data.Inventory[key]})${key}**`
                     })
                     .join(", ");
