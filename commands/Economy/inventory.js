@@ -9,7 +9,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES"],
     description: "Inventory Command!",
     async execute(client, message, cmd, args, Discord) {
-        
+
         const nodeta = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
@@ -22,7 +22,9 @@ module.exports = {
                 if (!data) return message.lineReplyNoMention(nodeta)
                 const mappedData = Object.keys(data.Inventory)
                     .map((key) => {
-                        return `${key}(${data.Inventory[key]})`
+                        const text = key;
+                        const result = key.replace("hunting-rifle", "🔫")
+                        return `**(${data.Inventory[key]})${key}**`
                     })
                     .join(", ");
 
