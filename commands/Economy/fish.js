@@ -1,7 +1,7 @@
 const inventory = require("../../models/inventory");
 const lineReplyNoMention = require("discord-reply");
 const color = process.env.Color;
-const itemToBuy = "🎣 Fishing Rod";
+const itemToBuy = "🎣";
 
 module.exports = {
     name: "fish",
