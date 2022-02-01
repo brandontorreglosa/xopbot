@@ -1,42 +1,42 @@
 module.exports = [
     {
-        item: "🖥️ Computer",
+        item: "Computer",
         price: 4000,
     },
     {
-        item: "🎣 Fishing Rod",
+        item: "Fishing-Rod",
         price: 6000,
     },
     {
-        item: "🪓 Battle Axe",
+        item: "Battle-Axe",
         price: 8000,
     },
     {
-        item: "🔫 Hunting Gun",
+        item: "Hunting-Gun",
         price: 15000,
     },
     {
-        item: "🏹 Crossbow",
+        item: "Crossbow",
         price: 22000,
     },
     {
-        item: "😺 Cat",
+        item: "Cat",
         price: 30000,
     },
     {
-        item: "🐶 Dog",
+        item: "Dog",
         price: 38000,
     }, 
     {
-        item: "🤖 Robot",
+        item: "Robot",
         price: 45000,
     },
     {
-        item: "🐸 Dank Frog",
+        item: "Dank-Frog",
         price: 80000,
     },
     {
-        item: "<:FBI_OPEN_UP:824886936862457897> FBI Patrick",
+        item: "Fbi-Patrick",
         price: 120000,
     }
 ];

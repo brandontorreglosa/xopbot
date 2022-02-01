@@ -29,7 +29,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription('**The Item Mentioned Does Not Exist Or Is Not Valid!**')
-            return messsage.lineReplyNoMention(novalid)
+            return message.lineReplyNoMention(novalid)
         }
 
         const itemPrice = items.find((val) => (val.item.toLowerCase()) === itemToBuy).price;
