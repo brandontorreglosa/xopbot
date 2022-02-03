@@ -192,7 +192,7 @@ module.exports = {
                     },
                     {
                         name: '__📢 Announcment__',
-                        value: '```Updating 📷 Commands! Please Dont Use 🥺```'
+                        value: '```Updating The 📷 Image Commands! \nPlease Dont Use Them Yet 🥺```'
                     }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
@@ -262,7 +262,7 @@ module.exports = {
                 //.setTitle('__⏫ Leveling__')
                 .setColor(`${color}`)
                 .addFields(
-                    { name: '__⏫ Leveling (4)__', value: '\n[rank](https://xopbot-gg.glitch.me/) \n__***Get Your Level Rank Card!***__  \n[leaderboard](https://xopbot-gg.glitch.me/) \n__***Get Your Servers Leaderboard!***__ \n[level](https://xopbot-gg.glitch.me/) \n__***Get A Users Level!***__ \n[edit](https://xopbot-gg.glitch.me/) \n__***Edit Level Or Xp!***__' }
+                    { name: '__<:Stonks:824886940079489025> Leveling (4)__', value: '\n[rank](https://xopbot-gg.glitch.me/) \n__***Get Your Level Rank Card!***__  \n[leaderboard](https://xopbot-gg.glitch.me/) \n__***Get Your Servers Leaderboard!***__ \n[level](https://xopbot-gg.glitch.me/) \n__***Get A Users Level!***__ \n[edit](https://xopbot-gg.glitch.me/) \n__***Edit Level Or Xp!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -417,7 +417,7 @@ module.exports = {
                 //.setTitle('__🎮 Games__')
                 .setColor(`${color}`)
                 .addFields(
-                    { name: '__🎮 Games (5)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Play GuessTheNumber!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play RockPaperSciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__ \n[snake](https://xopbot-gg.glitch.me/) \n__***Play Snake Game!***__ \n[connect4](https://xopbot-gg.glitch.me/) \n__***Play Connect4!***__' }
+                    { name: '__<:SILENCE_liberal:824886939520991242> Games (5)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Play GuessTheNumber!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play RockPaperSciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__ \n[snake](https://xopbot-gg.glitch.me/) \n__***Play Snake Game!***__ \n[connect4](https://xopbot-gg.glitch.me/) \n__***Play Connect4!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
@@ -441,7 +441,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .addFields(
-                    { name: '__👷‍♂️ Owner (6)__', value: '\n[donate-premium](https://xopbot-gg.glitch.me/) \n__***Give Premium To User!***__\n[delete-premium](https://xopbot-gg.glitch.me/) \n__***Remove Premium From User!***__ \n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[leaveservers](https://xopbot-gg.glitch.me/) \n__***Make Bot Leave Servers!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__ \n[remind](https://xopbot-gg.glitch.me/) \n__***Remind Me Something!***__' }
+                    { name: '__<:dankmemer3:824890108041232394> Owner (6)__', value: '\n[donate-premium](https://xopbot-gg.glitch.me/) \n__***Give Premium To User!***__\n[delete-premium](https://xopbot-gg.glitch.me/) \n__***Remove Premium From User!***__ \n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[leaveservers](https://xopbot-gg.glitch.me/) \n__***Make Bot Leave Servers!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__ \n[remind](https://xopbot-gg.glitch.me/) \n__***Remind Me Something!***__' }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
