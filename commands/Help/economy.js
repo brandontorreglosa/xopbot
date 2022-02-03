@@ -39,8 +39,17 @@ module.exports = {
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
+        const embed12 = new Discord.MessageEmbed()
+            .setThumbnail(client.user, displayAvatarURL())
+            .setTimestamp()
+            // .setTitle('__🤑 Economy__')
+            .setColor(`${color}`)
+            .addFields(
+                { name: '__🤑 Economy (15)__', value: '\n[shop](https://xopbot.glitch.me/) \n__***View The Dealer\`s Shop!***__ \n[fish](https://xopbot.glitch.me/) \n__***Catch Fish To Get Paid!***__ \n[hunt](https://xopbot.glitch.me/) \n__***Hunt Animals For Cash!***__ \n[buy](https://xopbot.glitch.me/) \n__***Buy From The Shop!***__ \n[xrich](https://xopbot.glitch.me/) \n__***Get The Richest Xocoins Users!***__' }
+            )
+            .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        const pages = [embed9, embed10, embed11]
+        const pages = [embed9, embed10, embed12, embed11]
         disbutpages.pages(message, pages, {
             timeout: 540 * 1000,
             buttons: {
