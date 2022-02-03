@@ -45,7 +45,7 @@ module.exports = {
             // .setTitle('__🤑 Economy__')
             .setColor(`${color}`)
             .addFields(
-                { name: '__🤑 Economy (15)__', value: '\n[shop](https://xopbot.glitch.me/) \n__***View The Dealer\`s Shop!***__ \n[fish](https://xopbot.glitch.me/) \n__***Catch Fish To Get Paid!***__ \n[hunt](https://xopbot.glitch.me/) \n__***Hunt Animals For Cash!***__ \n[buy](https://xopbot.glitch.me/) \n__***Buy From The Shop!***__ \n[xrich](https://xopbot.glitch.me/) \n__***The Richest Xocoins Users!***__' }
+                { name: '__🤑 Economy (15)__', value: '\n[shop](https://xopbot.glitch.me/) \n__***View The Dealer\`s Shop!***__ \n[fish](https://xopbot.glitch.me/) \n__***Catch Fish To Get Paid!***__ \n[hunt](https://xopbot.glitch.me/) \n__***Hunt Animals For Cash!***__ \n[buy](https://xopbot.glitch.me/) \n__***Buy From The Shop!***__ \n[rich](https://xopbot.glitch.me/) \n__***The Richest Xocoins Users!***__' }
             )
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
