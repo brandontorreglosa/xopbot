@@ -35,7 +35,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`LMFAO! You Just Caught A \`🥾\`, What A Loser 🤣. Its Worth \`${Boot}\` Xocoins!`)
+                            .setDescription(`**LMFAO! You Just Caught A \`🥾\`, What A Loser 🤣. Its Worth \`${Boot}\` Xocoins!**`)
                         message.lineReplyNoMention(bootembed)
                         client.add(message.author.id, Boot)
 
@@ -45,7 +45,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`LMAO! You Just Caught A \`🐠\`, What A Noob 😂. Its Worth \`${YellowFish}\` Xocoins!`)
+                            .setDescription(`**LMAO! You Just Caught A \`🐠\`, What A Noob 😂. Its Worth \`${YellowFish}\` Xocoins!**`)
                         message.lineReplyNoMention(yellowfishembed)
                         client.add(message.author.id, YellowFish)
 
@@ -55,7 +55,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`LOL! You Just Caught A \`🐡\`, What A Bot 😆. Its Worth \`${FatFish}\` Xocoins!`)
+                            .setDescription(`**LOL! You Just Caught A \`🐡\`, What A Bot 😆. Its Worth \`${FatFish}\` Xocoins!**`)
                         message.lineReplyNoMention(fatfishembed)
                         client.add(message.author.id, FatFish)
                     } else if (random() === true) {
@@ -64,7 +64,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`OK! You Just Caught A \`🐟\`, What A Rookie 😁. Its Worth \`${BlueFish}\` Xocoins!`)
+                            .setDescription(`**OK! You Just Caught A \`🐟\`, What A Rookie 😁. Its Worth \`${BlueFish}\` Xocoins!**`)
                         message.lineReplyNoMention(bluefishembed)
                         client.add(message.author.id, BlueFish)
                     } else if (random() === true) {
@@ -73,7 +73,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`Well Done! You Just Caught A \`🐬\`, What A Newbie 👶. Its Worth \`${Dolphin}\` Xocoins!`)
+                            .setDescription(`**Well Done! You Just Caught A \`🐬\`, What A Newbie 👶. Its Worth \`${Dolphin}\` Xocoins!**`)
                         message.lineReplyNoMention(dolphinembed)
                         client.add(message.author.id, Dolphin)
                     } else if (random() === true) {
@@ -82,7 +82,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`Congrats! You Just Caught A \`🦞\`, What A Professional 🧑‍🏫. Its Worth \`${Lobster}\` Xocoins!`)
+                            .setDescription(`**Congrats! You Just Caught A \`🦞\`, What A Professional 🧑‍🏫. Its Worth \`${Lobster}\` Xocoins!**`)
                         message.lineReplyNoMention(lobsterembed)
                         client.add(message.author.id, Lobster)
                     } else if (random() === true) {
@@ -91,7 +91,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`WTH! You Just Caught A \`🦈\`, What A Thug 😎. Its Worth \`${Shark}\` Xocoins!`)
+                            .setDescription(`**WTH! You Just Caught A \`🦈\`, What A Thug 😎. Its Worth \`${Shark}\` Xocoins!**`)
                         message.lineReplyNoMention(sharkembed)
                         client.add(message.author.id, Shark)
                     } else if (random() === true) {
@@ -100,7 +100,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`WTF! You Just Caught A \`🦀\`, What A Mafia Boss 🕵️‍♂️. Its Worth \`${Crab}\` Xocoins!`)
+                            .setDescription(`**WTF! You Just Caught A \`🦀\`, What A Mafia Boss 🕵️‍♂️. Its Worth \`${Crab}\` Xocoins!**`)
                         message.lineReplyNoMention(crabembed)
                         client.add(message.author.id, Crab)
                     } else if (random() === true) {
@@ -109,7 +109,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`OMG! You Just Caught A \`🦑\`, What A Fisherman 🎣. Its Worth \`${Squid}\` Xocoins!`)
+                            .setDescription(`**OMG! You Just Caught A \`🦑\`, What A Fisherman 🎣. Its Worth \`${Squid}\` Xocoins!**`)
                         message.lineReplyNoMention(squidembed)
                         client.add(message.author.id, Squid)
                     } else if (random() === true) {
@@ -118,7 +118,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`OMFG! You Just Caught A \`🐋\`, What A Merperson 🧜‍♂️. Its Worth \`${Whale}\` Xocoins!`)
+                            .setDescription(`**OMFG! You Just Caught A \`🐋\`, What A Merperson 🧜‍♂️. Its Worth \`${Whale}\` Xocoins!**`)
                         message.lineReplyNoMention(whaleembed)
                         client.add(message.author.id, Whale)
                     } else if (random() === true) {
@@ -127,7 +127,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`WTH, OMG! You Just Caught A \`🦐\`, What A Boat 🛶. Its Worth \`${Shrimp}\` Xocoins!`)
+                            .setDescription(`**WTH, OMG! You Just Caught A \`🦐\`, What A Boat 🛶. Its Worth \`${Shrimp}\` Xocoins!**`)
                         message.lineReplyNoMention(shrimpembed)
                         client.add(message.author.id, Shrimp)
                     } else if (random() === true) {
@@ -136,7 +136,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`WTF, OMFG! You Just Caught A \`🐙\`, What A Ship 🚢. Its Worth \`${Octopus}\` Xocoins!`)
+                            .setDescription(`**WTF, OMFG! You Just Caught A \`🐙\`, What A Ship 🚢. Its Worth \`${Octopus}\` Xocoins!**`)
                         message.lineReplyNoMention(octopusembed)
                         client.add(message.author.id, Octopus)
                     } else if (random() === true) {
@@ -145,7 +145,7 @@ module.exports = {
                             .setTimestamp()
                             .setColor(`${color}`)
                             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                            .setDescription(`Holy Crap, You Little Sh*t! You Just Caught A \`💎\`, What A Thief 🦹. Its Worth \`${Diamond}\` Xocoins!`)
+                            .setDescription(`**Holy Crap, You Little Sh*t! You Just Caught A \`💎\`, What A Thief 🦹. Its Worth \`${Diamond}\` Xocoins!**`)
                         message.lineReplyNoMention(diamondembed)
                         client.add(message.author.id, Diamond)
                     }
