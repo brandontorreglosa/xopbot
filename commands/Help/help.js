@@ -111,12 +111,12 @@ module.exports = {
                         inline: true
                     },
                     {
-                        name: '__⚠ Config__',
+                        name: '__<:dankhype:825049281299611718> Config__',
                         value: '`x!config`',
                         inline: true
                     },
                     {
-                        name: '__👷‍♂️ Owner__',
+                        name: '__<:dankmemer3:824890108041232394> Owner__',
                         value: '`x!owner`',
                         inline: true
                     },
@@ -136,12 +136,12 @@ module.exports = {
                         inline: true
                     },
                     {
-                        name: '__🎮 Games__',
+                        name: '__<:SILENCE_liberal:824886939520991242> Games__',
                         value: '`x!games`',
                         inline: true
                     },
                     {
-                        name: '__🥳 Fun__',
+                        name: '__<:KEKW:829300759194501140> Fun__',
                         value: '`x!fun`',
                         inline: true
                     },
@@ -192,7 +192,7 @@ module.exports = {
                     },
                     {
                         name: '__📢 Announcment__',
-                        value: '```Website Domain Changed! New Domain Is https://xopbot.glitch.me/```'
+                        value: '```Updating 📷 Commands! Please Dont Use 🥺```'
                     }
                 )
                 .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
