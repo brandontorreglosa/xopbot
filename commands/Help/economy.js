@@ -40,7 +40,7 @@ module.exports = {
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed12 = new Discord.MessageEmbed()
-            .setThumbnail(client.user, displayAvatarURL())
+            .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             // .setTitle('__🤑 Economy__')
             .setColor(`${color}`)
