@@ -45,7 +45,7 @@ module.exports = {
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setTitle(`${splitargs[0]} Is Shortened!`)
-            .setUrl(`https://api.popcat.xyz/shorten?url=${text}&extension=${text2}`)
+            .setURL(`https://api.popcat.xyz/shorten?url=${text}&extension=${text2}`)
             .setDescription(`**Your \`Url\` Is Now This: [New Url](https://api.popcat.xyz/shorten?url=${text}&extension=${text2}) Have Fun Sharing It! 😀**`)
         message.lineReplyNoMention(embed);
     }

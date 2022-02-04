@@ -21,7 +21,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__⚙ Utility__')
             .setColor(`${color}`)
-            .setDescription('**__⚙ Utility (9)__** \n[ticket](https://xopbot.glitch.me/) \n__***Generates A Ticket!***__ \n[webhook](https://xopbot.glitch.me/) \n__***Send From A Webhook!***__ \n[xopchat](https://xopbot.glitch.me/) \n__***Request For Xopchat!***__ \n[afk](https://xopbot.glitch.me/) \n__***Get AFK Status!***__ \n[suggest](https://xopbot.glitch.me/) \n__***Make Suggestions!***__')
+            .setDescription('**__⚙ Utility (10)__** \n[ticket](https://xopbot.glitch.me/) \n__***Generates A Ticket!***__ \n[webhook](https://xopbot.glitch.me/) \n__***Send From A Webhook!***__ \n[xopchat](https://xopbot.glitch.me/) \n__***Request For Xopchat!***__ \n[afk](https://xopbot.glitch.me/) \n__***Get AFK Status!***__ \n[suggest](https://xopbot.glitch.me/) \n__***Make Suggestions!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed4 = new Discord.MessageEmbed()
@@ -29,7 +29,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__⚙ Utility__')
             .setColor(`${color}`)
-            .setDescription('**__⚙ Utility (9)__** \n[nickname](https://xopbot.glitch.me/) \n__***Change Nickname!***__ \n[anime](https://xopbot.glitch.me/) \n__***Search For Anime!***__ \n[wiki](https://xopbot.glitch.me/) \n__***Search On Wiki!***__ \n[google](https://xopbot.glitch.me/) \n__***Search On Google!***__')
+            .setDescription('**__⚙ Utility (10)__** \n[nickname](https://xopbot.glitch.me/) \n__***Change Nickname!***__ \n[anime](https://xopbot.glitch.me/) \n__***Search For Anime!***__ \n[wiki](https://xopbot.glitch.me/) \n__***Search On Wiki!***__ \n[google](https://xopbot.glitch.me/) \n__***Search On Google!***__ \n[urlshortner](https://xopbot.glitch.me/) \n__***Shorten Your Url!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
             const pages = [embed3, embed4]
