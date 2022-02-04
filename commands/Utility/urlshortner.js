@@ -40,13 +40,15 @@ module.exports = {
             return message.lineReplyNoMention(notxt2)
         }
 
+        const url = `https://api.popcat.xyz/shorten?url=${text}&extension=${text2}`;
+
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setTitle(`${splitargs[0]} Is Shortened!`)
-            .setURL(`https://api.popcat.xyz/shorten?url=${text}&extension=${text2}`)
-            .setDescription(`**Your \`Url\` Is Now This: [New Url](https://api.popcat.xyz/shorten?url=${text}&extension=${text2}) Have Fun Sharing It! 😀**`)
+            .setURL(url)
+            .setDescription(`**Your \`Url\` Is Now This: [New Url](${url}) Have Fun Sharing It! 😀**`)
         message.lineReplyNoMention(embed);
     }
 }
