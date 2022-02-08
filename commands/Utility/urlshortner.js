@@ -46,8 +46,7 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setTitle(`${splitargs[0]} Is Shortened!`)
-            .setURL(url)
+            .setTitle(`${text} Is Shortened!`)
             .setDescription(`**Your \`Url\` Is Now This: [New Url](${url}) Have Fun Sharing It! 😀**`)
         message.lineReplyNoMention(embed);
     }

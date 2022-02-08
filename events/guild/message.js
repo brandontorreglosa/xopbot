@@ -275,7 +275,7 @@ try {
           .setTimestamp()
           .setColor(`${color}`)
           .setAuthor(`Wait!`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Hold Your Horses! You Have Missing Permissions: \`${invalidPerms}\`**`)
+          .setDescription(`**Hold Your Horses 🐴! You Have Missing Permissions: \`${invalidPerms}\`**`)
         return message.lineReplyNoMention(invalidembedperm) //, allowedMentions: { repliedUser: true } });
       }
     }
@@ -331,7 +331,7 @@ try {
           .setTimestamp()
           .setColor(`${color}`)
           .setAuthor(`Oh No!`, message.author.displayAvatarURL({ dynamic: true }))
-          .setDescription(`**Hold Your Beer! XOPBOT Has Missing Permissions: \`${invalidPerms1}\`**`)
+          .setDescription(`**Hold Your Beer 🍺! XOPBOT Has Missing Permissions: \`${invalidPerms1}\`**`)
         return message.lineReplyNoMention(invalidembedperm1) //, allowedMentions: { repliedUser: true } });
       }
     }
@@ -556,4 +556,3 @@ try {
   const errorlogs = client.channels.cache.get(errorChannel)
   errorlogs.send({ content: `**Error On Message Event!\n\nError:\n\n ${err}**` })
 }
-
