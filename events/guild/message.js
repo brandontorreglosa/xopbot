@@ -480,6 +480,7 @@ try {
           const embed20 = new Discord.MessageEmbed()
             .setTimestamp()
             .setTitle('Welcome!')
+            .setThumbnail(member.displayAvatarURL({ dynamic: true }))
             .setDescription(joinmessage)
             .setColor("GREEN")
           member.guild.channels.cache.get(channel).send(embed20);
