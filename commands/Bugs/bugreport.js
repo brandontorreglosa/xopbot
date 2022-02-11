@@ -1,6 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const db = rewuire('quick.db');
+const db = require('quick.db');
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
