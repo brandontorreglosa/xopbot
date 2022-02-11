@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const db = rewuire('quick.db');
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
@@ -16,12 +17,15 @@ module.exports = {
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription('**`(prefix)bugreport <bug>`**')
         if (!query) return message.lineReplyNoMention(queryembed) //, allowedMentions: { repliedUser: true } })
+        db.add('reports.sofar', 1);
+        const reportssofar = db.get('reports.sofar');
         const reportEmbed = new Discord.MessageEmbed()
             .setColor(`${color}`)
             .setTitle('**New Bug Found!**')
             .addField('Author', message.author.toString(), true)
             .addField('Guild', message.guild.name, true)
             .addField('Report', query)
+            .addField('Reports So Far:', reportssofar)
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
         channel.send(reportEmbed);
