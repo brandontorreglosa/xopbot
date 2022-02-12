@@ -24,7 +24,7 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setTitle(`New Text Channel Named ${message.channel.name}`)
+                .setTitle(`New Text Channel Named ${args[1]}`)
                 .setDescription(`**Channel Was Created By ${message.author.username}**`)
                 .setColor(`${color}`)
             message.lineReplyNoMention(embed);

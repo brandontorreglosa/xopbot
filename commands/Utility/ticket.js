@@ -71,7 +71,7 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Incoming Air Strike ✈️💣! Channel Delteting In 5 Seconds!**')
-        .setFooter(`Say Goodbye To ${message.channel.name}!`, message.author.displayAvatarURL({ dynamic: true }))
+        .setFooter(`Say Goodbye To ${channel.name}!`, message.author.displayAvatarURL({ dynamic: true }))
 
       const collector = reactionMessage.createReactionCollector(
         (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).permissions.has("SEND_MESSAGES"),
