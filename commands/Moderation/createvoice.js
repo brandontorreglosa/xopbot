@@ -21,7 +21,7 @@ module.exports = {
                 return message.lineReplyNoMention(nopr)
             }
             message.guild.channels.create(args.slice(0).join(" "), { type: "voice" });
-            const fetchname = args[1];
+            const fetchname = args[0];
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setTitle(`New Voice Channel Named ${fetchname}`)
