@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const color = process.env.Color;
 module.exports = {
   name: "ticket",
   cooldown: 10,
@@ -11,9 +12,15 @@ module.exports = {
     if (cmd === 'ticket-set') {
       message.guild.channels.create("Tickets", {
         type: "category",
-        topic: "All the mail will be here :D",
+        topic: "All the tickets will be here :D",
       })
-      message.lineReplyNoMention({ content: '**Ticket`s Category Is Now Setup! 😃**' })
+      const succestxtc = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor(`${color}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**The \`Ticket`s\` Category Is Now Setup! 😉**')
+
+      message.lineReplyNoMention(succestxtc)
     }
 
     else if (cmd === 'ticket') {
@@ -38,15 +45,32 @@ module.exports = {
         VIEW_CHANNEL: true,
       });
 
-      const reactionMessage = await channel.send({ content: "**Thank You For Contacting Support!**" });
+      const reactionMessage = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor(`${color}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
+
+      const errormessage = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor(`${color}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**Error Sending The React Emojis, OOPS! \nContact A \`Admin\` To Help!**')
 
       try {
         await reactionMessage.react("🔒");
         await reactionMessage.react("⛔");
       } catch (err) {
-        channel.send({ content: "**Error Sending Emojis!**" });
+        channel.send(errormessage);
         throw err;
       }
+
+      const deltxtc = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor(`${color}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription('**Incoming Air Strike ✈️💣! Channel Delteting In 5 Seconds!**')
+        .setFooter(`Say Goodbye TO ${channel}!`, message.author.displayAvatarURL({ dynamic: true }))
 
       const collector = reactionMessage.createReactionCollector(
         (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).permissions.has("SEND_MESSAGES"),
@@ -59,7 +83,7 @@ module.exports = {
             channel.updateOverwrite(message.author, { SEND_MESSAGES: false });
             break;
           case "⛔":
-            channel.send({ content: "**Deleting This Channel In 5 Seconds!**" });
+            channel.send(deltxtc);
             setTimeout(() => channel.delete(), 5000);
             break;
         }
@@ -67,8 +91,10 @@ module.exports = {
 
       const embed101 = new Discord.MessageEmbed()
         .setTimestamp()
-        .setTitle(`${message.author.username}`)
-        .setDescription(`We Will Be Right With You! ${channel}`)
+        .setColor(`${color}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**Hey, The Server Moderator(s) Will Be Right Wth You! \nMake Sure To Check The TXTC ${channel} For Responses!**`)
+        .setFooter(`Opened By ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
 
       message
         .lineReplyNoMention(embed101)
