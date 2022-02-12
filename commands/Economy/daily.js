@@ -1,4 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
+const db = require('quick.db');
 const color = process.env.Color;
 module.exports = {
   name: "daily",
@@ -10,11 +11,14 @@ module.exports = {
   description: "daily Xocoins",
   async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 5000) + 5000;
+    db.add(`${message.author.username}_daily_collected`, 1)
+    const fetchd = db.get(`${message.author.username}_daily_collected`)
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**You Received \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Daily Xocoins! 💸**`)
       .setColor(`${color}`)
+      .setFooter(`Total Daily\`s Collected: ${fetchd}`)
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)
   },

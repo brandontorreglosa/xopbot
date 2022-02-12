@@ -21,10 +21,10 @@ module.exports = {
                 return message.lineReplyNoMention(nopr)
             }
             message.guild.channels.create(args.slice(0).join(" "), { type: "voice" });
-
+            const fetchname = args[1];
             const embed = new Discord.MessageEmbed()
                 .setTimestamp()
-                .setTitle(`New Voice Channel Named ${args[1]}`)
+                .setTitle(`New Voice Channel Named ${fetchname}`)
                 .setDescription(`**Channel Was Created By ${message.author.username}**`)
                 .setColor(`${color}`)
             message.lineReplyNoMention(embed);
