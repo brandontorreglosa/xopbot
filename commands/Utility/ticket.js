@@ -44,12 +44,13 @@ module.exports = {
         SEND_MESSAGE: true,
         VIEW_CHANNEL: true,
       });
-
-      const reactionMessage = new Discord.MessageEmbed()
+      const supportembedy = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
+
+      const reactionMessage = await channel.send(supportembedy);
 
       const errormessage = new Discord.MessageEmbed()
         .setTimestamp()
