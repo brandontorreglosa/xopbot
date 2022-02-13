@@ -15,13 +15,13 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('**You Dont Have A \`🔫 Hunting Gun\` Or A \`🏹 Crossbow\`!**')
+            .setDescription('**You Dont Have A \`🔫 Hunting Gun\`!**')
 
         inventory.findOne(
             { Guild: message.guild.id, User: message.author.id },
             async (err, data) => {
                 if (!data) return message.lineReplyNoMention(e);
-                const hasItem = Object.keys(data.Inventory).includes(itemToBuy, itemToBuy2);
+                const hasItem = Object.keys(data.Inventory).includes(itemToBuy);
                 if (!hasItem) {
                     message.channel.send(e)
                 } else {
