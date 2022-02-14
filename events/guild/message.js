@@ -479,10 +479,12 @@ try {
 
           const embed20 = new Discord.MessageEmbed()
             .setTimestamp()
-            .setTitle('Welcome!')
-            .setThumbnail(member.displayAvatarURL({ dynamic: true }))
+            .setTitle(`Welcome!`)
+            .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setDescription(joinmessage)
+            .setImage('https://th.bing.com/th/id/OIP.b5kgWCKi-MEpQli15LggJwAAAA?pid=ImgDet&w=425&h=282&rs=1')
             .setColor("GREEN")
+            .setFooter(`We Are Now ${member.guild.memberCount} Members! 🥳`)
           member.guild.channels.cache.get(channel).send(embed20);
           // member.guild.channels.cache.get(channel).send({ files: [{ attachment: `https://api.popcat.xyz/welcomecard?background=https://1.bp.blogspot.com/-WjAFpo5alPQ/X1XUTr7vmoI/AAAAAAAA64Q/xsAeXXEB_Kgz9xTikBMc8maBJaIy42E7wCLcBGAsYHQ/s2560/neon-man-4k-ix-3840x2160.png&text1=${member}&text2=Welcome+To+${message.guild.name}&text3=${message.guild.memberCount}&avatar=${message.guild.iconURL()}`, name: "xopbotwelcomecard.png" }] })
         }
@@ -492,8 +494,10 @@ try {
         const embed200 = new Discord.MessageEmbed()
           .setTimestamp()
           .setTitle("Welcome!")
+          .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
           .setDescription(`${member}, Welcome to **${member.guild.name}**! We Hope You Like Our Server! Enjoy Your Stay here!`)
-          .setFooter(`We Are Now ${member.guild.memberCount} Members`)
+          .setImage('https://th.bing.com/th/id/OIP.0CogQ-fD04qBjQCZVxRL5AHaB1?pid=ImgDet&rs=1')
+          .setFooter(`We Are Now ${member.guild.memberCount} Members! 🥳`)
           .setColor("GREEN")
 
         member.guild.channels.cache.get(channel).send(embed200)
@@ -528,8 +532,11 @@ try {
           const embed2678 = new Discord.MessageEmbed()
             .setTimestamp()
             .setTitle('Goodbye!')
+            .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
+            .setImage('https://th.bing.com/th/id/OIP.Vv-AX2TSQBLJ5RFNMUmpSwHaE7?pid=ImgDet&rs=1')
             .setDescription(leavemessage)
-            .setColor(`${color}`);
+            .setColor(`${color}`)
+            .setFooter(`Now We Are ${member.guild.memberCount} Members! 😭`)
 
           let channel = data.Bye
 
@@ -538,10 +545,10 @@ try {
         } else if (!data2) {
           const embed2 = new Discord.MessageEmbed()
             .setTitle("Goodbye")
-            .setThumbnail(member.user.avatarURL())
+            .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setDescription(`**${member.user.tag}** Just Left This Server! We hope They Return Back Soon!`)
-            .setFooter(`We Now Have ${member.guild.memberCount} Members!`)
-            .setThumbnail(member.user.avatarURL())
+            .setFooter(`Now We Are ${member.guild.memberCount} Members! 😭`)
+            .setImage('https://th.bing.com/th/id/OIP.b5kgWCKi-MEpQli15LggJwAAAA?pid=ImgDet&w=425&h=282&rs=1')
             .setColor(`${color}`)
 
           let byechannel = data.Bye
