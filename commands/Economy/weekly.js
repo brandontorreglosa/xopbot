@@ -1,8 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const { Database } = require("quickmongo");
-const mongodb = process.env.MONGODB_SRV;
-const db = new Database(mongodb);
+const db = require("quick.db");
 module.exports = {
   name: "weekly",
   permissions: ["SEND_MESSAGES"],
