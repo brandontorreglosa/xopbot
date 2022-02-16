@@ -1,5 +1,5 @@
 const lineReplyNoMention = require('discord-reply');
-const db = require('quick.db');
+const db = require('quickmongo');
 const color = process.env.Color;
 module.exports = {
   name: "daily",

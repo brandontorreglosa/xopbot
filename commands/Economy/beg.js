@@ -1,6 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const db = require('quick.db');
+const db = require('quickmongo');
 module.exports = {
   name: "beg",
   permissions: ["SEND_MESSAGES"],
