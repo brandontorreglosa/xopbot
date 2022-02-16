@@ -1,6 +1,8 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const db = require('quickmongo');
+const { Database } = require("quickmongo");
+const mongodb = process.env.MONGODB_SRV;
+const db = new Database(mongodb);
 module.exports = {
   name: "yearly",
   permissions: ["SEND_MESSAGES"],
@@ -11,8 +13,8 @@ module.exports = {
   description: "yearly Xocoins",
   async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 1000000) + 5000;
-    db.add(`${message.author.username}_yearly_collected`, 1)
-    const fetchd = db.get(`${message.author.username}_yearly_collected`)
+    await db.add(`${message.author.username}_yearly_collected`, 1)
+    const fetchd = await db.get(`${message.author.username}_yearly_collected`)
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))

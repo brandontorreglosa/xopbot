@@ -1,6 +1,8 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const db = require('quickmongo');
+const { Database } = require("quickmongo");
+const mongodb = process.env.MONGODB_SRV;
+const db = new Database(mongodb);
 module.exports = {
   name: "beg",
   permissions: ["SEND_MESSAGES"],
@@ -11,8 +13,8 @@ module.exports = {
   description: "beg for coins",
   async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 500) + 1;
-    db.add(`${message.author.username}_begged_total`, 1)
-    const totalbegs = db.get(`${message.author.username}_begged_total`)
+    await db.add(`${message.author.username}_begged_total`, 1)
+    const totalbegs = await db.get(`${message.author.username}_begged_total`)
     const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
