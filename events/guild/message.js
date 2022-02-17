@@ -351,7 +351,7 @@ try {
       if (command) command.execute(client, message, cmd, args, Discord)
     }
     if (command.cooldown) {
-      const color = new process.env.Color;
+      const color = process.env.Color;
       const current_time = Date.now();
       const cooldown_amount = (command.cooldown) * 1000
 
