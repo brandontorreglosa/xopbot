@@ -364,71 +364,78 @@ try {
 
             if (time_left.toFixed(1) >= 31536000) {
               let year = (time_left.toFixed(1) / 31536000);
+              let ycmd = (command.cooldown.toFixed(1) / 31536000)
               const ym = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(year)}\` Year(s)! \nUntil Then You Would Have A Car 🤣!**`)
-                .setFooter(`The Default Cooldown Is ${cooldown_amount}y`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${ycmd}y`, message.author.displayAvatarURL({ dynamic: true }))
               return message.lineReplyNoMention(ym) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 2628000) {
               let month = (time_left.toFixed(1) / 2628000);
+              let mmcmd = (command.cooldown.toFixed(1) / 2628000);
               const mm = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(month)}\` Month(s)! \nUntil Then You Would Have Premium 👑!**`)
-                .setFooter(`The Default Cooldown Is ${cooldown_amount}mo`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${mmcmd}mo`, message.author.displayAvatarURL({ dynamic: true }))
               return message.lineReplyNoMention(mm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 604800) {
               let week = (time_left.toFixed(1) / 604800);
+              let wcmd = (command.cooldown.toFixed(1) / 604800);
               const wm = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(week)}\` Week(s)! \nUntil Then You Would Have A PS5 🎮!**`)
-                .setFooter(`The Default Cooldown Is ${cooldown_amount}w`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${wcmd}w`, message.author.displayAvatarURL({ dynamic: true }))
               return message.lineReplyNoMention(wm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 86400) {
               let day = (time_left.toFixed(1) / 86400);
+              let dcmd = (command.cooldown.toFixed(1) / 86400);
               const dm = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(day)}\` Day(s)! \nUntil Then Go Touch Some Grass 😀!**`)
-                .setFooter(`The Default Cooldown Is ${cooldown_amount}d`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${dcmd}d`, message.author.displayAvatarURL({ dynamic: true }))
               return message.lineReplyNoMention(dm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 3600) {
               let hour = (time_left.toFixed(1) / 3600);
+              let hcmd = (command.cooldown.toFixed(1) / 3600);
               const hm = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(hour)}\` Hour(s)! \nUntil Then Go Eat Some Sushi 🍣!**`)
-                .setFooter(`The Default Cooldown Is ${cooldown_amount}h`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${hcmd}h`, message.author.displayAvatarURL({ dynamic: true }))
               return message.lineReplyNoMention(hm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 60) {
               let minute = (time_left.toFixed(1) / 60);
+              let mcmd = (command.cooldown.toFixed(1) / 60);
               const mmm = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(minute)}\` Minute(s)! \nUntil Then Go Drink Some Milk 🥛!**`)
-                .setFooter(`The Default Cooldown Is ${cooldown_amount}m`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${mcmd}m`, message.author.displayAvatarURL({ dynamic: true }))
               return message.lineReplyNoMention(mmm) //, allowedMentions: { repliedUser: true } })
             }
             let seconds = (time_left.toFixed(1));
+            let scmd = (command.cooldown.toFixed(1));
             const sm = new Discord.MessageEmbed()
               .setTimestamp()
               .setColor(`${color}`)
               .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
               .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(seconds)}\` Second(s)! \nNo Need To Do Something, Just Wait ⌛!**`)
-              .setFooter(`The Default Cooldown Is ${cooldown_amount}s`, message.author.displayAvatarURL({ dynamic: true }))
+              .setFooter(`The Default Cooldown Is ${scmd}s`, message.author.displayAvatarURL({ dynamic: true }))
             return message.lineReplyNoMention(sm) //, allowedMentions: { repliedUser: true } })
           } else {
             await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
