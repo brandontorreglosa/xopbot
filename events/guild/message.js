@@ -347,11 +347,11 @@ try {
       return message.lineReplyNoMention({ content: "**You Need To \`Register\` For \`NSFW Usage\` To Do This Command! 🔞 \nRequirments: \n```18+ Years Old \nMature Adult \nMature Behavior \nFull Responsibility``` \nSimply Do `(prefix)register` And I Will Take You To The Process! 😊**" }) //, allowedMentions: { repliedUser: true } })
 
     // <----/Cooldown System/---->
-
     async function commandExecute() {
       if (command) command.execute(client, message, cmd, args, Discord)
     }
     if (command.cooldown) {
+      const color = new process.env.Color;
       const current_time = Date.now();
       const cooldown_amount = (command.cooldown) * 1000
 
@@ -364,30 +364,72 @@ try {
 
             if (time_left.toFixed(1) >= 31536000) {
               let year = (time_left.toFixed(1) / 31536000);
-              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(year)}\` More Year(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              const ym = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(year)}\` Year(s)! \nUntil Then You Would Have A Car 🤣!**`)
+                .setFooter(`The Default Cooldown Is ${cooldown_amount}y`, message.author.displayAvatarURL({ dynamic: true }))
+              return message.lineReplyNoMention(ym) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 2628000) {
               let month = (time_left.toFixed(1) / 2628000);
-              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(month)}\` More Month(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              const mm = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(month)}\` Month(s)! \nUntil Then You Would Have Premium 👑!**`)
+                .setFooter(`The Default Cooldown Is ${cooldown_amount}mo`, message.author.displayAvatarURL({ dynamic: true }))
+              return message.lineReplyNoMention(mm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 604800) {
               let week = (time_left.toFixed(1) / 604800);
-              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(week)}\` More Week(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              const wm = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(week)}\` Week(s)! \nUntil Then You Would Have A PS5 🎮!**`)
+                .setFooter(`The Default Cooldown Is ${cooldown_amount}w`, message.author.displayAvatarURL({ dynamic: true }))
+              return message.lineReplyNoMention(wm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 86400) {
               let day = (time_left.toFixed(1) / 86400);
-              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(day)}\` More Day(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              const dm = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(day)}\` Day(s)! \nUntil Then Go Touch Some Grass 😀!**`)
+                .setFooter(`The Default Cooldown Is ${cooldown_amount}d`, message.author.displayAvatarURL({ dynamic: true }))
+              return message.lineReplyNoMention(dm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 3600) {
               let hour = (time_left.toFixed(1) / 3600);
-              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(hour)}\` More Hour(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              const hm = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(hour)}\` Hour(s)! \nUntil Then Go Eat Some Sushi 🍣!**`)
+                .setFooter(`The Default Cooldown Is ${cooldown_amount}h`, message.author.displayAvatarURL({ dynamic: true }))
+              return message.lineReplyNoMention(hm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 60) {
               let minute = (time_left.toFixed(1) / 60);
-              return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(minute)}\` More Minute(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+              const mmm = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(minute)}\` Minute(s)! \nUntil Then Go Drink Some Milk 🥛!**`)
+                .setFooter(`The Default Cooldown Is ${cooldown_amount}m`, message.author.displayAvatarURL({ dynamic: true }))
+              return message.lineReplyNoMention(mmm) //, allowedMentions: { repliedUser: true } })
             }
             let seconds = (time_left.toFixed(1));
-            return message.lineReplyNoMention({ content: `**Please Wait \`${parseInt(seconds)}\` More Second(s) Before Using \`${command.name}\` Again!**` }) //, allowedMentions: { repliedUser: true } })
+            const sm = new Discord.MessageEmbed()
+              .setTimestamp()
+              .setColor(`${color}`)
+              .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
+              .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(seconds)}\` Second(s)! \nNo Need To Do Something, Just Wait ⌛!**`)
+              .setFooter(`The Default Cooldown Is ${cooldown_amount}s`, message.author.displayAvatarURL({ dynamic: true }))
+            return message.lineReplyNoMention(sm) //, allowedMentions: { repliedUser: true } })
           } else {
             await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
             commandExecute();
@@ -414,7 +456,7 @@ try {
         GuildID: message.guild.id,
       })
       if (antilink) {
-        if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.")) {
+        if (message.content.match("https://") || message.content.match("discord.gg") || message.content.match("www.") || message.content.match("http://")) {
           message.delete();
           message.lineReplyNoMention({ content: "**No \`Links\` Allowed While \`Anti-Link\` Is Active For \`XOPBOT\`!**" }).then(msg => { //, allowedMentions: { repliedUser: true } })
             let time = '4s'
