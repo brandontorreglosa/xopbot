@@ -371,7 +371,7 @@ try {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(year)}\` Year(s)! \nUntil Then You Would Have A Car 🤣!**`)
-                .setFooter(`The Default Cooldown Is ${rycmd}y`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${rycmd}y`)
               return message.lineReplyNoMention(ym) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 2628000) {
@@ -383,7 +383,7 @@ try {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(month)}\` Month(s)! \nUntil Then You Would Have Premium 👑!**`)
-                .setFooter(`The Default Cooldown Is ${rmmcmd}mo`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${rmmcmd}mo`)
               return message.lineReplyNoMention(mm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 604800) {
@@ -395,7 +395,7 @@ try {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(week)}\` Week(s)! \nUntil Then You Would Have A PS5 🎮!**`)
-                .setFooter(`The Default Cooldown Is ${rwcmd}w`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${rwcmd}w`)
               return message.lineReplyNoMention(wm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 86400) {
@@ -407,7 +407,7 @@ try {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(day)}\` Day(s)! \nUntil Then Go Touch Some Grass 😀!**`)
-                .setFooter(`The Default Cooldown Is ${rdcmd}d`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${rdcmd}d`)
               return message.lineReplyNoMention(dm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 3600) {
@@ -419,7 +419,7 @@ try {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(hour)}\` Hour(s)! \nUntil Then Go Eat Some Sushi 🍣!**`)
-                .setFooter(`The Default Cooldown Is ${rhcmd}h`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${rhcmd}h`)
               return message.lineReplyNoMention(hm) //, allowedMentions: { repliedUser: true } })
             }
             if (time_left.toFixed(1) >= 60) {
@@ -431,7 +431,7 @@ try {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(minute)}\` Minute(s)! \nUntil Then Go Drink Some Milk 🥛!**`)
-                .setFooter(`The Default Cooldown Is ${rmcmd}m`, message.author.displayAvatarURL({ dynamic: true }))
+                .setFooter(`The Default Cooldown Is ${rmcmd}m`)
               return message.lineReplyNoMention(mmm) //, allowedMentions: { repliedUser: true } })
             }
             let seconds = (time_left.toFixed(1));
@@ -442,7 +442,7 @@ try {
               .setColor(`${color}`)
               .setAuthor(`${message.author.username} Slow Down!`, message.author.displayAvatarURL({ dynamic: true }))
               .setDescription(`**Yo, Man You Need To Stop Spamming The Command \`${command.name}\`. \nYou Can Try It Again In \`${parseInt(seconds)}\` Second(s)! \nNo Need To Do Something, Just Wait ⌛!**`)
-              .setFooter(`The Default Cooldown Is ${rssmd}s`, message.author.displayAvatarURL({ dynamic: true }))
+              .setFooter(`The Default Cooldown Is ${rssmd}s`)
             return message.lineReplyNoMention(sm) //, allowedMentions: { repliedUser: true } })
           } else {
             await cooldown.findOneAndUpdate({ userId: message.author.id, cmd: command.name }, { time: current_time });
