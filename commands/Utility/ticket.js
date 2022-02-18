@@ -71,7 +71,7 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Incoming Air Strike ✈️💣! Channel Delteting In 5 Seconds!**')
-        .setFooter(`Say Goodbye To ${channel.name}!`, message.author.displayAvatarURL({ dynamic: true }))
+        .setFooter(`Say Goodbye To ${channel.name}!`)
 
       const collector = reactionMessage.createReactionCollector(
         (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).permissions.has("SEND_MESSAGES"),
@@ -95,7 +95,7 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**Hey, The Server Moderator(s) Will Be Right Wth You! \nMake Sure To Check The TXTC ${channel} For Responses!**`)
-        .setFooter(`Opened By ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setFooter(`Opened By ${message.author.username}`)
 
       message
         .lineReplyNoMention(embed101)

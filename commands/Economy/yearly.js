@@ -18,7 +18,7 @@ module.exports = {
       .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**You Received \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Yearly Xocoins! 💸**`)
       .setColor(`${color}`)
-      .setFooter(`Total Yearl\`s Collected: ${fetchd.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setFooter(`Total Yearl\`s Collected: ${fetchd.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`)
     message.lineReplyNoMention(embed);
     client.add(message.author.id, randomNumber)
   },

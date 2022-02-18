@@ -14,10 +14,11 @@ module.exports = {
         console.log(flags);
 
         const badgesuser = new Discord.MessageEmbed()
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setColor(`${color}`)
             .setTimestamp()
             .setDescription(`\`${user.username}\`'s badges: \`${flags.join(', ')}\``)
-            .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
+            .setFooter(`Requested By: ${message.author.tag}`)
         message.lineReplyNoMention(badgesuser)
     }
 }

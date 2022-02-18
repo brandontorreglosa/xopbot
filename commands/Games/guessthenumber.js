@@ -64,9 +64,10 @@ module.exports = {
             let attempts = guildAttempts.get(guild.id);
 
             const guessedthenumber = new Discord.MessageEmbed()
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
                 .setColor(`${gcolor}`)
-                .setDescription(`**✅ Perfect, \`<@${member.id}>\` The Number Was \`${guildNumber.get(guild.id)}\`, It Only Took You \`${attempts.attempts}\` Attempts!**`)
+                .setDescription(`**✅ Perfect, The Number Was \`${guildNumber.get(guild.id)}\`! It Only Took You \`${attempts.attempts}\` Attempts!**`)
 
             channel.send(guessedthenumber);
             guildNumber.delete(guild.id);
