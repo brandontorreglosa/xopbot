@@ -8,6 +8,7 @@ module.exports = {
     clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first()
+        const usertarget = message.guilds.members.cache.get(user.id);
         if (!user) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
@@ -25,7 +26,7 @@ module.exports = {
                 .setColor(`${color}`)
             return message.lineReplyNoMention(addroleError2)
         }
-        user.roles.add(roleToGive.id)
+        usertarget.roles.add(roleToGive)
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)

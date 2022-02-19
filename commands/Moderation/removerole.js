@@ -8,7 +8,7 @@ module.exports = {
   clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {
     const target = message.mentions.users.first();
-
+    const usertarget = message.guilds.members.cache.get(target.id);
     if (!target) {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
@@ -37,7 +37,7 @@ module.exports = {
       .setDescription(`**Removed: \`${rrole}\` From \`${target.username}\`!**`)
     await message.lineReplyNoMention(embed)
 
-    target.roles.remove(rrole.id)
+    usertarget.roles.remove(rrole)
 
   }
 }
