@@ -37,7 +37,7 @@ module.exports = {
       .setDescription(`**Removed: \`${rrole}\` From \`${target.username}\`!**`)
     await message.lineReplyNoMention(embed)
 
-    target.roles.remove(rrole)
+    target.roles.remove(rrole.id)
 
   }
 }

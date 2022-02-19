@@ -25,7 +25,7 @@ module.exports = {
                 .setColor(`${color}`)
             return message.lineReplyNoMention(addroleError2)
         }
-        user.roles.add(roleToGive)
+        user.roles.add(roleToGive.id)
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
