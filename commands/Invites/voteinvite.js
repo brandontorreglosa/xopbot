@@ -2,7 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {
     name: 'voteinvite',
-    cooldown: 3,
+    cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['vinv', 'voin'],

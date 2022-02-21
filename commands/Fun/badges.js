@@ -4,7 +4,7 @@ module.exports = {
     name: 'badges',
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 3,
+    cooldown: 5,
     aliases: ['usersbadge'],
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first() || message.author;

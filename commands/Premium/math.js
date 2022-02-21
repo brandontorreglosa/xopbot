@@ -5,7 +5,7 @@ module.exports = {
     name: 'math',
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 3,
+    cooldown: 5,
     aliases: ['mathprob', 'mathproblem'],
     premium: true,
     async execute(client, message, cmd, args, Discord) {

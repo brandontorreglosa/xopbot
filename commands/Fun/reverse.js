@@ -2,7 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {
     name: "reverse",
-    cooldown: 3,
+    cooldown: 5,
     aliases: ['rv'],
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_MESSAGES"],

@@ -3,7 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {
     name: "coinflip",
-    cooldown: 3,
+    cooldown: 5,
     aliases: ['cf'],
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],

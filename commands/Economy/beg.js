@@ -6,7 +6,7 @@ module.exports = {
   permissions: ["SEND_MESSAGES"],
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: [],
-  cooldown: 5,
+  cooldown: 15,
   permissions: [],
   description: "beg for coins",
   async execute(client, message, cmd, args, Discord) {

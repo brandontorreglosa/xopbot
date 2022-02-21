@@ -6,7 +6,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     aliases: ['usi', 'ui'],
-    cooldown: 3,
+    cooldown: 5,
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 

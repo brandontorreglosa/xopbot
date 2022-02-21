@@ -5,7 +5,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     premium: true,
-    cooldown: 3,
+    cooldown: 5,
     async execute(client, message, cmd, args, Discord) {
         const url = 'https://some-random-api.ml/meme';
 

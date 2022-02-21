@@ -2,7 +2,7 @@ const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {
     name: 'amino',
-    cooldown: 2,
+    cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Sends The Owners Youtube Channel!",

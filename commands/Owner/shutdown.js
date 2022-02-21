@@ -8,7 +8,7 @@ module.exports = {
     name: "shutdown",
     permissions: ["ADMINISTRATOR"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 120,
+    cooldown: 3,
     description: "Shut's down the bot",
     async execute(client, message, cmd, args, Discord) {
         try {

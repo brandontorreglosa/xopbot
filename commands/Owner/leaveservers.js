@@ -9,7 +9,7 @@ module.exports = {
     name: "leaveservers",
     permissions: ["ADMINISTRATOR"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 120,
+    cooldown: 3,
     description: "Check what Servers the bot is in!",
     async execute(client, message, cmd, args, Discord) {
         try {

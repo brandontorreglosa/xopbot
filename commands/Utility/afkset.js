@@ -3,7 +3,7 @@ const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {
   name: 'afkset',
-  cooldown: 5,
+  cooldown: 10,
   permissions: ["SEND_MESSAGES"],
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: ['afk', 'setafk'],

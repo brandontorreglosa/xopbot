@@ -8,7 +8,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     premium: true,
     aliases: ['wthr'],
-    cooldown: 2,
+    cooldown: 5,
     async execute(client, message, cmd, args, Discord) {
         const catcherv2 = args.slice(0).join(" ");
         weather.find({ search: args.join(" "), degreeType: 'F' }, function (error, result) {

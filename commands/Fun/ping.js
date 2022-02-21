@@ -4,7 +4,7 @@ module.exports = {
     name: 'ping',
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES"],
-    cooldown: 2,
+    cooldown: 5,
     description: "this is a ping command!",
     async execute(client, message, cmd, args, Discord) {
         const fakping = new Discord.MessageEmbed()

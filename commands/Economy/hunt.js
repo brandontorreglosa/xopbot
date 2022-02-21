@@ -8,7 +8,7 @@ module.exports = {
     name: "hunt",
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 15,
+    cooldown: 20,
     description: "Hunt For Stuff",
     async execute(client, message, cmd, args, Discord) {
         const e = new Discord.MessageEmbed()

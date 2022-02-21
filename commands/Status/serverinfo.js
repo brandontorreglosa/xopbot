@@ -5,7 +5,7 @@ const color = process.env.Color;
 module.exports = {
   name: 'serverinfo',
   aliases: ['si'],
-  cooldown: 20,
+  cooldown: 15,
   permissions: ["SEND_MESSAGES"],
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   async execute(client, message, cmd, args, Discord) {

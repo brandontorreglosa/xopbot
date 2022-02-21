@@ -7,7 +7,7 @@ module.exports = {
     name: "buy",
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 10,
+    cooldown: 15,
     description: "buy something",
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {

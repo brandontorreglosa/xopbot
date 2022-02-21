@@ -6,7 +6,7 @@ module.exports = {
   name: "fliptext",
   permissions: ["SEND_MESSAGES"],
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-  cooldown: 4,
+  cooldown: 5,
   description: "Flip some text",
   usage: "fliptext <text>",
   type: "Fun",

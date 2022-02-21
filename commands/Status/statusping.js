@@ -7,7 +7,7 @@ module.exports = {
   permissions: ["SEND_MESSAGES"],
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   aliases: ['stp', 'sping'],
-  cooldown: 4,
+  cooldown: 5,
   description: 'Get bot ping For The Server.',
   async execute(client, message, cmd, args, Discord) {
 
@@ -25,13 +25,13 @@ module.exports = {
       .setTitle('🏓 Pong!')
       .setColor(`${color}`)
       .setDescription(
-        `
+        `**
         🌐 Database Ping Data:
         🎣 Fetches Ping: \`${ping.endGet}ms\`
         📝 Wrights Ping: \`${ping.endWright}ms\`
         😕 Average Ping: \`${ping.avarage}ms\`
         💬 Message Ping: \`${endMessagePing}ms\`
-      `
+      **`
       )
       .setColor(`${color}`)
       .setTimestamp();
