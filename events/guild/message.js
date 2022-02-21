@@ -25,8 +25,9 @@ try {
         .setTimestamp()
         .setColor(`${color}`)
         .setAuthor(`🔝 You Leveled Up!`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`🥳 _**You Have Advanced To Level ${user.level} You Are Getting Wise! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
-        .setFooter('Thank You For Being Active 🙏')
+        .setDescription(`🥳 _**You Have Advanced To Level ${user.level} GG, Keep Going! \nKeep Chatting To Get Cool Roles To Show Off In The Guild 👍**_`)
+        .setImage('https://cdn.discordapp.com/attachments/824319314495537175/945298219351539822/ezgif.com-gif-maker.jpg')
+        .setFooter('Thank You For Being Active 😀')
       message.lineReplyNoMention(someonelevelup)
 
       if (user.level == 1) {
