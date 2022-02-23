@@ -30,8 +30,14 @@ module.exports = {
         })
 
         .catch(_e => {
+          const errdem = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription('**Failed To Set Your Status Due To Very High Role Try Demoting!')
+            .setFooter('Try Also Moving My Role On Top Of All!')
           quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-          return message.lineReplyNoMention({ content: '**Failed To Set Your Status Due To Very High Role Try Demoting.**' });
+          return message.lineReplyNoMention(errdem);
         });
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel)

@@ -22,8 +22,7 @@ module.exports = {
     const msg = await message.lineReplyNoMention(nopr);
     const endMessagePing = Date.now() - messagePing;
     const embed = new MessageEmbed()
-      .setTitle('🏓 Pong!')
-      .setColor(`${color}`)
+      .setAuthor(`🏓 Pong!`, message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(
         `**
         🌐 Database Ping Data:

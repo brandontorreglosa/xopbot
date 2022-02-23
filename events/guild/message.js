@@ -137,7 +137,13 @@ try {
         .setNickname(status.username)
 
         .then(() => {
-          message.lineReplyNoMention({ content: `**You Were AFK For \`${ms(Date.now() - (status.date || 0))}\`**` }) //, allowedMentions: { repliedUser: true } });
+          const sucafk = new Discord.MessageEmbed()
+            .setTimestamp()
+            .setColor(`${color}`)
+            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(`**You Were AFK For \`${ms(Date.now() - (status.date || 0))}\` With Reason: Went To touch Some Grass 🤣! **`)
+            .setFooter('Now That\'s A Good Reason!')
+          message.lineReplyNoMention(sucafk) //, allowedMentions: { repliedUser: true } });
         })
 
         .catch(_e => {
