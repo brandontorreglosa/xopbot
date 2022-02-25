@@ -66,7 +66,12 @@ module.exports = {
                     },
                 }).save();
             }
-            message.reply({content: `**You Have Bought The Item \`${itemToBuy}\` For \`${itemPrice}\` Xocoins! The Shop Has Taken That Price!**`});
+            const sucbuy = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**You Have Bought The Item \`${itemToBuy}\` For \`${itemPrice}\` Xocoins! The Dealer Has Taken From You That Price!**`)
+            message.lineReply(sucbuy);
             client.rmv(message.author.id, itemPrice);
         })
     }

@@ -34,7 +34,7 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription('**Failed To Set Your Status Due To Very High Role Try Demoting!')
+            .setDescription('**Failed To Set Your Status Due To Very High Role Try Demoting!**')
             .setFooter('Try Also Moving My Role On Top Of All!')
           quick.delete(`${message.author.id}_${message.guild.id}_afk`);
           return message.lineReplyNoMention(errdem);

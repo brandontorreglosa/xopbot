@@ -37,13 +37,22 @@ module.exports = {
             '8=========================D',
             '8==========================D',
             '8===========================D',
-            '8============================D'
+            '8============================D',
+            '8=============================D',
+            '8==============================D',
+            '8===============================D'
         ];
 
-        const user = message.mentions.users.first() ||  message.author;
+        const user = message.mentions.users.first() || message.author;
 
-        if (!user)
-            return message.lineReplyNoMention({ content: `**Mention Someone Or Provide Their User ID To Get Their PP Size!**` }) //, allowedMentions: { repliedUser: true } })
+        if (!user) {
+            const errnospec = new Discord.MessageEmbed()
+                .setTimestamp()
+                .setColor(`${color}`)
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription('**The User Was Not Found Please Try Again!**')
+            return message.lineReplyNoMention(errnospec)
+        }
 
         const embed = new Discord.MessageEmbed()
             .setTitle('PP Size Detector')
