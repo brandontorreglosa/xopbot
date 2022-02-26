@@ -23,7 +23,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🎮 Games__')
             .setColor(`${color}`)
-            .setDescription('**__<:BonkGoToHornyJail:824886935091675177> Images (35)__** \n[alert](https://xopbot-gg.glitch.me/) \n__***Alert The World OP!***__ \n[facts](https://xopbot-gg.glitch.me/) \n__***Facts Only Mate!***__ \n[clown](https://xopbot-gg.glitch.me/) \n__***Wow You Are A Clown!***__ \n[drake](https://xopbot-gg.glitch.me/) \n__***The Drake Meme!***__ \n[water](https://xopbot-gg.glitch.me/) \n__***I Need Water Guide Me!***__')
+            .setDescription('**__<:BonkGoToHornyJail:824886935091675177> Images (40)__** \n[alert](https://xopbot-gg.glitch.me/) \n__***Alert The World OP!***__ \n[facts](https://xopbot-gg.glitch.me/) \n__***Facts Only Mate!***__ \n[clown](https://xopbot-gg.glitch.me/) \n__***Wow You Are A Clown!***__ \n[drake](https://xopbot-gg.glitch.me/) \n__***The Drake Meme!***__ \n[water](https://xopbot-gg.glitch.me/) \n__***I Need Water Guide Me!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed17 = new Discord.MessageEmbed()
@@ -74,7 +74,7 @@ module.exports = {
             .setDescription('**__<:BonkGoToHornyJail:824886935091675177> Images (40)__** \n[noaffectbaby](https://xopbot-gg.glitch.me/) \n__***Don\'t Affect The Baby!***__ \n[monster](https://xopbot-gg.glitch.me/) \n__***Hideous And Scary!***__ \n[blur](https://xopbot-gg.glitch.me/) \n__***Disgusting, Blur It!***__ \n[jail](https://xopbot-gg.glitch.me/) \n__***Mum Pay My Bail :(!***__ \n[spank](https://xopbot-gg.glitch.me/) \n__***You Bad Kid!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-        const pages = [embed15, embed16, embed17, embed18, embed19, embed20, embed21]
+        const pages = [embed15, embed16, embed17, embed18, embed19, embed20, embed21, embed22]
         disbutpages.pages(message, pages, {
             timeout: 540 * 1000,
             buttons: {
