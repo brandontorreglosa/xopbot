@@ -55,7 +55,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🎮 Games__')
             .setColor(`${color}`)
-            .setDescription('**__📷 Images (35)__** \n[opinion](https://xopbot-gg.glitch.me/) \n__***Thats My Opinion!***__ \n[wanted](https://xopbot-gg.glitch.me/) \n__***Oh, Im Wanted!***__ \n[simp](https://xopbot-gg.glitch.me/) \n__***I Became A Simp!***__ \n[gun](https://xopbot-gg.glitch.me/) \n__***What Did You Say?!***__ \n[changemymind](https://xopbot-gg.glitch.me/) \n__***Change A Users Mind!***__')
+            .setDescription('**__<:BonkGoToHornyJail:824886935091675177> Images (35)__** \n[opinion](https://xopbot-gg.glitch.me/) \n__***Thats My Opinion!***__ \n[wanted](https://xopbot-gg.glitch.me/) \n__***Oh, Im Wanted!***__ \n[simp](https://xopbot-gg.glitch.me/) \n__***I Became A Simp!***__ \n[gun](https://xopbot-gg.glitch.me/) \n__***What Did You Say?!***__ \n[changemymind](https://xopbot-gg.glitch.me/) \n__***Change A Users Mind!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const embed21 = new Discord.MessageEmbed()
@@ -63,7 +63,7 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__🎮 Games__')
             .setColor(`${color}`)
-            .setDescription('**__📷 Images (35)__** \n[triggered](https://xopbot-gg.glitch.me/) \n__***Triggered User OP!***__ \n[hitler](https://xopbot-gg.glitch.me/) \n__***You Evil Monster!***__ \n[wasted](https://xopbot-gg.glitch.me/) \n__***I Wasted Myself!***__ \n[trash](https://xopbot-gg.glitch.me/) \n__***You Trash User!***__ \n[facepalm](https://xopbot-gg.glitch.me/) \n__***Just Why? Why!***__')
+            .setDescription('**__<:BonkGoToHornyJail:824886935091675177> Images (35)__** \n[triggered](https://xopbot-gg.glitch.me/) \n__***Triggered User OP!***__ \n[hitler](https://xopbot-gg.glitch.me/) \n__***You Evil Monster!***__ \n[wasted](https://xopbot-gg.glitch.me/) \n__***I Wasted Myself!***__ \n[trash](https://xopbot-gg.glitch.me/) \n__***You Trash User!***__ \n[facepalm](https://xopbot-gg.glitch.me/) \n__***Just Why? Why!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
         const pages = [embed15, embed16, embed17, embed18, embed19, embed20, embed21]
