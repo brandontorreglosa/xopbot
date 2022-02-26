@@ -1,6 +1,6 @@
 const lineReplyNoMention = require("discord-reply");
 const color = process.env.Color;
-
+const DIG = require("discord-image-generation");
 module.exports = {
     name: "blur",
     cooldown: 10,
