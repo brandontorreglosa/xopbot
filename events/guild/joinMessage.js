@@ -3,7 +3,6 @@ const color = process.env.Color;
 const errorChannel = process.env.errorChannel;
 module.exports = async (Discord, client, message) => {
     client.on("guildCreate", async guild => {
-        const { guild } = message;
         const newg = new Discord.MessageEmbed()
             .setTimestamp()
             .setColor(`${color}`)
