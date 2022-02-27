@@ -13,7 +13,7 @@ module.exports = async (Discord, client, message) => {
     })
     client.on("guildCreate", async guild => {
 
-        const channelToSend;
+        let channelToSend;
 
         guild.channels.cache.forEach((channel) => {
             if (
