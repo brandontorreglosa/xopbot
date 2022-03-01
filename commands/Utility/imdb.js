@@ -27,7 +27,10 @@ module.exports = {
       .setFooter(`👍 Ratings: ${movie.rating}`)
       .addField("🌎 Country", movie.country, true)
       .addField("💬 Languages", movie.languages, true)
-      .addField("✍️ Type", movie.type, true);
+      .addField("✍️ Type", movie.type, true)
+      .addField("🏆 Awards", movie.awards, true)
+      .addField("🎭 Actors", movie.actors, true)
+      .addField("⏲️ Runtime", movie.runtime, true)
     message.lineReplyNoMention(embed);
   }
 };
