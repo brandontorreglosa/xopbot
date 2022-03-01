@@ -12,7 +12,7 @@ module.exports = {
       const nopr = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor(`${color}`)
-        .setAuthor(`${message.author.username}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)imdb <movie/series name>\`**`)
       return message.lineReplyNoMention(nopr)
     }
@@ -24,10 +24,10 @@ module.exports = {
       .setColor(`${color}`)
       .setThumbnail(movie.poster)
       .setDescription(`**${movie.plot}**`)
-      .setFooter(`Ratings: ${movie.rating}`)
-      .addField("Country", movie.country, true)
-      .addField("Languages", movie.languages, true)
-      .addField("Type", movie.type, true);
+      .setFooter(`👍 Ratings: ${movie.rating}`)
+      .addField("🌎 Country", movie.country, true)
+      .addField("💬 Languages", movie.languages, true)
+      .addField("✍️ Type", movie.type, true);
     message.lineReplyNoMention(embed);
   }
 };
