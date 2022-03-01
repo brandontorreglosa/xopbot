@@ -1,45 +1,50 @@
-const Discord = require('discord.js');
-const play = require('google-play-scraper');
-
+const play = require("google-play-scraper");
+const lineReplyNoMention = require("discord-reply");
+const color = process.env.Color;
 module.exports = {
   name: "playstore",
-  description: "Get info about application on playstore",
   permissions: ["SEND_MESSAGES"],
-  category: "general",
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 5,
-  usage: "playstore <app name>",
+  cooldown: 5,
   aliases: ["app", "playstore", "ps"],
+  description: 'Look on the playstore for an app!',
   async execute(client, message, cmd, args, Discord) {
-    if (cmd.startsWith === 'playstore')
-    let kata = args.join(" ") 
-    if(!kata) return message.reply(`What's The Name Of Application Will You Search??`);
-    
-    play.search({term: kata,num:1})
-    .then(data => {
-      
-    let app = data[0].appId
-    play.app({appId:app})
-    .then(lata => {
-    let price = lata.price === 0? "Free" : `${lata.price}`
-    
-    let embed = new Discord.MessageEmbed()
-    .setColor("RED")
-    .setTitle(lata.title)
-    .setThumbnail(lata.icon)
-    .setDescription(lata.summary)
-    .addField('Developer', lata.developer, true)
-    .addField('Price', price, true)
-    .addField('Ratings', lata.scoreText, true)
-    .addField('Install', lata.installs === undefined ? "None" : lata.installs, true)
-    .addField('Genre', lata.genre === undefined ? "None" : lata.genre, true)
-    .addField('Released Date', lata.released === undefined ? "None" : lata.released, true)
-    .addField('Application Link', `[App Link](${lata.url})`, true)
-    .addField('Comment', lata.comments[0] === undefined ? "None" : lata.comments[0], true)
-    .setFooter(`Request by: ${message.author.tag}`, message.author.displayAvatarURL({ format: "png", dynamic: true }))
-    .setTimestamp()
-    return message.channel.send(embed);
-    })
-    })
+    if (!args[0]) {
+      const nopr = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setColor(`${color}`)
+        .setDescription(`**\`(prefix)playstore <app name>\`**`)
+      return message.lineReplyNoMention(nopr);
+    }
+
+    const kata = args.slice(0).join(" ");
+
+    play.search({ term: kata, num: 1 })
+      .then(data => {
+
+        let app = data[0].appId
+        play.app({ appId: app })
+          .then(data => {
+            let price = data.price === 0 ? "Free" : `${data.price}`
+
+            let embed = new Discord.MessageEmbed()
+              .setTimestamp()
+              .setColor(`${color}`)
+              .setAuthor(`${data.title}`, message.author.displayAvatarURL({ dynamic: true }))
+              .setThumbnail(data.icon)
+              .setDescription(data.summary)
+              .addField('Developer', data.developer, true)
+              .addField('Price', price, true)
+              .addField('Ratings', data.scoreText, true)
+              .addField('Install', data.installs === undefined ? "None" : data.installs, true)
+              .addField('Genre', data.genre === undefined ? "None" : data.genre, true)
+              .addField('Released Date', data.released === undefined ? "None" : data.released, true)
+              .addField('Application Link', `[App Link](${data.url})`, true)
+              .addField('Comment', data.comments[0] === undefined ? "None" : data.comments[0], true)
+              .setFooter(`Created by: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            return message.lineReplyNoMention(embed);
+          })
+      })
   }
 }
