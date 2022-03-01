@@ -51,8 +51,7 @@ module.exports = {
             .setEmoji('🎵')
 
         const row = new MessageActionRow()
-            .addComponents(google1, bing, duckduckgo)
-            .addComponents(youtubemusic, spotify)
+            .addComponents(google1, bing, duckduckgo, youtubemusic, spotify)
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
