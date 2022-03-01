@@ -58,7 +58,7 @@ module.exports = {
 
         const wikihow = new MessageButton()
             .setStyle('url')
-            .setURL(`https://www.wikihow.com/wikiHowTo?search=${text}`)
+            .setURL(`https://www.wikihow.com/wikiHowTo?search=${text2}`)
             .setLabel('Wikihow')
             .setEmoji('📑')
 
