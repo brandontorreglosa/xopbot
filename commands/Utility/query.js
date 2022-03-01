@@ -50,7 +50,11 @@ module.exports = {
             .setLabel('Spotify')
             .setEmoji('🎵')
 
-        let components=[{type: 1,components:[google1,bing,duckduckgo]},{type: 1,components:[youtubemusic,spotify]},]
+        const row = new MessageActionRow()
+            .addComponents(google1, bing, duckduckgo)
+        const row2 = new MessageActionRow()
+            .addComponents(youtubemusic, spotify)
+
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
             .setAuthor("Query", message.author.displayAvatarURL({ dynamic: true }))
@@ -58,6 +62,6 @@ module.exports = {
             .setDescription(`**Searched For: \n\`${text1}\` \n\nResults: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
             .setThumbnail(google)
             .setColor(`${color}`)
-        message.lineReplyNoMention({embed:embed,components:components});
+        message.lineReplyNoMention(embed, row, row2);
     }
 }
