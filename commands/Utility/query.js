@@ -50,14 +50,14 @@ module.exports = {
             .setLabel('Spotify')
             .setEmoji('🎵')
 
-        const components = [{ type: 1, components: [google1, bing, duckduckgo] }, { type: 1, components: [youtubemusic, spotify] }]
+        let components=[{type: 1,components:[google1,bing,duckduckgo]},{type: 1,components:[youtubemusic,spotify]},]
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
-            .setAuthor("Query", `https://th.bing.com/th/id/R.5069689e88f5dc4e88a5230dafb7e65b?rik=BBz5CfrNbwhMGg&pid=ImgRaw&r=0`)
+            .setAuthor("Query", message.author.displayAvatarURL({ dynamic: true }))
             .setThumbnail(`https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2000px-Google_%22G%22_Logo.svg.png`)
-            .setDescription(`**Searched For: \n${text1} \n\n**Results: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
+            .setDescription(`**Searched For: \n\`${text1}\` \n\nResults: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
             .setThumbnail(google)
             .setColor(`${color}`)
-        message.lineReplyNoMention({ embed: embed, components: components });
+        message.lineReplyNoMention({embed:embed,components:components});
     }
 }
