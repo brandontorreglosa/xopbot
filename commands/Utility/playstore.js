@@ -5,8 +5,8 @@ module.exports = {
   name: "playstore",
   permissions: ["SEND_MESSAGES"],
   clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-  cooldown: 5,
-  aliases: ["app", "playstore", "ps"],
+  cooldown: 10,
+  aliases: ['app', 'playstore'],
   description: 'Look on the playstore for an app!',
   async execute(client, message, cmd, args, Discord) {
     if (!args[0]) {
