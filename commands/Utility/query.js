@@ -50,11 +50,26 @@ module.exports = {
             .setLabel('Spotify')
             .setEmoji('🎵')
 
+        const wikipedia = new MessageButton()
+            .setStyle('url')
+            .setURL(`https://www.wikipedia.org/wiki/${text2}`)
+            .setLabel('Wikipedia')
+            .setEmoji('📑')
+
+        const wikihow = new MessageButton()
+            .setStyle('url')
+            .setURL(`https://www.wikihow.com/wikiHowTo?search=${text}`)
+            .setLabel('Wikihow')
+            .setEmoji('📑')
+
         const row = new MessageActionRow()
             .addComponents(google1, bing, duckduckgo);
 
         const row2 = new MessageActionRow()
             .addComponents(youtubemusic, spotify);
+
+        const row3 = new MessageActionRow()
+            .addComponents(wikipedia, wikihow);
 
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
@@ -63,6 +78,6 @@ module.exports = {
             .setDescription(`**Searched For: \n\`${text1}\` \n\nResults: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
             .setThumbnail(google)
             .setColor(`${color}`)
-        message.channel.send({ embed: embed, components: [row, row2] });
+        message.channel.send({ embed: embed, components: [row, row2, row3] });
     }
 }

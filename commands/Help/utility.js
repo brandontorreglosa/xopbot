@@ -29,33 +29,33 @@ module.exports = {
             .setTimestamp()
             //.setTitle('__⚙ Utility__')
             .setColor(`${color}`)
-            .setDescription('**__⚙ Utility (10)__** \n[nickname](https://xopbot.glitch.me/) \n__***Change Nickname!***__ \n[anime](https://xopbot.glitch.me/) \n__***Search For Anime!***__ \n[wiki](https://xopbot.glitch.me/) \n__***Search On Wiki!***__ \n[google](https://xopbot.glitch.me/) \n__***Search On Google!***__ \n[urlshortner](https://xopbot.glitch.me/) \n__***Shorten Your Url!***__')
+            .setDescription('**__⚙ Utility (10)__** \n[nickname](https://xopbot.glitch.me/) \n__***Change Nickname!***__ \n[anime](https://xopbot.glitch.me/) \n__***Search For Anime!***__ \n[playstore](https://xopbot.glitch.me/) \n__***Search On Playstore!***__ \n[query](https://xopbot.glitch.me/) \n__***Search All Querys!***__ \n[imdb](https://xopbot.glitch.me/) \n__***Find Movie/Series Info!***__')
             .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
 
-            const pages = [embed3, embed4]
-            disbutpages.pages(message, pages, {
-                timeout: 540 * 1000,
-                buttons: {
-                    delete: {
-                        style: "red",
-                        emoji: "❌",
-                        text: "Delete"
-                    },
-                    forward: {
-                        style: "blurple",
-                        emoji: "⏩",
-                        text: "Forward"
-                    },
-                    backward: {
-                        style: "blurple",
-                        emoji: "⏪",
-                        text: "Backward"
-                    }
+        const pages = [embed3, embed4]
+        disbutpages.pages(message, pages, {
+            timeout: 540 * 1000,
+            buttons: {
+                delete: {
+                    style: "red",
+                    emoji: "❌",
+                    text: "Delete"
                 },
-                extraRows: [],
-                extraPos: "below",
-                message: "",
-                ephemeral: "**Button Failure! Reasons: \n1.`Not Your Embed!`\n2.`Buttons Timed OUT!`**",
-            })
+                forward: {
+                    style: "blurple",
+                    emoji: "⏩",
+                    text: "Forward"
+                },
+                backward: {
+                    style: "blurple",
+                    emoji: "⏪",
+                    text: "Backward"
+                }
+            },
+            extraRows: [],
+            extraPos: "below",
+            message: "",
+            ephemeral: "**Button Failure! Reasons: \n1.`Not Your Embed!`\n2.`Buttons Timed OUT!`**",
+        })
     }
 }
