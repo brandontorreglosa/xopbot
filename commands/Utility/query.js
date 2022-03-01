@@ -52,7 +52,6 @@ module.exports = {
 
         const row = new MessageActionRow()
             .addComponents(google1, bing, duckduckgo)
-        const row2 = new MessageActionRow()
             .addComponents(youtubemusic, spotify)
 
         const embed = new Discord.MessageEmbed()
@@ -62,6 +61,6 @@ module.exports = {
             .setDescription(`**Searched For: \n\`${text1}\` \n\nResults: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
             .setThumbnail(google)
             .setColor(`${color}`)
-        message.lineReplyNoMention(embed, row, row2);
+        message.lineReplyNoMention(embed, row);
     }
 }
