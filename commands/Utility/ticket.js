@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const { MessageButton, MessageActionRow } = require("discord-buttons");
 module.exports = {
   name: "ticket",
   cooldown: 10,
@@ -44,27 +45,28 @@ module.exports = {
         SEND_MESSAGE: true,
         VIEW_CHANNEL: true,
       });
+      const button11 = new MessageButton()
+        .setStyle('green')
+        .setID('yes')
+        .setLabel('Lock')
+        .setEmoji('🔒')
+
+      const button1 = new MessageButton()
+        .setStyle('red')
+        .setID('no')
+        .setLabel('Close')
+        .setEmoji('⛔')
+
+      const row = new MessageActionRow()
+        .addComponents(button11, button1);
+
       const supportembedy = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
 
-      const reactionMessage = await channel.send(supportembedy);
-
-      const errormessage = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setColor(`${color}`)
-        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription('**Error Sending The React Emojis, OOPS! \nContact A \`Admin\` To Help!**')
-
-      try {
-        await reactionMessage.react("🔒");
-        await reactionMessage.react("⛔");
-      } catch (err) {
-        channel.send(errormessage);
-        throw err;
-      }
+      channel.send(supportembedy, row);
 
       const deltxtc = new Discord.MessageEmbed()
         .setTimestamp()
@@ -73,21 +75,12 @@ module.exports = {
         .setDescription('**Incoming Air Strike ✈️💣! Channel Delteting In 5 Seconds!**')
         .setFooter(`Say Goodbye To ${channel.name}!`)
 
-      const collector = reactionMessage.createReactionCollector(
-        (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).permissions.has("SEND_MESSAGES"),
-        { dispose: true }
-      );
-
-      collector.on("collect", (reaction, user) => {
-        switch (reaction.emoji.name) {
-          case "🔒":
-            channel.updateOverwrite(message.author, { SEND_MESSAGES: false });
-            break;
-          case "⛔":
-            channel.send(deltxtc);
-            setTimeout(() => channel.delete(), 5000);
-            break;
-        }
+      client.on("clickButton", async (button) => {
+        if (button.id === 'yes') {
+          channel.updateOverwrite(message.author, { SEND_MESSAGES: false });
+        } else if (button.id === 'no')
+          channel.send(deltxtc);
+        setTimeout(() => channel.delete(), 5000);
       });
 
       const embed101 = new Discord.MessageEmbed()
