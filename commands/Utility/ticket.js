@@ -84,8 +84,8 @@ module.exports = {
 
       client.on("clickButton", async (button) => {
         if (button.id === 'yes') {
-          channel.send(locktxtc).then(() => {
-            setTimeout(() => locktxtc.delete(), 10000)
+          channel.send(locktxtc).then(message => {
+            setTimeout(() => message.delete(), 10000)
           })
         } else if (button.id === 'no') {
           channel.send(deltxtc).then(() => {
@@ -104,9 +104,8 @@ module.exports = {
 
       message
         .lineReplyNoMention(embed101)
-        .then(() => {
-          setTimeout(() => message.delete(), 7000);
-          // setTimeout(() => message.delete(), 3000);
+        .then(message => {
+          setTimeout(() => message.delete(), 15000);
         })
         .catch((err) => {
           throw err;
