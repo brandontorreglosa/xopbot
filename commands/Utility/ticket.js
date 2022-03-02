@@ -87,9 +87,11 @@ module.exports = {
           channel.send(locktxtc).then(() => {
             setTimeout(() => locktxtc.delete(), 10000)
           })
-        } else if (button.id === 'no')
+        } else if (button.id === 'no') {
           channel.send(deltxtc);
-        setTimeout(() => channel.delete(), 5000);
+          setTimeout(() => channel.delete(), 5000)
+        }
+        button.defer();
       });
 
       const embed101 = new Discord.MessageEmbed()
