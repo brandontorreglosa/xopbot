@@ -11,7 +11,7 @@ module.exports = async (Discord, client, message) => {
             .setFooter('The Bot Will Be Scanning The Server!')
         errorChannel.send(newg);
     })
-    client.on("guildCreate", async guild => {
+    client.on("guildCreate", async (guild) => {
 
         let channelToSend;
 
