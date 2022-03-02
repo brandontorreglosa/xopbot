@@ -75,9 +75,18 @@ module.exports = {
         .setDescription('**Incoming Air Strike ✈️💣! Channel Delteting In 5 Seconds!**')
         .setFooter(`Say Goodbye To ${channel.name}!`)
 
+      const locktxtc = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setColor(`${color}`)
+        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setDescription(`**The Channel Has Now Been Locked 🔒! The Staff Will Reply Soon!**`)
+        .setFooter('Successfully Locked The Channel!')
+
       client.on("clickButton", async (button) => {
         if (button.id === 'yes') {
-          channel.updateOverwrite(message.author, { SEND_MESSAGES: false });
+          channel.send(locktxtc).then(() => {
+            setTimeout(() => locktxtc.delete(), 10000)
+          })
         } else if (button.id === 'no')
           channel.send(deltxtc);
         setTimeout(() => channel.delete(), 5000);
