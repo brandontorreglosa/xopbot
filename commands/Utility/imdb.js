@@ -30,7 +30,10 @@ module.exports = {
       .addField("✍️ Type", movie.type, true)
       .addField("🏆 Awards", movie.awards, true)
       .addField("🎭 Actors", movie.actors, true)
-      .addField("⏲️ Runtime", movie.runtime, true)
+      .addField("⌛ Runtime", movie.runtime, true)
+      .addField("⏲️ Released", movie.year, true)
+      .addField("👨‍🎓 Director", movie.director, true)
+      .addField("🗣️ Languages", movie.languages, true)
     message.lineReplyNoMention(embed);
   }
 };
