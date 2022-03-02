@@ -87,12 +87,10 @@ module.exports = {
           channel.send(locktxtc).then(() => {
             setTimeout(() => locktxtc.delete(), 10000)
           })
-            .setDisabled();
         } else if (button.id === 'no') {
           channel.send(deltxtc).then(() => {
             setTimeout(() => channel.delete(), 5000)
           })
-            .setDisabled()
         }
         button.reply.defer();
       });
