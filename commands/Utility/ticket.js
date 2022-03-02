@@ -66,7 +66,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
 
-      channel.send(supportembedy, row);
+      await channel.send(supportembedy, row);
 
       const deltxtc = new Discord.MessageEmbed()
         .setTimestamp()
