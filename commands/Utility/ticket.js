@@ -91,7 +91,7 @@ module.exports = {
           channel.send(deltxtc);
           setTimeout(() => channel.delete(), 5000)
         }
-        button.defer();
+        button.reply.defer();
       });
 
       const embed101 = new Discord.MessageEmbed()
