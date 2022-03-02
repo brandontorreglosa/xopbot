@@ -102,11 +102,7 @@ module.exports = {
         .setDescription(`**Hey, The Server Moderator(s) Will Be Right Wth You! \nMake Sure To Check The TXTC ${channel} For Responses!**`)
         .setFooter(`Opened By ${message.author.username}`)
 
-      message
-        .lineReplyNoMention(embed101)
-        .then(message => {
-          setTimeout(() => message.delete(), 15000);
-        })
+      message.lineReplyNoMention(embed101)
         .catch((err) => {
           throw err;
         });
