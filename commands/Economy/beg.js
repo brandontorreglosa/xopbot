@@ -24,6 +24,7 @@ module.exports = {
       .setID('mon1')
       .setLabel(`Get ${randompercentage} More Xocoins!`)
       .setEmoji("💸")
+      .setDisabled(true)
 
     const row = new MessageActionRow()
       .addComponent(button1)
@@ -52,7 +53,7 @@ module.exports = {
           .setFooter(`Have A Little More My Friend! 😃`)
         const now = await message.lineReplyNoMention(extrax)
         client.add(message.author.id, randompercentage)
-        now.edit({ embed: extrax, components: [row2] });
+        now.edit({ embed: embed, components: [row2] });
       }
       button.reply.defer()
     })
