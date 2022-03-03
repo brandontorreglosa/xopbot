@@ -59,7 +59,7 @@ module.exports = {
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Do You Accept The Terms: \n1) No \`NSFW\` Is Allowed. \n2) No \`Racist\` Subreddits. \n3) No Subreddit Against Our [PTOS](https://xopbot.glitch.me/policy/privacy). \n4) No \`Sexist\` Or \`Insulting\` Subreddit. \n5) Have Fun Using It! \nDo You Agree To Continue?**`)
             message.reply(stopvote, row)
-            
+
             client.on("clickButton", async (button) => {
                 if (button.id === "reject") {
                     const nostopcmdplz = new Discord.MessageEmbed()
@@ -69,8 +69,7 @@ module.exports = {
                         .setDescription(`**You Cancelled The Automeme Command Successfully!**`)
                     return message.lineReplyNoMention(nostopcmdplz)
                 } else if (button.id === "accept") {
-
-                    await message.lineReplyNoMention(on1).then((msg) => {
+                    message.lineReplyNoMention(on1).then((msg) => {
                         setTimeout(function () {
                             msg.edit(on2)
                             setTimeout(function () {
@@ -99,8 +98,8 @@ module.exports = {
                         })
                     }, 20000)
                 }
-            })
-            button.reply.defer();
+                button.reply.defer();
+            });
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel);
             message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" });
