@@ -60,11 +60,13 @@ module.exports = {
       const fakbutton = new MessageButton()
         .setStyle('green')
         .setLabel('Lock')
+        .setID('yes1')
         .setEmoji('🔒')
         .setDisabled(true)
 
       const fakbutton1 = new MessageButton()
         .setStyle('red')
+        .setID('no1')
         .setLabel('Close')
         .setEmoji('⛔')
         .setDisabled(true)
