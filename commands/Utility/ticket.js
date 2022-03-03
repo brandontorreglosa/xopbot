@@ -104,7 +104,7 @@ module.exports = {
           channel.send(locktxtc).then(message => {
             setTimeout(() => message.delete(), 10000)
           })
-          sentMessage.edit({ embed: sentMessage, components: [row2] });
+          sentMessage.edit({ embed: supportembedy, components: [row2] });
         } else if (button.id === 'no') {
           channel.send(deltxtc).then(() => {
             setTimeout(() => channel.delete(), 5000)
