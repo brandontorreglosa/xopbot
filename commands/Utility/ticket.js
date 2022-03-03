@@ -101,14 +101,13 @@ module.exports = {
 
       client.on("clickButton", async (button) => {
         if (button.id === 'yes') {
-          channel.send(locktxtc).then(message => {
-            setTimeout(() => message.delete(), 10000)
-          })
+          channel.send(locktxtc)
           sentMessage.edit({ embed: supportembedy, components: [row2] });
         } else if (button.id === 'no') {
           channel.send(deltxtc).then(() => {
             setTimeout(() => channel.delete(), 5000)
           })
+          sentMessage.edit({ embed: supportembedy, components: [row2] });
         }
         button.reply.defer();
       });

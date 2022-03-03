@@ -16,11 +16,20 @@ module.exports = {
     const button1 = new MessageButton()
       .setStyle('green')
       .setID('mon')
-      .setLabel`Get ${randompercentage} More Xocoins!`
+      .setLabel(`Get ${randompercentage} More Xocoins!`)
+      .setEmoji("💸")
+
+    const button2 = new MessageButton()
+      .setStyle('green')
+      .setID('mon1')
+      .setLabel(`Get ${randompercentage} More Xocoins!`)
       .setEmoji("💸")
 
     const row = new MessageActionRow()
       .addComponent(button1)
+
+    const row2 = new MessageActionRow()
+      .addComponent(button2)
 
     await db.add(`${message.author.username}_begged_total`, 1)
     const totalbegs = await db.get(`${message.author.username}_begged_total`)
@@ -41,8 +50,9 @@ module.exports = {
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Claimed Extra \`${randompercentage}\` Xocoins! 💸**`)
           .setFooter(`Have A Little More My Friend! 😃`)
-        message.lineReplyNoMention(extrax);
+        const now = await message.lineReplyNoMention(extrax)
         client.add(message.author.id, randompercentage)
+        now.edit({ embed: extrax, components: [row2] });
       }
       button.reply.defer()
     })
