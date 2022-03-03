@@ -17,7 +17,7 @@ module.exports = {
       return message.lineReplyNoMention(nopr)
     }
 
-    const args = message.content.split(" ").slice(1)
+    const m1 = args.slice(1).join(" ")
 
     const videoFinder = async (query) => {
       const videoResult = await ytSearch(query);
