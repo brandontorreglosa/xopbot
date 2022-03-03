@@ -66,7 +66,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
 
-      const botMsg = await channel.send(supportembedy, row);
+      await channel.send(supportembedy, row);
 
       const deltxtc = new Discord.MessageEmbed()
         .setTimestamp()
@@ -82,9 +82,6 @@ module.exports = {
         .setDescription(`**The Channel Has Now Been Locked 🔒! The Staff Will Reply Soon!**`)
         .setFooter('Successfully Locked The Channel!')
 
-      const filter = i => ((i.customId === "yes") || (i.customId === "no")) && i.user.id === message.author.id
-      const collector = botMsg.createButtonCollector({ filter, time: 15000 })
-
       client.on("clickButton", async (button) => {
         if (button.id === 'yes') {
           channel.send(locktxtc).then(message => {
@@ -97,16 +94,6 @@ module.exports = {
         }
         button.reply.defer();
       });
-
-      collector.on("collect", async (i) => {
-        if (i.customId === 'yes') {
-          row[0].setDisabled(true)
-          // first way
-          botMsg.edit({ embeds: [supportembedy], components: [row] })
-          //second way
-          i.update({ embeds: [supportembedy], components: [row] })
-        }
-      })
 
       const embed101 = new Discord.MessageEmbed()
         .setTimestamp()
