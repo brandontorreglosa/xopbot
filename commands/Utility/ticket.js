@@ -66,7 +66,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
 
-      let botMsg = await channel.send(supportembedy, row);
+      const botMsg = await channel.send(supportembedy, row);
 
       const deltxtc = new Discord.MessageEmbed()
         .setTimestamp()
@@ -83,7 +83,7 @@ module.exports = {
         .setFooter('Successfully Locked The Channel!')
 
       const filter = i => ((i.customId === "yes") || (i.customId === "no")) && i.user.id === message.author.id
-      const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 })
+      const collector = botMsg.createButtonCollector({ filter, time: 15000 })
 
       client.on("clickButton", async (button) => {
         if (button.id === 'yes') {
