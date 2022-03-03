@@ -41,7 +41,8 @@ module.exports = {
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Claimed Extra \`${randompercentage}\` Xocoins! 💸**`)
           .setFooter(`Have A Little More My Friend! 😃`)
-        message.lineReplyNoMention(extrax)
+        message.lineReplyNoMention(extrax);
+        client.add(message.author.id, randompercentage)
       }
       button.reply.defer()
     })
