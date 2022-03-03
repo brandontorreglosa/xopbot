@@ -40,7 +40,7 @@ module.exports = {
       .setDescription(`**You Begged And Got From XOPBOT \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins! 💸**`)
       .setColor(`${color}`)
       .setFooter(`You Have Begged For Over: ${totalbegs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Times!`)
-    message.channel.send(embed, row);
+    const now = message.channel.send(embed, row);
     client.add(message.author.id, randomNumber)
 
     client.on("clickButton", async (button) => {
@@ -51,7 +51,7 @@ module.exports = {
           .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
           .setDescription(`**You Claimed Extra \`${randompercentage}\` Xocoins! 💸**`)
           .setFooter(`Have A Little More My Friend! 😃`)
-        const now = await message.lineReplyNoMention(extrax)
+        await message.lineReplyNoMention(extrax)
         client.add(message.author.id, randompercentage)
         now.edit({ embed: embed, components: [row2] });
       }
