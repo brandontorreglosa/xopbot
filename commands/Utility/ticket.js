@@ -57,8 +57,23 @@ module.exports = {
         .setLabel('Close')
         .setEmoji('⛔')
 
+      const fakbutton = new MessageButton()
+        .setStyle('green')
+        .setLabel('Lock')
+        .setEmoji('🔒')
+        .setDisabled(true)
+
+      const fakbutton1 = new MessageButton()
+        .setStyle('red')
+        .setLabel('Close')
+        .setEmoji('⛔')
+        .setDisabled(true)
+
       const row = new MessageActionRow()
         .addComponents(button11, button1);
+
+      const row2 = new MessageActionRow()
+        .addComponents(fakbutton, fakbutton1);
 
       const supportembedy = new Discord.MessageEmbed()
         .setTimestamp()
@@ -66,7 +81,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
 
-      await channel.send(supportembedy, row);
+      const sentMessage = await channel.send(supportembedy, row);
 
       const deltxtc = new Discord.MessageEmbed()
         .setTimestamp()
@@ -87,6 +102,7 @@ module.exports = {
           channel.send(locktxtc).then(message => {
             setTimeout(() => message.delete(), 10000)
           })
+          sentMessage.edit({ embed: sentMessage, components: [row2] });
         } else if (button.id === 'no') {
           channel.send(deltxtc).then(() => {
             setTimeout(() => channel.delete(), 5000)
