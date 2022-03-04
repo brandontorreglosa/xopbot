@@ -107,7 +107,6 @@ module.exports = {
           channel.send(deltxtc).then(() => {
             setTimeout(() => channel.delete(), 5000)
           })
-          sentMessage.edit({ embed: supportembedy, components: [row2] });
         }
         button.reply.defer();
       });

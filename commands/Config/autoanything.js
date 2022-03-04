@@ -50,15 +50,32 @@ module.exports = {
                 .setLabel('Reject')
                 .setEmoji('❌')
 
+            const button3 = new MessageButton()
+                .setStyle('green')
+                .setID('accept1')
+                .setLabel("Accept")
+                .setEmoji('✅')
+                .setDisabled(true)
+
+            const button4 = new MessageButton()
+                .setStyle('red')
+                .setID('reject')
+                .setLabel('Reject')
+                .setEmoji('❌')
+                .setDisabled(true)
+
             const row = new MessageActionRow()
                 .addComponents(button1, button2)
+
+            const row2 = new MessageActionRow()
+                .addComponents(button3, button4)
 
             const stopvote = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Do You Accept The Terms: \n1) No \`NSFW\` Is Allowed. \n2) No \`Racist\` Subreddits. \n3) No Subreddit Against Our [PTOS](https://xopbot.glitch.me/policy/privacy). \n4) No \`Sexist\` Or \`Insulting\` Subreddit. \n5) Have Fun Using It! \nDo You Agree To Continue?**`)
-            message.reply(stopvote, row)
+            const check = await message.lineReplyNoMention(stopvote, row)
 
             client.on("clickButton", async (button) => {
                 if (button.id === "reject") {
@@ -97,6 +114,7 @@ module.exports = {
                             message.lineReplyNoMention(embed);
                         })
                     }, 20000)
+                    check.edit({ embed: stopvote, components: [row2] })
                 }
                 button.reply.defer();
             });

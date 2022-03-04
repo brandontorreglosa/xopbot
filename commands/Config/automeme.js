@@ -38,8 +38,25 @@ module.exports = {
             .setLabel('Reject')
             .setEmoji('❌')
 
+        const button3 = new MessageButton()
+            .setStyle('green')
+            .setID('accept1')
+            .setLabel("Accept")
+            .setEmoji('✅')
+            .setDisabled(true)
+
+        const button4 = new MessageButton()
+            .setStyle('red')
+            .setID('reject')
+            .setLabel('Reject')
+            .setEmoji('❌')
+            .setDisabled(true)
+
         const row = new MessageActionRow()
             .addComponents(button1, button2)
+
+        const row2 = new MessageActionRow()
+            .addComponents(button3, button4)
 
         const stopvote = new Discord.MessageEmbed()
             .setTimestamp()
@@ -47,7 +64,7 @@ module.exports = {
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**This Year Currently On Reddit: \nThere Has Been \`Dirty Users\` On \`SFW Subreddits\` And Spam \`NSFW Content\` \nIf U Dont Want NSFW Please Dont Execute This! \nDo U Still Agree To Continue?**`)
             .setFooter('Please Reply With Yes Or No!')
-        message.lineReplyNoMention(stopvote, row)
+        const check = await message.lineReplyNoMention(stopvote, row)
 
         client.on("clickButton", async (button) => {
             if (button.id === "reject") {
@@ -86,6 +103,7 @@ module.exports = {
                         message.lineReplyNoMention(embed);
                     })
                 }, 20000)
+                check.edit({ embed: stopvote, components: [row2] })
             }
             button.reply.defer();
         });

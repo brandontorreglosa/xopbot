@@ -40,7 +40,7 @@ module.exports = {
       .setDescription(`**You Begged And Got From XOPBOT \`${randomNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins! 💸**`)
       .setColor(`${color}`)
       .setFooter(`You Have Begged For Over: ${totalbegs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Times!`)
-    const now = await message.channel.send(embed, row);
+    const now = await message.lineReplyNoMention(embed, row);
     client.add(message.author.id, randomNumber)
 
     client.on("clickButton", async (button) => {
