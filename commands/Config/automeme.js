@@ -64,7 +64,7 @@ module.exports = {
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**This Year Currently On Reddit: \nThere Has Been \`Dirty Users\` On \`SFW Subreddits\` And Spam \`NSFW Content\` \nIf U Dont Want NSFW Please Dont Execute This! \nDo U Still Agree To Continue?**`)
             .setFooter('Please Reply With Yes Or No!')
-        const check = await message.lineReplyNoMention(stopvote, row)
+        const check = await message.channel.send(stopvote, row)
 
         client.on("clickButton", async (button) => {
             if (button.id === "reject") {
