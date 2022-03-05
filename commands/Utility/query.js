@@ -18,7 +18,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)google <search>\`**`)
-            return message.lineReplyNoMention(nopr)
+            return message.lineReplyNoMention({ embed: nopr })
         }
         const google1 = new MessageButton()
             .setStyle('url')
@@ -78,6 +78,6 @@ module.exports = {
             .setDescription(`**Searched For: \n\`${text1}\` \n\nResults: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
             .setThumbnail(google)
             .setColor(`${color}`)
-        message.channel.send({ embeds: [embed], components: [row, row2, row3] });
+        message.channel.send({ embed: embed, components: [row, row2, row3] });
     }
 }

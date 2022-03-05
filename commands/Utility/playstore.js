@@ -15,7 +15,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setColor(`${color}`)
         .setDescription(`**\`(prefix)playstore <app name>\`**`)
-      return message.lineReplyNoMention( { embeds : [ nopr ] } );
+      return message.lineReplyNoMention({ embed: nopr });
     }
 
     const kata = args.slice(0).join(" ");
@@ -27,8 +27,7 @@ module.exports = {
         play.app({ appId: app })
           .then(data => {
             let price = data.price === 0 ? "Free" : `${data.price}`
-
-            let embed = new Discord.MessageEmbed()
+            const embed = new Discord.MessageEmbed()
               .setTimestamp()
               .setColor(`${color}`)
               .setAuthor(`${data.title}`, message.author.displayAvatarURL({ dynamic: true }))
@@ -43,7 +42,7 @@ module.exports = {
               .addField('🔗 Application Link', `[App Link](${data.url})`, true)
               .addField('💬 Comment', data.comments[0] === undefined ? "None" : data.comments[0], true)
               .setFooter(`Created by: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
-            return message.lineReplyNoMention( { embeds : [ embed ] } );
+            return message.lineReplyNoMention({ embed: embed });
           })
       })
   }

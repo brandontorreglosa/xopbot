@@ -23,9 +23,9 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)anime <series>\`**`)
-      return message.lineReplyNoMention({embeds: [nopr]})
+      return message.lineReplyNoMention({ embed: nopr })
     }
-    await message.lineReplyNoMention({embeds: [load]})
+    await message.lineReplyNoMention({ embed: load })
 
     try {
       const body = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`)
@@ -40,7 +40,7 @@ module.exports = {
         .addField("Ratings", body.data[0].attributes.averageRating)
         .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
         .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL())
-      message.lineReplyNoMention({embeds: [embed]})
+      message.lineReplyNoMention({ embed: embed })
     } catch (err) {
       return message.lineReplyNoMention({ content: "**XOPBOT Was Unable To Find This Anime Series!**" });
     }

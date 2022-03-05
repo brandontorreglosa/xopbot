@@ -14,7 +14,7 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)youtube <video name>\`**`)
-      return message.lineReplyNoMention({embeds: [nopr]})
+      return message.lineReplyNoMention({ embed: nopr })
     }
 
     const m1 = args.slice(1).join(" ")
@@ -29,9 +29,9 @@ module.exports = {
     const video = await videoFinder(args.join(' '));
 
     if (video) {
-      message.lineReplyNoMention(`${video.url}`)
+      message.lineReplyNoMention({ content: `${video.url}` })
     } else {
-      message.lineReplyNoMention('no video found. sad')
+      message.lineReplyNoMention({ content: 'no video found. sad' })
     }
   }
 }

@@ -14,11 +14,11 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)imdb <movie/series name>\`**`)
-      return message.lineReplyNoMention({embeds: [nopr]})
+      return message.lineReplyNoMention({ embed: nopr })
     }
     const imob = new imdb.Client({ apiKey: "5e36f0db" });
     let movie = await imob.get({ name: args.slice(0).join(" ") });
-    let embed = new Discord.MessageEmbed()
+    const embed = new Discord.MessageEmbed()
       .setTimestamp()
       .setAuthor(`${movie.title}`, message.author.displayAvatarURL({ dynamic: true }))
       .setColor(`${color}`)
@@ -34,6 +34,6 @@ module.exports = {
       .addField("⏲️ Released", movie.year, true)
       .addField("👨‍🎓 Director", movie.director, true)
       .addField("🗣️ Languages", movie.languages, true)
-    message.lineReplyNoMention({embeds: [embed]});
+    message.lineReplyNoMention({ embed: embed });
   }
 };

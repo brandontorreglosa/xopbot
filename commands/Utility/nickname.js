@@ -16,7 +16,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)nickname <@user> <nickname>\`**`)
-            return message.lineReplyNoMention({embeds: [nopr]})
+            return message.lineReplyNoMention({ embed: nopr })
         }
         if (!newNickname) {
             const erispec = new Discord.MessageEmbed()
@@ -24,7 +24,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Please Add The Nickname!**`)
-            return message.lineReplyNoMention({embeds: [erispec]})
+            return message.lineReplyNoMention({ embed: erispec })
         }
         try {
             mentionMember.setNickname(newNickname);
@@ -36,6 +36,6 @@ module.exports = {
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Changed Nickname Of \`${mentionMember.username}\` To \`${newNickname}\`!**`)
-        message.lineReplyNoMention({embeds: [success]})
+        message.lineReplyNoMention({ embed: success })
     }
 }
