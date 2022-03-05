@@ -12,25 +12,10 @@ module.exports = {
   type: "Fun",
   async execute(client, message, cmd, args, Discord) {
     if (args.length < 1) {
-      const nopr = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setColor(`${color}`)
-        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**\`(prefix)fliptext <text\`**`)
-      return message.lineReplyNoMention(nopr)
+      const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)fliptext <text>\`**`)
+      return message.lineReplyNoMention({ embed: nopr })
     }
-    args.reverse();
-    var flipped = [];
-
-    args.forEach((arg) => {
-      flipped.push(flip(arg));
-    });
-
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setColor(`${color}`)
-      .setTitle('Fliptext Conversion')
-      .setDescription(flipped.join(" "))
-    message.lineReplyNoMention(embed);
+    args.reverse(); var flipped = []; args.forEach((arg) => { flipped.push(flip(arg)); }); const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setTitle('Fliptext Conversion').setDescription(flipped.join(" "))
+    message.lineReplyNoMention({ embed: embed });
   }
 }

@@ -11,12 +11,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const choices = ["Heads", "Tails"];
         const choice = choices[Math.floor(Math.random() * choices.length)];
-        let embed = new MessageEmbed()
-            .setColor(`${color}`)
-            .setTimestamp()
-            .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-            .setTitle("Coinflip!")
-            .setDescription(`**You Flipping Flipped \`${choice}\`**!`)
-        message.lineReplyNoMention(embed)
+        const embed = new MessageEmbed().setColor(`${color}`).setTimestamp().setThumbnail(message.author.displayAvatarURL({ dynamic: true })).setTitle("Coinflip!").setDescription(`**You Flipping Flipped \`${choice}\`**!`)
+        message.lineReplyNoMention({ embed: embed })
     }
 }

@@ -12,33 +12,19 @@ module.exports = {
    usage: "ascii <text>",
    description: "Returns provided text in ascii format.",
    async execute(client, message, cmd, args, Discord) {
-
       let text = args.join(" ");
       if (!text) {
-         const nopr = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setColor(`${color}`)
-            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**\`(prefix)ascii <text>\`**`)
-         return message.lineReplyNoMention(nopr)
+         const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)ascii <text>\`**`)
+         return message.lineReplyNoMention({ embed: nopr })
       }
       let maxlen = 20
       if (text.length > 11) {
-         const maxlenembed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setColor(`${color}`)
-            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**Please Put Text That Has \`11\` Characters Or Less Because The Conversion Won\`t Be That Good!**`)
-         return message.lineReplyNoMention(maxlenembed)
+         const maxlenembed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Please Put Text That Has \`11\`Characters Or Less Because The Conversion Won\`t Be That Good!**`)
+         return message.lineReplyNoMention({ embed: maxlenembed })
       }
-
       figlet(text, function (err, data) {
-         const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setColor(`${color}`)
-            .setTitle('Ascii Conversion')
-            .setDescription('```' + data + '```')
-         message.lineReplyNoMention(embed)
+         const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setTitle('Ascii Conversion').setDescription('```' + data + '```')
+         message.lineReplyNoMention({ embed: embed })
       })
    }
 }
