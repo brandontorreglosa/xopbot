@@ -16,7 +16,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)xopchat <channelID>\`**`)
-            return message.lineReplyNoMention(nopr)
+            return message.lineReplyNoMention({embeds: [nopr]})
         }
         const reportEmbed = new Discord.MessageEmbed()
             .setColor(`${color}`)
@@ -26,7 +26,7 @@ module.exports = {
             .addField('Channel Id', query)
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        channel.send(reportEmbed);
+        channel.send({embeds: [reportEmbed]});
         message.lineReplyNoMention({ content: "**We Have Sent The Request! \nCould Take 1 To 3 Days For The Request To Be Accepted!**" })
     }
 }

@@ -14,7 +14,7 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)imdb <movie/series name>\`**`)
-      return message.lineReplyNoMention(nopr)
+      return message.lineReplyNoMention({embeds: [nopr]})
     }
     const imob = new imdb.Client({ apiKey: "5e36f0db" });
     let movie = await imob.get({ name: args.slice(0).join(" ") });
@@ -34,6 +34,6 @@ module.exports = {
       .addField("⏲️ Released", movie.year, true)
       .addField("👨‍🎓 Director", movie.director, true)
       .addField("🗣️ Languages", movie.languages, true)
-    message.lineReplyNoMention(embed);
+    message.lineReplyNoMention({embeds: [embed]});
   }
 };

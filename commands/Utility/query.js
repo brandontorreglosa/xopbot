@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const { MessageButton, MessageActionRow } = require("discord-buttons");
+const { MessageButton, MessageActionRow } = require("discord.js");
 module.exports = {
     name: "query",
     permissions: ["SEND_MESSAGES"],
@@ -78,6 +78,6 @@ module.exports = {
             .setDescription(`**Searched For: \n\`${text1}\` \n\nResults: \n Looked At All Query's And Found \`${text1}\`. \nPlease Click Below Your Query ⬇️.**`)
             .setThumbnail(google)
             .setColor(`${color}`)
-        message.channel.send({ embed: embed, components: [row, row2, row3] });
+        message.channel.send({ embeds: [embed], components: [row, row2, row3] });
     }
 }

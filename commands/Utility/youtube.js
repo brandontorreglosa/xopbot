@@ -14,7 +14,7 @@ module.exports = {
         .setColor(`${color}`)
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(`**\`(prefix)youtube <video name>\`**`)
-      return message.lineReplyNoMention(nopr)
+      return message.lineReplyNoMention({embeds: [nopr]})
     }
 
     const m1 = args.slice(1).join(" ")

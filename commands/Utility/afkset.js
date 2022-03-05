@@ -26,7 +26,7 @@ module.exports = {
             .setColor(`${color}`)
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`**Status Successfully Set To \`[AFK]\`!**`)
-          return message.lineReplyNoMention(success)
+          return message.lineReplyNoMention({embeds: [success]})
         })
 
         .catch(_e => {
@@ -37,7 +37,7 @@ module.exports = {
             .setDescription('**Failed To Set Your Status Due To Very High Role Try Demoting!**')
             .setFooter('Try Also Moving My Role On Top Of All!')
           quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-          return message.lineReplyNoMention(errdem);
+          return message.lineReplyNoMention({embeds: [errdem]});
         });
     } catch (err) {
       const errorlogs = client.channels.cache.get(errorChannel)
