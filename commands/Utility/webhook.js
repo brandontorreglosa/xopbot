@@ -12,7 +12,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)webhook <text>\`**`)
-            return message.lineReplyNoMention(nopr)
+            return message.lineReplyNoMention({embeds: [nopr]})
         }
         const wc = new WebhookClient('857856391528316938', 'EN3jEXAvuGpkcQmtLZc2FRdNdxad5h4Md0HSLa6Y4b2-dMXJiW0FbMDX9Fta1W-uziWx')
         const embed = new MessageEmbed()

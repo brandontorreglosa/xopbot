@@ -20,7 +20,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**\`(prefix)suggest <suggestion>\`**`)
-            return message.lineReplyNoMention(nopr)
+            return message.lineReplyNoMention({embeds: [nopr]})
         }
         const embed = new Discord.MessageEmbed()
             .setTimestamp()
@@ -28,7 +28,7 @@ module.exports = {
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(messageArgs);
 
-        channel.send(embed).then((msg) => {
+        channel.send({embeds: [embed]}).then((msg) => {
             msg.react('👍');
             msg.react('👎');
             message.delete();

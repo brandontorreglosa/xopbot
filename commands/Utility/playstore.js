@@ -15,7 +15,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setColor(`${color}`)
         .setDescription(`**\`(prefix)playstore <app name>\`**`)
-      return message.lineReplyNoMention(nopr);
+      return message.lineReplyNoMention( { embeds : [ nopr ] } );
     }
 
     const kata = args.slice(0).join(" ");
@@ -43,8 +43,9 @@ module.exports = {
               .addField('🔗 Application Link', `[App Link](${data.url})`, true)
               .addField('💬 Comment', data.comments[0] === undefined ? "None" : data.comments[0], true)
               .setFooter(`Created by: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
-            return message.lineReplyNoMention(embed);
+            return message.lineReplyNoMention( { embeds : [ embed ] } );
           })
       })
   }
 }
+

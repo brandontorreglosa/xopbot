@@ -21,7 +21,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**The \`Ticket`s\` Category Is Now Setup! 😉**')
 
-      message.lineReplyNoMention(succestxtc)
+      message.lineReplyNoMention({embeds: [succestxtc]})
     }
 
     else if (cmd === 'ticket') {
@@ -83,7 +83,7 @@ module.exports = {
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
 
-      const sentMessage = await channel.send(supportembedy, row);
+      const sentMessage = await channel.send({embeds: [supportembedy], components: [row]});
 
       const deltxtc = new Discord.MessageEmbed()
         .setTimestamp()
@@ -118,7 +118,7 @@ module.exports = {
         .setDescription(`**Hey, The Server Moderator(s) Will Be Right Wth You! \nMake Sure To Check The TXTC ${channel} For Responses!**`)
         .setFooter(`Opened By ${message.author.username}`)
 
-      message.lineReplyNoMention(embed101)
+      message.lineReplyNoMention({embeds: [embed101]})
         .catch((err) => {
           throw err;
         });
