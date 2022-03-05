@@ -157,7 +157,7 @@ client.distube = new DisTube(client, {
     searchSongs: true, emitNewSongOnly: true, highWaterMark: 1024 * 1024 * 64, leaveOnEmpty: false, leaveOnFinish: false, leaveOnStop: false, searchSongs: false, youtubeDL: true, updateYouTubeDL: false,
 })
 
-client.distube()
+client.distube
     .on("addList", (message, queue, playlist) => {
         const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Added: \`${playlist.title}\` | Playlist: \`${playlist.total_items}\` Songs | Queue: \`- [${song.user}] -\` 🎶**`).setThumbnail(playlist.thumbnail)
         message.lineReplyNoMention({ embed: embed });
