@@ -9,16 +9,16 @@ module.exports = {
     description: "Game Command",
     async execute(client, message, cmd, args, Discord) {
         if (!args[0]) {
-            const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)doubleornothing<xocoins>\`**`)
+            const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)doubleornothing <xocoins>\`**`)
             return message.lineReplyNoMention({ embed: nopr })
         }
         const amountToBet = parseInt(args[0])
         if (isNaN(args[0])) {
-            const notnum = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\`Is Not A Number!**`)
+            const notnum = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Is Not A Number!**`)
             return message.lineReplyNoMention({ embed: notnum })
         }
         if (await client.bal(message.author.id) < amountToBet) {
-            const xocnom = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Dont Have \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\`Xocoins To Bet!**`)
+            const xocnom = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Dont Have \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To Bet!**`)
             return message.lineReplyNoMention({ embed: xocnom })
         }
         function random() {
@@ -27,11 +27,11 @@ module.exports = {
         }
         if (random() === true) {
             const winAmount = amountToBet * 2
-            const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Congrats You Have Won \`${winAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\`Xocoins!**`)
+            const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Congrats You Have Won \`${winAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins!**`)
             message.lineReplyNoMention({ embed: embed })
             client.add(message.author.id, winAmount)
         } else {
-            const embed1 = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Awwww!You Just Lost \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\`Xocoins To A Bet!**`)
+            const embed1 = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Awwww!You Just Lost \`${amountToBet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins To A Bet!**`)
             message.lineReplyNoMention({ embed: embed1 })
             client.rmv(message.author.id, amountToBet)
         }

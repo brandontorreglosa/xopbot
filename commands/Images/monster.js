@@ -14,7 +14,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`(prefix)monster <user>\`**`)
+                .setDescription(`**\`(prefix)monster <@user>\`**`)
             return message.lineReplyNoMention(nopr)
         }
         const user = message.mentions.users.first();

@@ -12,7 +12,7 @@ module.exports = {
   async execute(client, message, cmd, args, Discord) {
     const randomNumber = Math.floor(Math.random() * 500) + 1; const randompercentage = Math.floor(Math.random() * 100) + 1; const got = randomNumber + randompercentage; await db.add(`${message.author.username}_begged_total`, 1)
     const totalbegs = await db.get(`${message.author.username}_begged_total`)
-    const embed = new Discord.MessageEmbed().setTimestamp().setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Begged And Got From XOPBOT \`${got.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\`Xocoins,Including${randompercentage}Bonus!💸**`).setColor(`${color}`).setFooter(`You Have Begged For Over:${totalbegs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}Times!`)
+    const embed = new Discord.MessageEmbed().setTimestamp().setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Begged And Got From XOPBOT \`${got.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, Including ${randompercentage} Bonus!💸**`).setColor(`${color}`).setFooter(`You Have Begged For Over: ${totalbegs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Times!`)
     message.lineReplyNoMention({ embed: embed }); client.add(message.author.id, got)
   },
 };

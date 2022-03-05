@@ -18,11 +18,11 @@ module.exports = {
         }
         if (message.mentions.channels.first()) {
             const data = await goodbyeSchema.findOne({ GuildID: message.guild.id, }); if (data) {
-                await goodbyeSchema.findOneAndRemove({ GuildID: message.guild.id, }); const lvc1 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Leave Channel Set To${message.mentions.channels.first()}!**`)
+                await goodbyeSchema.findOneAndRemove({ GuildID: message.guild.id, }); const lvc1 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
                 message.lineReplyNoMention({ embed: lvc1 })
                 let newData = new goodbyeSchema({ Bye: message.mentions.channels.first().id, GuildID: message.guild.id, }); newData.save();
             } else if (!data) {
-                const lvc2 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Leave Channel Set To${message.mentions.channels.first()}!**`)
+                const lvc2 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Leave Channel Set To ${message.mentions.channels.first()}!**`)
                 message.lineReplyNoMention({ embed: lvc2 })
                 let newData = new goodbyeSchema({ Bye: message.mentions.channels.first().id, GuildID: message.guild.id, }); newData.save();
             }

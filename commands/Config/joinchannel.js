@@ -18,11 +18,11 @@ module.exports = {
         }
         if (message.mentions.channels.first()) {
             const data = await welcomeSchema.findOne({ GuildID: message.guild.id, }); if (data) {
-                await welcomeSchema.findOneAndRemove({ GuildID: message.guild.id, }); const jc1 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Join Channel Set To${message.mentions.channels.first()}!**`)
+                await welcomeSchema.findOneAndRemove({ GuildID: message.guild.id, }); const jc1 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Join Channel Set To ${message.mentions.channels.first()}!**`)
                 message.lineReplyNoMention({ embed: jc1 })
                 let newData = new welcomeSchema({ Welcome: message.mentions.channels.first().id, GuildID: message.guild.id, }); newData.save();
             } else if (!data) {
-                const jc2 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Join Channel Set To${message.mentions.channels.first()}!**`)
+                const jc2 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Join Channel Set To ${message.mentions.channels.first()}!**`)
                 message.lineReplyNoMention({ embed: jc2 })
                 let newData = new welcomeSchema({ Welcome: message.mentions.channels.first().id, GuildID: message.guild.id, }); newData.save();
             }
