@@ -5,7 +5,8 @@ module.exports = {
     name: 'edit',
     permissions: ["ADMINISTRATOR"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-    cooldown: 5, description: 'Edit Xp Level',
+    cooldown: 5, 
+    description: 'Edit Xp Level',
     async execute(client, message, cmd, args, Discord) {
         const usage = '(prefix)edit <@user> <(xp)(level)> <(add)(set)(remove)> <number>';
         const mentionedMember = message.mentions.users.first() || message.guild.members.cache.get(args[0]); const catchnomen = args[0];
