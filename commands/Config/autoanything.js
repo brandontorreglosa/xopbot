@@ -19,7 +19,7 @@ module.exports = {
                     .setColor(`${color}`)
                     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                     .setDescription('**`(prefix)antoanything <subreddit>`**')
-                return message.lineReplyNoMention(nospec)
+                return message.lineReplyNoMention({ embed: nospec })
             }
             let autoa = args.slice(0).join(' ');
             const on1 = new Discord.MessageEmbed()
@@ -75,7 +75,7 @@ module.exports = {
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Do You Accept The Terms: \n1) No \`NSFW\` Is Allowed. \n2) No \`Racist\` Subreddits. \n3) No Subreddit Against Our [PTOS](https://xopbot.glitch.me/policy/privacy). \n4) No \`Sexist\` Or \`Insulting\` Subreddit. \n5) Have Fun Using It! \nDo You Agree To Continue?**`)
-            const check = await message.channel.send(stopvote, row)
+            const check = await message.channel.send({ embed: stopvote, components: [row] })
 
             client.on("clickButton", async (button) => {
                 if (button.id === "reject") {
@@ -84,13 +84,13 @@ module.exports = {
                         .setColor(`${color}`)
                         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
                         .setDescription(`**You Cancelled The Automeme Command Successfully!**`)
-                    return message.lineReplyNoMention(nostopcmdplz)
+                    return message.lineReplyNoMention({ embed: nostopcmdplz })
                 } else if (button.id === "accept") {
-                    message.lineReplyNoMention(on1).then((msg) => {
+                    message.lineReplyNoMention({ embed: on1 }).then((msg) => {
                         setTimeout(function () {
-                            msg.edit(on2)
+                            msg.edit({ embed: on2 })
                             setTimeout(function () {
-                                msg.edit(on3)
+                                msg.edit({ embed: on3 })
                             }, 10000)
                         }, 10000)
                     })
@@ -111,7 +111,7 @@ module.exports = {
                             embed.setImage(`${memeImage}`)
                             embed.setColor(`${color}`)
                             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-                            message.lineReplyNoMention(embed);
+                            message.lineReplyNoMention({ embed: embed });
                         })
                     }, 20000)
                     check.edit({ embed: stopvote, components: [row2] })
