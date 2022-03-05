@@ -9,7 +9,7 @@ module.exports = {
     description: "just blur a photo",
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first() || message.author;
-        const avatar = user.displayAvatarURL({ dynamic: true, format: 'png' });
+        const avatar = user.displayAvatarURL({ size: 2048, dynamic: true, format: 'png' });
         const img = await new DIG.Blur().getImage(`${avatar}`, 2);
         const attachment = new Discord.MessageAttachment(img, "xopbotblur.png")
         return message.lineReplyNoMention({ files: [attachment] });

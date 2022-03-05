@@ -19,7 +19,7 @@ module.exports = {
         }
         const user = message.mentions.users.first();
         const avatar2 = message.author.displayAvatarURL({ dynamic: true, format: 'png' });
-        const avatar = user.displayAvatarURL({ dynamic: true, format: 'png' });
+        const avatar = user.displayAvatarURL({ size: 2048, dynamic: true, format: 'png' });
         const img = await new DIG.Bed().getImage(`${avatar2}`, `${avatar}`);
         const attachment = new Discord.MessageAttachment(img, "xopbotmonster.png")
         return message.lineReplyNoMention({ files: [attachment] });

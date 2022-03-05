@@ -13,20 +13,11 @@ module.exports = {
       description: "Sends random bigboobs",
       usage: "[command]",
       async execute(client, message, cmd, args, Discord) {
-
-            if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' })
-
+            if (!message.channel.nsfw) return message.lineReplyNoMention({ content: '**This Is Not A NSFW Channel! 🔞**' });
             got('https://www.reddit.com/r/bikinis/random.json').then(response => {
-                  let content = JSON.parse(response.body);
-                  var title = content[0].data.children[0].data.title;
-                  var amazeme = content[0].data.children[0].data.url;
-                  let wow = new discord.MessageEmbed()
-                        .setTimestamp()
-                        .setDescription(`:underage: **Bikinis**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`)
-                        .setImage(amazeme)
-                        .setFooter(`That Bikini Is So Sexy On You! :)`)
-                        .setColor(`${color}`)
-                  message.lineReplyNoMention(wow)
+                  let content = JSON.parse(response.body); var title = content[0].data.children[0].data.title; var amazeme = content[0].data.children[0].data.url;
+                  let wow = new discord.MessageEmbed().setTimestamp().setDescription(`:underage: **Bikinis**\n**[Provided To You By The Bot Supporters Of XOPBOT](${amazeme})**`).setImage(amazeme).setFooter(`That Bikini Is So Sexy On You! :)`).setColor(`${color}`)
+                  message.lineReplyNoMention({ embed: wow })
             })
       }
 }

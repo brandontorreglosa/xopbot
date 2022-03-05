@@ -18,7 +18,7 @@ module.exports = {
             return message.lineReplyNoMention(nopr)
         }
         const user = message.mentions.users.first();
-        const avatar2 = message.author.displayAvatarURL({ dynamic: true, format: 'png' });
+        const avatar2 = message.author.displayAvatarURL({ size: 2048, dynamic: true, format: 'png' });
         const avatar = user.displayAvatarURL({ dynamic: true, format: 'png' });
         const img = await new DIG.Spank().getImage(`${avatar2}`, `${avatar}`);
         const attachment = new Discord.MessageAttachment(img, "xopbotspank.png")

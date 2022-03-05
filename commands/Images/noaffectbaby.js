@@ -11,7 +11,7 @@ module.exports = {
     description: 'just dont affect the baby',
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first() || message.author;
-        const avatar = user.displayAvatarURL({ dynamic: true, format: 'png' });
+        const avatar = user.displayAvatarURL({ size: 2048, dynamic: true, format: 'png' });
         const img = await new DIG.Affect().getImage(`${avatar}`);
         const attachment = new Discord.MessageAttachment(img, "xopbotnoaffectbaby.png")
         return message.lineReplyNoMention({ files: [attachment] });
