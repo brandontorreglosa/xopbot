@@ -9,7 +9,6 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
-
         let status;
         switch (client.presence.status) {
             case "online":
@@ -25,14 +24,7 @@ module.exports = {
                 status = "😴 Offline";
                 break;
         }
-
-        const embed = new Discord.MessageEmbed()
-            //.setThumbnail(client.user.displayAvatarURL())
-            .setTimestamp()
-            .setAuthor(`Bot Information`, client.user.displayAvatarURL({ dynamic: true }))
-            .setColor(`${color}`)
-            .setDescription(`**ID:** \`831824859066925087\` \n**DEV:** \`👑HACKERPROᵈᵉᵛ#1498\` \n**Name:** \`XOPBOT\` \n**Prefix:** \`x!\` \n**Status:** \`${status}\` \n**Version:** \`60.0.0\` \n**Users:** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)}\` \n**Servers:** \`${client.guilds.cache.size}\` \n**Channels:** \`${client.channels.cache.size}\` \n**Commands:** \`200+\` \n**Categories:** \`18\` \n**Discord.JS Version:** \`12.5.3\` \n**Creation Date:** \`${moment(client.user.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` `)
-            .setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-        await message.lineReplyNoMention(embed)
+        const embed = new Discord.MessageEmbed().setTimestamp().setAuthor(`Bot Information`, client.user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setDescription(`**ID:** \`831824859066925087\` \n**DEV:** \`👑HACKERPROᵈᵉᵛ#1498\` \n**Name:** \`XOPBOT\` \n**Prefix:** \`x!\` \n**Status:** \`${status}\` \n**Version:** \`60.0.0\` \n**Users:** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)}\` \n**Servers:** \`${client.guilds.cache.size}\` \n**Channels:** \`${client.channels.cache.size}\` \n**Commands:** \`200+\` \n**Categories:** \`18\` \n**Discord.JS Version:** \`12.5.3\` \n**Creation Date:** \`${moment(client.user.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss A")}\` `).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+        await message.lineReplyNoMention({ embed: embed })
     }
 }

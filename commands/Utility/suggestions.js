@@ -11,23 +11,12 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const channel = message.guild.channels.cache.find(x => x.name.toLowerCase().includes("suggestions"));
         if (!channel) message.guild.channels.create(`suggestions`);
-        // const channel = await message.guild.channels.create(`💡suggestions`);
-
         let messageArgs = args.join(' ');
         if (!args[0]) {
-            const nopr = new Discord.MessageEmbed()
-                .setTimestamp()
-                .setColor(`${color}`)
-                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`**\`(prefix)suggest <suggestion>\`**`)
+            const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)suggest <suggestion>\`**`)
             return message.lineReplyNoMention({ embed: nopr })
         }
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setColor(`${color}`)
-            .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(messageArgs);
-
+        const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true })).setDescription(messageArgs);
         channel.send({ embed: embed }).then((msg) => {
             msg.react('👍');
             msg.react('👎');

@@ -10,34 +10,17 @@ module.exports = {
     const target = message.mentions.users.first();
     const usertarget = message.guilds.members.cache.get(target.id);
     if (!target) {
-      const nopr = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setColor(`${color}`)
-        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**\`(prefix)removerole <@user> <@role>\`**`)
-      return message.lineReplyNoMention(nopr)
+      const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)removerole <@user> <@role>\`**`)
+      return message.lineReplyNoMention({ embed: nopr })
     }
-
     const rrole = message.mentions.roles.first();
     const fetchrole = args[1];
-
     if (!rrole) {
-      const norrspec = new Discord.MessageEmbed()
-        .setTimestamp()
-        .setColor(`${color}`)
-        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**I Was Unable To Find The Role \`${fetchrole}\`!**`)
-      return message.lineReplyNoMention(norrspec)
+      const norrspec = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**I Was Unable To Find The Role \`${fetchrole}\`!**`)
+      return message.lineReplyNoMention({ embed: norrspec })
     }
-
-    const embed = new Discord.MessageEmbed()
-      .setTimestamp()
-      .setColor(`${color}`)
-      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription(`**Removed: \`${rrole}\` From \`${target.username}\`!**`)
-    await message.lineReplyNoMention(embed)
-
+    const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Removed: \`${rrole}\` From \`${target.username}\`!**`)
+    await message.lineReplyNoMention({ embed: embed })
     usertarget.roles.remove(rrole)
-
   }
 }

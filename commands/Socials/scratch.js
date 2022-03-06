@@ -7,12 +7,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
     description: "Sends The Owners Youtube Channel!",
     async execute(client, message, cmd, args, Discord) {
-        const embed = new Discord.MessageEmbed()
-            .setColor(`${color}`)
-            .setTimestamp()
-            .setTitle('My Scratch Account')
-            .setURL('https://scratch.mit.edu/users/COOLBLUEINKLINGTM/')
-            .setDescription('`Scratch Link` \n[Click Here](https://scratch.mit.edu/users/COOLBLUEINKLINGTM/)')
-        message.lineReplyNoMention(embed);
+        const embed = new Discord.MessageEmbed().setColor(`${color}`).setTimestamp().setTitle('My Scratch Account').setURL('https://scratch.mit.edu/users/COOLBLUEINKLINGTM/').setDescription('`Scratch Link` \n[Click Here](https://scratch.mit.edu/users/COOLBLUEINKLINGTM/)')
+        message.lineReplyNoMention({ embed: embed });
     }
 }

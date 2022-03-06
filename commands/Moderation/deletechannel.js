@@ -14,21 +14,12 @@ module.exports = {
             const user = message.mentions.users.first()
             const fetchedChannel = message.mentions.channels.first();
             if (!fetchedChannel) {
-                const nopr = new Discord.MessageEmbed()
-                    .setTimestamp()
-                    .setColor(`${color}`)
-                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**\`(prefix)deletechannel <#channel>\`**`)
-                return message.lineReplyNoMention(nopr)
+                const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)deletechannel <#channel>\`**`)
+                return message.lineReplyNoMention({ embed: nopr })
             }
-            fetchedChannel.delete()
-
-            const embed = new Discord.MessageEmbed()
-                .setTimestamp()
-                .setTitle(`Deleted Channel Named ${fetchedChannel}`)
-                .setDescription(`**Channel Was Deleted By ${message.author.username}**`)
-                .setColor(`${color}`)
-            await message.lineReplyNoMention(embed);
+            fetchedChannel.delete();
+            const embed = new Discord.MessageEmbed().setTimestamp().setTitle(`Deleted Channel Named ${fetchedChannel}`).setDescription(`**Channel Was Deleted By ${message.author.username}**`).setColor(`${color}`)
+            await message.lineReplyNoMention({ embed: embed });
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)
             errorlogs.send({ content: `Error On Delete Channel Command!\n\nError:\n\n **${err}**` })
