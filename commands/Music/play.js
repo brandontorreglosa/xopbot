@@ -218,7 +218,7 @@ module.exports = {
                 return message.lineReplyNoMention({ embed: embednovc99 });
             }
             try {
-                const queueembed = new Discord.MessageEmbed().setTimestamp().setThumbnail('https://cdn.discordapp.com/attachments/824319314495537175/893023202169749504/XOPBOT_Playlist.png').setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}.[${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`).slice(0, 10).join("\n"))
+                const queueembed = new Discord.MessageEmbed().setTimestamp().setThumbnail('https://cdn.discordapp.com/attachments/824319314495537175/893023202169749504/XOPBOT_Playlist.png').setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Current Queue: 🎶** \n' + queue.songs.map((song, id) => `**${id + 1}. [${song.name}](${song.url}) - \`[${song.formattedDuration}]\`**`).slice(0, 10).join("\n"))
                 return message.lineReplyNoMention({ embed: queueembed })
             } catch (err) { const errorlogs = client.channels.cache.get(errorChannel); message.lineReplyNoMention({ content: "**Looks Like An Error Has Occured!**" }); errorlogs.send({ content: `**Error On Queue Command!\n\nError:\n\n${err}**` }) }
         }
