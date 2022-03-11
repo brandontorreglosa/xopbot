@@ -16,7 +16,7 @@ module.exports = {
     }
     const vid = search(args.join(' '))
     if (vid) {
-      const embed = new MessageEmbed().setTitle((await vid).title).addFields({ name: 'Duration', value: `${(await vid).duration.timestamp} minutes`, inline: true }, { name: 'Created', value: `${(await vid).ago}`, inline: true }, { name: 'Views', value: `${(await vid).views}`, inline: true },).setURL((await vid).url).setColor(`${color}`).setTimestamp().setImage((await vid).thumbnail).setAuthor((await vid).author.name, logo, (await vid).author.url).setFooter(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+      const embed = new Discord.MessageEmbed().setTitle((await vid).title).addFields({ name: 'Duration', value: `${(await vid).duration.timestamp} minutes`, inline: true }, { name: 'Created', value: `${(await vid).ago}`, inline: true }, { name: 'Views', value: `${(await vid).views}`, inline: true },).setURL((await vid).url).setColor(`${color}`).setTimestamp().setImage((await vid).thumbnail).setAuthor((await vid).author.name, logo, (await vid).author.url).setFooter(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
       return message.lineReplyNoMention({ embed: embed })
     } else {
       message.lineReplyNoMention({ content: '**There Was An Error Finding That Command!**' })
