@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 require('discord-reply');
 const lineReplyNoMention = require('discord-reply');
-const { X_MongodbURL, X_Token } = require("./config.json");
 const Levels = require('discord-xp');
 require('dotenv').config();
 const { Client, Collection, Intents } = require("discord.js");
@@ -47,9 +46,9 @@ client.on("ready", () => {
 })
 
 // <----/Mongodb System/---->
-Levels.setURL(X_MongodbURL);
+Levels.setURL(process.env.dev.X_MongodbURL);
 
-mongoose.connect(X_MongodbURL, {
+mongoose.connect(process.env.dev.X_MongodbURL, {
     useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true,
 })
     .then(() => {
@@ -208,4 +207,4 @@ client.distube
         const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(message.client.user.username, message.client.user.displayAvatarURL()).setDescription(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`).setFooter(`Enter anything else or wait 60 seconds to cancel`);
         message.lineReplyNoMention({ embed: embed });
     });
-client.login(X_Token);
+client.login(process.env.dev.X_Token);
