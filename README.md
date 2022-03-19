@@ -1,4 +1,4 @@
-# XOPBOT-24-7
+<h1>XOPBOT-24-7</h1>
 <p align="center"><img src=https://user-images.githubusercontent.com/84269666/123801401-ecb67d80-d8f2-11eb-898c-64d6bdfd8c3d.png ></center>
 <div align="center"> 
 <h1>XOPBOT</h1>
@@ -14,20 +14,74 @@
 <a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/librariesio/dependents/npm/xoppack?style=for-the-badge&label=Dependents" alt="XOPPACK Dependents"></a>
 <a href="https://discord.gg/invite/dPXTa2XERS"><img src="https://img.shields.io/discord/707557478254247936?style=for-the-badge&color=blue&label=HACKERPROTM%27s%20Server" alt="Discord"></a>
 </p>
-<hr>
+<hr/>
 <h2>➡ Requirments</h2>
-<li> Discord.jsv12.5.3 Or Lower Versions Of V12
-<li> Node.jsv13.3 Or Higher Versions
-<li> Heroku Account For 24/7 Hosting
-<li> Some Knowledge Of Javascript
-<br>
+<li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12
+<li> <code>Node.jsv13.3</code> Or Higher Versions
+<li> <code>Heroku Account</code> For 24/7 Hosting
+<li> <code>Some Knowledge</code> Of Javascript
+<br/>
 <h2></h2>
-<hr>
+<hr/>
 <h2>➡ Information</h2>
 <li> A Discord Bot Packed With Over 200+ Commands On The GO!
 <li> Contains All Possible Categories That There Can Be.
 <li> Implented With 24/7 Hosting From Heroku Dynos.
 <li> 100% Free, No Cash Needed For The Source.
-<br>
+<br/>
+<h2></h2>
+<hr/>
+<h2>➡ Enviromental Variables</h2>
+<li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables
+<br/>
+PREFIX = your prefix
+<br/>
+Color = your color
+<br/>
+Gcolor = #00ff00 /*right answer*/
+<br/>
+Rcolor = #c30202 /*wrong answer*/
+<br/>
+App_ID = application id
+<br/>
+Owner_ID = owner id (bot dev id)
+<br/>
+logChannel = loggingchannel id
+<br/>
+errorChannel = errorchannel id
+<br/>
+XOP_SITE = bot website
+<br/>
+XOP_DONER = optional
+<br/>
+XOP_API = optional
+<br/>
 <h2></h2>
 <hr>
+<h2>➡ MongoDB Database Setup</h2>
+<li> Click The Photo Below To Watch On Youtube How To Setup The Database Of MongoDB For Free
+<br/><br/>
+<a href="https://www.youtube.com/watch?v=8no3SktqagY" title="Mongodb Setup For Free | Copyright XOPBOT.Inc">
+<img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/8no3SktqagY/maxresdefault.webp?v=8no3SktqagY">
+</a>
+<br/>
+<li> Want To Learn Javascript Even More? Click The Photo Below To Start Learning
+<br/><br/>
+<a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" title="Learn Javascript For Free | Copyright XOPBOT.Inc">
+<img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/PkZNo7MFNFg/maxresdefault.webp?v=PkZNo7MFNFg">
+</a>
+<br/>
+<h2></h2>
+<hr/>
+<h2>➡ Extras</h2>
+<li> Invite <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/services/redirect/invite/">Here</a>
+<li> Read The <code>Privacy Terms / PTOS</code> Of <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/policy/privacy/">Here</a>
+<li> Join Our Discord Server By Clicking The Photo Below Or Clicking The Link <a href="https://discord.gg/invite/dPXTa2XERS">Here</a>
+<br/><br/>
+<a href="https://discord.gg/invite/dPXTa2XERS">
+<img width="80%" height="30%" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
+</a>
+<br/>
+<h2></h2>
+<hr/>
+<h2>Make Sure To ⭐ And 🍴 The Repository 😊👍</h2>
