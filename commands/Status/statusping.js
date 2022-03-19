@@ -20,7 +20,7 @@ module.exports = {
       .setDescription(`**🌐 Database Ping Data:\n🎣 Fetches Ping: \`${ping.endGet}ms\`\n📝 Wrights Ping: \`${ping.endWright}ms\`\n😕 Average Ping: \`${ping.avarage}ms\`\n💬 Message Ping: \`${endMessagePing}ms\`**`).setColor(`${color}`).setTimestamp();
     msg.edit({
       content: '',
-      embed: nopr,
+      embed: embed,
     });
   },
 };
