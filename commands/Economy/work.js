@@ -15,6 +15,6 @@ module.exports = {
     }); const whatuding = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**What Are You Doing?! There Was \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, If You Worked As A \`${chosenJobs[0]}\`!😭**`)
     COLLECTOR.on("end", (collected) => { if (collected.size == 0) { return message.lineReplyNoMention({ embed: whatuding }) } }); const findjb = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**What Job Will You Do?💰 \nType The Job In This Channel.\n\`${chosenJobs.join("` `")}\`**`)
     message.lineReplyNoMention({ embed: findjb })
-    loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name} \nWorked As A: ${m.content}**` })
+    loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name}**` })
   },
 };

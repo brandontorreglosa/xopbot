@@ -16,6 +16,6 @@ module.exports = {
     }); const whatuding = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**What Are You Doing?! There Was \`${RANDOM_NUMBER.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins, Hidden Inside The \`${chosenLocations[0]}\`!😭**`)
     COLLECTOR.on("end", (collected) => { if (collected.size == 0) { return message.lineReplyNoMention({ embed: whatuding }); } }); const chloc = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Which Location Would You Like To Search?🔍 \nType The Location In This Channel.\n\`${chosenLocations.join("` `")}\`**`)
     message.lineReplyNoMention({ embed: chloc });
-    loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name} \nSearched: ${m.content}**` })
+    loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name}**` })
   },
 };
