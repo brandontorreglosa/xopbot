@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const logChannel = process.env.logChannel;
 module.exports = {
     name: 'rob',
     permissions: ["SEND_MESSAGES"],
@@ -7,6 +8,7 @@ module.exports = {
     cooldown: 20,
     description: "Rob Command!",
     async execute(client, message, cmd, args, Discord) {
+        const loggerchannel = client.channels.cache.get(logChannel);
         const maxtodep = 10000000; const user = message.mentions.users.first()
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)rob <@user>\`**`)
@@ -42,5 +44,6 @@ module.exports = {
             client.rmv(message.author.id, LooseAmount)
             client.add(user.id, LooseAmount)
         }
+        loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name}**` })
     }
 }

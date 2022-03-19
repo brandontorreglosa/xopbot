@@ -1,5 +1,6 @@
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const logChannel = process.env.logChannel;
 module.exports = {
   name: "deposit",
   permissions: ["SEND_MESSAGES"],
@@ -8,7 +9,9 @@ module.exports = {
   cooldown: 10,
   description: "Deposit Xocoins into your bank!",
   async execute(client, message, cmd, args, Discord) {
+    const loggerchannel = client.channels.cache.get(logChannel);
     const amount = args[0];
+    const w = amount;
     if (!args[0]) {
       const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)deposit <xocoins>\`**`)
       return message.lineReplyNoMention({ embed: nopr })
@@ -25,7 +28,8 @@ module.exports = {
       const embed = new Discord.MessageEmbed().setTimestamp().setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Deposited \`${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins Into Your Bank!💸**`).setColor(`${color}`)
       message.lineReplyNoMention({ embed: embed });
       client.rmv(message.author.id, amount)
-      client.bankadd(message.author.id, amount)
+      client.bankadd(message.author.id, w)
+      loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name} \nDeposited: ${amount}**` })
     } catch (err) { console.log(err); }
   },
 };

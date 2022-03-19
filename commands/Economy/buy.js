@@ -2,6 +2,7 @@ const inventory = require("../../models/inventory");
 const items = require("../../models/shopitems");
 const color = process.env.Color;
 const lineReplyNoMention = require("discord-reply");
+const logChannel = process.env.logChannel;
 module.exports = {
     name: "buy",
     permissions: ["SEND_MESSAGES"],
@@ -9,6 +10,7 @@ module.exports = {
     cooldown: 15,
     description: "buy something",
     async execute(client, message, cmd, args, Discord) {
+        const loggerchannel = client.channels.cache.get(logChannel);
         if (!args[0]) {
             const nospec = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**`(prefix)buy <item-name>`**')
             return message.lineReplyNoMention({ embed: nospec })
@@ -28,6 +30,7 @@ module.exports = {
             const sucbuy = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Have Bought The Item \`${itemToBuy}\` For \`${itemPrice}\` Xocoins! The Dealer Has Taken From You That Price!**`)
             message.lineReply({ embed: sucbuy });
             client.rmv(message.author.id, itemPrice);
+            loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name} \nBought: ${itemToBuy} | Price: ${itemPrice}**` })
         })
     }
 }
