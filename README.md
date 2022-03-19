@@ -77,8 +77,10 @@ XOP_API = optional
 <li> Invite <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/services/redirect/invite/">Here</a>
 <li> Read The <code>Privacy Terms / PTOS</code> Of <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/policy/privacy/">Here</a>
 <li> Join Our Discord Server By Clicking The Photo Below Or Clicking The Link <a href="https://discord.gg/invite/dPXTa2XERS">Here</a>
+<li> Follow Me On My <code>Instagram</code> By Clicking The Link <a href="https://www.instagram.com/brandon.torreglosa">Here</a>
+<li> Donate To Me Through <code>Ko-Fi</code> Or <code>Patreon</code> By Clicking The <code>❤ Sponsor</code> Button On Top
 <br/><br/>
-<a href="https://discord.gg/invite/dPXTa2XERS">
+<a href="https://discord.gg/invite/dPXTa2XERS" title="Our Support / Main Server | Copyright XOPBOT.Inc">
 <img width="80%" height="30%" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
 </a>
 <br/>
