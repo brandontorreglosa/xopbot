@@ -102,7 +102,7 @@ XOP_API = optional
 <li> Donate To Me Through <code>Ko-Fi</code> Or <code>Patreon</code> By Clicking The <code>❤ Sponsor</code> Button On Top
 <br/><br/>
 <a href="https://discord.gg/invite/dPXTa2XERS" title="Our Support / Main Server | Copyright XOPBOT.Inc">
-<img width="80%" height="30%" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
+<img width="65%" height="500" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
 </a>
 <br/>
 <h2></h2>
