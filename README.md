@@ -71,6 +71,12 @@ XOP_API = optional
 <img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/PkZNo7MFNFg/maxresdefault.webp?v=PkZNo7MFNFg">
 </a>
 <br/>
+<li> Want To Code A Bot From Scratch? Click The Photo Below To Start Coding
+<br/><br/>
+<a href="https://www.youtube.com/watch?v=4Np2fJOdXjE" title="Learn Discord.js Bot Development For Free | Copyright XOPBOT.Inc">
+<img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/4Np2fJOdXjE/maxresdefault.webp?v=4Np2fJOdXjE">
+</a>
+<br/>
 <h2></h2>
 <hr/>
 <h2>➡ Contributors</h2>
