@@ -2,7 +2,7 @@
 <p align="center"><img src=https://user-images.githubusercontent.com/84269666/123801401-ecb67d80-d8f2-11eb-898c-64d6bdfd8c3d.png ></center>
 <div align="center"> 
 <h1>XOPBOT</h1>
-<h3>A Multipurposebot With Over 200+ commands</h3>
+<h3>A Multipurposebot With Over 200+ Commands</h3>
 </div>
 <p align="center">
 <a href="https://github.com/HACKERPROTM/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/HACKERPROTM/XOPBOT-24-7?style=for-the-badge&color=yellow"></a> 
