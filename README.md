@@ -77,19 +77,19 @@ XOP_API = optional
 <li> Our Official Contributors Of This Repository
 <br/><br/>
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
-<img width="200" height="200" src="https://avatars.githubusercontent.com/u/84269666?v=4">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?v=4">
 </a>
 &nbsp;
 <a href="https://github.com/AryanDaga1" title="Unknown Real Name (AryanDaga1)">
-<img width="200" height="200" src="https://avatars.githubusercontent.com/u/82522625?v=4">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/82522625?v=4">
 </a>
 &nbsp;
 <a href="https://github.com/Nickdevelops" title="Nikos (Nickdevelops)">
-<img width="200" height="200" src="https://avatars.githubusercontent.com/u/86734318?v=4">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/86734318?v=4">
 </a>
 &nbsp;
 <a href="https://github.com/Simpleboy353" title="Unknown Real Name (Simpleboy353)">
-<img width="200" height="200" src="https://avatars.githubusercontent.com/u/67364262?v=4">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/67364262?v=4">
 </a>
 <br/>
 <h2></h2>
