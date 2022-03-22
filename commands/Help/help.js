@@ -78,13 +78,15 @@ module.exports = {
         }
         else if (cmd === 'games') {
             message.react('🎯'); const button13 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const rowg = new MessageActionRow().addComponents(button13)
             const embed115 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__<:SILENCE_liberal:824886939520991242> Games (5)__', value: '\n[guessthenumber](https://xopbot-gg.glitch.me/) \n__***Play GuessTheNumber!***__ \n[rps](https://xopbot-gg.glitch.me/) \n__***Play RockPaperSciccors!***__ \n[hangman](https://xopbot-gg.glitch.me/) \n__***Play Hangman!***__ \n[snake](https://xopbot-gg.glitch.me/) \n__***Play Snake Game!***__ \n[connect4](https://xopbot-gg.glitch.me/) \n__***Play Connect4!***__' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed115, components: [button13] })
+            await message.channel.send({ embed: embed115, components: [rowg] })
         }
         else if (cmd === 'owner') {
             message.react('👷‍♂️'); const button14 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const rowo = new MessageActionRow().addComponents(button14)
             if (message.author.id != OWNER_ID) return message.channel.send(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command!😔**`); const embed116 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__<:dankmemer3:824890108041232394> Owner (6)__', value: '\n[donate-premium](https://xopbot-gg.glitch.me/) \n__***Give Premium To User!***__\n[delete-premium](https://xopbot-gg.glitch.me/) \n__***Remove Premium From User!***__ \n[botservers](https://xopbot-gg.glitch.me/) \n__***Get The Bots Server Names!***__ \n[leaveservers](https://xopbot-gg.glitch.me/) \n__***Make Bot Leave Servers!***__ \n[shutdown](https://xopbot-gg.glitch.me/) \n__***Shutdown The Bot!***__ \n[remind](https://xopbot-gg.glitch.me/) \n__***Remind Me Something!***__' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed116, components: [button14] })
+            await message.channel.send({ embed: embed116, components: [rowo] })
         }
     }
 }
