@@ -105,6 +105,9 @@ XOP_API = optional
 <li> You Can Also Run On Your Terminal <code>git clone https://github.com/HACKERPROTM/XOPBOT-24-7.git</code>
 <li> Install All Packages By Running <code>npm i</code> Or <code>npm install</code>
 <li> Start The Bot By Running <code>node index.js</code> 
+<br/>
+<h2></h2>
+<hr/>
 <h2>➡ Extras</h2>
 <li> Invite <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/services/redirect/invite/">Here</a>
 <li> Read The <code>Privacy Terms / PTOS</code> Of <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/policy/privacy/">Here</a>
