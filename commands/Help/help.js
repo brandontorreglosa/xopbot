@@ -33,18 +33,21 @@ module.exports = {
         }
         else if (cmd === 'bugs') {
             message.react('🐜'); const button4 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const row4 = new MessageActionRow().addComponents(button4);
             const embed4 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__🐛 Bugs (3)__', value: '\n[bugreport](https://xopbot-gg.glitch.me/) \n__***Report A Bug To Admins!***__ \n[findbugs](https://xopbot-gg.glitch.me/) \n__***Find Bugs On Your Server!***__ \n[clearbugs](https://xopbot-gg.glitch.me/) \n__***Clear Bugs From Your Server!***__' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed4, components: [button4] })
+            await message.channel.send({ embed: embed4, components: [row4] })
         }
         else if (cmd === 'socials') {
             message.react('🗨'); const button5 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const row6 = new MessageActionRow().addComponents(button5);
             const embed6 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__💬 Socials (3)__', value: '\n[youtube](https://xopbot-gg.glitch.me/) \n__***Go To My Youtube Channel!***__ \n[scratch](https://xopbot-gg.glitch.me/) \n__***Go To My Scratch Account!***__ \n[amino](https://xopbot-gg.glitch.me/) \n__***Go To My Amino Account!***__' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed6, components: [button5] })
+            await message.channel.send({ embed: embed6, components: [row6] })
         }
         else if (cmd === 'leveling') {
             message.react('🆙'); const button7 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const row10 = new MessageActionRow().addComponents(button7);
             const embed10 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__<:Stonks:824886940079489025> Leveling (4)__', value: '\n[rank](https://xopbot-gg.glitch.me/) \n__***Get Your Level Rank Card!***__  \n[leaderboard](https://xopbot-gg.glitch.me/) \n__***Get Your Servers Leaderboard!***__ \n[level](https://xopbot-gg.glitch.me/) \n__***Get A Users Level!***__ \n[edit](https://xopbot-gg.glitch.me/) \n__***Edit Level Or Xp!***__' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed10, components: [button7] })
+            await message.channel.send({ embed: embed10, components: [row10] })
         }
         else if (cmd === 'nsfw') {
             const nsfenochcembed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription("**You Little Pervert! 😊 This Is Not A NSFW Channel! 🔞**")
@@ -61,13 +64,15 @@ module.exports = {
         }
         else if (cmd === 'premium') {
             message.react('🏆'); const button9 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const row12 = new MessageActionRow(button9);
             const embed12 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__👑 Premium (5)__', value: '\n[fakeuserinfo](https://xopbot-gg.glitch.me/) \n__***Get A Fake User Info! (Premium)***__ \n[weather](https://xopbot-gg.glitch.me/) \n__***Get Your Current Weather! (Premium)***__ \n[oldmeme](https://xopbot-gg.glitch.me/) \n__***Get Old Memes From Google! (Premium)***__ \n[tictactoe](https://xopbot-gg.glitch.me/) \n__***Play Tictactoe! (Premium)***__ \n[math](https://xopbot-gg.glitch.me/) \n__***Do Math Problems! (Premium)***__' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed12, components: [button9] })
+            await message.channel.send({ embed: embed12, components: [row12] })
         }
         else if (cmd === 'invites') {
             message.react('🖇'); const button10 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const row13 = new MessageActionRow().addComponents(button10);
             const embed13 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '__🔗 Invites (3)__', value: '\n[botinvite](https://xopbot-gg.glitch.me/) \n__***Invite The Bot To Your Server!***__ \n[websiteinvite](https://xopbot-gg.glitch.me/) \n__***Go To XOPBOTs Official Website!***__ \n[voteinvite](https://xopbot-gg.glitch.me/) \n__***Vote For XOPBOT To Get Famous!***__' }).setFooter(`Created By:${message.author.tag}`, message.author.displayAvatarURL())
-            await message.channel.send({ embed: embed13, components: [button10] })
+            await message.channel.send({ embed: embed13, components: [row13] })
         }
         else if (cmd === 'credits') {
             message.react('📃'); const button11 = new MessageButton().setStyle('url').setURL('https://xopbot-gg.glitch.me/').setLabel('Website').setEmoji(`💻`)
