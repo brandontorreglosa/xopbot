@@ -104,7 +104,8 @@ XOP_API = optional
 <li> Fork The Repository By Clicking <a href="https://github.com/HACKERPROTM/XOPBOT-24-7">Here</a>
 <li> You Can Also Run On Your Terminal <code>git clone https://github.com/HACKERPROTM/XOPBOT-24-7.git</code>
 <li> Install All Packages By Running <code>npm i</code> Or <code>npm install</code>
-<li> Start The Bot By Running <code>node index.js</code> 
+<li> Start The Bot By Running <code>node index.js</code> Or <code>node .</code>
+<li> Need Help With The Bot? Join The Discussion <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/discussions/1">Here</a>
 <br/>
 <h2></h2>
 <hr/>
