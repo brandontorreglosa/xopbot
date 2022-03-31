@@ -97,6 +97,10 @@ XOP_API = optional
 <a href="https://github.com/Simpleboy353" title="Unknown Real Name (Simpleboy353)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/67364262?v=4">
 </a>
+&nbsp;
+<a href="https://github.com/dependabot" title="Dependabot (Github)">
+<img width="150" height="150" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBSTo_X_Y8HAE9SSvpspolAKuxBjmz1Zz9Sg&usqp=CAU">
+</a>
 <br/>
 <h2></h2>
 <hr/>
