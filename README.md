@@ -33,14 +33,19 @@
 <hr/>
 <h2>➡ Enviromental Variables</h2>
 <li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables
-<br/>
-PREFIX = your prefix
+<li> The Colors Must Only Be Hex Or A Defined Color, "red" Example
+<li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons
+<li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File
+
+<h2></h2>
+<b>
+X_Prefix = your prefix
 <br/>
 Color = your color
 <br/>
-Gcolor = #00ff00 /*right answer*/
+Gcolor = #00ff00 
 <br/>
-Rcolor = #c30202 /*wrong answer*/
+Rcolor = #c30202
 <br/>
 App_ID = application id
 <br/>
@@ -55,6 +60,7 @@ XOP_SITE = bot website
 XOP_DONER = optional
 <br/>
 XOP_API = optional
+</b>
 <br/>
 <h2></h2>
 <hr>
