@@ -24,16 +24,28 @@ module.exports = {
         const sendme = await message.channel.send({ embed: avatar_list, components: [row] });
         client.on("clickButton", async (button) => {
             if (button.id === "128") {
+                if (!user.id === message.author.id) {
+                    await button.reply.defer();
+                    await button.message.channel.send({ content: "**Not Your Embed!**", ephemeral: true });
+                }
                 const avatar_list1 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 128, dynamic: true })}`)
-                sendme.edit({ embed: avatar_list1, components: [row1] });
+                await sendme.edit({ embed: avatar_list1, components: [row1] });
             } else if (button.id === "256") {
+                if (!user.id === message.author.id) {
+                    await button.reply.defer();
+                    await button.message.channel.send({ content: "**Not Your Embed!**", ephemeral: true });
+                }
                 const avatar_list2 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 256, dynamic: true })}`)
-                sendme.edit({ embed: avatar_list2, components: [row2] });
+                await sendme.edit({ embed: avatar_list2, components: [row2] });
             } else if (button.id === "1024") {
+                if (!user.id === message.author.id) {
+                    await button.reply.defer();
+                    await button.message.channel.send({ content: "**Not Your Embed!**", ephemeral: true });
+                }
                 const avatar_list3 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 1024, dynamic: true })}`)
-                sendme.edit({ embed: avatar_list3, components: [row3] })
+                await sendme.edit({ embed: avatar_list3, components: [row3] })
             }
-            button.reply.defer();
+            await button.reply.defer();
         });
     }
 }
