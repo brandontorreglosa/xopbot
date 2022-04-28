@@ -18,6 +18,8 @@ module.exports = {
         const button5 = new MessageButton().setStyle('blurple').setID('2561').setLabel('256px').setDisabled(true)
         const button6 = new MessageButton().setStyle('green').setID('10241').setLabel('1024px').setDisabled(true)
         const row1 = new MessageActionRow().addComponents(button4, button5, button6);
+        const row2 = new MessageActionRow().addComponents(button4, button5, button6);
+        const row3 = new MessageActionRow().addComponents(button4, button5, button6);
         const avatar_list = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 2048, dynamic: true })}`)
         const sendme = await message.channel.send({ embed: avatar_list, components: [row] });
         client.on("clickButton", async (button) => {
@@ -26,10 +28,10 @@ module.exports = {
                 sendme.edit({ embed: avatar_list1, components: [row1] });
             } else if (button.id === "256") {
                 const avatar_list2 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 256, dynamic: true })}`)
-                sendme.edit({ embed: avatar_list2, components: [row1] });
+                sendme.edit({ embed: avatar_list2, components: [row2] });
             } else if (button.id === "1024") {
                 const avatar_list3 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 1024, dynamic: true })}`)
-                sendme.edit({ embed: avatar_list3, components: [row1] })
+                sendme.edit({ embed: avatar_list3, components: [row3] })
             }
             button.reply.defer();
         });
