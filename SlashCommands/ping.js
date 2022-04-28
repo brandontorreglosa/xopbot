@@ -4,7 +4,7 @@ const { SlashCommandBuilder, SlashCommandStringOption } = require('@discordjs/bu
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('ping')
-        .setDescription('Replies with pong'),
+        .setDescription('Replies with pong :))'),
    async execute(interaction) {
         interaction.reply({
             content: "Pong :D"
