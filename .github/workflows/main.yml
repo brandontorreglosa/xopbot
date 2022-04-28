@@ -15,4 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "trixbotonline" #Must be unique in Heroku
           heroku_email: "brandontorreglosa@gmail.com"
-          procfile: "Worker: node index.js"
+         
