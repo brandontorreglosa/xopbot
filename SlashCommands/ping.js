@@ -7,7 +7,7 @@ module.exports = {
         .setDescription('Replies with pong'),
    async execute(interaction) {
         interaction.reply({
-            content: "Pong"
+            content: "Pong :D"
         })
 }
 };
