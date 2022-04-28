@@ -26,21 +26,21 @@ module.exports = {
             if (button.id === "128") {
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
-                    await button.message.channel.send({ content: "**Not Your Embed!**", ephemeral: true });
+                    await button.reply({ content: "**Not Your Embed!**", ephemeral: true });
                 }
                 const avatar_list1 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 128, dynamic: true })}`)
                 await sendme.edit({ embed: avatar_list1, components: [row1] });
             } else if (button.id === "256") {
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
-                    await button.message.channel.send({ content: "**Not Your Embed!**", ephemeral: true });
+                    await button.reply({ content: "**Not Your Embed!**", ephemeral: true });
                 }
                 const avatar_list2 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 256, dynamic: true })}`)
                 await sendme.edit({ embed: avatar_list2, components: [row2] });
             } else if (button.id === "1024") {
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
-                    await button.message.channel.send({ content: "**Not Your Embed!**", ephemeral: true });
+                    await button.reply({ content: "**Not Your Embed!**", ephemeral: true });
                 }
                 const avatar_list3 = new Discord.MessageEmbed().setAuthor(`${user.username}`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setTimestamp().setTitle(`Avatar Link`).setURL(`${user.displayAvatarURL({ dynamic: true })}`).setImage(`${user.displayAvatarURL({ size: 1024, dynamic: true })}`)
                 await sendme.edit({ embed: avatar_list3, components: [row3] })
