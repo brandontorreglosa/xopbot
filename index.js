@@ -3,7 +3,6 @@ require('discord-reply');
 const lineReplyNoMention = require('discord-reply');
 const Levels = require('discord-xp');
 require('dotenv').config();
-require('custom-env').env('dev');
 const { Client, Collection, Intents } = require("discord.js");
 const client = new Client({
     partials: ["MESSAGE", "CHANNEL", "REACTIONS"],
