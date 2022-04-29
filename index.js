@@ -38,25 +38,25 @@ const commands = [];
 client.commands = new Discord.Collection();
 
 for (const file of commandFiles) {
-	const command = require(`./SlashCommands/${file}`);
-	commands.push(command.data.toJSON());
-	client.commands.set(command.data.name, command);
+    const command = require(`./SlashCommands/${file}`);
+    commands.push(command.data.toJSON());
+    client.commands.set(command.data.name, command);
 }
 
 // <----/Handlers System/---->
 
 const eventFiles = fs
-	.readdirSync("./events")
-	.filter(file => file.endsWith(".js"));
+    .readdirSync("./events")
+    .filter(file => file.endsWith(".js"));
 
 for (const file of eventFiles) {
-	const event = require(`./events/${file}`);
-	
-	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args, commands));
-	} else {
-		client.on(event.name, (...args) => event.execute(...args, commands));
-	}
+    const event = require(`./events/${file}`);
+
+    if (event.once) {
+        client.once(event.name, (...args) => event.execute(...args, commands));
+    } else {
+        client.on(event.name, (...args) => event.execute(...args, commands));
+    }
 }
 
 ['command_handler', 'event_handler'].forEach(handler => {
@@ -75,6 +75,13 @@ client.on("ready", () => {
 
 // <----/Mongodb System/---->
 Levels.setURL(process.env.X_MongodbURL);
+
+const { Database } = require("quickmongo")
+const quickmongo = new Database(process.env.X_MongodbURL)
+quickmongo.connect(process.env.X_MongodbURL)
+quickmongo.on("ready", () => {
+    console.log("Connected To Quick Mongo Database!")
+});
 
 mongoose.connect(process.env.X_MongodbURL, {
     useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true,
