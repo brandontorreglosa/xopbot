@@ -18,7 +18,7 @@ module.exports = {
         const row2 = new MessageActionRow().addComponents(button3, button4)
         const row3 = new MessageActionRow().addComponents(button3, button4)
         const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**This Will Clear All Messages In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**`)
-        const rar = message.channel.send({ embed: nopr, components: [row] })
+        const Sentmessage = message.channel.send({ embed: nopr, components: [row] })
         client.on("clickButton", async (button) => {
             if (button.id === "yes") {
                 if (button.clicker.user.id !== message.author.id) {
@@ -30,7 +30,7 @@ module.exports = {
                         .then(() => setTimeout(() => message.channel.clone()
                             .then(() => message.channel.delete().catch(() => null)), 10000));
                     await button.reply.defer();
-                    rar.edit({ embed: nopr, components: [row2] });
+                    await Sentmessage.edit({ embed: nopr, components: [row2] });
                 }
             } else if (button.id === "no") {
                 if (button.clicker.user.id !== message.author.id) {
@@ -40,7 +40,7 @@ module.exports = {
                     const nonukeplz = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Cancelled The Nuke Command Successfully!**`)
                     message.lineReplyNoMention({ embed: nonukeplz });
                     await button.reply.defer();
-                    rar.edit({ embed: nopr, components: [row3] });
+                    await Sentmessage.edit({ embed: nopr, components: [row3] });
                 }
             }
         })
