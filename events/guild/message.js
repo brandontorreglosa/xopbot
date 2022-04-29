@@ -506,11 +506,11 @@ try {
         const perm1 = "SEND_MESSAGES"
         const perm2 = "MANAGE_MESSAGES"
         const perm3 = "ADMINISTRATOR"
-        if (message.content.startsWith("bugreport") || message.content.startsWith("bgreport") || message.content.startsWith("reportbug")) {
+        if (message.content.startsWith("budget") || message.content.startsWith("balance") || message.content.startsWith("bal")) {
           if (!message.member.permissions.has(perm3)) { return message.channel.send({ content: `**You Don't Have The Permission: ${perm3}**` }) };
           const user = message.mentions.users.first() || message.author; const bal = await client.bal(user.id); const bank = await client.bank(user.id)
           const debt = await client.debt(user.id)
-          const newEmbed = new Discord.MessageEmbed().setTimestamp().setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true })).setColor(`${Color}`).setDescription(`**💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**\n**🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**\n**💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**`)
+          const newEmbed = new Discord.MessageEmbed().setTimestamp().setAuthor(`${user.username}\`s Balance`, user.displayAvatarURL({ dynamic: true })).setColor(`${color}`).setDescription(`**💸 Wallet \`${bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**\n**🏦 Bank \`${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**\n**💰 Debt \`${debt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\` Xocoins**`)
           message.lineReplyNoMention({ embed: newEmbed })
           loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name} \nWallet: ${bal} | Bank: ${bank} | Debt: ${debt}**` })
         }

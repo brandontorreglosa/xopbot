@@ -17,7 +17,7 @@ module.exports = {
         }
         if (args[0] === "On" || args[0] === "on") {
             const data = await antiprefixSchema.findOne({ GuildID: message.guild.id, }); if (data) {
-                await antiprefixSchema.findOneAndRemove({ GuildID: message.guild.id, }); const on1 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Antilink Is Now `🟢 Enabled`!**')
+                await antiprefixSchema.findOneAndRemove({ GuildID: message.guild.id, }); const on1 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Antiprefix Is Now `🟢 Enabled`!**')
                 message.lineReplyNoMention({ embed: on1 }); let newData = new antiprefixSchema({ GuildID: message.guild.id, }); newData.save();
             } else if (!data) {
                 const on2 = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Antiprefix Is Now `🟢 Enabled`!**')
@@ -25,7 +25,7 @@ module.exports = {
             }
         } else if (args[0] === "Off" || args[0] === "off") {
             const data2 = await antiprefixSchema.findOne({ GuildID: message.guild.id, }); if (data2) {
-                await antiprefixSchema.findOneAndRemove({ GuildID: message.guild.id, }); const off1 = new Discord.MessageEmbed().setTimestamp().setColor(`${rcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Antilink Is Now `🔴 Disabled`!**')
+                await antiprefixSchema.findOneAndRemove({ GuildID: message.guild.id, }); const off1 = new Discord.MessageEmbed().setTimestamp().setColor(`${rcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Antiprefix Is Now `🔴 Disabled`!**')
                 return message.lineReplyNoMention({ embed: off1 });
             } else if (!data2) {
                 const noset = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Antiprefix Not Even Setup Bot!**')
