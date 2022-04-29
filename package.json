@@ -46,6 +46,7 @@
     "node-gyp": "^9.0.0",
     "novelcovid": "^3.0.2",
     "python": "^0.0.4",
+    "quickmongo": "^5.1.2",
     "reconlx": "^1.2.41",
     "snekfetch": "^4.0.4",
     "superagent": "^7.1.1",

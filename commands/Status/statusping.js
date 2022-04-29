@@ -1,5 +1,7 @@
 const { MessageEmbed } = require('discord.js');
-const quick = require('quick.db');
+const mongodburl = process.env.X_MongodbURL;
+const { Database } = require("quickmongo");
+const quick = new Database(mongodburl)
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {

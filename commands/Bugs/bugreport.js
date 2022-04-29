@@ -1,7 +1,9 @@
 const lineReplyNoMention = require('discord-reply');
 const logChannel = process.env.logChannel;
 const color = process.env.Color;
-const db = require("quick.db");
+const mongodburl = process.env.X_MongodbURL;
+const { Database } = require("quickmongo");
+const db = new Database(mongodburl)
 module.exports = {
     name: "bugreport",
     permissions: ["SEND_MESSAGES"],
