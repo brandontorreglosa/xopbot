@@ -13,6 +13,7 @@ module.exports = {
     description: "Sends a random meme from reddit",
     async execute(client, message, cmd, args, Discord) {
         try {
+            const user = message.author;
             if (!args[0]) {
                 const nospec = new Discord.MessageEmbed()
                     .setTimestamp()
@@ -79,44 +80,55 @@ module.exports = {
 
             client.on("clickButton", async (button) => {
                 if (button.id === "reject") {
-                    const nostopcmdplz = new Discord.MessageEmbed()
-                        .setTimestamp()
-                        .setColor(`${color}`)
-                        .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                        .setDescription(`**You Cancelled The Automeme Command Successfully!**`)
-                    return message.lineReplyNoMention({ embed: nostopcmdplz })
+                    if (button.clicker.user.id !== message.author.id) {
+                        await button.reply.defer();
+                        await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
+                    } else if (button.clicker.id === message.author.id) {
+                        const nostopcmdplz = new Discord.MessageEmbed()
+                            .setTimestamp()
+                            .setColor(`${color}`)
+                            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+                            .setDescription(`**You Cancelled The Automeme Command Successfully!**`)
+                        await button.reply.defer();
+                        return message.lineReplyNoMention({ embed: nostopcmdplz })
+                    }
                 } else if (button.id === "accept") {
-                    message.lineReplyNoMention({ embed: on1 }).then((msg) => {
-                        setTimeout(function () {
-                            msg.edit({ embed: on2 })
+                    if (button.clicker.user.id !== message.author.id) {
+                        await button.reply.defer();
+                        await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
+                    } else if (button.clicker.id === message.author.id) {
+                        message.lineReplyNoMention({ embed: on1 }).then((msg) => {
                             setTimeout(function () {
-                                msg.edit({ embed: on3 })
+                                msg.edit({ embed: on2 })
+                                setTimeout(function () {
+                                    msg.edit({ embed: on3 })
+                                }, 10000)
                             }, 10000)
-                        }, 10000)
-                    })
-                    setInterval(() => {
-                        got(`https://www.reddit.com/r/${autoa}/random.json`).then(response => {
-                            let content = JSON.parse(response.body);
-                            let permalink = content[0].data.children[0].data.permalink;
-                            let memeUrl = `https://reddit.com${permalink}`;
-                            let memeImage = content[0].data.children[0].data.url;
-                            let memeTitle = content[0].data.children[0].data.title;
-                            let memeUpvotes = content[0].data.children[0].data.ups;
-                            let memeDownvotes = content[0].data.children[0].data.downs;
-                            let memeNumComments = content[0].data.children[0].data.num_comments;
-                            const embed = new Discord.MessageEmbed()
-                            embed.setTimestamp()
-                            embed.setTitle(`${memeTitle}`)
-                            embed.setURL(`${memeUrl}`)
-                            embed.setImage(`${memeImage}`)
-                            embed.setColor(`${color}`)
-                            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-                            message.lineReplyNoMention({ embed: embed });
                         })
-                    }, 20000)
-                    check.edit({ embed: stopvote, components: [row2] })
+                        setInterval(() => {
+                            got(`https://www.reddit.com/r/${autoa}/random.json`).then(response => {
+                                let content = JSON.parse(response.body);
+                                let permalink = content[0].data.children[0].data.permalink;
+                                let memeUrl = `https://reddit.com${permalink}`;
+                                let memeImage = content[0].data.children[0].data.url;
+                                let memeTitle = content[0].data.children[0].data.title;
+                                let memeUpvotes = content[0].data.children[0].data.ups;
+                                let memeDownvotes = content[0].data.children[0].data.downs;
+                                let memeNumComments = content[0].data.children[0].data.num_comments;
+                                const embed = new Discord.MessageEmbed()
+                                embed.setTimestamp()
+                                embed.setTitle(`${memeTitle}`)
+                                embed.setURL(`${memeUrl}`)
+                                embed.setImage(`${memeImage}`)
+                                embed.setColor(`${color}`)
+                                embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+                                message.lineReplyNoMention({ embed: embed });
+                            })
+                        }, 20000)
+                        await button.reply.defer();
+                        await check.edit({ embed: stopvote, components: [row2] })
+                    }
                 }
-                button.reply.defer();
             });
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel);
