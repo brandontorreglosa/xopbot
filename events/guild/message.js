@@ -498,7 +498,7 @@ try {
     // <----/Antiprefix System/---->
 
     const antiprefixData = require('../../models/antiprefix')
-    client.on("message", async (message, Discord, client, args) => {
+    client.on("message", async (client, message, cmd, args, Discord) => {
       const antiprefix = await antiprefixData.findOne({
         GuildID: message.guild.id,
       })
@@ -507,7 +507,7 @@ try {
         const perm2 = "MANAGE_MESSAGES"
         const perm3 = "ADMINISTRATOR"
         if (message.content.startsWith("bugreport") || message.content.startsWith("bgreport") || message.content.startsWith("reportbug")) {
-          if (!message.member.permissions.has(perm3)) { return message.channel.send({ content: `**You Don't Have The Permission: ${perm3}**`}) };
+          if (!message.member.permissions.has(perm3)) { return message.channel.send({ content: `**You Don't Have The Permission: ${perm3}**` }) };
           const loggerchannel = client.channels.cache.get(logChannel);
           const channel = client.channels.cache.get('839389883486306304')
           const query = args.join(' '); const queryembed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**`(prefix)bugreport <bug>`**')
@@ -515,7 +515,7 @@ try {
           await db.add('reports.sofar', 1); const reportssofar = await db.get('reports.sofar'); const reportEmbed = new Discord.MessageEmbed().setColor(`${color}`).setTitle('**New Bug Found!**').addField('Author', message.author.toString(), true).addField('Guild', message.guild.name, true).addField('Report', query).addField('Reports So Far:', reportssofar).setThumbnail(message.author.displayAvatarURL({ dynamic: true })).setTimestamp()
           channel.send({ embed: reportEmbed }); message.lineReplyNoMention({ content: "**Bug Report Has Been Sent!**" })
           loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name}**` })
-        } 
+        }
       } else if (!antiprefix) {
         return;
       }
