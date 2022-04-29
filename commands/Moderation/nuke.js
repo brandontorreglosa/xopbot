@@ -16,8 +16,9 @@ module.exports = {
         const button4 = new MessageButton().setStyle('red').setID('reject').setLabel('Reject').setEmoji('❌').setDisabled(true)
         const row = new MessageActionRow().addComponents(button1, button2)
         const row2 = new MessageActionRow().addComponents(button3, button4)
+        const row3 = new MessageActionRow().addComponents(button3, button4)
         const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**This Will Clear All Messages In This Channel And May Cause Conflict For Bots Using ID To Track Channels. Continue?**`)
-        const rar = message.lineReplyNoMention({ embed: nopr, components: [row] })
+        const rar = message.channel.send({ embed: nopr, components: [row] })
         client.on("clickButton", async (button) => {
             if (button.id === "yes") {
                 if (button.clicker.user.id !== message.author.id) {
@@ -39,7 +40,7 @@ module.exports = {
                     const nonukeplz = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Cancelled The Nuke Command Successfully!**`)
                     message.lineReplyNoMention({ embed: nonukeplz });
                     await button.reply.defer();
-                    rar.edit({ embed: nopr, components: [row2] });
+                    rar.edit({ embed: nopr, components: [row3] });
                 }
             }
         })
