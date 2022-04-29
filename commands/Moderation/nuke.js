@@ -9,11 +9,11 @@ module.exports = {
     clientpermissions: ["MANAGE_MESSAGES", "MANAGE_CHANNELS", "SEND_MESSAGES", "EMBED_LINKS"],
     description: 'Removes all messages in the channel (Deletes the old channel and makes a copy of it with permissions intact)',
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.users.first() || message.author;
-        const button1 = new MessageButton().setStyle('green').setID('accept').setLabel("Accept").setEmoji('✅')
-        const button2 = new MessageButton().setStyle('red').setID('reject').setLabel('Reject').setEmoji('❌')
-        const button3 = new MessageButton().setStyle('green').setID('accept1').setLabel("Accept").setEmoji('✅').setDisabled(true)
-        const button4 = new MessageButton().setStyle('red').setID('reject').setLabel('Reject').setEmoji('❌').setDisabled(true)
+        const user = message.author;
+        const button1 = new MessageButton().setStyle('green').setID('yes').setLabel("Accept").setEmoji('✅')
+        const button2 = new MessageButton().setStyle('red').setID('no').setLabel('Reject').setEmoji('❌')
+        const button3 = new MessageButton().setStyle('green').setID('yes1').setLabel("Accept").setEmoji('✅').setDisabled(true)
+        const button4 = new MessageButton().setStyle('red').setID('no1').setLabel('Reject').setEmoji('❌').setDisabled(true)
         const row = new MessageActionRow().addComponents(button1, button2)
         const row2 = new MessageActionRow().addComponents(button3, button4)
         const row3 = new MessageActionRow().addComponents(button3, button4)
