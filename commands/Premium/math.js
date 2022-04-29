@@ -1,4 +1,4 @@
-const math = require('mathjs');
+const math = require('math.js');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {

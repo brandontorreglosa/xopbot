@@ -1,5 +1,4 @@
 const lineReplyNoMention = require('discord-reply');
-const os = require('os')
 const moment = require('moment')
 const color = process.env.Color;
 module.exports = {
