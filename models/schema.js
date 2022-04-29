@@ -5,6 +5,6 @@ const schema = new mongoose.Schema({
   coins: Number
 });
 
-const model = mongoose.model("Schema", schema);
+const model = mongoose.model("XocoinsSchema", schema);
 
 module.exports = model;
