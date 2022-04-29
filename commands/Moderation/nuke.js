@@ -19,15 +19,27 @@ module.exports = {
         const rar = message.lineReplyNoMention({ embed: nopr, components: [row] })
         client.on("clickButton", async (button) => {
             if (button.id === "yes") {
-                const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setTitle('Incoming Nuke!').setDescription(`**The Nuke Has Been Deployed, Say Goodbye To #${message.channel.name} \nTakes Up To 10 Seconds Max. To Clear Channel!**`).setFooter(`Was Deployed By ${message.author.username} 😱`)
-                message.lineReplyNoMention({ embed: embed })
-                    .then(() => setTimeout(() => message.channel.clone()
-                        .then(() => message.channel.delete().catch(() => null)), 10000));
-                rar.edit({ embed: nopr, components: [row2] });
+                if (button.clicker.user.id !== message.author.id) {
+                    await button.reply.defer();
+                    await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
+                } else if (button.clicker.id === message.author.id) {
+                    const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setTitle('Incoming Nuke!').setDescription(`**The Nuke Has Been Deployed, Say Goodbye To #${message.channel.name} \nTakes Up To 10 Seconds Max. To Clear Channel!**`).setFooter(`Was Deployed By ${message.author.username} 😱`)
+                    message.lineReplyNoMention({ embed: embed })
+                        .then(() => setTimeout(() => message.channel.clone()
+                            .then(() => message.channel.delete().catch(() => null)), 10000));
+                    await button.reply.defer();
+                    rar.edit({ embed: nopr, components: [row2] });
+                }
             } else if (button.id === "no") {
-                const nonukeplz = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Cancelled The Nuke Command Successfully!**`)
-                message.lineReplyNoMention({ embed: nonukeplz });
-                rar.edit({ embed: nopr, components: [row2] });
+                if (button.clicker.user.id !== message.author.id) {
+                    await button.reply.defer();
+                    await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
+                } else if (button.clicker.id === message.author.id) {
+                    const nonukeplz = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Cancelled The Nuke Command Successfully!**`)
+                    message.lineReplyNoMention({ embed: nonukeplz });
+                    await button.reply.defer();
+                    rar.edit({ embed: nopr, components: [row2] });
+                }
             }
         })
     }

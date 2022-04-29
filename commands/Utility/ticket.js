@@ -29,6 +29,7 @@ module.exports = {
       });
       channel.updateOverwrite(message.guild.id, { SEND_MESSAGE: false, VIEW_CHANNEL: false, });
       channel.updateOverwrite(message.author, { SEND_MESSAGE: true, VIEW_CHANNEL: true, });
+      const user = message.author;
       const button11 = new MessageButton().setStyle('green').setID('yes').setLabel('Lock').setEmoji('🔒')
       const button1 = new MessageButton().setStyle('red').setID('no').setLabel('Close').setEmoji('⛔')
       const fakbutton = new MessageButton().setStyle('green').setLabel('Lock').setID('yes1').setEmoji('🔒').setDisabled(true)
@@ -41,14 +42,25 @@ module.exports = {
       const locktxtc = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**The Channel Has Now Been Locked 🔒! The Staff Will Reply Soon!**`).setFooter('Successfully Locked The Channel!')
       client.on("clickButton", async (button) => {
         if (button.id === 'yes') {
-          channel.send({ embed: locktxtc })
-          sentMessage.edit({ embed: supportembedy, components: [row2] });
+          if (button.clicker.user.id !== message.author.id) {
+            await button.reply.defer();
+            await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
+          } else if (button.clicker.id === message.author.id) {
+            channel.send({ embed: locktxtc })
+            await button.reply.defer();
+            await sentMessage.edit({ embed: supportembedy, components: [row2] });
+          };
         } else if (button.id === 'no') {
-          channel.send({ embed: deltxtc }).then(() => {
-            setTimeout(() => channel.delete(), 5000)
-          })
+          if (button.clicker.user.id !== message.author.id) {
+            await button.reply.defer();
+            await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
+          } else if (button.clicker.id === message.author.id) {
+            await button.reply.defer();
+            await channel.send({ embed: deltxtc }).then(() => {
+              setTimeout(() => channel.delete(), 5000)
+            })
+          };
         }
-        button.reply.defer();
       });
       const embed101 = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Hey, The Server Moderator(s) Will Be Right Wth You! \nMake Sure To Check The TXTC ${channel} For Responses!**`).setFooter(`Opened By ${message.author.username}`)
       message.lineReplyNoMention({ embed: embed101 })
