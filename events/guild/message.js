@@ -1,7 +1,10 @@
 const fetch = require("node-fetch").default;
 const premiumSchema = require("../../models/premium");
 const nsfwSchema = require("../../models/registernsfw")
-const quick = require('quick.db');
+const mongodburl = process.env.X_MongodbURL;
+const { Database } = require("quickmongo");
+const db = new Database(mongodburl)
+const quick = new Database(mongodburl)
 const Levels = require('discord-xp');
 const fs = require('fs');
 const ms = require('ms');
@@ -9,7 +12,6 @@ require('dotenv').config();
 const cooldown = require('../../models/cooldown');
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const db = require("quick.db");
 
 try {
   module.exports = async (Discord, client, message) => {

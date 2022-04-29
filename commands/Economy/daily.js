@@ -1,5 +1,7 @@
 const lineReplyNoMention = require('discord-reply');
-const db = require("quick.db");
+const mongodburl = process.env.X_MongodbURL;
+const { Database } = require("quickmongo");
+const db = new Database(mongodburl)
 const color = process.env.Color;
 const logChannel = process.env.logChannel;
 module.exports = {
