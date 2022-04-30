@@ -77,8 +77,7 @@ client.on("ready", () => {
 Levels.setURL(process.env.X_MongodbURL);
 
 const { Database } = require("quickmongo")
-const quickmongo = new Database("mongodb://localhost/Cluster0")
-quickmongo.connect(process.env.X_MongodbURL)
+const quickmongo = new Database(`${process.env.X_MongodbURL}`)
 quickmongo.on("ready", () => {
     console.log("Connected To Quick Mongo Database!")
 });
