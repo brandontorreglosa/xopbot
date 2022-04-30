@@ -78,6 +78,11 @@ Levels.setURL(process.env.X_MongodbURL);
 
 const { Database } = require("quickmongo")
 const quickmongo = new Database(`${process.env.X_MongodbURL}`)
+quickmongo.connect(process.env.X_MongodbURL, {
+    useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true,
+}).then(() => {
+    console.log("Connected To Quick Mongo Database!")
+})
 quickmongo.on("ready", () => {
     console.log("Connected To Quick Mongo Database!")
 });
