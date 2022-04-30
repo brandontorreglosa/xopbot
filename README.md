@@ -1,5 +1,5 @@
 <h1>XOPBOT-24-7</h1>
-<p align="center"><img src=https://user-images.githubusercontent.com/84269666/123801401-ecb67d80-d8f2-11eb-898c-64d6bdfd8c3d.png ></center>
+<p align="center"><img src=https://user-images.githubusercontent.com/84269666/123801401-ecb67d80-d8f2-11eb-898c-64d6bdfd8c3d.png ></p>
 <div align="center"> 
 <h1>XOPBOT</h1>
 <h3>A Multipurposebot With Over 200+ Commands</h3>
@@ -8,7 +8,7 @@
 <a href="https://github.com/HACKERPROTM/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/HACKERPROTM/XOPBOT-24-7?style=for-the-badge&color=yellow"></a> 
 <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/network"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/HACKERPROTM/XOPBOT-24-7?style=for-the-badge&color=darkblue"></a>
 <a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/npm/l/xoppack.svg?style=for-the-badge&color=red" alt="Github License"></a>
- <br>
+<br/>
 <a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/npm/v/xoppack.svg?style=for-the-badge&label=XOPPACK" alt="XOPPACK Version" /></a>
 <a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/npm/dt/xoppack.svg?style=for-the-badge&label=Downloads" alt="XOPPACK Downloads" /></a>
 <a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/librariesio/dependents/npm/xoppack?style=for-the-badge&label=Dependents" alt="XOPPACK Dependents"></a>
@@ -36,10 +36,9 @@
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File
-
 <h2></h2>
 <b>
-X_Prefix = your prefix
+PREFIX = your prefix
 <br/>
 Color = your color
 <br/>
@@ -60,6 +59,8 @@ XOP_SITE = bot website
 XOP_DONER = optional
 <br/>
 XOP_API = optional
+<br/>
+X_MongodbURL = your mongodb url
 </b>
 <br/>
 <h2></h2>
@@ -133,4 +134,3 @@ XOP_API = optional
 <h2></h2>
 <hr/>
 <h2>Make Sure To ⭐ And 🍴 The Repository 😊👍</h2>
- 
