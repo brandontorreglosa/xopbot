@@ -31,6 +31,13 @@
 <br/>
 <h2></h2>
 <hr/>
+<h2>➡ Branches Information</h2>
+<p> You Can View Different Versions Of The Bot By Changing Your Branch</p>
+<li> Use The <code>Default: Main</code> Branch For <code>Discord.jsv12.5.3</code> Functions
+<li> Use The <code>Main-discordjs@v13</code> Branch For <code>Discord.js@v13</code> Functions
+<br/>
+<h2></h2>
+<hr/>
 <h2>➡ Enviromental Variables</h2>
 <li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example

@@ -2,8 +2,6 @@ const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 const errorChannel = process.env.errorChannel;
 const mongodburl = process.env.X_MongodbURL;
-const { Database } = require("quickmongo");
-const db = new Database(mongodburl)
 module.exports = {
     name: 'play',
     permissions: ["CONNECT", "SPEAK"],
