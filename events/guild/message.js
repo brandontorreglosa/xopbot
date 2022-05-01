@@ -1,8 +1,8 @@
 const fetch = require("node-fetch").default;
 const premiumSchema = require("../../models/premium");
 const nsfwSchema = require("../../models/registernsfw")
-const mongodburl = process.env.X_MongodbURL;
-const quick = new Database(mongodburl)
+// const mongodburl = process.env.X_MongodbURL;
+// const quick = new Database(mongodburl)
 const Levels = require('discord-xp');
 const fs = require('fs');
 const ms = require('ms');
@@ -125,34 +125,34 @@ try {
     }
 
     // <----/AFk System/---->
-    const status = quick.get(`${message.author.id}_${message.guild.id}_afk`);
+    // const status = quick.get(`${message.author.id}_${message.guild.id}_afk`);
 
-    if (status && status.active && message.guild.me.permissions.has('MANAGE_NICKNAMES' || 'ADMINISTRATOR')) {
+    // if (status && status.active && message.guild.me.permissions.has('MANAGE_NICKNAMES' || 'ADMINISTRATOR')) {
 
-      quick.set(`${message.author.id}_${message.guild.id}_afk`, {
-        username: message.author.username,
-        active: false,
-        date: null,
-      });
+    //   quick.set(`${message.author.id}_${message.guild.id}_afk`, {
+    //     username: message.author.username,
+    //     active: false,
+    //     date: null,
+    //   });
 
-      await message.member
-        .setNickname(status.username)
+    //   await message.member
+    //     .setNickname(status.username)
 
-        .then(() => {
-          const sucafk = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setColor(`${color}`)
-            .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`**You Were AFK For \`${ms(Date.now() - (status.date || 0))}\` With Reason: Went To touch Some Grass 🤣! **`)
-            .setFooter('Now That\'s A Good Reason!')
-          message.lineReplyNoMention(sucafk) //, allowedMentions: { repliedUser: true } });
-        })
+    //     .then(() => {
+    //       const sucafk = new Discord.MessageEmbed()
+    //         .setTimestamp()
+    //         .setColor(`${color}`)
+    //         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+    //         .setDescription(`**You Were AFK For \`${ms(Date.now() - (status.date || 0))}\` With Reason: Went To touch Some Grass 🤣! **`)
+    //         .setFooter('Now That\'s A Good Reason!')
+    //       message.lineReplyNoMention(sucafk) //, allowedMentions: { repliedUser: true } });
+    //     })
 
-        .catch(_e => {
-          quick.delete(`${message.author.id}_${message.guild.id}_afk`);
-          message.lineReplyNoMention({ content: '**Failed To Set Your Status.**' }) //, allowedMentions: { repliedUser: true } });
-        });
-    }
+    //     .catch(_e => {
+    //       quick.delete(`${message.author.id}_${message.guild.id}_afk`);
+    //       message.lineReplyNoMention({ content: '**Failed To Set Your Status.**' }) //, allowedMentions: { repliedUser: true } });
+    //     });
+    // }
 
     // <----/XOPCHAT System/---->
 
