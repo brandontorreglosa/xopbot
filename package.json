@@ -2,7 +2,7 @@
   "name": "xopbot",
   "version": "60.0.0-5",
   "description": "XOPBOT Is A Multipurpose Bot With Over 200+ Commands That Make You Love The Bot!",
-  "main": "INDEX.js",
+  "main": "index.js",
   "author": "hackerprodev",
   "license": "ISC",
   "keywords": [
