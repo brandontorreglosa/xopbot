@@ -46,11 +46,11 @@ for (const file of commandFiles) {
 // <----/Handlers System/---->
 
 const eventFiles = fs
-    .readdirSync("./EVENTS")
+    .readdirSync("./events")
     .filter(file => file.endsWith(".js"));
 
 for (const file of eventFiles) {
-    const event = require(`./EVENTS/${file}`);
+    const event = require(`./events/${file}`);
 
     if (event.once) {
         client.once(event.name, (...args) => event.execute(...args, commands));
@@ -59,8 +59,8 @@ for (const file of eventFiles) {
     }
 }
 
-['COMMAND_HANDLER', 'EVENT_HANDLER'].forEach(handler => {
-    require(`./HANDLERS/${handler}`)(client, Discord);
+['command_handler', 'event_handler'].forEach(handler => {
+    require(`./handlers/${handler}`)(client, Discord);
 })
 
 // <----/Disbotlist Servercount System/---->
