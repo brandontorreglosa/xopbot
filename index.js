@@ -19,9 +19,9 @@ const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 const client12 = require('alexflipnote.js');
 const AlexClient = new client12('Xs7IYMWumg1ccrsJFd_a49qgZkWoIgFaoGTeMkdF')
 const fs = require('fs')
-const schema = require('./models/schema')
-const bankschema = require('./models/bankschema')
-const debtschema = require('./models/debtschema')
+const schema = require('./MODELS/schema')
+const bankschema = require('./MODELS/bankschema')
+const debtschema = require('./MODELS/debtschema')
 
 // <----/Client Events/---->
 
@@ -31,14 +31,14 @@ client.setMaxListeners(0);
 
 // <----/Slash Commands/---->
 
-const commandFiles = fs.readdirSync("./SlashCommands").filter(file => file.endsWith(".js"));
+const commandFiles = fs.readdirSync("./SLASHCOMMANDS").filter(file => file.endsWith(".js"));
 
 const commands = [];
 
 client.commands = new Discord.Collection();
 
 for (const file of commandFiles) {
-    const command = require(`./SlashCommands/${file}`);
+    const command = require(`./SLASHCOMMANDS/${file}`);
     commands.push(command.data.toJSON());
     client.commands.set(command.data.name, command);
 }

@@ -3,7 +3,7 @@ import { readdirSync } from "fs";
 import { path } from "path";
 import { connect } from "mongoose";
 import { Command } from "../command/commands";
-import { Event } from "../events/message";
+import { Event } from "../EVENTS/message";
 import { Config } from "../config";
 import ConfigJson from "../../config.json";
 
