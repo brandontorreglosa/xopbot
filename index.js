@@ -59,8 +59,8 @@ for (const file of eventFiles) {
     }
 }
 
-['command_handler', 'event_handler'].forEach(handler => {
-    require(`./handlers/${handler}`)(client, Discord);
+['COMMAND_HANDLER', 'EVENT_HANDLER'].forEach(handler => {
+    require(`./HANDLERS/${handler}`)(client, Discord);
 })
 
 // <----/Disbotlist Servercount System/---->
