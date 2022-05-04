@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const welcomeSchema = require("../../models/WELCOME");
+const welcomeSchema = require("../../models/welcome");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 const gcolor = process.env.Gcolor;
