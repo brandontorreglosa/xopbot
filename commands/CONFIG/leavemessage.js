@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const LeaveMsgSchema = require("../../MODELS/LEAVE-MSG");
+const LeaveMsgSchema = require("../../models/leavemsg");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 const gcolor = process.env.Gcolor;
