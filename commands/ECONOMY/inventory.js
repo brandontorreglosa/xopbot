@@ -1,4 +1,4 @@
-const inventory = require("../../MODELS/INVENTORY");
+const inventory = require("../../models/inventory");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 const logChannel = process.env.logChannel;

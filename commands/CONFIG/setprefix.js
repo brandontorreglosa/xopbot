@@ -16,8 +16,8 @@ module.exports = {
             const maxpr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Prefix Can Not Be Longer Than \`5\`Characters!**`)
             return message.lineReplyNoMention({ embed: maxpr })
         }
-        let prefixes = JSON.parse(fs.readFileSync("./PREFIXES.json")); prefixes[message.guild.id] = { prefix: Prefixset }
-        fs.writeFile("./PREFIXES.json", JSON.stringify(prefixes), (err) => { if (err) console.log(err); })
+        let prefixes = JSON.parse(fs.readFileSync("./prefixes.json")); prefixes[message.guild.id] = { prefix: Prefixset }
+        fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) => { if (err) console.log(err); })
         const newpr = new Discord.MessageEmbed().setTimestamp().setColor(`${gcolor}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Prefix Has Been Set To \`${Prefixset}\`!**`)
         message.lineReplyNoMention({ embed: newpr }); return;
     }
