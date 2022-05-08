@@ -58,11 +58,11 @@ module.exports = {
             setInterval(() => {
                 got(`https://api.scratch.mit.edu/users/${autoa}/projects/${autob}/`).then(response => {
                     let content = JSON.parse(response.body);
-                    let memeTitle = content[0].data.title;
-                    let memeDescription = content[0].data.description;
-                    let memeUpvotes = content[0].data.views;
-                    let memeDownvotes = content[0].data.loves;
-                    let memeNumComments = content[0].data.favorites;
+                    let memeTitle = content[0].title;
+                    let memeDescription = content[0].description;
+                    let memeUpvotes = content[0].views;
+                    let memeDownvotes = content[0].loves;
+                    let memeNumComments = content[0].favorites;
                     const splitted = memeDescription.split(" ", 2048);
                     const embed = new Discord.MessageEmbed()
                     embed.setThumbnail(user.displayAvatarURL({ dynamic: true }))
