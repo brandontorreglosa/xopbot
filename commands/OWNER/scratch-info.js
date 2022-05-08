@@ -36,7 +36,7 @@ module.exports = {
                 .setTimestamp()
                 .setColor(`${color}`)
                 .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(`🔃 **| Finding \`${autoa}\` User... (\`Please Wait 20s\`)**`)
+                .setDescription(`🔃 **| Finding The User \`${autoa}\`... (\`Please Wait 20s\`)**`)
             const on2 = new Discord.MessageEmbed()
                 .setTimestamp()
                 .setColor(`${color}`)
@@ -58,11 +58,11 @@ module.exports = {
             setInterval(() => {
                 got(`https://api.scratch.mit.edu/users/${autoa}/projects/${autob}/`).then(response => {
                     let content = JSON.parse(response.body);
-                    let memeTitle = content[0].data.children[0].data.title;
-                    let memeDescription = content[0].data.children[0].data.description;
-                    let memeUpvotes = content[0].data.children[0].data.views;
-                    let memeDownvotes = content[0].data.children[0].data.loves;
-                    let memeNumComments = content[0].data.children[0].data.favorites;
+                    let memeTitle = content[0].data.title;
+                    let memeDescription = content[0].data.description;
+                    let memeUpvotes = content[0].data.views;
+                    let memeDownvotes = content[0].data.loves;
+                    let memeNumComments = content[0].data.favorites;
                     const splitted = memeDescription.split(" ", 2048);
                     const embed = new Discord.MessageEmbed()
                     embed.setThumbnail(user.displayAvatarURL({ dynamic: true }))
