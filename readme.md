@@ -20,7 +20,6 @@
 <li> <code>Node.jsv13.3</code> Or Higher Versions</li>
 <li> <code>Heroku Account</code> For 24/7 Hosting</li>
 <li> <code>Some Knowledge</code> Of Javascript</li>
-<br/>
 <h2></h2>
 <hr/>
 <h2>➡ Information</h2>
@@ -28,7 +27,6 @@
 <li> Contains All Possible Categories That There Can Be.</li>
 <li> Implented With 24/7 Hosting From Heroku Dynos.</li>
 <li> 100% Free, No Cash Needed For The Source.</li>
-<br/>
 <h2></h2>
 <hr/>
 <h2>➡ Branches Information</h2>
@@ -42,7 +40,6 @@
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example</li>
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
-<br/>
 <h2></h2>
 <b>
 PREFIX = your prefix
@@ -74,7 +71,7 @@ X_MongodbURL = your mongodb url
 <hr>
 <h2>➡ MongoDB Database Setup</h2>
 <li> Click The Photo Below To Watch On Youtube How To Setup The Database Of MongoDB For Free</li>
-<br/><br/>
+<br/>
 <a href="https://www.youtube.com/watch?v=8no3SktqagY" title="Mongodb Setup For Free | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/8no3SktqagY/maxresdefault.webp?v=8no3SktqagY">
 </a>
@@ -95,7 +92,7 @@ X_MongodbURL = your mongodb url
 <hr/>
 <h2>➡ Contributors</h2>
 <li> Our Official Contributors Of This Repository</li>
-<br/><br/>
+<br/>
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?v=4">
 </a>
@@ -124,7 +121,6 @@ X_MongodbURL = your mongodb url
 <li> Install All Packages By Running <code>npm i</code> Or <code>npm install</code></li>
 <li> Start The Bot By Running <code>node index.js</code> Or <code>node .</code></li>
 <li> Need Help With The Bot? Join The Discussion <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/discussions/1">Here</a></li>
-<br/>
 <h2></h2>
 <hr/>
 <h2>➡ Extras</h2>
@@ -133,7 +129,7 @@ X_MongodbURL = your mongodb url
 <li> Join Our Discord Server By Clicking The Photo Below Or Clicking The Link <a href="https://discord.gg/invite/dPXTa2XERS">Here</a></li>
 <li> Follow Me On My <code>Instagram</code> By Clicking The Link <a href="https://www.instagram.com/brandon.torreglosa">Here</a></li>
 <li> Donate To Me Through <code>Ko-Fi</code> Or <code>Patreon</code> By Clicking The <code>❤ Sponsor</code> Button On Top</li>
-<br/><br/>
+<br/>
 <a href="https://discord.gg/invite/dPXTa2XERS" title="Our Support / Main Server | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
 </a>
