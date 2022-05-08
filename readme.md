@@ -16,33 +16,45 @@
 </p>
 <hr/>
 <h2>➡ Requirments</h2>
-<li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12
-<li> <code>Node.jsv13.3</code> Or Higher Versions
-<li> <code>Heroku Account</code> For 24/7 Hosting
-<li> <code>Some Knowledge</code> Of Javascript
+<li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12</li>
+<br/>
+<li> <code>Node.jsv13.3</code> Or Higher Versions</li>
+<br/>
+<li> <code>Heroku Account</code> For 24/7 Hosting</li>
+<br/>
+<li> <code>Some Knowledge</code> Of Javascript</li>
 <br/>
 <h2></h2>
 <hr/>
 <h2>➡ Information</h2>
-<li> A Discord Bot Packed With Over 200+ Commands On The GO!
-<li> Contains All Possible Categories That There Can Be.
-<li> Implented With 24/7 Hosting From Heroku Dynos.
-<li> 100% Free, No Cash Needed For The Source.
+<li> A Discord Bot Packed With Over 200+ Commands On The GO!</li>
+<br/>
+<li> Contains All Possible Categories That There Can Be.</li>
+<br/>
+<li> Implented With 24/7 Hosting From Heroku Dynos.</li>
+<br/>
+<li> 100% Free, No Cash Needed For The Source.</li>
 <br/>
 <h2></h2>
 <hr/>
 <h2>➡ Branches Information</h2>
 <p> You Can View Different Versions Of The Bot By Changing Your Branch</p>
-<li> Use The <code>Default: Main</code> Branch For <code>Discord.jsv12.5.3</code> Functions
-<li> Use The <code>Main-discordjs@v13</code> Branch For <code>Discord.js@v13</code> Functions
+<br/>
+<li> Use The <code>Default: Main</code> Branch For <code>Discord.jsv12.5.3</code> Functions</li>
+<br/>
+<li> Use The <code>Main-discordjs@v13</code> Branch For <code>Discord.js@v13</code> Functions</li>
 <br/>
 <h2></h2>
 <hr/>
 <h2>➡ Enviromental Variables</h2>
-<li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables
-<li> The Colors Must Only Be Hex Or A Defined Color, "red" Example
-<li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons
-<li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File
+<li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables</li>
+<br/>
+<li> The Colors Must Only Be Hex Or A Defined Color, "red" Example</li>
+<br/>
+<li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
+<br/>
+<li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
+<br/>
 <h2></h2>
 <b>
 PREFIX = your prefix
@@ -73,19 +85,19 @@ X_MongodbURL = your mongodb url
 <h2></h2>
 <hr>
 <h2>➡ MongoDB Database Setup</h2>
-<li> Click The Photo Below To Watch On Youtube How To Setup The Database Of MongoDB For Free
+<li> Click The Photo Below To Watch On Youtube How To Setup The Database Of MongoDB For Free</li>
 <br/><br/>
 <a href="https://www.youtube.com/watch?v=8no3SktqagY" title="Mongodb Setup For Free | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/8no3SktqagY/maxresdefault.webp?v=8no3SktqagY">
 </a>
 <br/>
-<li> Want To Learn Javascript Even More? Click The Photo Below To Start Learning
+<li> Want To Learn Javascript Even More? Click The Photo Below To Start Learning</li>
 <br/><br/>
 <a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" title="Learn Javascript For Free | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/PkZNo7MFNFg/maxresdefault.webp?v=PkZNo7MFNFg">
 </a>
 <br/>
-<li> Want To Code A Bot From Scratch? Click The Photo Below To Start Coding
+<li> Want To Code A Bot From Scratch? Click The Photo Below To Start Coding</li>
 <br/><br/>
 <a href="https://www.youtube.com/watch?v=4Np2fJOdXjE" title="Learn Discord.js Bot Development For Free | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://i.ytimg.com/vi_webp/4Np2fJOdXjE/maxresdefault.webp?v=4Np2fJOdXjE">
@@ -94,7 +106,7 @@ X_MongodbURL = your mongodb url
 <h2></h2>
 <hr/>
 <h2>➡ Contributors</h2>
-<li> Our Official Contributors Of This Repository
+<li> Our Official Contributors Of This Repository</li>
 <br/><br/>
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?v=4">
@@ -119,11 +131,15 @@ X_MongodbURL = your mongodb url
 <h2></h2>
 <hr/>
 <h2>➡ Forking / Cloning</h2>
-<li> Fork The Repository By Clicking <a href="https://github.com/HACKERPROTM/XOPBOT-24-7">Here</a>
-<li> You Can Also Run On Your Terminal <code>git clone https://github.com/HACKERPROTM/XOPBOT-24-7.git</code>
-<li> Install All Packages By Running <code>npm i</code> Or <code>npm install</code>
-<li> Start The Bot By Running <code>node index.js</code> Or <code>node .</code>
-<li> Need Help With The Bot? Join The Discussion <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/discussions/1">Here</a>
+<li> Fork The Repository By Clicking <a href="https://github.com/HACKERPROTM/XOPBOT-24-7">Here</a></li>
+<br/>
+<li> You Can Also Run On Your Terminal <code>git clone https://github.com/HACKERPROTM/XOPBOT-24-7.git</code></li>
+<br/>
+<li> Install All Packages By Running <code>npm i</code> Or <code>npm install</code></li>
+<br/>
+<li> Start The Bot By Running <code>node index.js</code> Or <code>node .</code></li>
+<br/>
+<li> Need Help With The Bot? Join The Discussion <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/discussions/1">Here</a></li>
 <br/>
 <h2></h2>
 <hr/>
