@@ -17,42 +17,30 @@
 <hr/>
 <h2>➡ Requirments</h2>
 <li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12</li>
-<br/>
 <li> <code>Node.jsv13.3</code> Or Higher Versions</li>
-<br/>
 <li> <code>Heroku Account</code> For 24/7 Hosting</li>
-<br/>
 <li> <code>Some Knowledge</code> Of Javascript</li>
 <br/>
 <h2></h2>
 <hr/>
 <h2>➡ Information</h2>
 <li> A Discord Bot Packed With Over 200+ Commands On The GO!</li>
-<br/>
 <li> Contains All Possible Categories That There Can Be.</li>
-<br/>
 <li> Implented With 24/7 Hosting From Heroku Dynos.</li>
-<br/>
 <li> 100% Free, No Cash Needed For The Source.</li>
 <br/>
 <h2></h2>
 <hr/>
 <h2>➡ Branches Information</h2>
 <p> You Can View Different Versions Of The Bot By Changing Your Branch</p>
-<br/>
 <li> Use The <code>Default: Main</code> Branch For <code>Discord.jsv12.5.3</code> Functions</li>
-<br/>
 <li> Use The <code>Main-discordjs@v13</code> Branch For <code>Discord.js@v13</code> Functions</li>
-<br/>
 <h2></h2>
 <hr/>
 <h2>➡ Enviromental Variables</h2>
 <li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables</li>
-<br/>
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example</li>
-<br/>
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
-<br/>
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
 <br/>
 <h2></h2>
@@ -132,23 +120,19 @@ X_MongodbURL = your mongodb url
 <hr/>
 <h2>➡ Forking / Cloning</h2>
 <li> Fork The Repository By Clicking <a href="https://github.com/HACKERPROTM/XOPBOT-24-7">Here</a></li>
-<br/>
 <li> You Can Also Run On Your Terminal <code>git clone https://github.com/HACKERPROTM/XOPBOT-24-7.git</code></li>
-<br/>
 <li> Install All Packages By Running <code>npm i</code> Or <code>npm install</code></li>
-<br/>
 <li> Start The Bot By Running <code>node index.js</code> Or <code>node .</code></li>
-<br/>
 <li> Need Help With The Bot? Join The Discussion <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/discussions/1">Here</a></li>
 <br/>
 <h2></h2>
 <hr/>
 <h2>➡ Extras</h2>
-<li> Invite <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/services/redirect/invite/">Here</a>
-<li> Read The <code>Privacy Terms / PTOS</code> Of <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/policy/privacy/">Here</a>
-<li> Join Our Discord Server By Clicking The Photo Below Or Clicking The Link <a href="https://discord.gg/invite/dPXTa2XERS">Here</a>
-<li> Follow Me On My <code>Instagram</code> By Clicking The Link <a href="https://www.instagram.com/brandon.torreglosa">Here</a>
-<li> Donate To Me Through <code>Ko-Fi</code> Or <code>Patreon</code> By Clicking The <code>❤ Sponsor</code> Button On Top
+<li> Invite <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/services/redirect/invite/">Here</a></li>
+<li> Read The <code>Privacy Terms / PTOS</code> Of <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/policy/privacy/">Here</a></li>
+<li> Join Our Discord Server By Clicking The Photo Below Or Clicking The Link <a href="https://discord.gg/invite/dPXTa2XERS">Here</a></li>
+<li> Follow Me On My <code>Instagram</code> By Clicking The Link <a href="https://www.instagram.com/brandon.torreglosa">Here</a></li>
+<li> Donate To Me Through <code>Ko-Fi</code> Or <code>Patreon</code> By Clicking The <code>❤ Sponsor</code> Button On Top</li>
 <br/><br/>
 <a href="https://discord.gg/invite/dPXTa2XERS" title="Our Support / Main Server | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
