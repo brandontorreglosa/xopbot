@@ -5,7 +5,7 @@ const errorChannel = process.env.errorChannel;
 const { MessageButton, MessageActionRow } = require('discord-buttons');
 module.exports = {
     name: "scratch-info",
-    cooldown: 300,
+    cooldown: 10,
     permissions: ["SEND_MESSAGES"],
     aliases: ['scratch-i', 'scr-info'],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
