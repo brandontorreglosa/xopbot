@@ -64,6 +64,8 @@ XOP_DONER = optional
 <br/>
 XOP_API = optional
 <br/>
+X_Token = bot token
+<br/>
 X_MongodbURL = your mongodb url
 </b>
 <br/>
