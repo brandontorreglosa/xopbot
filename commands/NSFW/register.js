@@ -1,6 +1,7 @@
 const nsfwSchema = require("../../models/registernsfw");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
+const { MessageButton, MessageActionRow } = require('discord-buttons');
 module.exports = {
     name: 'register',
     cooldown: 3,
