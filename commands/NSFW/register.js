@@ -29,14 +29,14 @@ module.exports = {
                     nsfwSchema.findOne({ User: member.id, },
                         async (err, data) => {
                             if (data) {
+                                message.lineReplyNoMention({ content: "**You Have Already Registered For NSFW Commands!**" })
                                 await button.reply.defer();
                                 await SentMessage.edit({ embed: embed, components: [row2] });
-                                return message.lineReplyNoMention({ content: "**You Have Already Registered For NSFW Commands!**" });
                             }
+                            new nsfwSchema({ User: member.id }).save();
+                            message.lineReply({ content: `**Added ${member} To The NSFW Database! 🔞 \nHave Fun You Little Pervert 😊**` })
                             await button.reply.defer();
                             await SentMessage.edit({ embed: embed, components: [row3] });
-                            new nsfwSchema({ User: member.id }).save();
-                            return message.lineReply({ content: `**Added ${member} To The NSFW Database! 🔞 \nHave Fun You Little Pervert 😊**` });
                         }
                     );
                 };
@@ -45,12 +45,13 @@ module.exports = {
                     await button.reply.defer();
                     await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
                 } else if (button.clicker.id === message.author.id) {
+                    const nonukeplz = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Cancelled The NSFW Registration Successfully!**`)
+                    message.lineReplyNoMention({ embed: nonukeplz })
                     await button.reply.defer();
                     await SentMessage.edit({ embed: embed, components: [row4] });
-                    const nonukeplz = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**You Cancelled The NSFW Registration Successfully!**`)
-                    return message.lineReplyNoMention({ embed: nonukeplz });
                 }
             };
+            await button.reply.defer();
         });
     },
 };
