@@ -1,6 +1,7 @@
 const lineReply = require('discord-reply');
 const color = process.env.Color;
 const { MessageButton, MessageActionRow } = require("discord-buttons");
+const logChannel = process.env.logChannel;
 module.exports = {
     name: 'avatar',
     permissions: ["SEND_MESSAGES"],
@@ -9,6 +10,7 @@ module.exports = {
     cooldown: 5,
     description: 'Return a user(s) avatar picture!',
     async execute(client, message, cmd, args, Discord) {
+        const loggerchannel = client.channels.cache.get(logChannel);
         const user = message.mentions.users.first() || message.author;
         const button1 = new MessageButton().setStyle('red').setID('128').setLabel('128px')
         const button2 = new MessageButton().setStyle('blurple').setID('256').setLabel('256px')
@@ -52,5 +54,6 @@ module.exports = {
                 }
             }
         });
+        loggerchannel.send({ content: `**${message.author.username}#${message.author.discriminator} used the command ${this.name} in ${message.guild.name}**` })
     }
 }
