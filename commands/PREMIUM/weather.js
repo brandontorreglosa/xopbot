@@ -22,7 +22,7 @@ module.exports = {
             }
             var current = result[0].current;
             var location = result[0].location;
-            const weatherinfo = new Discord.MessageEmbed().setTimestamp().setDescription(`**${current.skytext}**`).setAuthor(`Weather forecast for ${current.observationpoint}`).setThumbnail(current.imageUrl).setColor(0x111111).addField('Timezone', `UTC${location.timezone}`, true).addField('Degree Type', 'Celsius', true).addField('Temperature', `${current.temperature}°`, true).addField('Wind', current.winddisplay, true).addField('Feels like', `${current.feelslike}°`, true).addField('Humidity', `${current.humidity}%`, true)
+            const weatherinfo = new Discord.MessageEmbed().setTimestamp().setDescription(`**${current.skytext}**`).setAuthor(`Weather forecast for ${current.observationpoint}`).setThumbnail('https://cdn.discordapp.com/attachments/975037800464388186/975487711391653938/cloud.gif').setColor(`${color}`).addField('Timezone', `UTC${location.timezone}`, true).addField('Degree Type', 'Celsius', true).addField('Temperature', `${current.temperature}°`, true).addField('Wind', current.winddisplay, true).addField('Feels like', `${current.feelslike}°`, true).addField('Humidity', `${current.humidity}%`, true).addField('Date', `${current.date}`, true).addField('Day', `${current.shortday}`, true).addField('Time', `${current.observationtime}`, true)
             message.lineReplyNoMention({ embed: weatherinfo })
         })
     }
