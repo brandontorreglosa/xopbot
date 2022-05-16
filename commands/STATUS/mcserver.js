@@ -18,7 +18,7 @@ module.exports = {
             return message.lineReplyNoMention({ embed: nopr1 })
         }
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
-            const embed = new Discord.MessageEmbed().setThumbnail('https://i.pinimg.com/originals/3e/ce/2a/3ece2a1e5a5e5f430f5a530ba1104a14.jpg').setColor('#029602').setTitle('**MC Server Status**').setURL('https://minecraftservers.org/').setDescription(`The Minecraft Server Status Of ${args[0]}`).addField('🌐 Server IP', response.host).addField('👥 Online Players', response.onlinePlayers).addField('👨‍👩‍👦‍👦 Max Players', response.maxPlayers).addField('🔢 Version', response.version).setTimestamp();
+            const embed = new Discord.MessageEmbed().setThumbnail('https://i.pinimg.com/originals/3e/ce/2a/3ece2a1e5a5e5f430f5a530ba1104a14.jpg').setColor('#029602').setTitle('**MC Server Status**').setURL('https://minecraftservers.org/').setFooter(`Server Status Of ${args[0].toUpperCase()}`).addField('🌐 Server IP', `**\`${response.host}\`**`).addField('👥 Online Players', `**\`${response.onlinePlayers}\`**`).addField('👨‍👩‍👦‍👦 Max Players', `**\`${response.maxPlayers}\`**`).addField('🔢 Version', `**\`${response.version}\`**`).setTimestamp();
             message.lineReplyNoMention({ embed: embed });
         })
             .catch((error) => {
