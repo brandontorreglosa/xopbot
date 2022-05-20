@@ -14,20 +14,27 @@ module.exports = {
         const button2 = new MessageButton().setStyle('red').setID('no').setLabel('Reject').setEmoji('❌')
         const button3 = new MessageButton().setStyle('green').setID('yes1').setLabel("Accept").setEmoji('✅').setDisabled(true)
         const button4 = new MessageButton().setStyle('red').setID('no1').setLabel('Reject').setEmoji('❌').setDisabled(true)
+        const button5 = new MessageButton().setStyle('green').setID('yes2').setLabel("Accept").setEmoji('✅').setDisabled(true)
+        const button6 = new MessageButton().setStyle('red').setID('no2').setLabel('Reject').setEmoji('❌').setDisabled(true)
+        const button7 = new MessageButton().setStyle('green').setID('yes3').setLabel("Accept").setEmoji('✅').setDisabled(true)
+        const button8 = new MessageButton().setStyle('red').setID('no3').setLabel('Reject').setEmoji('❌').setDisabled(true)
         const row = new MessageActionRow().addComponents(button1, button2)
         const row2 = new MessageActionRow().addComponents(button3, button4)
-        const row3 = new MessageActionRow().addComponents(button3, button4)
-        const row4 = new MessageActionRow().addComponents(button3, button4)
+        const row3 = new MessageActionRow().addComponents(button5, button6)
+        const row4 = new MessageActionRow().addComponents(button7, button8)
         const embed = new Discord.MessageEmbed().setColor(`${color}`).setTimestamp().setAuthor(`${member.username}`, member.displayAvatarURL({ dynamic: true })).setDescription(`**By Registering For NSFW Commands You Confirm Your 18. 🔞 \nAnd XOPBOT Is Not Responsible For Any Consequences! Continue?**`)
         const SentMessage = message.channel.send({ embed: embed, components: [row] });
-        client.on("clickButton", async (button) => {
+        client.on("clickButton", async(button) => {
             if (button.id === "yes") {
+                if (message.author.id === "636167329251852308") {
+                    message.channel.send({ content: "Elias. Why Are You Dumb 🤨!" })
+                }
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
                     await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
                 } else if (button.clicker.id === message.author.id) {
                     nsfwSchema.findOne({ User: member.id, },
-                        async (err, data) => {
+                        async(err, data) => {
                             if (data) {
                                 message.lineReplyNoMention({ content: "**You Have Already Registered For NSFW Commands!**" })
                                 await button.reply.defer();
