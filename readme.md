@@ -135,6 +135,7 @@ X_MongodbURL = your mongodb url
 <a href="https://discord.gg/invite/dPXTa2XERS" title="Our Support / Main Server | Copyright XOPBOT.Inc">
 <img width="80%" height="auto" src="https://discord.com/api/guilds/707557478254247936/widget.png?style=banner4" alt="Discord">
 </a>
+<b><p align="left">A Discord Bot Owned By <a href="https://github.com/XOPBOT-INC">XOPBOT.INC</a></p></b>
 <br/>
 <h2></h2>
 <hr/>
