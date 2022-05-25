@@ -1,30 +1,13 @@
 {
     "name": "xopbot",
-    "version": "60.0.03",
+    "version": "60.0.03-01",
     "description": "XOPBOT Is A Multipurpose Bot With Over 200+ Commands That Make You Love The Bot!",
     "main": "index.js",
     "author": "hackerprodev",
     "license": "APACHE",
-    "keywords": [
-        "xopbot",
-        "discordbot",
-        "nsfw",
-        "fun",
-        "music",
-        "utility",
-        "config",
-        "economy",
-        "api",
-        "node-fetch",
-        "xoppack"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/HACKERPROTM/XOPBOT-24-7.git"
-    },
-    "bugs": {
-        "url": "https://github.com/HACKERPROTM/XOPBOT-24-7/issues"
-    },
+    "keywords": ["xopbot", "discordbot", "nsfw", "fun", "music", "utility", "config", "economy", "api", "node-fetch", "xoppack"],
+    "repository": { "type": "git", "url": "git+https://github.com/HACKERPROTM/XOPBOT-24-7.git" },
+    "bugs": { "url": "https://github.com/HACKERPROTM/XOPBOT-24-7/issues" },
     "homepage": "https://github.com/HACKERPROTM/XOPBOT-24-7/",
     "dependencies": {
         "@discordjs/builders": "^0.13.0",
@@ -43,7 +26,7 @@
         "flip-text": "^1.2.0",
         "fs": "^0.0.1-security",
         "google-play-scraper": "^8.1.0",
-        "got": "^12.0.4",
+        "got": "^11.8.2",
         "imdb-api": "^4.4.1",
         "math.js": "^1.1.46",
         "minecraft-server-util": "^5.2.9",
