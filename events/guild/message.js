@@ -654,4 +654,4 @@ try {
 } catch (err) {
     const errorlogs = client.channels.cache.get(errorChannel)
     errorlogs.send({ content: `**Error On Message Event!\n\nError:\n\n ${err}**` })
-}
+};
