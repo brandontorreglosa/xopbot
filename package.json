@@ -27,6 +27,8 @@
     },
     "homepage": "https://github.com/HACKERPROTM/XOPBOT-24-7/",
     "dependencies": {
+        "@discordjs/builders": "^0.13.0",
+        "@discordjs/voice": "^0.9.0",
         "alexflipnote.js": "^2.6.3",
         "axios": "^0.27.2",
         "disbotlist": "^1.0.4",
