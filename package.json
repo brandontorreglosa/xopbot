@@ -5,9 +5,26 @@
     "main": "index.js",
     "author": "hackerprodev",
     "license": "APACHE",
-    "keywords": ["xopbot", "discordbot", "nsfw", "fun", "music", "utility", "config", "economy", "api", "node-fetch", "xoppack"],
-    "repository": { "type": "git", "url": "git+https://github.com/HACKERPROTM/XOPBOT-24-7.git" },
-    "bugs": { "url": "https://github.com/HACKERPROTM/XOPBOT-24-7/issues" },
+    "keywords": [
+        "xopbot",
+        "discordbot",
+        "nsfw",
+        "fun",
+        "music",
+        "utility",
+        "config",
+        "economy",
+        "api",
+        "node-fetch",
+        "xoppack"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HACKERPROTM/XOPBOT-24-7.git"
+    },
+    "bugs": {
+        "url": "https://github.com/HACKERPROTM/XOPBOT-24-7/issues"
+    },
     "homepage": "https://xopbot.glitch.me/top",
     "dependencies": {
         "@discordjs/builders": "^0.13.0",
@@ -21,7 +38,7 @@
         "discord-xp": "^1.1.16",
         "discord.js": "^12.5.3",
         "distube": "^2.8.18",
-        "dotenv": "^16.0.1",
+        "dotenv": "^10.0.0",
         "figlet": "^1.5.2",
         "flip-text": "^1.2.0",
         "fs": "^0.0.1-security",
@@ -31,7 +48,7 @@
         "math.js": "^1.1.46",
         "minecraft-server-util": "^5.2.9",
         "moment": "^2.29.3",
-        "mongoose": "^6.3.4",
+        "mongoose": "^5.13.14",
         "ms": "^2.1.3",
         "node-fetch": "^2.6.2",
         "node-gyp": "^9.0.0",
