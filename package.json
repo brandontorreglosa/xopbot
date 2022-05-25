@@ -1,6 +1,6 @@
 {
     "name": "xopbot",
-    "version": "60.0.03-01",
+    "version": "60.0.04",
     "description": "XOPBOT Is A Multipurpose Bot With Over 200+ Commands That Make You Love The Bot!",
     "main": "index.js",
     "author": "hackerprodev",
@@ -8,7 +8,7 @@
     "keywords": ["xopbot", "discordbot", "nsfw", "fun", "music", "utility", "config", "economy", "api", "node-fetch", "xoppack"],
     "repository": { "type": "git", "url": "git+https://github.com/HACKERPROTM/XOPBOT-24-7.git" },
     "bugs": { "url": "https://github.com/HACKERPROTM/XOPBOT-24-7/issues" },
-    "homepage": "https://github.com/HACKERPROTM/XOPBOT-24-7/",
+    "homepage": "https://xopbot.glitch.me/top",
     "dependencies": {
         "@discordjs/builders": "^0.13.0",
         "@discordjs/voice": "^0.9.0",

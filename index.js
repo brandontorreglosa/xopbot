@@ -74,22 +74,13 @@ client.on("ready", () => {
 })
 
 // <----/Mongodb System/---->
+
 Levels.setURL(process.env.X_MongodbURL);
-
-// const { Database } = require("quickmongo")
-// const quickmongo = new Database(`${process.env.X_MongodbURL}`)
-// quickmongo.connect(`${process.env.X_MongodbURL}`, {
-//     useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true,
-// }).then(() => {
-//     console.log("Connected To Quick Mongo Database!")
-// })
-// quickmongo.on("ready", () => {
-//     console.log("Connected To Quick Mongo Database!")
-// });
-
 mongoose.connect(process.env.X_MongodbURL, {
-    useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true,
-})
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: true,
+    })
     .then(() => {
         console.log("Connected To Mongo Database!");
     })
@@ -106,7 +97,7 @@ client.bal = (id) => new Promise(async ful => {
 })
 
 client.add = (id, coins) => {
-    schema.findOne({ id }, async (err, data) => {
+    schema.findOne({ id }, async(err, data) => {
         if (err) throw err;
         if (data) {
             data.coins += coins;
@@ -118,7 +109,7 @@ client.add = (id, coins) => {
 }
 
 client.rmv = (id, coins) => {
-    schema.findOne({ id }, async (err, data) => {
+    schema.findOne({ id }, async(err, data) => {
         if (err) throw err;
         if (data) {
             data.coins -= coins;
@@ -136,7 +127,7 @@ client.bank = (id) => new Promise(async ful => {
 })
 
 client.bankadd = (id, bank) => {
-    bankschema.findOne({ id }, async (err, data) => {
+    bankschema.findOne({ id }, async(err, data) => {
         if (err) throw err;
         if (data) {
             data.bank += bank;
@@ -148,7 +139,7 @@ client.bankadd = (id, bank) => {
 }
 
 client.bankrmv = (id, bank) => {
-    bankschema.findOne({ id }, async (err, data) => {
+    bankschema.findOne({ id }, async(err, data) => {
         if (err) throw err;
         if (data) {
             data.bank -= bank;
@@ -166,7 +157,7 @@ client.debt = (id) => new Promise(async ful => {
 })
 
 client.debtadd = (id, coins) => {
-    debtschema.findOne({ id }, async (err, data) => {
+    debtschema.findOne({ id }, async(err, data) => {
         if (err) throw err;
         if (data) {
             data.debt += debt;
@@ -178,7 +169,7 @@ client.debtadd = (id, coins) => {
 }
 
 client.debtrmv = (id, coins) => {
-    debtschema.findOne({ id }, async (err, data) => {
+    debtschema.findOne({ id }, async(err, data) => {
         if (err) throw err;
         if (data) {
             data.debt -= debt;
@@ -192,7 +183,15 @@ client.debtrmv = (id, coins) => {
 // <----/Distube System/---->
 
 client.distube = new DisTube(client, {
-    searchSongs: true, emitNewSongOnly: true, highWaterMark: 1024 * 1024 * 64, leaveOnEmpty: false, leaveOnFinish: false, leaveOnStop: false, searchSongs: false, youtubeDL: true, updateYouTubeDL: false,
+    searchSongs: true,
+    emitNewSongOnly: true,
+    highWaterMark: 1024 * 1024 * 64,
+    leaveOnEmpty: false,
+    leaveOnFinish: false,
+    leaveOnStop: false,
+    searchSongs: false,
+    youtubeDL: true,
+    updateYouTubeDL: false,
 })
 
 client.distube
@@ -208,7 +207,7 @@ client.distube
         const thing = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Channel Is \`Empty\`. XOPBOT Leaving The Channel In \`2m\`! 😭**`)
         const leftdavcc = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Channel Was \`Empty\` For Over \`2m\` So XOPBOT Left! 😭**`)
         message.lineReplyNoMention({ embed: thing }).then((msg) => {
-            setTimeout(function () {
+            setTimeout(function() {
                 msg.edit({ embed: leftdavcc })
                 message.member.voice.channel.leave()
             }, 120000)
@@ -242,8 +241,8 @@ client.distube
         message.lineReplyNoMention({ embed: embed });
     })
     .on("searchResult", (message, result) => {
-        let i = 0
-        const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(message.client.user.username, message.client.user.displayAvatarURL()).setDescription(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`).setFooter(`Enter anything else or wait 60 seconds to cancel`);
+            let i = 0
+            const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(message.client.user.username, message.client.user.displayAvatarURL()).setDescription(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`).setFooter(`Enter anything else or wait 60 seconds to cancel`);
         message.lineReplyNoMention({ embed: embed });
     });
 client.login(process.env.X_Token);
