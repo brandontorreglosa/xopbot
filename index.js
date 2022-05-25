@@ -65,13 +65,13 @@ for (const file of eventFiles) {
 
 // <----/Disbotlist Servercount System/---->
 
-client.on("ready", () => {
-    console.log(`CONNECTED WITH DISBOTLIST!`)
-})
+// client.on("ready", () => {
+//     console.log(`CONNECTED WITH DISBOTLIST!`)
+// })
 
-client.on("ready", () => {
-    dbl.serverCount();
-})
+// client.on("ready", () => {
+//     dbl.serverCount();
+// })
 
 // <----/Mongodb System/---->
 
