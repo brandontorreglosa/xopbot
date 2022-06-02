@@ -9,7 +9,7 @@ module.exports = {
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
         const fetchmute = args[0];
-        const target = message.mentions.members.first()
+        const target = message.mentions.users.first()
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)mute <@user> <[optional]time(s)(m)(h)(d)>\`**`)
             return message.lineReplyNoMention({ embed: nopr })

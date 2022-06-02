@@ -7,7 +7,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "BAN_MEMBERS"],
     description: "This Command Unbans Member",
     async execute(client, message, cmd, args, Discord) {
-        const member = message.mentions.members.first()
+        const member = message.mentions.users.first()
         const fetcherunban = args[0];
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)unban <@user>\`**`)

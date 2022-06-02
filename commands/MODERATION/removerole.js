@@ -7,7 +7,7 @@ module.exports = {
     permissions: ["MANAGE_ROLES"],
     clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
-        const target = message.mentions.members.first();
+        const target = message.mentions.users.first();
         const usertarget = message.guilds.members.cache.get(target.id);
         if (!target) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)removerole <@user> <@role>\`**`)

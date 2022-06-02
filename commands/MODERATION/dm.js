@@ -10,7 +10,7 @@ module.exports = {
     description: "Send DM message to a user",
     async execute(client, message, cmd, args, Discord) {
         try {
-            const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+            const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
             if (!user) {
                 const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)dm <@user> <text>\`**`)
                 return message.lineReplyNoMention({ embed: nopr })

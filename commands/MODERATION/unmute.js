@@ -7,7 +7,7 @@ module.exports = {
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS", "MUTE_MEMBERS"],
     description: "This Unmutes A Member",
     async execute(client, message, cmd, args, Discord) {
-        const target = message.mentions.members.first()
+        const target = message.mentions.users.first()
         const fettag = args[0];
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)unmute <@user>\`**`)
