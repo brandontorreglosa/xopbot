@@ -7,7 +7,7 @@ module.exports = {
     permissions: ["MANAGE_ROLES"],
     clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
-        const user = message.mentions.users.first()
+        const user = message.mentions.members.first();
         const usertarget = message.guilds.members.cache.get(user.id);
         if (!user) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)addrole <@user> <@role>\`**`)
@@ -19,7 +19,7 @@ module.exports = {
             const addroleError2 = new Discord.MessageEmbed().setTimestamp().setDescription(`**No Roles Provided!**`).setColor(`${color}`)
             return message.lineReplyNoMention({ embed: addroleError2 })
         }
-        usertarget.roles.add(roleToGive)
+        usertarget.roles.add(roleToGive.id)
         const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Added: \`${roleToGive}\` To \`${user.username}\`**`)
         message.lineReplyNoMention({ embed: embed })
     }

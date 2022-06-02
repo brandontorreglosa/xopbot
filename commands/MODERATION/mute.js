@@ -9,7 +9,7 @@ module.exports = {
     description: "This Mutes A Member",
     async execute(client, message, cmd, args, Discord) {
         const fetchmute = args[0];
-        const target = message.mentions.users.first()
+        const target = message.mentions.members.first()
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)mute <@user> <[optional]time(s)(m)(h)(d)>\`**`)
             return message.lineReplyNoMention({ embed: nopr })
@@ -42,7 +42,7 @@ module.exports = {
             memberTarget.roles.add(muteRole.id);
             const tempsucermute = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Temporary Muted Successfully \`${target.username}\` For \`${ms(ms(args[1]))}\`!**`)
             message.lineReplyNoMention({ embed: tempsucermute });
-            setTimeout(function () {
+            setTimeout(function() {
                 memberTarget.roles.remove(muteRole.id);
             }, ms(args[1]));
         } else {
