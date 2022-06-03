@@ -10,12 +10,10 @@ module.exports = {
     description: "Let's you fetch instagram data from any user except non-existed!",
     async execute(client, message, cmd, args, Discord) {
         try {
-            if (!args[0]) {
-                const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)instagram <username>\`**`)
-                return message.lineReplyNoMention({ embed: nopr })
-            }
+            if (!args[0]) { const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)instagram <username>\`**`); return message.lineReplyNoMention({ embed: nopr }) }
             const usertofind = args[0];
             fetch(`https://api.popcat.xyz/instagram?user=${usertofind}`).then(response => response.json()).then(data => {
+                if (!data) { return message.lineReplyNoMention({ content: "**Couldn't Find That User 😭!**" }); }
                 let posts = data.posts === 0 ? "No Posts" : `${data.posts}`;
                 let reels = data.reels === 0 ? "No Reels" : `${data.reels}`;
                 let private = data.private === false ? "Public" : `${data.private}`;
