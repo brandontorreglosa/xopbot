@@ -19,9 +19,11 @@ module.exports = {
                 let posts = data.posts === 0 ? "No Posts" : `${data.posts}`;
                 let reels = data.reels === 0 ? "No Reels" : `${data.reels}`;
                 let private = data.private === false ? "Public" : `${data.private}`;
+                private === true ? "Private" : `${data.private}`;
+                let bio = data.biography === None ? "No Biography" : `${data.biography}`;
                 let followers = data.followers === 0 ? "No Followers" : `${data.followers}`;
                 let following = data.following === 0 ? "Not Following Anyone" : `${data.following}`;
-                const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${data.username} | ${data.full_name}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`${data.biography}`).setThumbnail(`${data.profile_pic}`).addField("👤 Username", `${data.username}`, true).addField("👥 Followers", `${followers}`, true).addField("➕ Following", `${following}`, true).addField("📷 Posts", `${posts}`, true).addField("🎥 Reels", `${reels}`, true).addField("👀 Visibility", `${private}`, true);
+                const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${data.username} | ${data.full_name}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**${bio}**`).setThumbnail(`${data.profile_pic}`).addField("👤 Username", `${data.username}`, true).addField("👥 Followers", `${followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`, true).addField("➕ Following", `${following.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`, true).addField("📷 Posts", `${posts.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`, true).addField("🎥 Reels", `${reels.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`, true).addField("👀 Visibility", `${private}`, true);
                 message.lineReplyNoMention({ embed: embed });
             });
         } catch (err) {
