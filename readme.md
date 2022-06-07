@@ -174,7 +174,7 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?s=96&v=4">
 </a>
-<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: brandontorreglosa@gmail.com<br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
+<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
 <h2></h2>
 <hr/>
 <h2>➡ Forking / Cloning</h2>
