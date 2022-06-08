@@ -8,7 +8,7 @@ module.exports = {
     clientpermissions: ["MANAGE_ROLES", "SEND_MESSAGES", "EMBED_LINKS"],
     async execute(client, message, cmd, args, Discord) {
         const user = message.mentions.users.first();
-        const usertarget = message.guilds.members.cache.get(message.user.id);
+        const usertarget = message.guilds.members.cache.get(user.id);
         if (!user) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)addrole <@user> <@role>\`**`)
             return message.reply({ embed: nopr })
