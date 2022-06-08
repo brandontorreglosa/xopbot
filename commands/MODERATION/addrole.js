@@ -1,4 +1,4 @@
-//const lineReplyNoMention = require('discord-reply');
+const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
 module.exports = {
     name: 'addrole',
@@ -11,16 +11,16 @@ module.exports = {
         const usertarget = message.guild.members.cache.get(user.id);
         if (!user) {
             const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)addrole <@user> <@role>\`**`)
-            return message.reply({ embed: nopr })
+            return message.lineReplyNoMention({ embed: nopr })
         }
         args.shift()
         const roleToGive = message.mentions.roles.first()
         if (!roleToGive) {
-            const addroleError2 = new Discord.MessageEmbed().setTimestamp().setDescription(`**No Roles Provided!**`).setColor(`${color}`)
-            return message.reply({ embed: addroleError2 })
+            const addroleError2 = new Discord.MessageEmbed().setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setTimestamp().setDescription(`**No Roles Provided!**`).setColor(`${color}`)
+            return message.lineReplyNoMention({ embed: addroleError2 })
         }
         usertarget.roles.add(roleToGive.id)
         const embed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Added: \`${roleToGive}\` To \`${user.username}\`**`)
-        message.reply({ embed: embed })
+        message.lineReplyNoMention({ embed: embed })
     }
 }
