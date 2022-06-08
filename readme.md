@@ -1,4 +1,3 @@
-<h1>XOPBOT-24-7</h1>
 <p align="center"><img src=https://user-images.githubusercontent.com/84269666/123801401-ecb67d80-d8f2-11eb-898c-64d6bdfd8c3d.png ></p>
 <div align="center"> 
 <h1>XOPBOT</h1>
@@ -15,27 +14,27 @@
 <a href="https://discord.gg/invite/dPXTa2XERS"><img src="https://img.shields.io/discord/707557478254247936?style=for-the-badge&color=blue&label=HACKERPROTM%27s%20Server" alt="Discord"></a>
 </p>
 <hr/>
-<h2>➡ Requirments</h2>
+<h2>🔒 Requirments</h2>
 <li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12</li>
 <li> <code>Node.jsv13.3</code> Or Higher Versions</li>
 <li> <code>Heroku Account</code> For 24/7 Hosting</li>
 <li> <code>Some Knowledge</code> Of Javascript</li>
 <h2></h2>
 <hr/>
-<h2>➡ Information</h2>
+<h2>📰 Information</h2>
 <li> A Discord Bot Packed With Over 200+ Commands On The GO!</li>
 <li> Contains All Possible Categories That There Can Be.</li>
 <li> Implented With 24/7 Hosting From Heroku Dynos.</li>
 <li> 100% Free, No Cash Needed For The Source.</li>
 <h2></h2>
 <hr/>
-<h2>➡ Branches Information</h2>
+<h2>🌿 Branches Information</h2>
 <p> You Can View Different Versions Of The Bot By Changing Your Branch</p>
 <li> Use The <code>Default: Main</code> Branch For <code>Discord.jsv12.5.3</code> Functions</li>
 <li> Use The <code>Main-discordjs@v13</code> Branch For <code>Discord.js@v13</code> Functions</li>
 <h2></h2>
 <hr/>
-<h2>➡ Enviromental Variables</h2>
+<h2>🏞️ Enviromental Variables</h2>
 <li> Make Sure To Edit The <code>.env</code> File With Your Enviromental Variables</li>
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example</li>
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
@@ -71,7 +70,7 @@ X_MongodbURL = your mongodb url
 <br/>
 <h2></h2>
 <hr>
-<h2>➡ MongoDB Database Setup</h2>
+<h2>🌐 MongoDB Database Setup</h2>
 <li> Click The Photo Below To Watch On Youtube How To Setup The Database Of MongoDB For Free</li>
 <br/>
 <a href="https://www.youtube.com/watch?v=8no3SktqagY" title="Mongodb Setup For Free | Copyright XOPBOT.Inc">
@@ -92,7 +91,7 @@ X_MongodbURL = your mongodb url
 <br/>
 <h2></h2>
 <hr/>
-<h2>➡ Contributors</h2>
+<h2>🧑‍🏭 Contributors</h2>
 <li> Our Official Contributors Of This Repository</li>
 <br/>
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
@@ -117,6 +116,67 @@ X_MongodbURL = your mongodb url
 <br/>
 <h2></h2>
 <hr/>
+<h2>🌟 Stargazers (14)</h2>
+<li> Our Stargazers Of This Repository</li>
+<br/>
+<a href="https://github.com/Rafaelb4rros" title="Rafael Barros (Rafaelb4rros)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/80357541?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/natrixdev" title="Unknown Real Name (natrixdev)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/88579983?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/MGalaCyber" title="Unknown Real Name (MGalaCyber)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/87995243?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/syndrvme" title="Unknown Real Name (syndrvme)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/68643908?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/PleahMaCaka" title="Unknown Real Name (PleahMaCaka)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/50793769?s=96&v=4">
+</a>
+<br/>
+<a href="https://github.com/Veerendra9770" title="Unknown Real Name (Veerendra9770)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/64455866?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/MarcLDev" title="Marc (MarcLDev)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/70085700?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/PSingletary" title="Unknown Real Name (PSingletary)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/22543856?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/ThePhaseCat" title="Unknown Real Name (ThePhaseCat)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/84151006?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/JuanPablo2655" title="Isidro Casiano (JuanPablo2655)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/34992574?s=96&v=4">
+</a>
+<br/>
+<a href="https://github.com/Stepan2887" title="Stephanos (Stepan2887)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/103816480?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/MrPerfectShot" title="Unknown Real Name (MrPerfectShot)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/56578626?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/NFYTX" title="Unknown Real Name (NFYTX)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/70790310?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?s=96&v=4">
+</a>
+<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
+<h2></h2>
+<hr/>
 <h2>➡ Forking / Cloning</h2>
 <li> Fork The Repository By Clicking <a href="https://github.com/HACKERPROTM/XOPBOT-24-7">Here</a></li>
 <li> You Can Also Run On Your Terminal <code>git clone https://github.com/HACKERPROTM/XOPBOT-24-7.git</code></li>
@@ -125,7 +185,7 @@ X_MongodbURL = your mongodb url
 <li> Need Help With The Bot? Join The Discussion <a href="https://github.com/HACKERPROTM/XOPBOT-24-7/discussions/1">Here</a></li>
 <h2></h2>
 <hr/>
-<h2>➡ Extras</h2>
+<h2>🎓 Extras</h2>
 <li> Invite <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/services/redirect/invite/">Here</a></li>
 <li> Read The <code>Privacy Terms / PTOS</code> Of <code>XOPBOT</code> Clicking <a href="https://xopbot.glitch.me/policy/privacy/">Here</a></li>
 <li> Join Our Discord Server By Clicking The Photo Below Or Clicking The Link <a href="https://discord.gg/invite/dPXTa2XERS">Here</a></li>
