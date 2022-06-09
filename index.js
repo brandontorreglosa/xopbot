@@ -67,6 +67,9 @@ for (const file of eventFiles) {
 
 // <----/Disbotlist Servercount System/---->
 
+poster.on('posted', (stats) => {
+    console.log(`Posted stats to Top.gg | ${stats.serverCount} servers`)
+});
 // client.on("ready", () => {
 //     console.log(`CONNECTED WITH DISBOTLIST!`)
 // })
