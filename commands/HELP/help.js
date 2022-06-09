@@ -1,4 +1,5 @@
 const { MessageButton, MessageActionRow, MessageMenuOption, MessageMenu } = require('discord-buttons');
+const disbutpages = require("discord-embeds-pages-buttons")
 const OWNER_ID = process.env.Owner_ID;
 const color = process.env.Color;
 module.exports = {
