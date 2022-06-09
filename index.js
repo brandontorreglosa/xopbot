@@ -13,6 +13,8 @@ const mongoose = require('mongoose');
 const disbot = require("disbotlist");
 const disbut = require('discord-buttons');
 disbut(client);
+const { AutoPoster } = require('topgg-autoposter')
+const poster = AutoPoster(process.env.X_TopggToken, client)
 const DisTube = require('distube');
 const color = process.env.Color;
 const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
