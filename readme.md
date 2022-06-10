@@ -166,7 +166,7 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/JuanPablo2655" title="Isidro Casiano (JuanPablo2655)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/34992574?s=96&v=4">
 </a>
-<br/>
+&nbsp;
 <a href="https://github.com/Stepan2887" title="Stephanos (Stepan2887)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/103816480?s=96&v=4">
 </a>
