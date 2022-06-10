@@ -119,6 +119,14 @@ X_MongodbURL = your mongodb url
 <h2>🌟 Stargazers (14)</h2>
 <li> Our Stargazers Of This Repository</li>
 <br/>
+<a href="https://github.com/Alisssssya" title="Alisya (Alisssssya)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/99717744?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Slash1y" title="Lukas Stauersbøl (Slash1y)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/9026132?s=96&v=4">
+</a>
+&nbsp;
 <a href="https://github.com/Rafaelb4rros" title="Rafael Barros (Rafaelb4rros)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/80357541?s=96&v=4">
 </a>
@@ -134,11 +142,10 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/syndrvme" title="Unknown Real Name (syndrvme)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/68643908?s=96&v=4">
 </a>
-&nbsp;
 <a href="https://github.com/PleahMaCaka" title="Unknown Real Name (PleahMaCaka)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/50793769?s=96&v=4">
 </a>
-<br/>
+&nbsp;
 <a href="https://github.com/Veerendra9770" title="Unknown Real Name (Veerendra9770)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/64455866?s=96&v=4">
 </a>
