@@ -39,8 +39,15 @@
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example</li>
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
-<h2></h2>
 <li>This Is What You're <code>.env</code> Should Contain ⬇️</li>
+<h2></h2>
+<p align="center">.env</p>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
 <b>
 PREFIX = your prefix
 <br/>
@@ -70,6 +77,7 @@ X_MongodbURL = your mongodb url
 <br/>
 X_TopggToken = your topgg token
 </b>
+</table>
 <br/>
 <h2></h2>
 <hr>
