@@ -41,44 +41,74 @@
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
 <li>This Is What You're <code>.env</code> Should Contain ⬇️</li>
 <h2></h2>
-<p align="center">.env</p>
 <table>
+  <b>
   <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
+    <th>Enviroment</th>
+    <th>Value</th>
+    <th>Full Example</th>
   </tr>
-<b>
-PREFIX = your prefix
-<br/>
-Color = your color
-<br/>
-Gcolor = #00ff00 
-<br/>
-Rcolor = #c30202
-<br/>
-App_ID = application id
-<br/>
-Owner_ID = owner id (bot dev id)
-<br/>
-logChannel = loggingchannel id
-<br/>
-errorChannel = errorchannel id
-<br/>
-XOP_SITE = bot website
-<br/>
-XOP_DONER = optional
-<br/>
-XOP_API = optional
-<br/>
-X_Token = bot token
-<br/>
-X_MongodbURL = your mongodb url
-<br/>
-X_TopggToken = your topgg token
+<tr>
+  <td>PREFIX</td>
+  <td>a prefix for the bot</td>
+  <td>PREFIX = x!</td>
+<tr>
+  <td>Color</td>
+  <td>a color for a embed</td>
+  <td>Color = #ff0000</td>
+  <tr>
+    <tr>
+  <td>Gcolor</td>
+  <td>a success green color</td>
+  <td>Gcolor = #00ff00 </td>
+  <tr>
+    <tr>
+  <td>Rcolor</td>
+  <td>a failure red color</td>
+  <td>Rcolor = #c30202</td>
+  <tr>
+    <tr>
+  <td>App_ID</td>
+  <td>you're apllication's ID</td>
+  <td>App_ID = 831824859066925087</td>
+  <tr>
+    <tr>
+  <td>Owner_ID</td>
+  <td>you're own id</td>
+  <td>Owner_ID = 600094534386319370</td>
+  <tr>
+    <tr>
+  <td>logChannel</td>
+  <td>a channel to log uses of the bot</td>
+  <td>logChannel = 870540738025369610</td>
+  <tr>
+    <tr>
+  <td>errorChannel</td>
+  <td>a channel to log errors of the bot</td>
+  <td>errorChannel = 975047130890797137</td>
+  <tr>
+    <tr>
+  <td>XOP_SITE</td>
+  <td>a website to show to some embeds</td>
+  <td>XOP_SITE = https://xopbot.gltch.me</td>
+  <tr>
+    <tr>
+  <td>X_Token</td>
+  <td>the bot's token</td>
+  <td>X_Token = you're token</td>
+  <tr>
+    <tr>
+  <td>X_MongodbURL</td>
+  <td>a mongodb url to save data</td>
+  <td>X_MongodbURL = you're mongodb url</td>
+  <tr>
+    <tr>
+  <td>X_TopggToken</td>
+  <td>it update's the bot's server count</td>
+  <td>X_TopggToken = you're topgg token</td>
+  <tr>
 </b>
 </table>
-<br/>
 <h2></h2>
 <hr>
 <h2>🌐 MongoDB Database Setup</h2>
