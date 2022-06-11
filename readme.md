@@ -40,6 +40,7 @@
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
 <h2></h2>
+<li>This Is What You're <code>.env</code> Should Contain ⬇️</li>
 <b>
 PREFIX = your prefix
 <br/>
@@ -66,6 +67,8 @@ XOP_API = optional
 X_Token = bot token
 <br/>
 X_MongodbURL = your mongodb url
+<br/>
+X_TopggToken = your topgg token
 </b>
 <br/>
 <h2></h2>
@@ -119,6 +122,7 @@ X_MongodbURL = your mongodb url
 <h2>🌟 Stargazers (16)</h2>
 <li> Our Stargazers Of This Repository</li>
 <br/>
+<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
 <a href="https://github.com/ra1nbow1" title="Matvey Romanov (ra1nbow1)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/38384967?s=96&v=4">
 </a>
@@ -190,7 +194,6 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?s=96&v=4">
 </a>
-<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
 <h2></h2>
 <hr/>
 <h2>➡ Forking / Cloning</h2>
