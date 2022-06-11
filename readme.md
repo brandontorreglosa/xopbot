@@ -16,7 +16,7 @@
 <hr/>
 <h2>🔒 Requirments</h2>
 <li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12</li>
-<li> <code>Node.jsv13.3</code> Or Higher Versions</li>
+<li> <code>Node.jsv17.9.1</code> Or Higher Versions</li>
 <li> <code>Heroku Account</code> For 24/7 Hosting</li>
 <li> <code>Some Knowledge</code> Of Javascript</li>
 <h2></h2>
