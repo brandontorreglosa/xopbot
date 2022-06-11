@@ -16,7 +16,7 @@
 <hr/>
 <h2>🔒 Requirments</h2>
 <li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12</li>
-<li> <code>Node.jsv13.3</code> Or Higher Versions</li>
+<li> <code>Node.jsv17.9.1</code> Or Higher Versions</li>
 <li> <code>Heroku Account</code> For 24/7 Hosting</li>
 <li> <code>Some Knowledge</code> Of Javascript</li>
 <h2></h2>
@@ -39,35 +39,76 @@
 <li> The Colors Must Only Be Hex Or A Defined Color, "red" Example</li>
 <li> You Can Not Access The <b><code>.env.dev</code></b> File For Security Reasons</li>
 <li> To Hide Any Secret Variables, Add Them On A <b><code>.gitignore</code></b> File</li>
+<li>This Is What You're <code>.env</code> Should Contain ⬇️</li>
 <h2></h2>
-<b>
-PREFIX = your prefix
-<br/>
-Color = your color
-<br/>
-Gcolor = #00ff00 
-<br/>
-Rcolor = #c30202
-<br/>
-App_ID = application id
-<br/>
-Owner_ID = owner id (bot dev id)
-<br/>
-logChannel = loggingchannel id
-<br/>
-errorChannel = errorchannel id
-<br/>
-XOP_SITE = bot website
-<br/>
-XOP_DONER = optional
-<br/>
-XOP_API = optional
-<br/>
-X_Token = bot token
-<br/>
-X_MongodbURL = your mongodb url
+<table>
+  <b>
+  <tr>
+    <th>Enviroment</th>
+    <th>Value</th>
+    <th>Full Example</th>
+  </tr>
+<tr>
+  <td>PREFIX</td>
+  <td>a prefix for the bot</td>
+  <td>PREFIX = x!</td>
+<tr>
+  <td>Color</td>
+  <td>a color for a embed</td>
+  <td>Color = #ff0000</td>
+  <tr>
+    <tr>
+  <td>Gcolor</td>
+  <td>a success green color</td>
+  <td>Gcolor = #00ff00 </td>
+  <tr>
+    <tr>
+  <td>Rcolor</td>
+  <td>a failure red color</td>
+  <td>Rcolor = #c30202</td>
+  <tr>
+    <tr>
+  <td>App_ID</td>
+  <td>you're apllication's ID</td>
+  <td>App_ID = 831824859066925087</td>
+  <tr>
+    <tr>
+  <td>Owner_ID</td>
+  <td>you're own id</td>
+  <td>Owner_ID = 600094534386319370</td>
+  <tr>
+    <tr>
+  <td>logChannel</td>
+  <td>a channel to log uses of the bot</td>
+  <td>logChannel = 870540738025369610</td>
+  <tr>
+    <tr>
+  <td>errorChannel</td>
+  <td>a channel to log errors of the bot</td>
+  <td>errorChannel = 975047130890797137</td>
+  <tr>
+    <tr>
+  <td>XOP_SITE</td>
+  <td>a website to show to some embeds</td>
+  <td>XOP_SITE = https://xopbot.gltch.me</td>
+  <tr>
+    <tr>
+  <td>X_Token</td>
+  <td>the bot's token</td>
+  <td>X_Token = you're token</td>
+  <tr>
+    <tr>
+  <td>X_MongodbURL</td>
+  <td>a mongodb url to save data</td>
+  <td>X_MongodbURL = you're mongodb url</td>
+  <tr>
+    <tr>
+  <td>X_TopggToken</td>
+  <td>it update's the bot's server count</td>
+  <td>X_TopggToken = you're topgg token</td>
+  <tr>
 </b>
-<br/>
+</table>
 <h2></h2>
 <hr>
 <h2>🌐 MongoDB Database Setup</h2>
@@ -116,9 +157,32 @@ X_MongodbURL = your mongodb url
 <br/>
 <h2></h2>
 <hr/>
-<h2>🌟 Stargazers (14)</h2>
-<li> Our Stargazers Of This Repository</li>
-<br/>
+<h2>🌟 Stargazers (20)</h2>
+<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
+<a href="https://github.com/AlexDeveloperUwU" title="Alex (AlexDeveloperUwU)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/79850072?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Ghanendra56" title="Unknown Real Name (Ghanendra56)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/77883076?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/ra1nbow1" title="Matvey Romanov (ra1nbow1)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/38384967?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/chonong" title="Unknown Real Name (chonong)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/94769690?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Alisssssya" title="Alisya (Alisssssya)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/99717744?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Slash1y" title="Lukas Stauersbøl (Slash1y)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/9026132?s=96&v=4">
+</a>
+&nbsp;
 <a href="https://github.com/Rafaelb4rros" title="Rafael Barros (Rafaelb4rros)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/80357541?s=96&v=4">
 </a>
@@ -138,7 +202,7 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/PleahMaCaka" title="Unknown Real Name (PleahMaCaka)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/50793769?s=96&v=4">
 </a>
-<br/>
+&nbsp;
 <a href="https://github.com/Veerendra9770" title="Unknown Real Name (Veerendra9770)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/64455866?s=96&v=4">
 </a>
@@ -158,7 +222,7 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/JuanPablo2655" title="Isidro Casiano (JuanPablo2655)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/34992574?s=96&v=4">
 </a>
-<br/>
+&nbsp;
 <a href="https://github.com/Stepan2887" title="Stephanos (Stepan2887)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/103816480?s=96&v=4">
 </a>
@@ -174,7 +238,6 @@ X_MongodbURL = your mongodb url
 <a href="https://github.com/HACKERPROTM" title="Brandon Torreglosa (HACKERPROTM)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/84269666?s=96&v=4">
 </a>
-<b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
 <h2></h2>
 <hr/>
 <h2>➡ Forking / Cloning</h2>
