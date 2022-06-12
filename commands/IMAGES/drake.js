@@ -52,15 +52,6 @@ module.exports = {
                 .setDescription(`**You Are Not Allowed To Go Over \`70\` Characters!**`)
             return message.lineReplyNoMention(maxlen2)
         }
-
-        // const embed = new Discord.MessageEmbed()
-        //     .setTimestamp()
-        //     .setTitle('DRAKE')
-        //     .setColor(`${color}`)
-        //     .setImage(`https://api.popcat.xyz/drake?text1=${text}&text2=${text2}`)
-
-        //     message.lineReplyNoMention(embed)
-
         message.lineReplyNoMention({ files: [{ attachment: `https://api.popcat.xyz/drake?text1=${text}&text2=${text2}`, name: "xopbotdrake.png" }] });
     }
 }

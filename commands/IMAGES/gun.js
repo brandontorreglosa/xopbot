@@ -8,18 +8,8 @@ module.exports = {
     cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
-
-        const user = message.mentions.users.first() ||  message.author;
+        const user = message.mentions.users.first() || message.author;
         const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
-
-        // const embed = new Discord.MessageEmbed()
-        //     .setTimestamp()
-        //     .setTitle('GUN')
-        //     .setColor(`${color}`)
-        //     .setImage(`https://api.popcat.xyz/gun?image=${avatar}`)
-
-        // message.lineReplyNoMention(embed)
-
         message.lineReplyNoMention({ files: [{ attachment: `https://api.popcat.xyz/gun?image=${avatar}`, name: "xopbotgun.png" }] });
     }
 }

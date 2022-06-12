@@ -32,14 +32,6 @@ module.exports = {
                     .setDescription(`**You Are Not Allowed To Go Over \`50\` Characters!**`)
                 return message.lineReplyNoMention(maxlen)
             }
-            // const embed = new Discord.MessageEmbed()
-            //     .setTimestamp()
-            //     .setTitle('WATER')
-            //     .setColor(`${color}`)
-            //     .setImage(`https://vacefron.nl/api/water?text=${sayMessage}`)
-
-            // message.lineReplyNoMention(embed)
-
             message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/water?text=${sayMessage}`, name: "xopbotwater.png" }] });
         } catch (err) {
             const errorlogs = client.channels.cache.get(errorChannel)

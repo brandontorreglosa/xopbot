@@ -9,18 +9,8 @@ module.exports = {
     cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
-
-        const user = message.mentions.users.first() ||  message.author;
+        const user = message.mentions.users.first() || message.author;
         const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
-
-        // const embed = new Discord.MessageEmbed()
-        //     .setTimestamp()
-        //     .setTitle('DOCKOFSHAME')
-        //     .setColor(`${color}`)
-        //     .setImage(`https://vacefron.nl/api/dockofshame?user=${avatar}`)
-
-        // message.lineReplyNoMention(embed)
-
         message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/dockofshame?user=${avatar}`, name: "xopbotdockofshame.png" }] });
     }
 }

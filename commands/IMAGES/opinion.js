@@ -8,10 +8,8 @@ module.exports = {
     cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
-
-        const user = message.mentions.users.first() ||  message.author;
+        const user = message.mentions.users.first() || message.author;
         const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
-
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
@@ -29,15 +27,6 @@ module.exports = {
                 .setDescription(`**You Are Not Allowed To Go Over \`45\` Characters!**`)
             return message.lineReplyNoMention(maxlen)
         }
-
-        // const embed = new Discord.MessageEmbed()
-        //     .setTimestamp()
-        //     .setTitle('OPINION')
-        //     .setColor(`${color}`)
-        //     .setImage(`https://api.popcat.xyz/opinion?image=${avatar}&text=${text}`)
-
-        // message.lineReplyNoMention(embed)
-
         message.lineReplyNoMention({ files: [{ attachment: `https://api.popcat.xyz/opinion?image=${avatar}&text=${text}`, name: "xopbotopinion.png" }] });
     }
 }

@@ -9,7 +9,6 @@ module.exports = {
     cooldown: 5,
     description: "Image Manipulation Command",
     async execute(client, message, cmd, args, Discord) {
-
         if (!args[0]) {
             const nopr = new Discord.MessageEmbed()
                 .setTimestamp()
@@ -18,13 +17,10 @@ module.exports = {
                 .setDescription(`**\`(prefix)batmanslap <text> / <text2>\` \nMust Add \`/ \`For It To Work!**`)
             return message.lineReplyNoMention(nopr)
         }
-
-        const user = message.mentions.users.first() ||  message.author;
+        const user = message.mentions.users.first() || message.author;
         const avatar = user.displayAvatarURL({ size: 2048, format: "png" });
         const xopbot = client.user.displayAvatarURL({ size: 2048, format: 'png' })
-
         let splitargs = args.join(' ').split('/');
-
         const text = splitargs[0];
         if (!text) {
             const notxt = new Discord.MessageEmbed()
@@ -42,7 +38,6 @@ module.exports = {
                 .setDescription(`**You Are Not Allowed To Go Over \`50\` Characters!**`)
             return message.lineReplyNoMention(maxlen)
         }
-
         const text2 = splitargs[1];
         if (!text2) {
             const notxt2 = new Discord.MessageEmbed()
@@ -60,15 +55,6 @@ module.exports = {
                 .setDescription(`**You Are Not Allowed To Go Over \`50\` Characters!**`)
             return message.lineReplyNoMention(maxlen2)
         }
-
-        // const embed = new Discord.MessageEmbed()
-        //     .setTimestamp()
-        //     .setTitle('BATMANSLAP')
-        //     .setColor(`${color}`)
-        //     .setImage(`https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=${xopbot}`)
-
-        // message.lineReplyNoMention(embed)
-
         message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/batmanslap?text1=${text}&text2=${text2}&batman=${avatar}&robin=${xopbot}`, name: "xopbotbatmanslap.png" }] });
     }
 }

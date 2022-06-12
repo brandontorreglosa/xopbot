@@ -26,14 +26,6 @@ module.exports = {
                 .setDescription(`**You Are Not Allowed To Go Over \`15\` Characters!**`)
             return message.lineReplyNoMention(maxlen)
         }
-        // const embed = new Discord.MessageEmbed()
-        //     .setTimestamp()
-        //     .setTitle('CARREVERSE')
-        //     .setColor(`${color}`)
-        //     .setImage(`https://vacefron.nl/api/carreverse?text=${text}`)
-
-        //     message.lineReplyNoMention(embed)
-
         message.lineReplyNoMention({ files: [{ attachment: `https://vacefron.nl/api/carreverse?text=${text}`, name: "xopbotcarreverse.png" }] });
     }
 }
