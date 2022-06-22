@@ -202,7 +202,7 @@ try {
 
         // <----/Prefix System/---->
 
-        let prefixes = JSON.parse(fs.readFileSync("../src/prefixes.json"));
+        let prefixes = JSON.parse(fs.readFileSync("../../src/prefixes.json"));
         if (!prefixes[message.guild.id]) {
             prefixes[message.guild.id] = {
                 prefix: process.env.PREFIX
