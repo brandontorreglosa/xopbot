@@ -21,9 +21,9 @@ const dbl = new disbot("IbDYioKdSGgRbowHKUBYHjeZ", client);
 const client12 = require('alexflipnote.js');
 const AlexClient = new client12('Xs7IYMWumg1ccrsJFd_a49qgZkWoIgFaoGTeMkdF')
 const fs = require('fs')
-const schema = require('./models/schema')
-const bankschema = require('./models/bankschema')
-const debtschema = require('./models/debtschema')
+const schema = require('../models/schema')
+const bankschema = require('../models/bankschema')
+const debtschema = require('../models/debtschema')
 
 // <----/Client Events/---->
 
@@ -33,14 +33,14 @@ client.setMaxListeners(0);
 
 // <----/Slash Commands/---->
 
-const commandFiles = fs.readdirSync("./slashcommands").filter(file => file.endsWith(".js"));
+const commandFiles = fs.readdirSync("../slashcommands").filter(file => file.endsWith(".js"));
 
 const commands = [];
 
 client.commands = new Discord.Collection();
 
 for (const file of commandFiles) {
-    const command = require(`./slashcommands/${file}`);
+    const command = require(`../slashcommands/${file}`);
     commands.push(command.data.toJSON());
     client.commands.set(command.data.name, command);
 }
@@ -52,7 +52,7 @@ const eventFiles = fs
     .filter(file => file.endsWith(".js"));
 
 for (const file of eventFiles) {
-    const event = require(`./events/${file}`);
+    const event = require(`../events/${file}`);
 
     if (event.once) {
         client.once(event.name, (...args) => event.execute(...args, commands));
@@ -62,7 +62,7 @@ for (const file of eventFiles) {
 }
 
 ['command_handler', 'event_handler'].forEach(handler => {
-    require(`./handlers/${handler}`)(client, Discord);
+    require(`../handlers/${handler}`)(client, Discord);
 })
 
 // <----/Disbotlist Servercount System/---->
