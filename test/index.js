@@ -31,35 +31,7 @@ client.commands = new Collection();
 client.events = new Collection();
 client.setMaxListeners(0);
 
-// <----/Slash Commands/---->
-
-const commandFiles = fs.readdirSync("../slashcommands").filter(file => file.endsWith(".js"));
-
-const commands = [];
-
-client.commands = new Discord.Collection();
-
-for (const file of commandFiles) {
-    const command = require(`../slashcommands/${file}`);
-    commands.push(command.data.toJSON());
-    client.commands.set(command.data.name, command);
-}
-
 // <----/Handlers System/---->
-
-const eventFiles = fs
-    .readdirSync("./events")
-    .filter(file => file.endsWith(".js"));
-
-for (const file of eventFiles) {
-    const event = require(`../events/${file}`);
-
-    if (event.once) {
-        client.once(event.name, (...args) => event.execute(...args, commands));
-    } else {
-        client.on(event.name, (...args) => event.execute(...args, commands));
-    }
-}
 
 ['command_handler', 'event_handler'].forEach(handler => {
     require(`../handlers/${handler}`)(client, Discord);
