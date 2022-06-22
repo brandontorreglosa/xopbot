@@ -1,1 +1,1 @@
-Worker: bash ../test/index.bat
+Worker: bash ./test/index.bat
