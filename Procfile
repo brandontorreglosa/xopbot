@@ -1,1 +1,1 @@
-Worker: bash ./Discord Bot/test/index.bat
+Worker: bash ./Discord_Bot/test/index.bat
