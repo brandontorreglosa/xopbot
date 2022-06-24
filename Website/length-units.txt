@@ -1,0 +1,15 @@
+px
+Pixels, or px, are one of the most common length units in CSS.
+In CSS, 1 pixel is formally defined as 1/96 of an inch. All other absolute length units are based on this definition of a pixel.
+cm
+Centimeters.
+In CSS, 1cm is roughly 37.8 pixels, or about 25.2/64 of an inch.
+mm
+Millimeters.
+In CSS, 1mm is roughly 3.78 pixels, or 1/10th of a centimeter.
+pt
+Points.
+In CSS, 1pt is roughly 1.3333 pixels, or 1/72th of an inch.
+pc
+Picas.
+In CSS, 1pc is roughly 16 pixels, or 1/6 of an inch.

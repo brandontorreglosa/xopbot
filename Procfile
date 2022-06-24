@@ -1,1 +1,1 @@
-Worker: bash ./test/index.bat
+Worker: bash ./Duscord Bot/test/index.bat
