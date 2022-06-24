@@ -1,18 +1,27 @@
+<h1 align="left">Search Engine (XOPPY)</h1>
+<div align="center">
+<a href="https://xoppy.glitch.me/"><img width="80%" height="auto" src="https://user-images.githubusercontent.com/84269666/175720254-4657dc64-f5f6-4582-aa63-9c17d725f206.png"></a>
+<h1>XOPPY</h1>
+<h3>A Search Engine With Good Connection Speeds To Different Servers</h3>
+</div>
+<h2></h3>
+<br/>
+<hr/>
+<h1 align="left">Website (XOPBOT_SITE)</h1>
+<div align="center">
+<a href="https://xopbot.glitch.me/"><img width="80%" height="auto" src="https://user-images.githubusercontent.com/84269666/175721442-65e21cfa-700b-4133-ba2d-bd3559760528.png"></a>
+<h3>Something / no text </h3>
+</div>
+<h2></h3>
+<br/>
+<hr/>
+<h1 align="left">Discord Bot (XOPBOT)</h1>
 <p align="center"><img src=https://user-images.githubusercontent.com/84269666/123801401-ecb67d80-d8f2-11eb-898c-64d6bdfd8c3d.png ></p>
 <div align="center"> 
 <h1>XOPBOT</h1>
 <h3>A Multipurposebot With Over 200+ Commands</h3>
 </div>
-<p align="center">
-<a href="https://github.com/HACKERPROTM/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/HACKERPROTM/XOPBOT-24-7?style=for-the-badge&color=yellow"></a> 
-<a href="https://github.com/HACKERPROTM/XOPBOT-24-7/network"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/HACKERPROTM/XOPBOT-24-7?style=for-the-badge&color=darkblue"></a>
-<a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/npm/l/xoppack.svg?style=for-the-badge&color=red" alt="Github License"></a>
-<br/>
-<a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/npm/v/xoppack.svg?style=for-the-badge&label=XOPPACK" alt="XOPPACK Version" /></a>
-<a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/npm/dt/xoppack.svg?style=for-the-badge&label=Downloads" alt="XOPPACK Downloads" /></a>
-<a href="https://www.npmjs.com/package/xoppack"><img src="https://img.shields.io/librariesio/dependents/npm/xoppack?style=for-the-badge&label=Dependents" alt="XOPPACK Dependents"></a>
-<a href="https://discord.gg/invite/dPXTa2XERS"><img src="https://img.shields.io/discord/707557478254247936?style=for-the-badge&color=blue&label=HACKERPROTM%27s%20Server" alt="Discord"></a>
-</p>
+<h2></h2>
 <hr/>
 <h2>🔒 Requirments</h2>
 <li> <code>Discord.jsv12.5.3</code> Or Lower Versions Of V12</li>
