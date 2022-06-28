@@ -1,4 +1,6 @@
 /* <!----XOPPY Is A Trademark Of XOPBOT.inc And XOPBOT© More At https://xopbot.glitch.me/ 🔥🔥🔥----> */
+@media screen and (min-width:0px) and (max-width:900px){#con-nav{display:none;}#dropba{display:none;}#dropvas{display:inline-block;}.sticky{width: 96.5%;}}
+@media screen and (min-width:901px) and (max-width: 10000px){#dropvas{display:none;}}
 @media screen and (max-width:10000px) and (min-width:1801px){#r-activity{display:none}#r-head{display:none}div.content{display:none}div.warn{display:block}#pra{display:none}#bru{display:none}}
 @media screen and (max-width:1099px){div.pc{display:block}div.content{display:none}#r-activity{display:none}#r-head{display:none}div.warn{display:block}#pra{display:none}#bru{display:none}}
 @media screen and (max-width:324px){div.pc{display:none}div.mobile{display:block}div.warn{display:none}}

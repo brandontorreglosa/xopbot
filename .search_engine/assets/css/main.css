@@ -4,7 +4,7 @@
 ::-webkit-scrollbar-thumb{background:#000000}
 :root{--main:#ffffff;--secondary:#ff0000}
 ::-webkit-scrollbar:hover{width:8px}
-body{background-color:#0c0c0c}
+body{top:0!important;background-color:#0c0c0c}
 .loading{transform: translate(-50%, -50%);position:absolute;top:50%;left:50%;}
 #loader img{animation: spin 1.5s infinite ease-in-out;}@keyframes spin {0%{transform: rotate(0deg);}100%{transform: rotate(360deg)}}
 div.mobile{display:none}
@@ -46,17 +46,17 @@ a.gflag:hover{background-image:url(//gtranslate.net/flags/16a.png)}
 .goog-tooltip{display:none!important}
 .goog-tooltip:hover{display:none!important}
 .goog-text-highlight{background-color:transparent!important;border:none!important;box-shadow:none!important}
-body{top:0!important}
 #google_translate_element2{display:none!important}
-#home-view{float:left}
+#home-view{float:left;display:flex;}
 a.logo{font-family:"Alfa Slab One",cursive;font-size:19px;color:#ff0000}
-#home-view i{font-size:19px;display:inline-block;position:relative}
-.dropdownb{left:0%;margin-left:0.5px;background-color:#0c0c0c;display:none;position:absolute;width:140px;overflow:auto;box-shadow:0 10px 10px 0 rgba(0,0,0,0.4)}
+/*.#home-view i{font-size:19px;display:inline-block;position:relative}*/
+.dropdownb{left:-7%;background-color:#0c0c0c;display:none;position:absolute;width:140px;overflow:auto;box-shadow:0 10px 10px 0 rgba(0,0,0,0.4)}
 .dropdownb a{font-family:"Kdam Thmor Pro",sans-serif;display:block;color:#ffffff;padding:5px;text-decoration:none;font-size:14px}
 .dropdown p {font-family:"Kdam Thmor Pro",sans-serif;display:block;color:#ffffff;padding:5px 0px 0px 5px;text-decoration:none;font-size:14px}
 .dropdownb a:hover{color:#ffffff;background-color:#ff0000}
-#home-view:hover .dropdownb{display:block}
-.dropdownb i{font-size:10px}
+#dropvas{display:inline-block;position:relative;}
+#dropvas:hover .dropdownb{display:block}
+.dropdownb i{font-size:15px}
 .sticky{position:fixed;top:0;width:98.8%;padding-top:8px;background-color:#0c0c0c}
 #warn{text-align:center}
 #warn-ann{width:50%;height:auto;color:#ffffff;background-color:#000000;padding-bottom:5vh;border-radius:10px;font-family:"Kdam Thmor Pro",sans-serif}
@@ -64,3 +64,6 @@ p.w-head{font-size:25px;padding-top:2px}
 /*div.footer{font-family:"Kdam Thmor Pro",sans-serif;padding-left:0%;right:0%;bottom:0%;width:100%;height:150px;color:#ffffff;}*/
 p.head-f{padding-left:5px;font-size:12px;font-family:"Kdam Thmor Pro",sans-serif;color:#ffffff;float:left;}
 footer{position:absolute;left:0%;right:0%;width:100%;background-color:#000000;border-radius:2px;}
+#con-nav{display:flex;padding-left: 25px;font-family: "Alpha Slab One", cursive;color: #ffffff;}
+#con-nav i {font-size: 15px;color: #ffffff;}
+#con-nav a:hover {color: #ff0000;}
