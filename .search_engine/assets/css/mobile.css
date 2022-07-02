@@ -2,7 +2,5 @@
 @media screen and (min-width:0px) and (max-width:900px){#con-nav{display:none;}#dropba{display:none;}#dropvas{display:inline-block;}.sticky{width: 96.5%;}}
 @media screen and (min-width:901px) and (max-width: 10000px){#dropvas{display:none;}}
 @media screen and (max-width:10000px) and (min-width:1801px){#r-activity{display:none}#r-head{display:none}div.content{display:none}div.warn{display:block}#pra{display:none}#bru{display:none}}
-@media screen and (max-width:1099px){div.pc{display:block}div.content{display:none}#r-activity{display:none}#r-head{display:none}div.warn{display:block}#pra{display:none}#bru{display:none}}
+@media screen and (max-width:1339px){div.pc{display:block}div.content{display:none}#r-activity{display:none}#r-head{display:none}div.warn{display:block}#pra{display:none}#bru{display:none}div.s-engines a{display:none;}}
 @media screen and (max-width:324px){div.pc{display:none}div.mobile{display:block}div.warn{display:none}}
-@media screen and (min-width:1100px)  and (max-width:1119px){div.content{padding-left:29.5vh}#r-activity{padding-left:29.5vh}#r-head{padding-left:29.5vh}div.suggest{height:69px;width:69px}div.suggest img{padding-top:1.2vh;padding-right:2px}div.activity{width:160px;height:160px}div.activity img{width:160px}a.activity-desc{font-size:12.5px}a.activity-title{font-size:13.5px}}
-@media screen and (min-width:1120px)  and (max-width:1130px){div.content{padding-left:30.5vh}#r-activity{padding-left:30.5vh}#r-head{padding-left:30.5vh}div.suggest{height:70px;width:70px}div.suggest img{padding-top:1.2vh;padding-right:2px}div.activity{width:163px;height:163px}div.activity img{width:163px}a.activity-desc{font-size:13px}a.activity-title{font-size:14px}}

@@ -30,25 +30,87 @@
 <link async href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet"/>
 <link async rel="stylesheet" href="/assets/css/main.css"/>
 <link async rel="stylesheet" href="/assets/css/mobile.css"/>
+<link async rel="stylesheet" href="/assets/css/video.css"/>
 <script async src="/assets/js/main.js"></script>
 <script async src="/assets/js/loading.js"></script>
+<script async src="/assets/js/username.js"></script>
+<script async src="/assets/js/counter.js"></script>
 </head>
 <!----Body And Continue Of XOPPY---->
-<body>
+<body onload="newUser()">
 <center>
 <div class="loading"><div id="loader"><img src="https://cdn.glitch.global/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/favicon-128x128-xoppy.png?v=1655807563149"></div></div>
 </center>
 <div id="a-load">
 <div class="pc">
-<div id="navbar"><div id="home-view"><div id="dropvas"><a class="logo">XOPPY</a><div class="dropdownb"><a><i class="fa-solid fa-house-blank"></i>&nbsp;&nbsp;&nbsp;<c id="r-data-1">Home</c></a><a><i class="fa-solid fa-face-smile-hearts"></i>&nbsp;&nbsp;<c id="r-data-2">Popular</c></a><a><i class="fa-solid fa-compass"></i>&nbsp;&nbsp;&nbsp;<c id="r-data-3">Explore</c></a><a><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;&nbsp;<c id="r-data-4">History</c></a></div></div><div id="dropba"><a class="logo">XOPPY</a></div><div id="con-nav"><a class="nav-s"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-phone-plus"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-comments-question-check"></i>&nbsp;&nbsp;Questions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-message-bot"></i>&nbsp;&nbsp;Moderation</a></div></div><div id="user-view"><i class="fa-solid fa-user"></i>&nbsp;<a id="sep-view">|</a>&nbsp;<a id="text">Account</a><div class="dropdown"><p>User Settings</p><hr/><a id="rar" onclick="recent()">Show Adverts | 🔴</a><a id="pra" onclick="latest()">Show Activity | 🟢</a><a onclick="fastest()" id="bru">Show Content | 🟢</a><hr/><a>Language |<select id="lang" class="language" onchange="doGTranslate(this);"><option value="en|en">EN</option><option value="en|el">EL</option></select><div id="google_translate_element2"></div></a><a>Log In</a></div></div></div>
+  <div id="navbar"><div id="home-view"><div id="dropvas"><a class="logo">XOPPY</a><div class="dropdownb"><a><i class="fa-solid fa-house-blank"></i>&nbsp;&nbsp;&nbsp;<c id="r-data-1">Home</c></a><a><i class="fa-solid fa-face-smile-hearts"></i>&nbsp;&nbsp;<c id="r-data-2">Popular</c></a><a><i class="fa-solid fa-compass"></i>&nbsp;&nbsp;&nbsp;<c id="r-data-3">Explore</c></a><a><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;&nbsp;<c id="r-data-4">History</c></a></div></div><div id="dropba"><a class="logo">XOPPY</a></div><div id="con-nav"><a class="nav-s"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;<c id="r-data-5">Home</c></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;<c id="r-data-6">Search</c></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-phone-plus"></i>&nbsp;&nbsp;<c id="r-data-7">Contact</c></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-comments-question-check"></i>&nbsp;&nbsp;<c id="r-data-8">Questions</c></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-s"><i class="fa-solid fa-message-bot"></i>&nbsp;&nbsp;<c id="r-data-9">Moderation</c></a></div></div><div id="user-view"><i class="fa-solid fa-user"></i>&nbsp;<a id="sep-view">|</a>&nbsp;<a id="text">Account</a><div class="dropdown"><p class="user-set"><c id="r-data-10">User Settings</c></p><hr/><center><img id="user-img" src="https://cdn.glitch.global/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/R.png?v=1656704694585"><c id="username" class="user-n"></c><div class="followers"><k onclick="Test()" id="user-click" title="Followers"><i class="fa-solid fa-user-plus"></i>&nbsp;<s id="user-followers"></s></k>&nbsp;<k title="Like"><i style="color: lightgreen;" class="fa-solid fa-thumbs-up"></i><s id="user-likes"></s></k>&nbsp;<k title="Dislike"><i style="color: red;" class="fa-solid fa-thumbs-down"></i><s id="user-dlikes"></s></k></div></center><hr/><a id="rar" onclick="recent()">Show Adverts | 🔴</a><a id="pra" onclick="latest()">Show Activity | 🟢</a><a onclick="fastest()" id="bru">Show Content | 🟢</a><hr/><a>Language | <select id="lang" class="language" onchange="doGTranslate(this);"><option value="en|en">EN</option><option value="en|el">EL</option></select><div id="google_translate_element2"></div></a><a onclick="checkCookie()" id="username-sign">Set Username</a><a onclick="checkImage()" id="sign-img">Set Image</a><a id="change-img" onclick="changeImage()">Change Image</a><a id="check-import">Not Logged In</a></div></div></div>
 <div id="head">XOPPY</div>
 <center>
 <form id="GeekerMagazine" action="https://www.google.com/search" method="get" target="_blank">
-<div class="searchbar"><input id="search" name="q" type="text" placeholder="🔎 Search With Google" maxlength="150" minlength="2" list="suggestions"></div>
-<datalist style="display:none;" id="suggestions"><option value="Cat">Cat</option><option value="Dog">Dog</option></datalist>
+<div class="searchbar"><input oninput="suggest()" id="search" name="q" type="text" placeholder="🔎 Search With Google" maxlength="100" minlength="2"></div>
+</form>
+<form id="GeekerMagazine1" action="https://www.google.com/search" method="get" target="_blank">
+<div id="suggestions">
+<div class="searchbar-after"><input oninput="suggest()" id="search-after" name="q" type="text" placeholder="🔎 Search With Google" maxlength="100" minlength="2"></div>
+<div class="sbg">
+<a id="s-data-1"></a>
+</div>
+<div class="sbg">
+<a id="s-data-2"></a>
+</div>
+<div class="sbg" >
+<a id="s-data-3"></a>
+</div>
+<div class="sbg">
+<a id="s-data-4"></a>
+</div>
+<div class="sbg">
+<a id="s-data-5"></a>
+</div>
+<div class="space"></div>
+<div class="s-engines">
+<div id="data-eng-1" onclick="geng()" class="s-eng">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png">
+<a>Google</a>
+</div>
+&nbsp;&nbsp;
+<div id="data-eng-2" onclick="feng()" class="s-eng">
+<img src="https://www.mediationinstitute.edu.au/wp-content/uploads/2019/10/Firefox_Logo_2017-992x1024.png">
+<a>Firefox</a>
+</div>
+&nbsp;&nbsp;
+<div id="data-eng-3" onclick="ceng()" class="s-eng">
+<img src="https://th.bing.com/th/id/R.54848d31ba9839a54099c8dfe941d282?rik=j1DS80H4SxJA%2fw&pid=ImgRaw&r=0">
+<a>Yahoo</a>
+</div>
+&nbsp;&nbsp;
+<div id="data-eng-4" onclick="eeng()" class="s-eng">
+<img src="https://th.bing.com/th/id/OIP.F1bRPYw23-byQPy-UdFTAQHaHa?pid=ImgDet&rs=1">
+<a>Edge</a>
+</div>
+</div>
+<br/>
+<div class="s-buttons">
+<div class="s-btn">
+<button type="submit">Search <c id="s-engine">Google</c></button>
+</div>
+&nbsp;&nbsp;
+<div class="s-btn">
+<button type="button" onclick="window.open('https://www.google.com/doodles', '_self');">Feeling Lucky</button>
+</div>
+</div>
+<p></p>
+</div>
 </form>
 </center>
 <center>
+<div id="alert" class="alert">
+<br/>
+<div id="alert_eng">
+<a id="alert-msg"></a>
+<br/>
+</div>
+</div>
 <div class="content" id="d-coner">
 <div class="space"></div>
 <a href="https://www.youtube.com"><div class="suggest"><img src="https://th.bing.com/th/id/OIP.hR6TQma4SWfP-yfQmT5oqgHaHa?w=166&h=180&c=7&r=0&o=5&pid=1.7"></div></a>
@@ -71,20 +133,31 @@
 <div class="space"></div>
 <div id="r-head">Recent Activity</div>
 <div id="r-activity">
-<a href="https://www.youtube.com/watch?v=c9UfeDxaEMw"><div class="activity"><img loading="lazy" src="https://i.ytimg.com/vi/c9UfeDxaEMw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfhVenPSg-1KSqEvqB1yeDMl6ijA"><a class="activity-title" href="https://www.youtube.com/user/SSundee">SSundee</a><br/><a class="activity-desc" id="data-1">I Got Hunted By The FBI...</a></div></a>
+<a href="https://www.youtube.com/watch?v=c9UfeDxaEMw"><div onmouseover="vprev()" onmouseout="eprev()" class="activity"><img id="img-1" loading="lazy" src="https://i.ytimg.com/vi/c9UfeDxaEMw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfhVenPSg-1KSqEvqB1yeDMl6ijA"><video loading="lazy" id="vid"><source src="https://cdn.glitch.me/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/yt1s.com%20-%20I%20Got%20Hunted%20By%20The%20FBI%20in%20Among%20Us_480p_Trim.mp4?v=1656486355173"></video><a class="activity-title" href="https://www.youtube.com/user/SSundee">SSundee</a><br/><a class="activity-desc" id="data-1">I Got Hunted By The FBI...</a></div></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.youtube.com/watch?v=LyNrB4trtIQ"><div class="activity"><img loading="lazy" src="https://i.ytimg.com/vi/LyNrB4trtIQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDkV6PlOk2ok5NnbeI6kBEob3MbTw"><a class="activity-title" href="https://www.youtube.com/channel/UCAoPdO2e3Pwtk5y_SaIB2mQ">jeandrejvr</a><br/><a class="activity-desc" id="data-2">Deep-Voice Trolling On...</a></div></a>
+<a href="https://www.youtube.com/watch?v=LyNrB4trtIQ"><div onmouseover="bprev()" onmouseout="sprev()" class="activity"><img id="img-2" loading="lazy" src="https://i.ytimg.com/vi/LyNrB4trtIQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDkV6PlOk2ok5NnbeI6kBEob3MbTw"><video loading="lazy" id="vid1"><source src="https://cdn.glitch.me/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/yt1s.com%20-%20DeepVoice%20TROLLING%20on%20OMEGLE%20%20SHOCKED%20REACTIONS_480p.mp4?v=1656496897770"></video><a class="activity-title" href="https://www.youtube.com/channel/UCAoPdO2e3Pwtk5y_SaIB2mQ">jeandrejvr</a><br/><a class="activity-desc" id="data-2">Deep-Voice Trolling On...</a></div></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.youtube.com/watch?v=yuFxL3eqb04"><div class="activity"><img loading="lazy" src="https://i.ytimg.com/vi/yuFxL3eqb04/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkEfON5pS6-MyWyIE0dBmWJYYFNw"><a class="activity-title" href="https://www.youtube.com/c/ThatWasEpic11">ThatWasEpic</a><br/><a class="activity-desc" id="data-3">The Gentleman Prank</a></div></a>
+<a href="https://www.youtube.com/watch?v=yuFxL3eqb04"><div onmouseover="lprev()" onmouseout="kprev()" class="activity"><img id="img-3" loading="lazy" src="https://i.ytimg.com/vi/yuFxL3eqb04/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkEfON5pS6-MyWyIE0dBmWJYYFNw"><video loading="lazy" id="vid2"><source src="https://cdn.glitch.global/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/yt1s.com%20-%20Scrappy%20The%20Cholo_480p.mp4?v=1656666952958"></video><a class="activity-title" href="https://www.youtube.com/c/ThatWasEpic11">ThatWasEpic</a><br/><a class="activity-desc" id="data-3">The Gentleman Prank</a></div></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.youtube.com/watch?v=u3kHPv6pogE"><div class="activity"><img loading="lazy" src="https://i.ytimg.com/vi/u3kHPv6pogE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBev-Z-JRvYzA9chufCAmOPIVksZg"><a class="activity-title" href="https://www.youtube.com/c/TOPNOTCHIDIOTS">TopNotch Idiots</a><br/><a class="activity-desc" id="data-4">Stealing Phones Gone Wrong!</a></div></a>
+<a href="https://www.youtube.com/watch?v=u3kHPv6pogE"><div onmouseover="iprev()" onmouseout="dprev()" class="activity"><img id="img-4" loading="lazy" src="https://i.ytimg.com/vi/u3kHPv6pogE/hqdefault.jpg?sqp=-oaymw EcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBev-Z-JRvYzA9chufCAmOPIVksZg"><video loading="lazy" id="vid3"><source src="https://cdn.glitch.me/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/yt1s.com%20-%20STEALING%20PHONES%20GONE%20WILD_480p_Trim.mp4?v=1656664669416"></video><a class="activity-title" href="https://www.youtube.com/c/TOPNOTCHIDIOTS">TopNotch Idiots</a><br/><a class="activity-desc" id="data-4">Stealing Phones Gone Wrong!</a></div></a>
 </div>
 <center>
 <div style="display:none;" id="advert">
 <div style="padding-top:16px;" class="advert"><img loading="lazy" src="https://cdn.glitch.global/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/ezgif.com-gif-maker%20(1).gif?v=1655382199040"><a onclick="recent()" class="del">x</a></div>
 </div>
 </center>
-<!----<script async src="https://unpkg.com/@popperjs/core@2"></script>
+<!----<center>
+<div class="space"></div>
+<div id="r-activity">
+<div class="activity">
+<video id="vid">
+<source src="https://cdn.glitch.global/16fd2c9e-1980-4b8c-ba85-3ef2a66d3ee3/272645138_686431926040984_4760932048883041996_n.mp4?v=1656438045851" type="video/mp4">
+</video>
+<a class="activity-title" href="https://www.youtube.com/c/ThatWasEpic11">ThatWasEpic</a><br/><a class="activity-desc">The Gentleman Prank</a>
+</div>
+</div>
+</center>
+<script async src="https://unpkg.com/@popperjs/core@2"></script>
 <script async src="https://unpkg.com/tippy.js@6"></script>
 <script async type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
 <script>tippy(".tippy", { arrow: true, animation: "scale" });</script>

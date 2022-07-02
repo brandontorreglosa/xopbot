@@ -20,7 +20,9 @@ div.warn{display:none}
 #text{font-family:"Kdam Thmor Pro",sans-serif;font-size:14px}
 #head{font-family:"Alfa Slab One",cursive;color:var(--secondary);font-size:40px;padding-top:26vh;text-align:center}
 .searchbar input{width:70%;height:40px;background-color:#000000;color:#ffffff;padding-left:10px;border:solid white 1.5px;border-radius:20px}
-.searchbar input:hover{border:solid red 1.5px}
+div.searchbar-after input{border:none;border-bottom:solid white 1.5px;padding-left:5.5px;border-top-left-radius:10px;border-top-right-radius:10px;position:relative;font-family:"Kdam Thmor Pro",sans-serif;width:99.2%;height:40px;background-color:#000000;color:#ffffff;}
+#suggestions{position:absolute;top:35.5%;left:14.85%;width:70.15%;height:auto;background-color:#000000;color:#ffffff;border:solid white 1.5px;border-radius:2px;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;text-align:left;}
+#suggestions a{padding:5px;font-family:"Kdam Thmor Pro",sans-serif;font-size: 16px;}
 div.suggest{background-color:#000000;width:90px;height:90px;text-align:center;border-radius:10%;border:solid 1px #000000}
 div.suggest:hover{border:solid 1px #ff0000}
 div.suggest img{width:55px;height:55px;padding-top:2.7vh;border-radius:5%}
@@ -35,8 +37,8 @@ a.del{color:#ffffff;float:right;padding-right:5px;margin-top:-1.2%;}
 div.activity{border-radius:5px;background-color:#000000;width:200px;height:165px}
 div.activity:hover{border:solid 2px #ff0000}
 div.activity img{height:110px;width:200px}
-a.activity-title{color:#ffffff;padding-top:3px;padding-left:4px;font-size:14px;font-family:"Kdam Thmor Pro",sans-serif}
-a.activity-desc{color:#ffffff;padding-left:4px}
+a.activity-title{float:left;color:#ffffff;padding-top:3px;padding-left:4px;font-size:14px;font-family:"Kdam Thmor Pro",sans-serif}
+a.activity-desc{float:left;color:#ffffff;padding-left:4px}
 a.gflag{vertical-align:middle;font-size:16px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/16.png)}
 a.gflag img{border:0}
 a.gflag:hover{background-image:url(//gtranslate.net/flags/16a.png)}
@@ -52,7 +54,9 @@ a.logo{font-family:"Alfa Slab One",cursive;font-size:19px;color:#ff0000}
 /*.#home-view i{font-size:19px;display:inline-block;position:relative}*/
 .dropdownb{left:-7%;background-color:#0c0c0c;display:none;position:absolute;width:140px;overflow:auto;box-shadow:0 10px 10px 0 rgba(0,0,0,0.4)}
 .dropdownb a{font-family:"Kdam Thmor Pro",sans-serif;display:block;color:#ffffff;padding:5px;text-decoration:none;font-size:14px}
-.dropdown p {font-family:"Kdam Thmor Pro",sans-serif;display:block;color:#ffffff;padding:5px 0px 0px 5px;text-decoration:none;font-size:14px}
+p.user-set {font-family:"Kdam Thmor Pro",sans-serif;display:block;color:#ffffff;padding:5px 0px 0px 5px;text-decoration:none;font-size:14px}
+c.user-n{font-family:"Kdam Thmor Pro",sans-serif;display:block;color:#ffffff;padding:0px 0px 0px 5px;text-decoration:none;font-size:14px}
+.dropdown img {width:50px;height:50px;}
 .dropdownb a:hover{color:#ffffff;background-color:#ff0000}
 #dropvas{display:inline-block;position:relative;}
 #dropvas:hover .dropdownb{display:block}
@@ -67,3 +71,17 @@ footer{position:absolute;left:0%;right:0%;width:100%;background-color:#000000;bo
 #con-nav{display:flex;padding-left: 25px;font-family: "Alpha Slab One", cursive;color: #ffffff;}
 #con-nav i {font-size: 15px;color: #ffffff;}
 #con-nav a:hover {color: #ff0000;}
+div.sbg{width:100%;}
+div.sbg:hover{background-color:#ff0000;}
+div.s-btn button{background-color:#0c0c0c;height:35px;width:150px;color:#ffffff;font-size:18px;border:2px solid #0c0c0c;border-radius:2px;}
+div.s-btn button:hover{border: 2px solid red;}
+div.s-buttons{margin-left:34.2%;display:flex;font-family:"Kdam Thmor Pro",sans-serif;}
+div.s-engines{margin-left:27.3%;display:flex;font-family:"Kdam Thmor Pro",sans-serif;}
+div.s-eng{width:100px;height:29px;background-color:#ffffff;color:#000000;font-size:13px;border:2px solid #ffffff;border-radius:5px;}
+div.s-eng:hover{border:2px solid #ff0000;}
+div.s-eng img{height:25px;padding-top:2px;float:left;width:25px;}
+div.s-eng a{position:relative;padding-left:5px;top:3px;}
+#alert_eng{font-family:"Kdam Thmor Pro",sans-serif;width:40%;height:auto;color:#000000;background-color:#ffffff;border-radius:5px;border:2px solid #ffffff;}
+#alert{display:none;}
+div.followers k{text-align:center;width:50px;height:20px;background-color:#ffffff;font-family:"Kdam Thmor Pro",sans-serif;}
+div.followers s{text-decoration:none;padding-right:4px;}
