@@ -4,15 +4,7 @@
 <h1>XOPPY</h1>
 <h3>A Search Engine With Good Connection Speeds To Different Servers</h3>
 </div>
-<h2></h3>
-<br/>
-<hr/>
-<h1 align="left">Website (XOPBOT_SITE)</h1>
-<div align="center">
-<a href="https://xopbot.glitch.me/"><img width="80%" height="auto" src="https://user-images.githubusercontent.com/84269666/175721442-65e21cfa-700b-4133-ba2d-bd3559760528.png"></a>
-<h3>Something / no text </h3>
-</div>
-<h2></h3>
+<h2></h2>
 <br/>
 <hr/>
 <h1 align="left">Discord Bot (XOPBOT)</h1>
