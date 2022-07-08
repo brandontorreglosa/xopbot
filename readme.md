@@ -166,8 +166,20 @@
 <br/>
 <h2></h2>
 <hr/>
-<h2>🌟 Stargazers (25)</h2>
+<h2>🌟 Stargazers (28)</h2>
 <b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
+<a href="https://github.com/Viral-Alt" title="Unknown Real Name (Viral-Alt)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/99238948?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/OfficialSpy" title="Unknown Real Name (OfficialSpy)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/89903097?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Meawooo" title="Unknown Real Name (Meawooo)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/96882676?s=96&v=4">
+</a>
+&nbsp;
 <a href="https://github.com/lassv" title="Lasse (lassv)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/77295879?s=96&v=4">
 </a>
