@@ -1,7 +1,0 @@
-div.activity{border-radius:5px;background-color:#000000;width:200px;height:165px}
-div.activity:hover{border:solid 2px #ff0000}
-div.activity video, iframe{position:relative;height:110px;width:100%;left:-0.522%;float:left;}
-#vid{display:none;}
-#vid1{display:none;}
-#vid2{display:none;}
-#vid3{display:none;}
