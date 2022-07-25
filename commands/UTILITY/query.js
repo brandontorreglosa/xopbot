@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const lineReplyNoMention = require('discord-reply');
 const color = process.env.Color;
-const { MessageButton, MessageActionRow } = require("discord.js");
+const { MessageButton, MessageActionRow } = require("discord-buttons");
 module.exports = {
     name: "query",
     permissions: ["SEND_MESSAGES"],
@@ -13,7 +13,7 @@ module.exports = {
         const text2 = args.join('+');
         const google = `https://th.bing.com/th/id/R.5069689e88f5dc4e88a5230dafb7e65b?rik=BBz5CfrNbwhMGg&pid=ImgRaw&r=0`;
         if (!text2) {
-            const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)google <search>\`**`)
+            const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)query <search>\`**`)
             return message.lineReplyNoMention({ embed: nopr })
         }
         const google1 = new MessageButton().setStyle('url').setURL(`https://www.google.com/search?q=${text2}`).setLabel('Google').setEmoji('🔍')
