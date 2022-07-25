@@ -5,7 +5,8 @@ module.exports = (Discord, client) => {
         `${client.guilds.cache.size} Servers`,
         `${client.channels.cache.size} Channels`,
         `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
-        'https://xopbot.glitch.me',
+        'xopbot.glitch.me',
+        'Version 60.0.0',
         '200+ Commands',
         '24/7 Uptime'
     ];
