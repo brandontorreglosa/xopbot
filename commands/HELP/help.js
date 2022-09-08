@@ -101,7 +101,7 @@ module.exports = {
             message.react('💹');
             const button15 = new MessageButton().setStyle('url').setURL('https://xopbot.glitch.me/').setLabel('Website').setEmoji(`💻`)
             const roxs = new MessageActionRow().addComponents(button15);
-            const embed127 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).setDescription('**`📈 Status (6)`**  \n[statusping](https://xopbot.glitch.me/) \n**Get A `Status Ping`** \n[serverinfo](https://xopbot.glitch.me/) \n**Get `Server Info`** \n[botinfo](https://xopbot.glitch.me/) \n**Get `Bot Info`** \n[covid](https://xopbot.glitch.me/) \n**Get `Covid Info`** \n[userinfo](https://xopbot.glitch.me/) \n**Get `User Info`** \n[mcserver](https://xopbot.glitch.me/) \n**Get `MCSERVER Stats`**').setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+            const embed127 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).setDescription('**`📈 Status (6)`** \n[botinfo](https://xopbot.glitch.me/) \n**Get `Bot Info`** \n[userinfo](https://xopbot.glitch.me/) \n**Get `User Info`** \n[covid](https://xopbot.glitch.me/) \n**Get `Covid Info`** \n[serverinfo](https://xopbot.glitch.me/) \n**Get `Server Info`** \n[statusping](https://xopbot.glitch.me/) \n**Get A `Status Ping`** \n[mcserver](https://xopbot.glitch.me/) \n**Get `MCSERVER Stats`**').setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed127, components: [roxs] })
         }
     }
