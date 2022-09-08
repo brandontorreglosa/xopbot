@@ -20,10 +20,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/HACKERPROTM/XOPBOT-24-7.git"
+        "url": "git+https://github.com/HACKERPROTM/XOPBOT.git"
     },
     "bugs": {
-        "url": "https://github.com/HACKERPROTM/XOPBOT-24-7/issues"
+        "url": "https://github.com/HACKERPROTM/XOPBOT/issues"
     },
     "homepage": "https://xopbot.glitch.me/top",
     "dependencies": {
