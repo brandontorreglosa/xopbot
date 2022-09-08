@@ -38,7 +38,7 @@ module.exports = {
             message.react('🐜');
             const button4 = new MessageButton().setStyle('url').setURL('https://xopbot.glitch.me/').setLabel('Website').setEmoji(`💻`)
             const row4 = new MessageActionRow().addComponents(button4);
-            const embed4 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🪲 | Bugs (3)`', value: '\n[bugreport](https://xopbot.glitch.me/) \n**Report A `Bug`** \n[findbugs](https://xopbot.glitch.me/) \n**Find Bugs On Your `Server`**_ \n[clearbugs](https://xopbot.glitch.me/) \n**Clear Bugs From Your `Server`**' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+            const embed4 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🪲 | Bugs (3)`', value: '\n[bugreport](https://xopbot.glitch.me/) \n**Report A `Bug`** \n[findbugs](https://xopbot.glitch.me/) \n**Find Bugs On Your `Server`** \n[clearbugs](https://xopbot.glitch.me/) \n**Clear Bugs From Your `Server`**' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed4, components: [row4] })
         } else if (cmd === 'socials') {
             message.react('🗨');
@@ -63,7 +63,7 @@ module.exports = {
             const button81 = new MessageButton().setStyle('url').setURL('https://xnxx.com/').setLabel('XNXX').setEmoji(`💦`)
             const button811 = new MessageButton().setStyle('url').setURL('https://hanime.tv').setLabel('Hanime').setEmoji(`💋`)
             const row2 = new MessageActionRow().addComponents(button8, button81, button811)
-            const embed11 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🔞 | NSFW (45)`', value: '**Real Life NSFW**: \n```4k, orgy, gapes, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, masturbation, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW (Premium)**: \n```hentai, hthigh, hanal, hboobs, hrule34, hcowgirl, hmasturbation, hnetorare, hsuccubus, hpaizuri, hyuri, hmidriff, hneko, hkitsune```' }, ).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+            const embed11 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🔞 | NSFW (45)`', value: '**Real Life NSFW**: \n```4k, orgy, gapes, neko, pgif, spanks, squirts, gangbang, handcuffed, threesome, doggystyle, masturbation, lewds, sluts, bigass, bigboobs, bikinis, panties, yogapants, gonewild, creampie, cumsluts, blowjob, dildo, milf, bdsm, anal, ass, pussy, boobs, thigh``` \n**Anime NSFW (Premium)**: \n```hentai, hthigh, hanal, hboobs, hrule34, hcowgirl, hmasturbation, hnetorare, hsuccubus, hpaizuri, hyuri, hmidriff, hneko, hkitsune```' },).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed11, components: [row2] })
         } else if (cmd === 'premium') {
             message.react('🏆');
@@ -97,6 +97,12 @@ module.exports = {
             if (message.author.id != OWNER_ID) return message.channel.send(`**Sorry Only 👑HACKERPROᵈᵉᵛ#1498 Can Run This Command!😔**`);
             const embed116 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🙂 | Owner (6)`', value: '\n[donate-premium](https://xopbot.glitch.me/) \n**Give Premium To A `User`**\n[delete-premium](https://xopbot.glitch.me/) \n**Remove Premium From A `User`** \n[botservers](https://xopbot.glitch.me/) \n**Get The Bot\'s `Server Names`** \n[leaveservers](https://xopbot.glitch.me/) \n**Make The Bot `Leave Servers`** \n[shutdown](https://xopbot.glitch.me/) \n**Shutdown The `Bot`** \n[remind](https://xopbot.glitch.me/) \n**Remind Me `Something`**' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed116, components: [rowo] })
+        } else if (cmd === "status") {
+            message.react('💹');
+            const button15 = new MessageButton().setStyle('url').setURL('https://xopbot.glitch.me/').setLabel('Website').setEmoji(`💻`)
+            const roxs = new MessageActionRow().addComponents(button15);
+            const embed127 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).setDescription('**__📈 Status (6)__** \n[mcserver](https://xopbot.glitch.me/) \n__***Get MCSERVERS Stats!***__  \n[statusping](https://xopbot.glitch.me/) \n__***Get A Status Ping!***__ \n[serverinfo](https://xopbot.glitch.me/) \n__***Get Server Info!***__ \n[botinfo](https://xopbot.glitch.me/) \n__***Get Bot Info!***__ \n[covid](https://xopbot.glitch.me/) \n__***Get Covid Info!***__ \n[userinfo](https://xopbot.glitch.me/) \n__***Get User Info!***__').setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+            await message.channel.send({ embed: embed127, components: [roxs] })
         }
     }
 }
