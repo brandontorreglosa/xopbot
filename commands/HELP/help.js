@@ -4,7 +4,7 @@ const OWNER_ID = process.env.Owner_ID;
 const color = process.env.Color;
 module.exports = {
     name: "help",
-    aliases: ['bugs', 'socials', 'games', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner'],
+    aliases: ['bugs', 'socials', 'games', 'leveling', 'nsfw', 'premium', 'invites', 'credits', 'owner', 'status'],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     clientpermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
