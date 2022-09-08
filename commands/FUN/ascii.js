@@ -19,8 +19,8 @@ module.exports = {
          const nopr = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**\`(prefix)ascii <text>\`**`)
          return message.lineReplyNoMention({ embed: nopr })
       }
-      if (text.length > 17) {
-         const maxlenembed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Please Put Text That Has \`11\`Characters Or Less Because The Conversion Won\`t Be That Good!**`)
+      if (text.length > 13) {
+         const maxlenembed = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**Please Put Text That Has \`13\`Characters Or Less Because The Conversion Won\`t Be That Good!**`)
          return message.lineReplyNoMention({ embed: maxlenembed })
       }
       figlet(text, function (err, data) {
