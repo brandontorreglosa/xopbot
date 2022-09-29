@@ -65,7 +65,8 @@ module.exports = {
             await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
           } else if (button.clicker.id === message.author.id) {
             await button.reply.defer();
-            await channel.send({ embed: deltxtc, components: [row3] }).then(() => {
+            await sentMessage.edit({ embed: supportembedy, components: [row3] });
+            await channel.send({ embed: deltxtc }).then(() => {
               setTimeout(() => channel.delete(), 5000)
             })
           };

@@ -19,7 +19,7 @@ module.exports = {
         got('https://reddit.com/r/memes/random.json').then(async response => {
             let content = JSON.parse(response.body); let permalink = content[0].data.children[0].data.permalink; let memeUrl = `https://reddit.com${permalink}`; let memeImage = content[0].data.children[0].data.url; let memeTitle = content[0].data.children[0].data.title; let memeUpvotes = content[0].data.children[0].data.ups; let memeDownvotes = content[0].data.children[0].data.downs; let memeNumComments = content[0].data.children[0].data.num_comments;
             const embed = new Discord.MessageEmbed().setTimestamp().setTitle(`${memeTitle}`).setURL(`${memeUrl}`).setImage(`${memeImage}`).setColor(`${color}`).setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            const sendme = await message.lineReplyNoMention({ embed: embed, components: [row] });
+            const sendme = await message.channel.send({ embed: embed, components: [row] });
             client.on("clickButton", async (button) => {
                 if (button.id === id1) {
                     if (button.clicker.user.id !== message.author.id) {
