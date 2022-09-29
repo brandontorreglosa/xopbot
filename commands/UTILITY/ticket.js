@@ -30,10 +30,14 @@ module.exports = {
       channel.updateOverwrite(message.guild.id, { SEND_MESSAGE: false, VIEW_CHANNEL: false, });
       channel.updateOverwrite(message.author, { SEND_MESSAGE: true, VIEW_CHANNEL: true, });
       const user = message.author;
-      const button11 = new MessageButton().setStyle('green').setID('yes').setLabel('Lock').setEmoji('🔒')
-      const button1 = new MessageButton().setStyle('red').setID('no').setLabel('Close').setEmoji('⛔')
-      const fakbutton = new MessageButton().setStyle('green').setLabel('Lock').setID('yes1').setEmoji('🔒').setDisabled(true)
-      const fakbutton1 = new MessageButton().setStyle('red').setID('no1').setLabel('Close').setEmoji('⛔').setDisabled(true)
+      const id1 = "yes"+`${Math.floor(Math.random() * 5000)}`;
+      const id2 = "yes1"+`${Math.floor(Math.random() * 5000)}`;
+      const id3 = "no"+`${Math.floor(Math.random() * 5000)}`;
+      const id4 = "no1"+`${Math.floor(Math.random() * 5000)}`;
+      const button11 = new MessageButton().setStyle('green').setID(id1).setLabel('Lock').setEmoji('🔒')
+      const button1 = new MessageButton().setStyle('red').setID(id3).setLabel('Close').setEmoji('⛔')
+      const fakbutton = new MessageButton().setStyle('green').setLabel('Lock').setID(id2).setEmoji('🔒').setDisabled(true)
+      const fakbutton1 = new MessageButton().setStyle('red').setID('no1').setLabel(id4).setEmoji('⛔').setDisabled(true)
       const row = new MessageActionRow().addComponents(button11, button1);
       const row2 = new MessageActionRow().addComponents(fakbutton, fakbutton1);
       const supportembedy = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Hello There, You Contacted Support. Please Wait! \nAccidentely Opened This? React With \`⛔\` To Close It!**')
@@ -41,7 +45,7 @@ module.exports = {
       const deltxtc = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription('**Incoming Air Strike ✈️💣! Channel Delteting In 5 Seconds!**').setFooter(`Say Goodbye To ${channel.name}!`)
       const locktxtc = new Discord.MessageEmbed().setTimestamp().setColor(`${color}`).setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setDescription(`**The Channel Has Now Been Locked 🔒! The Staff Will Reply Soon!**`).setFooter('Successfully Locked The Channel!')
       client.on("clickButton", async (button) => {
-        if (button.id === 'yes') {
+        if (button.id === id1) {
           if (button.clicker.user.id !== message.author.id) {
             await button.reply.defer();
             await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
@@ -50,7 +54,7 @@ module.exports = {
             await button.reply.defer();
             await sentMessage.edit({ embed: supportembedy, components: [row2] });
           };
-        } else if (button.id === 'no') {
+        } else if (button.id === id3) {
           if (button.clicker.user.id !== message.author.id) {
             await button.reply.defer();
             await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });

@@ -10,14 +10,22 @@ module.exports = {
     aliases: ['register-nsfw', 'nsfw-register'],
     async execute(client, message, cmd, args, Discord) {
         const member = message.author;
-        const button1 = new MessageButton().setStyle('green').setID('yes').setLabel("Accept").setEmoji('✅')
-        const button2 = new MessageButton().setStyle('red').setID('no').setLabel('Reject').setEmoji('❌')
-        const button3 = new MessageButton().setStyle('green').setID('yes1').setLabel("Accept").setEmoji('✅').setDisabled(true)
-        const button4 = new MessageButton().setStyle('red').setID('no1').setLabel('Reject').setEmoji('❌').setDisabled(true)
-        const button5 = new MessageButton().setStyle('green').setID('yes2').setLabel("Accept").setEmoji('✅').setDisabled(true)
-        const button6 = new MessageButton().setStyle('red').setID('no2').setLabel('Reject').setEmoji('❌').setDisabled(true)
-        const button7 = new MessageButton().setStyle('green').setID('yes3').setLabel("Accept").setEmoji('✅').setDisabled(true)
-        const button8 = new MessageButton().setStyle('red').setID('no3').setLabel('Reject').setEmoji('❌').setDisabled(true)
+        const id1 = "yes"+`${Math.floor(Math.random() * 5000)}`;
+        const id2 = "yes1"+`${Math.floor(Math.random() * 5000)}`;
+        const id3 = "no"+`${Math.floor(Math.random() * 5000)}`;
+        const id4 = "no1"+`${Math.floor(Math.random() * 5000)}`;
+        const id5 = "yes2"+`${Math.floor(Math.random() * 5000)}`;
+        const id6 = "yes3"+`${Math.floor(Math.random() * 5000)}`;
+        const id7 = "no2"+`${Math.floor(Math.random() * 5000)}`;
+        const id8 = "no3"+`${Math.floor(Math.random() * 5000)}`;
+        const button1 = new MessageButton().setStyle('green').setID(id1).setLabel("Accept").setEmoji('✅')
+        const button2 = new MessageButton().setStyle('red').setID(id3).setLabel('Reject').setEmoji('❌')
+        const button3 = new MessageButton().setStyle('green').setID(id2).setLabel("Accept").setEmoji('✅').setDisabled(true)
+        const button4 = new MessageButton().setStyle('red').setID(id4).setLabel('Reject').setEmoji('❌').setDisabled(true)
+        const button5 = new MessageButton().setStyle('green').setID(id5).setLabel("Accept").setEmoji('✅').setDisabled(true)
+        const button6 = new MessageButton().setStyle('red').setID(id7).setLabel('Reject').setEmoji('❌').setDisabled(true)
+        const button7 = new MessageButton().setStyle('green').setID(id6).setLabel("Accept").setEmoji('✅').setDisabled(true)
+        const button8 = new MessageButton().setStyle('red').setID(id8).setLabel('Reject').setEmoji('❌').setDisabled(true)
         const row = new MessageActionRow().addComponents(button1, button2)
         const row2 = new MessageActionRow().addComponents(button3, button4)
         const row3 = new MessageActionRow().addComponents(button5, button6)
@@ -25,7 +33,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed().setColor(`${color}`).setTimestamp().setAuthor(`${member.username}`, member.displayAvatarURL({ dynamic: true })).setDescription(`**By Registering For NSFW Commands You Confirm Your 18. 🔞 \nAnd XOPBOT Is Not Responsible For Any Consequences! Continue?**`)
         const SentMessage = message.channel.send({ embed: embed, components: [row] });
         client.on("clickButton", async(button) => {
-            if (button.id === "yes") {
+            if (button.id === id1) {
                 if (message.author.id === "636167329251852308") {
                     message.channel.send({ content: "Elias. Why Are You Dumb 🤨!" })
                 }
@@ -47,7 +55,7 @@ module.exports = {
                         }
                     );
                 };
-            } else if (button.id === "no") {
+            } else if (button.id === id3) {
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
                     await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
