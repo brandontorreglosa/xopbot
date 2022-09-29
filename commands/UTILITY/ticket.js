@@ -30,12 +30,12 @@ module.exports = {
       channel.updateOverwrite(message.guild.id, { SEND_MESSAGE: false, VIEW_CHANNEL: false, });
       channel.updateOverwrite(message.author, { SEND_MESSAGE: true, VIEW_CHANNEL: true, });
       const user = message.author;
-      const id1 = "yes"+`${Math.floor(Math.random() * 5000)}`;
-      const id2 = "yes1"+`${Math.floor(Math.random() * 5000)}`;
-      const id3 = "no"+`${Math.floor(Math.random() * 5000)}`;
-      const id4 = "no1"+`${Math.floor(Math.random() * 5000)}`;
-      const id5 = "yes2"+`${Math.floor(Math.random() * 5000)}`;
-      const id6 = "no2"+`${Math.floor(Math.random() * 5000)}`;
+      const id1 = "yes" + `${Math.floor(Math.random() * 5000)}`;
+      const id2 = "yes1" + `${Math.floor(Math.random() * 5000)}`;
+      const id3 = "no" + `${Math.floor(Math.random() * 5000)}`;
+      const id4 = "no1" + `${Math.floor(Math.random() * 5000)}`;
+      const id5 = "yes2" + `${Math.floor(Math.random() * 5000)}`;
+      const id6 = "no2" + `${Math.floor(Math.random() * 5000)}`;
       const button11 = new MessageButton().setStyle('green').setID(id1).setLabel('Lock').setEmoji('🔒')
       const button1 = new MessageButton().setStyle('red').setID(id3).setLabel('Close').setEmoji('⛔')
       const fakbutton = new MessageButton().setStyle('green').setLabel('Lock').setID(id2).setEmoji('🔒').setDisabled(true)
@@ -65,7 +65,7 @@ module.exports = {
             await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
           } else if (button.clicker.id === message.author.id) {
             await button.reply.defer();
-            await channel.send({ embed: deltxtc }).then(() => {
+            await channel.send({ embed: deltxtc, components: [row3] }).then(() => {
               setTimeout(() => channel.delete(), 5000)
             })
           };
