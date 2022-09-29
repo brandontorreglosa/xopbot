@@ -69,13 +69,13 @@ module.exports = {
             message.react('🏆');
             const button9 = new MessageButton().setStyle('url').setURL('https://xopbot.glitch.me/').setLabel('Website').setEmoji(`💻`)
             const row12 = new MessageActionRow.addComponents(button9);
-            const embed12 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`👑 Premium (5)`', value: '\n[fakeuserinfo](https://xopbot.glitch.me/) \n**Get A `Fake User Info`** \n[weather](https://xopbot.glitch.me/) \n**Get Your `Current Weather`** \n[oldmeme](https://xopbot.glitch.me/) \n**Fetch Old Memes From `Google`** \n[tictactoe](https://xopbot.glitch.me/) \n**Play `Tictactoe`** \n[math](https://xopbot.glitch.me/) \n**Solve `Math Problems`**' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+            const embed12 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`👑 | Premium (5)`', value: '\n[fakeuserinfo](https://xopbot.glitch.me/) \n**Get A `Fake User Info`** \n[weather](https://xopbot.glitch.me/) \n**Get Your `Current Weather`** \n[oldmeme](https://xopbot.glitch.me/) \n**Fetch Old Memes From `Google`** \n[tictactoe](https://xopbot.glitch.me/) \n**Play `Tictactoe`** \n[math](https://xopbot.glitch.me/) \n**Solve `Math Problems`**' }).setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed12, components: [row12] })
         } else if (cmd === 'invites') {
             message.react('🖇');
             const button10 = new MessageButton().setStyle('url').setURL('https://xopbot.glitch.me/').setLabel('Website').setEmoji(`💻`)
             const row13 = new MessageActionRow().addComponents(button10);
-            const embed13 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🔗 Invites (3)`', value: '\n[botinvite](https://xopbot.glitch.me/) \n**Invite The Bot To Your `Server`** \n[websiteinvite](https://xopbot.glitch.me/) \n**Go To Bot\'s `Official Website`** \n[voteinvite](https://xopbot.glitch.me/) \n**Vote For The `Bot`**' }).setFooter(`Created By:${message.author.tag}`, message.author.displayAvatarURL())
+            const embed13 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).addFields({ name: '`🔗 | Invites (3)`', value: '\n[botinvite](https://xopbot.glitch.me/) \n**Invite The Bot To Your `Server`** \n[websiteinvite](https://xopbot.glitch.me/) \n**Go To Bot\'s `Official Website`** \n[voteinvite](https://xopbot.glitch.me/) \n**Vote For The `Bot`**' }).setFooter(`Created By:${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed13, components: [row13] })
         } else if (cmd === 'credits') {
             message.react('📃');
@@ -101,7 +101,7 @@ module.exports = {
             message.react('💹');
             const button15 = new MessageButton().setStyle('url').setURL('https://xopbot.glitch.me/').setLabel('Website').setEmoji(`💻`)
             const roxs = new MessageActionRow().addComponents(button15);
-            const embed127 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).setDescription('**`📈 Status (6)`** \n[botinfo](https://xopbot.glitch.me/) \n**Get `Bot Info`** \n[userinfo](https://xopbot.glitch.me/) \n**Get `User Info`** \n[covid](https://xopbot.glitch.me/) \n**Get `Covid Info`** \n[serverinfo](https://xopbot.glitch.me/) \n**Get `Server Info`** \n[statusping](https://xopbot.glitch.me/) \n**Get A `Status Ping`** \n[mcserver](https://xopbot.glitch.me/) \n**Get `MCSERVER Stats`**').setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
+            const embed127 = new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setTimestamp().setColor(`${color}`).setDescription('**`📈 | Status (6)`** \n[botinfo](https://xopbot.glitch.me/) \n**Get `Bot Info`** \n[userinfo](https://xopbot.glitch.me/) \n**Get `User Info`** \n[covid](https://xopbot.glitch.me/) \n**Get `Covid Info`** \n[serverinfo](https://xopbot.glitch.me/) \n**Get `Server Info`** \n[statusping](https://xopbot.glitch.me/) \n**Get A `Status Ping`** \n[mcserver](https://xopbot.glitch.me/) \n**Get `MCSERVER Stats`**').setFooter(`Created By: ${message.author.tag}`, message.author.displayAvatarURL())
             await message.channel.send({ embed: embed127, components: [roxs] })
         }
     }
