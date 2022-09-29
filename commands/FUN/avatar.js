@@ -12,15 +12,19 @@ module.exports = {
     async execute(client, message, cmd, args, Discord) {
         const id1 = "128px"+`${Math.floor(Math.random() * 5000)}`;
         const id2 = "1281px"+`${Math.floor(Math.random() * 5000)}`;
+        const id3 = "256px"+`${Math.floor(Math.random() * 5000)}`;
+        const id4 = "2561px"+`${Math.floor(Math.random() * 5000)}`;
+        const id5 = "1024px"+`${Math.floor(Math.random() * 5000)}`;
+        const id6 = "10241px"+`${Math.floor(Math.random() * 5000)}`;
         const loggerchannel = client.channels.cache.get(logChannel);
         const user = message.mentions.users.first() || message.author;
         const button1 = new MessageButton().setStyle('red').setID(id1).setLabel('128px')
-        const button2 = new MessageButton().setStyle('blurple').setID('256').setLabel('256px')
-        const button3 = new MessageButton().setStyle('green').setID('1024').setLabel('1024px')
+        const button2 = new MessageButton().setStyle('blurple').setID(id3).setLabel('256px')
+        const button3 = new MessageButton().setStyle('green').setID(id5).setLabel('1024px')
         const row = new MessageActionRow().addComponents(button1, button2, button3);
         const button4 = new MessageButton().setStyle('red').setID(id2).setLabel('128px').setDisabled(true)
-        const button5 = new MessageButton().setStyle('blurple').setID('2561').setLabel('256px').setDisabled(true)
-        const button6 = new MessageButton().setStyle('green').setID('10241').setLabel('1024px').setDisabled(true)
+        const button5 = new MessageButton().setStyle('blurple').setID(id4).setLabel('256px').setDisabled(true)
+        const button6 = new MessageButton().setStyle('green').setID(id6).setLabel('1024px').setDisabled(true)
         const row1 = new MessageActionRow().addComponents(button4, button5, button6);
         const row2 = new MessageActionRow().addComponents(button4, button5, button6);
         const row3 = new MessageActionRow().addComponents(button4, button5, button6);
@@ -36,7 +40,7 @@ module.exports = {
                     await sendme.edit({ embed: avatar_list1, components: [row1] });
                     await button.reply.defer();
                 }
-            } else if (button.id === "256") {
+            } else if (button.id === id3) {
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
                     await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
@@ -45,7 +49,7 @@ module.exports = {
                     await sendme.edit({ embed: avatar_list2, components: [row2] });
                     await button.reply.defer();
                 }
-            } else if (button.id === "1024") {
+            } else if (button.id === id5) {
                 if (button.clicker.user.id !== message.author.id) {
                     await button.reply.defer();
                     await button.message.lineReply({ content: `**This Is ${user.username}\'s Embed!**`, ephemeral: true });
