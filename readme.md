@@ -149,8 +149,24 @@
 <br/>
 <h2></h2>
 <hr/>
-<h2>🌟 Stargazers (30)</h2>
+<h2>🌟 Stargazers (34)</h2>
 <b><p>⚠️ Warning <br/> If You Wan't To Edit Or Remove Something From This Section That Includes You.<br/> You Can Easily Contact Me At My Email: <code>brandontorreglosa@gmail.com</code><br/>You Will Most Likely Get A Reply Within 2 Hours The Most. Make Sure To Say The Reason And Show Proof 🥳.<br/> We Respect Your Privacy 🔒. Don't Hesitate To Inform Us, We Don't Bite 😬</p></b>
+<a href="https://github.com/reesepushkin" title="Unknown Real Name (reesepushkin)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/112848346?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Debestof" title="Unknown Real Name (Debestof)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/97556964?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/graymundo032" title="Unknown Real Name (graymundo032)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/103803105?s=96&v=4">
+</a>
+&nbsp;
+<a href="https://github.com/Kunaiiiiiiiii" title="Unknown Real Name (Kunaiiiiiiiii)">
+<img width="150" height="150" src="https://avatars.githubusercontent.com/u/111090208?s=96&v=4">
+</a>
+&nbsp;
 <a href="https://github.com/akenolol" title="Unknown Real Name (akenolol)">
 <img width="150" height="150" src="https://avatars.githubusercontent.com/u/93791569?s=96&v=4">
 </a>
